@@ -3,8 +3,13 @@ import search_icon from "@/app/assets/icons/nav/search.svg";
 import account_icon from "@/app/assets/icons/nav/account.svg";
 
 import navigation_scss from '@/app/scss/components/main/Navigation.module.scss'
+import {useState} from "react";
+
+import avatar from '@/app/assets/default/default_ava_nav.svg'
 
 export const NavigationComponent = () => {
+    const [isAccountHover, setIsAccountHover] = useState(false)
+
     return (
         <section className={navigation_scss.root}>
             <ul className={navigation_scss.nav}>
@@ -48,11 +53,60 @@ export const NavigationComponent = () => {
                         <Image src={search_icon} alt={'search_icon'} width={0} height={0}/>
                     </button>
                 </li>
-                <li>
+                <li onMouseOver={() => setIsAccountHover(true)}>
                     <button>
                         <Image src={account_icon} alt={'account_icon'} width={0} height={0}/>
                     </button>
+                    {isAccountHover ?
+                        <section className={navigation_scss.account_various}
+                                 onMouseOver={() => setIsAccountHover(true)}
+                                 onMouseLeave={() => setIsAccountHover(false)}>
+                            <ul className={navigation_scss.account_nav}>
+                                <li className={navigation_scss.account_data}>
+                                    <Image src={avatar} className={navigation_scss.avatar}
+                                           alt={'avatar'} width={0} height={0}/>
+                                    <section>
+                                        <div>Имя</div>
+                                        <button>
+                                            Художник
+                                        </button>
+                                    </section>
+                                </li>
+                                <li>
+                                    <button>
+                                        Корзина
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        Заказы
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        Уведомления
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        Подписки
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        Настройки
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        Выход
+                                    </button>
+                                </li>
+                            </ul>
+                        </section>
+                        : null}
                 </li>
+
             </ul>
         </section>
     )

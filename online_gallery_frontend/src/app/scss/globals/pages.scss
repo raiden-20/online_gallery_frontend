@@ -7,3 +7,12 @@
   font-family: 'Fahkwang', sans-serif;
   font-size: $title-size;
 }
+
+.main_button {
+  background-color: $black-color;
+  color:$white-color;
+}
+
+.no_main_color {
+  border: $border-base;
+}

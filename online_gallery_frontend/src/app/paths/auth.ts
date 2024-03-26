@@ -1,0 +1,13 @@
+import {MAIN_PATHS} from "@/app/paths/main";
+
+export const AUTH_CATEGORY = {
+    LOGIN: '/login',
+    REGISTRATION: '/registration',
+    FORGOT_PASSWORD: '/forgotPassword',
+}
+
+export const AUTH_PATHS = {
+    LOGIN: MAIN_PATHS.AUTH + AUTH_CATEGORY.LOGIN,
+    REGISTRATION: MAIN_PATHS.AUTH + AUTH_CATEGORY.REGISTRATION ,
+    FORGOT_PASSWORD: MAIN_PATHS.AUTH + AUTH_CATEGORY.FORGOT_PASSWORD ,
+}

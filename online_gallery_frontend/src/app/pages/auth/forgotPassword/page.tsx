@@ -1,5 +1,7 @@
+import {Root} from "@/app/components/main/main/Root";
+
 const ForgotPassword = () => {
-    return
+    return <Root/>
 }
 
 export default ForgotPassword

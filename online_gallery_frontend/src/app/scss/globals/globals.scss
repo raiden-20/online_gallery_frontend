@@ -19,7 +19,7 @@ body {
   //height: 100vh;
   overflow-x: hidden;
 
-  background-color: $bgc;
+  background-color: $white-color;
 }
 
 button {
@@ -30,6 +30,9 @@ button {
   background-color: transparent;
   border: none;
 
+  height: $button-height;
+  border-radius: $button-radius;
+
   * {
     cursor: pointer;
   }
@@ -37,6 +40,14 @@ button {
 
 input, textarea {
   cursor: text;
+}
+
+input {
+  padding: $input-padding;
+  height: $input-height;
+  border-radius: $input-radius;
+
+  border: 1px solid $grey;
 }
 
 input:focus {

@@ -1,5 +1,7 @@
+import {Root} from "@/app/components/main/main/Root";
+
 const Login = () => {
-    return
+    return <Root/>
 }
 
 export default Login

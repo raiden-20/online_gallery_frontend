@@ -1,0 +1,19 @@
+@import "@/app/scss/globals/color";
+
+$nav-width: 1065px;
+$nav-height: 45px;
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  width: $nav-width;
+  height: $nav-height;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/app/scss/globals/globals.css";
+import {Roboto} from "next/font/google";
 import React from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+import '@/app/scss/globals/globals.scss'
+import '@/app/scss/globals/pages.scss'
+
+const inter = Roboto({weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Lindéro | online gallery",

@@ -9,10 +9,14 @@
 }
 
 .main_button {
+  font-weight: $button-weight;
+
   background-color: $black-color;
   color:$white-color;
 }
 
 .no_main_color {
-  border: $border-base;
+  font-weight: $button-weight;
+
+  border: $border-button;
 }

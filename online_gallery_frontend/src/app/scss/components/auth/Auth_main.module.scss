@@ -49,6 +49,11 @@ $form-gap: 10px;
       .p {
         text-align: center;
       }
+
+      .button_left {
+        display: flex;
+        justify-self: start;
+      }
     }
   }
 }

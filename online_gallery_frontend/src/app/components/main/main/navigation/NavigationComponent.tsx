@@ -8,7 +8,7 @@ import {useState} from "react";
 import avatar from '@/app/assets/default/default_ava_nav.svg'
 
 export const NavigationComponent = () => {
-    const [isAccountHover, setIsAccountHover] = useState(false)
+    const [isAccountClicked, setIsAccountClicked] = useState(false)
 
     return (
         <section className={navigation_scss.root}>
@@ -53,14 +53,12 @@ export const NavigationComponent = () => {
                         <Image src={search_icon} alt={'search_icon'} width={0} height={0}/>
                     </button>
                 </li>
-                <li onMouseOver={() => setIsAccountHover(true)}>
+                <li onClick={() => setIsAccountClicked(!isAccountClicked)}>
                     <button>
                         <Image src={account_icon} alt={'account_icon'} width={0} height={0}/>
                     </button>
-                    {isAccountHover ?
-                        <section className={navigation_scss.account_various}
-                                 onMouseOver={() => setIsAccountHover(true)}
-                                 onMouseLeave={() => setIsAccountHover(false)}>
+                    {isAccountClicked ?
+                        <section className={navigation_scss.account_various}>
                             <ul className={navigation_scss.account_nav}>
                                 <li className={navigation_scss.account_data}>
                                     <Image src={avatar} className={navigation_scss.avatar}

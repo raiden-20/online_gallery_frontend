@@ -65,38 +65,38 @@ export const NavigationComponent = () => {
                                            alt={'avatar'} width={0} height={0}/>
                                     <section>
                                         <div>Имя</div>
-                                        <button>
+                                        <button className={navigation_scss.button}>
                                             Художник
                                         </button>
                                     </section>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button className={navigation_scss.button}>
                                         Корзина
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button className={navigation_scss.button}>
                                         Заказы
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button className={navigation_scss.button}>
                                         Уведомления
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button className={navigation_scss.button}>
                                         Подписки
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button className={navigation_scss.button}>
                                         Настройки
                                     </button>
                                 </li>
                                 <li>
-                                    <button>
+                                    <button className={navigation_scss.button}>
                                         Выход
                                     </button>
                                 </li>

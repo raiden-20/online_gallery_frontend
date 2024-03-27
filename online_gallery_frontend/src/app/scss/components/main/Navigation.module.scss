@@ -45,9 +45,14 @@ $avatar-size: 50px;
 
     display: grid;
     align-content: space-between;
+
+    button {
+      height: min-content;
+    }
   }
 
   .account_data {
+    height: min-content;
     display: flex;
     gap: $account_various-data-gap;
 

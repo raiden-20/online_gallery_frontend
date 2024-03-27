@@ -1,7 +1,6 @@
 @import "@/app/scss/globals/color";
 @import "@/app/scss/globals/main_values";
 
-$nav-width: 1065px;
 $nav-height: 45px;
 
 $account_various-width: 188px;
@@ -21,7 +20,6 @@ $avatar-size: 50px;
 }
 
 .nav {
-  width: $nav-width;
   height: $nav-height;
 
   display: flex;

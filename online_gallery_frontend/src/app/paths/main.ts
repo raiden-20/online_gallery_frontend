@@ -1,11 +1,18 @@
 export const HEADER_PATH= '/pages'
 
+export const ROLES = {
+    ARTIST: 'artist',
+    CUSTOMER: 'customer'
+}
+
 export const PATHS_CATEGORY = {
     MAIN: '/main',
-    AUTH: '/auth'
+    AUTH: '/auth',
+    PROFILE: '/profile'
 }
 
 export const MAIN_PATHS = {
     MAIN: HEADER_PATH + PATHS_CATEGORY.MAIN,
-    AUTH: HEADER_PATH + PATHS_CATEGORY.AUTH
+    AUTH: HEADER_PATH + PATHS_CATEGORY.AUTH,
+    PROFILE: HEADER_PATH + PATHS_CATEGORY.PROFILE
 }

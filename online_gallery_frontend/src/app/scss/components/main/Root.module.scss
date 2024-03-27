@@ -1,8 +1,18 @@
+@import "@/app/scss/globals/main_values";
 
+$root-gap: 16px;
+
+.page {
+  display: grid;
+  width: 100%;
+}
 
 .root {
+  width: $default-width;
+
   display: grid;
   grid-template-rows: min-content auto min-content;
-  width: 100%;
+  row-gap: $root-gap;
+  justify-self: center;
   min-height: 100vh;
 }

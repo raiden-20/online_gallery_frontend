@@ -1,5 +1,7 @@
 @import "@/app/scss/globals/color";
 
+$default-width: 1065px;
+
 $font-family: "Roboto", sans-serif;
 
 $font-size: 18px;
@@ -8,9 +10,14 @@ $title-size: 24px;
 
 $title-auth-size: 36px;
 
+$profile-name-size: 32px;
+$profile-name-weight: 600;
+
 $button-height: 41px;
 $button-radius: 6px;
 $button-weight: 600;
+$button-padding: 9px 26px;
+$button-font-size: 19px;
 
 $input-height: 48px;
 $input-radius: 6px;
@@ -18,6 +25,7 @@ $input-padding: 0 16px;
 
 $border-base: 1px solid $black-color;
 $border-button: 2px solid $black-color;
+$border-white: 5px solid $white-color;
 
 
 

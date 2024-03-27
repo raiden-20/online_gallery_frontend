@@ -1,8 +1,8 @@
-
-
 .root {
   display: grid;
   grid-template-rows: min-content auto min-content;
   width: 100%;
   min-height: 100vh;
 }
+
+/*# sourceMappingURL=Root.module.css.map */

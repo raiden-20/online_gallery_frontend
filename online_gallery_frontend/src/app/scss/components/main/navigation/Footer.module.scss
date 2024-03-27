@@ -1,0 +1,44 @@
+@import "@/app/scss/globals/color";
+@import "@/app/scss/globals/main_values";
+
+$root-height: 70px;
+$root-padding: 15px 0 25px 0;
+$root-max-width: 1065px;
+
+$nav-gap: 35px;
+
+$github-image-size: 30px;
+
+.root {
+  padding: $root-padding;
+
+  height: $root-height;
+  width: $root-max-width;
+
+  display: flex;
+  justify-self: center;
+  align-self: end;
+
+  justify-content: space-between;
+
+  border-top: $border-base;
+
+  .nav {
+    display: flex;
+    gap: $nav-gap;
+
+    align-items: center;
+
+    li, a {
+      font-size: $font-size-footer;
+    }
+  }
+
+
+  .github_image {
+    width: $github-image-size;
+    height: $github-image-size;
+
+    object-fit: cover;
+  }
+}

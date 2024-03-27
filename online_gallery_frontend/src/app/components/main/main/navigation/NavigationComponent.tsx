@@ -2,7 +2,7 @@ import Image from "next/image";
 import search_icon from "@/app/assets/icons/nav/search.svg";
 import account_icon from "@/app/assets/icons/nav/account.svg";
 
-import navigation_scss from '@/app/scss/components/main/Navigation.module.scss'
+import navigation_scss from '@/app/scss/components/main/navigation/Navigation.module.scss'
 import {useState} from "react";
 
 import avatar from '@/app/assets/default/default_ava_nav.svg'

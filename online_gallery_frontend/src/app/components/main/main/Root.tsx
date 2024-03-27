@@ -4,21 +4,23 @@ import {NavigationComponent} from "@/app/components/main/main/navigation/Navigat
 import {usePathname} from "next/navigation";
 import {PATHS_CATEGORY} from "@/app/paths/main";
 import {Auth_main} from "@/app/components/auth/Auth_main";
+import {FooterComponent} from "@/app/components/main/main/navigation/FooterComponent";
+
+import root_scss from '@/app/scss/components/main/Root.module.scss'
 
 export const Root = () => {
     const pathname = usePathname().split('/')
     const pathnameThird = '/' + pathname[2]
 
     return (
-        <section>
-            <nav>
-                <NavigationComponent/>
-            </nav>
+        <section className={root_scss.root}>
+            <NavigationComponent/>
             <main>
                 {pathnameThird === PATHS_CATEGORY.AUTH ? <Auth_main/>
                     : null
                 }
             </main>
+            <FooterComponent/>
         </section>
     )
 }

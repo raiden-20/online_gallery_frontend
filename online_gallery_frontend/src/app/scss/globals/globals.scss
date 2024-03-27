@@ -42,7 +42,7 @@ input, textarea {
   cursor: text;
 }
 
-input {
+input, select {
   padding: $input-padding;
   height: $input-height;
   border-radius: $input-radius;
@@ -51,6 +51,10 @@ input {
 }
 
 input:focus {
+  outline: none;
+}
+
+select:focus {
   outline: none;
 }
 

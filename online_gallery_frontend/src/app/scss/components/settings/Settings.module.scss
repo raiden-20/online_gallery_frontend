@@ -1,0 +1,28 @@
+
+$root-gap: 35px;
+$main-gap: 35px;
+
+$button-font-size: 20px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: $main-gap;
+
+  .input_section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $main-gap;
+  }
+
+  .button {
+    font-size: $button-font-size;
+  }
+}

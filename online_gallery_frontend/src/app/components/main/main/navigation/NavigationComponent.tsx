@@ -6,8 +6,12 @@ import navigation_scss from '@/app/scss/components/main/navigation/Navigation.mo
 import {useState} from "react";
 
 import avatar from '@/app/assets/default/default_ava_nav.svg'
+import {useRouter} from "next/navigation";
+import {MAIN_PATHS} from "@/app/paths/main";
 
 export const NavigationComponent = () => {
+    const router = useRouter()
+
     const [isAccountClicked, setIsAccountClicked] = useState(false)
 
     return (
@@ -61,6 +65,7 @@ export const NavigationComponent = () => {
                         <ul className={navigation_scss.account_nav}>
                             <li className={navigation_scss.account_data}>
                                 <Image src={avatar} className={navigation_scss.avatar}
+                                       onClick={() => router.push(MAIN_PATHS.PROFILE)}
                                        alt={'avatar'} width={0} height={0}/>
                                 <section>
                                     <div>Имя</div>
@@ -90,7 +95,8 @@ export const NavigationComponent = () => {
                                 </button>
                             </li>
                             <li>
-                                <button className={navigation_scss.button}>
+                                <button className={navigation_scss.button}
+                                onClick={() => router.push(MAIN_PATHS.SETTINGS)}>
                                     Настройки
                                 </button>
                             </li>

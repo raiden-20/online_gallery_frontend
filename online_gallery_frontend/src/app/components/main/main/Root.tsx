@@ -8,6 +8,7 @@ import {FooterComponent} from "@/app/components/main/main/navigation/FooterCompo
 
 import root_scss from '@/app/scss/components/main/Root.module.scss'
 import {ProfileRoot} from "@/app/components/profile/ProfileRoot";
+import {SettingsRoot} from "@/app/components/settings/SettingsRoot";
 
 export const Root = () => {
     const pathname = usePathname().split('/')
@@ -19,7 +20,8 @@ export const Root = () => {
                 <NavigationComponent/>
                 <main>
                     {pathnameThird === PATHS_CATEGORY.AUTH ? <Auth_main/> :
-                        pathnameThird === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> : null
+                    pathnameThird === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
+                    pathnameThird === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> : null
                     }
                 </main>
                 <FooterComponent/>

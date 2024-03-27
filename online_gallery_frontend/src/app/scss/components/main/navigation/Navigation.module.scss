@@ -58,6 +58,8 @@ $avatar-size: 50px;
 
 
     .avatar {
+      cursor: pointer;
+
       width: $avatar-size;
       height: $avatar-size;
       object-fit: cover;

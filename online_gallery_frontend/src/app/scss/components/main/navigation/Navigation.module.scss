@@ -1,0 +1,70 @@
+@import "@/app/scss/globals/color";
+@import "@/app/scss/globals/main_values";
+
+$nav-height: 45px;
+
+$account_various-width: 188px;
+$account_various-height: 284px;
+$account_various-padding: 15px;
+
+$account_various-data-gap: 10px;
+
+$avatar-size: 50px;
+
+.root {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  height: $nav-height;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account_various {
+  width: $account_various-width;
+  height: $account_various-height;
+
+  position: absolute;
+
+  border: $border-base;
+
+  top: $nav-height;
+  padding: $account_various-padding;
+
+  background-color: $white-color;
+
+  .account_nav {
+    height: 100%;
+
+    display: grid;
+    align-content: space-between;
+
+    button {
+      height: min-content;
+    }
+  }
+
+  .account_data {
+    height: min-content;
+    display: flex;
+    gap: $account_various-data-gap;
+
+
+    .avatar {
+      cursor: pointer;
+
+      width: $avatar-size;
+      height: $avatar-size;
+      object-fit: cover;
+    }
+  }
+
+
+}

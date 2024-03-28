@@ -1,4 +1,4 @@
-import {MAIN_PATHS} from "@/app/paths/main";
+import {MAIN_PATHS} from "@/paths/main";
 
 export const AUTH_CATEGORY = {
     LOGIN: '/login',

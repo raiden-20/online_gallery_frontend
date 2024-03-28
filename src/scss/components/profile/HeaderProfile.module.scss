@@ -1,0 +1,171 @@
+@import "@/app/scss/globals/main_values";
+@import "@/app/scss/globals/color";
+
+$cover-height: 250px;
+
+$change-cover-top: 25px;
+$change-cover-padding-right: 24px;
+
+$change-avatar-top: -25px;
+
+$data-gap: 12px;
+
+$avatar-radius: 15px;
+$avatar-size: 200px;
+$avatar-top: -100px;
+
+$subscriber-section-gap: 15px;
+
+$button-bell-width: 43px;
+
+$bell-width: 23px;
+$bell-height: 25px;
+
+$change-window-padding: 32px;
+$change-window-bottom: 30px;
+$change-window-gap: 32px;
+$change-window-text-gap: 4px;
+$change-window-buttons-gap: 16px;
+$change-window-radius: 12px;
+$change-window-shadow: 0 0 10px 0 $shadow-color;
+
+
+.page {
+  display: grid;
+  position: relative;
+}
+
+.root {
+  display: flex;
+  flex-flow: column;
+
+  .cover_section {
+    display: grid;
+    position: relative;
+
+    height: $cover-height;
+
+    z-index: $z-index-low;
+
+    .cover {
+      width: 100%;
+      height: $cover-height;
+
+      object-fit: cover;
+    }
+
+    .change_cover {
+      padding-right: $change-cover-padding-right;
+
+      position: absolute;
+      top: $change-cover-top;
+
+      display: grid;
+      justify-self: end;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+
+  .profile_data {
+    display: grid;
+    gap: $data-gap;
+
+    justify-self: center;
+    justify-items: center;
+
+    .avatar_section {
+      display: grid;
+
+      position: relative;
+
+      height: $avatar-size - 94px;
+
+      z-index: $z-index-middle;
+
+      .avatar {
+        position: relative;
+        top: $avatar-top;
+
+        width: $avatar-size;
+        height: $avatar-size;
+
+        border: $border-white;
+        border-radius: $avatar-radius;
+
+        object-fit: cover;
+      }
+
+      .change_avatar {
+        position: absolute;
+        top: $change-avatar-top;
+
+        display: grid;
+        justify-self: center;
+        align-self: center;
+      }
+    }
+
+    .name {
+
+      font-size: $profile-name-size;
+      font-weight: $profile-name-weight;
+    }
+
+    .subscriber_section {
+      display: flex;
+      gap: $subscriber-section-gap;
+
+      .button_bell {
+        width: $button-bell-width;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+
+        .bell_image {
+          width: $bell-width;
+          height: $bell-height;
+        }
+      }
+    }
+  }
+}
+
+.change_data_window {
+  display: grid;
+  justify-self: center;
+  align-self: end;
+
+  position: fixed;
+  bottom: $change-window-bottom;
+
+  z-index: $z-index-up;
+
+  padding: $change-window-padding;
+
+  justify-items: center;
+  row-gap: $change-window-gap;
+
+  background-color: $white-color;
+  box-shadow: $change-window-shadow;
+
+  border-radius: $change-window-radius;
+
+  .change_data_window_data {
+    display: flex;
+    align-items: center;
+    gap: $change-window-text-gap;
+  }
+
+  .change_data_window_buttons {
+    display: flex;
+    gap: $change-window-buttons-gap;
+  }
+}
+
+
+

@@ -1,0 +1,90 @@
+@import "@/app/scss/globals/main_values";
+@import "@/app/scss/globals/color";
+
+$root-gap: 35px;
+$main-gap: 64px;
+
+$section-gap: 16px;
+
+$section-header-weight: 600;
+$section-header-font-size: 24px;
+
+$section-form-padding: 0 16px;
+$section-form-gap: 16px;
+
+$auth-data-height: 56px;
+
+
+$inputs-gap: 35px;
+
+$button-font-size: 20px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: $main-gap;
+
+  .section {
+    display: flex;
+    flex-flow: column;
+    gap: $section-gap;
+
+    .section_header {
+      font-size: $section-header-font-size;
+      font-weight: $section-header-weight;
+    }
+
+    .section_form {
+      padding: $section-form-padding;
+
+      display: flex;
+      flex-flow: column;
+      gap: $section-form-gap;
+
+      .auth_data {
+        height: $auth-data-height;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .footer_buttons {
+      padding: $section-form-padding;
+
+      width: max-content;
+
+      display: flex;
+      flex-flow: column;
+      gap: $section-form-gap;
+      justify-content: start;
+
+
+      .button {
+        text-align: start;
+      }
+    }
+  }
+
+  .input_section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $inputs-gap;
+  }
+
+  .button {
+    font-size: $button-font-size;
+  }
+
+  .delete_button {
+    color: $red-color;
+  }
+}

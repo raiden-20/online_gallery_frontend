@@ -1,7 +1,7 @@
 /* Error: Can't find stylesheet to import.
  *   ,
- * 1 | @import "@/app/scss/globals/color";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * 1 | @import "@/scss/globals/color";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^
  *   '
  *   Footer.module.scss 1:9  root stylesheet */
 
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"@/app/scss/globals/color\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Footer.module.scss 1:9  root stylesheet";
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"@/scss/globals/color\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Footer.module.scss 1:9  root stylesheet";
 }

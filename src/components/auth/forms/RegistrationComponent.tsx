@@ -1,5 +1,5 @@
-import auth_main_scss from "@/app/scss/components/auth/Auth_main.module.scss";
-import {AUTH_PATHS} from "@/app/paths/auth";
+import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
+import {AUTH_PATHS} from "@/paths/auth";
 import {useRouter} from "next/navigation";
 import {useState} from "react";
 

@@ -1,5 +1,5 @@
 import {useState} from "react";
-import nav_profile_scss from "@/app/scss/components/profile/Navigation.module.scss";
+import nav_profile_scss from "@/scss/components/profile/Navigation.module.scss";
 
 export const CustomerNavigationProfileComponent = () => {
     const [whoIsClicked, setWhoIsClicked] = useState(1)

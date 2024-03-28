@@ -1,12 +1,12 @@
-import {AccountSettingsComponent} from "@/app/components/settings/categories/account/AccountSettingsComponent";
+
+import settings_scss from '@/scss/components/settings/Settings.module.scss'
+import React, {useState} from "react";
+import {NavigationSettingsComponent} from "@/components/settings/nav/NavigationSettingsComponent";
+import {AccountSettingsComponent} from "@/components/settings/categories/account/AccountSettingsComponent";
 import {
     DeliveryAddressSettingsComponent
-} from "@/app/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent";
-import {PaySettingsComponent} from "@/app/components/settings/categories/pay/PaySettingsComponent";
-import {NavigationSettingsComponent} from "@/app/components/settings/nav/NavigationSettingsComponent";
-import {useState} from "react";
-
-import settings_scss from '@/app/scss/components/settings/Settings.module.scss'
+} from "@/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent";
+import {PaySettingsComponent} from "@/components/settings/categories/pay/PaySettingsComponent";
 
 export const SettingsRoot = () => {
 

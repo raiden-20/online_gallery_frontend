@@ -1,4 +1,4 @@
-import settings_scss from "@/app/scss/components/settings/Settings.module.scss";
+import settings_scss from "@/scss/components/settings/Settings.module.scss";
 
 export const PaySettingsComponent = () => {
     return (

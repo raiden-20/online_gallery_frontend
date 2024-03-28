@@ -1,3 +1,5 @@
+'use client'
+
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
 

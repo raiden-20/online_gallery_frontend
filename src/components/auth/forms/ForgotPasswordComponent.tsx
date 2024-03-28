@@ -1,4 +1,4 @@
-import auth_main_scss from "@/app/scss/components/auth/Auth_main.module.scss";
+import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 
 export const ForgotPasswordComponent = () => {
 

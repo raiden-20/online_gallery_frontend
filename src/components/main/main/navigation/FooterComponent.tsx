@@ -1,7 +1,7 @@
-import footer_scss from '@/app/scss/components/main/navigation/Footer.module.scss'
+import footer_scss from '@/scss/components/main/navigation/Footer.module.scss'
 import Image from "next/image";
 
-import github_icon from '@/app/assets/icons/nav/github.svg'
+import github_icon from '@/assets/icons/nav/github.svg'
 
 export const FooterComponent = () => {
     return (

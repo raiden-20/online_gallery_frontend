@@ -1,18 +1,18 @@
 'use client'
 
-import {NavigationComponent} from "@/app/components/main/main/navigation/NavigationComponent";
+import root_scss from '@/scss/components/main/Root.module.scss'
 import {usePathname} from "next/navigation";
-import {PATHS_CATEGORY} from "@/app/paths/main";
-import {Auth_main} from "@/app/components/auth/Auth_main";
-import {FooterComponent} from "@/app/components/main/main/navigation/FooterComponent";
-
-import root_scss from '@/app/scss/components/main/Root.module.scss'
-import {ProfileRoot} from "@/app/components/profile/ProfileRoot";
-import {SettingsRoot} from "@/app/components/settings/SettingsRoot";
+import {NavigationComponent} from "@/components/main/main/navigation/NavigationComponent";
+import {PATHS_CATEGORY} from "@/paths/main";
+import {Auth_main} from "@/components/auth/Auth_main";
+import {ProfileRoot} from "@/components/profile/ProfileRoot";
+import React from "react";
+import {SettingsRoot} from "@/components/settings/SettingsRoot";
+import {FooterComponent} from "@/components/main/main/navigation/FooterComponent";
 
 export const Root = () => {
     const pathname = usePathname().split('/')
-    const pathnameThird = '/' + pathname[2]
+    const pathnameThird = '/' + pathname[1]
 
     return (
         <section className={root_scss.page}>

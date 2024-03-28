@@ -1,11 +1,11 @@
-import header_profile_scss from '@/app/scss/components/profile/HeaderProfile.module.scss'
+import header_profile_scss from '@/scss/components/profile/HeaderProfile.module.scss'
 import Image from "next/image";
-import default_cover_profile from '@/app/assets/default/default_cover_profile.svg'
-import default_avatar_profile from '@/app/assets/default/default_avatar_profile.svg'
-import bell_icon from '@/app/assets/icons/profile/bell_icon.svg'
-import change_cover from '@/app/assets/icons/profile/change_cover.svg'
-import change_avatar from '@/app/assets/icons/profile/change_avatar.svg'
-import important from '@/app/assets/icons/profile/important.svg'
+import default_cover_profile from '@/assets/default/default_cover_profile.svg'
+import default_avatar_profile from '@/assets/default/default_avatar_profile.svg'
+import bell_icon from '@/assets/icons/profile/bell_icon.svg'
+import change_cover from '@/assets/icons/profile/change_cover.svg'
+import change_avatar from '@/assets/icons/profile/change_avatar.svg'
+import important from '@/assets/icons/profile/important.svg'
 
 import {useState} from "react";
 

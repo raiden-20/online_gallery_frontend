@@ -1,4 +1,4 @@
-import {ArtistProfileComponent} from "@/app/components/profile/artist/ArtistProfileComponent";
+import {ArtistProfileComponent} from "@/components/profile/artist/ArtistProfileComponent";
 
 export const ProfileRoot = () => {
     return <ArtistProfileComponent/>

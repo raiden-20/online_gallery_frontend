@@ -1,11 +1,14 @@
-import {usePathname} from "next/navigation";
-import {AUTH_CATEGORY} from "@/app/paths/auth";
-import {LoginComponent} from "@/app/components/auth/forms/LoginComponent";
-import {RegistrationComponent} from "@/app/components/auth/forms/RegistrationComponent";
-import {ForgotPasswordComponent} from "@/app/components/auth/forms/ForgotPasswordComponent";
+import React from "react";
 
-import auth_main_scss from '@/app/scss/components/auth/Auth_main.module.scss'
-import {CreateArtistComponent} from "@/app/components/auth/forms/CreateArtistComponent";
+import {usePathname} from "next/navigation";
+
+import auth_main_scss from '@/scss/components/auth/Auth_main.module.scss'
+import {AUTH_CATEGORY} from "@/paths/auth";
+
+import {RegistrationComponent} from "@/components/auth/forms/RegistrationComponent";
+import {LoginComponent} from "@/components/auth/forms/LoginComponent";
+import {ForgotPasswordComponent} from "@/components/auth/forms/ForgotPasswordComponent";
+import {CreateArtistComponent} from "@/components/auth/forms/CreateArtistComponent";
 
 export const Auth_main = () => {
     const pathname = usePathname().split('/')

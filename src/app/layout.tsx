@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import {Roboto} from "next/font/google";
 import React from "react";
 
+import '@/scss/globals/globals.scss'
+import '@/scss/globals/pages.scss'
+
 const inter = Roboto({weight: '400' , subsets: ["latin"] });
 
 export const metadata: Metadata = {

@@ -1,11 +1,12 @@
-import {WorksProfileComponent} from "@/app/components/profile/profile_elemets/works/WorksProfileComponent";
-import {
-    ArtistNavigationProfileComponent
-} from "@/app/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent";
-import {HeaderProfileComponent} from "@/app/components/profile/header/HeaderProfileComponent";
 // import {
 //     CustomerNavigationProfileComponent
 // } from "@/app/components/profile/profile_elemets/navigation/CustomerNavigationProfileComponent";
+
+import {HeaderProfileComponent} from "@/components/profile/header/HeaderProfileComponent";
+import {
+    ArtistNavigationProfileComponent
+} from "@/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent";
+import {WorksProfileComponent} from "@/components/profile/profile_elemets/works/WorksProfileComponent";
 
 export const ArtistProfileComponent = () => {
     return (

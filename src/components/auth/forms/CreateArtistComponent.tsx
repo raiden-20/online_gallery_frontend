@@ -1,7 +1,7 @@
 import {useState} from "react";
-import auth_main_scss from "@/app/scss/components/auth/Auth_main.module.scss";
-import {AUTH_PATHS} from "@/app/paths/auth";
+import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import {useRouter} from "next/navigation";
+import {AUTH_PATHS} from "@/paths/auth";
 
 export const CreateArtistComponent = () => {
     const router = useRouter()

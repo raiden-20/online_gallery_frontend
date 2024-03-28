@@ -1,13 +1,13 @@
 import Image from "next/image";
-import search_icon from "@/app/assets/icons/nav/search.svg";
-import account_icon from "@/app/assets/icons/nav/account.svg";
+import search_icon from "@/assets/icons/nav/search.svg";
+import account_icon from "@/assets/icons/nav/account.svg";
 
-import navigation_scss from '@/app/scss/components/main/navigation/Navigation.module.scss'
+import navigation_scss from '@/scss/components/main/navigation/Navigation.module.scss'
 import {useState} from "react";
 
-import avatar from '@/app/assets/default/default_ava_nav.svg'
+import avatar from '@/assets/default/default_ava_nav.svg'
 import {useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/app/paths/main";
+import {MAIN_PATHS} from "@/paths/main";
 
 export const NavigationComponent = () => {
     const router = useRouter()
@@ -17,7 +17,8 @@ export const NavigationComponent = () => {
     return (
         <ul className={navigation_scss.nav}>
             <li>
-                <button className={'title'}>
+                <button className={'title'}
+                        onClick={() => router.push(MAIN_PATHS.MAIN)}>
                     Lindéro
                 </button>
             </li>

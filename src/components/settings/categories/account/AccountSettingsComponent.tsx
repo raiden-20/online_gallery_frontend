@@ -1,6 +1,6 @@
-import settings_scss from '@/app/scss/components/settings/Settings.module.scss'
+import settings_scss from '@/scss/components/settings/Settings.module.scss'
 
-import more_icon from '@/app/assets/icons/settings/more.svg'
+import more_icon from '@/assets/icons/settings/more.svg'
 import Image from "next/image";
 
 export const AccountSettingsComponent = () => {

@@ -6,7 +6,7 @@ export const ProfileAPI = {
     async CustomerDataAPI(id: string) {
         try {
             const response = await instance.get(
-                PathsAPI.CUSTOMER + '/data' + `${id}`,
+                PathsAPI.CUSTOMER + PathsAPI.DATA + id,
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -18,7 +18,7 @@ export const ProfileAPI = {
     async ArtistDataAPI(id: string) {
         try {
             const response = await instance.get(
-                PathsAPI.ARTIST + PathsAPI.DATA + `${id}`,
+                PathsAPI.ARTIST + PathsAPI.DATA + id,
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -70,7 +70,7 @@ export const ProfileAPI = {
     async CreateArtistAPI(artist_name: string) {
         try {
             const response = await instance.post(
-                PathsAPI.CREATE + PathsAPI.ARTIST,
+                PathsAPI.ARTIST + PathsAPI.CREATE,
                 {
                     artist_name
                 }
@@ -85,7 +85,7 @@ export const ProfileAPI = {
     async CreateCustomerAPI(customer_name: string, date_birth: string, gender: string, avatar_url: string, cover_url: string) {
         try {
             const response = await instance.post(
-                PathsAPI.CREATE + PathsAPI.CUSTOMER,
+                PathsAPI.CUSTOMER + PathsAPI.CREATE,
                 {
                     customer_name,
                     date_birth,

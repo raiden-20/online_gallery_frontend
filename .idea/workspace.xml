@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="created artists page">
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="changed account navigation design">
+      <change afterPath="$PROJECT_DIR$/src/app/search/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/search/delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/search/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/search/Search.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/search",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -60,6 +67,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\search" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\scss" />
@@ -90,7 +98,7 @@
       <workItem from="1712001250172" duration="4519000" />
       <workItem from="1712005916393" duration="4304000" />
       <workItem from="1712047966179" duration="10977000" />
-      <workItem from="1712083573994" duration="3513000" />
+      <workItem from="1712083573994" duration="8267000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -172,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712086866427</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="changed account navigation design">
+      <option name="closed" value="true" />
+      <created>1712087597180</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712087597180</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +228,7 @@
     <MESSAGE value="set up a keycloak" />
     <MESSAGE value="created redux store, thunks and API for first sprint" />
     <MESSAGE value="created artists page" />
-    <option name="LAST_COMMIT_MESSAGE" value="created artists page" />
+    <MESSAGE value="changed account navigation design" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed account navigation design" />
   </component>
 </project>

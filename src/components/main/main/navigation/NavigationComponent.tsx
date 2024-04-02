@@ -66,7 +66,7 @@ export const NavigationComponent = () => {
                 </button>
             </li>
             <li>
-                <button>
+                <button onClick={() => router.push(MAIN_PATHS.SEARCH)}>
                     <Image src={search_icon} alt={'search_icon'} width={0} height={0}/>
                 </button>
             </li>

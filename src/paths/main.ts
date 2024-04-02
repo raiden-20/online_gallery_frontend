@@ -8,7 +8,8 @@ export const PATHS_CATEGORY = {
     AUTH: '/auth',
     PROFILE: '/profile',
     SETTINGS: '/settings',
-    ARTISTS: '/artists'
+    ARTISTS: '/artists',
+    SEARCH: '/search'
 }
 
 export const MAIN_PATHS = {
@@ -16,5 +17,6 @@ export const MAIN_PATHS = {
     AUTH: PATHS_CATEGORY.AUTH,
     PROFILE: PATHS_CATEGORY.PROFILE,
     SETTINGS: PATHS_CATEGORY.SETTINGS,
-    ARTISTS: PATHS_CATEGORY.ARTISTS
+    ARTISTS: PATHS_CATEGORY.ARTISTS,
+    SEARCH: PATHS_CATEGORY.SEARCH,
 }

@@ -10,6 +10,7 @@ import React from "react";
 import {SettingsRoot} from "@/components/settings/SettingsRoot";
 import {FooterComponent} from "@/components/main/main/navigation/FooterComponent";
 import {Artists} from "@/components/categories/artists/Artists";
+import {Search} from "@/components/search/Search";
 
 export const Root = () => {
     const pathname = usePathname().split('/')
@@ -23,7 +24,8 @@ export const Root = () => {
                     {main_path === PATHS_CATEGORY.AUTH ? <Auth_main/> :
                     main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
                     main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
-                    main_path === PATHS_CATEGORY.ARTISTS ? <Artists/> : null
+                    main_path === PATHS_CATEGORY.ARTISTS ? <Artists/> :
+                    main_path === PATHS_CATEGORY.SEARCH ? <Search/> : null
                     }
                 </main>
                 <FooterComponent/>

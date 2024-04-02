@@ -8,11 +8,24 @@ import {useState} from "react";
 import avatar from '@/assets/default/default_ava_nav.svg'
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
+import { signIn, signOut } from "next-auth/react";
+import {useSession} from "next-auth/react";
+import axios from "axios";
 
 export const NavigationComponent = () => {
     const router = useRouter()
 
+    const { status } = useSession();
+
+
     const [isAccountClicked, setIsAccountClicked] = useState(false)
+    const keycloakSessionLogOut = async () => {
+        try {
+           await axios.get(`/api/auth/logout`)
+        } catch (error: any) {
+            console.log(error)
+        }
+    }
 
     return (
         <ul className={navigation_scss.nav}>
@@ -57,7 +70,14 @@ export const NavigationComponent = () => {
                     <Image src={search_icon} alt={'search_icon'} width={0} height={0}/>
                 </button>
             </li>
-            <li onClick={() => setIsAccountClicked(!isAccountClicked)}>
+            <li onClick={() => {
+                if (status === 'unauthenticated') {
+                    signIn('keycloak')
+                } else {
+                    setIsAccountClicked(!isAccountClicked)
+                }
+            }
+            }>
                 <button>
                     <Image src={account_icon} alt={'account_icon'} width={0} height={0}/>
                 </button>
@@ -97,12 +117,16 @@ export const NavigationComponent = () => {
                             </li>
                             <li>
                                 <button className={navigation_scss.button}
-                                onClick={() => router.push(MAIN_PATHS.SETTINGS)}>
+                                        onClick={() => router.push(MAIN_PATHS.SETTINGS)}>
                                     Настройки
                                 </button>
                             </li>
                             <li>
-                                <button className={navigation_scss.button}>
+                                <button className={navigation_scss.button}
+                                onClick={() => {
+                                    keycloakSessionLogOut()
+                                        .then(() => signOut({callbackUrl: MAIN_PATHS.MAIN}))
+                                }}>
                                     Выход
                                 </button>
                             </li>
@@ -110,7 +134,6 @@ export const NavigationComponent = () => {
                     </section>
                     : null}
             </li>
-
         </ul>
     )
 }

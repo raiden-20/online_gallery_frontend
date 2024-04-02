@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="fixed bugs">
+      <change afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/auth/logout/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/KeycloakProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/encryption.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/sessionTokenAccessor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/setDynamicRoute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/LoginComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/LoginComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/RegistrationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/RegistrationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fcf1adb7bf818978f765a404012befed4d1db99b" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2eKjSqjTwfMeipFvoxTI4iRfhmG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\scss" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\utils" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\additional" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="" />
+      <created>1711660166738</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711660166738</updated>
+      <workItem from="1711660167807" duration="4294000" />
+      <workItem from="1711714656290" duration="6396000" />
+      <workItem from="1711721074754" duration="2087000" />
+      <workItem from="1711728951489" duration="15773000" />
+      <workItem from="1711795460749" duration="4465000" />
+      <workItem from="1711806296525" duration="1222000" />
+      <workItem from="1711883202376" duration="1211000" />
+      <workItem from="1711915590160" duration="10805000" />
+      <workItem from="1711970391574" duration="7668000" />
+      <workItem from="1712001250172" duration="4519000" />
+      <workItem from="1712005916393" duration="4304000" />
+      <workItem from="1712047966179" duration="604000" />
+    </task>
+    <task id="LOCAL-00001" summary="prepare app for working">
+      <option name="closed" value="true" />
+      <created>1711661315735</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711661315735</updated>
+    </task>
+    <task id="LOCAL-00002" summary="create necessary pages for first sprint">
+      <option name="closed" value="true" />
+      <created>1711661833618</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711661833618</updated>
+    </task>
+    <task id="LOCAL-00003" summary="delete some pages">
+      <option name="closed" value="true" />
+      <created>1711661953528</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711661953528</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add all necessary images for 1 sprint">
+      <option name="closed" value="true" />
+      <created>1711661997845</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711661997845</updated>
+    </task>
+    <task id="LOCAL-00005" summary="changed paths">
+      <option name="closed" value="true" />
+      <created>1711662065027</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711662065027</updated>
+    </task>
+    <task id="LOCAL-00006" summary="components design and routing for first sprint">
+      <option name="closed" value="true" />
+      <created>1711662175037</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711662175037</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed bugs">
+      <option name="closed" value="true" />
+      <created>1711663042542</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711663042542</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="prepare app for working" />
+    <MESSAGE value="create necessary pages for first sprint" />
+    <MESSAGE value="delete some pages" />
+    <MESSAGE value="add all necessary images for 1 sprint" />
+    <MESSAGE value="changed paths" />
+    <MESSAGE value="components design and routing for first sprint" />
+    <MESSAGE value="fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs" />
+  </component>
+</project>

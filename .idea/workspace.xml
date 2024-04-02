@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="fixed bugs">
-      <change afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/auth/logout/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/KeycloakProvider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/encryption.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/sessionTokenAccessor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/setDynamicRoute.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="set up a keycloak">
+      <change afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/authAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/artistInterface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/customerInterface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/redux.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/LoginComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/LoginComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/RegistrationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/RegistrationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/KeycloakProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/utils/providerMain.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,21 +54,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/messenger_frontend_v.2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
@@ -97,7 +100,7 @@
       <workItem from="1711970391574" duration="7668000" />
       <workItem from="1712001250172" duration="4519000" />
       <workItem from="1712005916393" duration="4304000" />
-      <workItem from="1712047966179" duration="604000" />
+      <workItem from="1712047966179" duration="10977000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -155,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711663042542</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="set up a keycloak">
+      <option name="closed" value="true" />
+      <created>1712050247246</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712050247246</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +203,7 @@
     <MESSAGE value="changed paths" />
     <MESSAGE value="components design and routing for first sprint" />
     <MESSAGE value="fixed bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs" />
+    <MESSAGE value="set up a keycloak" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up a keycloak" />
   </component>
 </project>

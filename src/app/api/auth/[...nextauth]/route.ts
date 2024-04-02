@@ -23,6 +23,7 @@ async function refreshAccessToken(token: JWT) {
     // @ts-ignore
     if (!resp.ok) throw refreshToken
 
+    console.log('token was refreshed')
     return {
         ...token,
         access_token: refreshToken.access_token,

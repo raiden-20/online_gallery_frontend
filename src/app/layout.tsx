@@ -4,7 +4,7 @@ import React from "react";
 
 import '@/scss/globals/globals.scss'
 import '@/scss/globals/pages.scss'
-import {NextAuthProvider} from "../../utils/KeycloakProvider";
+import {ProviderMain} from "../../utils/providerMain";
 
 const inter = Roboto({weight: '400', subsets: ["latin"]});
 
@@ -19,10 +19,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <NextAuthProvider>
+        <ProviderMain>
             <html lang="en">
             <body className={inter.className}>{children}</body>
             </html>
-        </NextAuthProvider>
+        </ProviderMain>
     );
 }

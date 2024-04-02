@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="changed account navigation design">
-      <change afterPath="$PROJECT_DIR$/src/app/search/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/search/delete.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/search/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search/Search.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="created search page">
+      <change afterPath="$PROJECT_DIR$/src/api/categoriesAPI.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/profileAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -98,7 +94,7 @@
       <workItem from="1712001250172" duration="4519000" />
       <workItem from="1712005916393" duration="4304000" />
       <workItem from="1712047966179" duration="10977000" />
-      <workItem from="1712083573994" duration="8267000" />
+      <workItem from="1712083573994" duration="9142000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -188,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712087597180</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="created search page">
+      <option name="closed" value="true" />
+      <created>1712094780988</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712094780988</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +233,7 @@
     <MESSAGE value="created redux store, thunks and API for first sprint" />
     <MESSAGE value="created artists page" />
     <MESSAGE value="changed account navigation design" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed account navigation design" />
+    <MESSAGE value="created search page" />
+    <option name="LAST_COMMIT_MESSAGE" value="created search page" />
   </component>
 </project>

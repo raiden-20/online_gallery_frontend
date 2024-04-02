@@ -7,6 +7,7 @@ export const PathsAPI= {
     CREATE: '/create',
     CHANGE: '/change',
     DELETE: '/delete',
+    SEARCH: '/search',
 
     CUSTOMER: '/customer',
     ARTIST: '/artist',
@@ -14,7 +15,8 @@ export const PathsAPI= {
 
     DATA: '/data',
     EMAIL: '/email',
-    PASSWORD: '/password'
+    PASSWORD: '/password',
+    OBJECT: '/object'
 }
 
 export const instance = axios.create({

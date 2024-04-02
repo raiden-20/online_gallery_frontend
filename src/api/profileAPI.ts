@@ -99,33 +99,6 @@ export const ProfileAPI = {
             console.error(error)
             return [error.response.status, error.response.data];
         }
-    },
-
-
-    async GetAllCustomersAPI() {
-        try {
-            const response = await instance.get(
-                PathsAPI.CUSTOMER + 's',
-            );
-            return [response.status, response.data];
-        } catch (error: any) {
-            console.error(error)
-            return [error.response.status, error.response.data];
-        }
-    },
-
-    async GetAllArtistsAPI() {
-        try {
-            const response = await instance.get(
-                PathsAPI.ARTIST + 's',
-            );
-            return [response.status, response.data];
-        } catch (error: any) {
-            console.error(error)
-            return [error.response.status, error.response.data];
-        }
-    },
-
-    // todo запрос на получение по имени
+    }
 
 }

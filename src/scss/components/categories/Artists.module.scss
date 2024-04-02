@@ -1,0 +1,66 @@
+
+$root-gap: 35px;
+$root-padding: 35px 0;
+
+$page-title-size: 32px;
+
+$users-gap: 15px;
+
+$one-user-gap: 10px;
+$one-user-avatar-size: 255px;
+$one-user-name-size: 32px;
+
+.root {
+  padding: $root-padding;
+
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .page_title {
+    font-size: $page-title-size;
+  }
+
+  .sort_section {
+    display: flex;
+
+    align-items: end;
+
+    .select {
+      border: none;
+
+      height: min-content;
+      width: min-content;
+    }
+  }
+}
+
+.users {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: $users-gap;
+
+  .one_user {
+    display: flex;
+    flex-flow: column;
+
+      gap: $one-user-gap;
+
+    .one_user_avatar {
+      width: $one-user-avatar-size;
+      height: $one-user-avatar-size;
+      object-fit: cover;
+    }
+
+    .one_user_name {
+      font-size: $one-user-name-size;
+      text-align: center;
+    }
+  }
+}

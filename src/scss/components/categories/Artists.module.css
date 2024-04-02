@@ -1,0 +1,45 @@
+.root {
+  padding: 35px 0;
+  display: flex;
+  flex-flow: column;
+  gap: 35px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header .page_title {
+  font-size: 32px;
+}
+.header .sort_section {
+  display: flex;
+  align-items: end;
+}
+.header .sort_section .select {
+  border: none;
+  height: min-content;
+  width: min-content;
+}
+
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.users .one_user {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+.users .one_user .one_user_avatar {
+  width: 255px;
+  height: 255px;
+  object-fit: cover;
+}
+.users .one_user .one_user_name {
+  font-size: 32px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=Artists.module.css.map */

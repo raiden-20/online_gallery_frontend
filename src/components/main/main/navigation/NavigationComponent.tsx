@@ -36,7 +36,7 @@ export const NavigationComponent = () => {
                 </button>
             </li>
             <li>
-                <button>
+                <button onClick={() => router.push(MAIN_PATHS.ARTISTS)}>
                     Художники
                 </button>
             </li>

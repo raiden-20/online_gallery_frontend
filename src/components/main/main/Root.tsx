@@ -9,19 +9,21 @@ import {ProfileRoot} from "@/components/profile/ProfileRoot";
 import React from "react";
 import {SettingsRoot} from "@/components/settings/SettingsRoot";
 import {FooterComponent} from "@/components/main/main/navigation/FooterComponent";
+import {Artists} from "@/components/categories/artists/Artists";
 
 export const Root = () => {
     const pathname = usePathname().split('/')
-    const pathnameThird = '/' + pathname[1]
+    const main_path = '/' + pathname[1]
 
     return (
         <section className={root_scss.page}>
             <section className={root_scss.root}>
                 <NavigationComponent/>
                 <main>
-                    {pathnameThird === PATHS_CATEGORY.AUTH ? <Auth_main/> :
-                    pathnameThird === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
-                    pathnameThird === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> : null
+                    {main_path === PATHS_CATEGORY.AUTH ? <Auth_main/> :
+                    main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
+                    main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
+                    main_path === PATHS_CATEGORY.ARTISTS ? <Artists/> : null
                     }
                 </main>
                 <FooterComponent/>

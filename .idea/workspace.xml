@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="set up a keycloak">
-      <change afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/authAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/artistInterface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/customerInterface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/redux.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="created redux store, thunks and API for first sprint">
+      <change afterPath="$PROJECT_DIR$/src/app/artists/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/KeycloakProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/utils/providerMain.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -59,7 +52,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/messenger_frontend_v.2",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend",
+    "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,6 +95,7 @@
       <workItem from="1712001250172" duration="4519000" />
       <workItem from="1712005916393" duration="4304000" />
       <workItem from="1712047966179" duration="10977000" />
+      <workItem from="1712083573994" duration="3184000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -166,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712050247246</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="created redux store, thunks and API for first sprint">
+      <option name="closed" value="true" />
+      <created>1712083749195</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712083749195</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +207,7 @@
     <MESSAGE value="components design and routing for first sprint" />
     <MESSAGE value="fixed bugs" />
     <MESSAGE value="set up a keycloak" />
-    <option name="LAST_COMMIT_MESSAGE" value="set up a keycloak" />
+    <MESSAGE value="created redux store, thunks and API for first sprint" />
+    <option name="LAST_COMMIT_MESSAGE" value="created redux store, thunks and API for first sprint" />
   </component>
 </project>

@@ -91,6 +91,17 @@ export const NavigationComponent = () => {
                                 <section>
                                     <div>Имя</div>
                                     <button className={navigation_scss.button}>
+                                        Покупатель
+                                    </button>
+                                </section>
+                            </li>
+                            <li className={navigation_scss.account_data}>
+                                <Image src={avatar} className={navigation_scss.avatar}
+                                       onClick={() => router.push(MAIN_PATHS.PROFILE)}
+                                       alt={'avatar'} width={0} height={0}/>
+                                <section>
+                                    <div>Имя</div>
+                                    <button className={navigation_scss.button}>
                                         Художник
                                     </button>
                                 </section>
@@ -123,10 +134,10 @@ export const NavigationComponent = () => {
                             </li>
                             <li>
                                 <button className={navigation_scss.button}
-                                onClick={() => {
-                                    keycloakSessionLogOut()
-                                        .then(() => signOut({callbackUrl: MAIN_PATHS.MAIN}))
-                                }}>
+                                        onClick={() => {
+                                            keycloakSessionLogOut()
+                                                .then(() => signOut({callbackUrl: MAIN_PATHS.MAIN}))
+                                        }}>
                                     Выход
                                 </button>
                             </li>

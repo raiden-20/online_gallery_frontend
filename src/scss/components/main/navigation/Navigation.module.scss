@@ -10,6 +10,7 @@ $account_various-padding: 15px;
 $account_various-data-gap: 10px;
 
 $avatar-size: 50px;
+$avatar-radius: 6px;
 
 .root {
   width: 100%;
@@ -29,7 +30,6 @@ $avatar-size: 50px;
 
 .account_various {
   width: $account_various-width;
-  height: $account_various-height;
 
   position: absolute;
 
@@ -48,6 +48,8 @@ $avatar-size: 50px;
     display: grid;
     align-content: space-between;
 
+    gap: 10px;
+
     button {
       height: min-content;
     }
@@ -65,6 +67,8 @@ $avatar-size: 50px;
       width: $avatar-size;
       height: $avatar-size;
       object-fit: cover;
+
+      border-radius: $avatar-radius;
     }
   }
 

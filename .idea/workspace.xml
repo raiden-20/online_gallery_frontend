@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="created redux store, thunks and API for first sprint">
-      <change afterPath="$PROJECT_DIR$/src/app/artists/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="created artists page">
       <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +90,7 @@
       <workItem from="1712001250172" duration="4519000" />
       <workItem from="1712005916393" duration="4304000" />
       <workItem from="1712047966179" duration="10977000" />
-      <workItem from="1712083573994" duration="3184000" />
+      <workItem from="1712083573994" duration="3513000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -169,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712083749195</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="created artists page">
+      <option name="closed" value="true" />
+      <created>1712086866427</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712086866427</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +211,7 @@
     <MESSAGE value="fixed bugs" />
     <MESSAGE value="set up a keycloak" />
     <MESSAGE value="created redux store, thunks and API for first sprint" />
-    <option name="LAST_COMMIT_MESSAGE" value="created redux store, thunks and API for first sprint" />
+    <MESSAGE value="created artists page" />
+    <option name="LAST_COMMIT_MESSAGE" value="created artists page" />
   </component>
 </project>

@@ -3,7 +3,7 @@ import search_icon from "@/assets/icons/nav/search.svg";
 import account_icon from "@/assets/icons/nav/account.svg";
 
 import navigation_scss from '@/scss/components/main/navigation/Navigation.module.scss'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import avatar from '@/assets/default/default_ava_nav.svg'
 import {useRouter} from "next/navigation";
@@ -15,7 +15,7 @@ import axios from "axios";
 export const NavigationComponent = () => {
     const router = useRouter()
 
-    const { status } = useSession();
+    const {  data: session, status } = useSession();
 
 
     const [isAccountClicked, setIsAccountClicked] = useState(false)
@@ -71,7 +71,9 @@ export const NavigationComponent = () => {
                 </button>
             </li>
             <li onClick={() => {
-                if (status === 'unauthenticated') {
+                console.log('s', status)
+                console.log('session', session)
+                if (status === 'unauthenticated' || session === null) {
                     signIn('keycloak')
                 } else {
                     setIsAccountClicked(!isAccountClicked)

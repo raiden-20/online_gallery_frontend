@@ -45,6 +45,7 @@ export const AuthConfig: AuthOptions = {
     callbacks: {
         async jwt({token, account}) {
             const nowTimeStamp = Math.floor(Date.now() / 1000)
+
             if (account) {
                 token.decoded = jwtDecode(account.access_token as string)
                 token.accessToken = account.access_token

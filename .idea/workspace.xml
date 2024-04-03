@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="changed profile API">
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="fixed keycloak">
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/settings/cancel.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
     </list>
@@ -45,29 +44,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/search&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/settings",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\settings" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\search" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\scss" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\utils" />
@@ -95,7 +94,7 @@
       <workItem from="1712005916393" duration="4304000" />
       <workItem from="1712047966179" duration="10977000" />
       <workItem from="1712083573994" duration="12128000" />
-      <workItem from="1712150526363" duration="2455000" />
+      <workItem from="1712150526363" duration="4244000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -209,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712096294509</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fixed keycloak">
+      <option name="closed" value="true" />
+      <created>1712154855629</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712154855629</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +260,7 @@
     <MESSAGE value="created search page" />
     <MESSAGE value="changes categories API" />
     <MESSAGE value="changed profile API" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed profile API" />
+    <MESSAGE value="fixed keycloak" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed keycloak" />
   </component>
 </project>

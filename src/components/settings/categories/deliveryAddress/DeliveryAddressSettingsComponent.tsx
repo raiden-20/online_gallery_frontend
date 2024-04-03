@@ -2,7 +2,7 @@ import settings_scss from "@/scss/components/settings/Settings.module.scss";
 
 export const DeliveryAddressSettingsComponent = () => {
     return (
-        <section className={settings_scss.main}>
+        <section className={settings_scss.address_pay_main}>
             <input placeholder={'ФИО'}/>
             <section className={settings_scss.input_section}>
                 <input placeholder={'Страна'}/>

@@ -2,7 +2,8 @@
 @import '@/scss/globals/main_values';
 
 $root-gap: 35px;
-$main-gap: 64px;
+$account-main-gap: 64px;
+$address-pay-main-gap: 35px;
 
 $section-gap: 16px;
 
@@ -19,6 +20,11 @@ $inputs-gap: 35px;
 
 $button-font-size: 20px;
 
+$new-section-gap: 16px;
+$new-section-header-gap: 10px;
+$new-form-header-size: 24px;
+$new-form-header-weight: 600;
+
 .root {
   display: flex;
   flex-flow: column;
@@ -29,66 +35,99 @@ $button-font-size: 20px;
   width: 100%;
   display: flex;
   flex-flow: column;
-  gap: $main-gap;
+  gap: $account-main-gap;
+}
 
-  .section {
+.address_pay_main {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: $address-pay-main-gap;
+}
+
+.section {
+  display: flex;
+  flex-flow: column;
+  gap: $section-gap;
+
+  .section_header {
+    font-size: $section-header-font-size;
+    font-weight: $section-header-weight;
+  }
+
+  .section_form {
+    padding: $section-form-padding;
+
     display: flex;
     flex-flow: column;
-    gap: $section-gap;
+    gap: $section-form-gap;
 
-    .section_header {
-      font-size: $section-header-font-size;
-      font-weight: $section-header-weight;
-    }
-
-    .section_form {
-      padding: $section-form-padding;
+    .auth_data {
+      height: $auth-data-height;
 
       display: flex;
-      flex-flow: column;
-      gap: $section-form-gap;
-
-      .auth_data {
-        height: $auth-data-height;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .save_button {
-        width: min-content;
-      }
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .footer_buttons {
-      padding: $section-form-padding;
-
-      width: max-content;
-
-      display: flex;
-      flex-flow: column;
-      gap: $section-form-gap;
-      justify-content: start;
-
-
-      .button {
-        text-align: start;
-      }
+    .save_button {
+      width: min-content;
     }
   }
 
-  .input_section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: $inputs-gap;
-  }
+  .footer_buttons {
+    padding: $section-form-padding;
 
-  .button {
-    font-size: $button-font-size;
-  }
+    width: max-content;
 
-  .delete_button {
-    color: $red-color;
+    display: flex;
+    flex-flow: column;
+    gap: $section-form-gap;
+    justify-content: start;
+
+
+    .button {
+      text-align: start;
+    }
   }
 }
+
+.input_section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: $inputs-gap;
+}
+
+.button {
+  font-size: $button-font-size;
+}
+
+.delete_button {
+  color: $red-color;
+}
+
+.new_section {
+  padding: $section-form-padding;
+
+  display: flex;
+  flex-flow: column;
+  gap: $new-section-gap;
+
+  .new_section_header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    gap: $new-section-header-gap;
+
+    .section_name {
+      font-size: $new-form-header-size;
+      font-weight: $new-form-header-weight;
+    }
+  }
+
+  button {
+    width: min-content;
+  }
+}
+

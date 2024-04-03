@@ -7,10 +7,11 @@ import {useEffect, useState} from "react";
 
 import avatar from '@/assets/default/default_ava_nav.svg'
 import {useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/paths/main";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
 import { signIn, signOut } from "next-auth/react";
 import {useSession} from "next-auth/react";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 export const NavigationComponent = () => {
     const router = useRouter()
@@ -88,7 +89,10 @@ export const NavigationComponent = () => {
                         <ul className={navigation_scss.account_nav}>
                             <li className={navigation_scss.account_data}>
                                 <Image src={avatar} className={navigation_scss.avatar}
-                                       onClick={() => router.push(MAIN_PATHS.PROFILE)}
+                                       onClick={() => {
+                                           Cookies.set('role', ROLES.CUSTOMER)
+                                           router.push(MAIN_PATHS.PROFILE_CUSTOMER)}
+                                       }
                                        alt={'avatar'} width={0} height={0}/>
                                 <section>
                                     <div>Имя</div>
@@ -99,7 +103,10 @@ export const NavigationComponent = () => {
                             </li>
                             <li className={navigation_scss.account_data}>
                                 <Image src={avatar} className={navigation_scss.avatar}
-                                       onClick={() => router.push(MAIN_PATHS.PROFILE)}
+                                       onClick={() => {
+                                           Cookies.set('role', ROLES.ARTIST)
+                                           router.push(MAIN_PATHS.PROFILE_ARTIST)}
+                                       }
                                        alt={'avatar'} width={0} height={0}/>
                                 <section>
                                     <div>Имя</div>

@@ -3,9 +3,16 @@ import Image from "next/image";
 
 import artists_scss from '@/scss/components/categories/Artists.module.scss'
 
-import default_ava from '@/assets/default/default_ava_nav.svg'
+import {UserShort} from "@/interfaces/artistInterface";
+import {MAIN_PATHS} from "@/paths/main";
 
-export const Artists = () => {
+interface ArtistsInterface {
+    artists: UserShort[],
+
+    getAllArtists(): void
+}
+
+export const Artists = (props: ArtistsInterface) => {
     const router = useRouter()
 
     return (
@@ -22,17 +29,17 @@ export const Artists = () => {
             </header>
             <main>
                 <ul className={artists_scss.users}>
-                    <li className={artists_scss.one_user}>
-                        <Image src={default_ava} className={artists_scss.one_user_avatar}
-                               alt={'default_ava'} width={0} height={0}/>
-                        <div className={artists_scss.one_user_name}>Имя</div>
-                    </li>
-                    <li className={artists_scss.one_user}>
-                        <Image src={default_ava} className={artists_scss.one_user_avatar}
-                               alt={'default_ava'} width={0} height={0}/>
-                        <div className={artists_scss.one_user_name}>Имя</div>
-                    </li>
-
+                    {props.artists.map((oneArtist: UserShort) => {
+                        return (
+                            <li className={artists_scss.one_user}
+                                onClick={() => router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + oneArtist.id)}>
+                                <Image loader={() => oneArtist.avatar_url}
+                                       src={oneArtist.avatar_url} className={artists_scss.one_user_avatar}
+                                       alt={'default_ava'} width={0} height={0}/>
+                                <div className={artists_scss.one_user_name}>{oneArtist.name}</div>
+                            </li>
+                        )
+                    })}
                 </ul>
             </main>
         </section>

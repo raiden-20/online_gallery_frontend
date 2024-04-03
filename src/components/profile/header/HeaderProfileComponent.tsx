@@ -7,17 +7,30 @@ import change_cover from '@/assets/icons/profile/change_cover.svg'
 import change_avatar from '@/assets/icons/profile/change_avatar.svg'
 import important from '@/assets/icons/profile/important.svg'
 
-import {useState} from "react";
+import delete_photo from '@/assets/icons/profile/delete_photo.svg'
 
+import React, {useState} from "react";
 
-export const HeaderProfileComponent = () => {
+interface HeaderProfileInterface {
+    input_coverUrl: string,
+    input_avatarUrl: string,
+    input_name: string,
+    isNeedChangeData: boolean
+
+    setInput_name(input_name: string): void
+    changeInputCover(event: React.ChangeEvent<HTMLInputElement>): void
+    changeInputAvatar(event: React.ChangeEvent<HTMLInputElement>): void
+    setIsChangeDataClicked(isChangeDataClicked: boolean): void
+    cancelChanging(): void
+
+    deleteAvatar(): void
+    deleteCover(): void
+}
+
+export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
     const [isCoverHover, setIsCoverHover] = useState(false)
     const [isAvatarHover, setIsAvatarHover] = useState(false)
-
     const [isNameClicked, setIsNameClicked] = useState(false)
-
-    const [isNeedChangeData, setIsNeedChangeData] = useState(true) // будет useEffect который будет реагировать при смене любого из 3х параметров
-
 
     return (
         <section className={header_profile_scss.page}>
@@ -25,15 +38,20 @@ export const HeaderProfileComponent = () => {
                 <section className={header_profile_scss.cover_section}
                          onMouseOver={() => setIsCoverHover(true)}
                          onMouseLeave={() => setIsCoverHover(false)}>
-                    <Image src={default_cover_profile} className={header_profile_scss.cover}
+                    <Image src={props.input_coverUrl === '' ? default_cover_profile : props.input_coverUrl}
+                           className={header_profile_scss.cover}
                            alt={'default_cover_profile'} width={0} height={0}/>
                     {isCoverHover ?
                         <section className={header_profile_scss.change_cover}>
                             <button>
-                                <input className={header_profile_scss.hidden} type="file" id="setCover"/>
+                                <input className={header_profile_scss.hidden} type="file" id="setCover"
+                                       onChange={(event) => props.changeInputCover(event)}/>
                                 <label htmlFor="setCover">
-                                    <Image src={change_cover} alt={'change_cover'}/>
+                                    <Image src={change_cover} alt={'change_cover'} width={0} height={0}/>
                                 </label>
+                            </button>
+                            <button onClick={() => props.deleteCover()}>
+                                <Image src={delete_photo} alt={'delete_photo'} width={0} height={0}/>
                             </button>
                         </section>
                         : null}
@@ -42,15 +60,20 @@ export const HeaderProfileComponent = () => {
                     <section className={header_profile_scss.avatar_section}
                              onMouseOver={() => setIsAvatarHover(true)}
                              onMouseLeave={() => setIsAvatarHover(false)}>
-                        <Image src={default_avatar_profile} className={header_profile_scss.avatar}
+                        <Image src={props.input_avatarUrl === '' ? default_avatar_profile : props.input_avatarUrl}
+                               className={header_profile_scss.avatar}
                                alt={'default_avatar_profile'} width={0} height={0}/>
                         {isAvatarHover ?
                             <section className={header_profile_scss.change_avatar}>
                                 <button>
-                                    <input className={header_profile_scss.hidden} type="file" id="setAvatar"/>
+                                    <input className={header_profile_scss.hidden} type="file" id="setAvatar"
+                                           onChange={(event) => props.changeInputAvatar(event)}/>
                                     <label htmlFor="setAvatar">
                                         <Image src={change_avatar} alt={'change_cover'} width={0} height={0}/>
                                     </label>
+                                </button>
+                                <button onClick={() => props.deleteAvatar()}>
+                                    <Image src={delete_photo} className={header_profile_scss.delete} alt={'delete_photo'} width={0} height={0}/>
                                 </button>
                             </section>
                             : null
@@ -58,11 +81,12 @@ export const HeaderProfileComponent = () => {
                     </section>
                     <section>
                         {isNameClicked ?
-                            <input value={'Linko'}/>
+                            <input value={props.input_name}
+                                   onChange={(event) => props.setInput_name(event.target.value)}/>
                             :
                             <button className={header_profile_scss.name}
                                     onClick={() => setIsNameClicked(true)}>
-                                Linko
+                                {props.input_name}
                             </button>
                         }
                     </section>
@@ -75,17 +99,20 @@ export const HeaderProfileComponent = () => {
                     </section>
                 </section>
             </section>
-            {isNeedChangeData ?
+            {props.isNeedChangeData ?
                 <section className={header_profile_scss.change_data_window}>
                     <section className={header_profile_scss.change_data_window_data}>
                         <Image src={important} alt={'important'} width={0} height={0}/>
                         <div>Сохранить изменения?</div>
                     </section>
                     <footer className={header_profile_scss.change_data_window_buttons}>
-                        <button className={'cancel_button'}>
+                        <button className={'cancel_button'} onClick={() => props.cancelChanging()}>
                             Отменить
                         </button>
-                        <button className={'main_button'}>
+                        <button className={'main_button'} onClick={() => {
+                            setIsNameClicked(false)
+                            props.setIsChangeDataClicked(true)}
+                        }>
                             Сохранить
                         </button>
                     </footer>

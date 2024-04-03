@@ -27,7 +27,8 @@ export const ProfileAPI = {
         }
     },
 
-    async ChangeCustomerDataAPI(customer_name: string, date_birth: string, gender: string, avatar_url: string, cover_url: string) {
+    async ChangeCustomerDataAPI(customer_name: string, date_birth: string, gender: string,
+                                avatar_url: string, cover_url: string, avatar_file: File | null, cover_file: File | null) {
         const formData = new FormData()
 
         formData.append('customer_name', customer_name)
@@ -35,6 +36,8 @@ export const ProfileAPI = {
         formData.append('gender', gender)
         formData.append('avatar_url', avatar_url)
         formData.append('cover_url', cover_url)
+        formData.append('avatar_file', avatar_file === null ? 'null' : avatar_file)
+        formData.append('cover_file', cover_file === null ? 'null' : cover_file)
 
         try {
             const response = await instance.put(
@@ -48,12 +51,14 @@ export const ProfileAPI = {
         }
     },
 
-    async ChangeArtistDataAPI(artist_name: string, avatar_url: string, cover_url: string) {
+    async ChangeArtistDataAPI(artist_name: string, avatar_url: string, cover_url: string,
+                              avatar_file: File, cover_file: File,description: string) {
         const formData = new FormData()
 
         formData.append('artist_name', artist_name)
         formData.append('avatar_url', avatar_url)
         formData.append('cover_url', cover_url)
+        formData.append('description', description)
 
         try {
             const response = await instance.put(

@@ -7,6 +7,7 @@ import {
     DeliveryAddressSettingsComponent
 } from "@/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent";
 import {PaySettingsComponent} from "@/components/settings/categories/pay/PaySettingsComponent";
+import {AccountSettingsContainer} from "@/components/settings/categories/account/AccountSettingsContainer";
 
 export const SettingsRoot = () => {
 
@@ -16,7 +17,7 @@ export const SettingsRoot = () => {
         <section className={settings_scss.root}>
             <NavigationSettingsComponent setWhoIsClicked={setWhoIsClicked}
                                          whoIsClicked={whoIsClicked}/>
-            {whoIsClicked === 1 ? <AccountSettingsComponent/> :
+            {whoIsClicked === 1 ? <AccountSettingsContainer/> :
                 whoIsClicked === 2 ? <DeliveryAddressSettingsComponent/> :
                     whoIsClicked === 3 ? <PaySettingsComponent/> : null}
         </section>

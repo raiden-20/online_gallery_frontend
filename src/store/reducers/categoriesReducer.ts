@@ -1,4 +1,4 @@
-import {Artist} from "@/interfaces/artistInterface";
+import {Artist, UserShort} from "@/interfaces/artistInterface";
 
 const SET_ARTISTS = 'SET_ARTISTS'
 const SET_SEARCH = 'SET_SEARCH'
@@ -7,7 +7,7 @@ const CLEAR_CATEGORIES_DATA = 'CLEAR_CATEGORIES_DATA'
 
 
 interface CategoriesReducerInterface {
-    artists: Artist[]
+    artists: UserShort[]
     search: []
 }
 

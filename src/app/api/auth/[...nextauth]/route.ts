@@ -5,6 +5,8 @@ import {encrypt} from "../../../../../utils/encryption";
 import {JWT} from "next-auth/jwt";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+import Cookies from "js-cookie";
+import {ROLES} from "@/paths/main";
 
 async function refreshAccessToken(token: JWT) {
     const resp = await axios.post(`${process.env.REFRESH_TOKEN_UTL}`,
@@ -52,6 +54,8 @@ export const AuthConfig: AuthOptions = {
                 token.id_token = account.id_token
                 token.expires_at = account.expires_at
                 token.refresh_token = account.refresh_token
+
+                Cookies.set('role', ROLES.CUSTOMER)
 
                 return token
             } else { // @ts-ignore

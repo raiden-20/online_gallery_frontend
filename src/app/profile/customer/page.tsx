@@ -1,7 +1,7 @@
 import {Root} from "@/components/main/main/Root";
 
-const Profile = () => {
+const CustomerProfile = () => {
     return <Root/>
 }
 
-export default Profile
+export default CustomerProfile

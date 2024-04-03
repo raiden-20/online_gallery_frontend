@@ -15,7 +15,7 @@ interface ProfileReducerInterface {
 
 const initialState: ProfileReducerInterface = {
     customer_data: {
-        customer_name: "",
+        customer_name: "я",
         date_birth: "",
         gender: "",
         avatar_url: "",
@@ -23,10 +23,11 @@ const initialState: ProfileReducerInterface = {
         artist_id: ""
     },
     artist_data: {
-        artist_name: "",
+        artist_name: "я",
         avatar_url: "",
         cover_url: "",
-        customer_id: ""
+        customer_id: "",
+        description: ""
     }
 }
 
@@ -51,7 +52,8 @@ export const profileReducer = (state = initialState, action: any) => {
                 artist_name: "",
                 avatar_url: "",
                 cover_url: "",
-                customer_id: ""
+                customer_id: "",
+                description: ""
             }
             state.customer_data = {
                 artist_id: "",

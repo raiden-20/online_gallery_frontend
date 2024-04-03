@@ -41,6 +41,8 @@ $one-user-name-size: 32px;
 }
 
 .users {
+  cursor: pointer;
+
   display: flex;
   flex-wrap: wrap;
 

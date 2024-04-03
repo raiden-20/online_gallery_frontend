@@ -4,6 +4,7 @@
 $cover-height: 250px;
 
 $change-cover-top: 25px;
+$change-cover-gap: 20px;
 $change-cover-padding-right: 24px;
 
 $change-avatar-top: -25px;
@@ -62,6 +63,8 @@ $change-window-shadow: 0 0 10px 0 $shadow-color;
 
       display: grid;
       justify-self: end;
+      grid-template-columns: min-content min-content;
+      gap: $change-cover-gap;
     }
   }
 
@@ -106,6 +109,20 @@ $change-window-shadow: 0 0 10px 0 $shadow-color;
         display: grid;
         justify-self: center;
         align-self: center;
+
+        grid-template-columns: min-content min-content;
+      }
+
+      .delete {
+        width: 25px;
+        height: 25px;
+
+        position: absolute;
+        top: -60px;
+        left: 85px;
+
+        display: flex;
+        justify-self: end;
       }
     }
 

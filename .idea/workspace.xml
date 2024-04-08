@@ -4,62 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="react-redux connection">
-      <change afterPath="$PROJECT_DIR$/src/app/404/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/profile/create/artist/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/profile/create/customer/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/404/404.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/main/RootContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search/SearchContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="react-redux connection 2">
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/nav/menu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/main/navigation/nav/AccountNavigation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/main/navigation/nav/NavigationComponentMobile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/authAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/authAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/categoriesAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/categoriesAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/profileAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artists/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artists/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/forgotPassword/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/forgotPassword/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/login/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/registration/createArtist/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/registration/createArtist/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/registration/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/registration/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/main/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/search/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/search/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/settings/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/settings/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/Auth_main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Auth_main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/CreateArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/RegistrationComponent.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/containers/CustomerProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/containers/CustomerProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/EmailComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/EmailComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/ProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/ProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/artistInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/artistInterface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/customerInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/customerInterface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/auth/Auth_main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/auth/Auth_main.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/encryption.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/encryption.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/nav/NavigationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Root.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Root.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Footer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Footer.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +58,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/messenger_frontend_v.2",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/main/main/navigation/nav",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -116,18 +71,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\main\navigation\nav" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\nav" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\auth\forms\artist" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\create\customer" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\customer" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\main\navigation\nav" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\main" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\auth\forms\artist" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\auth\forms\customer" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\components" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -159,6 +114,7 @@
       <workItem from="1712306041071" duration="718000" />
       <workItem from="1712308894572" duration="343000" />
       <workItem from="1712309468075" duration="5776000" />
+      <workItem from="1712565184162" duration="6508000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -296,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712181573537</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="react-redux connection 2">
+      <option name="closed" value="true" />
+      <created>1712565470138</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1712565470138</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +307,7 @@
     <MESSAGE value="fixed keycloak" />
     <MESSAGE value="changed settings design" />
     <MESSAGE value="react-redux connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="react-redux connection" />
+    <MESSAGE value="react-redux connection 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="react-redux connection 2" />
   </component>
 </project>

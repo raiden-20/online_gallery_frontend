@@ -7,12 +7,27 @@ $root-gap: 16px;
   width: 100%;
 }
 
+.mobile_nav {
+  display: none;
+}
+
 .root {
-  width: $default-width;
 
   display: grid;
   grid-template-rows: min-content auto min-content;
   row-gap: $root-gap;
   justify-self: center;
   min-height: 100vh;
+
+  padding: $main-padding;
+}
+
+@media screen and (max-width: 830px) {
+  .mobile_nav {
+    display: flex;
+  }
+
+  .desktop_nav {
+    display: none;
+  }
 }

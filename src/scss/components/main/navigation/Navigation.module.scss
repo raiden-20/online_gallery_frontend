@@ -2,6 +2,7 @@
 @import "@/scss/globals/main_values";
 
 $nav-height: 45px;
+$nav-height-mobile: 65px;
 
 $account_various-width: 188px;
 $account_various-height: 284px;
@@ -21,56 +22,115 @@ $avatar-radius: 6px;
 }
 
 .nav {
+  position: relative;
+
+  width: 100%;
   height: $nav-height;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .menu_img {
+    width: 30px;
+    height: 22.5px;
+  }
 }
 
-.account_various {
-  width: $account_various-width;
-
+.account_section {
   position: absolute;
 
-  border: $border-base;
+  top: $nav-height-mobile;
+  right: $account_various-width;
 
-  top: $nav-height;
-  padding: $account_various-padding;
+  z-index: $z-index-up;
 
-  background-color: $white-color;
 
-  z-index: $z-index-middle;
+  .account_various {
+    position: absolute;
+    width: $account_various-width;
 
-  .account_nav {
-    height: 100%;
+    border: $border-base;
+
+    padding: $account_various-padding;
+
+    background-color: $white-color;
+
+
+
+    .account_nav {
+      height: 100%;
+
+      display: grid;
+      align-content: space-between;
+
+      gap: 10px;
+
+      button {
+        height: min-content;
+      }
+    }
+
+    .account_data {
+      height: min-content;
+      display: flex;
+      gap: $account_various-data-gap;
+
+
+      .avatar {
+        cursor: pointer;
+
+        width: $avatar-size;
+        height: $avatar-size;
+        object-fit: cover;
+
+        border-radius: $avatar-radius;
+      }
+    }
+  }
+}
+
+.big_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu_li {
+  display: none;
+
+  width: max-content;
+}
+
+@media screen and (max-width: 830px){
+  .nav {
+    height: 65px;
+  }
+
+  .nav_mobile {
+    display: flex;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: $title-nav-size-mobile;
 
     display: grid;
-    align-content: space-between;
-
-    gap: 10px;
-
-    button {
-      height: min-content;
-    }
+    align-content: center;
   }
 
-  .account_data {
-    height: min-content;
+  .visible_various {
+    display: none;
+  }
+
+  .menu_li {
     display: flex;
-    gap: $account_various-data-gap;
-
-
-    .avatar {
-      cursor: pointer;
-
-      width: $avatar-size;
-      height: $avatar-size;
-      object-fit: cover;
-
-      border-radius: $avatar-radius;
-    }
   }
 
-
+  .img {
+    display: grid;
+    align-self: end;
+    width: 35px;
+    height: 35px;
+  }
 }

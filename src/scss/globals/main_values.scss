@@ -1,6 +1,6 @@
 @import "./color";
 
-$default-width: 1065px;
+//$default-width: 1065px;
 
 $font-family: "Roboto", sans-serif;
 
@@ -8,7 +8,10 @@ $font-size: 18px;
 $font-size-footer: 14px;
 $title-size: 24px;
 
+$main-padding: 24px;
+
 $title-auth-size: 36px;
+$title-nav-size-mobile: 40px;
 
 $profile-name-size: 32px;
 $profile-name-weight: 600;

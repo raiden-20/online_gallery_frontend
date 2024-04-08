@@ -14,8 +14,9 @@ import {useSession} from "next-auth/react";
 import {setToken} from "@/api/api_main";
 import {decrypt} from "../../../../utils/encryption";
 import {SearchContainer} from "@/components/search/SearchContainer";
-import {NavigationComponent} from "@/components/main/main/navigation/NavigationComponent";
+import {NavigationComponent} from "@/components/main/main/navigation/nav/NavigationComponent";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {NavigationComponentMobile} from "@/components/main/main/navigation/nav/NavigationComponentMobile";
 
 interface RootInterface {
     isCustomerCreate(router: AppRouterInstance): void
@@ -43,13 +44,18 @@ export const Root = (props: RootInterface) => {
     return (
         <section className={root_scss.page}>
             <section className={root_scss.root}>
-                <NavigationComponent/>
+                <nav className={root_scss.desktop_nav}>
+                    <NavigationComponent/>
+                </nav>
+                <nav className={root_scss.mobile_nav}>
+                    <NavigationComponentMobile/>
+                </nav>
                 <main>
-                    {main_path === PATHS_CATEGORY.CREATE  ? <Auth_main/> :
-                    main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
-                    main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
-                    main_path === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :
-                    main_path === PATHS_CATEGORY.SEARCH ? <SearchContainer/> : null
+                    {main_path === PATHS_CATEGORY.CREATE ? <Auth_main/> :
+                        main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
+                            main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
+                                main_path === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :
+                                    main_path === PATHS_CATEGORY.SEARCH ? <SearchContainer/> : null
                     }
                 </main>
                 <FooterComponent/>

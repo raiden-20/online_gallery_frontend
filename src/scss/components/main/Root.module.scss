@@ -12,7 +12,7 @@ $root-gap: 16px;
 }
 
 .root {
-
+  width: $width;
   display: grid;
   grid-template-rows: min-content auto min-content;
   row-gap: $root-gap;
@@ -20,6 +20,12 @@ $root-gap: 16px;
   min-height: 100vh;
 
   padding: $main-padding;
+}
+
+@media screen and (max-width: $width) {
+  .root {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 830px) {

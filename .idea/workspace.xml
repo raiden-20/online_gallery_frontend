@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="adapting navigation for mobile resolution">
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/nav/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/main/navigation/nav_elements/NavigationElementsMobile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/AccountNavigation.module.scss" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="adapting navigation for mobile resolution v2">
+      <change afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/nav/AccountNavigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/nav/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/nav/NavigationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/nav/NavigationComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/nav/NavigationComponentMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/AccountNavigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/AccountNavigation.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/main/main/navigation/nav_elements",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/settings/nav",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -70,11 +70,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\settings\nav" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\main\navigation\nav_elements" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\nav" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\main\navigation\nav" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\auth\forms\artist" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\create\customer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\main\navigation\nav" />
@@ -113,7 +113,7 @@
       <workItem from="1712306041071" duration="718000" />
       <workItem from="1712308894572" duration="343000" />
       <workItem from="1712309468075" duration="5776000" />
-      <workItem from="1712565184162" duration="10021000" />
+      <workItem from="1712565184162" duration="12720000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -267,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712571978340</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="adapting navigation for mobile resolution v2">
+      <option name="closed" value="true" />
+      <created>1712575575017</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1712575575017</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +324,7 @@
     <MESSAGE value="react-redux connection" />
     <MESSAGE value="react-redux connection 2" />
     <MESSAGE value="adapting navigation for mobile resolution" />
-    <option name="LAST_COMMIT_MESSAGE" value="adapting navigation for mobile resolution" />
+    <MESSAGE value="adapting navigation for mobile resolution v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="adapting navigation for mobile resolution v2" />
   </component>
 </project>

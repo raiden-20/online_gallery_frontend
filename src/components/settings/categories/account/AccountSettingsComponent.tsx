@@ -10,6 +10,8 @@ import {ProfileComponent} from "@/components/settings/categories/account/compone
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
 
+import cancel_icon from "@/assets/icons/settings/cancel.svg";
+
 interface AccountSettingsInterface {
     customer_data: Customer,
 
@@ -20,6 +22,8 @@ interface AccountSettingsInterface {
     changeEmail(input_email: string, setMessage:(message: string) => void): void
     changePassword(input_password: string): void
     deleteAccount(router: AppRouterInstance): void
+
+    setWhoIsClickedMobile(flag: number): void
 }
 
 export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
@@ -30,6 +34,12 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
 
     return (
         <section>
+            <button className={settings_scss.back}
+            onClick={() => props.setWhoIsClickedMobile(0)}>
+                <Image src={cancel_icon} alt={'cancel_icon'} width={19} height={10}/>
+                <div>Назад</div>
+            </button>
+
             {isEmailSection ? <EmailComponent setIsEmailSection={setIsEmailSection}
                                               changeEmail={props.changeEmail}/> :
                 isPasswordSection ? <PasswordComponent setIsPasswordSection={setIsPasswordSection}

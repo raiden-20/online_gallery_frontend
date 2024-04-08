@@ -17,6 +17,7 @@ $auth-data-height: 56px;
 
 
 $inputs-gap: 35px;
+$inputs-gap-row: 24px;
 
 $button-font-size: 20px;
 
@@ -62,14 +63,6 @@ $new-form-header-weight: 600;
     flex-flow: column;
     gap: $section-form-gap;
 
-    .auth_data {
-      height: $auth-data-height;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
     .save_button {
       width: min-content;
     }
@@ -90,6 +83,14 @@ $new-form-header-weight: 600;
       text-align: start;
     }
   }
+}
+
+.auth_data {
+  height: $auth-data-height;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .input_section {
@@ -119,11 +120,6 @@ $new-form-header-weight: 600;
     align-items: center;
 
     gap: $new-section-header-gap;
-
-    .section_name {
-      font-size: $new-form-header-size;
-      font-weight: $new-form-header-weight;
-    }
   }
 
   button {
@@ -131,7 +127,55 @@ $new-form-header-weight: 600;
   }
 }
 
+.section_name {
+  font-size: $new-form-header-size;
+  font-weight: $new-form-header-weight;
+}
+
 .message {
   color: $red-color;
 }
+
+.root_mobile {
+  display: none;
+}
+
+.back {
+  display: none;
+}
+
+@media screen and (max-width: 830px) {
+  .root {
+    display: none;
+  }
+
+  .root_mobile {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .back {
+    display: flex;
+    gap: 10px;
+
+    align-items: center;
+  }
+
+  .input_section {
+    display: flex;
+    flex-flow: column;
+    gap: $inputs-gap-row;
+  }
+
+
+  .section {
+    .section_form {
+      .save_button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
 

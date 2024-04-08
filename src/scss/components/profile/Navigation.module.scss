@@ -27,3 +27,18 @@ $nav-buttons-font-size: 24px;
     border-bottom: $border-base;
   }
 }
+
+@media screen and (max-width: 830px) {
+  .root {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+
+    li {
+      width: 100%;
+      display: flex;
+
+      justify-content: space-between;
+    }
+  }
+}

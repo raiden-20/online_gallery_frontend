@@ -15,18 +15,18 @@ interface ProfileReducerInterface {
 
 const initialState: ProfileReducerInterface = {
     customer_data: {
-        customer_name: "я",
-        date_birth: "",
+        customerName: "я",
+        birthDate: "",
         gender: "",
-        avatar_url: "",
-        cover_url: "",
-        artist_id: ""
+        avatarUrl: "",
+        coverUrl: "",
+        artistId: ""
     },
     artist_data: {
-        artist_name: "я",
-        avatar_url: "",
-        cover_url: "",
-        customer_id: "",
+        artistName: "я",
+        avatarUrl: "",
+        coverUrl: "",
+        customerId: "",
         description: ""
     }
 }
@@ -49,18 +49,18 @@ export const profileReducer = (state = initialState, action: any) => {
 
         case CLEAR_PROFILE_DATA: {
             stateCopy.artist_data = {
-                artist_name: "",
-                avatar_url: "",
-                cover_url: "",
-                customer_id: "",
+                artistName: "",
+                avatarUrl: "",
+                coverUrl: "",
+                customerId: "",
                 description: ""
             }
             state.customer_data = {
-                artist_id: "",
-                avatar_url: "",
-                cover_url: "",
-                customer_name: "",
-                date_birth: "",
+                artistId: "",
+                avatarUrl: "",
+                coverUrl: "",
+                customerName: "",
+                birthDate: "",
                 gender: ""
             }
 

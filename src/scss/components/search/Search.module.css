@@ -25,6 +25,7 @@
 }
 
 .one_element {
+  cursor: pointer;
   padding: 12px 0;
   display: flex;
   align-items: center;

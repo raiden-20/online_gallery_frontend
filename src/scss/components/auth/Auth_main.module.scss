@@ -1,4 +1,5 @@
 @import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
 
 $root-width: 500px;
 $root-padding: 35px;
@@ -54,6 +55,10 @@ $form-gap: 10px;
         display: flex;
         justify-self: start;
       }
+    }
+
+    .message {
+      color: $red-color
     }
   }
 }

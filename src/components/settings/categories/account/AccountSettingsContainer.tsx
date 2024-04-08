@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {changeCustomerProfileData, createArtistProfile, getCustomerProfileData} from "@/store/thunks/profileThunk";
+import {changeCustomerProfileData, getCustomerProfileData} from "@/store/thunks/profileThunk";
 import {Customer} from "@/interfaces/customerInterface";
 import {AccountSettingsComponent} from "@/components/settings/categories/account/AccountSettingsComponent";
 import {changeEmail, changePassword, deleteAccount} from "@/store/thunks/authThunk";

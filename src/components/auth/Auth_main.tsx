@@ -3,12 +3,12 @@ import React from "react";
 import {usePathname} from "next/navigation";
 
 import auth_main_scss from '@/scss/components/auth/Auth_main.module.scss'
-import {AUTH_CATEGORY} from "@/paths/auth";
 
-import {RegistrationComponent} from "@/components/auth/forms/RegistrationComponent";
-import {LoginComponent} from "@/components/auth/forms/LoginComponent";
-import {ForgotPasswordComponent} from "@/components/auth/forms/ForgotPasswordComponent";
-import {CreateArtistComponent} from "@/components/auth/forms/CreateArtistComponent";
+import {CreateCustomerComponent} from "@/components/auth/forms/customer/CreateCustomerComponent";
+import {CreateArtistComponent} from "@/components/auth/forms/artist/CreateArtistComponent";
+import {PATHS_CATEGORY} from "@/paths/main";
+import {CreateCustomerContainer} from "@/components/auth/forms/customer/CreateCustomerContainer";
+import {CreateArtistContainer} from "@/components/auth/forms/artist/CreateArtistContainer";
 
 export const Auth_main = () => {
     const pathname = usePathname().split('/')
@@ -20,10 +20,8 @@ export const Auth_main = () => {
                 <section className={auth_main_scss.auth}>
                     <header className={auth_main_scss.header + ' title'}>Lindéro</header>
                     <section>
-                        {pathnameLast === AUTH_CATEGORY.LOGIN ? <LoginComponent/> :
-                            pathnameLast === AUTH_CATEGORY.REGISTRATION ? <RegistrationComponent/> :
-                                pathnameLast === AUTH_CATEGORY.FORGOT_PASSWORD ? <ForgotPasswordComponent/> :
-                                pathnameLast === AUTH_CATEGORY.CREATE_ARTIST ? <CreateArtistComponent/>
+                        {pathnameLast === PATHS_CATEGORY.CUSTOMER ? <CreateCustomerContainer/> :
+                                pathnameLast === PATHS_CATEGORY.ARTIST? <CreateArtistContainer/>
                                     : null}
                     </section>
                 </section>

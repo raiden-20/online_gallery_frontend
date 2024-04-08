@@ -1,6 +1,6 @@
 import {ProfileAPI} from "@/api/profileAPI";
 import {Dispatch} from "redux";
-import {clearCategoriesReducer, setArtists, setSearch} from "@/store/reducers/categoriesReducer";
+import {clearCategoriesReducer, setSmth, setSearch} from "@/store/reducers/categoriesReducer";
 import {CategoriesAPI} from "@/api/categoriesAPI";
 
 export const getAllCustomers = () =>
@@ -10,7 +10,7 @@ export const getAllCustomers = () =>
                 switch (response[0]) {
                     case 200 : {
                         dispatch(clearCategoriesReducer())
-                        dispatch(setArtists(response[1]))
+                        dispatch(setSmth(response[1]))
                     }
                 }
             }).catch(error => {
@@ -32,24 +32,10 @@ export const getAllArtists = () =>
             console.error(error)
         })
     }
-export const getArtistsByName = (input_name: string) =>
-    (dispatch: Dispatch) => {
-        CategoriesAPI.GetArtistsByNameAPI(input_name)
-            .then(response => {
-                switch (response[0]) {
-                    case 200 : {
-                        dispatch(clearCategoriesReducer())
-                        dispatch(setSearch(response[1]))
-                    }
-                }
-            }).catch(error => {
-            console.error(error)
-        })
-    }
 
-export const getCustomersByName = (input_name: string) =>
+export const getSmthByName = (input_name: string, type: string) =>
     (dispatch: Dispatch) => {
-        CategoriesAPI.GetCustomersByNameAPI(input_name)
+        CategoriesAPI.GetSmthByNameAPI(input_name, type)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {

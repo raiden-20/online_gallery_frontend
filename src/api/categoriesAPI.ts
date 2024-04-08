@@ -1,10 +1,10 @@
-import {instance, PathsAPI} from "@/api/api_main";
+import {instanceWithoutToken, PathsAPI} from "@/api/api_main";
 
 export const CategoriesAPI = {
 
     async GetAllCustomersAPI() {
         try {
-            const response = await instance.get(
+            const response = await instanceWithoutToken.get(
                 PathsAPI.CUSTOMER + 's',
             );
             return [response.status, response.data];
@@ -16,7 +16,7 @@ export const CategoriesAPI = {
 
     async GetAllArtistsAPI() {
         try {
-            const response = await instance.get(
+            const response = await instanceWithoutToken.get(
                 PathsAPI.ARTIST + 's',
             );
             return [response.status, response.data];
@@ -26,22 +26,10 @@ export const CategoriesAPI = {
         }
     },
 
-    async GetArtistsByNameAPI(input_name: string) {
+    async GetSmthByNameAPI(input_name: string, type: string) {
         try {
-            const response = await instance.get(
-                PathsAPI.SEARCH + PathsAPI.ARTIST + PathsAPI.OBJECT + '=' + input_name,
-            );
-            return [response.status, response.data];
-        } catch (error: any) {
-            console.error(error)
-            return [error.response.status, error.response.data];
-        }
-    },
-
-    async GetCustomersByNameAPI(input_name: string) {
-        try {
-            const response = await instance.get(
-                PathsAPI.SEARCH + PathsAPI.CUSTOMER + PathsAPI.OBJECT + '=' + input_name,
+            const response = await instanceWithoutToken.get(
+                PathsAPI.SEARCH + `/${type}` + PathsAPI.OBJECT + '=' + input_name,
             );
             return [response.status, response.data];
         } catch (error: any) {

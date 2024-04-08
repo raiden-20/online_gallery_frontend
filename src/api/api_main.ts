@@ -1,4 +1,4 @@
-'use client'
+
 import axios from "axios";
 
 export const PathsAPI= {
@@ -25,8 +25,22 @@ export const instance = axios.create({
         'Content-Type': 'application/json'
     }
 });
+export const instanceFile = axios.create({
+    baseURL: PathsAPI.BASE,
+    headers: {
+        'Content-Type': 'multipart/form-data; boundary=---------------------------123456789012345678901234567'
+    }
+});
+
+export const instanceWithoutToken = axios.create({
+    baseURL: PathsAPI.BASE,
+    headers: {
+        'Content-Type': 'application/json'
+    }
+});
 
 export const setToken = (token: string) => {
     instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    instanceFile.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 }
 

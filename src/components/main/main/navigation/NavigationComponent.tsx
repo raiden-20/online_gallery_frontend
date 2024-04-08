@@ -3,30 +3,22 @@ import search_icon from "@/assets/icons/nav/search.svg";
 import account_icon from "@/assets/icons/nav/account.svg";
 
 import navigation_scss from '@/scss/components/main/navigation/Navigation.module.scss'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 import avatar from '@/assets/default/default_ava_nav.svg'
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
-import { signIn, signOut } from "next-auth/react";
+import {signIn, signOut} from "next-auth/react";
 import {useSession} from "next-auth/react";
-import axios from "axios";
 import Cookies from "js-cookie";
+import {keycloakSessionLogOut} from "@/store/thunks/authThunk"
 
 export const NavigationComponent = () => {
     const router = useRouter()
 
     const {  data: session, status } = useSession();
 
-
     const [isAccountClicked, setIsAccountClicked] = useState(false)
-    const keycloakSessionLogOut = async () => {
-        try {
-           await axios.get(`/api/auth/logout`)
-        } catch (error: any) {
-            console.log(error)
-        }
-    }
 
     return (
         <ul className={navigation_scss.nav}>
@@ -72,10 +64,12 @@ export const NavigationComponent = () => {
                 </button>
             </li>
             <li onClick={() => {
-                console.log('s', status)
-                console.log('session', session)
                 if (status === 'unauthenticated' || session === null) {
                     signIn('keycloak')
+                        .then(() => {
+                            Cookies.set('role', ROLES.CUSTOMER)
+
+                        })
                 } else {
                     setIsAccountClicked(!isAccountClicked)
                 }
@@ -91,6 +85,7 @@ export const NavigationComponent = () => {
                                 <Image src={avatar} className={navigation_scss.avatar}
                                        onClick={() => {
                                            Cookies.set('role', ROLES.CUSTOMER)
+                                           Cookies.set('currentId', Cookies.get('customerId') as string)
                                            router.push(MAIN_PATHS.PROFILE_CUSTOMER)}
                                        }
                                        alt={'avatar'} width={0} height={0}/>
@@ -105,6 +100,7 @@ export const NavigationComponent = () => {
                                 <Image src={avatar} className={navigation_scss.avatar}
                                        onClick={() => {
                                            Cookies.set('role', ROLES.ARTIST)
+                                           Cookies.set('currentId', Cookies.get('artistId') as string)
                                            router.push(MAIN_PATHS.PROFILE_ARTIST)}
                                        }
                                        alt={'avatar'} width={0} height={0}/>
@@ -145,7 +141,12 @@ export const NavigationComponent = () => {
                                 <button className={navigation_scss.button}
                                         onClick={() => {
                                             keycloakSessionLogOut()
-                                                .then(() => signOut({callbackUrl: MAIN_PATHS.MAIN}))
+                                                .then(() => {
+                                                    Cookies.remove('customerId');
+                                                    Cookies.remove('currentId');
+                                                    Cookies.remove('artistId');
+                                                    Cookies.remove('role')})
+                                                    signOut({callbackUrl: MAIN_PATHS.MAIN})
                                         }}>
                                     Выход
                                 </button>

@@ -1,13 +1,13 @@
 export interface Artist {
-    artist_name: string,
-    avatar_url: string,
-    cover_url: string,
-    customer_id: string,
+    artistName: string,
+    avatarUrl: string,
+    coverUrl: string,
+    customerId: string,
     description: string
 }
 
 export interface UserShort {
     id: string
     name: string,
-    avatar_url: string
+    avatarUrl: string
 }

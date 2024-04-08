@@ -3,25 +3,40 @@ import React, {useEffect, useState} from "react";
 import {Customer} from "@/interfaces/customerInterface";
 import {setPhoto} from "@/components/profile/components/setPhoto";
 import {CustomerCategoriesProfile} from "@/components/profile/profile_elemets/categories/CustomerCategoriesProfile";
+import Cookies from "js-cookie";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from "next/navigation";
 
 interface CustomerProfileInterface {
     customer_data: Customer
 
-    getCustomerProfileData(id: string): void
+    getCustomerProfileData(id: string, router: AppRouterInstance): void
 
-    changeCustomerProfileData(customer_name: string, date_birth: string, gender: string,
-                              avatar_url: string, cover_url: string, avatar_file: File | null, cover_file: File | null): void
+    changeCustomerProfileData(customerName: string, birthDate: string, gender: string,
+                              avatarUrl: string, coverUrl: string, avatar: File | string, cover: File | string,
+                              router: AppRouterInstance, setMessage:(message: string) => void): void
 }
 
 export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
+    const router = useRouter()
 
-    const [input_coverFile, setInput_coverFile] = useState<File | null>()
-    const [input_coverUrl, setInput_coverUrl] = useState(props.customer_data.cover_url)
+    useEffect(() => {
+        props.getCustomerProfileData(Cookies.get('currentId') as string, router)
+    }, []);
 
-    const [input_avatarFile, setInput_avatarFile] = useState<File | null>()
-    const [input_avatarUrl, setInput_avatarUrl] = useState(props.customer_data.avatar_url)
+    useEffect(() => {
+        if (Cookies.get('currentId') === Cookies.get('customerId') && Cookies.get('artistId') === null) {
+            Cookies.set('artistId', props.customer_data.artistId)
+        }
+    }, [props.customer_data]);
 
-    const [input_name, setInput_name] = useState(props.customer_data.customer_name)
+    const [input_coverFile, setInput_coverFile] = useState<File | string>('')
+    const [input_coverUrl, setInput_coverUrl] = useState(props.customer_data.coverUrl)
+
+    const [input_avatarFile, setInput_avatarFile] = useState<File | string>('')
+    const [input_avatarUrl, setInput_avatarUrl] = useState(props.customer_data.avatarUrl)
+
+    const [input_name, setInput_name] = useState(props.customer_data.customerName)
 
     const [isNeedChangeData, setIsNeedChangeData] = useState(false)
     const [isChangeDataClicked, setIsChangeDataClicked] = useState(false)
@@ -29,11 +44,14 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     const [isAvatarDeleted, setIsAvatarDeleted] = useState(false)
     const [isCoverDeleted, setIsCoverDeleted] = useState(false)
 
+    const [message, setMessage] = useState('sdfghfds')
+
 
     useEffect(() => {
         if (isChangeDataClicked) {
-            let avatar = props.customer_data.avatar_url
-            let cover = props.customer_data.cover_url
+            setMessage('')
+            let avatar = props.customer_data.avatarUrl
+            let cover = props.customer_data.coverUrl
             if (isAvatarDeleted) {
                 avatar = 'delete'
             }
@@ -41,15 +59,16 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
                 cover = 'delete'
             }
 
-            props.changeCustomerProfileData(input_name, props.customer_data.date_birth, props.customer_data.gender,
-                avatar, cover, input_avatarFile as File || null, input_coverFile as File || null)
+            props.changeCustomerProfileData(input_name, props.customer_data.birthDate, props.customer_data.gender,
+                avatar, cover, input_avatarFile, input_coverFile,
+                router, setMessage)
 
             cancelChanging()
         }
     }, [isChangeDataClicked]);
 
     useEffect(() => {
-        if (input_coverFile === undefined && input_avatarFile === undefined && input_name === props.customer_data.customer_name) {
+        if (input_coverFile === undefined && input_avatarFile === undefined && input_name === props.customer_data.customerName) {
             setIsNeedChangeData(false)
         } else {
             setIsNeedChangeData(true)
@@ -66,11 +85,11 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     }
 
     const cancelChanging = () => {
-        setInput_coverFile(null)
-        setInput_coverUrl(props.customer_data.cover_url)
-        setInput_avatarFile(null)
-        setInput_avatarUrl(props.customer_data.avatar_url)
-        setInput_name(props.customer_data.customer_name)
+        setInput_coverFile('')
+        setInput_coverUrl(props.customer_data.coverUrl)
+        setInput_avatarFile('')
+        setInput_avatarUrl(props.customer_data.avatarUrl)
+        setInput_name(props.customer_data.customerName)
         setIsNeedChangeData(false)
         setIsAvatarDeleted(false)
         setIsCoverDeleted(false)
@@ -79,12 +98,12 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
 
     const deleteAvatar = () => {
         setIsAvatarDeleted(true)
-        setInput_avatarFile(null)
+        setInput_avatarFile('')
         setInput_avatarUrl('')
     }
     const deleteCover = () => {
         setIsCoverDeleted(true)
-        setInput_coverFile(null)
+        setInput_coverFile('')
         setInput_coverUrl('')
     }
 
@@ -96,7 +115,8 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
                                     isNeedChangeData={isNeedChangeData} cancelChanging={cancelChanging}
                                     setInput_name={setInput_name} setIsChangeDataClicked={setIsChangeDataClicked}
                                     changeInputCover={changeInputCover} changeInputAvatar={changeInputAvatar}
-                                    deleteAvatar={deleteAvatar} deleteCover={deleteCover}/>
+                                    deleteAvatar={deleteAvatar} deleteCover={deleteCover}
+                                    message={message}/>
             <CustomerCategoriesProfile/>
         </section>
     )

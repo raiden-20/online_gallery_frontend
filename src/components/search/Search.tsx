@@ -3,15 +3,22 @@ import {useRouter} from "next/navigation";
 import search_icon from '@/assets/icons/search/search.svg'
 import delete_icon from '@/assets/icons/search/delete.svg'
 
-import default_avatar from '@/assets/default/default_ava_nav.svg'
 import Image from "next/image";
 
 import search_scss from '@/scss/components/search/Search.module.scss'
 import nav_profile_scss from '@/scss/components/profile/Navigation.module.scss'
 import {useState} from "react";
+import {Artists} from "@/components/search/elements/Artists";
+import {Customers} from "@/components/search/elements/Customers";
 
-export const Search = () => {
-    const router = useRouter()
+export interface SearchInterface {
+    artists: [],
+    getSmthByName(input_name: string, type: string): void,
+    getAllArtists(): void
+    getAllCustomers(): void
+}
+
+export const Search = (props: SearchInterface) => {
 
     const [whoIsClicked, setWhoIsClicked] = useState(1)
     const [input_name, setInput_name] = useState('')
@@ -69,18 +76,14 @@ export const Search = () => {
                 </ul>
             </nav>
             <main>
-                <ul>
-                    <li className={search_scss.one_element}>
-                        <Image src={default_avatar} className={search_scss.one_element_photo}
-                               alt={'default_avatar'} width={0} height={0}/>
-                        <div className={search_scss.one_element_name}>Кот1</div>
-                    </li>
-                    <li className={search_scss.one_element}>
-                        <Image src={default_avatar} className={search_scss.one_element_photo}
-                               alt={'default_avatar'} width={0} height={0}/>
-                        <div className={search_scss.one_element_name}>Кот1</div>
-                    </li>
-                </ul>
+                {whoIsClicked === 1 ? <Artists artists={props.artists}
+                                               input_name={input_name}
+                                               getAllArtists={props.getAllArtists}
+                                               getSmthByName={props.getSmthByName}/> :
+                    whoIsClicked === 2 ? <Customers artists={props.artists}
+                                                    input_name={input_name}
+                                                    getAllCustomers={props.getAllCustomers}
+                                                    getSmthByName={props.getSmthByName}/> : null}
             </main>
         </section>
     )

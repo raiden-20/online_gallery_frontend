@@ -46,7 +46,7 @@ export const categoriesReducer = (state = initialState, action: any) => {
     }
 }
 
-export const setArtists = (artists: Artist[]) => {
+export const setSmth = (artists: Artist[]) => {
     return {
         type: SET_ARTISTS, artists
     }

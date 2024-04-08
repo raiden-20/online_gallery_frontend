@@ -3,23 +3,22 @@ import KeycloakProvider from "next-auth/providers/keycloak";
 
 import {encrypt} from "../../../../../utils/encryption";
 import {JWT} from "next-auth/jwt";
-import axios from "axios";
-import { jwtDecode } from "jwt-decode";
+import {jwtDecode} from "jwt-decode";
 import Cookies from "js-cookie";
-import {ROLES} from "@/paths/main";
 
 async function refreshAccessToken(token: JWT) {
-    const resp = await axios.post(`${process.env.REFRESH_TOKEN_UTL}`,
-        new URLSearchParams({
+    const resp = await fetch(`${process.env.REFRESH_TOKEN_UTL}`, {
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
             client_id: process.env.KEYCLOAK_CLIENT_ID as string,
             client_secret: process.env.KEYCLOAK_CLIENT_SECRET as string,
             grant_type: 'refresh_token',
             refresh_token: token.refresh_token as string
-        }), {
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            }
-        })
+        }),
+        method: 'POST'
+    })
     // @ts-ignore
     const refreshToken = await resp.json()
     // @ts-ignore
@@ -49,13 +48,13 @@ export const AuthConfig: AuthOptions = {
             const nowTimeStamp = Math.floor(Date.now() / 1000)
 
             if (account) {
+
                 token.decoded = jwtDecode(account.access_token as string)
                 token.accessToken = account.access_token
                 token.id_token = account.id_token
                 token.expires_at = account.expires_at
                 token.refresh_token = account.refresh_token
-
-                Cookies.set('role', ROLES.CUSTOMER)
+                token.providerAccountId = account.providerAccountId
 
                 return token
             } else { // @ts-ignore
@@ -72,6 +71,7 @@ export const AuthConfig: AuthOptions = {
 
         },
         async session({session, token}) {
+
             // @ts-ignore
             session.access_token = encrypt(token.accessToken)
             // @ts-ignore
@@ -80,7 +80,14 @@ export const AuthConfig: AuthOptions = {
             session.roles = token.decoded.realm_access.roles
             // @ts-ignore
             session.error = token.error
+            // @ts-ignore
+            session.providerAccountId = token.providerAccountId
 
+
+            console.log('SESSION', session)
+
+            // @ts-ignore
+            Cookies.set('id', session.providerAccountId)
             return session
         }
     }

@@ -3,24 +3,33 @@ import {ArtistCategoriesProfile} from "@/components/profile/profile_elemets/cate
 import {Artist} from "@/interfaces/artistInterface";
 import React, {useEffect, useState} from "react";
 import {setPhoto} from "@/components/profile/components/setPhoto";
+import Cookies from "js-cookie";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from "next/navigation";
 interface ArtistProfileInterface {
     artist_data: Artist
 
-    getArtistProfileData(id: string): void
+    getArtistProfileData(id: string, router: AppRouterInstance): void
 
-    changeArtistProfileData(artist_name: string, avatar_url: string, cover_url: string,
-                            avatar_file: File | undefined, cover_file: File, description: string): void
+    changeArtistProfileData(artistName: string, avatarUrl: string, coverUrl: string,
+                            avatar: File | string, cover: File | string, description: string,
+                            router: AppRouterInstance, setMessage:(message: string) => void): void
 }
 
 export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
+    const router = useRouter()
 
-    const [input_coverFile, setInput_coverFile] = useState<File | null>()
-    const [input_coverUrl, setInput_coverUrl] = useState(props.artist_data.cover_url)
+    useEffect(() => {
+        props.getArtistProfileData(Cookies.get('currentId') as string, router)
+    }, []);
 
-    const [input_avatarFile, setInput_avatarFile] = useState<File | null>()
-    const [input_avatarUrl, setInput_avatarUrl] = useState(props.artist_data.avatar_url)
+    const [input_coverFile, setInput_coverFile] = useState<File | string>('')
+    const [input_coverUrl, setInput_coverUrl] = useState(props.artist_data.coverUrl)
 
-    const [input_name, setInput_name] = useState(props.artist_data.artist_name)
+    const [input_avatarFile, setInput_avatarFile] = useState<File | string>('')
+    const [input_avatarUrl, setInput_avatarUrl] = useState(props.artist_data.avatarUrl)
+
+    const [input_name, setInput_name] = useState(props.artist_data.artistName)
 
     const [input_description, setInput_description] = useState(props.artist_data.description)
 
@@ -30,13 +39,13 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
     const [isAvatarDeleted, setIsAvatarDeleted] = useState(false)
     const [isCoverDeleted, setIsCoverDeleted] = useState(false)
 
-
+    const [message, setMessage] = useState('')
 
 
     useEffect(() => {
         if (isChangeDataClicked) {
-            let avatar = props.artist_data.avatar_url
-            let cover = props.artist_data.cover_url
+            let avatar = props.artist_data.avatarUrl
+            let cover = props.artist_data.coverUrl
             if (isAvatarDeleted) {
                 avatar = 'delete'
             }
@@ -45,8 +54,8 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
             }
 
             props.changeArtistProfileData(input_name, avatar, cover,
-                                            input_avatarFile as File || null, input_coverFile as File || null,
-                                            input_description)
+                                            input_avatarFile, input_coverFile,
+                                            input_description, router, setMessage)
 
             setIsChangeDataClicked(false)
             setIsNeedChangeData(false)
@@ -54,7 +63,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
     }, [isChangeDataClicked]);
 
     useEffect(() => {
-        if (input_coverFile === undefined && input_avatarFile === undefined && input_name === props.artist_data.artist_name) {
+        if (input_coverFile === undefined && input_avatarFile === undefined && input_name === props.artist_data.artistName) {
             setIsNeedChangeData(false)
         } else {
             setIsNeedChangeData(true)
@@ -72,21 +81,21 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
 
     const deleteAvatar = () => {
         setIsAvatarDeleted(true)
-        setInput_avatarFile(null)
+        setInput_avatarFile('')
         setInput_avatarUrl('')
     }
     const deleteCover = () => {
         setIsCoverDeleted(true)
-        setInput_coverFile(null)
+        setInput_coverFile('')
         setInput_coverUrl('')
     }
 
     const cancelChanging = () => {
-        setInput_coverFile(null)
-        setInput_coverUrl(props.artist_data.cover_url)
-        setInput_avatarFile(null)
-        setInput_avatarUrl(props.artist_data.avatar_url)
-        setInput_name(props.artist_data.artist_name)
+        setInput_coverFile('')
+        setInput_coverUrl(props.artist_data.coverUrl)
+        setInput_avatarFile('')
+        setInput_avatarUrl(props.artist_data.avatarUrl)
+        setInput_name(props.artist_data.artistName)
         setInput_description(props.artist_data.description)
         setIsNeedChangeData(false)
     }
@@ -98,7 +107,8 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                                     isNeedChangeData={isNeedChangeData} cancelChanging={cancelChanging}
                                     setInput_name={setInput_name} setIsChangeDataClicked={setIsChangeDataClicked}
                                     changeInputCover={changeInputCover} changeInputAvatar={changeInputAvatar}
-                                    deleteAvatar={deleteAvatar} deleteCover={deleteCover} />
+                                    deleteAvatar={deleteAvatar} deleteCover={deleteCover}
+                                    message={message}/>
             <ArtistCategoriesProfile input_description={input_description} setInput_description={setInput_description}/>
         </section>
     )

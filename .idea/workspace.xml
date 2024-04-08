@@ -4,31 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="react-redux">
-      <change afterPath="$PROJECT_DIR$/src/components/categories/artists/ArtistsContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/containers/ArtistProfileContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/CustomerCategoriesProfile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/About.tsx" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="react-redux connection">
+      <change afterPath="$PROJECT_DIR$/src/app/404/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/profile/create/artist/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/profile/create/customer/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/404/404.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/main/RootContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/search/SearchContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/authAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/authAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/categoriesAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/categoriesAPI.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/profileAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/artists/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artists/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/forgotPassword/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/forgotPassword/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/registration/createArtist/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/registration/createArtist/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/registration/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/registration/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/search/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/search/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/settings/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/settings/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Auth_main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Auth_main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/CreateArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/RegistrationComponent.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileRoot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/artist/ArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/artist/ArtistProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/customer/CustomerProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/customer/CustomerProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/NavigationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/containers/CustomerProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/containers/CustomerProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/CustomerNavigationProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/CustomerNavigationProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/works/WorksProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/WorksProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/EmailComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/EmailComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/ProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/ProfileComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaces/artistInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/artistInterface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/customerInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/customerInterface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/auth/Auth_main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/auth/Auth_main.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/encryption.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/encryption.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +87,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -82,18 +116,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\settings" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\search" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\scss" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\auth\forms\artist" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\create\customer" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\customer" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\main" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\auth\forms\artist" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\auth\forms\customer" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\components" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\customer" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\artists" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\utils" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -117,7 +151,14 @@
       <workItem from="1712005916393" duration="4304000" />
       <workItem from="1712047966179" duration="10977000" />
       <workItem from="1712083573994" duration="12128000" />
-      <workItem from="1712150526363" duration="14326000" />
+      <workItem from="1712150526363" duration="24784000" />
+      <workItem from="1712206273644" duration="7428000" />
+      <workItem from="1712217976052" duration="19000" />
+      <workItem from="1712242729661" duration="3716000" />
+      <workItem from="1712246464771" duration="15306000" />
+      <workItem from="1712306041071" duration="718000" />
+      <workItem from="1712308894572" duration="343000" />
+      <workItem from="1712309468075" duration="5776000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -247,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712157061143</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="react-redux connection">
+      <option name="closed" value="true" />
+      <created>1712181573536</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1712181573537</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +342,7 @@
     <MESSAGE value="changed profile API" />
     <MESSAGE value="fixed keycloak" />
     <MESSAGE value="changed settings design" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed settings design" />
+    <MESSAGE value="react-redux connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="react-redux connection" />
   </component>
 </project>

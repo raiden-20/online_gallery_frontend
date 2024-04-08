@@ -5,16 +5,19 @@ import {useEffect, useState} from "react";
 
 interface EmailInterface {
     setIsEmailSection(flag: boolean): void
-    changeEmail(input_email: string): void
+    changeEmail(input_email: string, setMessage:(message: string) => void): void
 }
 
 export const EmailComponent = (props: EmailInterface) => {
     const [isSave, setIsSave] = useState(false)
     const [input_email, setInput_email] = useState('')
 
+    const [message, setMessage] = useState('')
+
     useEffect(() => {
         if (isSave) {
-            props.changeEmail(input_email)
+            setMessage('')
+            props.changeEmail(input_email, setMessage)
             setIsSave(false)
         }
     }, [isSave]);
@@ -31,6 +34,7 @@ export const EmailComponent = (props: EmailInterface) => {
             <p>Введите новый электронный адрес. После успешной смены вам нужно будет заново авторизоваться</p>
             <input value={input_email} onChange={(event) => setInput_email(event.target.value)}
                 placeholder={'Новый электронный адрес'}/>
+            <p className={settings_scss.message}>{message}</p>
             <button className={'main_button ' + settings_scss.save_button}
                     onClick={() => setIsSave(true)}>
                 Сохранить

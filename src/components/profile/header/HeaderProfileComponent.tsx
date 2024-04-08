@@ -10,6 +10,7 @@ import important from '@/assets/icons/profile/important.svg'
 import delete_photo from '@/assets/icons/profile/delete_photo.svg'
 
 import React, {useState} from "react";
+import Cookies from "js-cookie";
 
 interface HeaderProfileInterface {
     input_coverUrl: string,
@@ -18,13 +19,20 @@ interface HeaderProfileInterface {
     isNeedChangeData: boolean
 
     setInput_name(input_name: string): void
+
     changeInputCover(event: React.ChangeEvent<HTMLInputElement>): void
+
     changeInputAvatar(event: React.ChangeEvent<HTMLInputElement>): void
+
     setIsChangeDataClicked(isChangeDataClicked: boolean): void
+
     cancelChanging(): void
 
     deleteAvatar(): void
+
     deleteCover(): void
+
+    message: string
 }
 
 export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
@@ -55,6 +63,7 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                             </button>
                         </section>
                         : null}
+                    <p className={header_profile_scss.message}>{props.message}</p>
                 </section>
                 <section className={header_profile_scss.profile_data}>
                     <section className={header_profile_scss.avatar_section}
@@ -73,7 +82,8 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                                     </label>
                                 </button>
                                 <button onClick={() => props.deleteAvatar()}>
-                                    <Image src={delete_photo} className={header_profile_scss.delete} alt={'delete_photo'} width={0} height={0}/>
+                                    <Image src={delete_photo} className={header_profile_scss.delete}
+                                           alt={'delete_photo'} width={0} height={0}/>
                                 </button>
                             </section>
                             : null
@@ -90,13 +100,16 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                             </button>
                         }
                     </section>
-                    <section className={header_profile_scss.subscriber_section}>
-                        <button className={'main_button'}>Подписаться</button>
-                        <button className={header_profile_scss.button_bell}>
-                            <Image src={bell_icon} className={header_profile_scss.bell_image}
-                                   alt={'bell_icon'} width={0} height={0}/>
-                        </button>
-                    </section>
+                    {Cookies.get('artistId') === Cookies.get('currentId') ?
+                        <section className={header_profile_scss.subscriber_section}>
+                            <button className={'main_button'}>Подписаться</button>
+                            <button className={header_profile_scss.button_bell}>
+                                <Image src={bell_icon} className={header_profile_scss.bell_image}
+                                       alt={'bell_icon'} width={0} height={0}/>
+                            </button>
+                        </section>
+                        : null
+                    }
                 </section>
             </section>
             {props.isNeedChangeData ?
@@ -111,7 +124,8 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                         </button>
                         <button className={'main_button'} onClick={() => {
                             setIsNameClicked(false)
-                            props.setIsChangeDataClicked(true)}
+                            props.setIsChangeDataClicked(true)
+                        }
                         }>
                             Сохранить
                         </button>

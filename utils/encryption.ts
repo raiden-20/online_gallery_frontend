@@ -8,8 +8,7 @@ export function encrypt(text: string) {
 }
 
 export function decrypt(encryptedString: string) {
-    const secretKey = process.env.NEXTAUTH_SECRET as string
-    const cryptr = new Cryptr(secretKey)
+    const cryptr = new Cryptr('my-own-secret-189656-haha')
 
     return cryptr.decrypt(encryptedString)
 }

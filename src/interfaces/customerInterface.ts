@@ -1,8 +1,8 @@
 export interface Customer {
-    customer_name: string
-    date_birth: string
+    customerName: string
+    birthDate: string
     gender: string
-    avatar_url: string
-    cover_url: string
-    artist_id: string
+    avatarUrl: string
+    coverUrl: string
+    artistId: string
 }

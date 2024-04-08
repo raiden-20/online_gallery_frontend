@@ -1,7 +1,7 @@
-import {Root} from "@/components/main/main/Root";
+import {RootContainer} from "@/components/main/main/RootContainer";
 
 const CreateArtist = () => {
-    return <Root/>
+    return <RootContainer/>
 }
 
 export default CreateArtist

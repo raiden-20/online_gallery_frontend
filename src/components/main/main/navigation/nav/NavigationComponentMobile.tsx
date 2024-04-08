@@ -11,6 +11,7 @@ import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {signIn, useSession} from "next-auth/react";
 import Cookies from "js-cookie";
 import {AccountNavigation} from "@/components/main/main/navigation/nav/AccountNavigation";
+import {NavigationElementsMobile} from "@/components/main/main/navigation/nav_elements/NavigationElementsMobile";
 
 export const NavigationComponentMobile = () => {
     const router = useRouter()
@@ -18,6 +19,7 @@ export const NavigationComponentMobile = () => {
     const {  data: session, status } = useSession();
 
     const [isAccountClicked, setIsAccountClicked] = useState(false)
+    const [isMenuClicked, setIsMenuClicked] = useState(false)
 
     return (
         <section className={navigation_scss.nav}>
@@ -26,11 +28,13 @@ export const NavigationComponentMobile = () => {
                         onClick={() => router.push(MAIN_PATHS.MAIN)}>
                     Lindéro
                 </button>
-                <button onClick={() => router.push(MAIN_PATHS.MAIN)}>
+                <button onClick={() => setIsMenuClicked(!isMenuClicked)}>
                     <Image src={menu_icon} alt={'menu_icon'}
                            className={navigation_scss.menu_img + ' ' + navigation_scss.img}
                            width={0} height={0}/>
                 </button>
+                {isMenuClicked ?
+                <NavigationElementsMobile setIsMenuClicked={setIsMenuClicked}/> : null}
             </section>
             <section className={navigation_scss.nav_mobile}>
                 <button onClick={() => router.push(MAIN_PATHS.SEARCH)}>
@@ -53,7 +57,7 @@ export const NavigationComponentMobile = () => {
                            width={0} height={0}/>
                 </button>
                 {isAccountClicked ?
-                    <AccountNavigation/>
+                    <AccountNavigation setIsMenuClicked={setIsAccountClicked}/>
                     : null}
             </section>
         </section>

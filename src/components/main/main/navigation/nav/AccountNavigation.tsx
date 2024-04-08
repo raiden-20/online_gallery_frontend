@@ -1,4 +1,4 @@
-import navigation_scss from "@/scss/components/main/navigation/Navigation.module.scss";
+import accountNavigation_scss from "@/scss/components/main/navigation/AccountNavigation.module.scss";
 import Image from "next/image";
 import avatar from "@/assets/default/default_ava_nav.svg";
 import Cookies from "js-cookie";
@@ -6,16 +6,22 @@ import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {keycloakSessionLogOut} from "@/store/thunks/authThunk";
 import {signOut} from "next-auth/react";
 import {useRouter} from "next/navigation";
+import navigation_scss from "@/scss/components/main/navigation/Navigation.module.scss";
+import close from "@/assets/icons/nav/close.svg";
 
-export const AccountNavigation = () => {
+export const AccountNavigation = (props: {setIsMenuClicked(isMenuClicked: boolean): void}) => {
     const router = useRouter()
 
     return (
-        <section className={navigation_scss.account_section}>
-            <section className={navigation_scss.account_various}>
-                <ul className={navigation_scss.account_nav}>
-                    <li className={navigation_scss.account_data}>
-                        <Image src={avatar} className={navigation_scss.avatar}
+        <section className={accountNavigation_scss.account_section}>
+            <section className={accountNavigation_scss.account_various}>
+                <button onClick={() => props.setIsMenuClicked(false)} className={navigation_scss.close_button}>
+                    <Image src={close} alt={'close'}
+                           width={0} height={0} className={navigation_scss.img}/>
+                </button>
+                <ul className={accountNavigation_scss.account_nav}>
+                    <li className={accountNavigation_scss.account_data}>
+                        <Image src={avatar} className={accountNavigation_scss.avatar}
                                onClick={() => {
                                    Cookies.set('role', ROLES.CUSTOMER)
                                    Cookies.set('currentId', Cookies.get('customerId') as string)
@@ -24,14 +30,14 @@ export const AccountNavigation = () => {
                                }
                                alt={'avatar'} width={0} height={0}/>
                         <section>
-                            <div>Имя</div>
-                            <button className={navigation_scss.button}>
+                            <div className={accountNavigation_scss.name}>Имя</div>
+                            <button className={accountNavigation_scss.button}>
                                 Покупатель
                             </button>
                         </section>
                     </li>
-                    <li className={navigation_scss.account_data}>
-                        <Image src={avatar} className={navigation_scss.avatar}
+                    <li className={accountNavigation_scss.account_data}>
+                        <Image src={avatar} className={accountNavigation_scss.avatar}
                                onClick={() => {
                                    Cookies.set('role', ROLES.ARTIST)
                                    Cookies.set('currentId', Cookies.get('artistId') as string)
@@ -40,40 +46,40 @@ export const AccountNavigation = () => {
                                }
                                alt={'avatar'} width={0} height={0}/>
                         <section>
-                            <div>Имя</div>
-                            <button className={navigation_scss.button}>
+                            <div className={accountNavigation_scss.name}>Имя</div>
+                            <button className={accountNavigation_scss.button}>
                                 Художник
                             </button>
                         </section>
                     </li>
                     <li>
-                        <button className={navigation_scss.button}>
+                        <button className={accountNavigation_scss.button}>
                             Корзина
                         </button>
                     </li>
                     <li>
-                        <button className={navigation_scss.button}>
+                        <button className={accountNavigation_scss.button}>
                             Заказы
                         </button>
                     </li>
                     <li>
-                        <button className={navigation_scss.button}>
+                        <button className={accountNavigation_scss.button}>
                             Уведомления
                         </button>
                     </li>
                     <li>
-                        <button className={navigation_scss.button}>
+                        <button className={accountNavigation_scss.button}>
                             Подписки
                         </button>
                     </li>
                     <li>
-                        <button className={navigation_scss.button}
+                        <button className={accountNavigation_scss.button}
                                 onClick={() => router.push(MAIN_PATHS.SETTINGS)}>
                             Настройки
                         </button>
                     </li>
                     <li>
-                        <button className={navigation_scss.button}
+                        <button className={accountNavigation_scss.button}
                                 onClick={() => {
                                     keycloakSessionLogOut()
                                         .then(() => {

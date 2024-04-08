@@ -19,6 +19,7 @@ export const NavigationComponent = () => {
     const {  data: session, status } = useSession();
 
     const [isAccountClicked, setIsAccountClicked] = useState(false)
+    const [isAccountNavClicked, setIsAccountNavClicked] = useState(false)
 
     return (
         <ul className={navigation_scss.nav}>
@@ -65,7 +66,7 @@ export const NavigationComponent = () => {
                 </button>
             </li>
             {isAccountClicked ?
-                <AccountNavigation/>
+                <AccountNavigation setIsMenuClicked={setIsAccountNavClicked}/>
                 : null}
             <li className={navigation_scss.img_section}>
                 <button onClick={() => router.push(MAIN_PATHS.SEARCH)}>

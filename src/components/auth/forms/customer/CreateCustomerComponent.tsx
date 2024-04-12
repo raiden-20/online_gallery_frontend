@@ -2,10 +2,11 @@ import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import {AUTH_PATHS} from "@/paths/auth";
 import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 interface CreateCustomerInterface {
     createCustomerProfile(customerName: string, birthDate: string, gender: string,
-                          setMessage:(message: string) => void): void
+                          setMessage: (message: string) => void, router: AppRouterInstance): void
 }
 
 export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
@@ -21,7 +22,7 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
 
     useEffect(() => {
         if (isButtonClicked && (input_name !== '' && input_date !== '' && input_gender !== '')) {
-            props.createCustomerProfile(input_name, input_date, input_gender, setMessage)
+            props.createCustomerProfile(input_name, input_date, input_gender, setMessage, router)
 
             router.push(AUTH_PATHS.CREATE_ARTIST)
             setIsButtonClicked(false)
@@ -32,9 +33,16 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
     return (
         <main className={auth_main_scss.form}>
             <input value={input_name}
-                   onChange={(event) => setInput_name(event.target.value)}
+                   onChange={(event) => {
+                       if (event.target.value.length > 200) {
+                           setMessage('Лимит на имя 200 символов')
+                       } else {
+                           setMessage('')
+                           setInput_name(event.target.value)
+                       }
+                   }}
                    placeholder={'Имя'}/>
-            <input value={input_date}
+            <input value={input_date} type={'date'}
                    onChange={(event) => setInput_date(event.target.value)}
                    placeholder={'Возраст'}/>
             <select value={input_gender}

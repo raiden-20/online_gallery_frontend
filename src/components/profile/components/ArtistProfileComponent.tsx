@@ -21,7 +21,14 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
 
     useEffect(() => {
         props.getArtistProfileData(Cookies.get('currentId') as string, router)
-    }, []);
+    }, [props.artist_data.artistName, props.artist_data.avatarUrl, props.artist_data.coverUrl]);
+
+    useEffect(() => {
+        setInput_coverUrl(props.artist_data.coverUrl)
+        setInput_avatarUrl(props.artist_data.avatarUrl)
+        setInput_name(props.artist_data.artistName)
+        setInput_description(props.artist_data.description)
+    }, [props.artist_data.artistName, props.artist_data.avatarUrl, props.artist_data.coverUrl]);
 
     const [input_coverFile, setInput_coverFile] = useState<File | string>('')
     const [input_coverUrl, setInput_coverUrl] = useState(props.artist_data.coverUrl)
@@ -44,6 +51,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
 
     useEffect(() => {
         if (isChangeDataClicked) {
+            setMessage('')
             let avatar = props.artist_data.avatarUrl
             let cover = props.artist_data.coverUrl
             if (isAvatarDeleted) {
@@ -53,41 +61,47 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                 cover = 'delete'
             }
 
-            props.changeArtistProfileData(input_name, avatar, cover,
-                                            input_avatarFile, input_coverFile,
-                                            input_description, router, setMessage)
+            props.changeArtistProfileData(input_name,
+                avatar === '' ? ' ' : avatar,
+                cover === '' ? ' ' : cover,
+                input_avatarFile === '' ? ' ' : input_avatarFile,
+                input_coverFile === '' ? ' ' : input_coverFile,
+                input_description === '' ? ' ' : input_description, router, setMessage)
 
             setIsChangeDataClicked(false)
             setIsNeedChangeData(false)
         }
     }, [isChangeDataClicked]);
 
-    useEffect(() => {
-        if (input_coverFile === undefined && input_avatarFile === undefined && input_name === props.artist_data.artistName) {
-            setIsNeedChangeData(false)
-        } else {
-            setIsNeedChangeData(true)
-        }
-
-    }, [input_coverFile, input_name, input_avatarFile]);
-
     const changeInputCover = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPhoto(event.target.files as FileList, setInput_coverUrl, setInput_coverFile)
+        setMessage('')
+        setPhoto(event.target.files as FileList, setInput_coverUrl, setInput_coverFile,
+            setMessage, setIsCoverDeleted, props.artist_data.coverUrl)
+        setIsNeedChangeData(true)
     }
 
     const changeInputAvatar = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPhoto(event.target.files as FileList, setInput_avatarUrl, setInput_avatarFile)
+        setMessage('')
+        setPhoto(event.target.files as FileList, setInput_avatarUrl, setInput_avatarFile,
+            setMessage, setIsAvatarDeleted, props.artist_data.avatarUrl)
+        setIsNeedChangeData(true)
     }
 
     const deleteAvatar = () => {
         setIsAvatarDeleted(true)
         setInput_avatarFile('')
-        setInput_avatarUrl('')
+        if (input_avatarUrl !== '') {
+            setInput_avatarUrl(input_avatarUrl === props.artist_data.avatarUrl ? '' : props.artist_data.avatarUrl)
+        }
+        setIsNeedChangeData(true)
     }
     const deleteCover = () => {
         setIsCoverDeleted(true)
         setInput_coverFile('')
-        setInput_coverUrl('')
+        if (input_coverUrl !== '') {
+            setInput_coverUrl(input_coverUrl === props.artist_data.coverUrl ? '' : props.artist_data.coverUrl)
+        }
+        setIsNeedChangeData(true)
     }
 
     const cancelChanging = () => {
@@ -108,7 +122,8 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                                     setInput_name={setInput_name} setIsChangeDataClicked={setIsChangeDataClicked}
                                     changeInputCover={changeInputCover} changeInputAvatar={changeInputAvatar}
                                     deleteAvatar={deleteAvatar} deleteCover={deleteCover}
-                                    message={message}/>
+                                    message={message}
+                                    setIsNeedChangeData={setIsNeedChangeData}/>
             <ArtistCategoriesProfile input_description={input_description} setInput_description={setInput_description}/>
         </section>
     )

@@ -25,7 +25,7 @@ export const getAllArtists = () =>
                 switch (response[0]) {
                     case 200 : {
                         dispatch(clearCategoriesReducer())
-                        dispatch(setSearch(response[1]))
+                        dispatch(setSmth(response[1]))
                     }
                 }
             }).catch(error => {

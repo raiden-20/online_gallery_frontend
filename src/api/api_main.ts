@@ -1,7 +1,7 @@
-
 import axios from "axios";
+import {decrypt} from "../../utils/encryption";
 
-export const PathsAPI= {
+export const PathsAPI = {
     BASE: 'http://localhost:8080',
 
     CREATE: '/create',
@@ -39,8 +39,29 @@ export const instanceWithoutToken = axios.create({
     }
 });
 
-export const setToken = (token: string) => {
-    instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    instanceFile.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-}
+instance.interceptors.response.use((response) => response,
+    async (error) => {
+        const prev = error.config
+        if (error.response.status === 401 && !prev.sent) {
+            prev.sent = true;
+            const token = localStorage.getItem('access_token') as string
+            prev.headers['Authorization'] = `Bearer ${decrypt(token)}`;
+
+            return instance(prev);
+        }
+    }
+)
+
+instanceFile.interceptors.response.use((response) => response,
+    async (error) => {
+        const prev = error.config
+        if (error.response.status === 401 && !prev.sent) {
+            prev.sent = true;
+            const token = localStorage.getItem('access_token') as string
+            prev.headers['Authorization'] = `Bearer ${decrypt(token)}`;
+
+            return instanceFile(prev);
+        }
+    }
+)
 

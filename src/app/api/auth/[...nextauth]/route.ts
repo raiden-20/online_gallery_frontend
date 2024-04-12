@@ -1,13 +1,13 @@
 import NextAuth, {AuthOptions} from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
 
-import {encrypt} from "../../../../../utils/encryption";
+import {decrypt, encrypt} from "../../../../../utils/encryption";
 import {JWT} from "next-auth/jwt";
 import {jwtDecode} from "jwt-decode";
 import Cookies from "js-cookie";
 
 async function refreshAccessToken(token: JWT) {
-    const resp = await fetch(`${process.env.REFRESH_TOKEN_UTL}`, {
+    const resp = await fetch(`${process.env.REFRESH_TOKEN_URL}`, {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -82,7 +82,6 @@ export const AuthConfig: AuthOptions = {
             session.error = token.error
             // @ts-ignore
             session.providerAccountId = token.providerAccountId
-
 
             console.log('SESSION', session)
 

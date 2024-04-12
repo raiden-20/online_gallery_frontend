@@ -12,7 +12,7 @@ import {Artists} from "@/components/search/elements/Artists";
 import {Customers} from "@/components/search/elements/Customers";
 
 export interface SearchInterface {
-    artists: [],
+    search: [],
     getSmthByName(input_name: string, type: string): void,
     getAllArtists(): void
     getAllCustomers(): void
@@ -76,11 +76,11 @@ export const Search = (props: SearchInterface) => {
                 </ul>
             </nav>
             <main>
-                {whoIsClicked === 1 ? <Artists artists={props.artists}
+                {whoIsClicked === 1 ? <Artists search={props.search}
                                                input_name={input_name}
                                                getAllArtists={props.getAllArtists}
                                                getSmthByName={props.getSmthByName}/> :
-                    whoIsClicked === 2 ? <Customers artists={props.artists}
+                    whoIsClicked === 2 ? <Customers search={props.search}
                                                     input_name={input_name}
                                                     getAllCustomers={props.getAllCustomers}
                                                     getSmthByName={props.getSmthByName}/> : null}

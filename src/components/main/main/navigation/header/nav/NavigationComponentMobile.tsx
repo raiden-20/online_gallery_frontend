@@ -10,8 +10,9 @@ import {useRouter} from "next/navigation";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {signIn, useSession} from "next-auth/react";
 import Cookies from "js-cookie";
-import {AccountNavigation} from "@/components/main/main/navigation/nav/AccountNavigation";
-import {NavigationElementsMobile} from "@/components/main/main/navigation/nav_elements/NavigationElementsMobile";
+import {AccountNavigation} from "@/components/main/main/navigation/header/nav/AccountNavigation";
+import {NavigationElementsMobile} from "@/components/main/main/navigation/header/nav_elements/NavigationElementsMobile";
+import {AccountNavigationContainer} from "@/components/main/main/navigation/header/AccountNavigationContainer";
 
 export const NavigationComponentMobile = () => {
     const router = useRouter()
@@ -20,6 +21,8 @@ export const NavigationComponentMobile = () => {
 
     const [isAccountClicked, setIsAccountClicked] = useState(false)
     const [isMenuClicked, setIsMenuClicked] = useState(false)
+
+    const [registrationFlag] = useState(Cookies.get('registrationFlag'))
 
     return (
         <section className={navigation_scss.nav}>
@@ -42,13 +45,14 @@ export const NavigationComponentMobile = () => {
                            width={0} height={0}/>
                 </button>
                 <button onClick={() => {
-                    if (status === 'unauthenticated' || session === null) {
+                    if ((status === 'unauthenticated' || session === null)) {
                         signIn('keycloak')
                             .then(() => {
                                 Cookies.set('role', ROLES.CUSTOMER)
+                                Cookies.set('status', 'authenticated')
 
                             })
-                    } else {
+                    } else if (registrationFlag === 'true'){
                         setIsAccountClicked(!isAccountClicked)
                     }
                 }
@@ -57,7 +61,7 @@ export const NavigationComponentMobile = () => {
                            width={0} height={0}/>
                 </button>
                 {isAccountClicked ?
-                    <AccountNavigation setIsMenuClicked={setIsAccountClicked}/>
+                    <AccountNavigationContainer setIsMenuClicked={setIsAccountClicked}/>
                     : null}
             </section>
         </section>

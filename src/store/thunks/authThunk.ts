@@ -12,6 +12,17 @@ export const keycloakSessionLogOut = async () => {
     }
 }
 
+export const deleteCookies = () => {
+    Cookies.remove('customerId');
+    Cookies.remove('currentId');
+    Cookies.remove('artistId');
+    Cookies.remove('role');
+    Cookies.remove('registrationFlag');
+    Cookies.remove('currentRole');
+    Cookies.remove('status');
+    localStorage.removeItem('access_token')
+}
+
 export const changeEmail = (input_email: string, setMessage:(message: string) => void) =>
     () => {
         AuthAPI.ChangeEmailAPI(input_email)
@@ -20,10 +31,8 @@ export const changeEmail = (input_email: string, setMessage:(message: string) =>
                     case 200 : {
                         keycloakSessionLogOut()
                             .then(() => {
-                                Cookies.remove('customerId');
-                                Cookies.remove('currentId');
-                                Cookies.remove('artistId');
-                                Cookies.remove('role');
+                                deleteCookies()
+
                                 signOut({callbackUrl: MAIN_PATHS.MAIN})
                             })
                         break
@@ -45,10 +54,8 @@ export const changePassword = (input_password: string) =>
                     case 200 : {
                         keycloakSessionLogOut()
                             .then(() => {
-                                Cookies.remove('customerId');
-                                Cookies.remove('currentId');
-                                Cookies.remove('artistId');
-                                Cookies.remove('role');
+                                deleteCookies()
+
                                 signOut({callbackUrl: MAIN_PATHS.MAIN})
 
                             })
@@ -67,10 +74,8 @@ export const deleteAccount = (router: AppRouterInstance) =>
                     case 200 : {
                         keycloakSessionLogOut()
                             .then(() => {
-                                Cookies.remove('customerId');
-                                Cookies.remove('currentId');
-                                Cookies.remove('artistId');
-                                Cookies.remove('role');
+                                deleteCookies()
+
                                 signOut({callbackUrl: MAIN_PATHS.MAIN})
 
                             })

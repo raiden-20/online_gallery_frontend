@@ -22,13 +22,14 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
 
     useEffect(() => {
         props.getCustomerProfileData(Cookies.get('currentId') as string, router)
-    }, []);
+    }, [props.customer_data.customerName, props.customer_data.avatarUrl, props.customer_data.coverUrl]);
 
     useEffect(() => {
-        if (Cookies.get('currentId') === Cookies.get('customerId') && Cookies.get('artistId') === null) {
-            Cookies.set('artistId', props.customer_data.artistId)
-        }
-    }, [props.customer_data]);
+        setInput_coverUrl(props.customer_data.coverUrl)
+        setInput_avatarUrl(props.customer_data.avatarUrl)
+        setInput_name(props.customer_data.customerName)
+        //setInput_description(props.customer_data.description)
+    }, [props.customer_data.customerName, props.customer_data.avatarUrl, props.customer_data.coverUrl]);
 
     const [input_coverFile, setInput_coverFile] = useState<File | string>('')
     const [input_coverUrl, setInput_coverUrl] = useState(props.customer_data.coverUrl)
@@ -44,7 +45,9 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     const [isAvatarDeleted, setIsAvatarDeleted] = useState(false)
     const [isCoverDeleted, setIsCoverDeleted] = useState(false)
 
-    const [message, setMessage] = useState('sdfghfds')
+   // const [input_description, setInput_description] = useState(props.customer_data.description)
+
+    const [message, setMessage] = useState('')
 
 
     useEffect(() => {
@@ -60,31 +63,32 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
             }
 
             props.changeCustomerProfileData(input_name, props.customer_data.birthDate, props.customer_data.gender,
-                avatar, cover, input_avatarFile, input_coverFile,
+                avatar === '' ? ' ' : avatar,
+                cover === '' ? ' ' : cover,
+                input_avatarFile === '' ? ' ' : input_avatarFile,
+                input_coverFile === '' ? ' ' : input_coverFile,
                 router, setMessage)
 
             cancelChanging()
         }
     }, [isChangeDataClicked]);
 
-    useEffect(() => {
-        if (input_coverFile === undefined && input_avatarFile === undefined && input_name === props.customer_data.customerName) {
-            setIsNeedChangeData(false)
-        } else {
-            setIsNeedChangeData(true)
-        }
-
-    }, [input_coverFile, input_name, input_avatarFile]);
-
     const changeInputCover = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPhoto(event.target.files as FileList, setInput_coverUrl, setInput_coverFile)
+        setMessage('')
+        setPhoto(event.target.files as FileList, setInput_coverUrl, setInput_coverFile,
+            setMessage, setIsCoverDeleted, props.customer_data.coverUrl)
+        setIsNeedChangeData(true)
     }
 
     const changeInputAvatar = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPhoto(event.target.files as FileList, setInput_avatarUrl, setInput_avatarFile)
+        setMessage('')
+        setPhoto(event.target.files as FileList, setInput_avatarUrl, setInput_avatarFile,
+            setMessage, setIsAvatarDeleted, props.customer_data.avatarUrl)
+        setIsNeedChangeData(true)
     }
 
     const cancelChanging = () => {
+        setMessage('')
         setInput_coverFile('')
         setInput_coverUrl(props.customer_data.coverUrl)
         setInput_avatarFile('')
@@ -97,14 +101,22 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     }
 
     const deleteAvatar = () => {
+        setMessage('')
         setIsAvatarDeleted(true)
         setInput_avatarFile('')
-        setInput_avatarUrl('')
+        if (input_avatarUrl !== '') {
+            setInput_avatarUrl(input_avatarUrl === props.customer_data.avatarUrl ? '' : props.customer_data.avatarUrl)
+        }
+        setIsNeedChangeData(true)
     }
     const deleteCover = () => {
+        setMessage('')
         setIsCoverDeleted(true)
         setInput_coverFile('')
-        setInput_coverUrl('')
+        if (input_coverUrl !== '') {
+            setInput_coverUrl(input_coverUrl === props.customer_data.coverUrl ? '' : props.customer_data.coverUrl)
+        }
+        setIsNeedChangeData(true)
     }
 
 
@@ -116,7 +128,8 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
                                     setInput_name={setInput_name} setIsChangeDataClicked={setIsChangeDataClicked}
                                     changeInputCover={changeInputCover} changeInputAvatar={changeInputAvatar}
                                     deleteAvatar={deleteAvatar} deleteCover={deleteCover}
-                                    message={message}/>
+                                    message={message}
+                                    setIsNeedChangeData={setIsNeedChangeData}/>
             <CustomerCategoriesProfile/>
         </section>
     )

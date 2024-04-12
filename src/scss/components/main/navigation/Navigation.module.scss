@@ -40,6 +40,10 @@ $nav-height-mobile: 65px;
   width: max-content;
 }
 
+.close_button {
+  display: none;
+}
+
 @media screen and (max-width: 830px){
   .nav {
     height: 65px;
@@ -66,6 +70,12 @@ $nav-height-mobile: 65px;
     align-self: end;
     width: 25px;
     height: 25px;
+  }
+
+  .close_button {
+    width: min-content;
+    display: grid;
+    justify-self: end;
   }
 }
 
@@ -95,10 +105,4 @@ $nav-height-mobile: 65px;
   button {
     font-size: 20px;
   }
-}
-
-.close_button {
-  width: min-content;
-  display: grid;
-  justify-self: end;
 }

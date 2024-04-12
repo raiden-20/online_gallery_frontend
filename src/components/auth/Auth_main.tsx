@@ -1,11 +1,11 @@
+'use client'
+
 import React from "react";
 
 import {usePathname} from "next/navigation";
 
 import auth_main_scss from '@/scss/components/auth/Auth_main.module.scss'
 
-import {CreateCustomerComponent} from "@/components/auth/forms/customer/CreateCustomerComponent";
-import {CreateArtistComponent} from "@/components/auth/forms/artist/CreateArtistComponent";
 import {PATHS_CATEGORY} from "@/paths/main";
 import {CreateCustomerContainer} from "@/components/auth/forms/customer/CreateCustomerContainer";
 import {CreateArtistContainer} from "@/components/auth/forms/artist/CreateArtistContainer";

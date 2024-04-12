@@ -1,9 +1,10 @@
 import settings_scss from "@/scss/components/settings/Settings.module.scss";
 import {Customer} from "@/interfaces/customerInterface";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
+import header_profile_scss from "@/scss/components/profile/HeaderProfile.module.scss";
 
 interface ProfileInterface {
     customer_data: Customer,
@@ -26,18 +27,22 @@ export const ProfileComponent = (props: ProfileInterface) => {
 
     useEffect(() => {
         if (isSave) {
-            props.changeCustomerProfileData(props.customer_data.customerName, input_date, input_gender,
+            props.changeCustomerProfileData(props.customer_data.customerName, input_date,
+                input_gender === '' ? 'MAN' : input_gender,
                 props.customer_data.avatarUrl, props.customer_data.coverUrl, ' ', ' ',
                 router, setMessage)
             setIsSave(false)
-
-
         }
     }, [isSave]);
 
     useEffect(() => {
-        props.getCustomerProfileData(Cookies.get('id') as string, router)
+        props.getCustomerProfileData(Cookies.get('customerId') as string, router)
     }, []);
+
+    useEffect(() => {
+        setInput_date(props.customer_data.birthDate)
+        setInput_gender(props.customer_data.gender)
+    }, [props.customer_data.birthDate, props.customer_data.gender]);
 
     return (
         <section className={settings_scss.section}>
@@ -58,6 +63,7 @@ export const ProfileComponent = (props: ProfileInterface) => {
                     Сохранить
                 </button>
             </section>
+            <p className={header_profile_scss.message}>{message}</p>
         </section>
     )
 }

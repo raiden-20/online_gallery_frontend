@@ -1,9 +1,8 @@
 import search_scss from "@/scss/components/search/Search.module.scss";
-import Image from "next/image";
-import default_avatar from "@/assets/default/default_ava_nav.svg";
 import {useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/paths/main";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {useEffect} from "react";
+import Cookies from "js-cookie";
 
 interface SearchCustomers {
     customerId: string,
@@ -12,7 +11,7 @@ interface SearchCustomers {
 }
 
 interface CustomersInterface {
-    artists: SearchCustomers[],
+    search: SearchCustomers[],
     input_name: string
 
     getAllCustomers(): void
@@ -30,15 +29,22 @@ export const Customers = (props: CustomersInterface) => {
         }
     }, [props.input_name]);
 
+    useEffect(() => {
+        props.getAllCustomers()
+    }, []);
+
     return (
         <ul>
-            {props.artists.map((oneElement:SearchCustomers) => {
+            {props.search.map((oneElement:SearchCustomers) => {
                 return (
                     <li className={search_scss.one_element}
-                    onClick={() => router.push(MAIN_PATHS.PROFILE)}>
-                        <Image loader={() => oneElement.avatarUrl}
-                               src={oneElement.avatarUrl === '' ? default_avatar : oneElement.avatarUrl} className={search_scss.one_element_photo}
-                               alt={'avatar'} width={0} height={0}/>
+                    onClick={() => {
+                        router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + oneElement.customerId)
+                        Cookies.set("currentRole", ROLES.CUSTOMER)
+                        Cookies.set("currentId", oneElement.customerId)
+                    }}>
+                        <img src={oneElement.avatarUrl === '' ? "/default_ava_nav.jpg" : oneElement.avatarUrl} className={search_scss.one_element_photo}
+                             alt={'avatar'}/>
                         <div className={search_scss.one_element_name}>{oneElement.customerName}</div>
                     </li>
                 )

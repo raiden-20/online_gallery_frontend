@@ -7,7 +7,7 @@ import {MAIN_PATHS} from "@/paths/main";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 interface CreateArtistInterface {
-    createArtistProfile(artistName: string, setMessage:(message: string) => void): void
+    createArtistProfile(artistName: string, setMessage:(message: string) => void, router: AppRouterInstance): void
 }
 
 export const CreateArtistComponent = (props: CreateArtistInterface) => {
@@ -23,7 +23,7 @@ export const CreateArtistComponent = (props: CreateArtistInterface) => {
     useEffect(() => {
         if (isRegisterClicked) {
             if (input_name !== '') {
-                props.createArtistProfile(input_name, setMessage)
+                props.createArtistProfile(input_name, setMessage, router)
             }
 
             setIsRegisterClicked(false)
@@ -36,10 +36,18 @@ export const CreateArtistComponent = (props: CreateArtistInterface) => {
                 <main className={auth_main_scss.form}>
                     <p>Введите имя для аккаунта художника</p>
                     <input value={input_name}
-                           onChange={(event) => setInput_name(event.target.value)}
-                        placeholder={'Имя'}/>
+                           onChange={(event) => {
+                               if (event.target.value.length > 200) {
+                                   setMessage('Лимит на имя 200 символов')
+                               } else {
+                                   setMessage('')
+                                   setInput_name(event.target.value)
+                               }
+                           }
+                           }
+                           placeholder={'Имя'}/>
                     <button className={'main_button'}
-                    onClick={() => setIsRegisterClicked(true)}>
+                            onClick={() => setIsRegisterClicked(true)}>
                         Зарегистрироваться
                     </button>
                     <p className={auth_main_scss.message}>{message}</p>
@@ -47,14 +55,18 @@ export const CreateArtistComponent = (props: CreateArtistInterface) => {
                 :
                 <main className={auth_main_scss.form}>
                     <p>Создать аккаунт художника?</p>
-                    <button className={'main_button'}
-                            onClick={() => setIsPressedYes(true)}>
-                        Да
-                    </button>
-                    <button className={'no_main_color'}
-                    onClick={() => router.push(MAIN_PATHS.PROFILE)}>
-                        Нет
-                    </button>
+                    <p> Необязательно соглашаться сейчас, вы всегда сможете создать через настройки</p>
+                    <section className={auth_main_scss.button_section}>
+                        <button className={'cancel_button'}
+                                onClick={() => router.push(MAIN_PATHS.PROFILE)}>
+                            Пропустить
+                        </button>
+                        <button className={'main_button'}
+                                onClick={() => setIsPressedYes(true)}>
+                            Cтать художником
+                        </button>
+                    </section>
+
                 </main>
             }
         </section>

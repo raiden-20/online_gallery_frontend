@@ -2,7 +2,7 @@ import settings_scss from '@/scss/components/settings/Settings.module.scss'
 
 import more_icon from '@/assets/icons/settings/more.svg'
 import Image from "next/image";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Customer} from "@/interfaces/customerInterface";
 import {EmailComponent} from "@/components/settings/categories/account/components/EmailComponent";
 import {PasswordComponent} from "@/components/settings/categories/account/components/PasswordComponent";
@@ -11,6 +11,8 @@ import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-
 import {useRouter} from "next/navigation";
 
 import cancel_icon from "@/assets/icons/settings/cancel.svg";
+import {MAIN_PATHS} from "@/paths/main";
+import Cookies from "js-cookie";
 
 interface AccountSettingsInterface {
     customer_data: Customer,
@@ -31,6 +33,12 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
 
     const [isEmailSection, setIsEmailSection] = useState(false)
     const [isPasswordSection, setIsPasswordSection] = useState(false)
+
+    const [artistId, setArtistId] = useState('')
+
+    useEffect(() => {
+        setArtistId(Cookies.get('artistId') as string)
+    }, []);
 
     return (
         <section>
@@ -69,10 +77,15 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
                         <section className={settings_scss.section}>
                             <header className={settings_scss.section_header}>Действия</header>
                             <section className={settings_scss.footer_buttons}>
-                                <button className={settings_scss.button}>Создать аккаунт художника</button>
+                                {!artistId ?
+                                    <button className={settings_scss.button}
+                                            onClick={() => router.push(MAIN_PATHS.CREATE_ARTIST)}>
+                                        Создать аккаунт художника
+                                    </button>
+                                    : null}
                                 <button className={settings_scss.button + ' ' + settings_scss.delete_button}
-                                onClick={() => props.deleteAccount(router)}>
-                                    Удалить аккаунт
+                                        onClick={() => props.deleteAccount(router)}>
+                                Удалить аккаунт
                                 </button>
                             </section>
                         </section>

@@ -2,9 +2,16 @@ import {ArtistProfileContainer} from "@/components/profile/containers/ArtistProf
 import Cookies from "js-cookie";
 import {ROLES} from "@/paths/main";
 import {CustomerProfileContainer} from "@/components/profile/containers/CustomerProfileContainer";
+import {useEffect, useState} from "react";
 
 export const ProfileRoot = () => {
-    if (Cookies.get('role') === ROLES.ARTIST) {
+    const [currentRole, setCurrentRole] = useState('')
+
+    useEffect(() => {
+        setCurrentRole(Cookies.get('currentRole') as string)
+    }, []);
+
+    if (currentRole === ROLES.ARTIST) {
         return <ArtistProfileContainer/>
     } else {
         return <CustomerProfileContainer/>

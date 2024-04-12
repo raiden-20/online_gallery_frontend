@@ -1,11 +1,16 @@
-import {instance, instanceFile, instanceWithoutToken, PathsAPI} from "@/api/api_main";
+import {
+    instance,
+    instanceFile,
+    instanceWithoutToken,
+    PathsAPI,
+} from "@/api/api_main";
 import Cookies from "js-cookie";
 
 export const ProfileAPI = {
     async CustomerDataAPI(id: string) {
         try {
             const response = await instanceWithoutToken.get(
-                PathsAPI.CUSTOMER + PathsAPI.DATA + '/' + id,
+                PathsAPI.CUSTOMER + '/' + id,
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -17,7 +22,7 @@ export const ProfileAPI = {
     async ArtistDataAPI(id: string) {
         try {
             const response = await instanceWithoutToken.get(
-                PathsAPI.ARTIST + PathsAPI.DATA + '/' + id,
+                PathsAPI.ARTIST + '/' + id,
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -29,7 +34,7 @@ export const ProfileAPI = {
     async IsCustomerAPI() {
         try {
             const response = await instance.get(
-                PathsAPI.ARTIST + '/' + Cookies.get('customerId') as string + '/first-entry',
+                PathsAPI.CUSTOMER + '/' + Cookies.get('customerId') as string + '/first-entry',
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -41,16 +46,15 @@ export const ProfileAPI = {
     async ChangeCustomerDataAPI(customerName: string, birthDate: string, gender: string,
                                 avatarUrl: string, coverUrl: string, avatar: File | string, cover: File | string) {
         const formData = new FormData()
-
-        formData.append('customerId', Cookies.get('customerId') as string)
+        const id = Cookies.get('customerId') as string
+        formData.append('customerId', id)
         formData.append('customerName', customerName)
         formData.append('birthDate', birthDate)
         formData.append('gender', gender)
         formData.append('avatarUrl', avatarUrl)
         formData.append('coverUrl', coverUrl)
-        formData.append('avatar', avatar === null ? 'null' : avatar)
-        formData.append('cover', cover === null ? 'null' : cover)
-
+        formData.append('avatar', avatar === ' ' ? new File([], 'empty.txt', { type: 'text/plain' }) : avatar)
+        formData.append('cover', cover === ' ' ? new File([], 'empty.txt', { type: 'text/plain' }) : cover)
         try {
             const response = await instanceFile.put(
                 PathsAPI.CUSTOMER + PathsAPI.DATA,
@@ -72,9 +76,8 @@ export const ProfileAPI = {
         formData.append('avatarUrl', avatarUrl)
         formData.append('coverUrl', coverUrl)
         formData.append('description', description)
-        formData.append('avatar', avatar)
-        formData.append('cover', cover)
-
+        formData.append('avatar', avatar === ' ' ? new File([], 'empty.txt', { type: 'text/plain' }) : avatar)
+        formData.append('cover', cover === ' ' ? new File([], 'empty.txt', { type: 'text/plain' }) : cover)
         try {
             const response = await instanceFile.put(
                 PathsAPI.ARTIST + PathsAPI.DATA,

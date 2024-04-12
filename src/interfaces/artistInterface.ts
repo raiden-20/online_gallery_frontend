@@ -7,7 +7,7 @@ export interface Artist {
 }
 
 export interface UserShort {
-    id: string
-    name: string,
+    artistId: string
+    artistName: string,
     avatarUrl: string
 }

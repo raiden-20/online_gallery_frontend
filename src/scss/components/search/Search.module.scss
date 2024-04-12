@@ -49,6 +49,8 @@ $one-element-name-weight: 600;
   gap: $one-element-gap;
 
   .one_element_photo {
+    cursor: pointer;
+
     width: $one-element-img-size;
     height: $one-element-img-size;
 
@@ -58,6 +60,7 @@ $one-element-name-weight: 600;
   }
 
   .one_element_name {
+    cursor: pointer;
     font-size: $one-element-name-size;
     font-weight: $one-element-name-weight;
   }

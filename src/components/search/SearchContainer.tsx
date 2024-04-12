@@ -7,13 +7,13 @@ import {Search} from "@/components/search/Search";
 
 interface containerState {
     categories: {
-        artists: []
+        search: []
     }
 }
 
 const mapStateToProps = (state: containerState) => {
     return {
-        artists: state.categories.artists
+        search: state.categories.search
     }
 }
 

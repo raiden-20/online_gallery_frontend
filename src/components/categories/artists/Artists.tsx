@@ -1,11 +1,8 @@
-import {useRouter} from "next/navigation";
-import Image from "next/image";
-
 import artists_scss from '@/scss/components/categories/Artists.module.scss'
 
 import {UserShort} from "@/interfaces/artistInterface";
-import {MAIN_PATHS} from "@/paths/main";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
+import {OneArtist} from "@/components/categories/artists/OneArtist";
 
 interface ArtistsInterface {
     artists: UserShort[],
@@ -14,7 +11,10 @@ interface ArtistsInterface {
 }
 
 export const Artists = (props: ArtistsInterface) => {
-    const router = useRouter()
+    const select = [
+        {popular: 'popular', value: 'популярности'},
+        {popular: 'alphabet', value: 'алфавиту'},
+    ]
 
     useEffect(() => {
         props.getAllArtists()
@@ -27,23 +27,18 @@ export const Artists = (props: ArtistsInterface) => {
                 <section className={artists_scss.sort_section}>
                     <div>Сортировать по:</div>
                     <select className={artists_scss.select}>
-                        <option value="popular">популярности</option>
-                        <option value="alphabet">алфавиту</option>
+                        {select.map((option: {popular: string, value: string}) => {
+                            return (
+                                <option value={option.popular}>{option.value}</option>
+                            )
+                        })}
                     </select>
                 </section>
             </header>
             <main>
                 <ul className={artists_scss.users}>
                     {props.artists.map((oneArtist: UserShort) => {
-                        return (
-                            <li className={artists_scss.one_user}
-                                onClick={() => router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + oneArtist.id)}>
-                                <Image loader={() => oneArtist.avatarUrl}
-                                       src={oneArtist.avatarUrl} className={artists_scss.one_user_avatar}
-                                       alt={'default_ava'} width={0} height={0}/>
-                                <div className={artists_scss.one_user_name}>{oneArtist.name}</div>
-                            </li>
-                        )
+                        return <OneArtist oneArtist={oneArtist}/>
                     })}
                 </ul>
             </main>

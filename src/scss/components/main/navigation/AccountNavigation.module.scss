@@ -3,7 +3,7 @@
 
 $nav-height-mobile: 65px;
 
-$account_various-width: 188px;
+$account_various-width: 190px;
 $account_various-height: 284px;
 $account_various-padding: 15px;
 
@@ -24,6 +24,8 @@ $avatar-radius: 6px;
   .account_various {
     position: absolute;
     width: $account_various-width;
+
+
 
     border: $border-base;
 
@@ -47,8 +49,9 @@ $avatar-radius: 6px;
 
     .account_data {
       height: min-content;
-      display: flex;
-      gap: $account_various-data-gap;
+      display: grid;
+      grid-template-columns: $avatar-size auto;
+      column-gap: $account_various-data-gap;
 
 
       .avatar {
@@ -59,6 +62,11 @@ $avatar-radius: 6px;
         object-fit: cover;
 
         border-radius: $avatar-radius;
+      }
+
+      .name_section {
+        width: 100%;
+        word-break: break-all;
       }
     }
   }
@@ -96,6 +104,7 @@ $avatar-radius: 6px;
     }
 
     .name, .button {
+      cursor: pointer;
       font-size: 20px;
     }
   }

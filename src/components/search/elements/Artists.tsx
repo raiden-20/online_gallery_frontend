@@ -1,9 +1,8 @@
 import search_scss from "@/scss/components/search/Search.module.scss";
-import Image from "next/image";
-import default_avatar from "@/assets/default/default_ava_nav.svg";
 import {useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/paths/main";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {useEffect} from "react";
+import Cookies from "js-cookie";
 
 interface SearchCustomers {
     artistId: string,
@@ -13,7 +12,7 @@ interface SearchCustomers {
 }
 
 interface ArtistsInterface {
-    artists: SearchCustomers[],
+    search: SearchCustomers[],
     input_name: string,
 
     getAllArtists(): void
@@ -24,6 +23,10 @@ export const Artists = (props: ArtistsInterface) => {
     const router = useRouter()
 
     useEffect(() => {
+        props.getAllArtists()
+    }, []);
+
+    useEffect(() => {
         if (props.input_name === '') {
             props.getAllArtists()
         } else {
@@ -31,18 +34,22 @@ export const Artists = (props: ArtistsInterface) => {
         }
     }, [props.input_name]);
 
-    props.artists.sort((a, b) => Number.parseInt(a.viewsCount) - Number.parseInt(b.viewsCount))
+    props.search.sort((a, b) => Number.parseInt(a.viewsCount) - Number.parseInt(b.viewsCount))
 
     return (
         <ul>
-            {props.artists.map((oneElement:SearchCustomers) => {
+            {props.search.map((oneElement:SearchCustomers) => {
                 return (
                     <li className={search_scss.one_element}
-                        onClick={() => router.push(MAIN_PATHS.PROFILE)}>
-                        <Image loader={() => oneElement.avatarUrl}
-                               src={oneElement.avatarUrl === '' ? default_avatar : oneElement.avatarUrl}
-                               className={search_scss.one_element_photo}
-                               alt={'avatar'} width={0} height={0}/>
+                        onClick={() => {
+                            router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + oneElement.artistId)
+                            Cookies.set("currentRole", ROLES.ARTIST)
+                            Cookies.set("currentId", oneElement.artistId)
+                        }
+                    }>
+                        <img src={oneElement.avatarUrl === '' ? "/default_ava_nav.jpg" : oneElement.avatarUrl}
+                             className={search_scss.one_element_photo}
+                             alt={'avatar'}/>
                         <div className={search_scss.one_element_name}>{oneElement.artistName}</div>
                     </li>
                 )

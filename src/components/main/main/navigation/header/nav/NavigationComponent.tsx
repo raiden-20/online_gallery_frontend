@@ -11,7 +11,7 @@ import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {signIn} from "next-auth/react";
 import {useSession} from "next-auth/react";
 import Cookies from "js-cookie";
-import {AccountNavigation} from "@/components/main/main/navigation/nav/AccountNavigation";
+import {AccountNavigationContainer} from "@/components/main/main/navigation/header/AccountNavigationContainer";
 
 export const NavigationComponent = () => {
     const router = useRouter()
@@ -20,6 +20,8 @@ export const NavigationComponent = () => {
 
     const [isAccountClicked, setIsAccountClicked] = useState(false)
     const [isAccountNavClicked, setIsAccountNavClicked] = useState(false)
+
+    const [registrationFlag] = useState(Cookies.get('registrationFlag'))
 
     return (
         <ul className={navigation_scss.nav}>
@@ -66,7 +68,7 @@ export const NavigationComponent = () => {
                 </button>
             </li>
             {isAccountClicked ?
-                <AccountNavigation setIsMenuClicked={setIsAccountNavClicked}/>
+                <AccountNavigationContainer setIsMenuClicked={setIsAccountNavClicked}/>
                 : null}
             <li className={navigation_scss.img_section}>
                 <button onClick={() => router.push(MAIN_PATHS.SEARCH)}>
@@ -76,13 +78,14 @@ export const NavigationComponent = () => {
             </li>
             <li>
                 <button onClick={() => {
-                    if (status === 'unauthenticated' || session === null) {
+                    if ((status === 'unauthenticated' || session === null)) {
                         signIn('keycloak')
                             .then(() => {
                                 Cookies.set('role', ROLES.CUSTOMER)
+                                Cookies.set('status', 'authenticated')
 
                             })
-                    } else {
+                     } else {
                         setIsAccountClicked(!isAccountClicked)
                     }
                 }

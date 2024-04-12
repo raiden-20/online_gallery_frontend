@@ -4,13 +4,23 @@ $root-padding: 35px 0;
 
 $page-title-size: 32px;
 
-$users-gap: 15px;
+$users-gap: 48px;
 
+$one-user-width: 234px;
 $one-user-gap: 10px;
-$one-user-avatar-size: 255px;
+$one-user-data-gap: 12px;
+$one-user-avatar-size: 200px;
+$one-user-avatar-radius: 15px;
 $one-user-name-size: 32px;
 
+$one-user-photo-size: 307px;
+$one-user-photo-radius: 8px;
+$one-user-photo-gap: 8px;
+
+$photo-max-width: 796px;
+
 .root {
+  width: 100%;
   padding: $root-padding;
 
   display: flex;
@@ -41,28 +51,81 @@ $one-user-name-size: 32px;
 }
 
 .users {
-  cursor: pointer;
-
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column;
 
   gap: $users-gap;
 
   .one_user {
-    display: flex;
-    flex-flow: column;
+    position: relative;
+    cursor: pointer;
 
-      gap: $one-user-gap;
+    display: grid;
+    grid-template-columns: $one-user-width auto;
+    column-gap: 35px;
 
-    .one_user_avatar {
-      width: $one-user-avatar-size;
-      height: $one-user-avatar-size;
-      object-fit: cover;
+    .user_data {
+      width: $one-user-width;
+
+      display: grid;
+      grid-template-rows: repeat(3, min-content);
+      gap: $one-user-data-gap;
+
+      justify-items: center;
+
+      .one_user_avatar {
+        cursor: pointer;
+        width: $one-user-avatar-size;
+        height: $one-user-avatar-size;
+
+        border-radius: $one-user-avatar-radius;
+
+        img {
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+
+          border-radius: $one-user-avatar-radius;
+        }
+      }
+
+      .one_user_name {
+        cursor: pointer;
+        font-size: $one-user-name-size;
+        text-align: center;
+
+        word-break: break-all;
+      }
     }
 
-    .one_user_name {
-      font-size: $one-user-name-size;
-      text-align: center;
+    .one_user_photo {
+      scroll-behavior: smooth;
+      max-width: $photo-max-width;
+      display: flex;
+      gap: $one-user-photo-gap;
+
+      overflow: hidden;
+
+      .onePhoto {
+        width: $one-user-photo-size;
+        height: $one-user-photo-size;
+        object-fit: cover;
+
+        border-radius: $one-user-photo-radius;
+      }
     }
   }
+}
+
+.next_icon {
+  position: absolute;
+  top: $one-user-photo-size / 2 - 20px;
+  right: 10px;
+}
+
+.back_icon {
+  position: absolute;
+  top: $one-user-photo-size / 2 - 20px;
 }

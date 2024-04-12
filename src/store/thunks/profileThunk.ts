@@ -1,9 +1,16 @@
 import {Dispatch} from "redux";
 import {ProfileAPI} from "@/api/profileAPI";
-import {clearProfileReducer, setArtistData, setCustomerData} from "@/store/reducers/profileReducer";
+import {
+    clearProfileReducer,
+    setArtistData,
+    setCustomerData,
+    setMyArtistData,
+    setMyCustomerData
+} from "@/store/reducers/profileReducer";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
+import {Customer} from "@/interfaces/customerInterface";
 
 
 export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
@@ -12,7 +19,12 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        dispatch(clearProfileReducer())
+                        if (id === Cookies.get('customerId') && response[1].artistId) {
+                            Cookies.set('artistId', response[1].artistId)
+                        }
+                        if (id === Cookies.get('customerId')) {
+                            dispatch(setMyCustomerData(response[1]))
+                        }
                         dispatch(setCustomerData(response[1]))
 
                         break
@@ -33,7 +45,9 @@ export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        dispatch(clearProfileReducer())
+                        if (id === Cookies.get('artistId')) {
+                            dispatch(setMyArtistData(response[1]))
+                        }
                         dispatch(setArtistData(response[1]))
                         break
                     }
@@ -55,6 +69,8 @@ export const changeCustomerProfileData = (customerName: string, birthDate: strin
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
+
                         break
                     }
                     case 404 : {
@@ -63,6 +79,11 @@ export const changeCustomerProfileData = (customerName: string, birthDate: strin
                     }
                     case 400 : {
                         setMessage('Файл слишком большой')
+                        break
+                    }
+                    case 413 : {
+                        setMessage('Файл слишком большой')
+                        break
                     }
                 }
             }).catch(error => {
@@ -78,6 +99,7 @@ export const changeArtistProfileData = (artistName: string, avatarUrl: string, c
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                         break
                     }
                     case 404 : {
@@ -86,6 +108,11 @@ export const changeArtistProfileData = (artistName: string, avatarUrl: string, c
                     }
                     case 400 : {
                         setMessage('Файл слишком большой')
+                        break
+                    }
+                    case 413 : {
+                        setMessage('Файл слишком большой')
+                        break
                     }
                 }
             }).catch(error => {
@@ -93,15 +120,15 @@ export const changeArtistProfileData = (artistName: string, avatarUrl: string, c
         })
     }
 
-export const createArtistProfile = (artistName: string, setMessage: (message: string) => void) =>
+export const createArtistProfile = (artistName: string, setMessage: (message: string) => void,
+                                    router: AppRouterInstance) =>
     () => {
         ProfileAPI.CreateArtistAPI(artistName)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
                         Cookies.set('artistId', response[1])
-                        Cookies.set('currentId', response[1])
-
+                        router.push(MAIN_PATHS.MAIN)
                         break
                     }
                     case 409 : {
@@ -116,7 +143,7 @@ export const createArtistProfile = (artistName: string, setMessage: (message: st
     }
 
 export const createCustomerProfile = (customerName: string, birthDate: string, gender: string,
-                                      setMessage: (message: string) => void) =>
+                                      setMessage: (message: string) => void, router: AppRouterInstance) =>
     () => {
         ProfileAPI.CreateCustomerAPI(customerName, birthDate, gender)
             .then(response => {
@@ -125,6 +152,8 @@ export const createCustomerProfile = (customerName: string, birthDate: string, g
                         Cookies.set('customerId', response[1])
                         Cookies.set('currentId', response[1])
                         Cookies.set('registrationFlag', 'true')
+                        router.push(MAIN_PATHS.CREATE_ARTIST)
+
                         break
                     }
                     case 409 : {
@@ -146,11 +175,12 @@ export const isCustomerCreate = (router: AppRouterInstance) =>
                 .then(response => {
                     switch (response[0]) {
                         case 200 : {
-                            debugger
-                            if (!response[1]) {
+                            if (response[1]) {
                                 router.push(MAIN_PATHS.CREATE_CUSTOMER)
+                                Cookies.set('registrationFlag', 'process')
+                            } else {
+                                Cookies.set('registrationFlag', 'true')
                             }
-                            Cookies.set('registrationFlag', 'true')
                             break
                         }
                     }

@@ -22,6 +22,10 @@ $img-size: 20px;
       gap: $one-info-fap;
 
       text-align: center;
+
+      .icon {
+        display: none;
+      }
     }
   }
 }
@@ -41,6 +45,10 @@ $img-size: 20px;
         display: flex;
         flex-flow: row;
         align-items: center;
+
+        .icon {
+          display: block;
+        }
       }
     }
   }

@@ -9,6 +9,7 @@ $one-work-name_weight: 600;
 $one-work-img-radius: 10px;
 
 .root {
+  width: 100%;
 
   display: flex;
   flex-wrap: wrap;
@@ -38,5 +39,14 @@ $one-work-img-radius: 10px;
 
   .one_work_weight {
     font-weight: $one-work-name_weight;
+  }
+}
+
+@media screen and (max-width: 752px) {
+  .root {
+    display: grid;
+  }
+  .one_work {
+    width: 100%;
   }
 }

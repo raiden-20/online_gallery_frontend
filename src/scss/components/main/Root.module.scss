@@ -1,6 +1,7 @@
 @import "@/scss/globals/main_values";
 
 $root-gap: 16px;
+$root-padding-one: 24px;
 
 .page {
   display: grid;
@@ -12,7 +13,7 @@ $root-gap: 16px;
 }
 
 .root {
-  width: $width;
+  width: $width + $root-padding-one * 2;
   display: grid;
   grid-template-rows: min-content auto min-content;
   row-gap: $root-gap;

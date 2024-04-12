@@ -3,25 +3,30 @@ import Image from "next/image";
 
 import github_icon from '@/assets/icons/nav/github.svg'
 
+interface footerLinksInterface {
+    title: string
+    link: string,
+}
+
 export const FooterComponent = () => {
+    const footer_links: footerLinksInterface[] = [
+        {title: 'Copyright © 2024 Lindéro', link: ''},
+        {title: 'Информация', link: ''},
+        {title: 'Техническая поддержка', link: ''}
+    ]
+
     return (
         <section className={footer_scss.root}>
             <ul className={footer_scss.nav}>
-                <li>
-                    Copyright © 2024 Lindéro
-                </li>
-                <li>
-                    <a>
-                        Информация
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        Техническая поддержка
-                    </a>
-                </li>
+                {footer_links.map((oneLink: footerLinksInterface, index) => {
+                    return (
+                        <li className={index === 0 ? footer_scss.first : undefined}>
+                            <a className={footer_scss.oneLink}>{oneLink.title}</a>
+                        </li>
+                    )
+                })}
             </ul>
-            <section>
+            <section className={footer_scss.github_section}>
                 <a>
                     <Image src={github_icon} className={footer_scss.github_image}
                            alt={'github_icon'} width={0} height={0}/>

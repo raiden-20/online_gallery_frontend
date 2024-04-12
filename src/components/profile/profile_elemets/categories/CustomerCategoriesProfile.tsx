@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {WorksProfileComponent} from "@/components/profile/profile_elemets/categories/works/WorksProfileComponent";
-import {AboutArtist} from "@/components/profile/profile_elemets/categories/artist/about/AboutArtist";
+import {AboutArtistComponent} from "@/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent";
 import {
     CustomerNavigationProfileComponent
 } from "@/components/profile/profile_elemets/navigation/CustomerNavigationProfileComponent";

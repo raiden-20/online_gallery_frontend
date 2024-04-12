@@ -1,0 +1,40 @@
+@import "@/scss/globals/color";
+
+$root-gap: 25px;
+$one-post-gap: 16px;
+$one-post-title-size: 24px;
+$one-post-title-weight: 600;
+$one-post-border-padding: 48px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.one_post {
+  display: flex;
+  flex-flow: column;
+  gap: $one-post-gap;
+
+  .one_post_img {
+    width: 100%;
+  }
+
+  .one_post_title {
+    font-size: $one-post-title-size;
+    font-weight: $one-post-title-weight;
+  }
+
+  .one_post_date {
+    display: grid;
+    color: $grey-date;
+
+    text-align: end;
+  }
+}
+
+.border {
+  border-bottom: 1px solid $grey_border;
+  padding-bottom: $one-post-border-padding;
+}

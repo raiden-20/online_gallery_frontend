@@ -3,7 +3,8 @@ import {
 } from "@/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent";
 import {WorksProfileComponent} from "@/components/profile/profile_elemets/categories/works/WorksProfileComponent";
 import {useState} from "react";
-import {AboutArtist} from "@/components/profile/profile_elemets/categories/artist/about/AboutArtist";
+import {AboutArtistComponent} from "@/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent";
+import {PostsArtistComponent} from "@/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent";
 
 interface ArtistCategoryInterface {
     input_description: string
@@ -17,8 +18,9 @@ export const ArtistCategoriesProfile = (props: ArtistCategoryInterface) => {
         <section>
             <ArtistNavigationProfileComponent setWhoIsClicked={setWhoIsClicked} whoIsClicked={whoIsClicked}/>
             {whoIsClicked === 1 ? <WorksProfileComponent/> :
-            whoIsClicked === 4 ? <AboutArtist input_description={props.input_description}
-                                              setInput_description={props.setInput_description}/> : null}
+            whoIsClicked === 3 ? <PostsArtistComponent/> :
+            whoIsClicked === 4 ? <AboutArtistComponent input_description={props.input_description}
+                                                       setInput_description={props.setInput_description}/> : null}
         </section>
     )
 }

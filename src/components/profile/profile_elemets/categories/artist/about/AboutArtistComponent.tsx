@@ -18,7 +18,7 @@ interface info {
     data: string
 }
 
-export const AboutArtist = (props: AboutInterface) => {
+export const AboutArtistComponent = (props: AboutInterface) => {
     const info: info[] = [
         {icon: saled_paintings_icon, title: 'Проданные картины', data: '10'},
         {icon: count_saled_icon, title: 'Сумма продаж', data: '100000 ₽'},

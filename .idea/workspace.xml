@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="fix design about artist">
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="fix design works profile">
+      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/PostsArtist.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/CustomerCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/CustomerCategoriesProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/color.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +119,7 @@
       <workItem from="1712831188424" duration="996000" />
       <workItem from="1712832199169" duration="2795000" />
       <workItem from="1712853423386" duration="1672000" />
-      <workItem from="1712893848533" duration="9255000" />
+      <workItem from="1712893848533" duration="10803000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -331,7 +337,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712905576694</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="fix design works profile">
+      <option name="closed" value="true" />
+      <created>1712906013408</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1712906013408</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +375,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete some pages" />
     <MESSAGE value="add all necessary images for 1 sprint" />
     <MESSAGE value="changed paths" />
     <MESSAGE value="components design and routing for first sprint" />
@@ -386,6 +399,7 @@
     <MESSAGE value="design mobile version for footer" />
     <MESSAGE value="design works in profile" />
     <MESSAGE value="fix design about artist" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix design about artist" />
+    <MESSAGE value="fix design works profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix design works profile" />
   </component>
 </project>

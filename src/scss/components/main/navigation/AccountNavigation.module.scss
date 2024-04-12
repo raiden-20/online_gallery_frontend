@@ -72,7 +72,7 @@ $avatar-radius: 6px;
   }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: $max-device-width) {
   .account_section {
     z-index: $z-index-menu;
     position: fixed;

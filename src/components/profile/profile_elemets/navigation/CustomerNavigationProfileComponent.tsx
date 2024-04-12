@@ -1,23 +1,21 @@
-import {useState} from "react";
 import nav_profile_scss from "@/scss/components/profile/Navigation.module.scss";
 import {ProfileNavInterface} from "@/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent";
 
 export const CustomerNavigationProfileComponent = (props: ProfileNavInterface) => {
+    const categories = [ 'Коллекция' , 'О себе']
 
     return (
         <ul className={nav_profile_scss.root}>
-            <li className={props.whoIsClicked === 1 ? nav_profile_scss.active : undefined}
-                onClick={() => props.setWhoIsClicked(1)}>
-                <button className={nav_profile_scss.button}>
-                    Коллекция
-                </button>
-            </li>
-            <li className={props.whoIsClicked === 2 ? nav_profile_scss.active : undefined}
-                onClick={() => props.setWhoIsClicked(2)}>
-                <button className={nav_profile_scss.button}>
-                    О себе
-                </button>
-            </li>
+            {categories.map((one_category: string, index) => {
+                return (
+                    <li className={props.whoIsClicked === index + 1? nav_profile_scss.active : undefined}
+                        onClick={() => props.setWhoIsClicked(index + 1)}>
+                        <button className={nav_profile_scss.button}>
+                            {one_category}
+                        </button>
+                    </li>
+                )
+            })}
         </ul>
     )
 }

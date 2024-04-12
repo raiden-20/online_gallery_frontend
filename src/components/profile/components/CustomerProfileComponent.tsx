@@ -45,7 +45,7 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     const [isAvatarDeleted, setIsAvatarDeleted] = useState(false)
     const [isCoverDeleted, setIsCoverDeleted] = useState(false)
 
-   // const [input_description, setInput_description] = useState(props.customer_data.description)
+    const [input_description, setInput_description] = useState('dfghtgd') // todo добавить описание
 
     const [message, setMessage] = useState('')
 
@@ -130,7 +130,8 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
                                     deleteAvatar={deleteAvatar} deleteCover={deleteCover}
                                     message={message}
                                     setIsNeedChangeData={setIsNeedChangeData}/>
-            <CustomerCategoriesProfile/>
+            <CustomerCategoriesProfile input_description={input_description}
+                                       setInput_description={setInput_description}/>
         </section>
     )
 }

@@ -1,0 +1,47 @@
+@import "@/scss/globals/main_values";
+
+$root-gap: 48px;
+$root-gap-mobile: 30px;
+
+$one-info-fap: 10px;
+
+$img-size: 20px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+
+  .info_section {
+    display: flex;
+    justify-content: space-between;
+
+    .one_info {
+      display: flex;
+      flex-flow: column;
+      gap: $one-info-fap;
+
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: $max-device-width){
+  .root {
+    gap: $root-gap-mobile;
+
+    .info_section {
+      flex-flow: column;
+
+      img {
+        width: $img-size;
+      }
+
+      .one_info {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+      }
+    }
+  }
+}

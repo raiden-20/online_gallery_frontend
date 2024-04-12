@@ -28,7 +28,7 @@ $root-gap: 16px;
   }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: $max-device-width) {
   .mobile_nav {
     display: flex;
   }

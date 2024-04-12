@@ -67,11 +67,13 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                                 <input className={header_profile_scss.hidden} type="file" id="setCover"
                                        onChange={(event) => props.changeInputCover(event)}/>
                                 <label htmlFor="setCover">
-                                    <Image src={change_cover} alt={'change_cover'} width={0} height={0} priority={true}/>
+                                    <Image src={change_cover} className={header_profile_scss.change_cover_img}
+                                           alt={'change_cover'} width={0} height={0} priority={true}/>
                                 </label>
                             </button>
                             <button onClick={() => props.deleteCover()}>
-                                <Image src={delete_photo} alt={'delete_photo'} width={0} height={0} priority={true}/>
+                                <Image src={delete_photo} className={header_profile_scss.delete_img}
+                                       alt={'delete_photo'} width={0} height={0} priority={true}/>
                             </button>
                         </section>
                         : null}

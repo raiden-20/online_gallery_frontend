@@ -30,6 +30,9 @@ $change-window-buttons-gap: 16px;
 $change-window-radius: 12px;
 $change-window-shadow: 0 0 10px 0 $shadow-color;
 
+$change-cover-img-width: 200px;
+$delete-img-width: 34px;
+
 
 .page {
   display: grid;
@@ -204,5 +207,23 @@ $change-window-shadow: 0 0 10px 0 $shadow-color;
   color: $red-color;
 }
 
+@media screen and (max-width: $max-device-width) {
+  .change_cover_img {
+    width: $change-cover-img-width;
+  }
+  .delete_img {
+    width: $delete-img-width;
+  }
+}
 
-
+@media screen and (max-width: 550px) {
+  .root {
+    .profile_data {
+      .name_section {
+        .name {
+          font-size: $profile-name-size-mobile;
+        }
+      }
+    }
+  }
+}

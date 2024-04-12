@@ -5,6 +5,8 @@ $root-height: 96px;
 $root-padding: 32px 0 16px 0;
 
 $nav-buttons-font-size: 24px;
+$nav-buttons-font-size-mobile: 16px;
+$nav-buttons-weight: 600;
 
 .root {
   height: $root-height;
@@ -21,6 +23,7 @@ $nav-buttons-font-size: 24px;
 
   .button {
     font-size: $nav-buttons-font-size;
+    font-weight: $nav-buttons-weight;
   }
 
   .active {
@@ -28,17 +31,11 @@ $nav-buttons-font-size: 24px;
   }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 550px) {
   .root {
-    width: 100%;
-    display: flex;
-    flex-flow: column;
 
-    li {
-      width: 100%;
-      display: flex;
-
-      justify-content: space-between;
+    .button {
+      font-size: $nav-buttons-font-size-mobile;
     }
   }
 }

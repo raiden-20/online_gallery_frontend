@@ -144,7 +144,7 @@ $new-form-header-weight: 600;
   display: none;
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: $max-device-width) {
   .root {
     display: none;
   }

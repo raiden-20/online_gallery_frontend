@@ -17,7 +17,7 @@ export const ActionButtonsHeaderProfile = () => {
     const [role] = useState(Cookies.get('role'))
     const [status] = useState(Cookies.get('status'))
 
-    const [isCreatePost, setIsCreatePost] = useState(true)
+    const [isCreatePost, setIsCreatePost] = useState(false)
 
     return (
         <section>

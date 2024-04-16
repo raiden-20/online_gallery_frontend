@@ -1,10 +1,12 @@
 @import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
 
 $root-gap: 25px;
 $one-post-gap: 16px;
 $one-post-title-size: 24px;
 $one-post-title-weight: 600;
 $one-post-border-padding: 48px;
+$one-post-photo-height: 90%;
 
 .root {
   display: flex;
@@ -18,6 +20,7 @@ $one-post-border-padding: 48px;
   gap: $one-post-gap;
 
   .one_post_img {
+    cursor: pointer;
     width: 100%;
   }
 
@@ -32,6 +35,13 @@ $one-post-border-padding: 48px;
 
     text-align: end;
   }
+}
+
+.one_post_opened_photo {
+  height: $one-post-photo-height;
+  object-fit: cover;
+
+  z-index: $z-index-menu;
 }
 
 .border {

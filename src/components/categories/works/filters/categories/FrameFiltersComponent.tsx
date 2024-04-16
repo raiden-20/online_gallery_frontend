@@ -25,7 +25,7 @@ export const FrameFiltersComponent = () => {
                         <Image src={search_icon} alt={'search_icon'}/>
                         <input placeholder={'Поиск'}/>
                     </section>
-                    <ul className={filters_scss.size_section + ' ' + filters_scss.checkbox_section}>
+                    <ul className={filters_scss.size_section + ' ' + filters_scss.checkbox_section + ' scrollbar'}>
                         {frame.map(oneFrame => {
                             return (
                                 <li className={filters_scss.size_one_section}>

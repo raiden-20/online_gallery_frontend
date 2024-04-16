@@ -168,19 +168,6 @@ $search-gap: 12px;
       overflow-y: auto;
     }
 
-    .checkbox_section::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    .checkbox_section::-webkit-scrollbar-track {
-      background: none;
-    }
-
-    .checkbox_section::-webkit-scrollbar-thumb {
-      background: $grey-date;
-      border-radius: 2px;
-    }
-
     input[type="checkbox"] {
       cursor: pointer;
 

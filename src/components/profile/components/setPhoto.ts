@@ -1,6 +1,4 @@
-import {bool} from "prop-types";
-
-const fileSize = 2097152
+export const fileSize = 2097152
 
 export const setPhoto = (photoFile: FileList, setPhotoUrl: (photoUrl: string) => void,
                          setPhotoFile: (photoFile: File) => void, setMessage: (message: string) => void,

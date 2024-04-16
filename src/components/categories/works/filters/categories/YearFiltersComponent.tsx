@@ -19,7 +19,7 @@ export const YearFiltersComponent = () => {
                 </button>
             </header>
             {isOpen ?
-                <ul className={filters_scss.size_section + ' ' + filters_scss.checkbox_section}>
+                <ul className={filters_scss.size_section + ' ' + filters_scss.checkbox_section + ' scrollbar'}>
                     {date.map(oneDate => {
                         return (
                             <li className={filters_scss.size_one_section}>

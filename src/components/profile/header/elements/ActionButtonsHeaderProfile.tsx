@@ -7,6 +7,7 @@ import bell_icon from "@/assets/icons/profile/bell_icon.svg";
 import art_icon from "@/assets/icons/profile/art.svg";
 import create_post_icon from "@/assets/icons/profile/create_post.svg";
 import React, {useState} from "react";
+import {CreatePostProfile} from "@/components/profile/profile_elemets/create_post/CreatePostProfile";
 
 export const ActionButtonsHeaderProfile = () => {
 
@@ -15,6 +16,8 @@ export const ActionButtonsHeaderProfile = () => {
     const [currentRole] = useState(Cookies.get('currentRole'))
     const [role] = useState(Cookies.get('role'))
     const [status] = useState(Cookies.get('status'))
+
+    const [isCreatePost, setIsCreatePost] = useState(true)
 
     return (
         <section>
@@ -47,13 +50,18 @@ export const ActionButtonsHeaderProfile = () => {
                             <Image src={art_icon} alt={'art_icon'}/>
                             <div>Выставить работу</div>
                         </button>
-                        <button className={'cancel_button ' + header_profile_scss.subscriber_section}>
+                        <button className={'cancel_button ' + header_profile_scss.subscriber_section}
+                                onClick={() => setIsCreatePost(true)}>
                             <Image src={create_post_icon} alt={'create_post_icon'}/>
                             <div>Написать пост</div>
                         </button>
                     </section>
                     : null
             }
+
+            {isCreatePost ?
+                <CreatePostProfile setIsCreatePost={setIsCreatePost}/>
+                : null}
         </section>
     )
 }

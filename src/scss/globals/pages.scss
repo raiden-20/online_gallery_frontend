@@ -44,3 +44,16 @@
 
   background-color: $grey-bg;
 }
+
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: none;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: $grey-date;
+  border-radius: 2px;
+}

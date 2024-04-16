@@ -1,12 +1,12 @@
-import header_profile_scss from '@/scss/components/profile/HeaderProfile.module.scss'
-import Image from "next/image";
-import important from '@/assets/icons/profile/important.svg'
-
 import React, {useState} from "react";
+
 import {CoverSectionHeaderProfile} from "@/components/profile/header/elements/CoverSectionHeaderProfile";
 import {AvatarSectionHeaderProfile} from "@/components/profile/header/elements/AvatarSectionHeaderProfile";
 import {ActionButtonsHeaderProfile} from "@/components/profile/header/elements/ActionButtonsHeaderProfile";
 import {NameHeaderProfile} from "@/components/profile/header/elements/NameHeaderProfile";
+import {SaveDataHeaderProfile} from "@/components/profile/header/elements/SaveDataHeaderProfile";
+
+import header_profile_scss from '@/scss/components/profile/HeaderProfile.module.scss'
 
 interface HeaderProfileInterface {
     input_coverUrl: string,
@@ -50,24 +50,9 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                 </section>
             </section>
             {props.isNeedChangeData ?
-                <section className={header_profile_scss.change_data_window}>
-                    <section className={header_profile_scss.change_data_window_data}>
-                        <Image src={important} alt={'important'} width={0} height={0}/>
-                        <section>Сохранить изменения?</section>
-                    </section>
-                    <footer className={header_profile_scss.change_data_window_buttons}>
-                        <button className={'cancel_button'} onClick={() => props.cancelChanging()}>
-                            Отменить
-                        </button>
-                        <button className={'main_button'} onClick={() => {
-                            setIsNameClicked(false)
-                            props.setIsChangeDataClicked(true)
-                        }
-                        }>
-                            Сохранить
-                        </button>
-                    </footer>
-                </section>
+                <SaveDataHeaderProfile cancelChanging={props.cancelChanging}
+                                       setIsNameClicked={setIsNameClicked}
+                                       setIsChangeDataClicked={props.setIsChangeDataClicked}/>
                 : null}
         </section>
     )

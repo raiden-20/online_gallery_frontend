@@ -4,8 +4,9 @@ import bell_icon from '@/assets/icons/profile/bell_icon.svg'
 import change_cover from '@/assets/icons/profile/change_cover.svg'
 import change_avatar from '@/assets/icons/profile/change_avatar.svg'
 import important from '@/assets/icons/profile/important.svg'
-
 import delete_photo from '@/assets/icons/profile/delete_photo.svg'
+import art_icon from '@/assets/icons/profile/art.svg'
+import create_post_icon from '@/assets/icons/profile/create_post.svg'
 
 import React, {useState} from "react";
 import Cookies from "js-cookie";
@@ -141,6 +142,18 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                                        alt={'bell_icon'} width={0} height={0}/>
                             </button>
                         </section>
+                        :
+                        artistId && artistId === currentId && currentRole === ROLES.ARTIST ?
+                            <section className={header_profile_scss.artist_action_section}>
+                                <button className={'main_button ' + header_profile_scss.subscriber_section}>
+                                    <Image src={art_icon} alt={'art_icon'}/>
+                                    <div>Выставить работу</div>
+                                </button>
+                                <button className={'cancel_button ' + header_profile_scss.subscriber_section}>
+                                    <Image src={create_post_icon} alt={'create_post_icon'}/>
+                                    <div>Написать пост</div>
+                                </button>
+                            </section>
                         : null
                     }
                 </section>

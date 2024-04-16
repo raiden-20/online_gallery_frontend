@@ -33,6 +33,8 @@ $change-window-shadow: 0 0 10px 0 $shadow-color;
 $change-cover-img-width: 200px;
 $delete-img-width: 34px;
 
+$artist-action-section-gap: 15px;
+
 
 .page {
   display: grid;
@@ -168,6 +170,11 @@ $delete-img-width: 34px;
       height: $bell-height;
     }
   }
+}
+
+.artist_action_section {
+  display: flex;
+  gap: $artist-action-section-gap;
 }
 
 .change_data_window {

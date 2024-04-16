@@ -4,41 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="design for artist posts">
-      <change afterPath="$PROJECT_DIR$/src/app/paintings/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/photo/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/sculptures/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/categories/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/categories/filter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/categories/filter_category_close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/categories/filter_category_open.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/categories/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/ArtistsFiltersComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/FrameFiltersComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/MaterialsFiltersComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/PriceFiltersComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/SizeFiltersComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/StatusFilterComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/TagsFiltersComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/YearFiltersComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/categories/Filters.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="design for filters">
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/art.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/create_post.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav_elements/NavigationElementsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav_elements/NavigationElementsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/CustomerCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/CustomerCategoriesProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/WorksProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/WorksComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/color.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/globals/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/pages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,29 +50,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/messenger_frontend_v.2&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/profile",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\categories" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\sculptures" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\photo" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories" />
@@ -148,7 +121,7 @@
       <workItem from="1712853423386" duration="1672000" />
       <workItem from="1712893848533" duration="14165000" />
       <workItem from="1713190421846" duration="18212000" />
-      <workItem from="1713270577330" duration="642000" />
+      <workItem from="1713270577330" duration="1429000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -382,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712907750326</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="design for filters">
+      <option name="closed" value="true" />
+      <created>1713271743845</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1713271743845</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed paths" />
     <MESSAGE value="components design and routing for first sprint" />
     <MESSAGE value="fixed bugs" />
     <MESSAGE value="set up a keycloak" />
@@ -437,6 +417,7 @@
     <MESSAGE value="fix design about artist" />
     <MESSAGE value="fix design works profile" />
     <MESSAGE value="design for artist posts" />
-    <option name="LAST_COMMIT_MESSAGE" value="design for artist posts" />
+    <MESSAGE value="design for filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="design for filters" />
   </component>
 </project>

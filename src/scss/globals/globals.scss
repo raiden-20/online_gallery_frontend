@@ -30,6 +30,9 @@ button {
   height: $button-height;
   border-radius: $button-radius;
 
+  display: flex;
+  align-items: center;
+
   * {
     cursor: pointer;
   }

@@ -15,7 +15,7 @@ export const WorksRoot = () => {
     const pathname = usePathname().split('/')
     const lastPath = '/' + pathname[pathname.length - 1]
 
-    const [isFiltersOpen, setIsFiltersOpen] = useState(true)
+    const [isFiltersOpen, setIsFiltersOpen] = useState(false)
 
     const select = [
         {popular: 'popular', value: 'популярности'},

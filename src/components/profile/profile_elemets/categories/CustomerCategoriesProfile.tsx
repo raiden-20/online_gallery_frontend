@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {WorksProfileComponent} from "@/components/profile/profile_elemets/categories/works/WorksProfileComponent";
+import {WorksComponent} from "@/components/profile/profile_elemets/categories/works/WorksComponent";
 import {AboutArtistComponent} from "@/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent";
 import {
     CustomerNavigationProfileComponent
@@ -17,7 +17,7 @@ export const CustomerCategoriesProfile = (props: customerCategoriesInterface) =>
     return (
         <section>
             <CustomerNavigationProfileComponent setWhoIsClicked={setWhoIsClicked} whoIsClicked={whoIsClicked}/>
-            {whoIsClicked === 1 ? <WorksProfileComponent/> :
+            {whoIsClicked === 1 ? <WorksComponent/> :
             whoIsClicked === 2 ? <AboutCustomer input_description={props.input_description}
                                                 setInput_description={props.setInput_description}/> : null}
         </section>

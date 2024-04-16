@@ -1,6 +1,6 @@
 import works_profile_scss from '@/scss/components/profile/categories/WorksProfile.module.scss'
 
-export const WorksProfileComponent = () => {
+export const WorksComponent = () => {
 
     return (
         <ul className={works_profile_scss.root}>

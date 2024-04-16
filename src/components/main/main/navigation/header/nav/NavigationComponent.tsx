@@ -43,17 +43,17 @@ export const NavigationComponent = () => {
                 </button>
             </li>
             <li className={navigation_scss.visible_various}>
-                <button>
+                <button onClick={() => router.push(MAIN_PATHS.PAINTINGS)}>
                     Картины
                 </button>
             </li>
             <li className={navigation_scss.visible_various}>
-                <button>
+                <button onClick={() => router.push(MAIN_PATHS.PHOTO)}>
                     Фотографии
                 </button>
             </li>
             <li className={navigation_scss.visible_various}>
-                <button>
+                <button onClick={() => router.push(MAIN_PATHS.SCULPTURES)}>
                     Скульптуры
                 </button>
             </li>

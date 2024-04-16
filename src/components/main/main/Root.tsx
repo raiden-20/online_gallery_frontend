@@ -17,6 +17,7 @@ import {NavigationComponentMobile} from "@/components/main/main/navigation/heade
 import {Artist} from "@/interfaces/artistInterface";
 import {Customer} from "@/interfaces/customerInterface";
 import {useSession} from "next-auth/react";
+import {WorksRoot} from "@/components/categories/works/WorksRoot";
 
 interface RootInterface {
     artist_data: Artist
@@ -75,6 +76,9 @@ export const Root = (props: RootInterface) => {
                         main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
                             main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
                                 main_path === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :
+                                main_path === PATHS_CATEGORY.PAINTINGS ? <WorksRoot/> :
+                                main_path === PATHS_CATEGORY.PHOTO ? <WorksRoot/> :
+                                main_path === PATHS_CATEGORY.SCULPTURES ? <WorksRoot/> :
                                     main_path === PATHS_CATEGORY.SEARCH ? <SearchContainer/> : null
                     }
                 </main>

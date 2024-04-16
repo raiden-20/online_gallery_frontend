@@ -14,6 +14,9 @@ export const PATHS_CATEGORY = {
     PROFILE: '/profile',
     SETTINGS: '/settings',
     ARTISTS: '/artists',
+    PAINTINGS: '/paintings',
+    PHOTO: '/photo',
+    SCULPTURES: '/sculptures',
     SEARCH: '/search',
 
     ERROR_404: '/404'
@@ -32,5 +35,8 @@ export const MAIN_PATHS = {
     SETTINGS: PATHS_CATEGORY.SETTINGS,
 
     ARTISTS: PATHS_CATEGORY.ARTISTS,
+    PAINTINGS: PATHS_CATEGORY.PAINTINGS,
+    PHOTO: PATHS_CATEGORY.PHOTO,
+    SCULPTURES: PATHS_CATEGORY.SCULPTURES,
     SEARCH: PATHS_CATEGORY.SEARCH,
 }

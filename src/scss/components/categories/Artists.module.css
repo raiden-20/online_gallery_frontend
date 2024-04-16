@@ -13,14 +13,16 @@
 .header .page_title {
   font-size: 32px;
 }
-.header .sort_section {
+
+.sort_section {
   display: flex;
   align-items: end;
 }
-.header .sort_section .select {
+.sort_section .select {
   border: none;
   height: min-content;
   width: min-content;
+  font-weight: 600;
 }
 
 .users {

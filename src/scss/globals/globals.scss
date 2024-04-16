@@ -1,7 +1,6 @@
 @import '@/scss/globals/color';
 @import '@/scss/globals/main_values';
 
-
 * {
   font-size: $font-size;
 
@@ -15,8 +14,6 @@
 
 html,
 body {
-  //max-width: 100vw;
-  //height: 100vh;
   overflow-x: hidden;
 
   background-color: $white-color;
@@ -92,6 +89,7 @@ ol {
   background: #888;
   border-radius: 2px;
 }
+
 
 
 

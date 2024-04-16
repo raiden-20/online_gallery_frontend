@@ -4,6 +4,8 @@ $root-padding: 35px 0;
 
 $page-title-size: 32px;
 
+$options-weight: 600;
+
 $users-gap: 48px;
 
 $one-user-width: 234px;
@@ -35,18 +37,20 @@ $photo-max-width: 796px;
   .page_title {
     font-size: $page-title-size;
   }
+}
 
-  .sort_section {
-    display: flex;
+.sort_section {
+  display: flex;
 
-    align-items: end;
+  align-items: end;
 
-    .select {
-      border: none;
+  .select {
+    border: none;
 
-      height: min-content;
-      width: min-content;
-    }
+    height: min-content;
+    width: min-content;
+
+    font-weight: $options-weight;
   }
 }
 

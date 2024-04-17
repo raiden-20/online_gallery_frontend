@@ -21,6 +21,8 @@ $button-bell-width: 43px;
 
 $bell-width: 23px;
 $bell-height: 25px;
+$bell-width-mobile: 19px;
+$bell-height-mobile: 20px;
 
 $change-window-padding: 32px;
 $change-window-bottom: 30px;
@@ -155,15 +157,18 @@ $artist-action-section-gap: 15px;
 }
 
 .subscriber_section {
+  height: max-content;
   display: flex;
   gap: $subscriber-section-gap;
 
-  .button_bell {
+  align-items: center;
+
+  img {
     width: $button-bell-width;
 
     display: grid;
-    justify-content: center;
-    align-content: center;
+    justify-self: center;
+    align-self: center;
 
     .bell_image {
       width: $bell-width;
@@ -223,7 +228,7 @@ $artist-action-section-gap: 15px;
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
   .root {
     .profile_data {
       .name_section {
@@ -231,6 +236,18 @@ $artist-action-section-gap: 15px;
           font-size: $profile-name-size-mobile;
         }
       }
+    }
+  }
+
+  .subscriber_section {
+
+    img {
+      width: $bell-width-mobile;
+      height: $bell-height-mobile;
+    }
+
+    div {
+      font-size: 14px;
     }
   }
 }

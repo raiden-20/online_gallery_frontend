@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="design for one art page 2">
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/settings/add.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/settings/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/settings/mark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/settings/open.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/OneAddressSettingsComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/OneCardSettingsComponent.tsx" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="design for settings (+ mobile)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/color.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +117,7 @@
       <workItem from="1712893848533" duration="14165000" />
       <workItem from="1713190421846" duration="18212000" />
       <workItem from="1713270577330" duration="11689000" />
-      <workItem from="1713362698298" duration="15330000" />
+      <workItem from="1713362698298" duration="16599000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -451,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713371122005</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="design for settings (+ mobile)">
+      <option name="closed" value="true" />
+      <created>1713384635869</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1713384635869</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +477,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed settings design" />
     <MESSAGE value="react-redux connection" />
     <MESSAGE value="react-redux connection 2" />
     <MESSAGE value="adapting navigation for mobile resolution" />
@@ -506,6 +501,7 @@
     <MESSAGE value="create one art page and make routes" />
     <MESSAGE value="design for one art page" />
     <MESSAGE value="design for one art page 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="design for one art page 2" />
+    <MESSAGE value="design for settings (+ mobile)" />
+    <option name="LAST_COMMIT_MESSAGE" value="design for settings (+ mobile)" />
   </component>
 </project>

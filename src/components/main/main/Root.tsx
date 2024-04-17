@@ -2,7 +2,7 @@
 
 import root_scss from '@/scss/components/main/Root.module.scss'
 import {usePathname, useRouter} from "next/navigation";
-import {PATHS_CATEGORY} from "@/paths/main";
+import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
 import {Auth_main} from "@/components/auth/Auth_main";
 import {ProfileRoot} from "@/components/profile/ProfileRoot";
 import React, {useEffect} from "react";
@@ -18,6 +18,7 @@ import {Artist} from "@/interfaces/artistInterface";
 import {Customer} from "@/interfaces/customerInterface";
 import {useSession} from "next-auth/react";
 import {WorksRoot} from "@/components/categories/works/WorksRoot";
+import {OneWorkComponent} from "@/components/profile/profile_elemets/categories/works/OneWorkComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -33,8 +34,9 @@ interface RootInterface {
 export const Root = (props: RootInterface) => {
     const router = useRouter()
 
-    const pathname = usePathname().split('/')
-    const main_path = '/' + pathname[1]
+    const pathname = usePathname()
+    const pathnameArr = pathname.split('/')
+    const main_path = '/' + pathnameArr[1]
 
     const {  data: session} = useSession();
 
@@ -65,7 +67,7 @@ export const Root = (props: RootInterface) => {
     return (
         <section className={root_scss.page}>
             <section className={root_scss.root}>
-                <nav className={root_scss.desktop_nav}>
+                <nav className={root_scss.desktop_nav}> {/*todo перенести в одну компоненту */}
                     <NavigationComponent/>
                 </nav>
                 <nav className={root_scss.mobile_nav}>
@@ -73,13 +75,16 @@ export const Root = (props: RootInterface) => {
                 </nav>
                 <main>
                     {main_path === PATHS_CATEGORY.CREATE ? <Auth_main/> :
-                        main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
-                            main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
-                                main_path === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :
-                                main_path === PATHS_CATEGORY.PAINTINGS ? <WorksRoot/> :
-                                main_path === PATHS_CATEGORY.PHOTO ? <WorksRoot/> :
-                                main_path === PATHS_CATEGORY.SCULPTURES ? <WorksRoot/> :
-                                    main_path === PATHS_CATEGORY.SEARCH ? <SearchContainer/> : null
+                    main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
+                    main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
+                        pathname === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :
+                        pathname === PATHS_CATEGORY.PAINTINGS ? <WorksRoot/> :
+                        pathname === PATHS_CATEGORY.PHOTO ? <WorksRoot/> :
+                        pathname === PATHS_CATEGORY.SCULPTURES ? <WorksRoot/> :
+                        pathname === PATHS_CATEGORY.SEARCH ? <SearchContainer/> :
+                        pathname === MAIN_PATHS.ONE_PHOTO ? <OneWorkComponent/> :
+                        pathname === MAIN_PATHS.ONE_PAINTING ? <OneWorkComponent/> :
+                        pathname === MAIN_PATHS.ONE_SCULPTURE ? <OneWorkComponent/> : null
                     }
                 </main>
                 <FooterComponent/>

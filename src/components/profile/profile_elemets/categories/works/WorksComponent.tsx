@@ -1,11 +1,34 @@
 import works_profile_scss from '@/scss/components/profile/categories/WorksProfile.module.scss'
+import {usePathname, useRouter} from "next/navigation";
+import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
 
 export const WorksComponent = () => {
+    const router = useRouter()
+    const pathname = usePathname()
+
+    const toOneArt = () => {
+
+        switch (pathname) {
+            case PATHS_CATEGORY.PHOTO : {
+                router.push(MAIN_PATHS.ONE_PHOTO)
+                break
+            }
+            case PATHS_CATEGORY.PAINTINGS : {
+                router.push(MAIN_PATHS.ONE_PAINTING)
+                break
+            }
+            case PATHS_CATEGORY.SCULPTURES : {
+                router.push(MAIN_PATHS.ONE_SCULPTURE)
+                break
+            }
+        }
+    }
 
     return (
         <ul className={works_profile_scss.root}>
             <li>
-                <section className={works_profile_scss.one_work}>
+                <section className={works_profile_scss.one_work}
+                         onClick={toOneArt}>
                     <img src={'/default_work_profile.jpg'} className={works_profile_scss.one_work_img}
                          alt={'one work'}/>
                     <section className={works_profile_scss.one_work_names}>
@@ -16,7 +39,8 @@ export const WorksComponent = () => {
                 </section>
             </li>
             <li>
-                <section className={works_profile_scss.one_work}>
+                <section className={works_profile_scss.one_work}
+                         onClick={toOneArt}>
                     <img src={'/default_work_profile.jpg'} className={works_profile_scss.one_work_img}
                          alt={'one work'}/>
                     <section className={works_profile_scss.one_work_names}>
@@ -27,7 +51,8 @@ export const WorksComponent = () => {
                 </section>
             </li>
             <li>
-                <section className={works_profile_scss.one_work}>
+                <section className={works_profile_scss.one_work}
+                         onClick={toOneArt}>
                     <img src={'/default_work_profile.jpg'} className={works_profile_scss.one_work_img}
                          alt={'one work'}/>
                     <section className={works_profile_scss.one_work_names}>
@@ -38,7 +63,8 @@ export const WorksComponent = () => {
                 </section>
             </li>
             <li>
-                <section className={works_profile_scss.one_work}>
+                <section className={works_profile_scss.one_work}
+                         onClick={toOneArt}>
                     <img src={'/default_work_profile.jpg'} className={works_profile_scss.one_work_img}
                          alt={'one work'}/>
                     <section className={works_profile_scss.one_work_names}>
@@ -49,7 +75,8 @@ export const WorksComponent = () => {
                 </section>
             </li>
             <li>
-                <section className={works_profile_scss.one_work}>
+                <section className={works_profile_scss.one_work}
+                         onClick={toOneArt}>
                     <img src={'/default_work_profile.jpg'} className={works_profile_scss.one_work_img}
                          alt={'one work'}/>
                     <section className={works_profile_scss.one_work_names}>
@@ -60,18 +87,8 @@ export const WorksComponent = () => {
                 </section>
             </li>
             <li>
-                <section className={works_profile_scss.one_work}>
-                <img src={'/default_work_profile.jpg'} className={works_profile_scss.one_work_img}
-                         alt={'one work'}/>
-                    <section className={works_profile_scss.one_work_names}>
-                        <div className={works_profile_scss.one_work_weight}>Имя</div>
-                        <div>Название</div>
-                    </section>
-                    <div className={works_profile_scss.one_work_weight}>100000 ₽</div>
-                </section>
-            </li>
-            <li>
-                <section className={works_profile_scss.one_work}>
+                <section className={works_profile_scss.one_work}
+                         onClick={toOneArt}>
                     <img src={'/default_work_profile.jpg'} className={works_profile_scss.one_work_img}
                          alt={'one work'}/>
                     <section className={works_profile_scss.one_work_names}>
@@ -81,7 +98,18 @@ export const WorksComponent = () => {
                     <div className={works_profile_scss.one_work_weight}>100000 ₽</div>
                 </section>
             </li>
-
+            <li>
+                <section className={works_profile_scss.one_work}
+                         onClick={toOneArt}>
+                    <img src={'/default_work_profile.jpg'} className={works_profile_scss.one_work_img}
+                         alt={'one work'}/>
+                    <section className={works_profile_scss.one_work_names}>
+                        <div className={works_profile_scss.one_work_weight}>Имя</div>
+                        <div>Название</div>
+                    </section>
+                    <div className={works_profile_scss.one_work_weight}>100000 ₽</div>
+                </section>
+            </li>
         </ul>
     )
 }

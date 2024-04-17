@@ -12,6 +12,9 @@
   flex-flow: column;
   gap: 12px;
 }
+.one_work * {
+  cursor: pointer;
+}
 .one_work .one_work_img {
   width: 100%;
   border-radius: 10px;

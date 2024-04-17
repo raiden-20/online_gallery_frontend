@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="changed state for open create page (false)">
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OneOpenedPhotoPostComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OnePostArtistComponent.tsx" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="change state filter opened on false">
+      <change afterPath="$PROJECT_DIR$/src/app/paintings/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/photo/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/sculptures/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/PostsArtist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/PostsArtist.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/WorksComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/WorksComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -53,7 +59,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/profile/create_post",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app/sculptures",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -119,7 +125,8 @@
       <workItem from="1712853423386" duration="1672000" />
       <workItem from="1712893848533" duration="14165000" />
       <workItem from="1713190421846" duration="18212000" />
-      <workItem from="1713270577330" duration="10925000" />
+      <workItem from="1713270577330" duration="11689000" />
+      <workItem from="1713362698298" duration="1316000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -401,7 +408,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713285338469</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="design for opened post photo">
+      <option name="closed" value="true" />
+      <created>1713286310553</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1713286310553</updated>
+    </task>
+    <task id="LOCAL-00037" summary="change state filter opened on false">
+      <option name="closed" value="true" />
+      <created>1713286367021</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1713286367021</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,8 +454,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed account navigation design" />
-    <MESSAGE value="created search page" />
     <MESSAGE value="changes categories API" />
     <MESSAGE value="changed profile API" />
     <MESSAGE value="fixed keycloak" />
@@ -456,6 +477,8 @@
     <MESSAGE value="sorted header profile out by elements 2" />
     <MESSAGE value="design for create post page" />
     <MESSAGE value="changed state for open create page (false)" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed state for open create page (false)" />
+    <MESSAGE value="design for opened post photo" />
+    <MESSAGE value="change state filter opened on false" />
+    <option name="LAST_COMMIT_MESSAGE" value="change state filter opened on false" />
   </component>
 </project>

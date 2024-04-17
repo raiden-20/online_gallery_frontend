@@ -19,6 +19,10 @@ $one-work-img-radius: 10px;
 }
 
 .one_work {
+  * {
+    cursor: pointer;
+  }
+
   width: $one-work-width;
 
   display: flex;

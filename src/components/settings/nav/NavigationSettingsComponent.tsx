@@ -1,5 +1,4 @@
 import nav_profile_scss from "@/scss/components/profile/Navigation.module.scss";
-
 export const NavigationSettingsComponent = (props: {setWhoIsClicked(whoIsClicked: number): void, whoIsClicked: number}) => {
 
     return (

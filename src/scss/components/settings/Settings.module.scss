@@ -2,8 +2,14 @@
 @import '@/scss/globals/main_values';
 
 $root-gap: 35px;
+
 $account-main-gap: 64px;
-$address-pay-main-gap: 35px;
+
+$address-root-gap: 24px;
+$address-pay-main-gap: 16px;
+$address-pay-main-padding: 16px;
+$address_add_gap: 8px;
+$address-gap: 10px;
 
 $section-gap: 16px;
 
@@ -39,11 +45,68 @@ $new-form-header-weight: 600;
   gap: $account-main-gap;
 }
 
+.address_root {
+  display: flex;
+  flex-flow: column;
+  gap: $address-root-gap;
+}
+
 .address_pay_main {
+  padding: $address-pay-main-padding;
+
   width: 100%;
   display: flex;
   flex-flow: column;
   gap: $address-pay-main-gap;
+
+  input:disabled {
+    background-color: $white-color;
+    color: $grey_border;
+  }
+}
+
+.address_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add_address {
+  display: flex;
+  gap: $address_add_gap;
+  align-items: center;
+}
+
+.address {
+  display: flex;
+  gap: $address-gap;
+}
+
+.one_address {
+  display: flex;
+  flex-flow: column;
+  gap: $address-pay-main-gap;
+}
+
+.footer_one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  section {
+    display: flex;
+    gap: $section-form-gap;
+  }
+
+  .disabled {
+    background-color: $grey-date;
+    color: $white-color;
+  }
+}
+
+.card_data {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .section {
@@ -144,6 +207,15 @@ $new-form-header-weight: 600;
   display: none;
 }
 
+.p {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
 @media screen and (max-width: $max-device-width) {
   .root {
     display: none;
@@ -167,6 +239,11 @@ $new-form-header-weight: 600;
     gap: $inputs-gap-row;
   }
 
+  .icon {
+    width: 21px;
+    height: 11px;
+  }
+
 
   .section {
     .section_form {
@@ -174,6 +251,41 @@ $new-form-header-weight: 600;
         width: 100%;
       }
     }
+  }
+
+  .card_data {
+    width: 240px;
+  }
+
+  .input_section {
+    gap: $address-pay-main-gap;
+  }
+
+  .footer_one {
+    display: grid;
+    gap: 16px;
+    justify-items: start;
+
+    section {
+      width: 100%;
+
+      display: flex;
+      flex-flow: column;
+    }
+  }
+}
+
+.grey_bgc {
+  background-color: $grey_bg-settings;
+  border-radius: 6px;
+  padding: 16px;
+
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+
+  button {
+    height: min-content;
   }
 }
 

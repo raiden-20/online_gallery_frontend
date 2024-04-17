@@ -2,7 +2,6 @@
 import settings_scss from '@/scss/components/settings/Settings.module.scss'
 import React, {useState} from "react";
 import {NavigationSettingsComponent} from "@/components/settings/nav/NavigationSettingsComponent";
-import {AccountSettingsComponent} from "@/components/settings/categories/account/AccountSettingsComponent";
 import {
     DeliveryAddressSettingsComponent
 } from "@/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent";
@@ -21,16 +20,16 @@ export const SettingsRoot = () => {
                 <NavigationSettingsComponent setWhoIsClicked={setWhoIsClicked}
                                              whoIsClicked={whoIsClicked}/>
                 {whoIsClicked === 1 ? <AccountSettingsContainer setWhoIsClickedMobile={setWhoIsClickedMobile}/> :
-                    whoIsClicked === 2 ? <DeliveryAddressSettingsComponent/> :
-                        whoIsClicked === 3 ? <PaySettingsComponent/> : null}
+                    whoIsClicked === 2 ? <DeliveryAddressSettingsComponent setWhoIsClickedMobile={setWhoIsClickedMobile}/> :
+                        whoIsClicked === 3 ? <PaySettingsComponent setWhoIsClickedMobile={setWhoIsClickedMobile}/> : null}
             </section>
             <section className={settings_scss.root_mobile}>
                 {whoIsClickedMobile === 0 ?
                     <NavigationSettingsComponentMobile setWhoIsClicked={setWhoIsClickedMobile}/>
                 :
-                    whoIsClicked === 1 ? <AccountSettingsContainer setWhoIsClickedMobile={setWhoIsClickedMobile}/> :
-                        whoIsClicked === 2 ? <DeliveryAddressSettingsComponent/> :
-                            whoIsClicked === 3 ? <PaySettingsComponent/> : null
+                    whoIsClickedMobile === 1 ? <AccountSettingsContainer setWhoIsClickedMobile={setWhoIsClickedMobile}/> :
+                        whoIsClickedMobile === 2 ? <DeliveryAddressSettingsComponent setWhoIsClickedMobile={setWhoIsClickedMobile}/> :
+                            whoIsClickedMobile === 3 ? <PaySettingsComponent setWhoIsClickedMobile={setWhoIsClickedMobile}/> : null
                 }
             </section>
         </section>

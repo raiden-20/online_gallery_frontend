@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="design for one art page">
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="design for one art page 2">
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/settings/add.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/settings/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/settings/mark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/settings/open.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/OneAddressSettingsComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/OneCardSettingsComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/color.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -51,7 +62,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/settings/categories/pay",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -64,11 +75,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\settings\categories\pay" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\settings" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\sculptures" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\photo" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile\create_post" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\header\elements" />
@@ -118,7 +129,7 @@
       <workItem from="1712893848533" duration="14165000" />
       <workItem from="1713190421846" duration="18212000" />
       <workItem from="1713270577330" duration="11689000" />
-      <workItem from="1713362698298" duration="6270000" />
+      <workItem from="1713362698298" duration="15330000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -432,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713369998047</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="design for one art page 2">
+      <option name="closed" value="true" />
+      <created>1713371122005</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1713371122005</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed keycloak" />
     <MESSAGE value="changed settings design" />
     <MESSAGE value="react-redux connection" />
     <MESSAGE value="react-redux connection 2" />
@@ -487,6 +505,7 @@
     <MESSAGE value="change state filter opened on false" />
     <MESSAGE value="create one art page and make routes" />
     <MESSAGE value="design for one art page" />
-    <option name="LAST_COMMIT_MESSAGE" value="design for one art page" />
+    <MESSAGE value="design for one art page 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="design for one art page 2" />
   </component>
 </project>

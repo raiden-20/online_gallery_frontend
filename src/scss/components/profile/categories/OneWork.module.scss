@@ -89,6 +89,10 @@ $tag-padding: 4px 16px;
       color: $grey-filter-price-border;
     }
 
+    .info_text {
+      font-size: $more-info-noimp;
+    }
+
     .tags_section {
       display: flex;
       gap: $tags-section-gap;

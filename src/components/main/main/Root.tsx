@@ -20,6 +20,7 @@ import {useSession} from "next-auth/react";
 import {WorksRoot} from "@/components/categories/works/WorksRoot";
 import {OneWorkComponent} from "@/components/profile/profile_elemets/categories/works/OneWorkComponent";
 import {CartComponent} from "@/components/cart/CartComponent";
+import {MainComponent} from "@/components/main/MainComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -75,7 +76,8 @@ export const Root = (props: RootInterface) => {
                     <NavigationComponentMobile/>
                 </nav>
                 <main>
-                    {main_path === PATHS_CATEGORY.CREATE ? <Auth_main/> :
+                    {main_path === PATHS_CATEGORY.MAIN ? <MainComponent/> :
+                    main_path === PATHS_CATEGORY.CREATE ? <Auth_main/> :
                     main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
                     main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
                         pathname === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :

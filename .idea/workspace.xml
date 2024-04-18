@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="change subscriber word on support">
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/pages.scss" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="hide scroll">
+      <change afterPath="$PROJECT_DIR$/public/default_action.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/default_artist_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/default_banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/default_rec_auc_photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/main/next.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/main/Main.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -44,29 +52,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/settings/categories/pay&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\main" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\settings\categories\pay" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\settings" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\sculptures" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\photo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\header\elements" />
@@ -117,7 +125,8 @@
       <workItem from="1713190421846" duration="18212000" />
       <workItem from="1713270577330" duration="11689000" />
       <workItem from="1713362698298" duration="17017000" />
-      <workItem from="1713418643299" duration="2855000" />
+      <workItem from="1713418643299" duration="3811000" />
+      <workItem from="1713467453029" duration="4939000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -471,7 +480,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713421434075</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="hide scroll">
+      <option name="closed" value="true" />
+      <created>1713421603939</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1713421603939</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adapting navigation for mobile resolution v2" />
     <MESSAGE value="adapting settings for mobile resolution" />
     <MESSAGE value="fixed app width" />
     <MESSAGE value="testing part 1" />
@@ -526,6 +542,7 @@
     <MESSAGE value="design for header profile" />
     <MESSAGE value="create cart page and design" />
     <MESSAGE value="change subscriber word on support" />
-    <option name="LAST_COMMIT_MESSAGE" value="change subscriber word on support" />
+    <MESSAGE value="hide scroll" />
+    <option name="LAST_COMMIT_MESSAGE" value="hide scroll" />
   </component>
 </project>

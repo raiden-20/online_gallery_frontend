@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="design for header profile">
-      <change afterPath="$PROJECT_DIR$/src/app/cart/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-    </list>
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="create cart page and design" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +115,7 @@
       <workItem from="1713190421846" duration="18212000" />
       <workItem from="1713270577330" duration="11689000" />
       <workItem from="1713362698298" duration="17017000" />
-      <workItem from="1713418643299" duration="2085000" />
+      <workItem from="1713418643299" duration="2534000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -463,7 +453,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713386138180</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="create cart page and design">
+      <option name="closed" value="true" />
+      <created>1713421182830</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1713421182830</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="react-redux connection 2" />
     <MESSAGE value="adapting navigation for mobile resolution" />
     <MESSAGE value="adapting navigation for mobile resolution v2" />
     <MESSAGE value="adapting settings for mobile resolution" />
@@ -518,6 +515,7 @@
     <MESSAGE value="design for one art page 2" />
     <MESSAGE value="design for settings (+ mobile)" />
     <MESSAGE value="design for header profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="design for header profile" />
+    <MESSAGE value="create cart page and design" />
+    <option name="LAST_COMMIT_MESSAGE" value="create cart page and design" />
   </component>
 </project>

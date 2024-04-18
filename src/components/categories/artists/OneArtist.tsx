@@ -75,7 +75,7 @@ export const OneArtist = (props: OneArtistsInterface) => {
                                             })
                                     }
                                 }}>
-                            Подписаться
+                            Поддержать
                         </button>
                         <button className={header_profile_scss.button_bell}>
                             <Image src={bell_icon} className={header_profile_scss.bell_image}

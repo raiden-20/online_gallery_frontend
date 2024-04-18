@@ -57,3 +57,17 @@
   background: $grey-date;
   border-radius: 2px;
 }
+
+
+html::-webkit-scrollbar {
+  width: 0px;
+}
+
+.html::-webkit-scrollbar-track {
+  background: none;
+}
+
+.html::-webkit-scrollbar-thumb {
+  background: $grey-date;
+  border-radius: 0px;
+}

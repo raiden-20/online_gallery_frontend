@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="create cart page and design" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="change subscriber word on support">
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/pages.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +117,7 @@
       <workItem from="1713190421846" duration="18212000" />
       <workItem from="1713270577330" duration="11689000" />
       <workItem from="1713362698298" duration="17017000" />
-      <workItem from="1713418643299" duration="2534000" />
+      <workItem from="1713418643299" duration="2855000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -461,7 +463,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713421182830</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="change subscriber word on support">
+      <option name="closed" value="true" />
+      <created>1713421434075</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1713421434075</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adapting navigation for mobile resolution" />
     <MESSAGE value="adapting navigation for mobile resolution v2" />
     <MESSAGE value="adapting settings for mobile resolution" />
     <MESSAGE value="fixed app width" />
@@ -516,6 +525,7 @@
     <MESSAGE value="design for settings (+ mobile)" />
     <MESSAGE value="design for header profile" />
     <MESSAGE value="create cart page and design" />
-    <option name="LAST_COMMIT_MESSAGE" value="create cart page and design" />
+    <MESSAGE value="change subscriber word on support" />
+    <option name="LAST_COMMIT_MESSAGE" value="change subscriber word on support" />
   </component>
 </project>

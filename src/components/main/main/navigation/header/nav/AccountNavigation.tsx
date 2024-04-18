@@ -92,7 +92,8 @@ export const AccountNavigation = (props: accountNavInterface) => {
                         </li> : null
                     }
                     <li>
-                        <button className={accountNavigation_scss.button}>
+                        <button className={accountNavigation_scss.button}
+                                onClick={() => router.push(MAIN_PATHS.CART)}>
                             Корзина
                         </button>
                     </li>

@@ -19,6 +19,7 @@ import {Customer} from "@/interfaces/customerInterface";
 import {useSession} from "next-auth/react";
 import {WorksRoot} from "@/components/categories/works/WorksRoot";
 import {OneWorkComponent} from "@/components/profile/profile_elemets/categories/works/OneWorkComponent";
+import {CartComponent} from "@/components/cart/CartComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -84,7 +85,8 @@ export const Root = (props: RootInterface) => {
                         pathname === PATHS_CATEGORY.SEARCH ? <SearchContainer/> :
                         pathname === MAIN_PATHS.ONE_PHOTO ? <OneWorkComponent/> :
                         pathname === MAIN_PATHS.ONE_PAINTING ? <OneWorkComponent/> :
-                        pathname === MAIN_PATHS.ONE_SCULPTURE ? <OneWorkComponent/> : null
+                        pathname === MAIN_PATHS.ONE_SCULPTURE ? <OneWorkComponent/> :
+                    main_path === PATHS_CATEGORY.CART ? <CartComponent/> : null
                     }
                 </main>
                 <FooterComponent/>

@@ -1,0 +1,45 @@
+.root {
+  padding: 35px 0;
+  display: flex;
+  flex-flow: column;
+  gap: 35px;
+}
+
+.header {
+  font-size: 32px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: auto min-content;
+  gap: 100px;
+}
+
+.arts {
+  height: 65vh;
+  display: flex;
+  flex-flow: column;
+  gap: 35px;
+  overflow-x: hidden;
+}
+
+.arts::-webkit-scrollbar {
+  width: 0;
+}
+
+.buy_section {
+  width: 280px;
+  display: flex;
+  flex-flow: column;
+  gap: 35px;
+}
+.buy_section .buy_data {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+.buy_section .buy_data .total_text, .buy_section .buy_data .price_text {
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=Cart.module.css.map */

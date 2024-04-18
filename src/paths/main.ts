@@ -18,6 +18,7 @@ export const PATHS_CATEGORY = {
     PHOTO: '/photo',
     SCULPTURES: '/sculptures',
     SEARCH: '/search',
+    CART: '/cart',
 
     ERROR_404: '/404'
 }
@@ -39,6 +40,8 @@ export const MAIN_PATHS = {
     PHOTO: PATHS_CATEGORY.PHOTO,
     SCULPTURES: PATHS_CATEGORY.SCULPTURES,
     SEARCH: PATHS_CATEGORY.SEARCH,
+
+    CART: PATHS_CATEGORY.CART,
 
     ONE_PAINTING: PATHS_CATEGORY.PAINTINGS + '/[id]',
     ONE_PHOTO: PATHS_CATEGORY.PHOTO + '/[id]',

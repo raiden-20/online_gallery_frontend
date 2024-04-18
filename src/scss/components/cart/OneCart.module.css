@@ -1,0 +1,25 @@
+.root {
+  width: 100%;
+  display: grid;
+  grid-template-columns: min-content auto max-content;
+  column-gap: 15px;
+}
+.root .img {
+  width: 255px;
+  object-fit: cover;
+}
+.root .art_data {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+.root .price_section {
+  height: min-content;
+  display: grid;
+  justify-items: end;
+}
+.root .text {
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=OneCart.module.css.map */

@@ -1,0 +1,59 @@
+import search_scss from "@/scss/components/search/Search.module.scss";
+import {useRouter} from "next/navigation";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
+import {useEffect} from "react";
+import Cookies from "js-cookie";
+
+interface SearchCustomers {
+    artistId: string,
+    artistName: string,
+    avatarUrl: string,
+    viewsCount: string
+}
+
+interface ArtistsInterface {
+    search: SearchCustomers[],
+    input_name: string,
+
+    getAllArtists(): void
+    getSmthByName(input_name: string, type: string): void,
+}
+
+export const Artists = (props: ArtistsInterface) => {
+    const router = useRouter()
+
+    useEffect(() => {
+        props.getAllArtists()
+    }, []);
+
+    useEffect(() => {
+        if (props.input_name === '') {
+            props.getAllArtists()
+        } else {
+            props.getSmthByName(props.input_name, 'artist')
+        }
+    }, [props.input_name]);
+
+    props.search.sort((a, b) => Number.parseInt(a.viewsCount) - Number.parseInt(b.viewsCount))
+
+    return (
+        <ul>
+            {props.search.map((oneElement:SearchCustomers) => {
+                return (
+                    <li className={search_scss.one_element}
+                        onClick={() => {
+                            router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + oneElement.artistId)
+                            Cookies.set("currentRole", ROLES.ARTIST)
+                            Cookies.set("currentId", oneElement.artistId)
+                        }
+                    }>
+                        <img src={oneElement.avatarUrl === '' ? "/default_ava_nav.jpg" : oneElement.avatarUrl}
+                             className={search_scss.one_element_photo}
+                             alt={'avatar'}/>
+                        <div className={search_scss.one_element_name}>{oneElement.artistName}</div>
+                    </li>
+                )
+            })}
+        </ul>
+    )
+}

@@ -1,0 +1,41 @@
+@import '@/scss/globals/main_values';
+
+$rout-top: 206px;
+$root-height: 96px;
+$root-padding: 32px 0 16px 0;
+
+$nav-buttons-font-size: 24px;
+$nav-buttons-font-size-mobile: 16px;
+$nav-buttons-weight: 600;
+
+.root {
+  height: $root-height;
+  padding: $root-padding;
+
+  display: flex;
+
+  li {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .button {
+    font-size: $nav-buttons-font-size;
+    font-weight: $nav-buttons-weight;
+  }
+
+  .active {
+    border-bottom: $border-base;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .root {
+
+    .button {
+      font-size: $nav-buttons-font-size-mobile;
+    }
+  }
+}

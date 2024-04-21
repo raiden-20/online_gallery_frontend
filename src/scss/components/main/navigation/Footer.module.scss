@@ -1,0 +1,77 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+$root-height: 70px;
+$root-height-mobile: 97px;
+$root-padding: 15px 0 25px 0;
+$root-max-width: 1065px;
+
+$nav-gap: 35px;
+$nav-gap-mobile-column: 24px;
+$nav-gap-mobile-row: 4px;
+
+$github-image-size: 30px;
+
+.root {
+  padding: $root-padding;
+
+  height: $root-height;
+  width: 100%;
+
+  display: flex;
+  justify-self: center;
+  align-self: end;
+
+  justify-content: space-between;
+
+  border-top: $border-base;
+
+  .nav {
+    display: flex;
+    column-gap: $nav-gap;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    li, a {
+      font-size: $font-size-footer;
+    }
+
+
+  }
+
+  .github_section {
+    padding-left: 30px;
+
+    display: grid;
+    align-items: center;
+
+    .github_image {
+      width: $github-image-size;
+      height: $github-image-size;
+
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 580px){
+  .root {
+    height: auto;
+
+    .nav {
+      column-gap: $nav-gap-mobile-column;
+      row-gap: $nav-gap-mobile-row;
+
+      .first {
+        width: 100%;
+      }
+
+      li {
+        width: max-content;
+      }
+    }
+  }
+}
+

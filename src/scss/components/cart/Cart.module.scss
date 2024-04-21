@@ -1,0 +1,65 @@
+
+
+$root-padding: 35px 0;
+$root-gap: 35px;
+
+$main-gap: 100px;
+
+$header-size: 32px;
+
+$arts-gap: 35px;
+
+$buy-data-width: 280px;
+$buy-data-gap: 15px;
+
+$total-text-size: 24px;
+
+.root {
+  padding: $root-padding;
+
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.header {
+  font-size: $header-size;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: auto min-content;
+  gap: $main-gap;
+}
+
+.arts {
+  height: 65vh;
+
+  display: flex;
+  flex-flow: column;
+  gap: $arts-gap;
+
+  overflow-x: hidden;
+}
+
+.arts::-webkit-scrollbar {
+  width: 0;
+}
+
+.buy_section {
+  width: $buy-data-width;
+
+  display: flex;
+  flex-flow: column;
+  gap: $arts-gap;
+
+  .buy_data {
+    display: flex;
+    flex-flow: column;
+    gap: $buy-data-gap;
+
+    .total_text , .price_text{
+      font-size: $total-text-size;
+    }
+  }
+}

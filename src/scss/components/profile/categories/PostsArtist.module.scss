@@ -1,0 +1,50 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+$root-gap: 25px;
+$one-post-gap: 16px;
+$one-post-title-size: 24px;
+$one-post-title-weight: 600;
+$one-post-border-padding: 48px;
+$one-post-photo-height: 90%;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.one_post {
+  display: flex;
+  flex-flow: column;
+  gap: $one-post-gap;
+
+  .one_post_img {
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .one_post_title {
+    font-size: $one-post-title-size;
+    font-weight: $one-post-title-weight;
+  }
+
+  .one_post_date {
+    display: grid;
+    color: $grey-date;
+
+    text-align: end;
+  }
+}
+
+.one_post_opened_photo {
+  height: $one-post-photo-height;
+  object-fit: cover;
+
+  z-index: $z-index-menu;
+}
+
+.border {
+  border-bottom: 1px solid $grey_border;
+  padding-bottom: $one-post-border-padding;
+}

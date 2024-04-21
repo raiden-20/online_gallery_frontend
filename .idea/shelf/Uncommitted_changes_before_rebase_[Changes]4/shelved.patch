@@ -1,0 +1,216 @@
+Index: online_gallery_frontend/src/app/scss/globals/color.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$bgc: #FFFFFF;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/online_gallery_frontend/src/app/scss/globals/color.scss b/online_gallery_frontend/src/app/scss/globals/color.scss
+--- a/online_gallery_frontend/src/app/scss/globals/color.scss	(revision fcf1adb7bf818978f765a404012befed4d1db99b)
++++ b/online_gallery_frontend/src/app/scss/globals/color.scss	(date 1711660781182)
+@@ -1,1 +1,3 @@
+-$bgc: #FFFFFF;
+\ No newline at end of file
++$bgc: #FFFFFF;
++
++$border-color: #0F0F10;
+\ No newline at end of file
+Index: online_gallery_frontend/src/app/components/main/main/Root.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {NavigationComponent} from \"@/app/components/main/main/navigation/NavigationComponent\";\r\n\r\nexport const Root = () => {\r\n\r\n    return (\r\n        <section>\r\n            <nav>\r\n                <NavigationComponent/>\r\n            </nav>\r\n            <main>\r\n\r\n            </main>\r\n        </section>\r\n    )\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/online_gallery_frontend/src/app/components/main/main/Root.tsx b/online_gallery_frontend/src/app/components/main/main/Root.tsx
+--- a/online_gallery_frontend/src/app/components/main/main/Root.tsx	(revision fcf1adb7bf818978f765a404012befed4d1db99b)
++++ b/online_gallery_frontend/src/app/components/main/main/Root.tsx	(date 1711660781181)
+@@ -1,3 +1,5 @@
++'use client'
++
+ import {NavigationComponent} from "@/app/components/main/main/navigation/NavigationComponent";
+ 
+ export const Root = () => {
+Index: online_gallery_frontend/src/app/scss/globals/main_values.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$font-family: \"Roboto\", sans-serif;\r\n\r\n$font-size: 18px;\r\n$title-size: 24px;\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/online_gallery_frontend/src/app/scss/globals/main_values.scss b/online_gallery_frontend/src/app/scss/globals/main_values.scss
+--- a/online_gallery_frontend/src/app/scss/globals/main_values.scss	(revision fcf1adb7bf818978f765a404012befed4d1db99b)
++++ b/online_gallery_frontend/src/app/scss/globals/main_values.scss	(date 1711660781183)
+@@ -1,8 +1,12 @@
++@import "@/app/scss/globals/color";
++
+ $font-family: "Roboto", sans-serif;
+ 
+ $font-size: 18px;
+ $title-size: 24px;
+ 
++$border-base: 1px solid #0F0F10;
++
+ 
+ 
+ 
+Index: online_gallery_frontend/src/app/scss/components/main/Navigation.module.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@import \"@/app/scss/globals/color\";\r\n\r\n$nav-width: 1065px;\r\n$nav-height: 45px;\r\n\r\n.root {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.nav {\r\n  width: $nav-width;\r\n  height: $nav-height;\r\n\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/online_gallery_frontend/src/app/scss/components/main/Navigation.module.scss b/online_gallery_frontend/src/app/scss/components/main/Navigation.module.scss
+--- a/online_gallery_frontend/src/app/scss/components/main/Navigation.module.scss	(revision fcf1adb7bf818978f765a404012befed4d1db99b)
++++ b/online_gallery_frontend/src/app/scss/components/main/Navigation.module.scss	(date 1711660781182)
+@@ -1,9 +1,21 @@
+ @import "@/app/scss/globals/color";
++@import "@/app/scss/globals/main_values";
+ 
+ $nav-width: 1065px;
+ $nav-height: 45px;
+ 
++$account_various-width: 188px;
++$account_various-height: 284px;
++$account_various-padding: 15px;
++
++$account_various-data-gap: 10px;
++
++$avatar-size: 50px;
++
+ .root {
++  width: 100%;
++  position: fixed;
++
+   display: flex;
+   justify-content: center;
+   align-items: center;
+@@ -16,4 +28,37 @@
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
++}
++
++.account_various {
++  width: $account_various-width;
++  height: $account_various-height;
++
++  position: absolute;
++
++  border: $border-base;
++
++  top: $nav-height;
++  padding: $account_various-padding;
++
++  .account_nav {
++    height: 100%;
++
++    display: grid;
++    align-content: space-between;
++  }
++
++  .account_data {
++    display: flex;
++    gap: $account_various-data-gap;
++
++
++    .avatar {
++      width: $avatar-size;
++      height: $avatar-size;
++      object-fit: cover;
++    }
++  }
++
++
+ }
+\ No newline at end of file
+Index: online_gallery_frontend/src/app/components/main/main/navigation/NavigationComponent.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Image from \"next/image\";\r\nimport search_icon from \"@/app/assets/icons/nav/search.svg\";\r\nimport account_icon from \"@/app/assets/icons/nav/account.svg\";\r\n\r\nimport navigation_scss from '@/app/scss/components/main/Navigation.module.scss'\r\n\r\nexport const NavigationComponent = () => {\r\n    return (\r\n        <section className={navigation_scss.root}>\r\n            <ul className={navigation_scss.nav}>\r\n                <li>\r\n                    <button className={'title'}>\r\n                        Lindéro\r\n                    </button>\r\n                </li>\r\n                <li>\r\n                    <button>\r\n                        Художники\r\n                    </button>\r\n                </li>\r\n                <li>\r\n                    <button>\r\n                        Картины\r\n                    </button>\r\n                </li>\r\n                <li>\r\n                    <button>\r\n                        Фотографии\r\n                    </button>\r\n                </li>\r\n                <li>\r\n                    <button>\r\n                        Скульптуры\r\n                    </button>\r\n                </li>\r\n                <li>\r\n                    <button>\r\n                        Аукционы\r\n                    </button>\r\n                </li>\r\n                <li>\r\n                    <button>\r\n                        События\r\n                    </button>\r\n                </li>\r\n                <li>\r\n                    <button>\r\n                        <Image src={search_icon} alt={'search_icon'} width={0} height={0}/>\r\n                    </button>\r\n                </li>\r\n                <li>\r\n                    <button>\r\n                        <Image src={account_icon} alt={'account_icon'} width={0} height={0}/>\r\n                    </button>\r\n                </li>\r\n            </ul>\r\n        </section>\r\n    )\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/online_gallery_frontend/src/app/components/main/main/navigation/NavigationComponent.tsx b/online_gallery_frontend/src/app/components/main/main/navigation/NavigationComponent.tsx
+--- a/online_gallery_frontend/src/app/components/main/main/navigation/NavigationComponent.tsx	(revision fcf1adb7bf818978f765a404012befed4d1db99b)
++++ b/online_gallery_frontend/src/app/components/main/main/navigation/NavigationComponent.tsx	(date 1711660781181)
+@@ -3,8 +3,13 @@
+ import account_icon from "@/app/assets/icons/nav/account.svg";
+ 
+ import navigation_scss from '@/app/scss/components/main/Navigation.module.scss'
++import {useState} from "react";
++
++import avatar from '@/app/assets/default/default_ava_nav.svg'
+ 
+ export const NavigationComponent = () => {
++    const [isAccountHover, setIsAccountHover] = useState(false)
++
+     return (
+         <section className={navigation_scss.root}>
+             <ul className={navigation_scss.nav}>
+@@ -48,11 +53,60 @@
+                         <Image src={search_icon} alt={'search_icon'} width={0} height={0}/>
+                     </button>
+                 </li>
+-                <li>
+-                    <button>
+-                        <Image src={account_icon} alt={'account_icon'} width={0} height={0}/>
+-                    </button>
++                <li onMouseOver={() => setIsAccountHover(true)}>
++                    <button>
++                        <Image src={account_icon} alt={'account_icon'} width={0} height={0}/>
++                    </button>
++                    {isAccountHover ?
++                        <section className={navigation_scss.account_various}
++                                 onMouseOver={() => setIsAccountHover(true)}
++                                 onMouseLeave={() => setIsAccountHover(false)}>
++                            <ul className={navigation_scss.account_nav}>
++                                <li className={navigation_scss.account_data}>
++                                    <Image src={avatar} className={navigation_scss.avatar}
++                                           alt={'avatar'} width={0} height={0}/>
++                                    <section>
++                                        <div>Имя</div>
++                                        <button>
++                                            Художник
++                                        </button>
++                                    </section>
++                                </li>
++                                <li>
++                                    <button>
++                                        Корзина
++                                    </button>
++                                </li>
++                                <li>
++                                    <button>
++                                        Заказы
++                                    </button>
++                                </li>
++                                <li>
++                                    <button>
++                                        Уведомления
++                                    </button>
++                                </li>
++                                <li>
++                                    <button>
++                                        Подписки
++                                    </button>
++                                </li>
++                                <li>
++                                    <button>
++                                        Настройки
++                                    </button>
++                                </li>
++                                <li>
++                                    <button>
++                                        Выход
++                                    </button>
++                                </li>
++                            </ul>
++                        </section>
++                        : null}
+                 </li>
++
+             </ul>
+         </section>
+     )

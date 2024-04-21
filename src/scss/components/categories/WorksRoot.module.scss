@@ -1,0 +1,33 @@
+
+$root-gap: 24px;
+
+$header_size: 32px;
+$header_weight: 600;
+
+$filters-button-gap: 8px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+
+  gap: $root-gap;
+}
+
+.header {
+  font-size: $header-size;
+  font-weight: $header_weight;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  .filters_button {
+    height: min-content;
+
+    display: flex;
+    gap: $filters-button-gap;
+
+    font-weight: $header_weight;
+  }
+}

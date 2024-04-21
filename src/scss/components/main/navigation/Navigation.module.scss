@@ -1,0 +1,108 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+$nav-height: 45px;
+$nav-height-mobile: 65px;
+
+.root {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  position: relative;
+
+  width: 100%;
+  height: $nav-height;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .menu_img {
+    width: 30px;
+    height: 22.5px;
+  }
+}
+
+.big_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu_li {
+  display: none;
+
+  width: max-content;
+}
+
+.close_button {
+  display: none;
+}
+
+@media screen and (orientation: portrait){
+  .nav {
+    height: 65px;
+  }
+
+  .nav_mobile {
+    display: flex;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: $title-nav-size-mobile;
+
+    display: grid;
+    align-content: center;
+  }
+
+  .menu_li {
+    display: none;
+  }
+
+  .img {
+    display: grid;
+    align-self: end;
+    width: 25px;
+    height: 25px;
+  }
+
+  .close_button {
+    width: min-content;
+    display: grid;
+    justify-self: end;
+  }
+}
+
+.menu_page {
+  display: grid;
+  grid-template-rows: min-content auto;
+
+  padding: $main-padding;
+
+  z-index: $z-index-menu;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: $white-color;
+
+  .menu_full {
+    display: flex;
+    flex-flow: column;
+
+    gap: 24px;
+  }
+
+  button {
+    font-size: 20px;
+  }
+}

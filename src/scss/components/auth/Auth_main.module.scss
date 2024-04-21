@@ -1,0 +1,79 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
+
+$root-width: 500px;
+$root-padding: 35px;
+
+$auth-gap: 25px;
+
+$form-gap: 10px;
+$buttons-gap: 16px;
+$button-width: 232px;
+
+.page {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.root {
+  width: $root-width;
+  padding: $root-padding;
+
+  .auth {
+    display: flex;
+    flex-flow: column;
+    gap: $auth-gap;
+
+
+    .header {
+      font-size: $title-auth-size;
+
+      display: grid;
+      justify-content: center;
+    }
+
+    .form {
+      display: flex;
+      flex-flow: column;
+
+      gap: $form-gap;
+
+      .section_for_small_button {
+        display: flex;
+        justify-content: end;
+      }
+
+      .button_small {
+        width: max-content;
+        height: min-content;
+      }
+
+      .p {
+        text-align: center;
+      }
+
+      .button_left {
+        display: flex;
+        justify-self: start;
+      }
+    }
+
+    .message {
+      color: $red-color
+    }
+
+    .button_section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: $buttons-gap;
+
+      button {
+        width: $button-width;
+      }
+    }
+  }
+}

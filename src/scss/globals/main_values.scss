@@ -1,0 +1,48 @@
+@import "./color";
+
+//$default-width: 1065px;
+
+$font-family: "Roboto", sans-serif;
+
+$width: 1065px;
+
+$font-size: 18px;
+$font-size-footer: 14px;
+$title-size: 24px;
+
+$main-padding: 0 24px;
+
+$title-auth-size: 36px;
+$title-nav-size-mobile: 30px;
+
+$profile-name-size: 32px;
+$profile-name-size-mobile: 28px;
+$profile-name-weight: 600;
+
+$button-height: 41px;
+$button-radius: 6px;
+$button-weight: 600;
+$button-padding: 9px 24px;
+$button-font-size: 19px;
+
+$input-height: 48px;
+$input-radius: 6px;
+$input-padding: 0 16px;
+$textarea-padding: 10px 16px;
+
+$border-base: 1px solid $black-color;
+$border-button: 2px solid $black-color;
+$border-white: 5px solid $white-color;
+
+//z-index
+$z-index-menu: 20;
+$z-index-up: 10;
+$z-index-middle: 5;
+$z-index-low: 1;
+
+//width
+$max-device-width: 830px;
+
+
+
+

@@ -1,0 +1,291 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
+
+$cover-height: 250px;
+
+$change-cover-top: 25px;
+$change-cover-gap: 20px;
+$change-cover-padding-right: 24px;
+
+$change-avatar-top: -25px;
+
+$data-gap: 12px;
+
+$avatar-radius: 15px;
+$avatar-size: 200px;
+$avatar-top: -110px;
+
+$subscriber-section-gap: 15px;
+
+$button-bell-width: 43px;
+
+$bell-width: 23px;
+$bell-height: 25px;
+$bell-width-mobile: 19px;
+$bell-height-mobile: 20px;
+
+$change-window-padding: 32px;
+$change-window-bottom: 30px;
+$change-window-gap: 32px;
+$change-window-text-gap: 4px;
+$change-window-buttons-gap: 16px;
+$change-window-radius: 12px;
+$change-window-shadow: 0 0 10px 0 $shadow-color;
+
+$change-cover-img-width: 200px;
+$delete-img-width: 34px;
+
+$artist-action-section-gap: 15px;
+
+
+.page {
+  display: grid;
+  position: relative;
+}
+
+.root {
+  display: flex;
+  flex-flow: column;
+
+  .cover_section {
+    display: grid;
+    position: relative;
+
+    height: $cover-height;
+
+    z-index: $z-index-low;
+
+    .cover {
+      position: relative;
+      width: 100%;
+      height: $cover-height;
+
+      img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+      }
+    }
+
+    .change_cover {
+      padding-right: $change-cover-padding-right;
+
+      position: absolute;
+      top: $change-cover-top;
+
+      display: grid;
+      justify-self: end;
+      grid-template-columns: min-content min-content;
+      gap: $change-cover-gap;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+
+  .profile_data {
+    display: grid;
+    gap: $data-gap;
+
+    justify-self: center;
+    justify-items: center;
+
+    .avatar_section {
+      display: grid;
+
+      position: relative;
+
+      height: $avatar-size - 94px;
+
+      z-index: $z-index-middle;
+
+      .avatar {
+        position: relative;
+        top: $avatar-top;
+
+        width: $avatar-size;
+        height: $avatar-size;
+
+        border: $border-white;
+        border-radius: $avatar-radius;
+
+        img {
+          width: 100%;
+          height: 100%;
+
+          object-fit: cover;
+          border-radius: $avatar-radius;
+        }
+      }
+
+      .change_avatar {
+        position: absolute;
+        top: $change-avatar-top;
+
+        display: grid;
+        justify-self: center;
+        align-self: center;
+
+        grid-template-columns: min-content min-content;
+      }
+
+      .delete {
+        width: 25px;
+        height: 25px;
+
+        position: absolute;
+        top: -60px;
+        left: 85px;
+
+        display: flex;
+        justify-self: end;
+      }
+    }
+
+    .name_section {
+      word-break: break-all;
+
+      .name {
+        font-size: $profile-name-size;
+        font-weight: $profile-name-weight;
+      }
+
+      .name_mobile {
+        cursor: auto;
+        display: none;
+      }
+
+    }
+  }
+}
+
+.subscriber_section {
+  height: max-content;
+  display: flex;
+  gap: $subscriber-section-gap;
+
+  align-items: center;
+
+  img {
+    width: $button-bell-width;
+
+    display: grid;
+    justify-self: center;
+    align-self: center;
+
+    .bell_image {
+      width: $bell-width;
+      height: $bell-height;
+    }
+  }
+}
+
+.artist_action_section {
+  display: flex;
+  gap: $artist-action-section-gap;
+}
+
+.change_data_window {
+  display: grid;
+  justify-self: center;
+  align-self: end;
+
+  position: fixed;
+  bottom: $change-window-bottom;
+
+  z-index: $z-index-up;
+
+  padding: $change-window-padding;
+
+  justify-items: center;
+  row-gap: $change-window-gap;
+
+  background-color: $white-color;
+  box-shadow: $change-window-shadow;
+
+  border-radius: $change-window-radius;
+
+  .change_data_window_data {
+    display: flex;
+    align-items: center;
+    gap: $change-window-text-gap;
+  }
+
+  .change_data_window_buttons {
+    display: flex;
+    gap: $change-window-buttons-gap;
+  }
+}
+
+.message {
+  padding-top: 10px;
+  color: $red-color;
+}
+
+@media screen and (orientation: landscape) {
+  .edit_button {
+    display: none;
+  }
+}
+
+@media screen and (orientation: portrait){
+  .edit_button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    img {
+      width: 20px;
+    }
+  }
+  .change_data_window {
+    width: 100%;
+    bottom: 0;
+
+    .change_data_window_buttons {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  .artist_action_section {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $max-device-width) {
+  .change_cover_img {
+    width: $change-cover-img-width;
+  }
+  .delete_img {
+    width: $delete-img-width;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .root {
+    .profile_data {
+      .name_section {
+        .name {
+          font-size: $profile-name-size-mobile;
+        }
+      }
+    }
+  }
+
+  .subscriber_section {
+
+    img {
+      width: $bell-width-mobile;
+      height: $bell-height-mobile;
+    }
+
+    div {
+      font-size: 14px;
+    }
+  }
+}

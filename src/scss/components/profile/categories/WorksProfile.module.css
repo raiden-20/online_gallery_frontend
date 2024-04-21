@@ -1,0 +1,64 @@
+.root {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 36px;
+}
+
+.one_work {
+  width: 345px;
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+.one_work * {
+  cursor: pointer;
+}
+.one_work .one_work_img {
+  width: 100%;
+  border-radius: 10px;
+}
+.one_work .one_work_names {
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+}
+.one_work .one_work_weight {
+  font-weight: 600;
+}
+
+.create_art_button {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  .root {
+    display: grid;
+  }
+  .one_work {
+    width: 100%;
+  }
+  .create_art_button {
+    position: fixed;
+    display: grid;
+    justify-self: end;
+    bottom: 100px;
+    right: 10px;
+  }
+  .create_art_button img {
+    width: 100px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .create_art_button img {
+    width: 90px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .create_art_button img {
+    width: 70px;
+  }
+}
+
+/*# sourceMappingURL=WorksProfile.module.css.map */

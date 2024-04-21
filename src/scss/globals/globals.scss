@@ -1,0 +1,96 @@
+@import '@/scss/globals/color';
+@import '@/scss/globals/main_values';
+
+* {
+  font-size: $font-size;
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+
+  font-family: $font-family;
+}
+
+html,
+body {
+  overflow-x: hidden;
+
+  background-color: $white-color;
+}
+
+button {
+  cursor: pointer;
+
+  text-align: center;
+
+  background-color: transparent;
+  border: none;
+
+  height: $button-height;
+  border-radius: $button-radius;
+
+  * {
+    cursor: pointer;
+  }
+}
+
+input, textarea {
+  cursor: text;
+}
+
+input, select {
+  padding: $input-padding;
+  height: $input-height;
+  border-radius: $input-radius;
+
+  border: 1px solid $grey;
+}
+
+input:focus {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  padding: $textarea-padding;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+p {
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+
+.scrollBar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+
+
+

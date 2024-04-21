@@ -1,0 +1,217 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+$root-padding: 24px 48px;
+$root-gap: 16px;
+
+$title-size: 28px;
+$title-weight: 600;
+
+$main-padding: 16px 0;
+$main-gap: 48px;
+
+$category-root-gap: 16px;
+$category-title-weight: 600;
+
+$button-open-close-w: 20px;
+$button-open-close-h: 11px;
+
+$price-section-gap: 10px;
+$price-one-w: 168.5px;
+$price-one-radius: 6px;
+$price-one-padding: 6px 16px;
+$price-one-title-size: 14px;
+
+$input-height: 19px;
+$input-size: 16px;
+
+$size-section-gap: 16px;
+$checkbox-section-gap: 12px;
+$checkbox-section-height: 179px;
+
+$search-padding: 8px 16px;
+$search-gap: 12px;
+
+
+.page {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  overflow: hidden;
+
+  z-index: 100;
+}
+
+.root {
+  z-index: $z-index-menu;
+
+  height: 100%;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 443px;
+
+  overflow-y: auto;
+
+  padding: $root-padding;
+
+  background-color: $white-color;
+
+  overflow-x: hidden;
+
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  gap: $root-gap;
+}
+
+.root::-webkit-scrollbar {
+  width: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    font-size: $title-size;
+    font-weight: $title-weight;
+  }
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  gap: $main-gap;
+  padding: $main-padding;
+
+  .category_root {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column;
+    gap: $category-root-gap;
+
+    .category_header {
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .category_title {
+        font-weight: $category-title-weight;
+      }
+
+      .button_open_close {
+        width: $button-open-close-w;
+        height: $button-open-close-h;
+      }
+
+      button {
+        height: min-content;
+      }
+    }
+
+    .price_section {
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $price-section-gap;
+
+      .price_one_section {
+        max-width: $price-one-w;
+
+        display: flex;
+        flex-flow: column;
+
+        padding: $price-one-padding;
+
+        border-radius: $price-one-radius;
+        border: 1px solid $grey-filter-price-border;
+
+        .price_one_section_title {
+          font-size: $price-one-title-size;
+          color: $grey;
+        }
+
+        input {
+          height: $input-height;
+          border: none;
+          padding: 0;
+
+          font-size: $input-size;
+        }
+      }
+    }
+
+    .size_section {
+      display: flex;
+      flex-flow: column;
+      gap: $size-section-gap;
+
+      .size_one_section {
+        display: flex;
+        gap: $checkbox-section-gap;
+      }
+    }
+
+    .checkbox_section {
+      max-height: $checkbox-section-height;
+      overflow-y: auto;
+    }
+
+    input[type="checkbox"] {
+      cursor: pointer;
+
+      width: 20px;
+      height: 20px;
+
+      border-radius: 50%; // todo
+
+      display: flex;
+      align-self: center;
+    }
+
+    .section_with_search {
+      display: flex;
+      flex-flow: column;
+      gap: $size-section-gap;
+    }
+
+    .search {
+      padding: $search-padding;
+
+      display: flex;
+      gap: $search-gap;
+
+      border: 1px solid $grey-filter-price-border;
+      border-radius: $price-one-radius;
+
+      input {
+        border: none;
+        height: min-content;
+        width: 100%;
+
+        padding: 0;
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+html.page{
+  height: 100vh;
+  overflow: hidden;
+}

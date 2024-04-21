@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+}
+
+.header {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav .filters_button {
+  height: min-content;
+  display: flex;
+  gap: 8px;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=WorksRoot.module.css.map */

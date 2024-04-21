@@ -1,0 +1,76 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+$root-width: 800px;
+$root-padding: 32px;
+$root-gap: 16px;
+$root-radius: 12px;
+
+$header-size: 24px;
+$header-weight: 600;
+
+$footer-gap: 16px;
+
+.page {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  z-index: $z-index-up;
+}
+
+.bg {
+  background-color: $grey-bg-dark;
+}
+
+.modal_window {
+  width: $root-width;
+  padding: $root-padding;
+  border-radius: $root-radius;
+
+  display: grid;
+
+  align-items: center;
+
+  background-color: $white-color;
+
+  z-index: $z-index-menu;
+}
+
+.root {
+  display: grid;
+  gap: $root-gap;
+
+  .header {
+    font-size: $header-size;
+    font-weight: $header-weight;
+
+    text-align: center;
+  }
+
+  .main_p {
+    font-weight: $header-weight;
+  }
+
+  .footer_buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $footer-gap;
+  }
+}
+
+@media screen and (orientation: portrait){
+  .modal_window {
+    width: 100%;
+    height: 100%;
+  }
+}

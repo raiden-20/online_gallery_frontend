@@ -62,10 +62,6 @@ $button-width: 232px;
       }
     }
 
-    .message {
-      color: $red-color
-    }
-
     .button_section {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -76,4 +72,8 @@ $button-width: 232px;
       }
     }
   }
+}
+
+.message {
+  color: $red-color
 }

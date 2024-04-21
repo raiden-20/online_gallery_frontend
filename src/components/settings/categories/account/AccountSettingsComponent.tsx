@@ -13,6 +13,7 @@ import {useRouter} from "next/navigation";
 import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import {MAIN_PATHS} from "@/paths/main";
 import Cookies from "js-cookie";
+import {DeleteAccountComponent} from "@/components/settings/categories/account/components/DeleteAccountComponent";
 
 interface AccountSettingsInterface {
     customer_data: Customer,
@@ -35,6 +36,8 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
     const [isPasswordSection, setIsPasswordSection] = useState(false)
 
     const [artistId, setArtistId] = useState('')
+
+    const [isDeleteClicked, setIsDeleteClicked] = useState(false)
 
     useEffect(() => {
         setArtistId(Cookies.get('artistId') as string)
@@ -84,14 +87,17 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
                                     </button>
                                     : null}
                                 <button className={settings_scss.button + ' ' + settings_scss.delete_button}
-                                        onClick={() => props.deleteAccount(router)}>
+                                        onClick={() => setIsDeleteClicked(true)}>
                                 Удалить аккаунт
                                 </button>
                             </section>
                         </section>
                     </section>
             }
-
+            {isDeleteClicked ? <DeleteAccountComponent setIsDeleteClicked={setIsDeleteClicked}
+                                                       deleteAccount={props.deleteAccount}
+                                                       customer_data={props.customer_data}/>
+                : null}
         </section>
     )
 }

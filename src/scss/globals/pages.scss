@@ -33,6 +33,16 @@
   font-size: $button-font-size;
 }
 
+.second_plan_button {
+  background-color: $grey-date;
+
+  padding: $button-padding;
+
+  font-weight: $button-weight;
+  font-size: $button-font-size;
+  color: $white-color;
+}
+
 .bg {
   position: fixed;
 

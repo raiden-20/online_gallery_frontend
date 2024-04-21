@@ -20,7 +20,7 @@ export const OneCardSettingsComponent = () => {
                     </section>
                 </section>
                 <button onClick={() => setIsOpen(!isOpen)}>
-                    <Image src={isOpen ? open_icon : close_icon}
+                    <Image src={isOpen ? open_icon : close_icon} className={settings_scss.icon}
                            alt={'open close icon'}/>
                 </button>
             </section>

@@ -63,9 +63,21 @@ $new-form-header-weight: 600;
     background-color: $white-color;
     color: $grey_border;
   }
+
+  .checkbox_section {
+
+    input[type='checkbox'] {
+      width: 20px;
+      height: 20px;
+    }
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
 }
 
 .address_header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -207,16 +219,7 @@ $new-form-header-weight: 600;
   display: none;
 }
 
-.p {
-  width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis
-}
-
-@media screen and (max-width: $max-device-width) {
+@media screen and (orientation: portrait) {
   .root {
     display: none;
   }
@@ -270,8 +273,17 @@ $new-form-header-weight: 600;
       width: 100%;
 
       display: flex;
-      flex-flow: column;
+      flex-wrap: wrap;
     }
+
+  }
+
+  .p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis
   }
 }
 

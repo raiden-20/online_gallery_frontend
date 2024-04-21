@@ -29,6 +29,7 @@ export const OneArtist = (props: OneArtistsInterface) => {
 
     const listRef = useRef<HTMLUListElement>(null);
 
+
     const scrollRight = () => {
         if (listRef.current) {
             listRef.current.scrollLeft += 200;
@@ -61,7 +62,7 @@ export const OneArtist = (props: OneArtistsInterface) => {
                     }
                 </section>
                 <div className={artists_scss.one_user_name}>{props.oneArtist.artistName}</div>
-                {artistId !== currentId && artistId !== props.oneArtist.artistId &&role !== ROLES.ARTIST && currentRole !== ROLES.ARTIST ?
+                {(artistId !== currentId && artistId !== props.oneArtist.artistId && role !== ROLES.ARTIST) || status === 'unauthenticated' ?
                     <section className={header_profile_scss.subscriber_section}>
                         <button className={'main_button'}
                                 onClick={() => {
@@ -70,14 +71,21 @@ export const OneArtist = (props: OneArtistsInterface) => {
                                     } else if (status === 'unauthenticated') {
                                         signIn("keycloak")
                                             .then(() => {
-                                                Cookies.set('role', ROLES.CUSTOMER)
-                                                Cookies.set('status', 'authenticated')
                                             })
                                     }
                                 }}>
                             Поддержать
                         </button>
-                        <button className={header_profile_scss.button_bell}>
+                        <button className={header_profile_scss.button_bell}
+                                onClick={() => {
+                                    if (status === 'authenticated') {
+                                        // todo
+                                    } else if (status === 'unauthenticated') {
+                                        signIn("keycloak")
+                                            .then(() => {
+                                            })
+                                    }
+                                }}>
                             <Image src={bell_icon} className={header_profile_scss.bell_image}
                                    alt={'bell_icon'} width={0} height={0}/>
                         </button>

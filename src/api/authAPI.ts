@@ -12,9 +12,12 @@ export const AuthAPI = {
                     email
                 }
             );
+            console.log(response)
+            if (response === undefined) {
+                return [409, '']
+            }
             return [response.status, response.data];
         } catch (error: any) {
-            console.error(error)
             return [error.response.status, error.response.data];
         }
     },
@@ -38,7 +41,11 @@ export const AuthAPI = {
     async DeleteAccountAPI() {
         try {
             const response = await instance.delete(
-                PathsAPI.DELETE + PathsAPI.ACCOUNT,
+                PathsAPI.ACCOUNT,
+                {
+                    data: {
+                        id: Cookies.get('customerId') as string
+                    }}
             );
             return [response.status, response.data];
         } catch (error: any) {

@@ -21,8 +21,6 @@ export const NavigationComponent = () => {
     const [isAccountClicked, setIsAccountClicked] = useState(false)
     const [isAccountNavClicked, setIsAccountNavClicked] = useState(false)
 
-    const [registrationFlag] = useState(Cookies.get('registrationFlag'))
-
     return (
         <ul className={navigation_scss.nav}>
             <li>

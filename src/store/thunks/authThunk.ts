@@ -27,6 +27,7 @@ export const changeEmail = (input_email: string, setMessage:(message: string) =>
     () => {
         AuthAPI.ChangeEmailAPI(input_email)
             .then(response => {
+                console.log('EEEEEROR', response)
                 switch (response[0]) {
                     case 200 : {
                         keycloakSessionLogOut()

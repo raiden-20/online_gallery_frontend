@@ -28,12 +28,36 @@
   font-weight: 600;
 }
 
-@media screen and (max-width: 752px) {
+.create_art_button {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
   .root {
     display: grid;
   }
   .one_work {
     width: 100%;
+  }
+  .create_art_button {
+    position: fixed;
+    display: grid;
+    justify-self: end;
+    bottom: 100px;
+    right: 10px;
+  }
+  .create_art_button img {
+    width: 100px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .create_art_button img {
+    width: 90px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .create_art_button img {
+    width: 70px;
   }
 }
 

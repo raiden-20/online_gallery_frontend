@@ -152,6 +152,12 @@ $artist-action-section-gap: 15px;
         font-size: $profile-name-size;
         font-weight: $profile-name-weight;
       }
+
+      .name_mobile {
+        cursor: auto;
+        display: none;
+      }
+
     }
   }
 }
@@ -217,6 +223,38 @@ $artist-action-section-gap: 15px;
 .message {
   padding-top: 10px;
   color: $red-color;
+}
+
+@media screen and (orientation: landscape) {
+  .edit_button {
+    display: none;
+  }
+}
+
+@media screen and (orientation: portrait){
+  .edit_button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    img {
+      width: 20px;
+    }
+  }
+  .change_data_window {
+    width: 100%;
+    bottom: 0;
+
+    .change_data_window_buttons {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  .artist_action_section {
+    display: none;
+  }
 }
 
 @media screen and (max-width: $max-device-width) {

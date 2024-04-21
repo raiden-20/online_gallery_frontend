@@ -51,13 +51,10 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + Cookies.get('customerId'))
                             }
                             }>
-                            {props.my_customer_data.avatarUrl === '' ?
-                                <img src={"/default_ava_nav.jpg"} className={accountNavigation_scss.avatar}
-                                     alt={'avatar'}/>
-                                :
-                                <img src={props.my_customer_data.avatarUrl} className={accountNavigation_scss.avatar}
-                                     alt={'avatar'}/>
-                            }
+                            <img src={props.my_customer_data.avatarUrl === '' ? "/default_ava_nav.jpg" : props.my_customer_data.avatarUrl }
+                                 className={accountNavigation_scss.avatar}
+                                 crossOrigin="anonymous"
+                                 alt={'avatar'}/>
                             <section className={accountNavigation_scss.name_section}>
                                 <div className={accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
                                 <button className={accountNavigation_scss.button}>
@@ -76,13 +73,10 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + Cookies.get('artistId'))
                             }
                             }>
-                            {props.my_artist_data.avatarUrl === '' ?
-                                <img src={"/default_ava_nav.jpg"} className={accountNavigation_scss.avatar}
-                                     alt={'avatar'}/>
-                                :
-                                <img src={props.my_artist_data.avatarUrl} className={accountNavigation_scss.avatar}
-                                     alt={'avatar'}/>
-                            }
+                            <img src={props.my_artist_data.avatarUrl === '' ? "/default_ava_nav.jpg" : props.my_artist_data.avatarUrl}
+                                 className={accountNavigation_scss.avatar}
+                                 crossOrigin="anonymous"
+                                 alt={'avatar'}/>
                             <section className={accountNavigation_scss.name_section}>
                                 <div className={accountNavigation_scss.name}>{props.my_artist_data.artistName}</div>
                                 <button className={accountNavigation_scss.button}>

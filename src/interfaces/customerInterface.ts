@@ -5,4 +5,5 @@ export interface Customer {
     avatarUrl: string
     coverUrl: string
     artistId: string
+    description: string
 }

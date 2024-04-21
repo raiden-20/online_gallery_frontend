@@ -57,6 +57,7 @@ select:focus {
 
 textarea {
   resize: vertical;
+  padding: $textarea-padding;
 }
 
 textarea:focus {

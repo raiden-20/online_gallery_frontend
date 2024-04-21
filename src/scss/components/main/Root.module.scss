@@ -29,7 +29,7 @@ $root-padding-one: 24px;
   }
 }
 
-@media screen and (max-width: $max-device-width) {
+@media screen and (orientation: portrait) {
   .mobile_nav {
     display: flex;
   }

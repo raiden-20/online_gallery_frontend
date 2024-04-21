@@ -23,6 +23,9 @@ interface HeaderProfileInterface {
     cancelChanging(): void
     deleteAvatar(): void
     deleteCover(): void
+
+    isEditMobile : boolean
+    setIsEditMobile(flag: boolean): void
 }
 
 export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
@@ -35,18 +38,22 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                 <CoverSectionHeaderProfile input_coverUrl={props.input_coverUrl}
                                            message={props.message}
                                            changeInputCover={props.changeInputCover}
-                                           deleteCover={props.deleteCover}/>
+                                           deleteCover={props.deleteCover}
+                                           isEditMobile={props.isEditMobile}/>
                 <section className={header_profile_scss.profile_data}>
                     <AvatarSectionHeaderProfile input_avatarUrl={props.input_avatarUrl}
                                                 message={props.message}
                                                 changeInputAvatar={props.changeInputAvatar}
-                                                deleteAvatar={props.deleteAvatar}/>
+                                                deleteAvatar={props.deleteAvatar}
+                                                isEditMobile={props.isEditMobile}/>
                     <NameHeaderProfile input_name={props.input_name}
                                        setInput_name={props.setInput_name}
                                        setIsNeedChangeData={props.setIsNeedChangeData}
                                        isNameClicked={isNameClicked}
-                                       setIsNameClicked={setIsNameClicked}/>
-                    <ActionButtonsHeaderProfile/>
+                                       setIsNameClicked={setIsNameClicked}
+                                       isEditMobile={props.isEditMobile}/>
+                    <ActionButtonsHeaderProfile isEditMobile={props.isEditMobile}
+                                                setIsEditMobile={props.setIsEditMobile}/>
                 </section>
             </section>
             {props.isNeedChangeData ?

@@ -1,4 +1,3 @@
-import {WorksComponent} from "@/components/profile/profile_elemets/categories/works/WorksComponent";
 import artists_scss from "@/scss/components/categories/Artists.module.scss";
 import React, {useState} from "react";
 
@@ -9,6 +8,7 @@ import works_root_scss from '@/scss/components/categories/WorksRoot.module.scss'
 import {usePathname} from "next/navigation";
 import {PATHS_CATEGORY} from "@/paths/main";
 import {FiltersComponent} from "@/components/categories/works/filters/FiltersComponent";
+import {WorksComponent} from "@/components/categories/works/works/WorksComponent";
 
 export const WorksRoot = () => {
 

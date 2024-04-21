@@ -6,16 +6,24 @@ import Image from "next/image";
 import bell_icon from "@/assets/icons/profile/bell_icon.svg";
 import art_icon from "@/assets/icons/profile/art.svg";
 import create_post_icon from "@/assets/icons/profile/create_post.svg";
+import edit_profile_icon from '@/assets/icons/profile/edit_profile.svg'
 import React, {useState} from "react";
 import {CreatePostProfile} from "@/components/profile/profile_elemets/create_post/CreatePostProfile";
 
-export const ActionButtonsHeaderProfile = () => {
+interface actionButtonsInterface {
+    isEditMobile : boolean
+    setIsEditMobile(flag: boolean): void
+}
+
+export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
 
     const [artistId] = useState(Cookies.get('artistId'))
+    const [customerId] = useState(Cookies.get('customerId'))
     const [currentId] = useState(Cookies.get('currentId'))
     const [currentRole] = useState(Cookies.get('currentRole'))
     const [role] = useState(Cookies.get('role'))
     const [status] = useState(Cookies.get('status'))
+
 
     const [isCreatePost, setIsCreatePost] = useState(false)
 
@@ -58,6 +66,13 @@ export const ActionButtonsHeaderProfile = () => {
                     </section>
                     : null
             }
+            {(currentId === customerId || currentId === artistId) && !props.isEditMobile ?
+                <button className={'cancel_button ' + header_profile_scss.edit_button}
+                    onClick={() => props.setIsEditMobile(true)}>
+                    <Image src={edit_profile_icon} alt={'edit_profile_icon'}/>
+                    <div>Редактировать профиль</div>
+                </button>
+            : null}
 
             {isCreatePost ?
                 <CreatePostProfile setIsCreatePost={setIsCreatePost}/>

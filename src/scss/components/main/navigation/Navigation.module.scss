@@ -44,7 +44,7 @@ $nav-height-mobile: 65px;
   display: none;
 }
 
-@media screen and (max-width: $max-device-width){
+@media screen and (orientation: portrait){
   .nav {
     height: 65px;
   }
@@ -62,7 +62,7 @@ $nav-height-mobile: 65px;
   }
 
   .menu_li {
-    display: flex;
+    display: none;
   }
 
   .img {

@@ -12,7 +12,7 @@ interface CustomerProfileInterface {
 
     getCustomerProfileData(id: string, router: AppRouterInstance): void
 
-    changeCustomerProfileData(customerName: string, birthDate: string, gender: string,
+    changeCustomerProfileData(customerName: string, birthDate: string, gender: string, description: string,
                               avatarUrl: string, coverUrl: string, avatar: File | string, cover: File | string,
                               router: AppRouterInstance, setMessage:(message: string) => void): void
 }
@@ -22,14 +22,14 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
 
     useEffect(() => {
         props.getCustomerProfileData(Cookies.get('currentId') as string, router)
-    }, [props.customer_data.customerName, props.customer_data.avatarUrl, props.customer_data.coverUrl]);
+    }, [props.customer_data.customerName, props.customer_data.avatarUrl, props.customer_data.coverUrl, props.customer_data.description]);
 
     useEffect(() => {
         setInput_coverUrl(props.customer_data.coverUrl)
         setInput_avatarUrl(props.customer_data.avatarUrl)
         setInput_name(props.customer_data.customerName)
-        //setInput_description(props.customer_data.description)
-    }, [props.customer_data.customerName, props.customer_data.avatarUrl, props.customer_data.coverUrl]);
+        setInput_description(props.customer_data.description)
+    }, [props.customer_data.customerName, props.customer_data.avatarUrl, props.customer_data.coverUrl, props.customer_data.description]);
 
     const [input_coverFile, setInput_coverFile] = useState<File | string>('')
     const [input_coverUrl, setInput_coverUrl] = useState(props.customer_data.coverUrl)
@@ -45,9 +45,10 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     const [isAvatarDeleted, setIsAvatarDeleted] = useState(false)
     const [isCoverDeleted, setIsCoverDeleted] = useState(false)
 
-    const [input_description, setInput_description] = useState('dfghtgd') // todo добавить описание
+    const [input_description, setInput_description] = useState(props.customer_data.description)
 
     const [message, setMessage] = useState('')
+    const [isEditMobile, setIsEditMobile] = useState(false)
 
 
     useEffect(() => {
@@ -63,6 +64,7 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
             }
 
             props.changeCustomerProfileData(input_name, props.customer_data.birthDate, props.customer_data.gender,
+                input_description === '' ? ' ' : input_description,
                 avatar === '' ? ' ' : avatar,
                 cover === '' ? ' ' : cover,
                 input_avatarFile === '' ? ' ' : input_avatarFile,
@@ -98,6 +100,7 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
         setIsAvatarDeleted(false)
         setIsCoverDeleted(false)
         setIsChangeDataClicked(false)
+        setIsEditMobile(false)
     }
 
     const deleteAvatar = () => {
@@ -129,9 +132,14 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
                                     changeInputCover={changeInputCover} changeInputAvatar={changeInputAvatar}
                                     deleteAvatar={deleteAvatar} deleteCover={deleteCover}
                                     message={message}
-                                    setIsNeedChangeData={setIsNeedChangeData}/>
+                                    setIsNeedChangeData={setIsNeedChangeData}
+                                    isEditMobile={isEditMobile}
+                                    setIsEditMobile={setIsEditMobile}/>
             <CustomerCategoriesProfile input_description={input_description}
-                                       setInput_description={setInput_description}/>
+                                       setInput_description={setInput_description}
+                                       setIsNeedChangeData={setIsNeedChangeData}
+                                       isEditMobile={isEditMobile}
+                                       setIsEditMobile={setIsEditMobile}/>
         </section>
     )
 }

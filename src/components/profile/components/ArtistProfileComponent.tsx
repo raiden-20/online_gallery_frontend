@@ -21,14 +21,14 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
 
     useEffect(() => {
         props.getArtistProfileData(Cookies.get('currentId') as string, router)
-    }, [props.artist_data.artistName, props.artist_data.avatarUrl, props.artist_data.coverUrl]);
+    }, [props.artist_data.artistName, props.artist_data.avatarUrl, props.artist_data.coverUrl, props.artist_data.description]);
 
     useEffect(() => {
         setInput_coverUrl(props.artist_data.coverUrl)
         setInput_avatarUrl(props.artist_data.avatarUrl)
         setInput_name(props.artist_data.artistName)
         setInput_description(props.artist_data.description)
-    }, [props.artist_data.artistName, props.artist_data.avatarUrl, props.artist_data.coverUrl]);
+    }, [props.artist_data.artistName, props.artist_data.avatarUrl, props.artist_data.coverUrl, props.artist_data.description]);
 
     const [input_coverFile, setInput_coverFile] = useState<File | string>('')
     const [input_coverUrl, setInput_coverUrl] = useState(props.artist_data.coverUrl)
@@ -47,6 +47,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
     const [isCoverDeleted, setIsCoverDeleted] = useState(false)
 
     const [message, setMessage] = useState('')
+    const [isEditMobile, setIsEditMobile] = useState(false)
 
 
     useEffect(() => {
@@ -112,6 +113,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
         setInput_name(props.artist_data.artistName)
         setInput_description(props.artist_data.description)
         setIsNeedChangeData(false)
+        setIsEditMobile(false)
     }
 
 
@@ -123,8 +125,13 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                                     changeInputCover={changeInputCover} changeInputAvatar={changeInputAvatar}
                                     deleteAvatar={deleteAvatar} deleteCover={deleteCover}
                                     message={message}
-                                    setIsNeedChangeData={setIsNeedChangeData}/>
-            <ArtistCategoriesProfile input_description={input_description} setInput_description={setInput_description}/>
+                                    setIsNeedChangeData={setIsNeedChangeData}
+                                    isEditMobile={isEditMobile}
+                                    setIsEditMobile={setIsEditMobile}/>
+            <ArtistCategoriesProfile input_description={input_description} setInput_description={setInput_description}
+                                     setIsNeedChangeData={setIsNeedChangeData}
+                                     isEditMobile={isEditMobile}
+                                     setIsEditMobile={setIsEditMobile}/>
         </section>
     )
 }

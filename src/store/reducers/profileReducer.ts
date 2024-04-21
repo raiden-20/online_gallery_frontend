@@ -24,6 +24,7 @@ const initialState: ProfileReducerInterface = {
         gender: "",
         avatarUrl: "",
         coverUrl: "",
+        description: "",
         artistId: ""
     },
     artist_data: {
@@ -40,6 +41,7 @@ const initialState: ProfileReducerInterface = {
         gender: "",
         avatarUrl: "",
         coverUrl: "",
+        description: "",
         artistId: ""
     },
     my_artist_data: {
@@ -64,6 +66,8 @@ export const profileReducer = (state = initialState, action: any) => {
                 gender: action.customer_data.gender,
                 avatarUrl: action.customer_data.avatarUrl,
                 coverUrl: action.customer_data.coverUrl,
+                description: action.customer_data.description === ' ' || action.customer_data.description === null ? ''
+                                                                    : action.customer_data.description,
                 artistId: action.customer_data.artistId
             }
 
@@ -76,7 +80,7 @@ export const profileReducer = (state = initialState, action: any) => {
                 avatarUrl: action.artist_data.avatarUrl,
                 coverUrl: action.artist_data.coverUrl,
                 customerId: action.artist_data.customerId,
-                description: action.artist_data.description
+                description: action.artist_data.description === ' ' ? '' : action.artist_data.description
             }
 
             return stateCopy
@@ -91,6 +95,7 @@ export const profileReducer = (state = initialState, action: any) => {
                 gender: action.customer_data.gender,
                 avatarUrl: action.customer_data.avatarUrl,
                 coverUrl: action.customer_data.coverUrl,
+                description: action.customer_data.description === ' ' ? '' : action.customer_data.description,
                 artistId: action.customer_data.artistId
             }
 
@@ -103,7 +108,7 @@ export const profileReducer = (state = initialState, action: any) => {
                 avatarUrl: action.artist_data.avatarUrl,
                 coverUrl: action.artist_data.coverUrl,
                 customerId: action.artist_data.customerId,
-                description: action.artist_data.description
+                description: action.artist_data.description === ' ' ? '' : action.artist_data.description
             }
 
             return stateCopy
@@ -123,6 +128,7 @@ export const profileReducer = (state = initialState, action: any) => {
                 coverUrl: "",
                 customerName: "",
                 birthDate: "",
+                description: "",
                 gender: ""
             }
 

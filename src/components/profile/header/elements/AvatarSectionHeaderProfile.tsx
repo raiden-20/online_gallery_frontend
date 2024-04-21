@@ -10,6 +10,7 @@ interface avatarSectionHeaderProfileInterface {
     message: string
     changeInputAvatar(event: React.ChangeEvent<HTMLInputElement>): void
     deleteAvatar(): void
+    isEditMobile : boolean
 }
 
 export const AvatarSectionHeaderProfile = (props: avatarSectionHeaderProfileInterface) => {
@@ -27,9 +28,10 @@ export const AvatarSectionHeaderProfile = (props: avatarSectionHeaderProfileInte
             <section className={header_profile_scss.avatar}>
                 <img src={props.input_avatarUrl === '' ? '/default_avatar_profile.jpg'
                     : props.input_avatarUrl}
+                     crossOrigin="anonymous"
                      alt={'avatar profile'}/>
             </section>
-            {isAvatarHover && status && (currentId === customerId || currentId === artistId) ?
+            {(isAvatarHover || props.isEditMobile) && status && (currentId === customerId || currentId === artistId) ?
                 <section className={header_profile_scss.change_avatar}>
                     <button>
                         <input className={header_profile_scss.hidden} type="file" id="setAvatar"

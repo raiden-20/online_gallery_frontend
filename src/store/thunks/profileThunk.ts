@@ -61,11 +61,11 @@ export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
         })
     }
 
-export const changeCustomerProfileData = (customerName: string, birthDate: string, gender: string,
+export const changeCustomerProfileData = (customerName: string, birthDate: string, gender: string, description: string,
                                           avatarUrl: string, coverUrl: string, avatar: File | string, cover: File | string,
                                           router: AppRouterInstance, setMessage: (message: string) => void) =>
     () => {
-        ProfileAPI.ChangeCustomerDataAPI(customerName, birthDate, gender, avatarUrl, coverUrl, avatar, cover)
+        ProfileAPI.ChangeCustomerDataAPI(customerName, birthDate, gender, description, avatarUrl, coverUrl, avatar, cover)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
@@ -149,8 +149,6 @@ export const createCustomerProfile = (customerName: string, birthDate: string, g
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        Cookies.set('customerId', response[1])
-                        Cookies.set('currentId', response[1])
                         Cookies.set('registrationFlag', 'true')
                         router.push(MAIN_PATHS.CREATE_ARTIST)
 
@@ -180,6 +178,7 @@ export const isCustomerCreate = (router: AppRouterInstance) =>
                                 Cookies.set('registrationFlag', 'process')
                             } else {
                                 Cookies.set('registrationFlag', 'true')
+                                Cookies.set('currentId', Cookies.get('customerId') as string)
                             }
                             break
                         }

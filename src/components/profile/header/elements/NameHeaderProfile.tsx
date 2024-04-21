@@ -8,6 +8,7 @@ interface nameHeaderProfileInterface {
     setInput_name(input_name: string): void
     setIsNeedChangeData(flag: boolean): void
     setIsNameClicked(isNameClicked: boolean): void
+    isEditMobile : boolean
 }
 
 export const NameHeaderProfile = (props: nameHeaderProfileInterface) => {
@@ -19,12 +20,15 @@ export const NameHeaderProfile = (props: nameHeaderProfileInterface) => {
 
     return (
         <section className={header_profile_scss.name_section}>
-            {props.isNameClicked && status && (currentId === customerId || currentId === artistId) ?
-                <input value={props.input_name}
-                       onChange={(event) => {
-                           props.setInput_name(event.target.value)
-                           props.setIsNeedChangeData(true)
-                       }}/>
+            {(props.isNameClicked || props.isEditMobile) && status && (currentId === customerId || currentId === artistId) ?
+                <section>
+                    <input value={props.input_name} className={header_profile_scss.input_name}
+                           onChange={(event) => {
+                               props.setInput_name(event.target.value)
+                               props.setIsNeedChangeData(true)
+                           }}/>
+                </section>
+
                 :
                 <button className={header_profile_scss.name}
                         onClick={() => props.setIsNameClicked(true)}>

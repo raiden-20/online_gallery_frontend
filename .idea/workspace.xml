@@ -4,16 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="hide scroll">
-      <change afterPath="$PROJECT_DIR$/public/default_action.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/default_artist_main.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/default_banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/default_rec_auc_photo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/main/next.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/main/Main.module.scss" afterDir="false" />
+    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="design for main page (v1)">
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/create_art_button.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/create_post_button.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/edit_profile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkProfileComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/WorksProfileComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/authAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/authAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/profileAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/OneArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/OneArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/ActionButtonsHeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/elements/ActionButtonsHeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/AvatarSectionHeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/elements/AvatarSectionHeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/CoverSectionHeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/elements/CoverSectionHeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/NameHeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/elements/NameHeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/CustomerCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/CustomerCategoriesProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/about/AboutCustomer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/about/AboutCustomer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/OneWorkComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/WorksComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/customerInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/customerInterface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Root.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Root.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/AccountNavigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/AccountNavigation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/globals.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +90,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/profile",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -70,18 +103,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\main" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\settings\categories\pay" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\settings" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\sculptures" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\header\elements" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\categories" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\categories\" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -126,7 +159,11 @@
       <workItem from="1713270577330" duration="11689000" />
       <workItem from="1713362698298" duration="17017000" />
       <workItem from="1713418643299" duration="3811000" />
-      <workItem from="1713467453029" duration="4939000" />
+      <workItem from="1713467453029" duration="5264000" />
+      <workItem from="1713521797692" duration="2000" />
+      <workItem from="1713532780001" duration="3000" />
+      <workItem from="1713637699914" duration="3420000" />
+      <workItem from="1713696155149" duration="21625000" />
     </task>
     <task id="LOCAL-00001" summary="prepare app for working">
       <option name="closed" value="true" />
@@ -488,7 +525,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713421603939</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="design for main page (v1)">
+      <option name="closed" value="true" />
+      <created>1713472595037</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1713472595037</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +550,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develop" />
+                        <option value="origin/develop" />
                       </list>
                     </value>
                   </entry>
@@ -518,7 +563,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adapting settings for mobile resolution" />
     <MESSAGE value="fixed app width" />
     <MESSAGE value="testing part 1" />
     <MESSAGE value="design mobile version for profile" />
@@ -543,6 +587,7 @@
     <MESSAGE value="create cart page and design" />
     <MESSAGE value="change subscriber word on support" />
     <MESSAGE value="hide scroll" />
-    <option name="LAST_COMMIT_MESSAGE" value="hide scroll" />
+    <MESSAGE value="design for main page (v1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="design for main page (v1)" />
   </component>
 </project>

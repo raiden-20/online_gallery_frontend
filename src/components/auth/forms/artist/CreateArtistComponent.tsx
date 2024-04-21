@@ -58,7 +58,7 @@ export const CreateArtistComponent = (props: CreateArtistInterface) => {
                     <p> Необязательно соглашаться сейчас, вы всегда сможете создать через настройки</p>
                     <section className={auth_main_scss.button_section}>
                         <button className={'cancel_button'}
-                                onClick={() => router.push(MAIN_PATHS.PROFILE)}>
+                                onClick={() => router.push(MAIN_PATHS.MAIN)}>
                             Пропустить
                         </button>
                         <button className={'main_button'}

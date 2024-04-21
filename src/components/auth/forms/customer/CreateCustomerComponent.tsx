@@ -16,7 +16,7 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
 
     const [input_name, setInput_name] = useState('')
     const [input_date, setInput_date] = useState('')
-    const [input_gender, setInput_gender] = useState('')
+    const [input_gender, setInput_gender] = useState('MAN')
 
     const [message, setMessage] = useState('')
 

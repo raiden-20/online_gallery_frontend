@@ -10,6 +10,7 @@ interface coverSectionHeaderProfileInterface {
     message: string
     changeInputCover(event: React.ChangeEvent<HTMLInputElement>): void
     deleteCover(): void
+    isEditMobile : boolean
 }
 
 export const CoverSectionHeaderProfile = (props: coverSectionHeaderProfileInterface) => {
@@ -27,10 +28,11 @@ export const CoverSectionHeaderProfile = (props: coverSectionHeaderProfileInterf
             <section className={header_profile_scss.cover}>
                 <img src={props.input_coverUrl === '' ? '/default_cover_profile.jpg'
                     : props.input_coverUrl}
+                     crossOrigin="anonymous"
                      alt={'cover profile'}/>
             </section>
 
-            {isCoverHover && status && (currentId === customerId || currentId === artistId) ?
+            {(isCoverHover || props.isEditMobile) && status && (currentId === customerId || currentId === artistId) ?
                 <section className={header_profile_scss.change_cover}>
                     <button>
                         <input className={header_profile_scss.hidden} type="file" id="setCover"

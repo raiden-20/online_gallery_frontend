@@ -18,9 +18,9 @@ import {Artist} from "@/interfaces/artistInterface";
 import {Customer} from "@/interfaces/customerInterface";
 import {useSession} from "next-auth/react";
 import {WorksRoot} from "@/components/categories/works/WorksRoot";
-import {OneWorkComponent} from "@/components/profile/profile_elemets/categories/works/OneWorkComponent";
 import {CartComponent} from "@/components/cart/CartComponent";
 import {MainComponent} from "@/components/main/MainComponent";
+import {OneWorkComponent} from "@/components/categories/works/works/OneWorkComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -56,7 +56,7 @@ export const Root = (props: RootInterface) => {
                 if (Cookies.get('artistId')) {
                     props.getArtistProfileData(Cookies.get('artistId') as string, router)
                 } else {
-                    if (props.customer_data.artistId !== '') {
+                    if (props.customer_data.artistId !== '' && props.customer_data.artistId !== null) {
                         Cookies.set('artistId', props.customer_data.artistId)
                         props.getArtistProfileData(Cookies.get('artistId') as string, router)
                     }

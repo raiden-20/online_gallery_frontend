@@ -65,6 +65,10 @@ $footer-gap: 16px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: $footer-gap;
+
+    button {
+      width: 100%;
+    }
   }
 }
 

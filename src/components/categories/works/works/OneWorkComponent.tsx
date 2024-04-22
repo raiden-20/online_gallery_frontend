@@ -4,14 +4,14 @@ export const OneWorkComponent = () => {
     return (
         <section className={one_work_scss.root}>
             <section className={one_work_scss.photo_section}> {/*todo scroll*/}
-                <img src={'/default_art_photo.jpg'} className={one_work_scss.one_photo}
+                <img src={'/default_art_photo.jpg'} className={one_work_scss.one_photo} crossOrigin="anonymous"
                      alt={'art photo'}/>
-                <img src={'/default_art_photo.jpg'} alt={'art photo'}/>
-                <img src={'/default_art_photo.jpg'} alt={'art photo'}/>
-                <img src={'/default_art_photo.jpg'} alt={'art photo'}/>
-                <img src={'/default_art_photo.jpg'} alt={'art photo'}/>
-                <img src={'/default_art_photo.jpg'} alt={'art photo'}/>
-                <img src={'/default_art_photo.jpg'} alt={'art photo'}/>
+                <img src={'/default_art_photo.jpg'} alt={'art photo'} crossOrigin="anonymous"/>
+                <img src={'/default_art_photo.jpg'} alt={'art photo'} crossOrigin="anonymous"/>
+                <img src={'/default_art_photo.jpg'} alt={'art photo'} crossOrigin="anonymous"/>
+                <img src={'/default_art_photo.jpg'} alt={'art photo'} crossOrigin="anonymous"/>
+                <img src={'/default_art_photo.jpg'} alt={'art photo'} crossOrigin="anonymous"/>
+                <img src={'/default_art_photo.jpg'} alt={'art photo'} crossOrigin="anonymous"/>
             </section>
             <main className={one_work_scss.art_info}>
                 <header className={one_work_scss.art_info_header}>

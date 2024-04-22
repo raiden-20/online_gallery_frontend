@@ -27,7 +27,8 @@ export const OneWorkProfileComponent = () => {
         <section className={works_profile_scss.one_work}
                  onClick={toOneArt}>
             <img src={'/default_work_profile.jpg'} className={works_profile_scss.one_work_img}
-                 alt={'one work'}/>
+                 alt={'one work'}
+                 crossOrigin="anonymous"/>
             <section className={works_profile_scss.one_work_names}>
                 <div className={works_profile_scss.one_work_weight}>Имя</div>
                 <div>Название</div>

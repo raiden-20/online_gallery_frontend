@@ -102,7 +102,8 @@ export const AccountNavigation = (props: accountNavInterface) => {
                         </button>
                     </li>
                     <li>
-                        <button className={accountNavigation_scss.button}>
+                        <button className={accountNavigation_scss.button}
+                                onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS)}>
                             Подписки
                         </button>
                     </li>

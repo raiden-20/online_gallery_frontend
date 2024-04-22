@@ -4,22 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="created delete account modal window and mobile version">
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/cart/add_info.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/cart/delete_arts.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/cart/delete_one.svg" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="design for cart">
+      <change afterPath="$PROJECT_DIR$/src/app/subscriptions/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/CancelSubscriptionComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/OneArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/OneArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/OneWorkComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/OneWorkComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OneOpenedPhotoPostComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OneOpenedPhotoPostComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OnePostArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OnePostArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/DeleteAccount.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/DeleteAccount.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/pages.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
         <option value="SCSS File" />
       </list>
@@ -67,6 +75,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\cart" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\subscribers\subscriptionsArtistPrivate" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -77,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713734544263</updated>
       <workItem from="1713734546760" duration="8478000" />
-      <workItem from="1713780008251" duration="2361000" />
+      <workItem from="1713780008251" duration="10211000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -95,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713737863407</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="design for cart">
+      <option name="closed" value="true" />
+      <created>1713782717045</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713782717045</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +146,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added button to settings card and address and ended mobile design" />
     <MESSAGE value="created delete account modal window and mobile version" />
-    <option name="LAST_COMMIT_MESSAGE" value="created delete account modal window and mobile version" />
+    <MESSAGE value="design for cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="design for cart" />
   </component>
 </project>

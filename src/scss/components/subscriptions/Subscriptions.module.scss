@@ -1,0 +1,141 @@
+@import '@/scss/globals/color';
+
+$root-gap: 24px;
+
+$header-size: 32px;
+$header-weight: 600;
+
+$search-padding: 12px 16px;
+$search-radius: 6px;
+
+$section-title-size: 24px;
+
+$subscriptions-private-section-gap: 8px;
+
+$artist-private-img-size: 70px;
+$artist-private-img-radius: 15px;
+
+$subscription-public-section-column-gap: 12px;
+$subscription-public-section-row-gap: 48px;
+
+$one-artist-public-gap: 12px;
+$one-artist-public-img-size: 165px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.header {
+  font-size: $header-size;
+  font-weight: $header-weight;
+}
+
+.search_section {
+  height: min-content;
+
+  padding: $search-padding;
+  border: 1px solid $grey;
+  border-radius: $search-radius;
+
+  display: grid;
+  grid-template-columns: min-content auto;
+  align-items: center;
+
+  input {
+    height: min-content;
+    border: none;
+  }
+}
+
+.section_title {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  justify-content: space-between;
+
+  font-weight: $header-weight;
+
+  div {
+    font-size: $section-title-size;
+  }
+
+  button {
+    cursor: auto;
+  }
+}
+
+.subscriptions_private_section {
+  display: grid;
+  row-gap: $subscriptions-private-section-gap;
+}
+
+
+.one_private_subscription_artists {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+
+  .artist_data_private {
+    display: flex;
+    gap: $subscriptions-private-section-gap;
+    align-items: center;
+
+    img {
+      width: $artist-private-img-size;
+      height: $artist-private-img-size;
+      object-fit: cover;
+
+      border-radius: $artist-private-img-radius;
+    }
+
+    div {
+      font-weight: $header-weight;
+    }
+  }
+
+  button {
+    width: min-content;
+
+    display: grid;
+    justify-self: end;
+  }
+}
+
+.subscription_public_section {
+  width: 99%;
+
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: $subscription-public-section-column-gap;
+  row-gap: $subscription-public-section-row-gap;
+
+  .one_artist_public {
+    * {
+      cursor: pointer;
+    }
+
+    display: grid;
+    justify-items: center;
+    gap: $one-artist-public-gap;
+
+    img {
+      width: $one-artist-public-img-size;
+      height: $one-artist-public-img-size;
+
+      border-radius: $artist-private-img-radius;
+
+      object-fit: cover;
+    }
+
+    div {
+      font-size: $header-size;
+      font-weight: $header-weight;
+    }
+  }
+}
+
+.p {
+  text-align: center;
+}

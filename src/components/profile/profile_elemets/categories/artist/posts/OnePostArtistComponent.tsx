@@ -9,7 +9,8 @@ export const OnePostArtistComponent = () => {
         <section className={posts_artist_module.one_post + ' ' + posts_artist_module.border}>
             <img src={'/default_work_profile.jpg'} className={posts_artist_module.one_post_img}
                  onClick={() => setOpenedPhotoSrc('/default_work_profile.jpg')}
-                 alt={'post photo'}/>
+                 alt={'post photo'}
+                 crossOrigin="anonymous"/>
             <header className={posts_artist_module.one_post_title}>Заголовок</header>
             <p>Оцените этот нереальный рисунок карандашом</p>
             <footer className={posts_artist_module.one_post_date}>9 апреля, 02:33</footer>

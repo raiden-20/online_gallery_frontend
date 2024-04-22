@@ -57,7 +57,7 @@ export const OneArtist = (props: OneArtistsInterface) => {
                         <img src={'/default_avatar_profile.jpg'}
                              alt={'default_ava'}/>
                         :
-                        <img src={props.oneArtist.avatarUrl}
+                        <img src={props.oneArtist.avatarUrl} crossOrigin="anonymous"
                              alt={'default_ava'}/>
                     }
                 </section>

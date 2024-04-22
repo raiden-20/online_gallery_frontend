@@ -13,7 +13,7 @@ export const OneOpenedPhotoPostComponent = (props: oneOpenedPhotoInterface) => {
         <section className={create_post_scss.page}>
             <section className={'bg ' + create_post_scss.bg} onClick={() => props.setOpenedPhotoSrc('')}></section>
             <img src={props.img} className={posts_artist_module.one_post_opened_photo}
-                 alt={'post photo'}/>
+                 alt={'post photo'} crossOrigin="anonymous"/>
         </section>
     )
 }

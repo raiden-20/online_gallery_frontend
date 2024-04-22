@@ -30,7 +30,7 @@ export const OneCartComponent = (props: oneCartInterface) => {
         <section className={one_cart_scss.root}>
             <input type={'checkbox'} className={one_cart_scss.checkbox}
                    onClick={() => setIsSelected(!isSelected)} checked={isSelected}/>
-            <img src={'/default_art_photo.jpg'} className={one_cart_scss.img}
+            <img src={'/default_art_photo.jpg'} className={one_cart_scss.img} crossOrigin="anonymous"
                  alt={'art photo'}/>
             <section className={one_cart_scss.data_section}>
                 <section className={one_cart_scss.art_data}>

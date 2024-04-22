@@ -1,13 +1,29 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
 
 $root-gap: 15px;
+$root-height: 165px;
 
-$img-width: 255px;
+$img-width: 165px;
 
-$art-data-gap: 5px;
+$art-data-gap: 8px;
 
 $font-size: 24px;
+$name-weight: 600;
+
+$anonymous-section-gap: 12px;
+$anonymous-section-add-gap: 6px;
+
+$hover-section-padding: 16px;
+$hover-section-radius: 12px;
+$hover-section-width: 400px;
+
+$add-text-size: 16px;
 
 .root {
+  height: $root-height;
+  position: relative;
+
   width: 100%;
   display: grid;
   grid-template-columns: min-content auto max-content;
@@ -18,7 +34,12 @@ $font-size: 24px;
     object-fit: cover;
   }
 
+  .data_section {
+    display: grid;
+  }
+
   .art_data {
+    position: relative;
     display: flex;
     flex-flow: column;
     gap: $art-data-gap;
@@ -31,7 +52,61 @@ $font-size: 24px;
     justify-items: end;
   }
 
+  .name {
+    font-weight: $name-weight;
+  }
+
   .text {
     font-size: $font-size;
   }
+
+  .section {
+    display: grid;
+    align-self: end;
+  }
+
+  .anonymous_section {
+    display: flex;
+    gap: $anonymous-section-gap;
+    align-items: center;
+
+    .anonymous_section_add {
+      display: flex;
+      gap: $anonymous-section-add-gap;
+
+      button {
+        height: min-content;
+      }
+
+      div, img {
+        display: grid;
+        align-self: center;
+      }
+    }
+  }
+}
+
+.hover_section {
+
+  width: $hover-section-width;
+
+  padding: $hover-section-padding;
+  border-radius: $hover-section-radius;
+
+  background-color: $white-color;
+  box-shadow: 0 0 10px 0 $shadow-color;
+  z-index: $z-index-up;
+
+  .add_text {
+    font-size: $add-text-size;
+    line-height: 20px;
+
+  }
+}
+
+.checkbox {
+  position: absolute;
+  display: grid;
+  align-self: start;
+  justify-self: start;
 }

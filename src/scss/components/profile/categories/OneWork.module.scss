@@ -4,16 +4,17 @@ $root-gap: 15px;
 $photo-section-width: 705px;
 $photo-section-gap: 24px;
 
-$art-info-gap: 16px;
+$art-info-gap: 24px;
 $art-info-header-gap: 4px;
 $art-info-header-artist-size: 24px;
 $art-info-header-artist-weight: 600;
 
-$art-price-size: 32px;
+$art-price-size: 24px;
 $art-price-weight: 600;
 
-$more-info-gap: 4px;
 $more-info-noimp: 16px;
+
+$details-section-gap: 32px;
 
 $tags-section-gap: 8px;
 $tag-radius: 6px;
@@ -65,7 +66,7 @@ $tag-padding: 4px 16px;
     }
 
     .art_name {
-      font-weight: $art-info-header-artist-weight;
+      font-style: italic;
     }
   }
 
@@ -79,29 +80,41 @@ $tag-padding: 4px 16px;
     text-align: center;
   }
 
-  .more_info {
+  .details_section {
+    display: grid;
+    grid-template-columns: 1.1fr 2fr;
+    gap: $details-section-gap;
+  }
+
+  .details_one_section {
+    display: grid;
+    gap: 8px;
+  }
+
+  .more_info_noimp {
+    font-size: $more-info-noimp;
+    color: $grey-filter-price-border;
+  }
+
+  .more_info_noimp_text {
+    font-size: $more-info-noimp;
+  }
+
+  .info_text {
+    font-size: $more-info-noimp;
+  }
+
+  .tags_section {
     display: flex;
-    flex-flow: column;
-    gap: $more-info-gap;
+    flex-wrap: wrap;
+    gap: $tags-section-gap;
 
-    .more_info_noimp {
-      font-size: $more-info-noimp;
-      color: $grey-filter-price-border;
-    }
+    .tag {
+      background-color: $grey_bg-settings;
+      border-radius: $tag-radius;
+      padding: $tag-padding;
 
-    .info_text {
-      font-size: $more-info-noimp;
-    }
-
-    .tags_section {
-      display: flex;
-      gap: $tags-section-gap;
-
-      .tag {
-        border: 1px solid $grey-filter-price-border;
-        border-radius: $tag-radius;
-        padding: $tag-padding;
-      }
+      color: $grey-tag;
     }
   }
 }

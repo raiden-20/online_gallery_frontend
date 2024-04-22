@@ -89,30 +89,29 @@ $one-photo-radius: 6px;
       padding: 0;
     }
   }
+}
 
-  .photo_section {
-    display: flex;
-    gap: $photo-section-gap;
+.photo_section {
+  display: flex;
+  gap: $photo-section-gap;
 
-    .onePhoto_section {
-      display: grid;
-
-      .onePhoto {
-        width: $one-photo-size;
-        height: $one-photo-size;
-        object-fit: cover;
-
-        border-radius: $one-photo-radius;
-      }
-
-      .delete_button {
-        position: absolute;
-
-        display: grid;
-        justify-self: end;
-
-        padding-right: 10px;
-      }
-    }
+  .onePhoto_section {
+    display: grid;
   }
+}
+.onePhoto {
+  width: $one-photo-size;
+  height: $one-photo-size;
+  object-fit: cover;
+
+  border-radius: $one-photo-radius;
+}
+
+.delete_button {
+  position: absolute;
+
+  display: grid;
+  justify-self: end;
+
+  padding-right: 10px;
 }

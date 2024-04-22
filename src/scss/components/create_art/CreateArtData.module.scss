@@ -1,0 +1,130 @@
+@import '@/scss/globals/color';
+@import '@/scss/globals/main_values';
+
+$root-gap: 48px;
+
+$section-root-gap: 16px;
+
+$header-size: 24px;
+$header_weight: 600;
+
+$textarea-height: 107px;
+$textarea-radius: 6px;
+
+$footer-gap: 12px;
+
+$hover-section-padding: 16px;
+$hover-section-radius: 12px;
+$hover-section-width: 400px;
+$add-text-size: 16px;
+
+$button-img-gap: 10px;
+
+$one-add-padding: 4px 16px;
+$one-add-radius: 6px;
+$one-add-gap: 10px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.section_root {
+  display: flex;
+  flex-flow: column;
+  gap: $section-root-gap;
+
+  .header {
+    font-size: $header-size;
+    font-weight: $header_weight;
+  }
+
+  textarea {
+    border-radius: $textarea-radius;
+    min-height: $textarea-height;
+  }
+}
+
+.inputs_section {
+  display: flex;
+  gap: $section-root-gap;
+
+  input {
+    width: 100%;
+  }
+}
+
+.footer {
+  width: 100%;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: min-content max-content min-content;
+  column-gap: $footer-gap;
+
+  align-items: center;
+}
+
+.hover_section {
+  position: absolute;
+
+  right: -15px;
+  bottom: -80px;
+
+  width: $hover-section-width;
+
+  padding: $hover-section-padding;
+  border-radius: $hover-section-radius;
+
+  background-color: $white-color;
+  box-shadow: 0 0 10px 0 $shadow-color;
+  z-index: $z-index-up;
+
+  display: grid;
+
+  .add_text {
+    font-size: $add-text-size;
+    line-height: 20px;
+  }
+}
+
+.button {
+  width: max-content;
+}
+
+.button_img {
+  width: max-content;
+  display: flex;
+  gap: $button-img-gap;
+}
+
+.hidden {
+  display: none;
+}
+
+.add_section {
+  display: flex;
+  flex-flow: column;
+  gap: $section-root-gap;
+
+  padding-bottom: $section-root-gap;
+}
+
+.add_section_ul {
+  display: flex;
+  gap: $section-root-gap;
+}
+
+.one_add {
+  width: max-content;
+  background-color: $grey_bg-settings;
+  color: $grey-tag;
+
+  padding: $one-add-padding;
+  border-radius: $one-add-radius;
+
+  display: flex;
+  gap: $one-add-gap;
+  align-items: center;
+}

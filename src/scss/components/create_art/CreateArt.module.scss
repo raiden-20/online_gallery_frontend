@@ -1,0 +1,60 @@
+@import '@/scss/globals/color';
+@import '@/scss/globals/main_values';
+
+$root-gap: 16px;
+$cancel-gap: 10px;
+
+$header-size: 24px;
+$header-weight: 600;
+
+$ul-gap: 16px;
+
+$icon-height: 25px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.cancel {
+  display: flex;
+  gap: $cancel-gap;
+  align-items: center;
+}
+
+.header {
+  font-size: $header-size;
+  font-weight: $header-weight;
+}
+
+.ul {
+  display: grid;
+  row-gap: $ul-gap;
+}
+
+.grey_bgc {
+
+  * {
+    cursor: pointer;
+  }
+
+  background-color: $grey_bg-settings;
+  border-radius: 6px;
+  padding: 16px;
+
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+
+  button {
+    height: $icon-height;
+  }
+}
+
+.type_section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

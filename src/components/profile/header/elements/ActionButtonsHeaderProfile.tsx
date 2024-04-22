@@ -1,4 +1,4 @@
-import {ROLES} from "@/paths/main";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
 import header_profile_scss from "@/scss/components/profile/HeaderProfile.module.scss";
 import {signIn} from "next-auth/react";
 import Cookies from "js-cookie";
@@ -9,6 +9,7 @@ import create_post_icon from "@/assets/icons/profile/create_post.svg";
 import edit_profile_icon from '@/assets/icons/profile/edit_profile.svg'
 import React, {useState} from "react";
 import {CreatePostProfile} from "@/components/profile/profile_elemets/create_post/CreatePostProfile";
+import {useRouter} from "next/navigation";
 
 interface actionButtonsInterface {
     isEditMobile : boolean
@@ -16,6 +17,8 @@ interface actionButtonsInterface {
 }
 
 export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
+
+    const router = useRouter()
 
     const [artistId] = useState(Cookies.get('artistId'))
     const [customerId] = useState(Cookies.get('customerId'))
@@ -54,7 +57,8 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                 :
                 artistId && artistId === currentId && currentRole === ROLES.ARTIST ?
                     <section className={header_profile_scss.artist_action_section}>
-                        <button className={'main_button ' + header_profile_scss.subscriber_section}>
+                        <button className={'main_button ' + header_profile_scss.subscriber_section}
+                                onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
                             <Image src={art_icon} alt={'art_icon'}/>
                             <div>Выставить работу</div>
                         </button>

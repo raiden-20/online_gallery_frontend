@@ -22,6 +22,7 @@ import {CartComponent} from "@/components/cart/CartComponent";
 import {MainComponent} from "@/components/main/MainComponent";
 import {OneWorkComponent} from "@/components/categories/works/works/one_work/OneWorkComponent";
 import {SubscriptionsComponent} from "@/components/subscribers/SubscriptionsComponent";
+import {CreateArtTypeComponent} from "@/components/create_art/CreateArtTypeComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -80,9 +81,10 @@ export const Root = (props: RootInterface) => {
                 </nav>
                 <main>
                     {main_path === PATHS_CATEGORY.MAIN ? <MainComponent/> :
-                    main_path === PATHS_CATEGORY.CREATE ? <Auth_main/> :
                     main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
                     main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
+                        pathname === MAIN_PATHS.CREATE_ARTIST ? <Auth_main/> :
+                        pathname === MAIN_PATHS.CREATE_CUSTOMER ? <Auth_main/> :
                         pathname === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :
                         pathname === PATHS_CATEGORY.PAINTINGS ? <WorksRoot/> :
                         pathname === PATHS_CATEGORY.PHOTO ? <WorksRoot/> :
@@ -90,6 +92,7 @@ export const Root = (props: RootInterface) => {
                         pathname === PATHS_CATEGORY.SEARCH ? <SearchContainer/> :
                         pathname === MAIN_PATHS.ONE_PHOTO ? <OneWorkComponent/> :
                         pathname === MAIN_PATHS.ONE_PAINTING ? <OneWorkComponent/> :
+                        pathname === MAIN_PATHS.CREATE_ART ? <CreateArtTypeComponent/> :
                         pathname === MAIN_PATHS.ONE_SCULPTURE ? <OneWorkComponent/> :
                     main_path === PATHS_CATEGORY.CART ? <CartComponent/> :
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsComponent/> : null

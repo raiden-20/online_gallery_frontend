@@ -18,10 +18,9 @@ interface OneArtistsInterface {
 export const OneArtist = (props: OneArtistsInterface) => {
     const router = useRouter()
 
-    const [currentRole, setCurrentRole] = useState(Cookies.get('currentRole'))
-    const [role, setRole] = useState(Cookies.get('role'))
-    const [currentId, setCurrentId] = useState(Cookies.get('currentId'))
-    const [artistId, setArtistId] = useState(Cookies.get('artistId'))
+    const [role] = useState(Cookies.get('role'))
+    const [currentId] = useState(Cookies.get('currentId'))
+    const [artistId] = useState(Cookies.get('artistId'))
     const {data: session, status} = useSession();
 
     const [isHover, setIsHover] = useState(false)

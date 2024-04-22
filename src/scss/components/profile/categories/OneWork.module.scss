@@ -20,6 +20,9 @@ $tags-section-gap: 8px;
 $tag-radius: 6px;
 $tag-padding: 4px 16px;
 
+$footer-gap: 32px;
+$footer-button-gap: 8px;
+
 .root {
   height: 100%;
 
@@ -116,5 +119,23 @@ $tag-padding: 4px 16px;
 
       color: $grey-tag;
     }
+  }
+}
+
+.underline {
+  font-size: $more-info-noimp;
+  text-decoration: underline;
+}
+
+.footer {
+  display: flex;
+  gap: $footer-gap;
+
+  button {
+    font-size: $more-info-noimp;
+
+    display: flex;
+    gap: $footer-button-gap;
+    align-items: center;
   }
 }

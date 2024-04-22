@@ -20,7 +20,7 @@ import {useSession} from "next-auth/react";
 import {WorksRoot} from "@/components/categories/works/WorksRoot";
 import {CartComponent} from "@/components/cart/CartComponent";
 import {MainComponent} from "@/components/main/MainComponent";
-import {OneWorkComponent} from "@/components/categories/works/works/OneWorkComponent";
+import {OneWorkComponent} from "@/components/categories/works/works/one_work/OneWorkComponent";
 import {SubscriptionsComponent} from "@/components/subscribers/SubscriptionsComponent";
 
 interface RootInterface {

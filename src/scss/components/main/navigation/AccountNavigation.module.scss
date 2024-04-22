@@ -27,7 +27,8 @@ $avatar-radius: 6px;
 
 
 
-    border: $border-base;
+    box-shadow: 0 4px 10px 0 $shadow-color;
+    border-radius: 6px;
 
     padding: $account_various-padding;
 

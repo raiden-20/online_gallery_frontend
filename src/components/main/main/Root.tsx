@@ -71,10 +71,12 @@ export const Root = (props: RootInterface) => {
         <section className={root_scss.page}>
             <section className={root_scss.root}>
                 <nav className={root_scss.desktop_nav}> {/*todo перенести в одну компоненту */}
-                    <NavigationComponent/>
+                    <NavigationComponent artist_avatar={props.artist_data.avatarUrl === '' ? '/default_ava_nav.jpg' : props.artist_data.avatarUrl}
+                                         customer_avatar={props.customer_data.avatarUrl === '' ? '/default_ava_nav.jpg' : props.customer_data.avatarUrl}/>
                 </nav>
                 <nav className={root_scss.mobile_nav}>
-                    <NavigationComponentMobile/>
+                    <NavigationComponentMobile artist_avatar={props.artist_data.avatarUrl === '' ? '/default_ava_nav.jpg' : props.artist_data.avatarUrl}
+                                               customer_avatar={props.customer_data.avatarUrl === '' ? '/default_ava_nav.jpg' : props.customer_data.avatarUrl}/>
                 </nav>
                 <main>
                     {main_path === PATHS_CATEGORY.MAIN ? <MainComponent/> :

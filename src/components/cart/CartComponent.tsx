@@ -4,8 +4,12 @@ import cart_scss from '@/scss/components/cart/Cart.module.scss'
 import delete_icon from '@/assets/icons/cart/delete_arts.svg'
 import Image from "next/image";
 import {useState} from "react";
+import {useRouter} from "next/navigation";
+import {MAIN_PATHS} from "@/paths/main";
 
 export const CartComponent = () => {
+    const router = useRouter()
+
     const [isAllSelected, setIsAllSelected] = useState(true)
 
     return (
@@ -46,9 +50,12 @@ export const CartComponent = () => {
                 <section className={cart_scss.buy_section}>
                     <section className={cart_scss.buy_data}>
                         <div className={cart_scss.price_text}>Итого</div>
-                        <div className={cart_scss.price_text}>1 170 000 ₽ </div>
+                        <div className={cart_scss.price_text}>1 170 000 ₽</div>
                     </section>
-                    <button className={'main_button'}>К оформлению</button>
+                    <button className={'main_button'}
+                            onClick={() => router.push(MAIN_PATHS.CREATE_ORDER)}>
+                        К оформлению
+                    </button>
                 </section>
             </main>
         </section>

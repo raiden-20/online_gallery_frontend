@@ -1,0 +1,30 @@
+.root {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 24px;
+}
+.root img {
+  display: grid;
+  align-self: end;
+}
+.root .info {
+  display: grid;
+  align-self: start;
+  justify-items: center;
+  row-gap: 5px;
+}
+.root .info p {
+  height: min-content;
+}
+.root .info .button {
+  text-decoration: underline;
+}
+.root .header {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=CreateOrderSuccess.module.css.map */

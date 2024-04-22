@@ -23,6 +23,8 @@ import {MainComponent} from "@/components/main/MainComponent";
 import {OneWorkComponent} from "@/components/categories/works/works/one_work/OneWorkComponent";
 import {SubscriptionsComponent} from "@/components/subscribers/SubscriptionsComponent";
 import {CreateArtTypeComponent} from "@/components/create_art/CreateArtTypeComponent";
+import {CreateOrderComponent} from "@/components/create_order/CreateOrderComponent";
+import {CreateOrderSuccessComponent} from "@/components/create_order/success/CreateOrderSuccessComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -94,6 +96,8 @@ export const Root = (props: RootInterface) => {
                         pathname === MAIN_PATHS.ONE_PAINTING ? <OneWorkComponent/> :
                         pathname === MAIN_PATHS.CREATE_ART ? <CreateArtTypeComponent/> :
                         pathname === MAIN_PATHS.ONE_SCULPTURE ? <OneWorkComponent/> :
+                        pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderComponent/> :
+                        pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
                     main_path === PATHS_CATEGORY.CART ? <CartComponent/> :
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsComponent/> : null
                     }

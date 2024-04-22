@@ -1,0 +1,42 @@
+$root-gap: 24px;
+
+$header-size: 24px;
+$header-weight: 600;
+
+$info-gap: 5px;
+
+.root {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: $root-gap;
+
+  img {
+    display: grid;
+    align-self: end;
+  }
+
+  .info {
+    display: grid;
+    align-self: start;
+    justify-items: center;
+
+    row-gap: $info-gap;
+
+    p {
+      height: min-content;
+    }
+
+    .button {
+      text-decoration: underline;
+    }
+  }
+
+  .header {
+    font-size: $header-size;
+    font-weight: $header-weight;
+  }
+}

@@ -71,6 +71,8 @@ export const OneArtist = (props: OneArtistsInterface) => {
                                     } else if (status === 'unauthenticated') {
                                         signIn("keycloak")
                                             .then(() => {
+                                                Cookies.set('role', ROLES.CUSTOMER)
+                                                Cookies.set('status', 'authenticated')
                                             })
                                     }
                                 }}>

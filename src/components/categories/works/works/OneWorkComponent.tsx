@@ -1,6 +1,8 @@
 import one_work_scss from '@/scss/components/profile/categories/OneWork.module.scss'
 import {useState} from "react";
 import {signIn, useSession} from "next-auth/react";
+import Cookies from "js-cookie";
+import {ROLES} from "@/paths/main";
 
 export const OneWorkComponent = () => {
     const {status} = useSession();
@@ -32,6 +34,11 @@ export const OneWorkComponent = () => {
                             }
                             else {
                                 signIn('keycloak')
+                                    .then(() => {
+                                        Cookies.set('role', ROLES.CUSTOMER)
+                                        Cookies.set('status', 'authenticated')
+
+                                    })
                             }
                         }}>
                     Добавить в корзину

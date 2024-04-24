@@ -25,6 +25,8 @@ import {SubscriptionsComponent} from "@/components/subscribers/SubscriptionsComp
 import {CreateArtTypeComponent} from "@/components/create_art/CreateArtTypeComponent";
 import {CreateOrderComponent} from "@/components/create_order/CreateOrderComponent";
 import {CreateOrderSuccessComponent} from "@/components/create_order/success/CreateOrderSuccessComponent";
+import {OrdersComponent} from "@/components/orders/OrdersComponent";
+import {OneOrderComponent} from "@/components/orders/one_order/OneOrderComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -98,6 +100,8 @@ export const Root = (props: RootInterface) => {
                         pathname === MAIN_PATHS.ONE_SCULPTURE ? <OneWorkComponent/> :
                         pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderComponent/> :
                         pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
+                        pathname === MAIN_PATHS.ORDERS ? <OrdersComponent/> :
+                        pathname === MAIN_PATHS.ONE_ORDER ? <OneOrderComponent/> :
                     main_path === PATHS_CATEGORY.CART ? <CartComponent/> :
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsComponent/> : null
                     }

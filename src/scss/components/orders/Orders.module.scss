@@ -1,0 +1,30 @@
+
+$root-gap: 16px;
+
+$header-size: 32px;
+$header-weight: 600;
+
+$main-gap: 24px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $root-gap;
+}
+
+.header {
+  font-size: $header-size;
+  font-weight: $header-weight;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  gap: $main-gap;
+}
+
+.li {
+  * {
+    cursor: pointer;
+  }
+}

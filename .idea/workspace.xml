@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="created create art page">
-      <change afterPath="$PROJECT_DIR$/src/app/create/order/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/create/order/success/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/create_order/edit.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/create_order/success.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_order/edit/AddressEditComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_order/edit/CardEditComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_order/success/CreateOrderSuccessComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOrderSuccess.module.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create page create order and success order">
+      <change afterPath="$PROJECT_DIR$/src/app/order/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/orders/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/orders/OneOrderComponentMain.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/orders/OrdersComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowChange.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowSend.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/orders/OneOrder.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/orders/Orders.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArt.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArt.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Main.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Main.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Main.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/color.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +32,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -54,7 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature__design__desktop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/create_order",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/orders/one_order/modal_windows",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,18 +68,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\orders\one_order\modal_windows" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\create_order" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_order\edit" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\create\order" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\create_art" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\pages\data\elements" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\orders\one_order\modal_windows" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\pages\data" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\pages" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\works\one_work" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\works\element" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\subscribers\subscriptionsArtistPrivate" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -89,7 +91,8 @@
       <option name="presentableId" value="Default" />
       <updated>1713734544263</updated>
       <workItem from="1713734546760" duration="8478000" />
-      <workItem from="1713780008251" duration="31490000" />
+      <workItem from="1713780008251" duration="31688000" />
+      <workItem from="1713865933149" duration="14261000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -163,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713821651178</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="create page create order and success order">
+      <option name="closed" value="true" />
+      <created>1713825928774</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1713825928774</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +213,7 @@
     <MESSAGE value="fixed sign in" />
     <MESSAGE value="added to one art page edit and delete buttons" />
     <MESSAGE value="created create art page" />
-    <option name="LAST_COMMIT_MESSAGE" value="created create art page" />
+    <MESSAGE value="create page create order and success order" />
+    <option name="LAST_COMMIT_MESSAGE" value="create page create order and success order" />
   </component>
 </project>

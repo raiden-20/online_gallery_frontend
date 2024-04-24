@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+}
+
+.header {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+}
+
+.li * {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=Orders.module.css.map */

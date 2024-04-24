@@ -21,6 +21,7 @@ export const PATHS_CATEGORY = {
     SEARCH: '/search',
     CART: '/cart',
     ORDER: '/order',
+    ORDERS: '/orders',
     SUBSCRIPTIONS: '/subscriptions',
 
     ERROR_404: '/404',
@@ -51,6 +52,8 @@ export const MAIN_PATHS = {
     SEARCH: PATHS_CATEGORY.SEARCH,
 
     CART: PATHS_CATEGORY.CART,
+    ORDERS: PATHS_CATEGORY.ORDERS,
+    ONE_ORDER: PATHS_CATEGORY.ORDER,
     SUBSCRIPTIONS: PATHS_CATEGORY.SUBSCRIPTIONS,
 
     ONE_PAINTING: PATHS_CATEGORY.PAINTINGS + '/[id]',

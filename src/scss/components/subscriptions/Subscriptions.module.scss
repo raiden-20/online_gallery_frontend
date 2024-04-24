@@ -1,43 +1,26 @@
 @import '@/scss/globals/color';
+@import '@/scss/globals/main_values';
 
-$root-gap: 24px;
-
-$header-size: 32px;
-$header-weight: 600;
-
-$search-padding: 12px 16px;
-$search-radius: 6px;
-
-$section-title-size: 24px;
-
-$subscriptions-private-section-gap: 8px;
 
 $artist-private-img-size: 70px;
-$artist-private-img-radius: 15px;
-
-$subscription-public-section-column-gap: 12px;
-$subscription-public-section-row-gap: 48px;
-
-$one-artist-public-gap: 12px;
-$one-artist-public-img-size: 165px;
 
 .root {
   display: flex;
   flex-flow: column;
-  gap: $root-gap;
+  gap: $gap-l1;
 }
 
 .header {
-  font-size: $header-size;
-  font-weight: $header-weight;
+  font-size: $font-size-xxl;
+  font-weight: $weight;
 }
 
 .search_section {
   height: min-content;
 
-  padding: $search-padding;
+  padding: $padding-8;
   border: 1px solid $grey;
-  border-radius: $search-radius;
+  border-radius: $elements-radius;
 
   display: grid;
   grid-template-columns: min-content auto;
@@ -54,10 +37,10 @@ $one-artist-public-img-size: 165px;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   justify-content: space-between;
 
-  font-weight: $header-weight;
+  font-weight: $weight;
 
   div {
-    font-size: $section-title-size;
+    font-size: $font-size-l;
   }
 
   button {
@@ -67,7 +50,7 @@ $one-artist-public-img-size: 165px;
 
 .subscriptions_private_section {
   display: grid;
-  row-gap: $subscriptions-private-section-gap;
+  row-gap: $gap-xxxs;
 }
 
 
@@ -79,7 +62,7 @@ $one-artist-public-img-size: 165px;
 
   .artist_data_private {
     display: flex;
-    gap: $subscriptions-private-section-gap;
+    gap: $gap-xxxs;
     align-items: center;
 
     img {
@@ -87,11 +70,11 @@ $one-artist-public-img-size: 165px;
       height: $artist-private-img-size;
       object-fit: cover;
 
-      border-radius: $artist-private-img-radius;
+      border-radius: $radius-big;
     }
 
     div {
-      font-weight: $header-weight;
+      font-weight: $weight;
     }
   }
 
@@ -108,8 +91,8 @@ $one-artist-public-img-size: 165px;
 
   display: flex;
   flex-wrap: wrap;
-  column-gap: $subscription-public-section-column-gap;
-  row-gap: $subscription-public-section-row-gap;
+  column-gap: $gap-xs;
+  row-gap: $gap-xxxl;
 
   .one_artist_public {
     * {
@@ -118,20 +101,20 @@ $one-artist-public-img-size: 165px;
 
     display: grid;
     justify-items: center;
-    gap: $one-artist-public-gap;
+    gap: $gap-xs;
 
     img {
-      width: $one-artist-public-img-size;
-      height: $one-artist-public-img-size;
+      width: $img-size-medium;
+      height: $img-size-medium;
 
-      border-radius: $artist-private-img-radius;
+      border-radius: $radius-big;
 
       object-fit: cover;
     }
 
     div {
-      font-size: $header-size;
-      font-weight: $header-weight;
+      font-size: $font-size-xxl;
+      font-weight: $weight;
     }
   }
 }

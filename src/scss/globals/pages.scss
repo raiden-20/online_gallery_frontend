@@ -6,22 +6,22 @@
 
 .title {
   font-family: 'Fahkwang', sans-serif;
-  font-size: $title-size;
+  font-size: $font-size-l;
 }
 
 .main_button {
-  font-weight: $button-weight;
+  font-weight: $weight;
 
   background-color: $black-color;
   color:$white-color;
 
   padding: $button-padding;
 
-  font-size: $button-font-size;
+  font-size: $font-size-s;
 }
 
 .no_main_color {
-  font-weight: $button-weight;
+  font-weight: $weight;
 }
 
 .cancel_button {
@@ -29,8 +29,8 @@
 
   padding: $button-padding;
 
-  font-weight: $button-weight;
-  font-size: $button-font-size;
+  font-weight: $weight;
+  font-size: $font-size-s;
 }
 
 .second_plan_button {
@@ -38,9 +38,23 @@
 
   padding: $button-padding;
 
-  font-weight: $button-weight;
-  font-size: $button-font-size;
+  font-weight: $weight;
+  font-size: $font-size-s;
   color: $white-color;
+}
+
+.page_modal_window {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  overflow: hidden;
+
+  z-index: $z-index-up;
 }
 
 .bg {
@@ -53,6 +67,28 @@
   height: 100vh;
 
   background-color: $grey-bg;
+}
+
+.bg2 {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $grey-bg-dark;
+}
+
+.modal_window {
+  width: $root-width-window;
+  padding: $root-padding-window;
+  border-radius: $radius-m;
+}
+
+.message {
+  color: $red-color
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -70,7 +106,7 @@
 
 
 html::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
 }
 
 .html::-webkit-scrollbar-track {
@@ -79,5 +115,5 @@ html::-webkit-scrollbar {
 
 .html::-webkit-scrollbar-thumb {
   background: $grey-date;
-  border-radius: 0px;
+  border-radius: 0;
 }

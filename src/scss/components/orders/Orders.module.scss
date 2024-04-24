@@ -1,26 +1,21 @@
+@import "@/scss/globals/main_values";
 
-$root-gap: 16px;
-
-$header-size: 32px;
-$header-weight: 600;
-
-$main-gap: 24px;
 
 .root {
   display: flex;
   flex-flow: column;
-  gap: $root-gap;
+  gap: $gap-s;
 }
 
 .header {
-  font-size: $header-size;
-  font-weight: $header-weight;
+  font-size: $font-size-xxl;
+  font-weight: $weight;
 }
 
 .main {
   display: flex;
   flex-flow: column;
-  gap: $main-gap;
+  gap: $gap-l1;
 }
 
 .li {

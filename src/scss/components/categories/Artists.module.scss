@@ -1,33 +1,15 @@
-
-$root-gap: 35px;
-$root-padding: 35px 0;
-
-$page-title-size: 32px;
-
-$options-weight: 600;
-
-$users-gap: 48px;
+@import "@/scss/globals/main_values";
 
 $one-user-width: 234px;
-$one-user-gap: 10px;
-$one-user-data-gap: 12px;
-$one-user-avatar-size: 200px;
-$one-user-avatar-radius: 15px;
-$one-user-name-size: 32px;
-
-$one-user-photo-size: 307px;
-$one-user-photo-radius: 8px;
-$one-user-photo-gap: 8px;
-
 $photo-max-width: 796px;
 
 .root {
   width: 100%;
-  padding: $root-padding;
+  padding: $padding-l;
 
   display: flex;
   flex-flow: column;
-  gap: $root-gap;
+  gap: $gap-xxl;
 }
 
 .header {
@@ -35,7 +17,7 @@ $photo-max-width: 796px;
   justify-content: space-between;
 
   .page_title {
-    font-size: $page-title-size;
+    font-size: $font-size-xxl;
   }
 }
 
@@ -50,7 +32,7 @@ $photo-max-width: 796px;
     height: min-content;
     width: min-content;
 
-    font-weight: $options-weight;
+    font-weight: $weight;
   }
 }
 
@@ -59,7 +41,7 @@ $photo-max-width: 796px;
   display: flex;
   flex-flow: column;
 
-  gap: $users-gap;
+  gap: $gap-xxxl;
 
   .one_user {
     position: relative;
@@ -74,16 +56,16 @@ $photo-max-width: 796px;
 
       display: grid;
       grid-template-rows: repeat(3, min-content);
-      gap: $one-user-data-gap;
+      gap: $gap-xs;
 
       justify-items: center;
 
       .one_user_avatar {
         cursor: pointer;
-        width: $one-user-avatar-size;
-        height: $one-user-avatar-size;
+        width: $img-size-big;
+        height: $img-size-big;
 
-        border-radius: $one-user-avatar-radius;
+        border-radius: $radius-big;
 
         img {
           cursor: pointer;
@@ -91,13 +73,13 @@ $photo-max-width: 796px;
           height: 100%;
           object-fit: cover;
 
-          border-radius: $one-user-avatar-radius;
+          border-radius: $radius-big;
         }
       }
 
       .one_user_name {
         cursor: pointer;
-        font-size: $one-user-name-size;
+        font-size: $font-size-xxl;
         text-align: center;
 
         word-break: break-all;
@@ -108,16 +90,16 @@ $photo-max-width: 796px;
       scroll-behavior: smooth;
       max-width: $photo-max-width;
       display: flex;
-      gap: $one-user-photo-gap;
+      gap: $gap-xxxs;
 
       overflow: hidden;
 
       .onePhoto {
-        width: $one-user-photo-size;
-        height: $one-user-photo-size;
+        width: $img-size-biggest;
+        height: $img-size-biggest;
         object-fit: cover;
 
-        border-radius: $one-user-photo-radius;
+        border-radius: $radius-s;
       }
     }
   }
@@ -125,11 +107,11 @@ $photo-max-width: 796px;
 
 .next_icon {
   position: absolute;
-  top: $one-user-photo-size / 2 - 20px;
+  top: $img-size-biggest / 2 - 20px;
   right: 10px;
 }
 
 .back_icon {
   position: absolute;
-  top: $one-user-photo-size / 2 - 20px;
+  top: $img-size-biggest / 2 - 20px;
 }

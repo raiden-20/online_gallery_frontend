@@ -86,7 +86,7 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
                                         Создать аккаунт художника
                                     </button>
                                     : null}
-                                <button className={settings_scss.button + ' ' + settings_scss.delete_button}
+                                <button className={settings_scss.delete_button}
                                         onClick={() => setIsDeleteClicked(true)}>
                                 Удалить аккаунт
                                 </button>

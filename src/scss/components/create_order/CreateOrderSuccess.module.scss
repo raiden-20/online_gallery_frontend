@@ -1,9 +1,5 @@
-$root-gap: 24px;
+@import '@/scss/globals/main_values';
 
-$header-size: 24px;
-$header-weight: 600;
-
-$info-gap: 5px;
 
 .root {
   width: 100%;
@@ -12,7 +8,7 @@ $info-gap: 5px;
   display: grid;
   justify-items: center;
   align-items: center;
-  gap: $root-gap;
+  gap: $gap-l1;
 
   img {
     display: grid;
@@ -24,7 +20,7 @@ $info-gap: 5px;
     align-self: start;
     justify-items: center;
 
-    row-gap: $info-gap;
+    row-gap: $gap-xxxxxs2;
 
     p {
       height: min-content;
@@ -36,7 +32,7 @@ $info-gap: 5px;
   }
 
   .header {
-    font-size: $header-size;
-    font-weight: $header-weight;
+    font-size: $font-size-l;
+    font-weight: $weight;
   }
 }

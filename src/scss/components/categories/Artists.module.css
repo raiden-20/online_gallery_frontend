@@ -1,92 +1,17 @@
-.root {
-  width: 100%;
-  padding: 35px 0;
-  display: flex;
-  flex-flow: column;
-  gap: 35px;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "@/scss/globals/main_values";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   Artists.module.scss 1:9  root stylesheet */
 
-.header {
-  display: flex;
-  justify-content: space-between;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"@/scss/globals/main_values\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Artists.module.scss 1:9  root stylesheet";
 }
-.header .page_title {
-  font-size: 32px;
-}
-
-.sort_section {
-  display: flex;
-  align-items: end;
-}
-.sort_section .select {
-  border: none;
-  height: min-content;
-  width: min-content;
-  font-weight: 600;
-}
-
-.users {
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  gap: 48px;
-}
-.users .one_user {
-  position: relative;
-  cursor: pointer;
-  display: grid;
-  grid-template-columns: 234px auto;
-  column-gap: 35px;
-}
-.users .one_user .user_data {
-  width: 234px;
-  display: grid;
-  grid-template-rows: repeat(3, min-content);
-  gap: 12px;
-  justify-items: center;
-}
-.users .one_user .user_data .one_user_avatar {
-  cursor: pointer;
-  width: 200px;
-  height: 200px;
-  border-radius: 15px;
-}
-.users .one_user .user_data .one_user_avatar img {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px;
-}
-.users .one_user .user_data .one_user_name {
-  cursor: pointer;
-  font-size: 32px;
-  text-align: center;
-  word-break: break-all;
-}
-.users .one_user .one_user_photo {
-  scroll-behavior: smooth;
-  max-width: 796px;
-  display: flex;
-  gap: 8px;
-  overflow: hidden;
-}
-.users .one_user .one_user_photo .onePhoto {
-  width: 307px;
-  height: 307px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.next_icon {
-  position: absolute;
-  top: 133.5px;
-  right: 10px;
-}
-
-.back_icon {
-  position: absolute;
-  top: 133.5px;
-}
-
-/*# sourceMappingURL=Artists.module.css.map */

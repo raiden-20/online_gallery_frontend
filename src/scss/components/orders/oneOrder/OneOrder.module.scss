@@ -1,38 +1,15 @@
 @import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
 
-$root-gap: 16px;
-
-$header-size: 32px;
-$header-weight: 600;
-
-$section-padding: 24px;
-$section-radius: 6px;
-
-$data-gap: 24px;
 $data-width: 705px;
-$condition-gap: 16px;
-
-$div-size: 16px;
-
-$art-data-gap: 15px;
-$art-data-img-size: 80px;
-
-$price-size: 24px;
-$price-weight: 600;
-
-$modal-width: 736px;
 
 .root {
   display: flex;
   flex-flow: column;
-  gap: $root-gap;
+  gap: $gap-s;
 
   p {
-    font-size: $div-size;
-
-    * {
-      font-size: $div-size;
-    }
+    font-size: $font-size-xs;
 
     button {
       height: min-content;
@@ -42,21 +19,21 @@ $modal-width: 736px;
 }
 
 .header {
-  font-size: $header-size;
-  font-weight: $header-weight;
+  font-size: $font-size-xxl;
+  font-weight: $weight;
 }
 
 .main {
   width: 100%;
   display: grid;
   grid-template-columns: max-content auto;
-  gap: $root-gap;
+  gap: $gap-s;
 }
 
 .section {
   background-color: $grey_bg-settings;
-  border-radius: $section-radius;
-  padding: $section-padding;
+  border-radius: $elements-radius;
+  padding: $padding-24;
 }
 
 .table {
@@ -64,14 +41,14 @@ $modal-width: 736px;
   grid-template-columns: 1fr 3fr;
 
   div {
-    font-size: $div-size;
+    font-size: $font-size-xs;
   }
 }
 
 .table_part {
   display: flex;
   flex-flow: column;
-  row-gap: $condition-gap;
+  row-gap: $gap-s;
 }
 
 .table_title {
@@ -85,7 +62,7 @@ $modal-width: 736px;
 .art_data {
   display: grid;
   grid-template-columns: min-content auto;
-  column-gap: $art-data-gap;
+  column-gap: $gap-s;
 
   align-items: center;
 
@@ -93,7 +70,7 @@ $modal-width: 736px;
     width: $art-data-img-size;
     height: $art-data-img-size;
     object-fit: cover;
-    border-radius: $section-radius;
+    border-radius: $elements-radius;
   }
 
   .art_data_name {
@@ -103,8 +80,8 @@ $modal-width: 736px;
   }
 
   .price {
-    font-size: $price-size;
-    font-weight: $price-weight;
+    font-size: $font-size-l;
+    font-weight: $weight;
   }
 }
 
@@ -112,7 +89,7 @@ $modal-width: 736px;
   max-width: $data-width;
   display: flex;
   flex-flow: column;
-  gap: $data-gap;
+  gap: $gap-l1;
 }
 
 .condition {
@@ -120,7 +97,7 @@ $modal-width: 736px;
 
   display: flex;
   flex-flow: column;
-  gap: $condition-gap;
+  gap: $gap-s;
 }
 
 .table_condition {
@@ -128,7 +105,7 @@ $modal-width: 736px;
   grid-template-columns: 1.5fr 2fr;
 
   div {
-    font-size: $div-size;
+    font-size: $font-size-xs;
   }
 }
 
@@ -139,7 +116,7 @@ $modal-width: 736px;
 .textarea {
   height: 107px;
   overflow-y: auto;
-  border-radius: $section-radius;
+  border-radius: $elements-radius;
   border: 1px solid $grey-filter-price-border;
 }
 

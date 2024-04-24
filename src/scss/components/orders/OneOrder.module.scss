@@ -1,29 +1,14 @@
 @import "@/scss/globals/color";
-
-
-$root-gap: 16px;
-$root-padding: 16px;
-$root-radius: 6px;
-
-$order-id-weight: 600;
-
-$status-padding: 4px 16px;
-$status-radius: 6px;
-$status-size: 16px;
-
-$order-img-size: 80px;
-$data-gap: 4px;
-
-$price-size: 24px;
+@import "@/scss/globals/main_values";
 
 .root {
   display: flex;
   flex-flow: column;
-  gap: $root-gap;
+  gap: $gap-s;
 
   background-color: $grey_bg-settings;
-  border-radius: $root-radius;
-  padding: $root-padding;
+  border-radius: $elements-radius;
+  padding: $section-padding-s;
 }
 
 .header_section {
@@ -38,31 +23,31 @@ $price-size: 24px;
 }
 
 .order_id {
-  font-weight: $order-id-weight;
+  font-weight: $weight;
 }
 
 .status {
   height: min-content;
-  padding: $status-padding;
-  border-radius: $status-radius;
+  padding: $padding-2;
+  border-radius: $elements-radius;
   background-color: $grey-status;
 
-  font-size: $status-size;
+  font-size: $font-size-xs;
 }
 
 .address {
-  font-size: $status-size;
+  font-size: $font-size-xs;
 }
 
 .order_data {
   display: grid;
   grid-template-columns: min-content auto;
-  column-gap: $root-gap;
+  column-gap: $gap-s;
 
   .img {
-    width: $order-img-size;
-    height: $order-img-size;
-    border-radius: $root-radius;
+    width: $art-data-img-size;
+    height: $art-data-img-size;
+    border-radius: $elements-radius;
   }
 
   .data {
@@ -73,16 +58,16 @@ $price-size: 24px;
 
     .section_name {
       display: grid;
-      row-gap: $data-gap;
+      row-gap: $gap-xxxxxs;
     }
 
     .weight {
-      font-weight: $order-id-weight;
+      font-weight: $weight;
     }
 
     .price {
-      font-weight: $order-id-weight;
-      font-size: $price-size;
+      font-weight: $weight;
+      font-size: $font-size-l;
     }
   }
 

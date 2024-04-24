@@ -1,24 +1,8 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
-$root-gap: 15px;
 $root-height: 165px;
-
-$img-width: 165px;
-
-$art-data-gap: 8px;
-
-$font-size: 24px;
-$name-weight: 600;
-
-$anonymous-section-gap: 12px;
-$anonymous-section-add-gap: 6px;
-
-$hover-section-padding: 16px;
-$hover-section-radius: 12px;
 $hover-section-width: 400px;
-
-$add-text-size: 16px;
 
 .root {
   height: $root-height;
@@ -27,10 +11,10 @@ $add-text-size: 16px;
   width: 100%;
   display: grid;
   grid-template-columns: min-content auto max-content;
-  column-gap: $root-gap;
+  column-gap: $gap-s;
 
   .img {
-    width: $img-width;
+    width: $img-size-medium;
     object-fit: cover;
   }
 
@@ -42,7 +26,7 @@ $add-text-size: 16px;
     position: relative;
     display: flex;
     flex-flow: column;
-    gap: $art-data-gap;
+    gap: $gap-xxxs;
   }
 
   .price_section {
@@ -53,11 +37,11 @@ $add-text-size: 16px;
   }
 
   .name {
-    font-weight: $name-weight;
+    font-weight: $weight;
   }
 
   .text {
-    font-size: $font-size;
+    font-size: $font-size-l;
   }
 
   .section {
@@ -67,12 +51,12 @@ $add-text-size: 16px;
 
   .anonymous_section {
     display: flex;
-    gap: $anonymous-section-gap;
+    gap: $gap-xs;
     align-items: center;
 
     .anonymous_section_add {
       display: flex;
-      gap: $anonymous-section-add-gap;
+      gap: $gap-xxxxs;
 
       button {
         height: min-content;
@@ -91,17 +75,16 @@ $add-text-size: 16px;
 
   width: $hover-section-width;
 
-  padding: $hover-section-padding;
-  border-radius: $hover-section-radius;
+  padding: $section-padding-s;
+  border-radius: $radius-m;
 
   background-color: $white-color;
   box-shadow: 0 0 10px 0 $shadow-color;
   z-index: $z-index-up;
 
   .add_text {
-    font-size: $add-text-size;
+    font-size: $gap-s;
     line-height: 20px;
-
   }
 }
 

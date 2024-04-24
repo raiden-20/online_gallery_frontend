@@ -1,16 +1,9 @@
 @import "@/scss/globals/main_values";
 
-$root-gap: 48px;
-$root-gap-mobile: 30px;
-
-$one-info-fap: 10px;
-
-$img-size: 20px;
-
 .root {
   display: flex;
   flex-flow: column;
-  gap: $root-gap;
+  gap: $gap-xxxl;
 
   .info_section {
     display: flex;
@@ -19,7 +12,7 @@ $img-size: 20px;
     .one_info {
       display: flex;
       flex-flow: column;
-      gap: $one-info-fap;
+      gap: $gap-xxs;
 
       text-align: center;
 
@@ -32,7 +25,7 @@ $img-size: 20px;
 
 @media screen and (max-width: $max-device-width){
   .root {
-    gap: $root-gap-mobile;
+    gap: $gap-l2;
 
     .info_section {
       flex-flow: column;

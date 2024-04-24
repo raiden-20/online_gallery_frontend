@@ -1,23 +1,18 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
-$root-gap: 25px;
-$one-post-gap: 16px;
-$one-post-title-size: 24px;
-$one-post-title-weight: 600;
-$one-post-border-padding: 48px;
 $one-post-photo-height: 90%;
 
 .root {
   display: flex;
   flex-flow: column;
-  gap: $root-gap;
+  gap: $gap-l;
 }
 
 .one_post {
   display: flex;
   flex-flow: column;
-  gap: $one-post-gap;
+  gap: $gap-s;
 
   .one_post_img {
     cursor: pointer;
@@ -25,8 +20,8 @@ $one-post-photo-height: 90%;
   }
 
   .one_post_title {
-    font-size: $one-post-title-size;
-    font-weight: $one-post-title-weight;
+    font-size: $font-size-l;
+    font-weight: $weight;
   }
 
   .one_post_date {
@@ -46,5 +41,5 @@ $one-post-photo-height: 90%;
 
 .border {
   border-bottom: 1px solid $grey_border;
-  padding-bottom: $one-post-border-padding;
+  padding-bottom: $padding-6;
 }

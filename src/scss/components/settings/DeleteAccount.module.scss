@@ -1,17 +1,7 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
-$root-width: 800px;
-$root-padding: 32px;
-$root-gap: 16px;
-$root-radius: 12px;
-
-$header-size: 24px;
-$header-weight: 600;
-
-$footer-gap: 16px;
-
-.page {
+.page_modal_window {
   position: fixed;
 
   top: 0;
@@ -27,14 +17,10 @@ $footer-gap: 16px;
   z-index: $z-index-up;
 }
 
-.bg {
-  background-color: $grey-bg-dark;
-}
-
 .modal_window {
-  width: $root-width;
-  padding: $root-padding;
-  border-radius: $root-radius;
+  width: $root-width-window;
+  padding: $root-padding-window;
+  border-radius: $radius-m;
 
   display: grid;
 
@@ -47,24 +33,24 @@ $footer-gap: 16px;
 
 .root {
   display: grid;
-  gap: $root-gap;
+  gap: $gap-s;
 
   .header {
-    font-size: $header-size;
-    font-weight: $header-weight;
+    font-size: $font-size-l;
+    font-weight: $weight;
 
     text-align: center;
   }
 
   .main_p {
-    font-weight: $header-weight;
+    font-weight: $weight;
   }
 
   .footer_buttons {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: $footer-gap;
+    column-gap: $gap-s;
 
     button {
       width: 100%;

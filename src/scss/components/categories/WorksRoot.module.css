@@ -1,23 +1,17 @@
-.root {
-  display: flex;
-  flex-flow: column;
-  gap: 24px;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "@/scss/globals/main_values";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   WorksRoot.module.scss 1:9  root stylesheet */
 
-.header {
-  font-size: 32px;
-  font-weight: 600;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"@/scss/globals/main_values\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   WorksRoot.module.scss 1:9  root stylesheet";
 }
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-}
-.nav .filters_button {
-  height: min-content;
-  display: flex;
-  gap: 8px;
-  font-weight: 600;
-}
-
-/*# sourceMappingURL=WorksRoot.module.css.map */

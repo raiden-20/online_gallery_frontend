@@ -41,24 +41,24 @@ export const PhotoSection = () => {
                         <Image src={back_icon} alt={'next_icon'}/>
                     </button>
                     : null}
-                <li onClick={() => setOpenedPhotoSrc(['/default_avatar_profile.jpg', '/default_work_profile.jpg', '/default_avatar_profile.jpg'])}>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
+                <li onClick={() => setOpenedPhotoSrc(['/default_cover_profile.jpg', '/default_work_profile.jpg', '/default_cover_profile.jpg'])}>
+                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
                            alt={'photo'} width={0} height={0}/>
                 </li>
                 <li>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
+                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
                            alt={'photo'} width={0} height={0}/>
                 </li>
                 <li>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
+                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
                            alt={'photo'} width={0} height={0}/>
                 </li>
                 <li>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
+                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
                            alt={'photo'} width={0} height={0}/>
                 </li>
                 <li>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
+                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
                            alt={'photo'} width={0} height={0}/>
                 </li>
             </ul>

@@ -10,7 +10,7 @@ export const OneSubscription = () => {
     return (
         <section className={subscriptions_scss.one_private_subscription_artists}>
             <section className={subscriptions_scss.artist_data_private}>
-                <img src={'/default_avatar_profile.jpg'} alt={'avatar'} crossOrigin="anonymous"/>
+                <img src={'/default_avatar_profile.svg'} alt={'avatar'} crossOrigin="anonymous"/>
                 <div>Имя</div>
             </section>
             <div>1 000 ₽</div>

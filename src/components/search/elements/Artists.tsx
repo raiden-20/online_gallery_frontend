@@ -47,7 +47,7 @@ export const Artists = (props: ArtistsInterface) => {
                             Cookies.set("currentId", oneElement.artistId)
                         }
                     }>
-                        <img src={oneElement.avatarUrl === '' ? "/default_ava_nav.jpg" : oneElement.avatarUrl}
+                        <img src={oneElement.avatarUrl === '' ? '/default_avatar_profile.svg' : oneElement.avatarUrl}
                              className={search_scss.one_element_photo}
                              alt={'avatar'} crossOrigin="anonymous"/>
                         <div className={search_scss.one_element_name}>{oneElement.artistName}</div>

@@ -90,32 +90,32 @@ export const MainComponent = () => {
                 </header>
                 <section className={main_scss.artists_section}>
                     <section className={main_scss.one_artist}>
-                        <img src={'/default_artist_main.jpg'} className={main_scss.one_artist_photo}
+                        <img src={'/default_avatar_profile.svg'} className={main_scss.one_artist_photo}
                              alt={'artist photo'} crossOrigin="anonymous"/>
                         <div className={main_scss.one_artist_name}>Имя</div>
                     </section>
                     <section className={main_scss.one_artist}>
-                        <img src={'/default_artist_main.jpg'} className={main_scss.one_artist_photo}
+                        <img src={'/default_avatar_profile.svg'} className={main_scss.one_artist_photo}
                              alt={'artist photo'} crossOrigin="anonymous"/>
                         <div className={main_scss.one_artist_name}>Имя</div>
                     </section>
                     <section className={main_scss.one_artist}>
-                        <img src={'/default_artist_main.jpg'} className={main_scss.one_artist_photo}
+                        <img src={'/default_avatar_profile.svg'} className={main_scss.one_artist_photo}
                              alt={'artist photo'} crossOrigin="anonymous"/>
                         <div className={main_scss.one_artist_name}>Имя</div>
                     </section>
                     <section className={main_scss.one_artist}>
-                        <img src={'/default_artist_main.jpg'} className={main_scss.one_artist_photo}
+                        <img src={'/default_avatar_profile.svg'} className={main_scss.one_artist_photo}
                              alt={'artist photo'} crossOrigin="anonymous"/>
                         <div className={main_scss.one_artist_name}>Имя</div>
                     </section>
                     <section className={main_scss.one_artist}>
-                        <img src={'/default_artist_main.jpg'} className={main_scss.one_artist_photo}
+                        <img src={'/default_avatar_profile.svg'} className={main_scss.one_artist_photo}
                              alt={'artist photo'} crossOrigin="anonymous"/>
                         <div className={main_scss.one_artist_name}>Имя</div>
                     </section>
                     <section className={main_scss.one_artist}>
-                        <img src={'/default_artist_main.jpg'} className={main_scss.one_artist_photo}
+                        <img src={'/default_avatar_profile.svg'} className={main_scss.one_artist_photo}
                              alt={'artist photo'} crossOrigin="anonymous"/>
                         <div className={main_scss.one_artist_name}>Имя</div>
                     </section>

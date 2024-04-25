@@ -51,7 +51,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + Cookies.get('customerId'))
                             }
                             }>
-                            <img src={props.my_customer_data.avatarUrl === '' ? "/default_ava_nav.jpg" : props.my_customer_data.avatarUrl }
+                            <img src={props.my_customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_customer_data.avatarUrl }
                                  className={accountNavigation_scss.avatar}
                                  crossOrigin="anonymous"
                                  alt={'avatar'}/>
@@ -73,7 +73,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + Cookies.get('artistId'))
                             }
                             }>
-                            <img src={props.my_artist_data.avatarUrl === '' ? "/default_ava_nav.jpg" : props.my_artist_data.avatarUrl}
+                            <img src={props.my_artist_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_artist_data.avatarUrl}
                                  className={accountNavigation_scss.avatar}
                                  crossOrigin="anonymous"
                                  alt={'avatar'}/>

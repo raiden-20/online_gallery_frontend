@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add oneOpenPhoto">
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="fixed profile navigation font size">
+      <change afterPath="$PROJECT_DIR$/public/Group 8.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/default_avatar_profile.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/default_artist_main.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/default_ava_nav.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/PhotoSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/PhotoSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/AvatarSectionHeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/elements/AvatarSectionHeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature__design__desktop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/profile",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -53,11 +66,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\orders\one_order\modal_windows" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\create_order" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_order\edit" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\create\order" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\artists\oneArtist" />
@@ -79,7 +92,7 @@
       <workItem from="1713780008251" duration="31688000" />
       <workItem from="1713865933149" duration="14261000" />
       <workItem from="1713952774723" duration="12228000" />
-      <workItem from="1714034356332" duration="5426000" />
+      <workItem from="1714034356332" duration="7203000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -185,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714073623572</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fixed profile navigation font size">
+      <option name="closed" value="true" />
+      <created>1714073861231</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714073861231</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +249,7 @@
     <MESSAGE value="created orders pages" />
     <MESSAGE value="redo scss files (variables)" />
     <MESSAGE value="add oneOpenPhoto" />
-    <option name="LAST_COMMIT_MESSAGE" value="add oneOpenPhoto" />
+    <MESSAGE value="fixed profile navigation font size" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed profile navigation font size" />
   </component>
 </project>

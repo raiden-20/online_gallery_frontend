@@ -1,8 +1,8 @@
 @import "@/scss/globals/main_values";
 @import "@/scss/globals/color";
 
-$who-buy-size: 69px;
-$who-buy-img-size: 45px;
+$who-buy-size: 59px;
+$who-buy-img-size: 35px;
 
 $star-width: 197px;
 
@@ -94,6 +94,9 @@ $star-width: 197px;
     object-fit: cover;
 
     border-radius: $elements-radius;
+
+    display: grid;
+    align-self: center;
   }
 
   div {

@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="created private posts components">
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/art/star.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/CancelSubscriptionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/CancelSubscriptionComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/CreatePost.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/CreatePost.module.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="small changes in all">
       <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/color.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +78,7 @@
       <workItem from="1713780008251" duration="31688000" />
       <workItem from="1713865933149" duration="14261000" />
       <workItem from="1713952774723" duration="12228000" />
-      <workItem from="1714034356332" duration="14953000" />
+      <workItem from="1714034356332" duration="15276000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -226,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714080916872</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="small changes in all">
+      <option name="closed" value="true" />
+      <created>1714084678573</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1714084678574</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +271,7 @@
     <MESSAGE value="set default photo" />
     <MESSAGE value="fix one open photo visibility" />
     <MESSAGE value="created private posts components" />
-    <option name="LAST_COMMIT_MESSAGE" value="created private posts components" />
+    <MESSAGE value="small changes in all" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes in all" />
   </component>
 </project>

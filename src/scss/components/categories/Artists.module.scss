@@ -95,6 +95,8 @@ $photo-max-width: 796px;
       overflow: hidden;
 
       .onePhoto {
+        cursor: pointer;
+
         width: $img-size-biggest;
         height: $img-size-biggest;
         object-fit: cover;
@@ -107,11 +109,12 @@ $photo-max-width: 796px;
 
 .next_icon {
   position: absolute;
-  top: $img-size-biggest / 2 - 20px;
-  right: 10px;
+  top: $img-size-biggest / 2 - $padding-20;
+  right: $gap-xxs;
 }
 
 .back_icon {
   position: absolute;
-  top: $img-size-biggest / 2 - 20px;
+  top: $img-size-biggest / 2 - $padding-20;
+  margin-left: $gap-xxs;
 }

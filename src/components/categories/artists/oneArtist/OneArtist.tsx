@@ -5,11 +5,10 @@ import header_profile_scss from "@/scss/components/profile/HeaderProfile.module.
 import {signIn, useSession} from "next-auth/react";
 import Image from "next/image";
 import bell_icon from "@/assets/icons/profile/bell_icon.svg";
-import back_icon from "@/assets/icons/search/back.svg";
-import next_icon from "@/assets/icons/search/next.svg";
-import React, {useRef, useState} from "react";
+import React, {useState} from "react";
 import {UserShort} from "@/interfaces/artistInterface";
 import {useRouter} from "next/navigation";
+import {PhotoSection} from "@/components/categories/artists/oneArtist/PhotoSection";
 
 interface OneArtistsInterface {
     oneArtist: UserShort,
@@ -21,25 +20,7 @@ export const OneArtist = (props: OneArtistsInterface) => {
     const [role] = useState(Cookies.get('role'))
     const [currentId] = useState(Cookies.get('currentId'))
     const [artistId] = useState(Cookies.get('artistId'))
-    const {data: session, status} = useSession();
-
-    const [isHover, setIsHover] = useState(false)
-
-
-    const listRef = useRef<HTMLUListElement>(null);
-
-
-    const scrollRight = () => {
-        if (listRef.current) {
-            listRef.current.scrollLeft += 200;
-        }
-    };
-
-    const scrollLeft = () => {
-        if (listRef.current) {
-            listRef.current.scrollLeft -= 200;
-        }
-    };
+    const {status} = useSession();
 
     return (
         <li key={props.oneArtist.artistId}
@@ -94,45 +75,7 @@ export const OneArtist = (props: OneArtistsInterface) => {
                     : null
                 }
             </section>
-            <ul ref={listRef}
-                className={artists_scss.one_user_photo}
-                onMouseOver={() => setIsHover(true)}
-                onMouseLeave={() => setIsHover(false)}>
-                {isHover ?
-                    <button className={artists_scss.back_icon}
-                            onMouseOver={() => setIsHover(true)}
-                            onClick={scrollLeft}>
-                        <Image src={back_icon} alt={'next_icon'}/>
-                    </button>
-                    : null}
-                <li>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
-                <li>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
-                <li>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
-                <li>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
-                <li>
-                    <Image src={'/default_avatar_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
-            </ul>
-            {isHover ?
-                <button className={artists_scss.next_icon}
-                        onMouseOver={() => setIsHover(true)}
-                        onClick={scrollRight}>
-                    <Image src={next_icon} alt={'next_icon'}/>
-                </button>
-                : null}
+            <PhotoSection/>
         </li>
     )
 }

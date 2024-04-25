@@ -1,33 +1,11 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
-.page_modal_window {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  display: grid;
-  justify-items: center;
-  align-items: center;
-
-  z-index: $z-index-up;
-}
-
 .modal_window {
-  width: $root-width-window;
-  padding: $root-padding-window;
-  border-radius: $radius-m;
-
   display: grid;
-
   align-items: center;
 
   background-color: $white-color;
-
   z-index: $z-index-menu;
 }
 

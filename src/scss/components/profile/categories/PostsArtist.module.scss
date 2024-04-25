@@ -33,6 +33,7 @@ $one-post-photo-height: 90%;
 }
 
 .one_post_opened_photo {
+  position: relative;
   height: $one-post-photo-height;
   object-fit: cover;
 
@@ -42,4 +43,35 @@ $one-post-photo-height: 90%;
 .border {
   border-bottom: 1px solid $grey_border;
   padding-bottom: $padding-6;
+}
+
+.button_close {
+  position: absolute;
+  display: grid;
+  justify-self: end;
+  align-self: start;
+
+  padding: $gap-xxl2 $gap-xxl2 0 0;
+
+  z-index: $z-index-menu;
+}
+
+.button_next {
+  position: absolute;
+  display: grid;
+  justify-self: end;
+
+  padding-right: $gap-xxl2;
+
+  z-index: $z-index-menu;
+}
+
+.button_prev {
+  position: absolute;
+  display: grid;
+  justify-self: start;
+
+  padding-left: $gap-xxl2;
+
+  z-index: $z-index-menu;
 }

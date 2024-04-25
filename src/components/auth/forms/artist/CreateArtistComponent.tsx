@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import {useRouter} from "next/navigation";
 import {AUTH_PATHS} from "@/paths/auth";
@@ -50,7 +50,7 @@ export const CreateArtistComponent = (props: CreateArtistInterface) => {
                             onClick={() => setIsRegisterClicked(true)}>
                         Зарегистрироваться
                     </button>
-                    <p className={auth_main_scss.message}>{message}</p>
+                    <p className={'message'}>{message}</p>
                 </main>
                 :
                 <main className={auth_main_scss.form}>

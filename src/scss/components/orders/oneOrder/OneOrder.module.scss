@@ -114,7 +114,8 @@ $data-width: 705px;
 }
 
 .textarea {
-  height: 107px;
+  min-height: 107px;
+  max-height: 200px;
   overflow-y: auto;
   border-radius: $elements-radius;
   border: 1px solid $grey-filter-price-border;

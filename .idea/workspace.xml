@@ -4,54 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="created orders pages">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="redo scss files (variables)">
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/next_photo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/prev_photo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/PhotoSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/auth/Auth_main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/auth/Auth_main.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/OneArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddPhotoComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddPhotoComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowChange.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowChange.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowSend.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowSend.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OneOpenedPhotoPostComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OneOpenedPhotoPostComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OnePostArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OnePostArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/create_post/CreatePostProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/create_post/CreatePostProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Filters.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Filters.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Filters.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Filters.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArt.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArt.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/create_order/CreateOrderSuccess.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOrderSuccess.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/create_order/CreateOrderSuccess.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOrderSuccess.module.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/create_order/CreateOrderSuccess.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOrderSuccess.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Main.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Main.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Main.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Root.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Root.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Root.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Root.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/AccountNavigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/AccountNavigation.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Footer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Footer.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Footer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Footer.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/OneOrder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/OneOrder.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/Orders.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/Orders.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/Orders.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/Orders.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/AboutArtist.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/AboutArtist.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/AboutArtist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/AboutArtist.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/CreatePost.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/CreatePost.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/PostsArtist.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/PostsArtist.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/PostsArtist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/PostsArtist.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/settings/DeleteAccount.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/DeleteAccount.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/globals/pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/pages.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,35 +58,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature__design__desktop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/orders/one_order/modal_windows&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature__design__desktop",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/profile",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\orders\one_order\modal_windows" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\create_order" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_order\edit" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\create\order" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\create_art" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\artists\oneArtist" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\orders\one_order\modal_windows" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\pages\data" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\pages" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\works\one_work" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\works\element" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -124,7 +100,8 @@
       <workItem from="1713734546760" duration="8478000" />
       <workItem from="1713780008251" duration="31688000" />
       <workItem from="1713865933149" duration="14261000" />
-      <workItem from="1713952774723" duration="11817000" />
+      <workItem from="1713952774723" duration="12228000" />
+      <workItem from="1714034356332" duration="5110000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -214,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713953187979</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="redo scss files (variables)">
+      <option name="closed" value="true" />
+      <created>1713989398479</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713989398479</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +240,7 @@
     <MESSAGE value="created create art page" />
     <MESSAGE value="create page create order and success order" />
     <MESSAGE value="created orders pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="created orders pages" />
+    <MESSAGE value="redo scss files (variables)" />
+    <option name="LAST_COMMIT_MESSAGE" value="redo scss files (variables)" />
   </component>
 </project>

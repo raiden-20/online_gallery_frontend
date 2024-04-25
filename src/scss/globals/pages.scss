@@ -55,6 +55,10 @@
   overflow: hidden;
 
   z-index: $z-index-up;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
 
 .bg {
@@ -67,6 +71,7 @@
   height: 100vh;
 
   background-color: $grey-bg;
+  z-index: $z-index-middle;
 }
 
 .bg2 {
@@ -79,12 +84,19 @@
   height: 100vh;
 
   background-color: $grey-bg-dark;
+  z-index: $z-index-middle;
 }
 
 .modal_window {
   width: $root-width-window;
   padding: $root-padding-window;
   border-radius: $radius-m;
+
+  display: grid;
+  align-items: center;
+
+  background-color: $white-color;
+  z-index: $z-index-menu;
 }
 
 .message {

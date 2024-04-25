@@ -7,6 +7,7 @@ import {MAIN_PATHS} from "@/paths/main";
 import one_order_scss from '@/scss/components/orders/oneOrder/OneOrder.module.scss'
 import {useState} from "react";
 import {OneOrderModalWindowChange} from "@/components/orders/one_order/modal_windows/OneOrderModalWindowChange";
+import {OneOrderModalWindowSend} from "@/components/orders/one_order/modal_windows/OneOrderModalWindowSend";
 
 export const OneOrderComponent = () => {
     const router = useRouter()
@@ -70,8 +71,8 @@ export const OneOrderComponent = () => {
             <p>Возникли проблемы? <button>Обратитесь в техническую поддержку</button></p>
 
             {isClicked ?
-                // <OneOrderModalWindowSend setIsClicked={setIsClicked}/>
-                <OneOrderModalWindowChange setIsClicked={setIsClicked}/>
+                <OneOrderModalWindowSend setIsClicked={setIsClicked}/>
+                //<OneOrderModalWindowChange setIsClicked={setIsClicked}/>
             : null}
         </section>
     )

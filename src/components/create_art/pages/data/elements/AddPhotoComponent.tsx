@@ -72,7 +72,7 @@ export const AddPhotoComponent = (props: mainPhotoInterface) => {
                 </section>
                 : null}
             {message !== '' ?
-                <p className={auth_main_scss.message}>{message}</p>
+                <p className={'message'}>{message}</p>
                 : null}
             <button className={'main_button ' + create_art_data_scss.button}>
                 <input className={create_art_data_scss.hidden} type="file" id="setAddPhoto"

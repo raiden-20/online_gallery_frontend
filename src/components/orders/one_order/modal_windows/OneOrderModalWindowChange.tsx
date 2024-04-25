@@ -25,15 +25,15 @@ export const OneOrderModalWindowChange = (props: OneOrderModalWindowInterface) =
     }, [isButtonCLicked]);
 
     return (
-        <section className={delete_account_scss.page}>
-            <section className={'bg ' + delete_account_scss.bg} onClick={() => props.setIsClicked(false)}></section>
-            <main className={delete_account_scss.modal_window + ' ' + one_order_scss.modal_width}>
+        <section className={'page_modal_window'}>
+            <section className={'bg2'} onClick={() => props.setIsClicked(false)}></section>
+            <main className={'modal_window ' + one_order_scss.modal_width}>
                 <section className={delete_account_scss.root}>
                     <textarea className={one_order_scss.textarea} placeholder={'Трек-номер для отслеживания заказа'}
                               value={input_message}
                               onChange={(event) => setInput_message(event.target.value)}/>
                     {message !== '' ?
-                        <p className={auth_main_scss.message}>{message}</p>
+                        <p className={'message'}>{message}</p>
                         : null}
                     <footer className={delete_account_scss.footer_buttons}>
                         <button className={'cancel_button'} onClick={() => props.setIsClicked(false)}>

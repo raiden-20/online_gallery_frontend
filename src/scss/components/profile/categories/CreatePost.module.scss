@@ -3,33 +3,9 @@
 
 $title-max-height: 84px;
 
-.page_modal_window {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  display: grid;
-  justify-items: center;
-  align-items: center;
-
-  z-index: $z-index-up;
-}
-
 .root {
-  width: $root-width-window;
-  padding: $root-padding-window;
-  border-radius: $radius-m;
-
   display: grid;
   gap: $gap-s;
-
-  background-color: $white-color;
-
-  z-index: $z-index-menu;
 
   .cancel {
     width: min-content;

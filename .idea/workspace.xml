@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="redo scss files (variables)">
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/next_photo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/prev_photo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/PhotoSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/OneArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddPhotoComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddPhotoComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowChange.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowChange.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowSend.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowSend.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OneOpenedPhotoPostComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OneOpenedPhotoPostComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OnePostArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OnePostArtistComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/create_post/CreatePostProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/create_post/CreatePostProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/CreatePost.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/CreatePost.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/PostsArtist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/PostsArtist.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/DeleteAccount.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/DeleteAccount.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/pages.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add oneOpenPhoto">
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/Navigation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +79,7 @@
       <workItem from="1713780008251" duration="31688000" />
       <workItem from="1713865933149" duration="14261000" />
       <workItem from="1713952774723" duration="12228000" />
-      <workItem from="1714034356332" duration="5110000" />
+      <workItem from="1714034356332" duration="5426000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -199,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713989398479</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add oneOpenPhoto">
+      <option name="closed" value="true" />
+      <created>1714073623572</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714073623572</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +227,7 @@
     <MESSAGE value="create page create order and success order" />
     <MESSAGE value="created orders pages" />
     <MESSAGE value="redo scss files (variables)" />
-    <option name="LAST_COMMIT_MESSAGE" value="redo scss files (variables)" />
+    <MESSAGE value="add oneOpenPhoto" />
+    <option name="LAST_COMMIT_MESSAGE" value="add oneOpenPhoto" />
   </component>
 </project>

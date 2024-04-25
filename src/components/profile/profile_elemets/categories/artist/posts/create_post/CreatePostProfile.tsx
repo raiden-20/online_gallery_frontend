@@ -12,7 +12,7 @@ interface createPostProfile {
     setIsCreatePost(isCreatePost: boolean): void
 }
 
-export const CreatePostProfile = (props: createPostProfile) => {
+export const CreatePostProfile = (props: createPostProfile) => { // todo обязательно проверку, что минимум текст был или фото
     const [photoArraySrc, setPhotoArraySrc] = useState<string[]>([])
     const [photoArrayFile, setPhotoArrayFile] = useState<File[]>([])
 
@@ -82,7 +82,9 @@ export const CreatePostProfile = (props: createPostProfile) => {
                                    onChange={(event) => setPhotoArr(event.target.files as FileList)}/>
                             <label htmlFor="setCover" className={create_post_scss.button_images}>
                                 <Image src={download_photo_icon} alt={'download_photo_icon'}/>
-                                <div>Загрузить изображение</div>
+                                <div className={photoArraySrc.length === 4 ? create_post_scss.forbidden : undefined}>
+                                    Загрузить изображение
+                                </div>
                             </label>
                         </button>
                         <button className={'main_button'}>

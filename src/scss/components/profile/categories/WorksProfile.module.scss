@@ -1,4 +1,10 @@
 @import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
+
+$who-buy-size: 69px;
+$who-buy-img-size: 45px;
+
+$star-width: 197px;
 
 .root {
   width: 100%;
@@ -8,6 +14,11 @@
 
   column-gap: $gap-s;
   row-gap: $gap-xxl;
+}
+
+.img_section {
+  position: relative;
+  display: grid;
 }
 
 .one_work {
@@ -22,6 +33,7 @@
   gap: $gap-xs;
 
   .one_work_img {
+    position: relative;
     width: 100%;
 
     border-radius: $radius-xm;
@@ -39,6 +51,58 @@
 }
 
 .create_art_button {
+  display: none;
+}
+
+.who_buy_section {
+  position: absolute;
+  min-width: $who-buy-size;
+  height: $who-buy-size;
+  border-radius: $radius-xm 0;
+
+  background-color: $grey-who;
+
+
+}
+
+.star_section {
+  max-width: $star-width;
+  border-radius: 0 $radius-xm;
+
+  display: grid;
+  align-self: end;
+}
+
+.who_buy_data {
+  padding: $padding-12;
+
+  display: flex;
+
+  justify-self: start;
+  align-self: start;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: $gap-xxs;
+
+  color: $white-color;
+
+  img {
+    width: $who-buy-img-size;
+    height: $who-buy-img-size;
+    object-fit: cover;
+
+    border-radius: $elements-radius;
+  }
+
+  div {
+    font-size: $font-size-xs;
+    font-weight: $weight-700;
+  }
+}
+
+.who_buy_name_hide {
   display: none;
 }
 

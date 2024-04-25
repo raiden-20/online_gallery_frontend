@@ -30,7 +30,7 @@ export const ArtDataComponent = () => {
                     <section className={create_art_data_scss.hover_section}>
                         <p className={create_art_data_scss.add_text}>Просматривать и покупать товар смогут только
                             пользователи с ежемесячной подпиской. Остальные пользователи будут видеть только размытое
-                            основное фото и название</p>
+                            основное фото и название. После покупки товара он перейдет в публичный доступ</p>
                     </section>
                     : null}
             </footer>

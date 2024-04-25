@@ -48,6 +48,11 @@ input, select {
   border: 1px solid $grey;
 }
 
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+}
+
 input:focus {
   outline: none;
 }

@@ -4,10 +4,36 @@
 $one-post-photo-height: 90vh;
 $one-post-photo-width: 90vh;
 
+.main {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-s;
+}
+
+.header_buttons {
+  display: flex;
+  gap: $gap-s;
+}
+
+.footer_buttons {
+  display: flex;
+  gap: $gap-xl;
+}
+
 .root {
   display: flex;
   flex-flow: column;
   gap: $gap-l;
+}
+
+.button {
+  display: flex;
+  gap: $gap-xxs;
+  font-weight: $weight;
+
+  img {
+    width: $img_button-width;
+  }
 }
 
 .one_post {
@@ -44,7 +70,7 @@ $one-post-photo-width: 90vh;
 
 .border {
   border-bottom: 1px solid $grey_border;
-  padding-bottom: $padding-6;
+  padding-bottom: $padding-48;
 }
 
 .button_close {
@@ -76,4 +102,13 @@ $one-post-photo-width: 90vh;
   padding-left: $gap-xxl2;
 
   z-index: $z-index-menu;
+}
+
+.footer_stretch {
+  display: flex;
+  justify-content: space-between;
+}
+
+.p {
+  color: $grey-date;
 }

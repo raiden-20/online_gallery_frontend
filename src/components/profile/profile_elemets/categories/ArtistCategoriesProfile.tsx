@@ -5,6 +5,7 @@ import {useState} from "react";
 import {AboutArtistComponent} from "@/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent";
 import {PostsArtistComponent} from "@/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent";
 import {WorksProfileComponent} from "@/components/profile/profile_elemets/categories/works/WorksProfileComponent";
+import {MainPostsComponent} from "@/components/profile/profile_elemets/categories/artist/posts/MainPostsComponent";
 
 interface ArtistCategoryInterface {
     input_description: string
@@ -21,7 +22,7 @@ export const ArtistCategoriesProfile = (props: ArtistCategoryInterface) => {
         <section>
             <ArtistNavigationProfileComponent setWhoIsClicked={setWhoIsClicked} whoIsClicked={whoIsClicked}/>
             {whoIsClicked === 1 ? <WorksProfileComponent/> :
-            whoIsClicked === 3 ? <PostsArtistComponent/> :
+            whoIsClicked === 3 ? <MainPostsComponent/> :
             whoIsClicked === 4 ? <AboutArtistComponent input_description={props.input_description}
                                                        setInput_description={props.setInput_description}
                                                        setIsNeedChangeData={props.setIsNeedChangeData}

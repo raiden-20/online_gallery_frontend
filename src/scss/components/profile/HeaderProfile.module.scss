@@ -5,7 +5,7 @@ $cover-height: 250px;
 
 $change-cover-top: 25px;
 $change-cover-gap: 20px;
-$change-avatar-top: -25px;
+$change-avatar-top: -10px;
 $avatar-top: -110px;
 $button-bell-width: 43px;
 $change-window-bottom: 30px;
@@ -138,14 +138,15 @@ $delete-img-width: 34px;
 }
 
 .subscriber_section {
-  height: max-content;
+  height: min-content;
+  width: max-content;
   display: flex;
   gap: $gap-s;
 
   align-items: center;
 
   img {
-    width: $button-bell-width;
+    width: min-content;
 
     display: grid;
     justify-self: center;

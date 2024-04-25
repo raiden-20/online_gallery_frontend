@@ -78,7 +78,7 @@ export const CreatePostProfile = (props: createPostProfile) => {
                         : null}
                     <footer className={create_post_scss.buttons_section}>
                         <button>
-                            <input className={header_profile_scss.hidden} type="file" id="setCover"
+                            <input className={create_post_scss.hidden} type="file" id="setCover"
                                    onChange={(event) => setPhotoArr(event.target.files as FileList)}/>
                             <label htmlFor="setCover" className={create_post_scss.button_images}>
                                 <Image src={download_photo_icon} alt={'download_photo_icon'}/>

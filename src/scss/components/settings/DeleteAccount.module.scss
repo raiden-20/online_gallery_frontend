@@ -1,20 +1,12 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
-.modal_window {
-  display: grid;
-  align-items: center;
-
-  background-color: $white-color;
-  z-index: $z-index-menu;
-}
-
 .root {
   display: grid;
   gap: $gap-s;
 
   .header {
-    font-size: $font-size-l;
+    font-size: $font-size-l0;
     font-weight: $weight;
 
     text-align: center;

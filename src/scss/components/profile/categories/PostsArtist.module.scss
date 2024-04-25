@@ -1,7 +1,8 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
-$one-post-photo-height: 90%;
+$one-post-photo-height: 90vh;
+$one-post-photo-width: 90vh;
 
 .root {
   display: flex;
@@ -34,7 +35,8 @@ $one-post-photo-height: 90%;
 
 .one_post_opened_photo {
   position: relative;
-  height: $one-post-photo-height;
+  max-height: $one-post-photo-height;
+  max-width: $one-post-photo-width;
   object-fit: cover;
 
   z-index: $z-index-menu;

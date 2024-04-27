@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add input checkbox css settings">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="test one api">
+      <change afterPath="$PROJECT_DIR$/public/banner1.svg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/banner2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-BoldOblique.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-MediumOblique.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-Oblique.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-SemiBoldOblique.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/new_mexika/behance-644c5296f1fe6.otf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/api/arts.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/assets/icons/main/prev.svg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css.map" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/icons/main/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/icons/main/next.svg" afterDir="false" />
@@ -17,6 +29,8 @@
       <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddInformationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddInformationComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/ProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/ProfileComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/globals/color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/color.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/globals/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/globals.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
@@ -42,6 +56,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -97,7 +114,7 @@
       <workItem from="1714034356332" duration="15635000" />
       <workItem from="1714132913798" duration="565000" />
       <workItem from="1714214693084" duration="2899000" />
-      <workItem from="1714242760574" duration="4540000" />
+      <workItem from="1714242760574" duration="4839000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -259,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714085251225</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="test one api">
+      <option name="closed" value="true" />
+      <created>1714247595648</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1714247595648</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +334,7 @@
     <MESSAGE value="small changes in all" />
     <MESSAGE value="change who buy art section size" />
     <MESSAGE value="add input checkbox css settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="add input checkbox css settings" />
+    <MESSAGE value="test one api" />
+    <option name="LAST_COMMIT_MESSAGE" value="test one api" />
   </component>
 </project>

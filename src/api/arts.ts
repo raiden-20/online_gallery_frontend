@@ -1,4 +1,4 @@
-import {instance} from "@/api/api_main";
+import {instance, instanceFile} from "@/api/api_main";
 
 export const ArtsAPI = {
     async CreateArtAPI(input_name: string, input_type: string, photos: File[], input_price: string,
@@ -26,7 +26,7 @@ export const ArtsAPI = {
             formData.append('frame', isFrame ? 'true': 'false')
 
             debugger
-            const response = await instance.post(
+            const response = await instanceFile.post(
                 '/art',
                 formData
             );

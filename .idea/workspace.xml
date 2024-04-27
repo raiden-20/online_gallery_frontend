@@ -4,37 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="test one api">
-      <change afterPath="$PROJECT_DIR$/public/banner1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/banner2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-BoldOblique.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-MediumOblique.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-Oblique.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/involve/Involve-SemiBoldOblique.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/new_mexika/behance-644c5296f1fe6.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/arts.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/main/prev.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="test one api 2">
+      <change afterPath="$PROJECT_DIR$/src/components/main/elements/popular/PopularComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Popular.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/icons/main/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/icons/main/next.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddInformationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddInformationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/ProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/ProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/color.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/pages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/arts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/arts.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +20,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
-        <option value="SCSS File" />
         <option value="TypeScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -114,7 +88,7 @@
       <workItem from="1714034356332" duration="15635000" />
       <workItem from="1714132913798" duration="565000" />
       <workItem from="1714214693084" duration="2899000" />
-      <workItem from="1714242760574" duration="4839000" />
+      <workItem from="1714242760574" duration="7789000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -284,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714247595648</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="test one api 2">
+      <option name="closed" value="true" />
+      <created>1714247977601</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1714247977601</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +317,7 @@
     <MESSAGE value="change who buy art section size" />
     <MESSAGE value="add input checkbox css settings" />
     <MESSAGE value="test one api" />
-    <option name="LAST_COMMIT_MESSAGE" value="test one api" />
+    <MESSAGE value="test one api 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="test one api 2" />
   </component>
 </project>

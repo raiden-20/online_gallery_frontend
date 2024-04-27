@@ -7,23 +7,23 @@ export const ArtsAPI = {
         try {
             const formData = new FormData()
 
-            formData.append('name', input_name)
-            formData.append('type', input_type)
+            const json = {
+                name : input_name,
+                type: input_type,
+                isPrivate: isAnonymous ? 'true': 'false',
+                price: input_price,
+                description: input_description,
+                createDate: input_year,
+                size: input_size,
+                tags: tags,
+                materials: materials,
+                isFrame: isFrame ? 'true': 'false'
+
+            }
+            formData.append('ArtCreateDTO', JSON.stringify(json))
             photos.forEach(img => {
                 formData.append("photos", img)
             })
-            formData.append('isPrivate', isAnonymous ? 'true': 'false')
-            formData.append('price', input_price)
-            formData.append('description', input_description)
-            formData.append('createDate', input_year)
-            formData.append('size', input_size)
-            tags.forEach(tag => {
-                formData.append("tags", tag)
-            })
-            materials.forEach(material => {
-                formData.append("materials", material)
-            })
-            formData.append('frame', isFrame ? 'true': 'false')
 
             debugger
             const response = await instanceFile.post(

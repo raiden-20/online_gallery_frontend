@@ -17,10 +17,28 @@ export const ArtsAPI = {
                 size: input_size,
                 tags: tags,
                 materials: materials,
-                isFrame: isFrame ? 'true': 'false'
+                frame: isFrame ? 'true': 'false'
 
             }
-            formData.append('ArtCreateDTO', JSON.stringify(json))
+
+            const dto_object = new Blob([JSON.stringify({
+                name : input_name,
+                type: input_type,
+                isPrivate: isAnonymous ? 'true': 'false',
+                price: input_price,
+                description: input_description,
+                createDate: input_year,
+                size: input_size,
+                tags: tags,
+                materials: materials,
+                isFrame: isFrame ? 'true': 'false'
+            })], {
+                type: 'application/json'
+            })
+
+
+            formData.append('ArtCreateDTO', dto_object);
+
             photos.forEach(img => {
                 formData.append("photos", img)
             })

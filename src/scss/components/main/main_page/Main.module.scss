@@ -1,0 +1,22 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/pages";
+
+.root {
+  padding: $padding-64;
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xl;
+}
+
+.header_arrows {
+  font-family: 'New Mexika', sans-serif;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.header {
+  font-family: 'New Mexika', sans-serif;
+  font-size: $font-size-64;
+  text-align: center;
+}

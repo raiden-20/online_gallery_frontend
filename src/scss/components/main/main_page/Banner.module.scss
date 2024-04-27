@@ -8,6 +8,7 @@ $button-width: 158px;
 $banner-height: 370px;
 
 .root {
+  padding: $padding-64;
   display: flex;
   flex-flow: column;
   gap: $gap-xl;
@@ -17,6 +18,13 @@ $banner-height: 370px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.ul {
+  width: $width;
+  display: flex;
+  gap: $gap-l1;
+  overflow-x: hidden;
 }
 
 .main {
@@ -36,5 +44,6 @@ $banner-height: 370px;
 }
 
 .banner_img {
+  width: $width;
   height: $banner-height;
 }

@@ -1,112 +1,12 @@
 @import "@/scss/globals/main_values";
+@import "@/scss/globals/pages";
 
-.banner_section {
-  display: grid;
-  position: relative;
-
-  left: 0;
-
-  .banner_img {
-    width: 100%;
+.root {
+  * {
+    font-family: 'Involve', sans-serif;
   }
 
-  .next_banner_button {
-    position: absolute;
-    justify-self: end;
-    align-self: center;
-
-    padding-right: $gap-xxxxl;
-  }
-}
-
-.section {
-  padding: $padding-5;
-
-  display: flex;
-  flex-flow: column;
-  gap: $gap-xxl;
-
-  .section_title {
-    font-size: $font-size-xxxxl;
-  }
-
-  .section_main {
-    display: flex;
-    justify-content: space-between;
-
-    .section_main_data {
-      display: grid;
-      grid-template-columns: min-content max-content;
-      column-gap: $gap-xxl2;
-
-      .section_main_data_img {
-        max-height: $section-main-data-img-size;
-        max-width: $section-main-data-img-size;
-      }
-
-      .section_main_info {
-        display: grid;
-        grid-template-rows: repeat(3, min-content);
-        align-self: end;
-        row-gap: $gap-xxxxxs2;
-
-        .weight {
-          font-size: $font-size-xxl;
-        }
-      }
-    }
-
-    .art_data {
-      font-size: $font-size-xxxl;
-    }
-
-    .action_section {
-      display: flex;
-      flex-flow: column;
-      gap: $gap-xxl;
-
-      .section_action_img {
-        max-width: $section-action-img-width;
-        max-height: $section-action-img-height;
-      }
-
-      .action_data {
-        display: flex;
-        flex-flow: column;
-        gap: $gap-xxxxxs2;
-      }
-    }
-  }
-
-  .artists_section{
-    display: flex;
-    gap: $gap-s;
-    flex-wrap: wrap;
-
-    .one_artist {
-      * {
-        cursor: pointer;
-      }
-
-      display: flex;
-      flex-flow: column;
-      gap: $gap-xxxxxs2;
-
-      .one_artist_photo {
-        width: $artist-photo-size;
-        height: $artist-photo-size;
-        object-fit: cover;
-      }
-
-      .one_artist_name {
-        font-size: $font-size-xxl;
-        text-align: center;
-      }
-    }
-  }
-
-  .section_next_button {
-    display: grid;
-    align-self: center;
+  header {
+    font-family: 'New Mexika', sans-serif;
   }
 }

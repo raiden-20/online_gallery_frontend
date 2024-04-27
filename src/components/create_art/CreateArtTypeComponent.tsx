@@ -21,6 +21,9 @@ export const CreateArtTypeComponent = () => {
         }
     }
 
+
+
+
     return (
         <section className={create_art_scss.root}>
             <button className={create_art_scss.cancel}

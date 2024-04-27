@@ -2,17 +2,12 @@ import main_scss from '@/scss/components/main/Main.module.scss'
 
 import next_icon from '@/assets/icons/main/next.svg'
 import Image from "next/image";
+import {BannerComponent} from "@/components/main/elements/banner/BannerComponent";
 
 export const MainComponent = () => {
     return (
         <section>
-            <section className={main_scss.banner_section}> {/*баннер*/}
-                <img src={'/default_banner.jpg'} className={main_scss.banner_img}
-                     alt={'banner'} crossOrigin="anonymous"/>
-                <button className={main_scss.next_banner_button}>
-                    <Image src={next_icon} alt={'next_icon'}/>
-                </button>
-            </section>
+            <BannerComponent/>
             <section className={main_scss.section}> {/*рекомендации*/}
                 <header className={main_scss.section_title}>
                     Рекомендации

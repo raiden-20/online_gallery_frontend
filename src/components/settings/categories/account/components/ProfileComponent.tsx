@@ -9,7 +9,7 @@ import header_profile_scss from "@/scss/components/profile/HeaderProfile.module.
 interface ProfileInterface {
     customer_data: Customer,
 
-    changeCustomerProfileData(customerName: string, birthDate: string, gender: string,
+    changeCustomerProfileData(customerName: string, birthDate: string, gender: string, description: string,
                               avatarUrl: string, coverUrl: string, avatar: File | string, cover: File | string,
                               router: AppRouterInstance, setMessage: (message: string) => void): void
 
@@ -28,7 +28,7 @@ export const ProfileComponent = (props: ProfileInterface) => {
     useEffect(() => {
         if (isSave) {
             props.changeCustomerProfileData(props.customer_data.customerName, input_date,
-                input_gender === '' ? 'MAN' : input_gender,
+                input_gender === '' ? 'MAN' : input_gender, props.customer_data.description,
                 props.customer_data.avatarUrl, props.customer_data.coverUrl, ' ', ' ',
                 router, setMessage)
             setIsSave(false)

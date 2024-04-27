@@ -19,7 +19,7 @@ interface AccountSettingsInterface {
     customer_data: Customer,
 
     getCustomerProfileData(id: string, router: AppRouterInstance): void
-    changeCustomerProfileData(customerName: string, birthDate: string, gender: string,
+    changeCustomerProfileData(customerName: string, birthDate: string, gender: string, description: string,
                               avatarUrl: string, coverUrl: string, avatar: File, cover: File,
                               router: AppRouterInstance, setMessage:(message: string) => void): void
     changeEmail(input_email: string, setMessage:(message: string) => void): void

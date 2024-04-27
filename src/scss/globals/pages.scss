@@ -1,8 +1,17 @@
 @import '@/scss/globals/color';
 @import '@/scss/globals/main_values';
-@import '@/scss/globals/globals';
 
 @import url('https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@font-face {
+  font-family: "Involve";
+  src: url('/fonts/involve/Involve-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "New Mexika";
+  src: url('/fonts/new_mexika/behance-644c5296f1fe6.otf') format('opentype');
+}
 
 .title {
   font-family: 'Fahkwang', sans-serif;
@@ -41,6 +50,38 @@
   font-weight: $weight;
   font-size: $font-size-s;
   color: $white-color;
+}
+
+.button_main_page {
+  height: 50px;
+
+  padding: $padding-12-32;
+  border: 1px solid $grey-border-main;
+  border-radius: $radius-48;
+  font-size: $font-size-l0;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  color: $grey-border-main;
+  font-family: "New Mexika", sans-serif;
+}
+
+.button_main_page-2 {
+  height: 70px;
+
+  padding: $padding-12-32;
+  border: 1px solid $grey-border-main;
+  border-radius: $radius-48;
+  font-size: $font-size-l0;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  color: $grey-border-main;
+  font-family: "New Mexika", sans-serif;
 }
 
 .page_modal_window {
@@ -114,11 +155,6 @@
 .scrollbar::-webkit-scrollbar-thumb {
   background: $grey-date;
   border-radius: 2px;
-}
-
-
-html::-webkit-scrollbar {
-  width: 0;
 }
 
 .html::-webkit-scrollbar-track {

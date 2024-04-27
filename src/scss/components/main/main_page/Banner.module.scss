@@ -1,0 +1,40 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
+@import "@/scss/globals/pages";
+
+$button-height: 58px;
+$button-width: 158px;
+
+$banner-height: 370px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xl;
+}
+
+.buttons_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-s
+}
+
+.date {
+  font-size: $font-size-xxxxl;
+  font-family: "Involve", sans-serif;
+}
+
+.button {
+  height: $button-height;
+  width: $button-width;
+}
+
+.banner_img {
+  height: $banner-height;
+}

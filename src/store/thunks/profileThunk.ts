@@ -1,7 +1,6 @@
 import {Dispatch} from "redux";
 import {ProfileAPI} from "@/api/profileAPI";
 import {
-    clearProfileReducer,
     setArtistData,
     setCustomerData,
     setMyArtistData,
@@ -10,7 +9,6 @@ import {
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
-import {Customer} from "@/interfaces/customerInterface";
 
 
 export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
@@ -19,7 +17,7 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        if (id === Cookies.get('customerId') && response[1].artistId) {
+                        if (id === Cookies.get('customerId') && response[1].artistId !== '') {
                             Cookies.set('artistId', response[1].artistId)
                         }
                         if (id === Cookies.get('customerId')) {

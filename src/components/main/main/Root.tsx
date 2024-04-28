@@ -20,7 +20,13 @@ import {useSession} from "next-auth/react";
 import {WorksRoot} from "@/components/categories/works/WorksRoot";
 import {CartComponent} from "@/components/cart/CartComponent";
 import {MainComponent} from "@/components/main/MainComponent";
-import {OneWorkComponent} from "@/components/categories/works/works/OneWorkComponent";
+import {OneWorkComponent} from "@/components/categories/works/works/one_work/OneWorkComponent";
+import {SubscriptionsComponent} from "@/components/subscribers/SubscriptionsComponent";
+import {CreateArtTypeComponent} from "@/components/create_art/CreateArtTypeComponent";
+import {CreateOrderComponent} from "@/components/create_order/CreateOrderComponent";
+import {CreateOrderSuccessComponent} from "@/components/create_order/success/CreateOrderSuccessComponent";
+import {OrdersComponent} from "@/components/orders/OrdersComponent";
+import {OneOrderComponent} from "@/components/orders/one_order/OneOrderComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -70,16 +76,19 @@ export const Root = (props: RootInterface) => {
         <section className={root_scss.page}>
             <section className={root_scss.root}>
                 <nav className={root_scss.desktop_nav}> {/*todo перенести в одну компоненту */}
-                    <NavigationComponent/>
+                    <NavigationComponent artist_avatar={props.artist_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.artist_data.avatarUrl}
+                                         customer_avatar={props.customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.customer_data.avatarUrl}/>
                 </nav>
                 <nav className={root_scss.mobile_nav}>
-                    <NavigationComponentMobile/>
+                    <NavigationComponentMobile artist_avatar={props.artist_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.artist_data.avatarUrl}
+                                               customer_avatar={props.customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.customer_data.avatarUrl}/>
                 </nav>
                 <main>
                     {main_path === PATHS_CATEGORY.MAIN ? <MainComponent/> :
-                    main_path === PATHS_CATEGORY.CREATE ? <Auth_main/> :
                     main_path === PATHS_CATEGORY.PROFILE ? <ProfileRoot/> :
                     main_path === PATHS_CATEGORY.SETTINGS ? <SettingsRoot/> :
+                        pathname === MAIN_PATHS.CREATE_ARTIST ? <Auth_main/> :
+                        pathname === MAIN_PATHS.CREATE_CUSTOMER ? <Auth_main/> :
                         pathname === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :
                         pathname === PATHS_CATEGORY.PAINTINGS ? <WorksRoot/> :
                         pathname === PATHS_CATEGORY.PHOTO ? <WorksRoot/> :
@@ -87,8 +96,14 @@ export const Root = (props: RootInterface) => {
                         pathname === PATHS_CATEGORY.SEARCH ? <SearchContainer/> :
                         pathname === MAIN_PATHS.ONE_PHOTO ? <OneWorkComponent/> :
                         pathname === MAIN_PATHS.ONE_PAINTING ? <OneWorkComponent/> :
+                        pathname === MAIN_PATHS.CREATE_ART ? <CreateArtTypeComponent/> :
                         pathname === MAIN_PATHS.ONE_SCULPTURE ? <OneWorkComponent/> :
-                    main_path === PATHS_CATEGORY.CART ? <CartComponent/> : null
+                        pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderComponent/> :
+                        pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
+                        pathname === MAIN_PATHS.ORDERS ? <OrdersComponent/> :
+                        pathname === MAIN_PATHS.ONE_ORDER ? <OneOrderComponent/> :
+                    main_path === PATHS_CATEGORY.CART ? <CartComponent/> :
+                    main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsComponent/> : null
                     }
                 </main>
                 <FooterComponent/>

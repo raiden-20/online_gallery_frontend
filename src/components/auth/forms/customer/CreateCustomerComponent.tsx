@@ -1,7 +1,7 @@
 import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import {AUTH_PATHS} from "@/paths/auth";
 import {useRouter} from "next/navigation";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 interface CreateCustomerInterface {
@@ -54,7 +54,7 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
                     onClick={() => setIsButtonClicked(true)}>
                 Зарегистрироваться
             </button>
-            <p className={auth_main_scss.message}>{message}</p>
+            <p className={'message'}>{message}</p>
         </main>
     )
 }

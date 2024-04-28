@@ -1,35 +1,53 @@
-
-
-$root-padding: 35px 0;
-$root-gap: 35px;
-
-$main-gap: 100px;
-
-$header-size: 32px;
-
-$arts-gap: 35px;
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
 
 $buy-data-width: 280px;
-$buy-data-gap: 15px;
-
-$total-text-size: 24px;
 
 .root {
-  padding: $root-padding;
+  padding: $padding-s;
 
   display: flex;
   flex-flow: column;
-  gap: $root-gap;
+  gap: $gap-xxl;
 }
 
 .header {
-  font-size: $header-size;
+  font-size: $font-size-xxl;
+  font-weight: $weight;
+}
+
+.top_buttons_section {
+  display: flex;
+  align-items: center;
+  gap: $gap-l;
+
+  .top_button_checkbox {
+    height: min-content;
+    display: flex;
+    gap: $gap-xs;
+
+    img, div {
+      display: grid;
+      align-self: center;
+    }
+  }
+
+  .top_button_delete {
+    height: min-content;
+    display: flex;
+    gap: $gap-xxxxs;
+
+    img, div {
+      display: grid;
+      align-self: center;
+    }
+  }
 }
 
 .main {
   display: grid;
   grid-template-columns: auto min-content;
-  gap: $main-gap;
+  gap: $gap-xxl;
 }
 
 .arts {
@@ -37,9 +55,10 @@ $total-text-size: 24px;
 
   display: flex;
   flex-flow: column;
-  gap: $arts-gap;
+  gap: $gap-xxl;
+  overflow-y: auto;
 
-  overflow-x: hidden;
+  position: relative;
 }
 
 .arts::-webkit-scrollbar {
@@ -47,19 +66,29 @@ $total-text-size: 24px;
 }
 
 .buy_section {
+  background-color: $grey_bg-settings;
+  border-radius: $elements-radius;
+  padding: $section-padding-s;
+
   width: $buy-data-width;
+  height: min-content;
 
   display: flex;
   flex-flow: column;
-  gap: $arts-gap;
+  gap: $gap-l;
 
   .buy_data {
+
     display: flex;
     flex-flow: column;
-    gap: $buy-data-gap;
+    gap: $gap-s;
 
     .total_text , .price_text{
-      font-size: $total-text-size;
+      font-size: $font-size-l;
+    }
+
+    .price_text {
+      font-weight: $weight;
     }
   }
 }

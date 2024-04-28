@@ -3,7 +3,6 @@
 
 * {
   font-size: $font-size;
-
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -14,6 +13,8 @@
 
 html,
 body {
+  font-size: $font-size;
+
   overflow-x: hidden;
 
   background-color: $white-color;
@@ -21,14 +22,14 @@ body {
 
 button {
   cursor: pointer;
-
   text-align: center;
 
   background-color: transparent;
   border: none;
 
   height: $button-height;
-  border-radius: $button-radius;
+  font-size: $font-size-s;
+  border-radius: $elements-radius;
 
   * {
     cursor: pointer;
@@ -42,9 +43,14 @@ input, textarea {
 input, select {
   padding: $input-padding;
   height: $input-height;
-  border-radius: $input-radius;
+  border-radius: $elements-radius;
 
   border: 1px solid $grey;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
 }
 
 input:focus {
@@ -89,6 +95,10 @@ ol {
 .scrollBar::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 2px;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
 }
 
 

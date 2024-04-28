@@ -1,27 +1,32 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
 
-$root-gap: 15px;
-
-$img-width: 255px;
-
-$art-data-gap: 5px;
-
-$font-size: 24px;
+$root-height: 165px;
+$hover-section-width: 400px;
 
 .root {
+  height: $root-height;
+  position: relative;
+
   width: 100%;
   display: grid;
   grid-template-columns: min-content auto max-content;
-  column-gap: $root-gap;
+  column-gap: $gap-s;
 
   .img {
-    width: $img-width;
+    width: $img-size-medium;
     object-fit: cover;
   }
 
+  .data_section {
+    display: grid;
+  }
+
   .art_data {
+    position: relative;
     display: flex;
     flex-flow: column;
-    gap: $art-data-gap;
+    gap: $gap-xxxs;
   }
 
   .price_section {
@@ -31,7 +36,61 @@ $font-size: 24px;
     justify-items: end;
   }
 
-  .text {
-    font-size: $font-size;
+  .name {
+    font-weight: $weight;
   }
+
+  .text {
+    font-size: $font-size-l;
+  }
+
+  .section {
+    display: grid;
+    align-self: end;
+  }
+
+  .anonymous_section {
+    display: flex;
+    gap: $gap-xs;
+    align-items: center;
+
+    .anonymous_section_add {
+      display: flex;
+      gap: $gap-xxxxs;
+
+      button {
+        height: min-content;
+      }
+
+      div, img {
+        display: grid;
+        align-self: center;
+      }
+    }
+  }
+}
+
+.hover_section {
+  position: absolute;
+
+  width: $hover-section-width;
+
+  padding: $section-padding-s;
+  border-radius: $radius-m;
+
+  background-color: $white-color;
+  box-shadow: 0 0 10px 0 $shadow-color;
+  z-index: $z-index-up;
+
+  .add_text {
+    font-size: $gap-s;
+    line-height: 20px;
+  }
+}
+
+.checkbox {
+  position: absolute;
+  display: grid;
+  align-self: start;
+  justify-self: start;
 }

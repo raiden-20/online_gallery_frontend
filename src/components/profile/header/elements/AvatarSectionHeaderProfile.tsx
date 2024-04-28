@@ -26,7 +26,7 @@ export const AvatarSectionHeaderProfile = (props: avatarSectionHeaderProfileInte
                  onMouseOver={() => setIsAvatarHover(true)}
                  onMouseLeave={() => setIsAvatarHover(false)}>\
             <section className={header_profile_scss.avatar}>
-                <img src={props.input_avatarUrl === '' ? '/default_avatar_profile.jpg'
+                <img src={props.input_avatarUrl === '' ? '/default_avatar_profile.svg'
                     : props.input_avatarUrl}
                      crossOrigin="anonymous"
                      alt={'avatar profile'}/>

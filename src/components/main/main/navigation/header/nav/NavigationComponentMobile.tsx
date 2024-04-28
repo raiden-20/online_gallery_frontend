@@ -13,8 +13,15 @@ import Cookies from "js-cookie";
 import {AccountNavigation} from "@/components/main/main/navigation/header/nav/AccountNavigation";
 import {NavigationElementsMobile} from "@/components/main/main/navigation/header/nav_elements/NavigationElementsMobile";
 import {AccountNavigationContainer} from "@/components/main/main/navigation/header/AccountNavigationContainer";
+import {Artist} from "@/interfaces/artistInterface";
+import {Customer} from "@/interfaces/customerInterface";
 
-export const NavigationComponentMobile = () => {
+interface navigationInterface {
+    artist_avatar: string
+    customer_avatar: string
+}
+
+export const NavigationComponentMobile = (props: navigationInterface) => {
     const router = useRouter()
 
     const {  data: session, status } = useSession();
@@ -23,6 +30,7 @@ export const NavigationComponentMobile = () => {
     const [isMenuClicked, setIsMenuClicked] = useState(false)
 
     const [registrationFlag] = useState(Cookies.get('registrationFlag'))
+    const [role] = useState(Cookies.get('role'))
 
     return (
         <section className={navigation_scss.nav}>
@@ -57,8 +65,14 @@ export const NavigationComponentMobile = () => {
                     }
                 }
                 }>
-                    <Image src={account_icon} alt={'account_icon'} className={navigation_scss.img}
-                           width={0} height={0}/>
+                    {status === 'authenticated' ?
+                        <img src={role === ROLES.CUSTOMER ? props.customer_avatar : props.artist_avatar}
+                             alt={'account_icon'} className={navigation_scss.avatar}
+                             crossOrigin="anonymous"/>
+                    :
+                        <Image src={account_icon} alt={'account_icon'} className={navigation_scss.img}
+                               width={0} height={0}/>
+                    }
                 </button>
                 {isAccountClicked ?
                     <AccountNavigationContainer setIsMenuClicked={setIsAccountClicked}/>

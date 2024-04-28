@@ -29,11 +29,11 @@ export const PaySettingsComponent = (props: paySettingsInterface) => {
                     <header className={settings_scss.address_header}>
                         <button className={settings_scss.add_address}
                                 onClick={() => setIsOpen(!isOpen)}>
-                            <Image src={add_icon} alt={'add_icon'}/>
+                            <Image src={add_icon} alt={'add_icon'} className={settings_scss.icon}/>
                             <div>Добавить новую карту</div>
                         </button>
                         <button onClick={() => setIsOpen(!isOpen)}>
-                            <Image src={isOpen ? open_icon : close_icon}
+                            <Image src={isOpen ? open_icon : close_icon} className={settings_scss.icon}
                                    alt={'open close icon'}/>
                         </button>
                     </header>
@@ -43,6 +43,10 @@ export const PaySettingsComponent = (props: paySettingsInterface) => {
                             <section className={settings_scss.input_section}>
                                 <input placeholder={'ММ/ГГ'}/>
                                 <input type={'password'} placeholder={'CVV'}/>
+                            </section>
+                            <section className={settings_scss.checkbox_section}>
+                                <input type={'checkbox'}/>
+                                <div>Сделать основным</div>
                             </section>
                             <button className={'main_button'}>Добавить карту</button>
                         </section>

@@ -1,0 +1,74 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-s;
+
+  background-color: $grey_bg-settings;
+  border-radius: $elements-radius;
+  padding: $section-padding-s;
+}
+
+.header_section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.order_id {
+  font-weight: $weight;
+}
+
+.status {
+  height: min-content;
+  padding: $padding-2;
+  border-radius: $elements-radius;
+  background-color: $grey-status;
+
+  font-size: $font-size-xs;
+}
+
+.address {
+  font-size: $font-size-xs;
+}
+
+.order_data {
+  display: grid;
+  grid-template-columns: min-content auto;
+  column-gap: $gap-s;
+
+  .img {
+    width: $art-data-img-size;
+    height: $art-data-img-size;
+    border-radius: $elements-radius;
+  }
+
+  .data {
+    height: min-content;
+    display: grid;
+    grid-template-columns: auto max-content;
+    align-self: center;
+
+    .section_name {
+      display: grid;
+      row-gap: $gap-xxxxxs;
+    }
+
+    .weight {
+      font-weight: $weight;
+    }
+
+    .price {
+      font-weight: $weight;
+      font-size: $font-size-l;
+    }
+  }
+
+}

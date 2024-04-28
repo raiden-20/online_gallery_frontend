@@ -1,76 +1,34 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
-$root-padding: 24px 48px;
-$root-gap: 16px;
-
-$title-size: 28px;
-$title-weight: 600;
-
-$main-padding: 16px 0;
-$main-gap: 48px;
-
-$category-root-gap: 16px;
-$category-title-weight: 600;
 
 $button-open-close-w: 20px;
 $button-open-close-h: 11px;
 
-$price-section-gap: 10px;
 $price-one-w: 168.5px;
-$price-one-radius: 6px;
-$price-one-padding: 6px 16px;
-$price-one-title-size: 14px;
 
-$input-height: 19px;
-$input-size: 16px;
-
-$size-section-gap: 16px;
-$checkbox-section-gap: 12px;
 $checkbox-section-height: 179px;
-
-$search-padding: 8px 16px;
-$search-gap: 12px;
-
-
-.page {
-
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  height: 100vh;
-  width: 100vw;
-
-  overflow: hidden;
-
-  z-index: 100;
-}
 
 .root {
   z-index: $z-index-menu;
 
   height: 100%;
+  width: 443px;
 
   position: fixed;
-
   top: 0;
   left: 0;
 
-  width: 443px;
-
   overflow-y: auto;
+  overflow-x: hidden;
 
-  padding: $root-padding;
+  padding: $padding-filters;
 
   background-color: $white-color;
 
-  overflow-x: hidden;
-
   display: grid;
   grid-template-rows: min-content auto min-content;
-  gap: $root-gap;
+  gap: $gap-s;
 }
 
 .root::-webkit-scrollbar {
@@ -82,23 +40,23 @@ $search-gap: 12px;
   justify-content: space-between;
 
   .title {
-    font-size: $title-size;
-    font-weight: $title-weight;
+    font-size: $font-size-l;
+    font-weight: $weight;
   }
 }
 
 .main {
   display: flex;
   flex-flow: column;
-  gap: $main-gap;
-  padding: $main-padding;
+  gap: $gap-xxxl;
+  padding: $filters-padding;
 
   .category_root {
     width: 100%;
 
     display: flex;
     flex-flow: column;
-    gap: $category-root-gap;
+    gap: $gap-s;
 
     .category_header {
 
@@ -107,7 +65,7 @@ $search-gap: 12px;
       justify-content: space-between;
 
       .category_title {
-        font-weight: $category-title-weight;
+        font-weight: $weight;
       }
 
       .button_open_close {
@@ -124,7 +82,7 @@ $search-gap: 12px;
 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: $price-section-gap;
+      gap: $gap-xxs;
 
       .price_one_section {
         max-width: $price-one-w;
@@ -132,22 +90,22 @@ $search-gap: 12px;
         display: flex;
         flex-flow: column;
 
-        padding: $price-one-padding;
+        padding: $padding-1;
 
-        border-radius: $price-one-radius;
+        border-radius: $elements-radius;
         border: 1px solid $grey-filter-price-border;
 
         .price_one_section_title {
-          font-size: $price-one-title-size;
+          font-size: $font-size-xxxs;
           color: $grey;
         }
 
         input {
-          height: $input-height;
+          height: $input-height-small;
           border: none;
           padding: 0;
 
-          font-size: $input-size;
+          font-size: $font-size-xs;
         }
       }
     }
@@ -155,11 +113,11 @@ $search-gap: 12px;
     .size_section {
       display: flex;
       flex-flow: column;
-      gap: $size-section-gap;
+      gap: $gap-s;
 
       .size_one_section {
         display: flex;
-        gap: $checkbox-section-gap;
+        gap: $gap-xs;
       }
     }
 
@@ -168,32 +126,20 @@ $search-gap: 12px;
       overflow-y: auto;
     }
 
-    input[type="checkbox"] {
-      cursor: pointer;
-
-      width: 20px;
-      height: 20px;
-
-      border-radius: 50%; // todo
-
-      display: flex;
-      align-self: center;
-    }
-
     .section_with_search {
       display: flex;
       flex-flow: column;
-      gap: $size-section-gap;
+      gap: $gap-s;
     }
 
     .search {
       padding: $search-padding;
 
       display: flex;
-      gap: $search-gap;
+      gap: $gap-xs;
 
       border: 1px solid $grey-filter-price-border;
-      border-radius: $price-one-radius;
+      border-radius: $elements-radius;
 
       input {
         border: none;
@@ -211,7 +157,7 @@ $search-gap: 12px;
   justify-content: space-between;
 }
 
-html.page{
+html.page_modal_window{
   height: 100vh;
   overflow: hidden;
 }

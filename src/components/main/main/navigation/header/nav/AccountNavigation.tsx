@@ -51,7 +51,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + Cookies.get('customerId'))
                             }
                             }>
-                            <img src={props.my_customer_data.avatarUrl === '' ? "/default_ava_nav.jpg" : props.my_customer_data.avatarUrl }
+                            <img src={props.my_customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_customer_data.avatarUrl }
                                  className={accountNavigation_scss.avatar}
                                  crossOrigin="anonymous"
                                  alt={'avatar'}/>
@@ -73,7 +73,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + Cookies.get('artistId'))
                             }
                             }>
-                            <img src={props.my_artist_data.avatarUrl === '' ? "/default_ava_nav.jpg" : props.my_artist_data.avatarUrl}
+                            <img src={props.my_artist_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_artist_data.avatarUrl}
                                  className={accountNavigation_scss.avatar}
                                  crossOrigin="anonymous"
                                  alt={'avatar'}/>
@@ -83,7 +83,17 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                     Художник
                                 </button>
                             </section>
-                        </li> : null
+                        </li>
+                        :
+                        <li>
+                            <button className={accountNavigation_scss.buttonAdd}>
+                                <div className={accountNavigation_scss.plus}>+</div>
+                                <div className={accountNavigation_scss.artist_button}
+                                    onClick={() => router.push(MAIN_PATHS.CREATE_ARTIST)}>
+                                    Художник
+                                </div>
+                            </button>
+                        </li>
                     }
                     <li>
                         <button className={accountNavigation_scss.button}
@@ -92,7 +102,8 @@ export const AccountNavigation = (props: accountNavInterface) => {
                         </button>
                     </li>
                     <li>
-                        <button className={accountNavigation_scss.button}>
+                        <button className={accountNavigation_scss.button}
+                        onClick={() => router.push(MAIN_PATHS.ORDERS)}>
                             Заказы
                         </button>
                     </li>
@@ -102,7 +113,8 @@ export const AccountNavigation = (props: accountNavInterface) => {
                         </button>
                     </li>
                     <li>
-                        <button className={accountNavigation_scss.button}>
+                        <button className={accountNavigation_scss.button}
+                                onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS)}>
                             Подписки
                         </button>
                     </li>

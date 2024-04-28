@@ -5,12 +5,6 @@ $nav-height-mobile: 65px;
 
 $account_various-width: 190px;
 $account_various-height: 284px;
-$account_various-padding: 15px;
-
-$account_various-data-gap: 10px;
-
-$avatar-size: 50px;
-$avatar-radius: 6px;
 
 .account_section {
   position: absolute;
@@ -27,9 +21,10 @@ $avatar-radius: 6px;
 
 
 
-    border: $border-base;
+    box-shadow: 0 4px 10px 0 $shadow-color;
+    border-radius: 6px;
 
-    padding: $account_various-padding;
+    padding: $padding-3;
 
     background-color: $white-color;
 
@@ -50,18 +45,18 @@ $avatar-radius: 6px;
     .account_data {
       height: min-content;
       display: grid;
-      grid-template-columns: $avatar-size auto;
-      column-gap: $account_various-data-gap;
+      grid-template-columns: $nav-avatar-size auto;
+      column-gap: $gap-xxs;
 
 
       .avatar {
         cursor: pointer;
 
-        width: $avatar-size;
-        height: $avatar-size;
+        width: $nav-avatar-size;
+        height: $nav-avatar-size;
         object-fit: cover;
 
-        border-radius: $avatar-radius;
+        border-radius: $elements-radius;
       }
 
       .name_section {
@@ -85,7 +80,7 @@ $avatar-radius: 6px;
     background-color: $white-color;
 
     .account_various {
-      border: none;
+      box-shadow: none;
       width: 100%;
 
       display: grid;
@@ -108,4 +103,23 @@ $avatar-radius: 6px;
       font-size: 20px;
     }
   }
+}
+
+.buttonAdd {
+  height: min-content;
+  display: flex;
+  align-items: center;
+  gap: $gap-xxxxxs2;
+}
+
+.plus {
+  color: $grey-date;
+  width: min-content;
+  height: min-content;
+  font-size: $font-size-l;
+}
+
+.artist_button {
+  font-size: 1em;
+  font-weight: $weight-400;
 }

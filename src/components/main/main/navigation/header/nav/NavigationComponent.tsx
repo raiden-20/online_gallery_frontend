@@ -13,13 +13,20 @@ import {useSession} from "next-auth/react";
 import Cookies from "js-cookie";
 import {AccountNavigationContainer} from "@/components/main/main/navigation/header/AccountNavigationContainer";
 
-export const NavigationComponent = () => {
+interface navigationInterface {
+    artist_avatar: string
+    customer_avatar: string
+}
+
+export const NavigationComponent = (props: navigationInterface) => {
     const router = useRouter()
 
     const {  data: session, status } = useSession();
 
     const [isAccountClicked, setIsAccountClicked] = useState(false)
     const [isAccountNavClicked, setIsAccountNavClicked] = useState(false)
+
+    const [role] = useState(Cookies.get('role'))
 
     return (
         <ul className={navigation_scss.nav}>
@@ -88,8 +95,14 @@ export const NavigationComponent = () => {
                     }
                 }
                 }>
-                    <Image src={account_icon} alt={'account_icon'} className={navigation_scss.img}
-                           width={0} height={0}/>
+                    {status === 'authenticated' ?
+                        <img src={role === ROLES.CUSTOMER ? props.customer_avatar : props.artist_avatar}
+                             alt={'account_icon'} className={navigation_scss.avatar}
+                             crossOrigin="anonymous"/>
+                        :
+                        <Image src={account_icon} alt={'account_icon'} className={navigation_scss.img}
+                               width={0} height={0}/>
+                    }
                 </button>
 
             </li>

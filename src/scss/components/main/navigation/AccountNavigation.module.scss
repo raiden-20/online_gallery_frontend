@@ -104,3 +104,22 @@ $account_various-height: 284px;
     }
   }
 }
+
+.buttonAdd {
+  height: min-content;
+  display: flex;
+  align-items: center;
+  gap: $gap-xxxxxs2;
+}
+
+.plus {
+  color: $grey-date;
+  width: min-content;
+  height: min-content;
+  font-size: $font-size-l;
+}
+
+.artist_button {
+  font-size: 1em;
+  font-weight: $weight-400;
+}

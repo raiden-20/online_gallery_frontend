@@ -4,10 +4,12 @@ import Image from "next/image";
 import open_icon from "@/assets/icons/settings/open.svg";
 import close_icon from "@/assets/icons/settings/close.svg";
 import mark_icon from '@/assets/icons/settings/mark.svg'
+import {DeleteCardModalWindow} from "@/components/settings/categories/pay/DeleteCardModalWindow";
 
 export const OneCardSettingsComponent = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
+    const [isDelete, setIsDelete] = useState(false)
 
     return (
         <section>
@@ -35,7 +37,10 @@ export const OneCardSettingsComponent = () => {
                         <button className={'main_button'}>Сохранить</button>
                         :
                         <section className={settings_scss.footer_one}>
-                            <button className={'no_main_color'}>Удалить</button>
+                            <button className={'no_main_color'}
+                                    onClick={() => setIsDelete(true)}>
+                                Удалить
+                            </button>
                             <section>
                                 <button className={'cancel_button'} onClick={() => setIsEdit(true)}>
                                     Редактировать
@@ -46,10 +51,11 @@ export const OneCardSettingsComponent = () => {
                             </section>
                         </section>
                     }
-
                 </section>
                 : null
             }
+            {isDelete ? <DeleteCardModalWindow setIsDelete={setIsDelete}/>
+                : null}
         </section>
 
     )

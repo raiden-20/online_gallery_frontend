@@ -83,7 +83,17 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                     Художник
                                 </button>
                             </section>
-                        </li> : null
+                        </li>
+                        :
+                        <li>
+                            <button className={accountNavigation_scss.buttonAdd}>
+                                <div className={accountNavigation_scss.plus}>+</div>
+                                <div className={accountNavigation_scss.artist_button}
+                                    onClick={() => router.push(MAIN_PATHS.CREATE_ARTIST)}>
+                                    Художник
+                                </div>
+                            </button>
+                        </li>
                     }
                     <li>
                         <button className={accountNavigation_scss.button}

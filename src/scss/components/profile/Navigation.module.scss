@@ -2,10 +2,15 @@
 
 $rout-top: 206px;
 $root-height: 96px;
+$root-padding: 32px 0 16px 0;
+
+$nav-buttons-font-size: 24px;
+$nav-buttons-font-size-mobile: 16px;
+$nav-buttons-weight: 600;
 
 .root {
   height: $root-height;
-  padding: $padding-6;
+  padding: $root-padding;
 
   display: flex;
 
@@ -17,8 +22,8 @@ $root-height: 96px;
   }
 
   .button {
-    font-size: $font-size-l0;
-    font-weight: $weight;
+    font-size: $nav-buttons-font-size;
+    font-weight: $nav-buttons-weight;
   }
 
   .active {
@@ -30,7 +35,7 @@ $root-height: 96px;
   .root {
 
     .button {
-      font-size: $font-size-xs;
+      font-size: $nav-buttons-font-size-mobile;
     }
   }
 }

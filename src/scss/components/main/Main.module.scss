@@ -1,12 +1,131 @@
-@import "@/scss/globals/main_values";
-@import "@/scss/globals/pages";
 
-.root {
-  * {
-    font-family: 'Involve', sans-serif;
+$button-next-padding: 50px;
+
+$recommendations-auctions-section-gap: 35px;
+$section-padding: 45px 0;
+$section-title-size: 48px;
+$section-main-data-gap: 45px;
+$section-main-data-img-size: 510px;
+$section-main-info-gap: 5px;
+
+$artist-name-size: 24px;
+$art-data-size: 36px;
+
+$action-section-gap: 35px;
+$section-action-img-width: 500px;
+$section-action-img-height: 150px;
+
+$artists-section-gap: 15px;
+$artist-photo-size: 245px;
+$artist-name-size: 32px;
+
+.banner_section {
+  display: grid;
+  position: relative;
+
+  left: 0;
+
+  .banner_img {
+    width: 100%;
   }
 
-  header {
-    font-family: 'New Mexika', sans-serif;
+  .next_banner_button {
+    position: absolute;
+    justify-self: end;
+    align-self: center;
+
+    padding-right: $button-next-padding;
+  }
+}
+
+.section {
+  padding: $section-padding;
+
+  display: flex;
+  flex-flow: column;
+  gap: $recommendations-auctions-section-gap;
+
+  .section_title {
+    font-size: $section-title-size;
+  }
+
+  .section_main {
+    display: flex;
+    justify-content: space-between;
+
+    .section_main_data {
+      display: grid;
+      grid-template-columns: min-content max-content;
+      column-gap: $section-main-data-gap;
+
+      .section_main_data_img {
+        max-height: $section-main-data-img-size;
+        max-width: $section-main-data-img-size;
+      }
+
+      .section_main_info {
+        display: grid;
+        grid-template-rows: repeat(3, min-content);
+        align-self: end;
+        row-gap: $section-main-info-gap;
+
+        .artist_name {
+          font-size: $artist-name-size;
+        }
+      }
+    }
+
+    .art_data {
+      font-size: $art-data-size;
+    }
+
+    .action_section {
+      display: flex;
+      flex-flow: column;
+      gap: $action-section-gap;
+
+      .section_action_img {
+        max-width: $section-action-img-width;
+        max-height: $section-action-img-height;
+      }
+
+      .action_data {
+        display: flex;
+        flex-flow: column;
+        gap: $section-main-info-gap;
+      }
+    }
+  }
+
+  .artists_section{
+    display: flex;
+    gap: $artists-section-gap;
+    flex-wrap: wrap;
+
+    .one_artist {
+      * {
+        cursor: pointer;
+      }
+
+      display: flex;
+      flex-flow: column;
+      gap: $section-main-info-gap;
+
+      .one_artist_photo {
+        width: $artist-photo-size;
+        height: $artist-photo-size;
+        object-fit: cover;
+      }
+
+      .one_artist_name {
+        font-size: $artist-name-size;
+        text-align: center;
+      }
+    }
+  }
+
+  .section_next_button {
+    display: grid;
+    align-self: center;
   }
 }

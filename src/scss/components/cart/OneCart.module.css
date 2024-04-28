@@ -1,17 +1,25 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "@/scss/globals/color";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   OneCart.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"@/scss/globals/color\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   OneCart.module.scss 1:9  root stylesheet";
+.root {
+  width: 100%;
+  display: grid;
+  grid-template-columns: min-content auto max-content;
+  column-gap: 15px;
 }
+.root .img {
+  width: 255px;
+  object-fit: cover;
+}
+.root .art_data {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+.root .price_section {
+  height: min-content;
+  display: grid;
+  justify-items: end;
+}
+.root .text {
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=OneCart.module.css.map */

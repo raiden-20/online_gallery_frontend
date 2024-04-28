@@ -28,14 +28,6 @@ $nav-height-mobile: 65px;
   }
 }
 
-.avatar {
-  width: 35px;
-  height: 35px;
-  object-fit: cover;
-
-  border-radius: 6px;
-}
-
 .big_nav {
   display: flex;
   justify-content: space-between;
@@ -63,6 +55,8 @@ $nav-height-mobile: 65px;
   }
 
   .title {
+    font-size: $title-nav-size-mobile;
+
     display: grid;
     align-content: center;
   }

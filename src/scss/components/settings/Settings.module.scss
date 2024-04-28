@@ -1,75 +1,90 @@
 @import '@/scss/globals/color';
 @import '@/scss/globals/main_values';
 
+$root-gap: 35px;
+
+$account-main-gap: 64px;
+
+$address-root-gap: 24px;
+$address-pay-main-gap: 16px;
+$address-pay-main-padding: 16px;
+$address_add_gap: 8px;
+$address-gap: 10px;
+
+$section-gap: 16px;
+
+$section-header-weight: 600;
+$section-header-font-size: 24px;
+
+$section-form-padding: 0 16px;
+$section-form-gap: 16px;
+
 $auth-data-height: 56px;
+
+
+$inputs-gap: 35px;
+$inputs-gap-row: 24px;
+
+$button-font-size: 20px;
+
+$new-section-gap: 16px;
+$new-section-header-gap: 10px;
+$new-form-header-size: 24px;
+$new-form-header-weight: 600;
 
 .root {
   display: flex;
   flex-flow: column;
-  gap: $gap-xxl;
+  gap: $root-gap;
 }
 
 .main {
   width: 100%;
   display: flex;
   flex-flow: column;
-  gap: $gap-xxxxxl;
+  gap: $account-main-gap;
 }
 
 .address_root {
   display: flex;
   flex-flow: column;
-  gap: $gap-l1;
+  gap: $address-root-gap;
 }
 
 .address_pay_main {
-  padding: $section-padding-s;
+  padding: $address-pay-main-padding;
 
   width: 100%;
   display: flex;
   flex-flow: column;
-  gap: $gap-s;
+  gap: $address-pay-main-gap;
 
   input:disabled {
     background-color: $white-color;
     color: $grey_border;
   }
-
-  .checkbox_section {
-
-    input[type='checkbox'] {
-      width: 20px;
-      height: 20px;
-    }
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
 }
 
 .address_header {
-  width: 100%;
   display: flex;
-  gap: $gap-xxs;
   justify-content: space-between;
 }
 
 .add_address {
   display: flex;
-  gap: $gap-xxxs;
+  gap: $address_add_gap;
   align-items: center;
 }
 
 .address {
-  width: 100%;
   display: flex;
-  gap: $gap-xxs;
+  gap: $address-gap;
 }
 
 .one_address {
   display: flex;
   flex-flow: column;
-  gap: $gap-s;
+  gap: $address-pay-main-gap;
 }
 
 .footer_one {
@@ -79,7 +94,7 @@ $auth-data-height: 56px;
 
   section {
     display: flex;
-    gap: $gap-s;
+    gap: $section-form-gap;
   }
 
   .disabled {
@@ -89,27 +104,27 @@ $auth-data-height: 56px;
 }
 
 .card_data {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1.5fr 2fr;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .section {
   display: flex;
   flex-flow: column;
-  gap: $gap-s;
+  gap: $section-gap;
 
   .section_header {
-    font-size: $font-size-l;
-    font-weight: $weight;
+    font-size: $section-header-font-size;
+    font-weight: $section-header-weight;
   }
 
   .section_form {
-    padding: $input-padding;
+    padding: $section-form-padding;
 
     display: flex;
     flex-flow: column;
-    gap: $gap-s;
+    gap: $section-form-gap;
 
     .save_button {
       width: min-content;
@@ -117,13 +132,13 @@ $auth-data-height: 56px;
   }
 
   .footer_buttons {
-    padding: $input-padding;
+    padding: $section-form-padding;
 
     width: max-content;
 
     display: flex;
     flex-flow: column;
-    gap: $gap-s;
+    gap: $section-form-gap;
     justify-content: start;
 
 
@@ -144,30 +159,30 @@ $auth-data-height: 56px;
 .input_section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: $gap-xxl;
+  column-gap: $inputs-gap;
 }
 
 .button {
+  font-size: $button-font-size;
 }
 
 .delete_button {
   color: $red-color;
-  text-align: start;
 }
 
 .new_section {
-  padding: $input-padding;
+  padding: $section-form-padding;
 
   display: flex;
   flex-flow: column;
-  gap: $gap-s;
+  gap: $new-section-gap;
 
   .new_section_header {
     display: flex;
     justify-content: start;
     align-items: center;
 
-    gap: $gap-xxs;
+    gap: $new-section-header-gap;
   }
 
   button {
@@ -176,8 +191,8 @@ $auth-data-height: 56px;
 }
 
 .section_name {
-  font-size: $font-size-l;
-  font-weight: $weight;
+  font-size: $new-form-header-size;
+  font-weight: $new-form-header-weight;
 }
 
 .message {
@@ -192,7 +207,16 @@ $auth-data-height: 56px;
   display: none;
 }
 
-@media screen and (orientation: portrait) {
+.p {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+@media screen and (max-width: $max-device-width) {
   .root {
     display: none;
   }
@@ -212,7 +236,7 @@ $auth-data-height: 56px;
   .input_section {
     display: flex;
     flex-flow: column;
-    gap: $gap-l1;
+    gap: $inputs-gap-row;
   }
 
   .icon {
@@ -229,8 +253,12 @@ $auth-data-height: 56px;
     }
   }
 
+  .card_data {
+    width: 240px;
+  }
+
   .input_section {
-    gap: $gap-s;
+    gap: $address-pay-main-gap;
   }
 
   .footer_one {
@@ -242,19 +270,9 @@ $auth-data-height: 56px;
       width: 100%;
 
       display: flex;
-      flex-wrap: wrap;
+      flex-flow: column;
     }
-
   }
-}
-
-.p {
-  width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .grey_bgc {

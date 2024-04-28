@@ -1,12 +1,30 @@
 @import "@/scss/globals/color";
-@import "@/scss/globals/main_values";
+
+$root-gap: 15px;
+$photo-section-width: 705px;
+$photo-section-gap: 24px;
+
+$art-info-gap: 16px;
+$art-info-header-gap: 4px;
+$art-info-header-artist-size: 24px;
+$art-info-header-artist-weight: 600;
+
+$art-price-size: 32px;
+$art-price-weight: 600;
+
+$more-info-gap: 4px;
+$more-info-noimp: 16px;
+
+$tags-section-gap: 8px;
+$tag-radius: 6px;
+$tag-padding: 4px 16px;
 
 .root {
   height: 100%;
 
   display: grid;
   grid-template-columns: min-content auto;
-  gap: $gap-s;
+  gap: $root-gap;
 }
 
 .photo_section {
@@ -15,7 +33,7 @@
 
   display: flex;
   flex-flow: column;
-  gap: $gap-l1;
+  gap: $photo-section-gap;
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -34,26 +52,26 @@
 
   display: flex;
   flex-flow: column;
-  gap: $gap-l1;
+  gap: $art-info-gap;
 
   .art_info_header {
     display: flex;
     flex-flow: column;
-    gap: $gap-xxxxxs;
+    gap: $art-info-header-gap;
 
     .art_artist {
-      font-size: $font-size-l;
-      font-weight: $weight;
+      font-size: $art-info-header-artist-size;
+      font-weight: $art-info-header-artist-weight;
     }
 
     .art_name {
-      font-style: italic;
+      font-weight: $art-info-header-artist-weight;
     }
   }
 
   .art_price {
-    font-size: $font-size-l;
-    font-weight: $weight;
+    font-size: $art-price-size;
+    font-weight: $art-price-weight;
   }
 
   .add_to_cart {
@@ -61,55 +79,29 @@
     text-align: center;
   }
 
-  .details_section {
-    display: grid;
-    grid-template-columns: 1.1fr 2fr;
-    gap: $gap-xl;
-  }
-
-  .details_one_section {
-    display: grid;
-    gap: 8px;
-  }
-
-  .more_info_noimp {
-    font-size: $font-size-xs;
-    color: $grey-filter-price-border;
-  }
-
-  .more_info_noimp_text, .info_text {
-    font-size: $font-size-xs;
-  }
-
-  .tags_section {
+  .more_info {
     display: flex;
-    flex-wrap: wrap;
-    gap: $gap-xxxs;
+    flex-flow: column;
+    gap: $more-info-gap;
 
-    .tag {
-      background-color: $grey_bg-settings;
-      border-radius: $elements-radius;
-      padding: $padding-2;
-
-      color: $grey-tag;
+    .more_info_noimp {
+      font-size: $more-info-noimp;
+      color: $grey-filter-price-border;
     }
-  }
-}
 
-.underline {
-  font-size: $font-size-xs;
-  text-decoration: underline;
-}
+    .info_text {
+      font-size: $more-info-noimp;
+    }
 
-.footer {
-  display: flex;
-  gap: $gap-xl;
+    .tags_section {
+      display: flex;
+      gap: $tags-section-gap;
 
-  button {
-    font-size: $font-size-xs;
-
-    display: flex;
-    gap: $gap-xxxs;
-    align-items: center;
+      .tag {
+        border: 1px solid $grey-filter-price-border;
+        border-radius: $tag-radius;
+        padding: $tag-padding;
+      }
+    }
   }
 }

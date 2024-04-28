@@ -1,4 +1,4 @@
-import {MAIN_PATHS, ROLES} from "@/paths/main";
+import {ROLES} from "@/paths/main";
 import header_profile_scss from "@/scss/components/profile/HeaderProfile.module.scss";
 import {signIn} from "next-auth/react";
 import Cookies from "js-cookie";
@@ -8,18 +8,14 @@ import art_icon from "@/assets/icons/profile/art.svg";
 import create_post_icon from "@/assets/icons/profile/create_post.svg";
 import edit_profile_icon from '@/assets/icons/profile/edit_profile.svg'
 import React, {useState} from "react";
-import {CreatePostProfile} from "@/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostProfile";
-import {useRouter} from "next/navigation";
+import {CreatePostProfile} from "@/components/profile/profile_elemets/create_post/CreatePostProfile";
 
 interface actionButtonsInterface {
-    isEditMobile: boolean
-
+    isEditMobile : boolean
     setIsEditMobile(flag: boolean): void
 }
 
 export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
-
-    const router = useRouter()
 
     const [artistId] = useState(Cookies.get('artistId'))
     const [customerId] = useState(Cookies.get('customerId'))
@@ -57,20 +53,26 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                 </section>
                 :
                 artistId && artistId === currentId && currentRole === ROLES.ARTIST ?
-                    <button className={'main_button ' + header_profile_scss.subscriber_section}
-                            onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
-                        <Image src={art_icon} alt={'art_icon'}/>
-                        <div>Выставить работу</div>
-                    </button>
+                    <section className={header_profile_scss.artist_action_section}>
+                        <button className={'main_button ' + header_profile_scss.subscriber_section}>
+                            <Image src={art_icon} alt={'art_icon'}/>
+                            <div>Выставить работу</div>
+                        </button>
+                        <button className={'cancel_button ' + header_profile_scss.subscriber_section}
+                                onClick={() => setIsCreatePost(true)}>
+                            <Image src={create_post_icon} alt={'create_post_icon'}/>
+                            <div>Написать пост</div>
+                        </button>
+                    </section>
                     : null
             }
             {(currentId === customerId || currentId === artistId) && !props.isEditMobile ?
                 <button className={'cancel_button ' + header_profile_scss.edit_button}
-                        onClick={() => props.setIsEditMobile(true)}>
+                    onClick={() => props.setIsEditMobile(true)}>
                     <Image src={edit_profile_icon} alt={'edit_profile_icon'}/>
                     <div>Редактировать профиль</div>
                 </button>
-                : null}
+            : null}
 
             {isCreatePost ?
                 <CreatePostProfile setIsCreatePost={setIsCreatePost}/>

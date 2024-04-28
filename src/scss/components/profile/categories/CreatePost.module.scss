@@ -1,11 +1,54 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
+$root-width: 800px;
+$root-padding: 32px;
+$root-gap: 16px;
+$root-radius: 12px;
+
+$title-size: 24px;
+$title-weight: 600;
 $title-max-height: 84px;
 
-.root {
+$textarea-height: 260px;
+
+$button-images-gap: 10px;
+
+$photo-section-gap: 8px;
+$one-photo-size: 100px;
+$one-photo-radius: 6px;
+
+.page {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
   display: grid;
-  gap: $gap-s;
+  justify-items: center;
+  align-items: center;
+
+  z-index: $z-index-up;
+}
+
+.bg {
+  background-color: $grey-bg-dark;
+}
+
+.root {
+  width: $root-width;
+  padding: $root-padding;
+  border-radius: $root-radius;
+
+  display: grid;
+  gap: $root-gap;
+
+  background-color: $white-color;
+
+  z-index: $z-index-menu;
 
   .cancel {
     width: min-content;
@@ -22,14 +65,14 @@ $title-max-height: 84px;
     padding: 0;
     border: none;
 
-    font-size: $font-size-l;
-    font-weight: $weight;
+    font-size: $title-size;
+    font-weight: $title-weight;
   }
 
   .textarea {
     border: none;
     resize: none;
-    height: $textarea-height-2;
+    height: $textarea-height;
 
     padding-right: 5px;
   }
@@ -40,43 +83,36 @@ $title-max-height: 84px;
 
     .button_images {
       display: flex;
-      gap: $gap-xxs;
+      gap: $button-images-gap;
       align-items: center;
 
       padding: 0;
     }
   }
-}
 
-.photo_section {
-  display: flex;
-  gap: $gap-xxxs;
+  .photo_section {
+    display: flex;
+    gap: $photo-section-gap;
 
-  .onePhoto_section {
-    display: grid;
+    .onePhoto_section {
+      display: grid;
+
+      .onePhoto {
+        width: $one-photo-size;
+        height: $one-photo-size;
+        object-fit: cover;
+
+        border-radius: $one-photo-radius;
+      }
+
+      .delete_button {
+        position: absolute;
+
+        display: grid;
+        justify-self: end;
+
+        padding-right: 10px;
+      }
+    }
   }
-}
-.onePhoto {
-  width: $one-photo-size;
-  height: $one-photo-size;
-  object-fit: cover;
-
-  border-radius: $elements-radius;
-}
-
-.delete_button {
-  position: absolute;
-
-  display: grid;
-  justify-self: end;
-
-  padding-right: 10px;
-}
-
-.hidden {
-  display: none;
-}
-
-.forbidden {
-  color: $grey-date;
 }

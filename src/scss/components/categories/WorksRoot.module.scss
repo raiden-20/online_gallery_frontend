@@ -1,4 +1,8 @@
-@import "@/scss/globals/main_values";
+
+$root-gap: 24px;
+
+$header_size: 32px;
+$header_weight: 600;
 
 $filters-button-gap: 8px;
 
@@ -6,12 +10,12 @@ $filters-button-gap: 8px;
   display: flex;
   flex-flow: column;
 
-  gap: $gap-l1;
+  gap: $root-gap;
 }
 
 .header {
-  font-size: $font-size-xxl;
-  font-weight: $weight;
+  font-size: $header-size;
+  font-weight: $header_weight;
 }
 
 .nav {
@@ -22,8 +26,8 @@ $filters-button-gap: 8px;
     height: min-content;
 
     display: flex;
-    gap: $gap-xxxs;
+    gap: $filters-button-gap;
 
-    font-weight: $weight;
+    font-weight: $header_weight;
   }
 }

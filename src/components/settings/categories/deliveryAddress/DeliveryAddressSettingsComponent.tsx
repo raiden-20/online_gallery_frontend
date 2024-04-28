@@ -50,10 +50,6 @@ export const DeliveryAddressSettingsComponent = (props: deliverySettingsInterfac
                                 <input placeholder={'Индекс'}/>
                             </section>
                             <input placeholder={'Адрес'}/>
-                            <section className={settings_scss.checkbox_section}>
-                                <input type={'checkbox'}/>
-                                <div>Сделать основным</div>
-                            </section>
                             <button className={'main_button'}>Добавить адрес</button>
                         </section>
                         : null}

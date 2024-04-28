@@ -11,23 +11,23 @@ export const NavigationSettingsComponentMobile = (props: {setWhoIsClicked(whoIsC
                 Настройки
             </header>
             <ul className={settings_scss.root_mobile}>
-                <li className={settings_scss.auth_data} onClick={() => props.setWhoIsClicked(1)}>
+                <li className={settings_scss.auth_data}>
                     <header>Аккаунт</header>
-                    <button>
+                    <button onClick={() => props.setWhoIsClicked(1)}>
                         <Image src={more_icon} alt={'more_icon'} className={settings_scss.icon}
                                width={0} height={0}/>
                     </button>
                 </li>
-                <li className={settings_scss.auth_data} onClick={() => props.setWhoIsClicked(2)}>
+                <li className={settings_scss.auth_data}>
                     <header>Адрес доставки</header>
-                    <button>
+                    <button onClick={() => props.setWhoIsClicked(2)}>
                         <Image src={more_icon} alt={'more_icon'}  className={settings_scss.icon}
                                width={0} height={0}/>
                     </button>
                 </li>
-                <li className={settings_scss.auth_data} onClick={() => props.setWhoIsClicked(3)}>
+                <li className={settings_scss.auth_data}>
                     <header>Способы оплаты</header>
-                    <button>
+                    <button onClick={() => props.setWhoIsClicked(3)}>
                         <Image src={more_icon} alt={'more_icon'} className={settings_scss.icon}
                                width={0} height={0}/>
                     </button>

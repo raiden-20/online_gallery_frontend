@@ -1,45 +1,23 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
-$one-post-photo-height: 90vh;
-$one-post-photo-width: 90vh;
-
-.main {
-  display: flex;
-  flex-flow: column;
-  gap: $gap-s;
-}
-
-.header_buttons {
-  display: flex;
-  gap: $gap-s;
-}
-
-.footer_buttons {
-  display: flex;
-  gap: $gap-xl;
-}
+$root-gap: 25px;
+$one-post-gap: 16px;
+$one-post-title-size: 24px;
+$one-post-title-weight: 600;
+$one-post-border-padding: 48px;
+$one-post-photo-height: 90%;
 
 .root {
   display: flex;
   flex-flow: column;
-  gap: $gap-l;
-}
-
-.button {
-  display: flex;
-  gap: $gap-xxs;
-  font-weight: $weight;
-
-  img {
-    width: $img_button-width;
-  }
+  gap: $root-gap;
 }
 
 .one_post {
   display: flex;
   flex-flow: column;
-  gap: $gap-s;
+  gap: $one-post-gap;
 
   .one_post_img {
     cursor: pointer;
@@ -47,8 +25,8 @@ $one-post-photo-width: 90vh;
   }
 
   .one_post_title {
-    font-size: $font-size-l;
-    font-weight: $weight;
+    font-size: $one-post-title-size;
+    font-weight: $one-post-title-weight;
   }
 
   .one_post_date {
@@ -60,9 +38,7 @@ $one-post-photo-width: 90vh;
 }
 
 .one_post_opened_photo {
-  position: relative;
-  max-height: $one-post-photo-height;
-  max-width: $one-post-photo-width;
+  height: $one-post-photo-height;
   object-fit: cover;
 
   z-index: $z-index-menu;
@@ -70,45 +46,5 @@ $one-post-photo-width: 90vh;
 
 .border {
   border-bottom: 1px solid $grey_border;
-  padding-bottom: $padding-48;
-}
-
-.button_close {
-  position: absolute;
-  display: grid;
-  justify-self: end;
-  align-self: start;
-
-  padding: $gap-xxl2 $gap-xxl2 0 0;
-
-  z-index: $z-index-menu;
-}
-
-.button_next {
-  position: absolute;
-  display: grid;
-  justify-self: end;
-
-  padding-right: $gap-xxl2;
-
-  z-index: $z-index-menu;
-}
-
-.button_prev {
-  position: absolute;
-  display: grid;
-  justify-self: start;
-
-  padding-left: $gap-xxl2;
-
-  z-index: $z-index-menu;
-}
-
-.footer_stretch {
-  display: flex;
-  justify-content: space-between;
-}
-
-.p {
-  color: $grey-date;
+  padding-bottom: $one-post-border-padding;
 }

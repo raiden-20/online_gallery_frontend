@@ -2,7 +2,7 @@ import artists_scss from '@/scss/components/categories/Artists.module.scss'
 
 import {UserShort} from "@/interfaces/artistInterface";
 import React, {useEffect} from "react";
-import {OneArtist} from "@/components/categories/artists/oneArtist/OneArtist";
+import {OneArtist} from "@/components/categories/artists/OneArtist";
 
 interface ArtistsInterface {
     artists: UserShort[],

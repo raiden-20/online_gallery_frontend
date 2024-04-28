@@ -1,7 +1,14 @@
-@import '@/scss/globals/main_values';
 
+
+$header-gap: 12px;
 $img-size: 19px;
+
+$one-element-padding: 12px 0;
+$one-element-gap: 10px;
 $one-element-img-size: 70px;
+$one-element-img-radius: 6px;
+$one-element-name-size: 24px;
+$one-element-name-weight: 600;
 
 .root {
   display: flex;
@@ -11,7 +18,7 @@ $one-element-img-size: 70px;
 .header {
   display: grid;
   grid-template-columns: min-content auto min-content;
-  gap: $gap-xs;
+  gap: $header-gap;
 
   align-items: center;
 
@@ -35,11 +42,11 @@ $one-element-img-size: 70px;
 
 .one_element {
   cursor: pointer;
-  padding: $padding-7;
+  padding: $one-element-padding;
 
   display: flex;
   align-items: center;
-  gap: $gap-xxs;
+  gap: $one-element-gap;
 
   .one_element_photo {
     cursor: pointer;
@@ -49,12 +56,12 @@ $one-element-img-size: 70px;
 
     object-fit: cover;
 
-    border-radius: $elements-radius;
+    border-radius: $one-element-img-radius;
   }
 
   .one_element_name {
     cursor: pointer;
-    font-size: $font-size-l;
-    font-weight: $weight;
+    font-size: $one-element-name-size;
+    font-weight: $one-element-name-weight;
   }
 }

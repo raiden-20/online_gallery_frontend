@@ -1,36 +1,27 @@
 @import '@/scss/globals/color';
 @import '@/scss/globals/main_values';
+@import '@/scss/globals/globals';
 
 @import url('https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-@font-face {
-  font-family: "Involve";
-  src: url('/fonts/involve/Involve-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: "New Mexika";
-  src: url('/fonts/new_mexika/behance-644c5296f1fe6.otf') format('opentype');
-}
-
 .title {
   font-family: 'Fahkwang', sans-serif;
-  font-size: $font-size-l;
+  font-size: $title-size;
 }
 
 .main_button {
-  font-weight: $weight;
+  font-weight: $button-weight;
 
   background-color: $black-color;
   color:$white-color;
 
   padding: $button-padding;
 
-  font-size: $font-size-s;
+  font-size: $button-font-size;
 }
 
 .no_main_color {
-  font-weight: $weight;
+  font-weight: $button-weight;
 }
 
 .cancel_button {
@@ -38,68 +29,8 @@
 
   padding: $button-padding;
 
-  font-weight: $weight;
-  font-size: $font-size-s;
-}
-
-.second_plan_button {
-  background-color: $grey-date;
-
-  padding: $button-padding;
-
-  font-weight: $weight;
-  font-size: $font-size-s;
-  color: $white-color;
-}
-
-.button_main_page {
-  height: 50px;
-
-  padding: $padding-12-32;
-  border: 1px solid $grey-border-main;
-  border-radius: $radius-48;
-  font-size: $font-size-l0;
-
-  display: grid;
-  justify-content: center;
-  align-content: center;
-
-  color: $grey-border-main;
-  font-family: "New Mexika", sans-serif;
-}
-
-.button_main_page-2 {
-  height: 70px;
-
-  padding: $padding-12-32;
-  border: 1px solid $grey-border-main;
-  border-radius: $radius-48;
-  font-size: $font-size-l0;
-
-  display: grid;
-  justify-content: center;
-  align-content: center;
-
-  color: $grey-border-main;
-  font-family: "New Mexika", sans-serif;
-}
-
-.page_modal_window {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  height: 100vh;
-  width: 100vw;
-
-  overflow: hidden;
-
-  z-index: $z-index-up;
-
-  display: grid;
-  justify-items: center;
-  align-items: center;
+  font-weight: $button-weight;
+  font-size: $button-font-size;
 }
 
 .bg {
@@ -112,36 +43,6 @@
   height: 100vh;
 
   background-color: $grey-bg;
-  z-index: $z-index-middle;
-}
-
-.bg2 {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  background-color: $grey-bg-dark;
-  z-index: $z-index-middle;
-}
-
-.modal_window {
-  width: $root-width-window;
-  padding: $root-padding-window;
-  border-radius: $radius-m;
-
-  display: grid;
-  align-items: center;
-
-  background-color: $white-color;
-  z-index: $z-index-menu;
-}
-
-.message {
-  color: $red-color
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -157,11 +58,16 @@
   border-radius: 2px;
 }
 
+
+html::-webkit-scrollbar {
+  width: 0px;
+}
+
 .html::-webkit-scrollbar-track {
   background: none;
 }
 
 .html::-webkit-scrollbar-thumb {
   background: $grey-date;
-  border-radius: 0;
+  border-radius: 0px;
 }

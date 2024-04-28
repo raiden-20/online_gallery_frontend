@@ -13,13 +13,12 @@ import {useRouter} from "next/navigation";
 import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import {MAIN_PATHS} from "@/paths/main";
 import Cookies from "js-cookie";
-import {DeleteAccountComponent} from "@/components/settings/categories/account/components/DeleteAccountComponent";
 
 interface AccountSettingsInterface {
     customer_data: Customer,
 
     getCustomerProfileData(id: string, router: AppRouterInstance): void
-    changeCustomerProfileData(customerName: string, birthDate: string, gender: string, description: string,
+    changeCustomerProfileData(customerName: string, birthDate: string, gender: string,
                               avatarUrl: string, coverUrl: string, avatar: File, cover: File,
                               router: AppRouterInstance, setMessage:(message: string) => void): void
     changeEmail(input_email: string, setMessage:(message: string) => void): void
@@ -36,8 +35,6 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
     const [isPasswordSection, setIsPasswordSection] = useState(false)
 
     const [artistId, setArtistId] = useState('')
-
-    const [isDeleteClicked, setIsDeleteClicked] = useState(false)
 
     useEffect(() => {
         setArtistId(Cookies.get('artistId') as string)
@@ -86,18 +83,15 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
                                         Создать аккаунт художника
                                     </button>
                                     : null}
-                                <button className={settings_scss.delete_button}
-                                        onClick={() => setIsDeleteClicked(true)}>
+                                <button className={settings_scss.button + ' ' + settings_scss.delete_button}
+                                        onClick={() => props.deleteAccount(router)}>
                                 Удалить аккаунт
                                 </button>
                             </section>
                         </section>
                     </section>
             }
-            {isDeleteClicked ? <DeleteAccountComponent setIsDeleteClicked={setIsDeleteClicked}
-                                                       deleteAccount={props.deleteAccount}
-                                                       customer_data={props.customer_data}/>
-                : null}
+
         </section>
     )
 }

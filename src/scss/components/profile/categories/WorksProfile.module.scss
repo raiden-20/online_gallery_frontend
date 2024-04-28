@@ -1,10 +1,12 @@
-@import "@/scss/globals/main_values";
-@import "@/scss/globals/color";
 
-$who-buy-size: 59px;
-$who-buy-img-size: 35px;
+$root-column-gap: 15px;
+$root-row-gap: 36px;
 
-$star-width: 197px;
+$one-work-width: 345px;
+$one-work-gap: 12px;
+$one-work-names_gap: 4px;
+$one-work-name_weight: 600;
+$one-work-img-radius: 10px;
 
 .root {
   width: 100%;
@@ -12,13 +14,8 @@ $star-width: 197px;
   display: flex;
   flex-wrap: wrap;
 
-  column-gap: $gap-s;
-  row-gap: $gap-xxl;
-}
-
-.img_section {
-  position: relative;
-  display: grid;
+  column-gap: $root-column-gap;
+  row-gap: $root-row-gap;
 }
 
 .one_work {
@@ -30,82 +27,26 @@ $star-width: 197px;
 
   display: flex;
   flex-flow: column;
-  gap: $gap-xs;
+  gap: $one-work-gap;
 
   .one_work_img {
-    position: relative;
     width: 100%;
 
-    border-radius: $radius-xm;
+    border-radius: $one-work-img-radius;
   }
 
   .one_work_names {
     display: flex;
     flex-flow: column;
-    gap: $gap-xxxxxs;
+    gap: $one-work-names_gap;
   }
 
   .one_work_weight {
-    font-weight: $weight;
+    font-weight: $one-work-name_weight;
   }
 }
 
 .create_art_button {
-  display: none;
-}
-
-.who_buy_section {
-  position: absolute;
-  min-width: $who-buy-size;
-  height: $who-buy-size;
-  border-radius: $radius-xm 0;
-
-  background-color: $grey-who;
-
-
-}
-
-.star_section {
-  max-width: $star-width;
-  border-radius: 0 $radius-xm;
-
-  display: grid;
-  align-self: end;
-}
-
-.who_buy_data {
-  padding: $padding-12;
-
-  display: flex;
-
-  justify-self: start;
-  align-self: start;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: $gap-xxs;
-
-  color: $white-color;
-
-  img {
-    width: $who-buy-img-size;
-    height: $who-buy-img-size;
-    object-fit: cover;
-
-    border-radius: $elements-radius;
-
-    display: grid;
-    align-self: center;
-  }
-
-  div {
-    font-size: $font-size-xs;
-    font-weight: $weight-700;
-  }
-}
-
-.who_buy_name_hide {
   display: none;
 }
 

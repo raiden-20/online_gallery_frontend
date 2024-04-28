@@ -1,17 +1,45 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "@/scss/globals/main_values";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   Cart.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"@/scss/globals/main_values\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Cart.module.scss 1:9  root stylesheet";
+.root {
+  padding: 35px 0;
+  display: flex;
+  flex-flow: column;
+  gap: 35px;
 }
+
+.header {
+  font-size: 32px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: auto min-content;
+  gap: 100px;
+}
+
+.arts {
+  height: 65vh;
+  display: flex;
+  flex-flow: column;
+  gap: 35px;
+  overflow-x: hidden;
+}
+
+.arts::-webkit-scrollbar {
+  width: 0;
+}
+
+.buy_section {
+  width: 280px;
+  display: flex;
+  flex-flow: column;
+  gap: 35px;
+}
+.buy_section .buy_data {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+.buy_section .buy_data .total_text, .buy_section .buy_data .price_text {
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=Cart.module.css.map */

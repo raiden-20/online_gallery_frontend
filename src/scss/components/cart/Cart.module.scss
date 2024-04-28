@@ -1,53 +1,35 @@
-@import "@/scss/globals/main_values";
-@import "@/scss/globals/color";
+
+
+$root-padding: 35px 0;
+$root-gap: 35px;
+
+$main-gap: 100px;
+
+$header-size: 32px;
+
+$arts-gap: 35px;
 
 $buy-data-width: 280px;
+$buy-data-gap: 15px;
+
+$total-text-size: 24px;
 
 .root {
-  padding: $padding-s;
+  padding: $root-padding;
 
   display: flex;
   flex-flow: column;
-  gap: $gap-xxl;
+  gap: $root-gap;
 }
 
 .header {
-  font-size: $font-size-xxl;
-  font-weight: $weight;
-}
-
-.top_buttons_section {
-  display: flex;
-  align-items: center;
-  gap: $gap-l;
-
-  .top_button_checkbox {
-    height: min-content;
-    display: flex;
-    gap: $gap-xs;
-
-    img, div {
-      display: grid;
-      align-self: center;
-    }
-  }
-
-  .top_button_delete {
-    height: min-content;
-    display: flex;
-    gap: $gap-xxxxs;
-
-    img, div {
-      display: grid;
-      align-self: center;
-    }
-  }
+  font-size: $header-size;
 }
 
 .main {
   display: grid;
   grid-template-columns: auto min-content;
-  gap: $gap-xxl;
+  gap: $main-gap;
 }
 
 .arts {
@@ -55,10 +37,9 @@ $buy-data-width: 280px;
 
   display: flex;
   flex-flow: column;
-  gap: $gap-xxl;
-  overflow-y: auto;
+  gap: $arts-gap;
 
-  position: relative;
+  overflow-x: hidden;
 }
 
 .arts::-webkit-scrollbar {
@@ -66,29 +47,19 @@ $buy-data-width: 280px;
 }
 
 .buy_section {
-  background-color: $grey_bg-settings;
-  border-radius: $elements-radius;
-  padding: $section-padding-s;
-
   width: $buy-data-width;
-  height: min-content;
 
   display: flex;
   flex-flow: column;
-  gap: $gap-l;
+  gap: $arts-gap;
 
   .buy_data {
-
     display: flex;
     flex-flow: column;
-    gap: $gap-s;
+    gap: $buy-data-gap;
 
     .total_text , .price_text{
-      font-size: $font-size-l;
-    }
-
-    .price_text {
-      font-weight: $weight;
+      font-size: $total-text-size;
     }
   }
 }

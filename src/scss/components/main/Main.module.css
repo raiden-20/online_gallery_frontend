@@ -1,17 +1,91 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "@/scss/globals/main_values";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   Main.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"@/scss/globals/main_values\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Main.module.scss 1:9  root stylesheet";
+.banner_section {
+  display: grid;
+  position: relative;
+  left: 0;
 }
+.banner_section .banner_img {
+  width: 100%;
+}
+.banner_section .next_banner_button {
+  position: absolute;
+  justify-self: end;
+  align-self: center;
+  padding-right: 50px;
+}
+
+.section {
+  padding: 45px 0;
+  display: flex;
+  flex-flow: column;
+  gap: 35px;
+}
+.section .section_title {
+  font-size: 48px;
+}
+.section .section_main {
+  display: flex;
+  justify-content: space-between;
+}
+.section .section_main .section_main_data {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  column-gap: 45px;
+}
+.section .section_main .section_main_data .section_main_data_img {
+  max-height: 510px;
+  max-width: 510px;
+}
+.section .section_main .section_main_data .section_main_info {
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  align-self: end;
+  row-gap: 5px;
+}
+.section .section_main .section_main_data .section_main_info .artist_name {
+  font-size: 32px;
+}
+.section .section_main .art_data {
+  font-size: 36px;
+}
+.section .section_main .action_section {
+  display: flex;
+  flex-flow: column;
+  gap: 35px;
+}
+.section .section_main .action_section .section_action_img {
+  max-width: 500px;
+  max-height: 150px;
+}
+.section .section_main .action_section .action_data {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+.section .artists_section {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.section .artists_section .one_artist {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+.section .artists_section .one_artist * {
+  cursor: pointer;
+}
+.section .artists_section .one_artist .one_artist_photo {
+  width: 245px;
+  height: 245px;
+  object-fit: cover;
+}
+.section .artists_section .one_artist .one_artist_name {
+  font-size: 32px;
+  text-align: center;
+}
+.section .section_next_button {
+  display: grid;
+  align-self: center;
+}
+
+/*# sourceMappingURL=Main.module.css.map */

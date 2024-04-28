@@ -22,10 +22,10 @@ export const CardEditComponent = (props: addressEditInterface) => {
 
 
     return (
-        <section className={create_order_scss.page}>
-            <section className={'bg ' + create_order_scss.bg}
+        <section className={'page_modal_window'}>
+            <section className={'bg2'}
                      onClick={() => props.setIsCardEdit(false)}></section>
-            <main className={create_order_scss.modal_window}>
+            <main className={'modal_window'}>
                 <section className={create_order_scss.root_window}>
                     <header className={create_order_scss.header_window}>
                         Выберите карту

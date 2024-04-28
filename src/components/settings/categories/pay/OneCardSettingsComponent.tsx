@@ -16,9 +16,11 @@ export const OneCardSettingsComponent = () => {
             <section className={settings_scss.address_header}>
                 <section className={settings_scss.address}>
                     <Image src={mark_icon} alt={'mark_icon'}/>
-                    <section className={settings_scss.card_data + ' ' + settings_scss.p}>
-                        <div>MASTERCARD</div>
-                        <div>•••• •••• •••• 1234</div>
+                    <section className={settings_scss.p}>
+                        <section className={settings_scss.card_data}>
+                            <div>MASTERCARD</div>
+                            <div>•••• •••• •••• 1234</div>
+                        </section>
                     </section>
                 </section>
                 <button onClick={() => setIsOpen(!isOpen)}>

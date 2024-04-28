@@ -21,10 +21,10 @@ export const AddressEditComponent = (props: addressEditInterface) => {
 
 
     return (
-        <section className={create_order_scss.page}>
-            <section className={'bg ' + create_order_scss.bg}
+        <section className={'page_modal_window'}>
+            <section className={'bg2'}
                      onClick={() => props.setIsAddressEdit(false)}></section>
-            <main className={create_order_scss.modal_window}>
+            <main className={'modal_window'}>
                 <section className={create_order_scss.root_window}>
                     <header className={create_order_scss.header_window}>
                         Выберите адрес доставки
@@ -32,7 +32,7 @@ export const AddressEditComponent = (props: addressEditInterface) => {
                     <ul className={create_order_scss.window_height}>
                         {isOpen ?
                             null
-                        :
+                            :
                             <section className={settings_scss.address_root}>
                                 <li className={settings_scss.grey_bgc}>
                                     <OneAddressSettingsComponent/>
@@ -50,7 +50,7 @@ export const AddressEditComponent = (props: addressEditInterface) => {
                                     <div>Добавить новый адрес</div>
                                 </button>
                                 <button onClick={() => setIsOpen(!isOpen)}>
-                                <Image src={isOpen ? open_icon : close_icon} className={settings_scss.icon}
+                                    <Image src={isOpen ? open_icon : close_icon} className={settings_scss.icon}
                                            alt={'open close icon'}/>
                                 </button>
                             </header>

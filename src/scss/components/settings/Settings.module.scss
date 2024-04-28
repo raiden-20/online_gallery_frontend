@@ -50,6 +50,7 @@ $auth-data-height: 56px;
 .address_header {
   width: 100%;
   display: flex;
+  gap: $gap-xxs;
   justify-content: space-between;
 }
 
@@ -60,6 +61,7 @@ $auth-data-height: 56px;
 }
 
 .address {
+  width: 100%;
   display: flex;
   gap: $gap-xxs;
 }
@@ -87,9 +89,9 @@ $auth-data-height: 56px;
 }
 
 .card_data {
-  width: 300px;
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
 }
 
 .section {
@@ -227,10 +229,6 @@ $auth-data-height: 56px;
     }
   }
 
-  .card_data {
-    width: 240px;
-  }
-
   .input_section {
     gap: $gap-s;
   }
@@ -248,14 +246,15 @@ $auth-data-height: 56px;
     }
 
   }
+}
 
-  .p {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis
-  }
+.p {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .grey_bgc {

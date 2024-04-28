@@ -36,7 +36,7 @@ export const CreateOrderComponent = () => {
                             </button>
                         </header>
                         <section className={create_order_scss.data}>
-                            <p>ул. Победы, д. 20, кв. 29, г. Воронеж, Воронежская обл., Россия, Иванов Иван
+                            <p className={create_order_scss.p}>ул. Победы, д. 20, кв. 29, г. Воронеж, Воронежская обл., Россия, Иванов Иван
                                 Иванович </p>
                         </section>
                     </section>

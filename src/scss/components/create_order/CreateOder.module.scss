@@ -53,6 +53,14 @@ $total-width: 255px;
   }
 }
 
+.p {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .data {
   padding: $section-padding-s;
   background-color: $grey_bg-settings;

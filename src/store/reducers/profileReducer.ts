@@ -32,7 +32,12 @@ const initialState: ProfileReducerInterface = {
         avatarUrl: "",
         coverUrl: "",
         customerId: "",
-        description: ""
+        description: "",
+        countSoldArts: "",
+        salesAmount: "",
+        countSubscribers: "",
+        isPublicSubscribe: false,
+        isPrivateSubscribe: false,
     },
 
     my_customer_data: {
@@ -49,7 +54,12 @@ const initialState: ProfileReducerInterface = {
         avatarUrl: "",
         coverUrl: "",
         customerId: "",
-        description: ""
+        description: "",
+        countSoldArts: "",
+        salesAmount: "",
+        countSubscribers: "",
+        isPublicSubscribe: false,
+        isPrivateSubscribe: false,
     }
 }
 
@@ -80,7 +90,13 @@ export const profileReducer = (state = initialState, action: any) => {
                 avatarUrl: action.artist_data.avatarUrl,
                 coverUrl: action.artist_data.coverUrl,
                 customerId: action.artist_data.customerId,
-                description: action.artist_data.description === ' ' ? '' : action.artist_data.description
+                description: action.artist_data.description === ' ' ? '' : action.artist_data.description,
+
+                countSoldArts: action.artist_data.countSoldArts,
+                salesAmount: action.artist_data.salesAmount,
+                countSubscribers: action.artist_data.countSubscribers,
+                isPublicSubscribe: action.artist_data.isPublicSubscribe,
+                isPrivateSubscribe: action.artist_data.isPrivateSubscribe,
             }
 
             return stateCopy
@@ -108,7 +124,13 @@ export const profileReducer = (state = initialState, action: any) => {
                 avatarUrl: action.artist_data.avatarUrl,
                 coverUrl: action.artist_data.coverUrl,
                 customerId: action.artist_data.customerId,
-                description: action.artist_data.description === ' ' ? '' : action.artist_data.description
+                description: action.artist_data.description === ' ' ? '' : action.artist_data.description,
+
+                countSoldArts: action.artist_data.countSoldArts,
+                salesAmount: action.artist_data.salesAmount,
+                countSubscribers: action.artist_data.countSubscribers,
+                isPublicSubscribe: action.artist_data.isPublicSubscribe,
+                isPrivateSubscribe: action.artist_data.isPrivateSubscribe,
             }
 
             return stateCopy
@@ -120,7 +142,12 @@ export const profileReducer = (state = initialState, action: any) => {
                 avatarUrl: "",
                 coverUrl: "",
                 customerId: "",
-                description: ""
+                description: "",
+                countSoldArts: "",
+                salesAmount: "",
+                countSubscribers: "",
+                isPublicSubscribe: false,
+                isPrivateSubscribe: false,
             }
             state.customer_data = {
                 artistId: "",

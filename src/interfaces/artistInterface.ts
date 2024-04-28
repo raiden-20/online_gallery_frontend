@@ -3,11 +3,18 @@ export interface Artist {
     avatarUrl: string,
     coverUrl: string,
     customerId: string,
-    description: string
+    description: string,
+    countSoldArts: string
+    salesAmount: string
+    countSubscribers: string
+    isPublicSubscribe: boolean
+    isPrivateSubscribe: boolean
 }
 
 export interface UserShort {
     artistId: string
     artistName: string,
-    avatarUrl: string
+    avatarUrl: string,
+    viewsCount: string,
+    photos: {artId: string}
 }

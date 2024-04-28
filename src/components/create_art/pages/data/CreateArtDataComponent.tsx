@@ -4,7 +4,7 @@ import {MainPhotoComponent} from "@/components/create_art/pages/data/elements/Ma
 import {AddPhotoComponent} from "@/components/create_art/pages/data/elements/AddPhotoComponent";
 import {AddInformationComponent} from "@/components/create_art/pages/data/elements/AddInformationComponent";
 import {useState} from "react";
-import {ArtsAPI} from "@/api/arts";
+import {ArtsAPI} from "@/api/artsAPI";
 
 export const CreateArtDataComponent = () => {
     const [photoArraySrc, setPhotoArraySrc] = useState<string[]>([])

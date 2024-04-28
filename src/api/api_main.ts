@@ -5,30 +5,51 @@ export const PathsAPI = {
     BASE: 'http://localhost:8080',
 
     CREATE: '/create',
+    BUY: '/buy',
     CHANGE: '/change',
     DELETE: '/delete',
     SEARCH: '/search',
+    ACTION: '/action',
+    SUBSCRIBE: '/subscribe',
+    UNSUBSCRIBE: '/unsubscribe',
+    SEND: '/send',
+    EDIT: '/edit',
+    RECEIVE: '/receive',
 
     CUSTOMER: '/customer',
     ARTIST: '/artist',
+    SUBSCRIPTIONS: '/subscriptions',
+    SUBSCRIBERS: '/subscribers',
     ACCOUNT: '/account',
 
     DATA: '/data',
     EMAIL: '/email',
     PASSWORD: '/password',
-    OBJECT: '/object'
+    OBJECT: '/object',
+    ADDRESS: '/address',
+    CARD: '/card',
+
+    POST: '/post',
+    ART: '/art',
+    CART: '/cart',
+    ORDER: '/order',
+
+    PUBLIC: '/public',
+    PRIVATE: '/private'
 }
 
 export const instance = axios.create({
     baseURL: PathsAPI.BASE,
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization' : `Bearer `
     }
 });
 export const instanceFile = axios.create({
     baseURL: PathsAPI.BASE,
     headers: {
-        'Content-Type': 'multipart/form-data; boundary=---------------------------123456789012345678901234567'
+        'Content-Type': 'multipart/form-data; boundary=---------------------------123456789012345678901234567',
+        'Authorization' : `Bearer `
     }
 });
 

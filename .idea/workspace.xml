@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="last design details">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="last design details 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/AddressEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/AddressEditComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/CardEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/CardEditComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/OneCardSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/OneCardSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/popilar1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/popular3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/populat2.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +89,8 @@
       <workItem from="1714132913798" duration="565000" />
       <workItem from="1714214693084" duration="2899000" />
       <workItem from="1714242760574" duration="10282000" />
-      <workItem from="1714254685340" duration="8901000" />
+      <workItem from="1714254685340" duration="9252000" />
+      <workItem from="1714292017854" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -294,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714262555586</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="last design details 2">
+      <option name="closed" value="true" />
+      <created>1714263909625</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1714263909625</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +330,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added button to settings card and address and ended mobile design" />
     <MESSAGE value="created delete account modal window and mobile version" />
     <MESSAGE value="design for cart" />
     <MESSAGE value="design for subscriptions" />
@@ -349,6 +354,7 @@
     <MESSAGE value="test one api 3" />
     <MESSAGE value="main page design" />
     <MESSAGE value="last design details" />
-    <option name="LAST_COMMIT_MESSAGE" value="last design details" />
+    <MESSAGE value="last design details 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="last design details 2" />
   </component>
 </project>

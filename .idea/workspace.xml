@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="last design details 2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/popilar1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/popular3.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/populat2.svg" beforeDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="testing">
+      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/Cart.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArt.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArt.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_order/CreateOrderSuccess.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOrderSuccess.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Main.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Main.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Artists.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Artists.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Main.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Main.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Popular.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Popular.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/OneOrder.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/OneOrder.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/Orders.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/Orders.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/MainPosts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/MainPosts.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/SuggestionSubscribeOnArtist.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/SuggestionSubscribeOnArtist.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/DeleteAccount.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/DeleteAccount.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,21 +61,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature__design__desktop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
@@ -330,7 +349,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created delete account modal window and mobile version" />
     <MESSAGE value="design for cart" />
     <MESSAGE value="design for subscriptions" />
     <MESSAGE value="changed design for navigation" />
@@ -355,6 +373,7 @@
     <MESSAGE value="main page design" />
     <MESSAGE value="last design details" />
     <MESSAGE value="last design details 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="last design details 2" />
+    <MESSAGE value="testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing" />
   </component>
 </project>

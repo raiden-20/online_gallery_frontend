@@ -1,8 +1,5 @@
 import {connect} from "react-redux";
-import {Artist} from "@/interfaces/artistInterface";
-import {ArtistProfileComponent} from "@/components/profile/components/ArtistProfileComponent";
-import {changeArtistProfileData, getArtistProfileData} from "@/store/thunks/profileThunk";
-import {getAllArtists, getAllCustomers, getSmthByName} from "@/store/thunks/categoriesThunk";
+import {getAllArtists, getAllArts, getAllCustomers, getSmthByName} from "@/store/thunks/categoriesThunk";
 import {Search} from "@/components/search/Search";
 
 interface containerState {
@@ -20,7 +17,8 @@ const mapStateToProps = (state: containerState) => {
 const mapDispatchToProps = {
     getSmthByName,
     getAllCustomers,
-    getAllArtists
+    getAllArtists,
+    getAllArts
 }
 
 export const SearchContainer = connect(mapStateToProps, mapDispatchToProps)(Search)

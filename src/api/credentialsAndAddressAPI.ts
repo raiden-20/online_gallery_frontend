@@ -2,7 +2,7 @@ import {instanceWithoutToken, PathsAPI} from "@/api/api_main";
 
 export const CredentialsAndAddressAPI = {
     async AddAddressAPI(name: string, country: string, region: string, city: string,
-                        index: string, location: string, isDefault: string) {
+                        index: string, location: string, isDefault: boolean) {
         try {
             const response = await instanceWithoutToken.post(
                 PathsAPI.ADDRESS,
@@ -24,7 +24,7 @@ export const CredentialsAndAddressAPI = {
     },
 
     async EditAddressAPI(addressId: string, name: string, country: string, region: string, city: string,
-                        index: string, location: string, isDefault: string) {
+                        index: string, location: string, isDefault: boolean) {
         try {
             const response = await instanceWithoutToken.put(
                 PathsAPI.ADDRESS,
@@ -76,7 +76,7 @@ export const CredentialsAndAddressAPI = {
     },
 
 
-    async AddCardAPI(number: string, date: string, cvv: string, isDefault: string) {
+    async AddCardAPI(number: string, date: string, cvv: string, isDefault: boolean) {
         try {
             const response = await instanceWithoutToken.post(
                 PathsAPI.CARD,
@@ -94,7 +94,7 @@ export const CredentialsAndAddressAPI = {
         }
     },
 
-    async EditCardAPI(cardId: string, type: string, number: string, date: string, cvv: string, isDefault: string) {
+    async EditCardAPI(cardId: string, type: string, number: string, date: string, cvv: string, isDefault: boolean) {
         try {
             const response = await instanceWithoutToken.put(
                 PathsAPI.CARD,

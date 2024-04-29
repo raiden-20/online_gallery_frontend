@@ -45,7 +45,7 @@ export const CartAPI = {
         }
     },
 
-    async BuyCartAPI(arts: {artId: boolean}, cardId: boolean, addressId: boolean) {
+    async BuyCartAPI(arts: {[key: string]: boolean }, cardId: string, addressId: string) {
         try {
             const response = await instance.post(
                 PathsAPI.CART + PathsAPI.BUY,

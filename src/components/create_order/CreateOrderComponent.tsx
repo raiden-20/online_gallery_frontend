@@ -8,15 +8,53 @@ import create_order_scss from '@/scss/components/create_order/CreateOder.module.
 
 import edit_icon from '@/assets/icons/create_order/edit.svg'
 import settings_scss from "@/scss/components/settings/Settings.module.scss";
-import {useState} from "react";
-import {AddressEditComponent} from "@/components/create_order/edit/AddressEditComponent";
-import {CardEditComponent} from "@/components/create_order/edit/CardEditComponent";
+import {useEffect, useState} from "react";
+import {AddressEditComponent} from "@/components/create_order/edit/address/AddressEditComponent";
+import {CardEditContainer} from "@/components/create_order/edit/cart/CardEditContainer";
+import {OneAddressInterface, OneCardInterface} from "@/interfaces/credentials";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {AddressEditContainer} from "@/components/create_order/edit/address/AddressEditContainer";
 
-export const CreateOrderComponent = () => {
+
+interface createOrderInterface {
+    totalCount: number
+    selectedArts: {[key: string]: boolean }
+    addresses: OneAddressInterface[]
+    cards: OneCardInterface[]
+
+    BuyCart(arts: {[key: string]: boolean }, cardId: string, addressId: string, router: AppRouterInstance): void,
+    getAddresses(router: AppRouterInstance): void,
+    getCards(router: AppRouterInstance): void
+}
+
+export const CreateOrderComponent = (props: createOrderInterface) => {
     const router = useRouter()
 
     const [isAddressEdit, setIsAddressEdit] = useState(false)
     const [isCardEdit, setIsCardEdit] = useState(false)
+    const [buy, setBuy] = useState(false)
+
+    useEffect(() => {
+        props.getAddresses(router)
+        props.getCards(router)
+    }, []);
+
+    useEffect(() => {
+        let addressId = ''
+        let cardId = ''
+        {props.addresses.map((oneAddress: OneAddressInterface) => {
+            if (oneAddress.isDefault) {
+                addressId = oneAddress.addressId
+            }
+        })}
+        {props.cards.map((oneCard: OneCardInterface) => {
+            if (oneCard.isDefault) {
+                cardId = oneCard.cardId
+            }
+        })}
+
+        props.BuyCart(props.selectedArts, cardId, addressId, router)
+    }, [buy]);
 
     return (
         <section className={create_order_scss.root}>
@@ -36,8 +74,18 @@ export const CreateOrderComponent = () => {
                             </button>
                         </header>
                         <section className={create_order_scss.data}>
-                            <p className={create_order_scss.p}>ул. Победы, д. 20, кв. 29, г. Воронеж, Воронежская обл., Россия, Иванов Иван
-                                Иванович </p>
+
+                            {props.addresses.map((oneAddress: OneAddressInterface) => {
+                                if (oneAddress.isDefault) {
+                                    return (
+                                        <p className={create_order_scss.p}>
+                                            {oneAddress.location}, {oneAddress.city},
+                                            {oneAddress.region}, {oneAddress.country}, {oneAddress.name}
+                                        </p>
+                                    )
+                                }
+                            })}
+
                         </section>
                     </section>
                     <section className={create_order_scss.one_data}>
@@ -47,29 +95,37 @@ export const CreateOrderComponent = () => {
                                 <Image src={edit_icon} alt={'edit_icon'}/>
                             </button>
                         </header>
-                        <section className={create_order_scss.data + ' ' + create_order_scss.card_data + ' ' + settings_scss.p}>
-                            <div>MIR</div>
-                            <div>•••• •••• •••• 1234</div>
-                        </section>
+                        {props.cards.map((oneCard: OneCardInterface) => {
+                            if (oneCard.isDefault ) {
+                                return (
+                                    <section
+                                        className={create_order_scss.data + ' ' + create_order_scss.card_data + ' ' + settings_scss.p}>
+                                        <div>{oneCard.type}</div>
+                                        <div>•••• •••• ••••
+                                            {oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length - 1)}</div>
+                                    </section>
+                                )
+                            }
+                        })}
                     </section>
                 </section>
                 <section className={create_order_scss.total_section + ' ' + create_order_scss.data}>
                     <section className={create_order_scss.total_data}>
                         <div>Итого</div>
-                        <div>1 170 000 ₽ </div>
+                        <div>{props.totalCount} ₽ </div>
                     </section>
                     <button className={'main_button'}
-                    onClick={() => router.push(MAIN_PATHS.SUCCESS_ORDER)}>
+                    onClick={() => setBuy(true)}>
                         Оплатить
                     </button>
                 </section>
             </main>
             {isAddressEdit ?
-                <AddressEditComponent setIsAddressEdit={setIsAddressEdit}/>
+                <AddressEditContainer setIsAddressEdit={setIsAddressEdit}/>
             : null}
 
             {isCardEdit ?
-                <CardEditComponent setIsCardEdit={setIsCardEdit}/>
+                <CardEditContainer setIsCardEdit={setIsCardEdit}/>
             : null}
         </section>
     )

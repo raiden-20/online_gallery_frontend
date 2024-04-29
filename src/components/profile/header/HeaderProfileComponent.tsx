@@ -2,11 +2,11 @@ import React, {useState} from "react";
 
 import {CoverSectionHeaderProfile} from "@/components/profile/header/elements/CoverSectionHeaderProfile";
 import {AvatarSectionHeaderProfile} from "@/components/profile/header/elements/AvatarSectionHeaderProfile";
-import {ActionButtonsHeaderProfile} from "@/components/profile/header/elements/ActionButtonsHeaderProfile";
 import {NameHeaderProfile} from "@/components/profile/header/elements/NameHeaderProfile";
 import {SaveDataHeaderProfile} from "@/components/profile/header/elements/SaveDataHeaderProfile";
 
 import header_profile_scss from '@/scss/components/profile/HeaderProfile.module.scss'
+import {ActionProfileContainer} from "@/components/profile/header/elements/actions/ActionProfileContainer";
 
 interface HeaderProfileInterface {
     input_coverUrl: string,
@@ -14,6 +14,9 @@ interface HeaderProfileInterface {
     input_name: string,
     isNeedChangeData: boolean
     message: string
+
+    isPublicSubscribe: boolean
+    isPrivateSubscribe: boolean
 
     setInput_name(input_name: string): void
     changeInputCover(event: React.ChangeEvent<HTMLInputElement>): void
@@ -52,8 +55,10 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                                        isNameClicked={isNameClicked}
                                        setIsNameClicked={setIsNameClicked}
                                        isEditMobile={props.isEditMobile}/>
-                    <ActionButtonsHeaderProfile isEditMobile={props.isEditMobile}
-                                                setIsEditMobile={props.setIsEditMobile}/>
+                    <ActionProfileContainer isEditMobile={props.isEditMobile}
+                                                setIsEditMobile={props.setIsEditMobile}
+                                                isPrivateSubscribe={props.isPublicSubscribe}
+                                                isPublicSubscribe={props.isPublicSubscribe}/>
                 </section>
             </section>
             {props.isNeedChangeData ?

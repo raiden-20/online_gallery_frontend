@@ -32,7 +32,7 @@ export const ActionsAPI = {
         }
     },
 
-    async PrivateUnsubscribe(artistId: string, cardId: string) {
+    async PrivateUnsubscribe(artistId: string) {
         try {
             const response = await instance.delete(
                 PathsAPI.PRIVATE + PathsAPI.UNSUBSCRIBE,

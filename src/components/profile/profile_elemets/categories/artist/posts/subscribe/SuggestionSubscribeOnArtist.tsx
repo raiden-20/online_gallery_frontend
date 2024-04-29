@@ -4,8 +4,8 @@ import subscribe_icon from '@/assets/icons/profile/create_post/subscribe_img.svg
 import Image from "next/image";
 import {useState} from "react";
 import {
-    CreatePrivateModalWindow
-} from "@/components/profile/profile_elemets/categories/artist/posts/create_private/CreatePrivateModalWindow";
+    CreatePrivateContainer
+} from "@/components/profile/profile_elemets/categories/artist/posts/create_private/CreatePrivateContainer";
 
 export const SuggestionSubscribeOnArtist = () => {
 
@@ -23,7 +23,7 @@ export const SuggestionSubscribeOnArtist = () => {
                 </button>
             </main>
             {isClicked ?
-                <CreatePrivateModalWindow setIsClicked={setIsClicked}/>
+                <CreatePrivateContainer setIsClicked={setIsClicked}/>
                 : null
             }
         </section>

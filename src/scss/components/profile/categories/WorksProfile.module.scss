@@ -6,6 +6,8 @@ $who-buy-img-size: 35px;
 
 $star-width: 197px;
 
+$blur: 10px;
+
 .root {
   width: 100%;
 
@@ -37,6 +39,10 @@ $star-width: 197px;
     width: 100%;
 
     border-radius: $radius-xm;
+  }
+
+  .one_work_img_not_available {
+    filter: blur($blur);
   }
 
   .one_work_names {
@@ -100,6 +106,12 @@ $star-width: 197px;
   }
 
   div {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     font-size: $font-size-xs;
     font-weight: $weight-700;
   }

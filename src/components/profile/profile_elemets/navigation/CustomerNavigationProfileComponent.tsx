@@ -1,5 +1,10 @@
 import nav_profile_scss from "@/scss/components/profile/Navigation.module.scss";
-import {ProfileNavInterface} from "@/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent";
+
+interface ProfileNavInterface {
+    whoIsClicked: number
+    setWhoIsClicked(whoIsClicked: number): void
+}
+
 
 export const CustomerNavigationProfileComponent = (props: ProfileNavInterface) => {
     const categories = [ 'Коллекция' , 'О себе']

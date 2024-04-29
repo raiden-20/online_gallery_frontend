@@ -1,25 +1,30 @@
-import {useState} from "react";
-import Cookies from "js-cookie";
-import {PostsArtistComponent} from "@/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent";
+import React from "react";
 import {
     SuggestionSubscribeOnArtist
 } from "@/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscribeOnArtist";
 import main_posts_scss from '@/scss/components/profile/categories/MainPosts.module.scss'
+import {
+    PostsArtistComponent
+} from "@/components/profile/profile_elemets/categories/artist/posts/elements/PostsArtistComponent";
+import {OnePostInterface} from "@/interfaces/PostsInterface";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
-export const MainPostsComponent = () => {
+interface mainPostInterface {
+    countSubscribers: string
+    posts: OnePostInterface[]
+    GetPrivatePosts(artistId: string, router: AppRouterInstance): void
+    DeletePrivatePost(id: string, router: AppRouterInstance): void
+}
 
-    const [artistId] = useState(Cookies.get('artistId'))
-    const [currentId] = useState(Cookies.get('currentId'))
+export const MainPostsComponent = (props: mainPostInterface) => {
 
-// todo проверка есть ли подписка
     return (
         <section className={main_posts_scss.root}>
-            {/*{artistId === currentId ?*/}
-            {/*    <PostsArtistComponent/> /* <SuggestionSubscribeOnArtist/> */}
-            {/*    :*/}
-            {/*    <PostsArtistComponent/>*/}
-            {/*}*/}
+            {props.countSubscribers === '' ?
                 <SuggestionSubscribeOnArtist/>
+                :
+                <PostsArtistComponent posts={props.posts} DeletePrivatePost={props.DeletePrivatePost}/>
+            }
         </section>
     )
 }

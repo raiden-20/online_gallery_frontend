@@ -1,12 +1,17 @@
 import delete_account_scss from "@/scss/components/settings/DeleteAccount.module.scss";
 import posts_artist_module from '@/scss/components/profile/categories/PostsArtist.module.scss'
 import React, {useEffect, useState} from "react";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from "next/navigation";
 
 interface deletePostsInterface {
     setIsDeletePosts(isDeletePosts: boolean): void
+    artistName: string
+    PrivateDeletePostPlace(router: AppRouterInstance): void
 }
 
 export const DeletePostsComponent = (props: deletePostsInterface) => {
+    const router = useRouter()
 
     const [message, setMessage] = useState('')
     const [isDelete, setIsDelete] = useState(false)
@@ -15,11 +20,11 @@ export const DeletePostsComponent = (props: deletePostsInterface) => {
 
     useEffect(() => {
         if (isDelete) {
-            // if (input_name === props.customer_data.customerName) {
-            //     props.deleteAccount(router)
-            // } else {
-            //     setMessage('Имена не совпадают')
-            // }
+            if (input_name === props.artistName) {
+                props.PrivateDeletePostPlace(router)
+            } else {
+                setMessage('Имена не совпадают')
+            }
             setIsDelete(false)
         }
     }, [isDelete]);

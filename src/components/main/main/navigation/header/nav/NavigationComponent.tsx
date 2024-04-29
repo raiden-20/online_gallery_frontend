@@ -12,6 +12,7 @@ import {signIn} from "next-auth/react";
 import {useSession} from "next-auth/react";
 import Cookies from "js-cookie";
 import {AccountNavigationContainer} from "@/components/main/main/navigation/header/AccountNavigationContainer";
+import {signin} from "@/store/thunks/authThunk";
 
 interface navigationInterface {
     artist_avatar: string
@@ -84,12 +85,7 @@ export const NavigationComponent = (props: navigationInterface) => {
             <li>
                 <button onClick={() => {
                     if ((status === 'unauthenticated' || session === null)) {
-                        signIn('keycloak')
-                            .then(() => {
-                                Cookies.set('role', ROLES.CUSTOMER)
-                                Cookies.set('status', 'authenticated')
-
-                            })
+                        signin()
                      } else {
                         setIsAccountClicked(!isAccountClicked)
                     }

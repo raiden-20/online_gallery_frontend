@@ -39,7 +39,7 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
 
 export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ProfileAPI.ArtistDataAPI(id)
+        ProfileAPI.ArtistDataAPI(id, Cookies.get('currentId') as string)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {

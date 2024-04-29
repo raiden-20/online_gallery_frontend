@@ -10,7 +10,6 @@ interface ArtistProfileInterface {
     artist_data: Artist
 
     getArtistProfileData(id: string, router: AppRouterInstance): void
-
     changeArtistProfileData(artistName: string, avatarUrl: string, coverUrl: string,
                             avatar: File | string, cover: File | string, description: string,
                             router: AppRouterInstance, setMessage:(message: string) => void): void
@@ -116,7 +115,6 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
         setIsEditMobile(false)
     }
 
-
     return (
         <section>
             <HeaderProfileComponent input_coverUrl={input_coverUrl} input_avatarUrl={input_avatarUrl} input_name={input_name}
@@ -127,11 +125,16 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                                     message={message}
                                     setIsNeedChangeData={setIsNeedChangeData}
                                     isEditMobile={isEditMobile}
-                                    setIsEditMobile={setIsEditMobile}/>
+                                    setIsEditMobile={setIsEditMobile}
+                                    isPrivateSubscribe={props.artist_data.isPublicSubscribe}
+                                    isPublicSubscribe={props.artist_data.isPublicSubscribe}/>
             <ArtistCategoriesProfile input_description={input_description} setInput_description={setInput_description}
                                      setIsNeedChangeData={setIsNeedChangeData}
                                      isEditMobile={isEditMobile}
-                                     setIsEditMobile={setIsEditMobile}/>
+                                     setIsEditMobile={setIsEditMobile}
+                                     countSoldArts={props.artist_data.countSoldArts}
+                                     countSubscribers={props.artist_data.countSubscribers}
+                                     salesAmount={props.artist_data.salesAmount}/>
         </section>
     )
 }

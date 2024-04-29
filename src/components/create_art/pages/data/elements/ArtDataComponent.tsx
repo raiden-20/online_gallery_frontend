@@ -5,32 +5,19 @@ import React, {useState} from "react";
 
 interface artDataInterface {
     input_name: string
-
     setInput_name(input_name: string): void
-
     input_price: string
-
     setInput_price(input_price: string): void
-
     input_year: string
-
     setInput_year(input_year: string): void
-
     input_description: string
-
     setInput_description(input_description: string): void
-
     input_height: string
-
     setInput_height(input_height: string): void
-
     input_width: string
-
     setInput_width(input_height: string): void
-
-    isAnonymous: boolean
-
-    setIsAnonymous(isAnonymous: boolean): void
+    isPrivate: boolean
+    setIsPrivate(isPrivate: boolean): void
 }
 
 export const ArtDataComponent = (props: artDataInterface) => {
@@ -57,7 +44,7 @@ export const ArtDataComponent = (props: artDataInterface) => {
             </section>
             <footer className={create_art_data_scss.footer}>
                 <input type={'checkbox'}
-                       onChange={() => props.setIsAnonymous(!props.isAnonymous)}/>
+                       onChange={() => props.setIsPrivate(!props.isPrivate)}/>
                 <div>Сделать доступным только для пользователей с ежемесячной подпиской</div>
                 <button onMouseOver={() => setIsHover(true)}
                         onMouseLeave={() => setIsHover(false)}>

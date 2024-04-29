@@ -1,11 +1,12 @@
 import delete_account_scss from "@/scss/components/settings/DeleteAccount.module.scss";
-import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import React, {useEffect, useState} from "react";
 
 import one_order_scss from '@/scss/components/orders/oneOrder/OneOrder.module.scss'
 
 interface OneOrderModalWindowInterface {
+    orderId: string
     setIsClicked(isClicked: boolean): void
+    SetOrder(orderId: string, comment: string): void
 }
 
 export const OneOrderModalWindowSend = (props: OneOrderModalWindowInterface) => {
@@ -17,7 +18,7 @@ export const OneOrderModalWindowSend = (props: OneOrderModalWindowInterface) => 
     useEffect(() => {
         if (isButtonCLicked) {
             if (input_message !== '') {
-
+                props.SetOrder(props.orderId, input_message)
             } else {
                 setMessage('Введите сообщение')
             }

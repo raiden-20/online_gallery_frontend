@@ -134,7 +134,9 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
                                     message={message}
                                     setIsNeedChangeData={setIsNeedChangeData}
                                     isEditMobile={isEditMobile}
-                                    setIsEditMobile={setIsEditMobile}/>
+                                    setIsEditMobile={setIsEditMobile}
+                                    isPrivateSubscribe={false}
+                                    isPublicSubscribe={false}/>
             <CustomerCategoriesProfile input_description={input_description}
                                        setInput_description={setInput_description}
                                        setIsNeedChangeData={setIsNeedChangeData}

@@ -4,13 +4,18 @@ import back_icon from "@/assets/icons/search/back.svg";
 import next_icon from "@/assets/icons/search/next.svg";
 import {
     OneOpenedPhotoPostComponent
-} from "@/components/profile/profile_elemets/categories/artist/posts/OneOpenedPhotoPostComponent";
+} from "@/components/profile/profile_elemets/categories/artist/posts/elements/OneOpenedPhotoPostComponent";
 import React, {useRef, useState} from "react";
 
-export const PhotoSection = () => {
+interface photoInterface {
+    photos: {artId: string}
+}
+
+export const PhotoSection = (props: photoInterface) => {
 
     const [isHover, setIsHover] = useState(true)
     const [openedPhotoSrc, setOpenedPhotoSrc] = useState<string[]>([])
+    const [indexOpened, setIndexOpened] = useState(0)
 
 
     const listRef = useRef<HTMLUListElement>(null);
@@ -41,26 +46,17 @@ export const PhotoSection = () => {
                         <Image src={back_icon} alt={'next_icon'}/>
                     </button>
                     : null}
-                <li onClick={() => setOpenedPhotoSrc(['/default_cover_profile.jpg', '/default_work_profile.jpg', '/default_cover_profile.jpg'])}>
-                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
-                <li>
-                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
-                <li>
-                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
-                <li>
-                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
-                <li>
-                    <Image src={'/default_cover_profile.jpg'} className={artists_scss.onePhoto}
-                           alt={'photo'} width={0} height={0}/>
-                </li>
+                {Object.values(props.photos).map((value, index) => {
+                    return (
+                        <li key={index} onClick={() => {
+                            setOpenedPhotoSrc(['/default_cover_profile.jpg', '/default_work_profile.jpg', '/default_cover_profile.jpg'])
+                            setIndexOpened(index)
+                        }}>
+                            <img src={value} className={artists_scss.onePhoto}
+                                 alt={'photo'} crossOrigin={'anonymous'}/>
+                        </li>
+                    )
+                })}
             </ul>
             {isHover ?
                 <button className={artists_scss.next_icon}
@@ -70,7 +66,8 @@ export const PhotoSection = () => {
                 </button>
                 : null}
             {openedPhotoSrc.length !== 0 ?
-                <OneOpenedPhotoPostComponent setOpenedPhotoSrc={setOpenedPhotoSrc} openedPhotoSrc={openedPhotoSrc}/>
+                <OneOpenedPhotoPostComponent setOpenedPhotoSrc={setOpenedPhotoSrc} openedPhotoSrc={openedPhotoSrc}
+                                             indexOpened={indexOpened} setIndexOpened={setIndexOpened}/>
                 : null}
         </section>
     )

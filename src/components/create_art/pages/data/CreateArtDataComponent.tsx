@@ -3,66 +3,89 @@ import {ArtDataComponent} from "@/components/create_art/pages/data/elements/ArtD
 import {MainPhotoComponent} from "@/components/create_art/pages/data/elements/MainPhotoComponent";
 import {AddPhotoComponent} from "@/components/create_art/pages/data/elements/AddPhotoComponent";
 import {AddInformationComponent} from "@/components/create_art/pages/data/elements/AddInformationComponent";
-import {useState} from "react";
-import {ArtsAPI} from "@/api/artsAPI";
+import {usePathname} from "next/navigation";
+import {MAIN_PATHS} from "@/paths/main";
+import {MainPhotoEditComponent} from "@/components/create_art/edit_art/MainPhotoEditComponent";
+import {AddPhotoEditComponent} from "@/components/create_art/edit_art/AddPhotoEditComponent";
 
-export const CreateArtDataComponent = () => {
-    const [photoArraySrc, setPhotoArraySrc] = useState<string[]>([])
-    const [photoArrayFile, setPhotoArrayFile] = useState<File[]>([])
+interface createArtDataInterface {
+    photoArraySrc: string[]
+    photoArrayFile: File[]
+    input_name: string
+    input_price: string
+    input_year: string
+    input_description: string
+    input_height: string
+    input_width: string
+    tags: string[]
+    materials: string[]
+    isPrivate: boolean
+    isFrame: boolean
+    photoUrls: string[]
+    setPhotoArrayFile(photoArrayFile: (prevItems: File[]) => File[]): void
+    setPhotoArraySrc(photoArraySrc: (prevItems: string[]) => string[]): void
+    setInput_name(input_name: string): void
+    setInput_year(input_name: string): void
+    setInput_price(input_name: string): void
+    setInput_description(input_name: string): void
+    setInput_height(input_name: string): void
+    setInput_width(input_name: string): void
+    setTags(tags: string[]): void
+    setMaterials(materials: string[]): void
+    setIsPrivate(isPrivate: boolean): void
+    setIsFrame(isFrame: boolean): void
+    setCreateArt(createArt: boolean): void
+    setDeletePhotoUrls(arr: string[]): void
+    deletePhotoUrls: string[]
+    setIsChangeMainPhoto(flag: boolean): void
+    setIsChangeMainPhoto(flag: boolean): void
+}
 
-    const [input_name, setInput_name] = useState('')
-    const [input_price, setInput_price] = useState('')
-    const [input_year, setInput_year] = useState('')
-    const [input_description, setInput_description] = useState('')
-    const [input_height, setInput_height] = useState('')
-    const [input_width, setInput_width] = useState('')
-    const [tags, setTags] = useState<string[]>([])
-    const [materials, setMaterials] = useState<string[]>([])
-    const [isAnonymous, setIsAnonymous] = useState(false)
-    const [isFrame, setIsFrame] = useState(false)
+export const CreateArtDataComponent = (props: createArtDataInterface) => {
 
-    const [message, setMessage] = useState('')
-
-
-    const setArt = () => {
-        const size = input_height + 'x' + input_width
-        ArtsAPI.CreateArtAPI(input_name, 'PAINTING', photoArrayFile, input_price, input_year, input_description, size, tags,
-        materials, isAnonymous, isFrame)
-            .then((response) => {
-                switch (response[0]) {
-                    case 200 : {
-                        setMessage('Запрос прошел успешно')
-                        break
-                    }
-                    default: {
-                        setMessage('Запрос провалился я заебалась, ошибка: ' + response[0])
-                        break
-                    }
-                }
-            } )
-    }
+    const pathname = usePathname()
 
     return (
         <section className={create_art_data_scss.root}>
-            <ArtDataComponent input_name={input_name} setInput_name={setInput_name}
-                              input_price={input_price} setInput_price={setInput_price}
-                              input_year={input_year} setInput_year={setInput_year}
-                              input_description={input_description} setInput_description={setInput_description}
-                              input_height={input_height} setInput_height={setInput_height}
-                              input_width={input_width} setInput_width={setInput_width}
-                              isAnonymous={isAnonymous} setIsAnonymous={setIsAnonymous}/>
-            <MainPhotoComponent photoArraySrc={photoArraySrc} photoArrayFile={photoArrayFile}
-                                setPhotoArrayFile={setPhotoArrayFile} setPhotoArraySrc={setPhotoArraySrc} />
-            <AddPhotoComponent photoArraySrc={photoArraySrc} photoArrayFile={photoArrayFile}
-                               setPhotoArrayFile={setPhotoArrayFile} setPhotoArraySrc={setPhotoArraySrc}/>
-            <AddInformationComponent tags={tags} setTags={setTags}
-                                     materials={materials} setMaterials={setMaterials}
-                                     isFrame={isFrame} setIsFrame={setIsFrame}/>
+            <ArtDataComponent input_name={props.input_name} setInput_name={props.setInput_name}
+                              input_price={props.input_price} setInput_price={props.setInput_price}
+                              input_year={props.input_year} setInput_year={props.setInput_year}
+                              input_description={props.input_description}
+                              setInput_description={props.setInput_description}
+                              input_height={props.input_height} setInput_height={props.setInput_height}
+                              input_width={props.input_width} setInput_width={props.setInput_width}
+                              isPrivate={props.isPrivate} setIsPrivate={props.setIsPrivate}/>
+            {pathname === MAIN_PATHS.CREATE_ART ?
+                <MainPhotoComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
+                                    setPhotoArrayFile={props.setPhotoArrayFile}
+                                    setPhotoArraySrc={props.setPhotoArraySrc}
+                />
+                :
+                <MainPhotoEditComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
+                                        setPhotoArrayFile={props.setPhotoArrayFile}
+                                        setPhotoArraySrc={props.setPhotoArraySrc}
+                                        photoUrls={props.photoUrls} setDeletePhotoUrls={props.setDeletePhotoUrls}
+                                        deletePhotoUrls={props.deletePhotoUrls} setIsChangeMainPhoto={props.setIsChangeMainPhoto}/>
+            }
+            {pathname === MAIN_PATHS.CREATE_ART ?
+                <AddPhotoComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
+                                   setPhotoArrayFile={props.setPhotoArrayFile} setPhotoArraySrc={props.setPhotoArraySrc}/>
+                :
+                <AddPhotoEditComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
+                                   setPhotoArrayFile={props.setPhotoArrayFile} setPhotoArraySrc={props.setPhotoArraySrc}
+                                   photoUrls={props.photoUrls} setDeletePhotoUrls={props.setDeletePhotoUrls}
+                                   deletePhotoUrls={props.deletePhotoUrls}/>
+            }
+
+            <AddPhotoComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
+                               setPhotoArrayFile={props.setPhotoArrayFile} setPhotoArraySrc={props.setPhotoArraySrc}/>
+            <AddInformationComponent tags={props.tags} setTags={props.setTags}
+                                     materials={props.materials} setMaterials={props.setMaterials}
+                                     isFrame={props.isFrame} setIsFrame={props.setIsFrame}/>
             <button className={'main_button'}
-            onClick={setArt}>
+                    onClick={() => props.setCreateArt(true)}>
                 Выставить работу
             </button>
-            <p className={'message'}>{message}</p>
         </section>
     )
 }

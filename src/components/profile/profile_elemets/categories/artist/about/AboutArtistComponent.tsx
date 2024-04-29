@@ -1,10 +1,11 @@
 import about_artist_scss from '@/scss/components/profile/categories/AboutArtist.module.scss'
 import {useState} from "react";
 
-import saled_paintings_icon from '@/assets/icons/profile/artist_info/saled_paintings.svg'
-import count_saled_icon from '@/assets/icons/profile/artist_info/count_saled.svg'
+import sale_paintings_icon from '@/assets/icons/profile/artist_info/saled_paintings.svg'
+import count_sale_icon from '@/assets/icons/profile/artist_info/count_saled.svg'
 import subscribers_icon from '@/assets/icons/profile/artist_info/subscribers.svg'
 import Image from "next/image";
+import {NULL} from "@/paths/elements";
 
 interface AboutInterface {
     input_description: string
@@ -14,6 +15,10 @@ interface AboutInterface {
 
     isEditMobile : boolean
     setIsEditMobile(flag: boolean): void
+
+    countSoldArts: string
+    salesAmount: string
+    countSubscribers: string
 }
 
 interface info {
@@ -24,9 +29,9 @@ interface info {
 
 export const AboutArtistComponent = (props: AboutInterface) => {
     const info: info[] = [
-        {icon: saled_paintings_icon, title: 'Проданные картины', data: '10'},
-        {icon: count_saled_icon, title: 'Сумма продаж', data: '100000 ₽'},
-        {icon: subscribers_icon, title: 'Платные подписчики', data: '100'},
+        {icon: sale_paintings_icon, title: 'Проданные картины', data: props.countSoldArts},
+        {icon: count_sale_icon, title: 'Сумма продаж', data: props.salesAmount + ' ₽'},
+        {icon: subscribers_icon, title: 'Платные подписчики', data: props.countSubscribers},
 
     ]
 
@@ -47,13 +52,15 @@ export const AboutArtistComponent = (props: AboutInterface) => {
             }
             <section className={about_artist_scss.info_section}>
                 {info.map((one_info: info) => {
-                    return (
-                        <section className={about_artist_scss.one_info}>
-                            <Image src={one_info.icon} alt={'icon'} className={about_artist_scss.icon}/>
-                            <div>{one_info.title}</div>
-                            <div>{one_info.data}</div>
-                        </section>
-                    )
+                    if (one_info.data !== NULL) {
+                        return (
+                            <section className={about_artist_scss.one_info}>
+                                <Image src={one_info.icon} alt={'icon'} className={about_artist_scss.icon}/>
+                                <div>{one_info.title}</div>
+                                <div>{one_info.data}</div>
+                            </section>
+                        )
+                    }
                 })}
             </section>
         </section>

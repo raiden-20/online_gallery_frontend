@@ -15,6 +15,7 @@ import {NavigationElementsMobile} from "@/components/main/main/navigation/header
 import {AccountNavigationContainer} from "@/components/main/main/navigation/header/AccountNavigationContainer";
 import {Artist} from "@/interfaces/artistInterface";
 import {Customer} from "@/interfaces/customerInterface";
+import {signin} from "@/store/thunks/authThunk";
 
 interface navigationInterface {
     artist_avatar: string
@@ -54,12 +55,7 @@ export const NavigationComponentMobile = (props: navigationInterface) => {
                 </button>
                 <button onClick={() => {
                     if ((status === 'unauthenticated' || session === null)) {
-                        signIn('keycloak')
-                            .then(() => {
-                                Cookies.set('role', ROLES.CUSTOMER)
-                                Cookies.set('status', 'authenticated')
-
-                            })
+                        signin()
                     } else if (registrationFlag === 'true'){
                         setIsAccountClicked(!isAccountClicked)
                     }

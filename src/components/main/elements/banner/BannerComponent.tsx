@@ -48,9 +48,9 @@ export const BannerComponent = () => {
                 </button>
             </section>
             <ul className={banner_scss.ul} ref={BannerRef}>
-                {bannersArr.map((banner) => {
+                {bannersArr.map((banner, index) => {
                     return (
-                        <li className={banner_scss.main}>
+                        <li className={banner_scss.main} key={index}>
                             <img src={banner} className={banner_scss.banner_img}
                                  alt={'banner'} crossOrigin={'anonymous'}/>
                         </li>

@@ -4,18 +4,31 @@ import add_photo_icon from '@/assets/icons/create_art/add_photo.svg'
 import Image from "next/image";
 import React, {useState} from "react";
 import {fileSize} from "@/components/profile/components/setPhoto";
-import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import create_post_scss from "@/scss/components/profile/categories/CreatePost.module.scss";
 import delete_photo_icon from "@/assets/icons/profile/create_post/delete.svg";
 
 interface mainPhotoInterface {
     photoArraySrc: string[]
     photoArrayFile: File[]
+
     setPhotoArrayFile(photoArrayFile: (prevItems: File[]) => File[]): void
+
     setPhotoArraySrc(photoArraySrc: (prevItems: string[]) => string[]): void
 }
 
-export const MainPhotoComponent = (props: mainPhotoInterface) => {
+interface mainPhotoInterface2 {
+    photoArraySrc: string[]
+    photoArrayFile: File[]
+
+    setPhotoArrayFile(photoArrayFile: (prevItems: File[]) => File[]): void
+
+    setPhotoArraySrc(photoArraySrc: (prevItems: string[]) => string[]): void
+
+    setDeletePhotoUrls(arr: string[]): void
+
+}
+
+export const MainPhotoComponent = (props: mainPhotoInterface | mainPhotoInterface2) => {
 
     const [message, setMessage] = useState('')
 
@@ -28,7 +41,7 @@ export const MainPhotoComponent = (props: mainPhotoInterface) => {
 
                 reader.onload = (event) => {
                     if (event.target !== null && event.target.result !== null) {
-                        props.setPhotoArraySrc((prevItems : string[]) => {
+                        props.setPhotoArraySrc((prevItems: string[]) => {
                             const newItems = [...prevItems];
                             // @ts-ignore
                             newItems.splice(0, 1, event.target.result.toString());
@@ -38,7 +51,7 @@ export const MainPhotoComponent = (props: mainPhotoInterface) => {
 
                 };
                 reader.readAsDataURL(file);
-                props.setPhotoArrayFile((prevItems : File[]) => {
+                props.setPhotoArrayFile((prevItems: File[]) => {
                     const newItems = [...prevItems];
                     newItems.splice(0, 1, photoFile[0]);
                     return newItems;
@@ -68,7 +81,8 @@ export const MainPhotoComponent = (props: mainPhotoInterface) => {
                         <Image src={delete_photo_icon} alt={'delete_photo_icon'}/>
                     </button>
                     <img src={props.photoArraySrc[0]} className={create_post_scss.onePhoto}
-                         alt={'photo'}/>
+                         alt={'photo'}
+                         crossOrigin={'anonymous'}/>
                 </section>
                 : null}
             {message !== '' ?

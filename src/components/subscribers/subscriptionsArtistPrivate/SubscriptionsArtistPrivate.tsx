@@ -1,7 +1,23 @@
 import subscriptions_scss from "@/scss/components/subscriptions/Subscriptions.module.scss";
+import {SubscriptionsArtistsPrivate} from "@/interfaces/subscriptions";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import React, {useEffect} from "react";
+import {useRouter} from "next/navigation";
 import {OneSubscription} from "@/components/subscribers/subscriptionsArtistPrivate/OneSubscription";
 
-export const SubscriptionsArtistPrivate = () => {
+interface subscriptionsInterface {
+    subscriptionsArtistsPrivate: SubscriptionsArtistsPrivate[]
+    PrivateSubscriptionsArtists(router: AppRouterInstance): void,
+}
+
+
+export const SubscriptionsArtistPrivate = (props: subscriptionsInterface) => {
+    const router = useRouter()
+
+    useEffect(() => {
+        props.PrivateSubscriptionsArtists(router)
+    }, []);
+
     return (
         <main>
             <header className={subscriptions_scss.section_title}>
@@ -11,18 +27,14 @@ export const SubscriptionsArtistPrivate = () => {
                 <button className={'no_main_color'}></button>
             </header>
             <ul className={subscriptions_scss.subscriptions_private_section}>
-                <li>
-                    <OneSubscription/>
-                </li>
-                <li>
-                    <OneSubscription/>
-                </li>
-                <li>
-                    <OneSubscription/>
-                </li>
-                <li>
-                    <OneSubscription/>
-                </li>
+                {props.subscriptionsArtistsPrivate.map((oneArtist: SubscriptionsArtistsPrivate, index) => {
+                    return (
+                        <li key={index} className={subscriptions_scss.grid}>
+                            <OneSubscription oneArtist={oneArtist}/>
+                        </li>
+                    )
+                })
+                }
             </ul>
         </main>
     )

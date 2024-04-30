@@ -15,6 +15,14 @@ $total-width: 255px;
   font-weight: $weight;
 }
 
+.weight {
+  font-weight: $weight;
+}
+
+.no_important {
+  color: $grey-date;
+}
+
 .main {
   width: 100%;
   display: grid;
@@ -41,6 +49,15 @@ $total-width: 255px;
       font-size: $font-size-l;
       font-weight: $weight;
     }
+
+    button {
+      height: min-content;
+    }
+  }
+
+  .one_data_card_header {
+    display: flex;
+    justify-content: space-between;
 
     button {
       height: min-content;
@@ -156,4 +173,8 @@ $total-width: 255px;
 
 .window_height::-webkit-scrollbar {
   width: 0;
+}
+
+.z {
+  z-index: $z-index-menu-top;
 }

@@ -1,19 +1,22 @@
-import {Artist, UserShort} from "@/interfaces/artistInterface";
+import {Artist, ArtShortCategories, UserShort} from "@/interfaces/artistInterface";
 
 const SET_ARTISTS = 'SET_ARTISTS'
+const SET_ARTS = 'SET_ARTS'
 const SET_SEARCH = 'SET_SEARCH'
 
 const CLEAR_CATEGORIES_DATA = 'CLEAR_CATEGORIES_DATA'
 
 
 interface CategoriesReducerInterface {
-    artists: UserShort[]
+    artists: UserShort[],
+    arts: ArtShortCategories[],
     search: []
 }
 
 
 const initialState: CategoriesReducerInterface = {
     artists: [],
+    arts: [],
     search: []
 }
 
@@ -23,7 +26,13 @@ export const categoriesReducer = (state = initialState, action: any) => {
 
         case SET_ARTISTS: {
             stateCopy.artists = action.artists
+            stateCopy.search = action.artists
+            return stateCopy
+        }
 
+        case SET_ARTS: {
+            stateCopy.arts = action.arts
+            stateCopy.search = action.arts
             return stateCopy
         }
 
@@ -46,9 +55,15 @@ export const categoriesReducer = (state = initialState, action: any) => {
     }
 }
 
-export const setSmth = (artists: Artist[]) => {
+export const setArtists = (artists: Artist[]) => {
     return {
         type: SET_ARTISTS, artists
+    }
+}
+
+export const setArts = (arts: ArtShortCategories[]) => {
+    return {
+        type: SET_ARTS, arts
     }
 }
 

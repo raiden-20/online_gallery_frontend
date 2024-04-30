@@ -30,28 +30,28 @@ export const FiltersComponent = (props: filtersInterface) => {
                     </button>
                 </header>
                 <ul className={filters_scss.main}>
-                    <li>
+                    <li key={0}>
                         <PriceFiltersComponent/>
                     </li>
-                    <li>
+                    <li key={1}>
                         <SizeFiltersComponent/>
                     </li>
-                    <li>
+                    <li key={2}>
                         <ArtistsFiltersComponent/>
                     </li>
-                    <li>
+                    <li key={3}>
                         <YearFiltersComponent/>
                     </li>
-                    <li>
+                    <li key={4}>
                         <MaterialsFiltersComponent/>
                     </li>
-                    <li>
+                    <li key={5}>
                         <TagsFiltersComponent/>
                     </li>
-                    <li>
+                    <li key={6}>
                         <FrameFiltersComponent/>
                     </li>
-                    <li>
+                    <li key={7}>
                         <StatusFilterComponent/>
                     </li>
                 </ul>

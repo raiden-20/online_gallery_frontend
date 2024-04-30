@@ -1,5 +1,3 @@
-import {useRouter} from "next/navigation";
-
 import search_icon from '@/assets/icons/search/search.svg'
 import delete_icon from '@/assets/icons/search/delete.svg'
 
@@ -10,15 +8,19 @@ import nav_profile_scss from '@/scss/components/profile/Navigation.module.scss'
 import {useState} from "react";
 import {Artists} from "@/components/search/elements/Artists";
 import {Customers} from "@/components/search/elements/Customers";
+import {Works} from "@/components/search/elements/Works";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 export interface SearchInterface {
     search: [],
     getSmthByName(input_name: string, type: string): void,
     getAllArtists(): void
     getAllCustomers(): void
+    getAllArts(type: string, router: AppRouterInstance): void
 }
 
 export const Search = (props: SearchInterface) => {
+    const categories = ['Художники',  'Покупатели',  'Картины',  'Фотографии',  'Скульптуры',  'Аукционы',  'События']
 
     const [whoIsClicked, setWhoIsClicked] = useState(1)
     const [input_name, setInput_name] = useState('')
@@ -38,41 +40,15 @@ export const Search = (props: SearchInterface) => {
             </section>
             <nav>
                 <ul className={nav_profile_scss.root + ' ' + search_scss.nav}>
-                    <li className={whoIsClicked === 1 ? nav_profile_scss.active : undefined}>
-                        <button onClick={() => setWhoIsClicked(1)}>
-                            Художники
-                        </button>
-                    </li>
-                    <li className={whoIsClicked === 2 ? nav_profile_scss.active : undefined}>
-                        <button onClick={() => setWhoIsClicked(2)}>
-                            Покупатели
-                        </button>
-                    </li>
-                    <li className={whoIsClicked === 3 ? nav_profile_scss.active : undefined}>
-                        <button onClick={() => setWhoIsClicked(3)}>
-                            Картины
-                        </button>
-                    </li>
-                    <li className={whoIsClicked === 4 ? nav_profile_scss.active : undefined}>
-                        <button onClick={() => setWhoIsClicked(4)}>
-                            Фотографии
-                        </button>
-                    </li>
-                    <li className={whoIsClicked === 5 ? nav_profile_scss.active : undefined}>
-                        <button onClick={() => setWhoIsClicked(5)}>
-                            Скульптуры
-                        </button>
-                    </li>
-                    <li className={whoIsClicked === 6 ? nav_profile_scss.active : undefined}>
-                        <button onClick={() => setWhoIsClicked(6)}>
-                            Аукционы
-                        </button>
-                    </li>
-                    <li className={whoIsClicked === 7 ? nav_profile_scss.active : undefined}>
-                        <button onClick={() => setWhoIsClicked(7)}>
-                            События
-                        </button>
-                    </li>
+                    {categories.map((one: string, index)  => {
+                        return (
+                            <li className={whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}>
+                                <button onClick={() => setWhoIsClicked(index + 1)} key={index}>
+                                    {one}
+                                </button>
+                            </li>
+                        )
+                    })}
                 </ul>
             </nav>
             <main>
@@ -80,10 +56,16 @@ export const Search = (props: SearchInterface) => {
                                                input_name={input_name}
                                                getAllArtists={props.getAllArtists}
                                                getSmthByName={props.getSmthByName}/> :
-                    whoIsClicked === 2 ? <Customers search={props.search}
-                                                    input_name={input_name}
-                                                    getAllCustomers={props.getAllCustomers}
-                                                    getSmthByName={props.getSmthByName}/> : null}
+                whoIsClicked === 2 ? <Customers search={props.search}
+                                                input_name={input_name}
+                                                getAllCustomers={props.getAllCustomers}
+                                                getSmthByName={props.getSmthByName}/> :
+                whoIsClicked === 3 || whoIsClicked === 4 || whoIsClicked === 5
+                    ? <Works search={props.search}
+                             input_name={input_name}
+                             getAllArts={props.getAllArts}
+                             getSmthByName={props.getSmthByName}
+                             whoIsClicked={whoIsClicked}/> : null}
             </main>
         </section>
     )

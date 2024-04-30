@@ -1,29 +1,42 @@
 import suggestion_scss from '@/scss/components/profile/categories/SuggestionSubscribeOnArtist.module.scss'
 
-import subscribe_icon from '@/assets/icons/profile/create_post/subscribe_img.svg'
 import Image from "next/image";
 import {useState} from "react";
-import {
-    CreatePrivateModalWindow
-} from "@/components/profile/profile_elemets/categories/artist/posts/create_private/CreatePrivateModalWindow";
+import {PrivateSubscribeContainer} from "@/components/profile/private_subscribe/PrivateSubscribeContainer";
+import not_available from '@/assets/icons/profile/create_post/not_available.svg'
+import {useSession} from "next-auth/react";
+import {signin} from "@/store/thunks/authThunk";
+import Cookies from "js-cookie";
 
 export const SuggestionSubscribeOnArtist = () => {
 
     const [isClicked, setIsClicked] = useState(false)
 
+    const { data: session, status } = useSession()
+
+    const [artistName] = useState(Cookies.get('artistName'))
+
     return (
         <section className={suggestion_scss.root}>
-            <Image src={subscribe_icon} alt={'subscribe_icon'}/>
             <main className={suggestion_scss.main}>
-                <p>Подключите функцию ежемесячной подписки и начните публиковать посты и размещать эксклюзивные товары
-                    прямо сейчас!</p>
-                <button className={'main_button'}
-                        onClick={() => setIsClicked(true)}>
-                    Подключить подписку
-                </button>
+                <Image src={not_available} alt={'not_available'} width={0} height={0}/>
+                <p>Чтобы просматривать эксклюзивный контент,
+                    необходимо
+                    <button className={suggestion_scss.underline}
+                            onClick={() => {
+                                if (status === 'authenticated') {
+                                    setIsClicked(true)
+                                } else {
+                                    signin()
+                                }
+                            }
+                            }>
+                        оформить ежемесячную подписку
+                    </button> на {artistName}
+                </p>
             </main>
             {isClicked ?
-                <CreatePrivateModalWindow setIsClicked={setIsClicked}/>
+                <PrivateSubscribeContainer setSubscribe={setIsClicked}/>
                 : null
             }
         </section>

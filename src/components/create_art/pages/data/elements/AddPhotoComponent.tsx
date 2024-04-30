@@ -4,7 +4,6 @@ import {fileSize} from "@/components/profile/components/setPhoto";
 import create_post_scss from "@/scss/components/profile/categories/CreatePost.module.scss";
 import Image from "next/image";
 import delete_photo_icon from "@/assets/icons/profile/create_post/delete.svg";
-import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import add_photo_icon from "@/assets/icons/create_art/add_photo.svg";
 
 interface mainPhotoInterface {

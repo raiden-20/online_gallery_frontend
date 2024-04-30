@@ -17,25 +17,25 @@ import {NavigationComponentMobile} from "@/components/main/main/navigation/heade
 import {Artist} from "@/interfaces/artistInterface";
 import {Customer} from "@/interfaces/customerInterface";
 import {useSession} from "next-auth/react";
-import {WorksRoot} from "@/components/categories/works/WorksRoot";
-import {CartComponent} from "@/components/cart/CartComponent";
 import {MainComponent} from "@/components/main/MainComponent";
-import {OneWorkComponent} from "@/components/categories/works/works/one_work/OneWorkComponent";
-import {SubscriptionsComponent} from "@/components/subscribers/SubscriptionsComponent";
-import {CreateArtTypeComponent} from "@/components/create_art/CreateArtTypeComponent";
-import {CreateOrderComponent} from "@/components/create_order/CreateOrderComponent";
 import {CreateOrderSuccessComponent} from "@/components/create_order/success/CreateOrderSuccessComponent";
-import {OrdersComponent} from "@/components/orders/OrdersComponent";
-import {OneOrderComponent} from "@/components/orders/one_order/OneOrderComponent";
+import {SubscriptionsContainer} from "@/components/subscribers/SubscriptionsContainer";
+import {CreateArtContainer} from "@/components/create_art/CreateArtContainer";
+import {OneWorkContainer} from "@/components/categories/works/works/one_work/element/OneWorkContainer";
+import {WorkRootContainer} from "@/components/categories/works/WorkRootContainer";
+import {CartContainer} from "@/components/cart/CartContainer";
+import {CreateOrderContainer} from "@/components/create_order/CreateOrderContainer";
+import {OrdersContainer} from "@/components/orders/OrdersContainer";
+import {OneOrderContainer} from "@/components/orders/one_order/OneOrderContainer";
+import {EditArtContainer} from "@/components/create_art/edit_art/EditArtContainer";
+import {setToken} from "@/api/api_main";
 
 interface RootInterface {
     artist_data: Artist
     customer_data: Customer
 
     isCustomerCreate(router: AppRouterInstance): void,
-
     getCustomerProfileData(id: string, router: AppRouterInstance): void
-
     getArtistProfileData(id: string, router: AppRouterInstance): void
 }
 
@@ -67,15 +67,15 @@ export const Root = (props: RootInterface) => {
                         props.getArtistProfileData(Cookies.get('artistId') as string, router)
                     }
                 }
+                setToken(localStorage.getItem('access_token') as string)
             }
         }
     }, [session]);
 
-
     return (
         <section className={root_scss.page}>
             <section className={root_scss.root}>
-                <nav className={root_scss.desktop_nav}> {/*todo перенести в одну компоненту */}
+                <nav className={root_scss.desktop_nav}>
                     <NavigationComponent artist_avatar={props.artist_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.artist_data.avatarUrl}
                                          customer_avatar={props.customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.customer_data.avatarUrl}/>
                 </nav>
@@ -90,20 +90,19 @@ export const Root = (props: RootInterface) => {
                         pathname === MAIN_PATHS.CREATE_ARTIST ? <Auth_main/> :
                         pathname === MAIN_PATHS.CREATE_CUSTOMER ? <Auth_main/> :
                         pathname === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :
-                        pathname === PATHS_CATEGORY.PAINTINGS ? <WorksRoot/> :
-                        pathname === PATHS_CATEGORY.PHOTO ? <WorksRoot/> :
-                        pathname === PATHS_CATEGORY.SCULPTURES ? <WorksRoot/> :
+                        main_path === PATHS_CATEGORY.PAINTINGS ? <WorkRootContainer/> :
+                        main_path === PATHS_CATEGORY.PHOTOS ? <WorkRootContainer/> :
+                        main_path === PATHS_CATEGORY.SCULPTURES ? <WorkRootContainer/> :
+                        main_path === PATHS_CATEGORY.ARTS ? <OneWorkContainer/> :
                         pathname === PATHS_CATEGORY.SEARCH ? <SearchContainer/> :
-                        pathname === MAIN_PATHS.ONE_PHOTO ? <OneWorkComponent/> :
-                        pathname === MAIN_PATHS.ONE_PAINTING ? <OneWorkComponent/> :
-                        pathname === MAIN_PATHS.CREATE_ART ? <CreateArtTypeComponent/> :
-                        pathname === MAIN_PATHS.ONE_SCULPTURE ? <OneWorkComponent/> :
-                        pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderComponent/> :
+                        pathname === MAIN_PATHS.CREATE_ART ? <CreateArtContainer/> :
+                        main_path === PATHS_CATEGORY.EDIT ? <EditArtContainer/> :
+                        pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderContainer/> :
                         pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
-                        pathname === MAIN_PATHS.ORDERS ? <OrdersComponent/> :
-                        pathname === MAIN_PATHS.ONE_ORDER ? <OneOrderComponent/> :
-                    main_path === PATHS_CATEGORY.CART ? <CartComponent/> :
-                    main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsComponent/> : null
+                        pathname === MAIN_PATHS.ORDERS ? <OrdersContainer/> :
+                        main_path === PATHS_CATEGORY.ORDERS ? <OneOrderContainer/> :
+                    main_path === PATHS_CATEGORY.CART ? <CartContainer/> :
+                    main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsContainer/> : null
                     }
                 </main>
                 <FooterComponent/>

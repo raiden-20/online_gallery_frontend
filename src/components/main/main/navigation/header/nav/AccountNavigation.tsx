@@ -43,7 +43,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                 </button>
                 <ul className={accountNavigation_scss.account_nav}>
                     {registrationFlag === 'true' ?
-                        <li className={accountNavigation_scss.account_data}
+                        <li className={accountNavigation_scss.account_data} key={0}
                             onClick={() => {
                                 Cookies.set('role', ROLES.CUSTOMER)
                                 Cookies.set('currentRole', ROLES.CUSTOMER)
@@ -65,7 +65,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                         : null
                     }
                     {artistId !== undefined ?
-                        <li className={accountNavigation_scss.account_data}
+                        <li className={accountNavigation_scss.account_data} key={1}
                             onClick={() => {
                                 Cookies.set('role', ROLES.ARTIST)
                                 Cookies.set('currentRole', ROLES.ARTIST)
@@ -85,7 +85,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                             </section>
                         </li>
                         :
-                        <li>
+                        <li key={2}>
                             <button className={accountNavigation_scss.buttonAdd}>
                                 <div className={accountNavigation_scss.plus}>+</div>
                                 <div className={accountNavigation_scss.artist_button}
@@ -95,36 +95,36 @@ export const AccountNavigation = (props: accountNavInterface) => {
                             </button>
                         </li>
                     }
-                    <li>
+                    <li key={3}>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => router.push(MAIN_PATHS.CART)}>
                             Корзина
                         </button>
                     </li>
-                    <li>
+                    <li key={4}>
                         <button className={accountNavigation_scss.button}
                         onClick={() => router.push(MAIN_PATHS.ORDERS)}>
                             Заказы
                         </button>
                     </li>
-                    <li>
+                    <li key={5}>
                         <button className={accountNavigation_scss.button}>
                             Уведомления
                         </button>
                     </li>
-                    <li>
+                    <li key={6}>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS)}>
                             Подписки
                         </button>
                     </li>
-                    <li>
+                    <li key={7}>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => router.push(MAIN_PATHS.SETTINGS)}>
                             Настройки
                         </button>
                     </li>
-                    <li>
+                    <li key={8}>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => {
                                     keycloakSessionLogOut()

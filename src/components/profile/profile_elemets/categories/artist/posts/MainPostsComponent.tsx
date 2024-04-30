@@ -1,25 +1,33 @@
-import {useState} from "react";
-import Cookies from "js-cookie";
-import {PostsArtistComponent} from "@/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent";
-import {
-    SuggestionSubscribeOnArtist
-} from "@/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscribeOnArtist";
+import React, {useEffect, useState} from "react";
 import main_posts_scss from '@/scss/components/profile/categories/MainPosts.module.scss'
+import {
+    PostsArtistComponent
+} from "@/components/profile/profile_elemets/categories/artist/posts/elements/PostsArtistComponent";
+import {OnePostInterface} from "@/interfaces/PostsInterface";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import Cookies from "js-cookie";
+import {useRouter} from "next/navigation";
 
-export const MainPostsComponent = () => {
+interface mainPostInterface {
+    countSubscribers: string
+    posts: OnePostInterface[]
 
-    const [artistId] = useState(Cookies.get('artistId'))
-    const [currentId] = useState(Cookies.get('currentId'))
+    GetPrivatePosts(artistId: string, router: AppRouterInstance): void
+    DeletePrivatePost(id: string, router: AppRouterInstance): void
+}
 
-// todo проверка есть ли подписка
+export const MainPostsComponent = (props: mainPostInterface) => {
+    const router = useRouter()
+
+    const [currentId] = useState(Cookies.get('currentId') as string)
+
+    useEffect(() => {
+        props.GetPrivatePosts(currentId, router)
+    }, []);
+
     return (
         <section className={main_posts_scss.root}>
-            {/*{artistId === currentId ?*/}
-            {/*    <PostsArtistComponent/> /* <SuggestionSubscribeOnArtist/> */}
-            {/*    :*/}
-            {/*    <PostsArtistComponent/>*/}
-            {/*}*/}
-                <SuggestionSubscribeOnArtist/>
+            <PostsArtistComponent posts={props.posts} DeletePrivatePost={props.DeletePrivatePost}/>
         </section>
     )
 }

@@ -1,34 +1,47 @@
 import artists_scss from "@/scss/components/categories/Artists.module.scss";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import filter_icon from '@/assets/icons/categories/filter.svg'
 import Image from "next/image";
 
 import works_root_scss from '@/scss/components/categories/WorksRoot.module.scss'
-import {usePathname} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import {PATHS_CATEGORY} from "@/paths/main";
 import {FiltersComponent} from "@/components/categories/works/filters/FiltersComponent";
-import {WorksComponent} from "@/components/categories/works/works/WorksComponent";
+import {WorksArts} from "@/components/categories/works/works/WorksArts";
+import {ArtShortInterface} from "@/interfaces/artInterface";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
-export const WorksRoot = () => {
+interface workRootInterface {
+    arts: ArtShortInterface[]
+    GetArtsCategories(type: string, router: AppRouterInstance): void
+}
+
+export const WorksRoot = (props: workRootInterface) => {
+    const router = useRouter()
 
     const pathname = usePathname().split('/')
-    const lastPath = '/' + pathname[pathname.length - 1]
+    const lastPath = pathname[pathname.length - 1]
 
     const [isFiltersOpen, setIsFiltersOpen] = useState(false)
 
     const select = [
+        {popular: '-', value: '-'},
         {popular: 'popular', value: 'популярности'},
         {popular: 'alphabet', value: 'алфавиту'},
     ]
+
+    useEffect(() => {
+        props.GetArtsCategories(lastPath, router)
+    }, []);
 
     return (
         <section className={works_root_scss.root}>
             {isFiltersOpen ? <FiltersComponent setIsFiltersOpen={setIsFiltersOpen}/> : null}
             <header className={works_root_scss.header}>
-                {lastPath === PATHS_CATEGORY.PAINTINGS ? 'Картины' :
-                    lastPath === PATHS_CATEGORY.PHOTO ? 'Фотографии' :
-                        lastPath === PATHS_CATEGORY.SCULPTURES ? 'Скульптуры' : null}
+                {'/' + lastPath === PATHS_CATEGORY.PAINTINGS ? 'Картины' :
+                    '/' + lastPath === PATHS_CATEGORY.PHOTOS ? 'Фотографии' :
+                        '/' + lastPath === PATHS_CATEGORY.SCULPTURES ? 'Скульптуры' : null}
             </header>
             <nav className={works_root_scss.nav}>
                 <button className={works_root_scss.filters_button}
@@ -47,7 +60,7 @@ export const WorksRoot = () => {
                     </select>
                 </section>
             </nav>
-            <WorksComponent/>
+            <WorksArts arts={props.arts}/>
         </section>
     )
 }

@@ -37,6 +37,20 @@
 
 .address {
   font-size: $font-size-xs;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}.address {
+  font-size: $font-size-xs;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .order_data {
@@ -47,6 +61,7 @@
   .img {
     width: $art-data-img-size;
     height: $art-data-img-size;
+    object-fit: cover;
     border-radius: $elements-radius;
   }
 

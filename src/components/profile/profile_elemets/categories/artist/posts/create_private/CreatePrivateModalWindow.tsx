@@ -2,13 +2,18 @@ import delete_account_scss from "@/scss/components/settings/DeleteAccount.module
 import React, {useEffect, useState} from "react";
 
 import suggestion_scss from '@/scss/components/profile/categories/SuggestionSubscribeOnArtist.module.scss'
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import Cookies from "js-cookie";
+import {useRouter} from "next/navigation";
 
 interface createPrivateInterface {
     setIsClicked(isClicked: boolean): void
+    PrivateCreatePostPlace(artistId: string, price: string, router: AppRouterInstance): void
 }
 
 
 export const CreatePrivateModalWindow = (props: createPrivateInterface) => {
+    const router = useRouter()
 
     const [input_price, setInput_price] = useState('')
 
@@ -21,7 +26,7 @@ export const CreatePrivateModalWindow = (props: createPrivateInterface) => {
             if (input_price === '' || input_price === '0') {
                 setMessage('Введите сумму')
             } else {
-                // todo
+                props.PrivateCreatePostPlace(Cookies.get('artistId') as string, input_price, router)
             }
         }
     }, [isAddClicked]);
@@ -52,7 +57,6 @@ export const CreatePrivateModalWindow = (props: createPrivateInterface) => {
                             </button>
                         </footer>
                     </section>
-
                 </section>
             </main>
         </section>

@@ -1,14 +1,11 @@
 import artists_scss from "@/scss/components/categories/Artists.module.scss";
 import Cookies from "js-cookie";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
-import header_profile_scss from "@/scss/components/profile/HeaderProfile.module.scss";
-import {signIn, useSession} from "next-auth/react";
-import Image from "next/image";
-import bell_icon from "@/assets/icons/profile/bell_icon.svg";
-import React, {useState} from "react";
+import React from "react";
 import {UserShort} from "@/interfaces/artistInterface";
 import {useRouter} from "next/navigation";
 import {PhotoSection} from "@/components/categories/artists/oneArtist/PhotoSection";
+import {NULL} from "@/paths/elements";
 
 interface OneArtistsInterface {
     oneArtist: UserShort,
@@ -16,11 +13,6 @@ interface OneArtistsInterface {
 
 export const OneArtist = (props: OneArtistsInterface) => {
     const router = useRouter()
-
-    const [role] = useState(Cookies.get('role'))
-    const [currentId] = useState(Cookies.get('currentId'))
-    const [artistId] = useState(Cookies.get('artistId'))
-    const {status} = useSession();
 
     return (
         <li key={props.oneArtist.artistId}
@@ -42,40 +34,11 @@ export const OneArtist = (props: OneArtistsInterface) => {
                     }
                 </section>
                 <div className={artists_scss.one_user_name}>{props.oneArtist.artistName}</div>
-                {(artistId !== currentId && artistId !== props.oneArtist.artistId && role !== ROLES.ARTIST) || status === 'unauthenticated' ?
-                    <section className={header_profile_scss.subscriber_section}>
-                        <button className={'main_button'}
-                                onClick={() => {
-                                    if (status === 'authenticated') {
-                                        // todo
-                                    } else if (status === 'unauthenticated') {
-                                        signIn("keycloak")
-                                            .then(() => {
-                                                Cookies.set('role', ROLES.CUSTOMER)
-                                                Cookies.set('status', 'authenticated')
-                                            })
-                                    }
-                                }}>
-                            Поддержать
-                        </button>
-                        <button className={header_profile_scss.button_bell}
-                                onClick={() => {
-                                    if (status === 'authenticated') {
-                                        // todo
-                                    } else if (status === 'unauthenticated') {
-                                        signIn("keycloak")
-                                            .then(() => {
-                                            })
-                                    }
-                                }}>
-                            <Image src={bell_icon} className={header_profile_scss.bell_image}
-                                   alt={'bell_icon'} width={0} height={0}/>
-                        </button>
-                    </section>
-                    : null
-                }
             </section>
-            <PhotoSection/>
+            {props.oneArtist.photos !== undefined ?
+                <PhotoSection photos={props.oneArtist.photos}/>
+                : null
+            }
         </li>
     )
 }

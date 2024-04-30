@@ -1,35 +1,59 @@
 import one_work_scss from "@/scss/components/profile/categories/OneWork.module.scss";
+import {ArtInterface} from "@/interfaces/artInterface";
 
-export const OneWorkData = () => {
+interface oneWorkDataInterface {
+    one_work: ArtInterface
+}
+
+export const OneWorkData = (props: oneWorkDataInterface) => {
     return (
         <section className={one_work_scss.art_info}>
-            <section className={one_work_scss.details_section}>
-                <section className={one_work_scss.details_one_section}>
+            <ul className={one_work_scss.art_table}>
+                <li className={one_work_scss.details_section} key={0}>
                     <div className={one_work_scss.more_info_noimp}>Тип</div>
+                    <div className={one_work_scss.more_info_noimp_text}>{props.one_work.type}</div>
+                </li>
+                <li className={one_work_scss.details_section} key={1}>
                     <div className={one_work_scss.more_info_noimp}>Материал</div>
+                    <ul className={one_work_scss.materials_ul}>
+                        {props.one_work.materials.map((oneMaterial: string, index) => {
+                            return (
+                                <li className={one_work_scss.more_info_noimp_text} key={index}>{' '}
+                                    {oneMaterial}{index !== props.one_work.materials.length - 1 ? ', ' : null}
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </li>
+                <li className={one_work_scss.details_section} key={2}>
                     <div className={one_work_scss.more_info_noimp}>Размер</div>
+                    <div className={one_work_scss.more_info_noimp_text}>
+                        {props.one_work.size}
+                    </div>
+                </li>
+                <li className={one_work_scss.details_section} key={3}>
                     <div className={one_work_scss.more_info_noimp}>Наличие рамы</div>
-                    <div className={one_work_scss.more_info_noimp}>Владелец</div>
-                </section>
-                <section className={one_work_scss.details_one_section}>
-                    <div className={one_work_scss.more_info_noimp_text}>Картина</div>
-                    <div className={one_work_scss.more_info_noimp_text}>Масло, холст</div>
-                    <div className={one_work_scss.more_info_noimp_text}>20 x 30 см</div>
-                    <div className={one_work_scss.more_info_noimp_text}>Да</div>
-                    <div className={one_work_scss.underline}>Вася Пупкин</div>
-                </section>
-            </section>
-            <p className={one_work_scss.info_text}>Lorem ipsum dolor sit amet consectetur. Pharetra scelerisque
-                morbi amet nunc aliquam condimentum dignissim pellentesque. Elementum at at aliquam nulla mi
-                cursus. Massa donec cursus purus etiam facilisi tincidunt arcu feugiat. Iaculis integer dapibus
-                eget elementum. Varius purus risus cras montes. Fermentum ultrices suscipit lectus augue.</p>
-            <section className={one_work_scss.tags_section}>
-                <section className={one_work_scss.more_info_noimp + ' ' + one_work_scss.tag}>Пейзаж</section>
-                <section className={one_work_scss.more_info_noimp + ' ' + one_work_scss.tag}>Импрессионизм</section>
-                <section className={one_work_scss.more_info_noimp + ' ' + one_work_scss.tag}>Еще что-нибудь
-                </section>
-                <section className={one_work_scss.more_info_noimp + ' ' + one_work_scss.tag}>И еще</section>
-            </section>
+                    <div className={one_work_scss.more_info_noimp_text}>
+                        {props.one_work.frame ? 'Да' : 'Нет'}
+                    </div>
+                </li>
+                {props.one_work.customerId !== null ?
+                    <li className={one_work_scss.details_section} key={4}>
+                        <div className={one_work_scss.more_info_noimp}>Владелец</div>
+                        <div className={one_work_scss.underline}>{props.one_work.customerName}</div>
+                    </li>
+                    : null}
+            </ul>
+            <p className={one_work_scss.info_text}>{props.one_work.description}</p>
+            <ul className={one_work_scss.tags_section}>
+                {props.one_work.tags.map((tag: string, index) => {
+                    return (
+                        <li className={one_work_scss.more_info_noimp + ' ' + one_work_scss.tag} key={index}>
+                            {tag}
+                        </li>
+                    )
+                })}
+            </ul>
         </section>
     )
 }

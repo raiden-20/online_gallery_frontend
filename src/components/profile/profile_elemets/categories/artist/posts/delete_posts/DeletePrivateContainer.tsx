@@ -4,15 +4,9 @@ import {
     DeletePostsComponent
 } from "@/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePostsComponent";
 
-interface state {
-    profile: {
-        artistName: string
-    }
-}
 
-const mapStateToProps = (state: state) => {
+const mapStateToProps = () => {
     return {
-        artistName: state.profile.artistName
     }
 }
 

@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {CartAPI} from "@/api/cartAPI";
-import {setArts, setSelectedArts} from "@/store/reducers/cartReducer";
+import {deleteFromCart, setCart, setSelectedArts} from "@/store/reducers/cartReducer";
 import {MAIN_PATHS} from "@/paths/main";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
@@ -10,7 +10,7 @@ export const GetCart = () =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        dispatch(setArts(response[1]))
+                        dispatch(setCart(response[1]))
                     }
                 }
             }).catch(error => {
@@ -18,12 +18,13 @@ export const GetCart = () =>
         })
     }
 
-export const AddArtToCart = (artId: string) =>
+export const AddArtToCart = (artId: string, router: AppRouterInstance) =>
     () => {
         CartAPI.AddArtToCartAPI(artId)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -31,12 +32,14 @@ export const AddArtToCart = (artId: string) =>
         })
     }
 
-export const DeleteArtFromCart = (artId: string) =>
-    () => {
+export const DeleteArtFromCart = (artId: string, router: AppRouterInstance) =>
+    (dispatch: Dispatch) => {
         CartAPI.DeleteArtFromCartAPI(artId)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
+                        //dispatch(deleteFromCart(artId))
                     }
                 }
             }).catch(error => {

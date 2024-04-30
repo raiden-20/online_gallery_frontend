@@ -9,6 +9,7 @@ export const PublicAction = (id: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -16,12 +17,14 @@ export const PublicAction = (id: string, router: AppRouterInstance) =>
         })
     }
 
-export const PrivateSubscribe = (artistId: string, cardId: string, router: AppRouterInstance) =>
+export const PrivateSubscribe = (artistId: string, cardId: string, router: AppRouterInstance, setSubscribe:(flag: boolean) => void) =>
     () => {
         ActionsAPI.PrivateSubscribe(artistId, cardId)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        setSubscribe(false)
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -35,6 +38,7 @@ export const PrivateUnsubscribe = (artistId: string, router: AppRouterInstance) 
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {

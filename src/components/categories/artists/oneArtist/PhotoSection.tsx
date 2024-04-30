@@ -12,10 +12,9 @@ interface photoInterface {
 }
 
 export const PhotoSection = (props: photoInterface) => {
-
     const [isHover, setIsHover] = useState(true)
-    const [openedPhotoSrc, setOpenedPhotoSrc] = useState<string[]>([])
-    const [indexOpened, setIndexOpened] = useState(0)
+    const [openedPhotoSrc, setOpenedPhotoSrc] = useState<{[key: string]: string }>({})
+    const [indexOpened, setIndexOpened] = useState('')
 
 
     const listRef = useRef<HTMLUListElement>(null);
@@ -49,8 +48,8 @@ export const PhotoSection = (props: photoInterface) => {
                 {Object.values(props.photos).map((value, index) => {
                     return (
                         <li key={index} onClick={() => {
-                            setOpenedPhotoSrc(['/default_cover_profile.jpg', '/default_work_profile.jpg', '/default_cover_profile.jpg'])
-                            setIndexOpened(index)
+                            setOpenedPhotoSrc(props.photos)
+                            setIndexOpened(value)
                         }}>
                             <img src={value} className={artists_scss.onePhoto}
                                  alt={'photo'} crossOrigin={'anonymous'}/>
@@ -65,7 +64,7 @@ export const PhotoSection = (props: photoInterface) => {
                     <Image src={next_icon} alt={'next_icon'}/>
                 </button>
                 : null}
-            {openedPhotoSrc.length !== 0 ?
+            {Object.keys(openedPhotoSrc).length ?
                 <OneOpenedPhotoPostComponent setOpenedPhotoSrc={setOpenedPhotoSrc} openedPhotoSrc={openedPhotoSrc}
                                              indexOpened={indexOpened} setIndexOpened={setIndexOpened}/>
                 : null}

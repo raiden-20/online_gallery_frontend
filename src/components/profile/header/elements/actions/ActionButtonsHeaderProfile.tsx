@@ -14,6 +14,7 @@ import {PrivateSubscribeContainer} from "@/components/profile/private_subscribe/
 import {
     CreatePostContainer
 } from "@/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostContainer";
+import {useSession} from "next-auth/react";
 
 interface actionButtonsInterface {
     isEditMobile: boolean
@@ -36,7 +37,9 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
     const [currentId] = useState(Cookies.get('currentId') as string)
     const [currentRole] = useState(Cookies.get('currentRole') as string)
     const [role] = useState(Cookies.get('role') as string)
-    const [status] = useState(Cookies.get('status') as string)
+    const {  data: session, status } = useSession();
+
+
 
 
     const [isCreatePost, setIsCreatePost] = useState(false)
@@ -49,7 +52,7 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                     {!props.isPrivateSubscribe ?
                         <button className={'main_button'}
                                 onClick={() => {
-                                    if (status) {
+                                    if (status === 'authenticated') {
                                         setSubscribe(true)
                                     } else {
                                         signin()
@@ -60,7 +63,7 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                         :
                         <button className={'cancel_button'}
                                 onClick={() => {
-                                    if (status) {
+                                    if (status === 'authenticated') {
                                         props.PrivateUnsubscribe(currentId, router)
                                     } else {
                                         signin()

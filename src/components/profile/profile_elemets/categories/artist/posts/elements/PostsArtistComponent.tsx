@@ -24,6 +24,8 @@ interface PostArtistInterface {
 
 export const PostsArtistComponent = (props: PostArtistInterface) => {
 
+    console.log(props.posts)
+
     const [artistId] = useState(Cookies.get('artistId'))
     const [currentId] = useState(Cookies.get('currentId'))
 
@@ -53,7 +55,7 @@ export const PostsArtistComponent = (props: PostArtistInterface) => {
                             <OnePostArtistComponent onePost={onePost} DeletePrivatePost={props.DeletePrivatePost}/>
                         </li>
                     )
-                })}
+                }).reverse()}
                 {currentId === artistId ?
                     <button className={works_profile_scss.create_art_button}
                             onClick={() => setIsCreatePost(true)}>

@@ -1,7 +1,7 @@
 import {RootContainer} from "@/components/main/main/RootContainer";
 
-const OnePhoto = () => {
+const Edit = () => {
     return <RootContainer/>
 }
 
-export default OnePhoto
+export default Edit

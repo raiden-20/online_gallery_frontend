@@ -21,8 +21,9 @@ export const ProfileAPI = {
 
     async ArtistDataAPI(artistId: string, currentId: string) {
         try {
+            const id = currentId === undefined ? null : currentId
             const response = await instanceWithoutToken.get(
-                PathsAPI.ARTIST + `/artist/artistId=${artistId}&currentId=${currentId}`,
+                PathsAPI.ARTIST + `/artistId=${artistId}&currentId=${id}`,
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -50,12 +51,11 @@ export const ProfileAPI = {
         formData.append('customerName', customerName)
         formData.append('birthDate', birthDate)
         formData.append('gender', gender)
-        formData.append('description', description)
+        formData.append('description', description === '' ? ' ' : description)
         formData.append('avatarUrl', avatarUrl)
         formData.append('coverUrl', coverUrl)
         formData.append('avatar', avatar === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : avatar)
         formData.append('cover', cover === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : cover)
-
         try {
             const response = await instanceFile.put(
                 PathsAPI.CUSTOMER + PathsAPI.DATA,

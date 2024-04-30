@@ -5,20 +5,26 @@ import add_info_icon from '@/assets/icons/cart/add_info.svg'
 import delete_one_art_icon from '@/assets/icons/cart/delete_one.svg'
 import Image from "next/image";
 import {CartInterface} from "@/interfaces/cartInterface";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from "next/navigation";
+import {debug} from "node:util";
 
 interface oneCartInterface {
     oneArt: CartInterface
     isAllSelected: boolean
 
     setArtId(artId: {[key: string]: boolean }): void
+    DeleteArtFromCart(artId: string, router: AppRouterInstance): void
     artId: {[key: string]: boolean } | undefined
 }
 
 export const OneCartComponent = (props: oneCartInterface) => {
+    const router = useRouter()
     const [isSelected, setIsSelected] = useState(props.isAllSelected)
     const [isAnonymous, setIsAnonymous] = useState(false)
 
     const [isHover, setIsHover] = useState(false)
+    const [isDelete, setIsDelete] = useState(false)
     const [windowPosition, setWindowPosition] = useState({ top: 0, left: 0 });
 
     useEffect(() => {
@@ -27,15 +33,26 @@ export const OneCartComponent = (props: oneCartInterface) => {
 
     useEffect(() => {
         const artData = props.artId
-        if (artData) {
-            if (isSelected) {
-                artData[props.oneArt.artId] = isAnonymous
-            } else {
-                delete artData[props.oneArt.artId]
-            }
+        debugger
+        if (isSelected) {
+            // @ts-ignore
+            artData[props.oneArt.artId] = isAnonymous
+            // @ts-ignore
+            props.setArtId(artData)
+        } else {
+            if (artData) {
+                delete artData[props.oneArt.artId]}
+            // @ts-ignore
             props.setArtId(artData)
         }
     }, [isSelected]);
+
+    useEffect(() => {
+        if (isDelete) {
+            props.DeleteArtFromCart(props.oneArt.artId, router)
+            setIsDelete(false)
+        }
+    }, [isDelete]);
 
     const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
         const buttonRect = e.currentTarget.getBoundingClientRect();
@@ -81,7 +98,8 @@ export const OneCartComponent = (props: oneCartInterface) => {
                     </section>
                     : null}
                 <div className={one_cart_scss.text + ' ' + one_cart_scss.name}>{props.oneArt.price} ₽</div>
-                <button className={'no_main_color'}>
+                <button className={'no_main_color'}
+                onClick={() => setIsDelete(true)}>
                     <Image src={delete_one_art_icon} alt={'delete_one_art_icon'}/>
                 </button>
             </section>

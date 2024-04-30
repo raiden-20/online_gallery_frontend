@@ -29,7 +29,7 @@ export const SubscriptionsArtistPrivate = (props: subscriptionsInterface) => {
             <ul className={subscriptions_scss.subscriptions_private_section}>
                 {props.subscriptionsArtistsPrivate.map((oneArtist: SubscriptionsArtistsPrivate, index) => {
                     return (
-                        <li key={index}>
+                        <li key={index} className={subscriptions_scss.grid}>
                             <OneSubscription oneArtist={oneArtist}/>
                         </li>
                     )

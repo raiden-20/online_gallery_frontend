@@ -1,10 +1,12 @@
 import {ArtArtistInterface, ArtCustomerInterface, ArtInterface, ArtShortInterface} from "@/interfaces/artInterface";
+import {ART_TYPES} from "@/paths/elements";
 
 const SET_ARTS = 'SET_ARTS'
 const SET_ARTIST_ARTS = 'SET_ARTIST_ARTS'
 const SET_CUSTOMER_ARTS = 'SET_CUSTOMER_ARTS'
 const SET_ONE_ART = 'SET_ONE_ART'
 const SET_ONE_ART_ELEMENTS = 'SET_ONE_ART_ELEMENTS'
+const CLEAR_ONE_ELEMENT = 'CLEAR_ONE_ELEMENT'
 
 interface ArtReducerInterface {
     arts: ArtShortInterface[]
@@ -45,7 +47,7 @@ export const artReducer = (state = initialState, action: any) => {
     switch (action.type) {
 
         case SET_ARTS: {
-            stateCopy.arts = JSON.parse(action.arts)
+            stateCopy.arts = action.arts
 
             return stateCopy
         }
@@ -62,7 +64,46 @@ export const artReducer = (state = initialState, action: any) => {
             return stateCopy
         }
 
+        case CLEAR_ONE_ELEMENT: {
+            stateCopy.oneArt = {
+                artId: '',
+                artistName: '',
+                name: '',
+                type: '',
+                photoUrls: [],
+                price: '',
+                artistId: '',
+                status: '',
+                isPrivate: false,
+                customerId: '',
+                customerName: '',
+                description: '',
+                size: '',
+                createDate: '',
+                tags: [],
+                materials: [],
+                frame: false,
+                publishDate: ''
+            }
+
+            return stateCopy
+        }
+
         case SET_ONE_ART: {
+            switch (action.oneArt.type) {
+                case ART_TYPES.PAINTING : {
+                    action.oneArt.type = 'Картина'
+                    break
+                }
+                case ART_TYPES.PHOTO : {
+                    action.oneArt.type = 'Фото'
+                    break
+                }
+                case ART_TYPES.SCULPTURE : {
+                    action.oneArt.type = 'Скульптура'
+                    break
+                }
+            }
             stateCopy.oneArt = action.oneArt
 
             return stateCopy
@@ -122,11 +163,13 @@ export const setOneArt = (oneArt: ArtInterface) => {
         type: SET_ONE_ART, oneArt
     }
 }
-export const setOneArtElements = (artId: string, name: string, typeArt: string, photos: File[], price: string,
-                          createDate: string, description: string, size: string,
-                          tags: string[], materials: string[], isPrivate: boolean, frame: boolean) => {
+export const setOneArtStatus = (status: string) => {
     return {
-        type: SET_ONE_ART_ELEMENTS, artId, name, typeArt, photos, price, createDate, description, size,
-        tags, materials, isPrivate, frame
+        type: SET_ONE_ART_ELEMENTS, status
+    }
+}
+export const clearOneArt = () => {
+    return {
+        type: CLEAR_ONE_ELEMENT
     }
 }

@@ -17,7 +17,7 @@ export const CreateArtFirstPage = (props: pageInterface) => {
             <ul className={create_art_scss.ul}>
                 {typeCategories.map((one: string, index) => {
                     return (
-                        <li className={create_art_scss.grey_bgc}
+                        <li className={create_art_scss.grey_bgc}  key={index}
                             onClick={() => {
                                 switch (index) {
                                     case 0: {

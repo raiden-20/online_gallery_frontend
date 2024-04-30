@@ -76,14 +76,13 @@ export const CreateArtDataComponent = (props: createArtDataInterface) => {
                                    photoUrls={props.photoUrls} setDeletePhotoUrls={props.setDeletePhotoUrls}
                                    deletePhotoUrls={props.deletePhotoUrls}/>
             }
-
-            <AddPhotoComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
-                               setPhotoArrayFile={props.setPhotoArrayFile} setPhotoArraySrc={props.setPhotoArraySrc}/>
             <AddInformationComponent tags={props.tags} setTags={props.setTags}
                                      materials={props.materials} setMaterials={props.setMaterials}
                                      isFrame={props.isFrame} setIsFrame={props.setIsFrame}/>
             <button className={'main_button'}
-                    onClick={() => props.setCreateArt(true)}>
+                    onClick={() => {
+                        props.setCreateArt(true)}
+                    }>
                 Выставить работу
             </button>
         </section>

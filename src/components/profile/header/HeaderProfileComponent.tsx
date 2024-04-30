@@ -57,7 +57,7 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                                        isEditMobile={props.isEditMobile}/>
                     <ActionProfileContainer isEditMobile={props.isEditMobile}
                                                 setIsEditMobile={props.setIsEditMobile}
-                                                isPrivateSubscribe={props.isPublicSubscribe}
+                                                isPrivateSubscribe={props.isPrivateSubscribe}
                                                 isPublicSubscribe={props.isPublicSubscribe}/>
                 </section>
             </section>

@@ -6,8 +6,15 @@ export interface SubscriptionsArtistsPrivate {
     payDate: string
 }
 
-export interface SubscriptionsUsers {
-    id: string
-    url: string
-    name: string
+export interface SubscriptionsPublicArtists {
+    artistId: string
+    avatarUrl: string
+    artistName: string
+    viewCount: string
+}
+
+export interface SubscriptionsCustomers {
+    customerId: string
+    avatarUrl: string
+    customerName: string
 }

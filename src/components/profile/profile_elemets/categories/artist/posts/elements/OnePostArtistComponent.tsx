@@ -24,8 +24,8 @@ interface OnePostComponentInterface {
 export const OnePostArtistComponent = (props: OnePostComponentInterface) => {
     const router = useRouter()
 
-    const [openedPhotoSrc, setOpenedPhotoSrc] = useState<string[]>([])
-    const [indexOpened, setIndexOpened] = useState(0)
+    const [openedPhotoSrc, setOpenedPhotoSrc] = useState<{[key: string]: string }>({})
+    const [indexOpened, setIndexOpened] = useState('')
 
     const [deletePost, setDeletePost] = useState(false)
     const [editPost, setEditPost] = useState(false)
@@ -42,13 +42,13 @@ export const OnePostArtistComponent = (props: OnePostComponentInterface) => {
     return (
         <section className={posts_artist_module.one_post + ' ' + posts_artist_module.border}>
             <ul>
-                {props.onePost.photoUrls.map((img: string, index) => {
+                {Object.keys(props.onePost.photoUrls).map((key: string, index) => {
                     return (
                         <li key={index}>
-                            <img src={img} className={posts_artist_module.one_post_img}
+                            <img src={props.onePost.photoUrls[key]} className={posts_artist_module.one_post_img}
                                  onClick={() => {
                                      setOpenedPhotoSrc(props.onePost.photoUrls)
-                                     setIndexOpened(index)
+                                     setIndexOpened(key)
                                  }}
                                  alt={'post photo'}
                                  crossOrigin="anonymous"/>
@@ -77,7 +77,7 @@ export const OnePostArtistComponent = (props: OnePostComponentInterface) => {
                 :
                 <footer className={posts_artist_module.one_post_date}>9 апреля, 02:33</footer>
             }
-            {openedPhotoSrc.length !== 0 ?
+            {Object.keys(openedPhotoSrc).length !== 0 ?
                 <OneOpenedPhotoPostComponent setOpenedPhotoSrc={setOpenedPhotoSrc} openedPhotoSrc={openedPhotoSrc}
                                              indexOpened={indexOpened} setIndexOpened={setIndexOpened}/>
                 : null

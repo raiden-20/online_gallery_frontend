@@ -25,7 +25,10 @@ export const AddCardComponent = (props: addCardInterface) => {
 
     useEffect(() => {
         if (addCard) {
-            props.AddCard(input_number, input_date, input_cvv, input_isDefault, router)
+            let dateArr = input_date.split('/')
+            let date = '20' + dateArr[1] + '-' + dateArr[0] + '-' + '01'
+
+            props.AddCard(input_number, date, input_cvv, input_isDefault, router)
             setAddCard(false)
         }
     }, [addCard]);

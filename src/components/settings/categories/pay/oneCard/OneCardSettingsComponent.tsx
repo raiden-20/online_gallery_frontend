@@ -26,25 +26,28 @@ export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
     const [input_date, setInput_date] = useState(props.oneCard.date)
     const [input_cvv, setInput_cvv] = useState(props.oneCard.cvv)
     const [input_isDefault, setInput_isDefault] = useState(props.oneCard.isDefault)
+    const [ddefault, setDefault] = useState(false)
 
     const [save, setSave] = useState(false)
 
     useEffect(() => {
-        if (save) {
-            props.EditCard(props.oneCard.cardId, props.oneCard.type, input_number, input_date,
+        if (save || ddefault) {
+            let dateArr = input_date.split('/')
+            let date = '20' + dateArr[1] + '-' + dateArr[0] + '-' + '01'
+            props.EditCard(props.oneCard.cardId, props.oneCard.type, input_number, date,
                            input_cvv, input_isDefault, router)
             setSave(false)
         }
-    }, [save]);
+    }, [save, ddefault]);
 
     return (
         <section>
             <section className={settings_scss.address_header}>
                 <section className={settings_scss.address}>
-                    <Image src={mark_icon} alt={'mark_icon'}/>
+                    <Image src={mark_icon} className={!props.oneCard.isDefault ? settings_scss.hide : undefined} alt={'mark_icon'}/>
                     <section className={settings_scss.p}>
                         <section className={settings_scss.card_data}>
-                            <div>{props.oneCard.type}</div>
+                            <div>{props.oneCard.type === '' ? 'MIR' : props.oneCard.type}</div>
                             <div>•••• •••• ••••
                                 {props.oneCard.number.substring(props.oneCard.number.length - 4, props.oneCard.number.length - 1)}
                             </div>
@@ -85,7 +88,11 @@ export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
                                     Редактировать
                                 </button>
                                 <button className={'main_button ' + settings_scss.disabled}
-                                        onClick={() => setInput_isDefault(true)}>
+                                        onClick={() => {
+                                            setInput_isDefault(true)
+                                            setDefault(true)
+                                        }
+                                        }>
                                     Сделать основным
                                 </button>
                             </section>

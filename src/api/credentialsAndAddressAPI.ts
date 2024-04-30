@@ -1,10 +1,10 @@
-import {instanceWithoutToken, PathsAPI} from "@/api/api_main";
+import {instance, instanceWithoutToken, PathsAPI} from "@/api/api_main";
 
 export const CredentialsAndAddressAPI = {
     async AddAddressAPI(name: string, country: string, region: string, city: string,
                         index: string, location: string, isDefault: boolean) {
         try {
-            const response = await instanceWithoutToken.post(
+            const response = await instance.post(
                 PathsAPI.ADDRESS,
                 {
                     name,
@@ -26,7 +26,7 @@ export const CredentialsAndAddressAPI = {
     async EditAddressAPI(addressId: string, name: string, country: string, region: string, city: string,
                         index: string, location: string, isDefault: boolean) {
         try {
-            const response = await instanceWithoutToken.put(
+            const response = await instance.put(
                 PathsAPI.ADDRESS,
                 {
                     addressId,
@@ -48,7 +48,7 @@ export const CredentialsAndAddressAPI = {
 
     async GetAddressesAPI() {
         try {
-            const response = await instanceWithoutToken.get(
+            const response = await instance.get(
                 PathsAPI.ADDRESS + 'es',
             );
             return [response.status, response.data];
@@ -60,7 +60,7 @@ export const CredentialsAndAddressAPI = {
 
     async DeleteAddressAPI(id: string) {
         try {
-            const response = await instanceWithoutToken.delete(
+            const response = await instance.delete(
                 PathsAPI.ADDRESS,
                 {
                     data: {
@@ -78,7 +78,7 @@ export const CredentialsAndAddressAPI = {
 
     async AddCardAPI(number: string, date: string, cvv: string, isDefault: boolean) {
         try {
-            const response = await instanceWithoutToken.post(
+            const response = await instance.post(
                 PathsAPI.CARD,
                 {
                     number,
@@ -96,7 +96,7 @@ export const CredentialsAndAddressAPI = {
 
     async EditCardAPI(cardId: string, type: string, number: string, date: string, cvv: string, isDefault: boolean) {
         try {
-            const response = await instanceWithoutToken.put(
+            const response = await instance.put(
                 PathsAPI.CARD,
                 {
                     cardId,
@@ -107,6 +107,7 @@ export const CredentialsAndAddressAPI = {
                     isDefault
                 }
             );
+
             return [response.status, response.data];
         } catch (error: any) {
             console.error(error)
@@ -116,7 +117,7 @@ export const CredentialsAndAddressAPI = {
 
     async GetCardsAPI() {
         try {
-            const response = await instanceWithoutToken.get(
+            const response = await instance.get(
                 PathsAPI.CARD + 's',
             );
             return [response.status, response.data];
@@ -128,7 +129,7 @@ export const CredentialsAndAddressAPI = {
 
     async DeleteCardAPI(id: string) {
         try {
-            const response = await instanceWithoutToken.delete(
+            const response = await instance.delete(
                 PathsAPI.CARD,
                 {
                     data: {

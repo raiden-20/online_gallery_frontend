@@ -7,19 +7,13 @@ import {
 
 interface state {
     art : {
-        arts: ArtCustomerInterface[]
-    }
-    profile: {
-        customerName: string
-        avatarUrl: string
+        arts_customer: ArtCustomerInterface[]
     }
 }
 
 const mapStateToProps = (state: state) => {
     return {
-        arts: state.art.arts,
-        customerName: state.profile.customerName,
-        avatarUrl: state.profile.avatarUrl
+        arts_customer: state.art.arts_customer,
     }
 }
 

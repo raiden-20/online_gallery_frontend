@@ -55,9 +55,9 @@ export const PopularAndAuctionsComponent = (props: PopularAuctionInterface) => {
                 </button>
             </section>
             <ul ref={galleryRef} className={popular_scss.ul}>
-                {props.photos.map((img) => {
+                {props.photos.map((img, index) => {
                     return (
-                        <li>
+                        <li key={index}>
                             <section className={popular_scss.root_oneWork}>
                                 <img src={img} className={popular_scss.one_work_img}
                                      alt={'one work'}

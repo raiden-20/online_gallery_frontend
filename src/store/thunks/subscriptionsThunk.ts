@@ -70,6 +70,7 @@ export const SearchSubscriptions  = (role: string, subscription: string, input: 
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+
                         switch (subscription) {
                             case 'private' : {
                                 if (role === ROLES.CUSTOMER) {

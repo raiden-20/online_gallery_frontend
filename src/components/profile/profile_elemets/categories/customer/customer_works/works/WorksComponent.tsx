@@ -20,9 +20,9 @@ export const WorksComponent = (props: workInterface) => {
 
     return (
         <ul className={works_profile_scss.root}>
-            {props.arts.map((oneArt: ArtShortInterface) => {
+            {props.arts.map((oneArt: ArtShortInterface, index) => {
                 return (
-                    <li>
+                    <li key={index}>
                         <OneWorkCategoriesComponent oneArt={oneArt}/>
                     </li>
                 )

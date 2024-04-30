@@ -4,16 +4,20 @@ import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {OneOrderModalWindowSend} from "@/components/orders/one_order/modal_windows/OneOrderModalWindowSend";
 import {OneOrderModalWindowChange} from "@/components/orders/one_order/modal_windows/OneOrderModalWindowChange";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from "next/navigation";
 
 interface oneOrderButtonsInterface {
+    text: string
     orderId: string
     status: string
-    SetOrder(orderId: string, comment: string): void
-    EditOrder(orderId: string, comment: string): void
-    ReceiveOrder(orderId: string): void
+    SetOrder(orderId: string, comment: string, router: AppRouterInstance): void
+    EditOrder(orderId: string, comment: string, router: AppRouterInstance): void
+    ReceiveOrder(orderId: string, router: AppRouterInstance): void
 }
 
 export const OneOrderButtons = (props: oneOrderButtonsInterface) => {
+    const router = useRouter()
 
     const [role] = useState(Cookies.get('role') as string)
 
@@ -24,27 +28,27 @@ export const OneOrderButtons = (props: oneOrderButtonsInterface) => {
 
     useEffect(() => {
         if (receive) {
-            props.ReceiveOrder(props.orderId)
+            props.ReceiveOrder(props.orderId, router)
         }
     }, [receive]);
 
     return (
         <section>
             {role === ROLES.CUSTOMER ?
-                props.status === ORDER_STATUS.PROGRESS ?
+                props.status === 'В пути' ?
                     <button className={'main_button'}
                             onClick={() => setReceive(true)}>
                         Подтвердить получение
                     </button>
                     : null
                 :
-                props.status === ORDER_STATUS.CREATED ?
+                props.status === 'Оформлен' ?
                     <button className={'main_button'}
                             onClick={() => setIsClicked(true)}>
                         Подтвердить отправление
                     </button>
                     :
-                    props.status === ORDER_STATUS.PROGRESS ?
+                    props.status === 'В пути' ?
                         <button className={'cancel_button'}
                                 onClick={() => setIsChange(true)}>
                             Изменить комментарий
@@ -57,7 +61,7 @@ export const OneOrderButtons = (props: oneOrderButtonsInterface) => {
                 : null}
             {isChange ?
                 <OneOrderModalWindowChange setIsClicked={setIsChange} EditOrder={props.EditOrder}
-                                           orderId={props.orderId}/>
+                                           orderId={props.orderId} text={props.text}/>
                 : null}
         </section>
     )

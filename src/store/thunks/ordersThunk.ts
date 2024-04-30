@@ -1,6 +1,7 @@
 import {Dispatch} from "redux";
 import {OrdersAPI} from "@/api/ordersAPI";
 import {setOneOrder, setOrders} from "@/store/reducers/orderReducer";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 export const GetOrders = (currentId: string) =>
     (dispatch: Dispatch) => {
@@ -30,12 +31,13 @@ export const GetOneOrder = (currentId: string) =>
         })
     }
 
-export const SetOrder = (orderId: string, comment: string) =>
+export const SetOrder = (orderId: string, comment: string, router: AppRouterInstance) =>
     () => {
         OrdersAPI.SendOrderAPI(orderId, comment)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -43,12 +45,13 @@ export const SetOrder = (orderId: string, comment: string) =>
         })
     }
 
-export const EditOrder = (orderId: string, comment: string) =>
+export const EditOrder = (orderId: string, comment: string, router: AppRouterInstance) =>
     () => {
         OrdersAPI.EditOrderAPI(orderId, comment)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -57,12 +60,13 @@ export const EditOrder = (orderId: string, comment: string) =>
     }
 
 
-export const ReceiveOrder = (orderId: string) =>
+export const ReceiveOrder = (orderId: string, router: AppRouterInstance) =>
     () => {
         OrdersAPI.ReceiveOrderAPI(orderId)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {

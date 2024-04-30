@@ -20,7 +20,7 @@ export const FooterComponent = () => {
             <ul className={footer_scss.nav}>
                 {footer_links.map((oneLink: footerLinksInterface, index) => {
                     return (
-                        <li className={index === 0 ? footer_scss.first : undefined}>
+                        <li className={index === 0 ? footer_scss.first : undefined} key={index}>
                             <a className={footer_scss.oneLink}>{oneLink.title}</a>
                         </li>
                     )

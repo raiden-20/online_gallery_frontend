@@ -52,7 +52,14 @@ export const AboutArtistComponent = (props: AboutInterface) => {
             }
             <section className={about_artist_scss.info_section}>
                 {info.map((one_info: info) => {
-                    if (one_info.data !== NULL) {
+                    if (one_info.data === null) {
+                        return (
+                            <section className={about_artist_scss.one_info + ' ' + about_artist_scss.non}>
+                                <div>Запрещенные данные</div>
+                                <div></div>
+                            </section>
+                        )
+                    } else {
                         return (
                             <section className={about_artist_scss.one_info}>
                                 <Image src={one_info.icon} alt={'icon'} className={about_artist_scss.icon}/>
@@ -61,6 +68,7 @@ export const AboutArtistComponent = (props: AboutInterface) => {
                             </section>
                         )
                     }
+
                 })}
             </section>
         </section>

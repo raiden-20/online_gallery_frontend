@@ -7,6 +7,7 @@ import {useRouter} from "next/navigation";
 import {OneAddressContainer} from "@/components/settings/categories/deliveryAddress/oneAddress/OneAddressContainer";
 import {OneAddressInterface} from "@/interfaces/credentials";
 import {AddAddressContainer} from "@/components/settings/categories/deliveryAddress/addAddress/AddAddressContainer";
+import {debug} from "node:util";
 
 interface addressEditInterface {
     address: OneAddressInterface[]
@@ -21,6 +22,7 @@ export const AddressEditComponent = (props: addressEditInterface) => {
         props.getAddresses(router)
     }, []);
 
+
     return (
         <section className={'page_modal_window'}>
             <section className={'bg2'}
@@ -32,16 +34,16 @@ export const AddressEditComponent = (props: addressEditInterface) => {
                     </header>
                     <ul className={create_order_scss.window_height}>
                         <ul className={settings_scss.address_root}>
-                            {props.address.map((oneAddress: OneAddressInterface) => {
+                            {props.address.map((oneAddress: OneAddressInterface, index) => {
                                 return (
-                                    <li className={settings_scss.grey_bgc}>
+                                    <li className={settings_scss.grey_bgc} key={index}>
                                         <OneAddressContainer oneAddress={oneAddress}/>
                                     </li>
                                 )
                             })
                             }
                         </ul>
-                        <li className={settings_scss.grey_bgc}>
+                        <li className={settings_scss.grey_bgc} key={0}>
                             <AddAddressContainer/>
                         </li>
                     </ul>

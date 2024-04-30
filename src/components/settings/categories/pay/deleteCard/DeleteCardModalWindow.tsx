@@ -2,13 +2,12 @@ import delete_account_scss from "@/scss/components/settings/DeleteAccount.module
 import React, {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
+import Cookies from "js-cookie";
 
 interface deleteAccountInterface {
-    customerName: string
     id: string
 
     setIsDelete(isDeleteClicked: boolean): void
-
     DeleteCard(id: string, router: AppRouterInstance): void
 }
 
@@ -19,9 +18,11 @@ export const DeleteCardModalWindow = (props: deleteAccountInterface) => {
     const [input_name, setInput_name] = useState('')
     const [deleteCard, setDeleteCard] = useState(false)
 
+    const [customerName] = useState(Cookies.get('customerName'))
+
     useEffect(() => {
         if (deleteCard) {
-            if (input_name === props.customerName) {
+            if (input_name === customerName) {
                 props.DeleteCard(props.id, router)
             } else {
                 setMessage('Имена не совпадают')

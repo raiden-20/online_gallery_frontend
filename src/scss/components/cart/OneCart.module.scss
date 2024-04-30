@@ -5,7 +5,7 @@ $root-height: 165px;
 $hover-section-width: 400px;
 
 .root {
-  height: $root-height;
+  min-height: $root-height;
   position: relative;
 
   width: 100%;

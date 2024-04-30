@@ -4,141 +4,152 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="created api request">
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/bell_delete_icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cart/CartContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/WorkRootContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/Works.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkCategoriesComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/CreateArtContainer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/AddPhotoEditComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/EditArt.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/EditArtContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/MainPhotoEditComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_order/CreateOrderContainer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/orders/OrdersContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderButtons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionButtonsHeaderProfile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionProfileContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/OneWorkArtistProfileComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/MainPostContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePost.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_private/CreatePrivateContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePrivateContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPost.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPostContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/OneWorkCustomerComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/WorksCustomerComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search/elements/Works.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/addAddress/AddAddressComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/addAddress/AddAddressContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/addCard/AddCardComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/addCard/AddCardContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/PostsInterface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/artInterface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/cartInterface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/credentials.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/subscriptions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/paths/elements.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/artReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/credentialsReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/orderReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/postsReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/privateReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/subscriptionsReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/actionsThunk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/ordersThunk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/postsThunk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/subscriptionsThunk.ts" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="testings 2 sprint">
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/create_post/not_available.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscriptionOnArtist.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/cancel/CancelSubscriptionContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPrivate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPublic.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/actionsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/actionsAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/cartAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/cartAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/artsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/artsAPI.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/credentialsAndAddressAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/credentialsAndAddressAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/profileAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/art/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/paintings/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/arts/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/photo/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/orders/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/photo/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/photos/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sculptures/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/profile/bell_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/icons/profile/bell_icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/PhotoSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/PhotoSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/FrameFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/FrameFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/MaterialsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/MaterialsFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/PriceFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/PriceFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/TagsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/TagsFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/YearFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/YearFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/Works.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/WorksComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkCategoriesComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkCategoriesComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkData.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/AddPhotoEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/AddPhotoEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/EditArt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/EditArt.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/MainPhotoEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/MainPhotoEditComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/CreateArtFirstPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/CreateArtFirstPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddPhotoComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddPhotoComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddInformationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddInformationComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/AddressEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/CardEditComponent.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/success/CreateOrderSuccessComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/success/CreateOrderSuccessComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/actions/ActionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/actions/ActionComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/artists/ArtistsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/artists/ArtistsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/popular_auctions/PopularAndAuctionsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/popular_auctions/PopularAndAuctionsComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/FooterComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/FooterComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/orders/OneOrderComponentMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/OneOrderComponentMain.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav_elements/NavigationElementsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav_elements/NavigationElementsMobile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/orders/OrdersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/OrdersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderButtons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowChange.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowChange.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowSend.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowSend.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/containers/ArtistProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/containers/ArtistProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/ActionButtonsHeaderProfile.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionButtonsHeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionButtonsHeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/CustomerCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/CustomerCategoriesProfile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/OneWorkArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/OneWorkArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/MainPostsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/MainPostsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OneOpenedPhotoPostComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OneOpenedPhotoPostComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/OnePostArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OnePostArtistComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/PostsArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/PostsArtistComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_private/CreatePrivateModalWindow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_private/CreatePrivateModalWindow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePostsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePostsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePrivateContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePrivateContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPostContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPostContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OneOpenedPhotoPostComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OneOpenedPhotoPostComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OnePostArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OnePostArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/PostsArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/PostsArtistComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscribeOnArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscribeOnArtist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/OneWorkProfileComponent.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/works/WorksProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/CustomerWorksContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/CustomerWorksContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/OneWorkCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/OneWorkCustomerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/WorksCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/WorksCustomerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/works/WorksComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/works/WorksComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/CustomerNavigationProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/CustomerNavigationProfileComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/SearchContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/SearchContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Works.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Works.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/OneAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/DeleteCardModalWindow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/OneCardSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/addCard/AddCardComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/addCard/AddCardComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/CancelSubscriptionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/cancel/CancelSubscriptionComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/artistInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/artistInterface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/PostsInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/PostsInterface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/subscriptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/subscriptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/elements.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/elements.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/orders/OneOrder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/OneOrder.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/AboutArtist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/AboutArtist.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/SuggestionSubscribeOnArtist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/SuggestionSubscribeOnArtist.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/artReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/artReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/redux.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/redux.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/credentialsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/credentialsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/orderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/orderReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/postsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/postsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/subscriptionsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/subscriptionsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/actionsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/actionsThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/ordersThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/ordersThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/postsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/postsThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/subscriptionsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/subscriptionsThunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,8 +161,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="SCSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -167,7 +178,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -182,7 +193,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature__store__thunk",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/create_art/edit_art",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app/orders/[id]",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -194,18 +205,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\edit_art" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_order\edit\address" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\customer\customer_works" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\customer" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist_works" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\orders\[id]" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\subscribers\subscriptionsArtistPublic" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile\create_post" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist\posts\subscribe" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\arts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\subscribers\subscriptionsArtistPrivate\cancel" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\edit\art\[id]" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\edit\art" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_order\edit\address" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_order\edit\cart" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\settings\categories\pay\deleteCard" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\settings\categories\pay\oneCard" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -226,7 +237,9 @@
       <workItem from="1714242760574" duration="10282000" />
       <workItem from="1714254685340" duration="9252000" />
       <workItem from="1714292017854" duration="94000" />
-      <workItem from="1714381792037" duration="25837000" />
+      <workItem from="1714381792037" duration="41705000" />
+      <workItem from="1714458027253" duration="13733000" />
+      <workItem from="1714472727662" duration="29567000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -444,7 +457,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714293991569</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="created all stores and connected with components">
+      <option name="closed" value="true" />
+      <created>1714410775801</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1714410775801</updated>
+    </task>
+    <task id="LOCAL-00029" summary="added 2 files to last commit">
+      <option name="closed" value="true" />
+      <created>1714410803589</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1714410803589</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,9 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="design for subscriptions" />
-    <MESSAGE value="changed design for navigation" />
-    <MESSAGE value="design for one art" />
     <MESSAGE value="fixed sign in" />
     <MESSAGE value="added to one art page edit and delete buttons" />
     <MESSAGE value="created create art page" />
@@ -499,6 +525,20 @@
     <MESSAGE value="last design details 2" />
     <MESSAGE value="testing" />
     <MESSAGE value="commit css" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit css" />
+    <MESSAGE value="created all stores and connected with components" />
+    <MESSAGE value="added 2 files to last commit" />
+    <MESSAGE value="testings 2 sprint" />
+    <option name="LAST_COMMIT_MESSAGE" value="testings 2 sprint" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

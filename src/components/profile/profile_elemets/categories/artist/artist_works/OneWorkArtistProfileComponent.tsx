@@ -1,8 +1,11 @@
 import works_profile_scss from "@/scss/components/profile/categories/WorksProfile.module.scss";
-import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
-import {usePathname, useRouter} from "next/navigation";
+import {MAIN_PATHS} from "@/paths/main";
+import {useRouter} from "next/navigation";
 import {useState} from "react";
 import {ArtArtistInterface} from "@/interfaces/artInterface";
+
+import star_icon from '@/assets/icons/art/star.svg'
+import Image from "next/image";
 
 interface oneWorkInterface {
     oneArt: ArtArtistInterface
@@ -11,39 +14,22 @@ interface oneWorkInterface {
 
 export const OneWorkArtistProfileComponent = (props: oneWorkInterface) => {
     const router = useRouter()
-    const pathname = usePathname()
 
     const [isHoverWhoBuy, setIsHoverWhoBuy] = useState(false)
-    //const [isHoverStar, setIsHoveStart] = useState(false)
-
+    const [isHoverStar, setIsHoveStart] = useState(false)
     const toOneArt = () => {
-        if (props.oneArt.available) {
-            switch (pathname) {
-                case PATHS_CATEGORY.PHOTO : {
-                    router.push(MAIN_PATHS.ONE_PHOTO)
-                    break
-                }
-                case PATHS_CATEGORY.PAINTINGS : {
-                    router.push(MAIN_PATHS.ONE_PAINTING)
-                    break
-                }
-                case PATHS_CATEGORY.SCULPTURES : {
-                    router.push(MAIN_PATHS.ONE_SCULPTURE)
-                    break
-                }
-            }
-        }
+        router.push(MAIN_PATHS.ONE_ART + `/${props.oneArt.artId}`)
     }
+
     return (
         <section className={works_profile_scss.one_work}
                  onClick={toOneArt}>
             <section className={works_profile_scss.img_section}>
                 <img src={props.oneArt.photoUrl}
-                     className={works_profile_scss.one_work_img + ' ' +
-                                !props.oneArt.available ? works_profile_scss.one_work_img_not_available : undefined}
+                     className={!props.oneArt.available ? works_profile_scss.one_work_img_not_available: works_profile_scss.one_work_img}
                      alt={'one work'}
                      crossOrigin="anonymous"/>
-                {props.oneArt.customerId !== '' ?
+                {props.oneArt.customerId !== null ?
                     <section className={works_profile_scss.who_buy_section}
                              onMouseEnter={() => setIsHoverWhoBuy(true)}
                              onMouseLeave={() => setIsHoverWhoBuy(false)}>
@@ -56,16 +42,18 @@ export const OneWorkArtistProfileComponent = (props: oneWorkInterface) => {
                     </section>
                     : null
                 }
-                {/*<section className={works_profile_scss.who_buy_section + ' ' + works_profile_scss.star_section*/}
-                {/*          onMouseEnter={() => setIsHoveStart(true)}*/}
-                {/*          onMouseLeave={() => setIsHoveStart(false)}>*/}
-                {/*    <section className={works_profile_scss.who_buy_data}>*/}
-                {/*        <Image src={star_icon} alt={'star'} width={0} height={0}/>*/}
-                {/*        <div className={!isHoverStar ? works_profile_scss.who_buy_name_hide : undefined}>*/}
-                {/*            Только для поддержавших*/}
-                {/*        </div>*/}
-                {/*    </section>*/}
-                {/*</section>*/}
+                {props.oneArt.isPrivate && props.oneArt.customerId !== null ?
+                    <section className={works_profile_scss.who_buy_section + ' ' + works_profile_scss.star_section}
+                             onMouseEnter={() => setIsHoveStart(true)}
+                             onMouseLeave={() => setIsHoveStart(false)}>
+                        <section className={works_profile_scss.who_buy_data}>
+                            <Image src={star_icon} alt={'star'} width={0} height={0}/>
+                            <div className={!isHoverStar ? works_profile_scss.who_buy_name_hide : undefined}>
+                                Только для поддержавших
+                            </div>
+                        </section>
+                    </section>
+                    : null}
             </section>
             <section className={works_profile_scss.one_work_names}>
                 <div className={works_profile_scss.one_work_weight}>{props.artistName}</div>

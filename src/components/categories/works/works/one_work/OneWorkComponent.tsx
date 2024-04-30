@@ -9,14 +9,14 @@ import {OneWorkData} from "@/components/categories/works/works/one_work/element/
 import {OneWorkButton} from "@/components/categories/works/works/one_work/element/OneWorkButton";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {ArtInterface} from "@/interfaces/artInterface";
-import {useRouter} from "next/navigation";
-import {AddArtToCart} from "@/store/thunks/cartThunk";
+import {usePathname, useRouter} from "next/navigation";
+import {MAIN_PATHS} from "@/paths/main";
 
 interface oneWorkInterface {
     one_work: ArtInterface
-    GetArt(artId: string, currentId: string, router: AppRouterInstance): void
+    GetArt(artId: string, router: AppRouterInstance): void
     DeleteArt(artId: string, router: AppRouterInstance): void
-    AddArtToCart(artId: string): void
+    AddArtToCart(artId: string, router: AppRouterInstance): void
 }
 
 export const OneWorkComponent = (props: oneWorkInterface) => {
@@ -24,8 +24,12 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
     const [currentId] = useState(Cookies.get('currentId') as string)
     const [deleteArt, setDeleteArt] = useState(false)
 
+    const pathname = usePathname()
+    const lastPath = pathname.split('/')[2]
+
     useEffect(() => {
-        props.GetArt(props.one_work.artId, currentId, router)
+
+        props.GetArt(lastPath, router)
     }, []);
 
     useEffect(() => {
@@ -34,6 +38,8 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
             setDeleteArt(false)
         }
     }, [deleteArt]);
+
+    console.log(props.one_work.customerId !== '' && props.one_work.customerId !== null)
 
     return (
         <section className={one_work_scss.root}>
@@ -47,9 +53,9 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
             </ul>
             <main className={one_work_scss.art_info}>
                 <header className={one_work_scss.art_info_header}>
-                    <div className={one_work_scss.art_artist}>Художник</div>
+                    <div className={one_work_scss.art_artist}>{props.one_work.artistName}</div>
                     <div className={one_work_scss.art_name}>{props.one_work.name},
-                        {props.one_work.createDate.substring(6, props.one_work.createDate.length - 1)}</div>
+                        {props.one_work.createDate.substring(0, 4)}</div>
                 </header>
                 <section className={one_work_scss.art_price}>
                     {props.one_work.price} ₽
@@ -59,9 +65,10 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
                                AddArtToCart={props.AddArtToCart}
                                artId={props.one_work.artId}/>
                 <OneWorkData one_work={props.one_work}/>
-                {currentId === props.one_work.artistId ?
+                {currentId === props.one_work.artistId && (props.one_work.customerId === '' || props.one_work.customerId === null ) ?
                     <footer className={one_work_scss.footer}>
-                        <button className={'no_main_color'}>
+                        <button className={'no_main_color'}
+                            onClick={() => router.push(MAIN_PATHS.EDIT_ART + `/${lastPath}`)}>
                             <Image src={edit_icon} alt={'edit_icon'}/>
                             <div>Редактировать</div>
                         </button>

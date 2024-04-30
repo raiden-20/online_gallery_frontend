@@ -30,19 +30,19 @@ export const OneAddressSettingsComponent = (props: oneAddressSettingsInterface) 
     const [input_city, setInput_city] = useState(props.oneAddress.city)
     const [input_index, setInput_index] = useState(props.oneAddress.index)
     const [input_location, setInput_location] = useState(props.oneAddress.location)
-    const [input_isDefault, setInput_isDefault] = useState(false)
+    const [input_isDefault, setInput_isDefault] = useState(props.oneAddress.isDefault)
+    const [ddefault, setDefault] = useState(false)
 
     const [edit, setEdit] = useState(false)
     const [deleteAddress, setDeleteAddress] = useState(false)
 
     useEffect(() => {
-        if (edit) {
+        if (edit || ddefault) {
             props.EditAddress(props.oneAddress.addressId, input_name, input_country, input_region, input_city,
                 input_index, input_location, input_isDefault, router)
             setEdit(false)
         }
-    }, [edit]);
-
+    }, [edit, ddefault]);
     useEffect(() => {
         if (deleteAddress) {
             props.DeleteAddress(props.oneAddress.addressId, router)
@@ -54,9 +54,10 @@ export const OneAddressSettingsComponent = (props: oneAddressSettingsInterface) 
         <section className={settings_scss.one_address}>
             <section className={settings_scss.address_header}>
                 <section className={settings_scss.address}>
-                    <Image src={mark_icon} alt={'mark_icon'}/>
-                    <p className={settings_scss.p}>ул. Победы, д. 20, кв. 29, г. Воронеж, Воронежская обл., Россия,
-                        ФИО</p>
+                    <Image src={mark_icon} className={!props.oneAddress.isDefault ? settings_scss.hide : undefined}
+                           alt={'mark_icon'}/>
+                    <p className={settings_scss.p}>{props.oneAddress.location}, {props.oneAddress.city}, {
+                        props.oneAddress.region}, {props.oneAddress.country}, {props.oneAddress.name}</p>
                 </section>
                 <button onClick={() => setIsOpen(!isOpen)}>
                     <Image src={isOpen ? open_icon : close_icon} className={settings_scss.icon}
@@ -103,7 +104,11 @@ export const OneAddressSettingsComponent = (props: oneAddressSettingsInterface) 
                                     Редактировать
                                 </button>
                                 <button className={'main_button ' + settings_scss.disabled}
-                                        onClick={() => setInput_isDefault(true)}>
+                                        onClick={() => {
+                                            setInput_isDefault(true)
+                                            setDefault(true)
+                                        }
+                                        }>
                                     Сделать основным
                                 </button>
                             </section>

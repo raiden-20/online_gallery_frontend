@@ -1,7 +1,11 @@
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {ArtsAPI} from "@/api/artsAPI";
 import {Dispatch} from "redux";
-import {setArts, setArtsArtist, setArtsCustomer, setOneArt} from "@/store/reducers/artReducer";
+import {clearOneArt, setArts, setArtsArtist, setArtsCustomer, setOneArt} from "@/store/reducers/artReducer";
+import {setSearch} from "@/store/reducers/categoriesReducer";
+import {MAIN_PATHS} from "@/paths/main";
+import Cookies from "js-cookie";
+import {ART_TYPES} from "@/paths/elements";
 
 export const CreateArt = (name: string, type: string, photos: File[], price: string,
                           createDate: string, description: string, size: string,
@@ -11,6 +15,7 @@ export const CreateArt = (name: string, type: string, photos: File[], price: str
             .then((response) => {
                 switch (response[0]) {
                     case 200 : {
+                        router.push(MAIN_PATHS.ONE_ART + `/${response[1].artId}`)
                         break
                     }
                 }
@@ -19,13 +24,14 @@ export const CreateArt = (name: string, type: string, photos: File[], price: str
         })
     }
 
-export const GetArt = (artId: string, currentId: string, router: AppRouterInstance) =>
+export const GetArt = (artId: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ArtsAPI.GetArtAPI(artId, currentId)
+        ArtsAPI.GetArtAPI(artId, Cookies.get('customerId') as string)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
                         response[1].artId = artId
+                        dispatch(clearOneArt())
                         dispatch(setOneArt(response[1]))
                     }
                 }
@@ -38,11 +44,27 @@ export const EditArt = (artId: string, name: string, type: string, changeMainPho
                         deletePhotoUrls: string[], price: string, createDate: string, description: string, size: string,
                         tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance) =>
     () => {
-        ArtsAPI.EditArtAPI(artId, name, type, changeMainPhoto, newPhotos, deletePhotoUrls, price,
+        let typeEnum = ''
+        switch (type) {
+            case 'Картина' : {
+                typeEnum = ART_TYPES.PAINTING
+                break
+            }
+            case 'Фото' : {
+                typeEnum = ART_TYPES.PHOTO
+                break
+            }
+            case 'Скульптура' : {
+                typeEnum = ART_TYPES.SCULPTURE
+                break
+            }
+        }
+        ArtsAPI.EditArtAPI(artId, name, typeEnum, changeMainPhoto, newPhotos, deletePhotoUrls, price,
             createDate, description, size, tags, materials, isPrivate, frame)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.push(MAIN_PATHS.ONE_ART + `/${artId}`)
                     }
                 }
             }).catch(error => {
@@ -56,6 +78,7 @@ export const DeleteArt = (artId: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.push(MAIN_PATHS.PAINTINGS)
                     }
                 }
             }).catch(error => {
@@ -70,15 +93,16 @@ export const GetArtsCategories = (type: string, router: AppRouterInstance) =>
                 switch (response[0]) {
                     case 200 : {
                         dispatch(setArts(response[1]))
+                        dispatch(setSearch(response[1]))
                     }
                 }
             }).catch(error => {
             console.error(error)
         })
     }
-export const GetArtsArtist = (artistId: string, currentId: string, router: AppRouterInstance) =>
+export const GetArtsArtist = (artistId: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ArtsAPI.GetAllArtistArtsAPI(artistId, currentId)
+        ArtsAPI.GetAllArtistArtsAPI(artistId, Cookies.get('customerId') as string)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {

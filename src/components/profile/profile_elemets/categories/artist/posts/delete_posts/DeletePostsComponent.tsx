@@ -3,10 +3,10 @@ import posts_artist_module from '@/scss/components/profile/categories/PostsArtis
 import React, {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
+import Cookies from "js-cookie";
 
 interface deletePostsInterface {
     setIsDeletePosts(isDeletePosts: boolean): void
-    artistName: string
     PrivateDeletePostPlace(router: AppRouterInstance): void
 }
 
@@ -18,9 +18,12 @@ export const DeletePostsComponent = (props: deletePostsInterface) => {
 
     const [input_name, setInput_name] = useState('')
 
+    const [artistName] = useState(Cookies.get('artistName') as string)
+
+
     useEffect(() => {
         if (isDelete) {
-            if (input_name === props.artistName) {
+            if (input_name === artistName) {
                 props.PrivateDeletePostPlace(router)
             } else {
                 setMessage('Имена не совпадают')
@@ -48,7 +51,8 @@ export const DeletePostsComponent = (props: deletePostsInterface) => {
                         <button className={'cancel_button'} onClick={() => props.setIsDeletePosts(false)}>
                             Отмена
                         </button>
-                        <button className={'second_plan_button'}>
+                        <button className={'second_plan_button'}
+                        onClick={() => setIsDelete(true) }>
                             Удалить
                         </button>
                     </footer>

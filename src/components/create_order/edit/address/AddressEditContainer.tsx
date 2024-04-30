@@ -3,15 +3,9 @@ import {OneAddressInterface} from "@/interfaces/credentials";
 import {getAddresses} from "@/store/thunks/credentialsThunk";
 import {AddressEditComponent} from "@/components/create_order/edit/address/AddressEditComponent";
 
-interface containerState {
-    credentials: {
-        address: OneAddressInterface[]
-    }
-}
 
-const mapStateToProps = (state: containerState) => {
+const mapStateToProps = () => {
     return {
-        address: state.credentials.address
     }
 }
 

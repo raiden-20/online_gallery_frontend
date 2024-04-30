@@ -5,13 +5,12 @@ import filter_icon from '@/assets/icons/categories/filter.svg'
 import Image from "next/image";
 
 import works_root_scss from '@/scss/components/categories/WorksRoot.module.scss'
-import {usePathname} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import {PATHS_CATEGORY} from "@/paths/main";
 import {FiltersComponent} from "@/components/categories/works/filters/FiltersComponent";
-import {Works} from "@/components/categories/works/works/Works";
+import {WorksArts} from "@/components/categories/works/works/WorksArts";
 import {ArtShortInterface} from "@/interfaces/artInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {ART_TYPES} from "@/paths/elements";
 
 interface workRootInterface {
     arts: ArtShortInterface[]
@@ -19,12 +18,12 @@ interface workRootInterface {
 }
 
 export const WorksRoot = (props: workRootInterface) => {
+    const router = useRouter()
 
     const pathname = usePathname().split('/')
-    const lastPath = '/' + pathname[pathname.length - 1]
+    const lastPath = pathname[pathname.length - 1]
 
     const [isFiltersOpen, setIsFiltersOpen] = useState(false)
-    const [category, setCategory] = useState(ART_TYPES.PAINTING)
 
     const select = [
         {popular: '-', value: '-'},
@@ -33,29 +32,16 @@ export const WorksRoot = (props: workRootInterface) => {
     ]
 
     useEffect(() => {
-        switch (lastPath) {
-            case 'Картины': {
-                setCategory(ART_TYPES.PAINTING)
-                break
-            }
-            case 'Фотографии': {
-                setCategory(ART_TYPES.PHOTO)
-                break
-            }
-            case 'Скульптуры': {
-                setCategory(ART_TYPES.SCULPTURE)
-                break
-            }
-        }
+        props.GetArtsCategories(lastPath, router)
     }, []);
 
     return (
         <section className={works_root_scss.root}>
             {isFiltersOpen ? <FiltersComponent setIsFiltersOpen={setIsFiltersOpen}/> : null}
             <header className={works_root_scss.header}>
-                {lastPath === PATHS_CATEGORY.PAINTINGS ? 'Картины' :
-                    lastPath === PATHS_CATEGORY.PHOTO ? 'Фотографии' :
-                        lastPath === PATHS_CATEGORY.SCULPTURES ? 'Скульптуры' : null}
+                {'/' + lastPath === PATHS_CATEGORY.PAINTINGS ? 'Картины' :
+                    '/' + lastPath === PATHS_CATEGORY.PHOTOS ? 'Фотографии' :
+                        '/' + lastPath === PATHS_CATEGORY.SCULPTURES ? 'Скульптуры' : null}
             </header>
             <nav className={works_root_scss.nav}>
                 <button className={works_root_scss.filters_button}
@@ -74,7 +60,7 @@ export const WorksRoot = (props: workRootInterface) => {
                     </select>
                 </section>
             </nav>
-            <Works arts={props.arts} category={category} GetArtsCategories={props.GetArtsCategories}/>
+            <WorksArts arts={props.arts}/>
         </section>
     )
 }

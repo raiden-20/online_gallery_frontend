@@ -5,7 +5,7 @@ import {WorksArtistProfileComponent} from "@/components/profile/profile_elemets/
 
 interface state {
     art : {
-        arts: ArtArtistInterface[]
+        arts_artist: ArtArtistInterface[]
     }
     profile: {
         artistName: string
@@ -14,7 +14,7 @@ interface state {
 
 const mapStateToProps = (state: state) => {
     return {
-        arts: state.art.arts,
+        arts_artist: state.art.arts_artist,
         artistName: state.profile.artistName
     }
 }

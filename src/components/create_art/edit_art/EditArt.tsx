@@ -12,13 +12,14 @@ interface editArtInterface {
 }
 
 export const EditArtComponent = (props: editArtInterface) => {
+
     const router = useRouter()
     const [photoArraySrc, setPhotoArraySrc] = useState<string[]>(props.oneArt.photoUrls)
     const [photoArrayFile, setPhotoArrayFile] = useState<File[]>([])
     const [deletePhotoUrls, setDeletePhotoUrls] = useState<string[]>([])
     const [input_name, setInput_name] = useState(props.oneArt.name)
     const [input_price, setInput_price] = useState(props.oneArt.price)
-    const [input_createDate, setInput_createDate] = useState(props.oneArt.createDate)
+    const [input_createDate, setInput_createDate] = useState(props.oneArt.createDate.split('').splice(0, 4).join(''))
     const [input_description, setInput_description] = useState(props.oneArt.description)
     const [input_height, setInput_height] = useState(props.oneArt.size.split('x')[0])
     const [input_width, setInput_width] = useState(props.oneArt.size.split('x')[1])
@@ -30,11 +31,24 @@ export const EditArtComponent = (props: editArtInterface) => {
     const [isChangeMainPhoto, setIsChangeMainPhoto] = useState(false)
 
     const [editArt, setEditArt] = useState(false)
+    useEffect(() => {
+        setPhotoArraySrc(props.oneArt.photoUrls)
+        setInput_name(props.oneArt.name)
+        setInput_price(props.oneArt.price)
+        setInput_createDate(props.oneArt.createDate.split('').splice(0, 4).join(''))
+        setInput_description(props.oneArt.description)
+        setInput_height(props.oneArt.size.split('x')[0])
+        setInput_width(props.oneArt.size.split('x')[1])
+        setTags(props.oneArt.tags)
+        setMaterials(props.oneArt.materials)
+        setIsPrivate(props.oneArt.isPrivate)
+        setIsFrame(props.oneArt.frame)
+    }, []);
 
     useEffect(() => {
         if (editArt) {
             props.EditArt(props.oneArt.artId, input_name, props.oneArt.type, isChangeMainPhoto, photoArrayFile,
-                deletePhotoUrls, input_price, input_createDate, input_description, input_height + 'x' + input_width
+                deletePhotoUrls, input_price, input_createDate + '-01-01', input_description, input_height + 'x' + input_width
                 , tags, materials,  isPrivate ,isFrame, router)
             setEditArt(false)
         }

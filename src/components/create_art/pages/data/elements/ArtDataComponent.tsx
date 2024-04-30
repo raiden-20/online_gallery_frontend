@@ -23,6 +23,8 @@ interface artDataInterface {
 export const ArtDataComponent = (props: artDataInterface) => {
     const [isHover, setIsHover] = useState(false)
 
+    const [message, setMessage] = useState('')
+
     return (
         <section className={create_art_data_scss.section_root}>
             <header className={create_art_data_scss.header}>Данные товара</header>
@@ -31,8 +33,18 @@ export const ArtDataComponent = (props: artDataInterface) => {
             <section className={create_art_data_scss.inputs_section}>
                 <input placeholder={'Цена, ₽'} value={props.input_price}
                        onChange={(event) => props.setInput_price(event.target.value)}/>
-                <input placeholder={'Год создания'} value={props.input_year}
-                       onChange={(event) => props.setInput_year(event.target.value)}/>
+                <section>
+                    <input placeholder={'Год создания'} value={props.input_year}
+                           onChange={(event) => {
+                               setMessage('')
+                               props.setInput_year(event.target.value)
+                               if (Number.parseInt(event.target.value) < 0 || Number.parseInt(event.target.value) > 2024) {
+                                   setMessage('Неправильная дата')
+                               }
+                           }
+                           }/>
+                    <p className={'message'}>{message}</p>
+                </section>
             </section>
             <textarea placeholder={'Описание'} value={props.input_description}
                       onChange={(event) => props.setInput_description(event.target.value)}></textarea>

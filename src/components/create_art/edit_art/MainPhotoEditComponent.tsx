@@ -48,6 +48,11 @@ export const MainPhotoEditComponent = (props: mainPhotoInterface) => {
                     return newItems;
                 });
 
+                props.setIsChangeMainPhoto(true)
+                const urls = props.deletePhotoUrls
+                urls.push(props.photoArraySrc[0])
+                props.setDeletePhotoUrls(urls)
+
             } else {
                 setMessage('Файл слишком большой!')
             }

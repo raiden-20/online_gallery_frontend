@@ -43,7 +43,7 @@ export const Search = (props: SearchInterface) => {
                     {categories.map((one: string, index)  => {
                         return (
                             <li className={whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}>
-                                <button onClick={() => setWhoIsClicked(index + 1)}>
+                                <button onClick={() => setWhoIsClicked(index + 1)} key={index}>
                                     {one}
                                 </button>
                             </li>

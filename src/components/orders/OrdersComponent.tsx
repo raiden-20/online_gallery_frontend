@@ -24,9 +24,9 @@ export const OrdersComponent = (props: ordersInterface) => {
         <section className={orders_scss.root}>
             <header className={orders_scss.header}>Заказы</header>
             <ul className={orders_scss.main}>
-                {props.orders.map((oneOrder) => {
+                {props.orders.map((oneOrder, index) => {
                     return (
-                        <li className={orders_scss.li}
+                        <li className={orders_scss.li} key={index}
                             onClick={() => route.push(MAIN_PATHS.ONE_ORDER + `/${oneOrder.orderId}`)}>
                             <OneOrderComponentMain oneOrder={oneOrder}/>
                         </li>

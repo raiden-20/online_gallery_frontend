@@ -126,7 +126,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                                     setIsNeedChangeData={setIsNeedChangeData}
                                     isEditMobile={isEditMobile}
                                     setIsEditMobile={setIsEditMobile}
-                                    isPrivateSubscribe={props.artist_data.isPublicSubscribe}
+                                    isPrivateSubscribe={props.artist_data.isPrivateSubscribe}
                                     isPublicSubscribe={props.artist_data.isPublicSubscribe}/>
             <ArtistCategoriesProfile input_description={input_description} setInput_description={setInput_description}
                                      setIsNeedChangeData={setIsNeedChangeData}
@@ -134,7 +134,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                                      setIsEditMobile={setIsEditMobile}
                                      countSoldArts={props.artist_data.countSoldArts}
                                      countSubscribers={props.artist_data.countSubscribers}
-                                     salesAmount={props.artist_data.salesAmount}/>
+                                     salesAmount={props.artist_data.salesAmount} isPrivateSubscribe={props.artist_data.isPrivateSubscribe}/>
         </section>
     )
 }

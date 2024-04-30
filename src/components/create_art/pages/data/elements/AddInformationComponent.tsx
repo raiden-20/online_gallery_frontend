@@ -38,9 +38,9 @@ export const AddInformationComponent = (props: addInfoInterface) => {
                     setInput_oneMaterial('')
                 }}>Добавить</button>
                 <ul className={create_art_data_scss.add_section_ul}>
-                    {props.materials.map((material: string) => {
+                    {props.materials.map((material: string, index) => {
                         return (
-                            <li className={create_art_data_scss.one_add}>
+                            <li className={create_art_data_scss.one_add} key={index}>
                                 <div>{material}</div>
                                 <button>
                                     <Image src={delete_add_icon} alt={'delete_add_icon'}/>
@@ -64,9 +64,9 @@ export const AddInformationComponent = (props: addInfoInterface) => {
                 }}>Добавить
                 </button>
                 <ul className={create_art_data_scss.add_section_ul}>
-                    {props.tags.map((material: string) => {
+                    {props.tags.map((material: string, index) => {
                         return (
-                            <li className={create_art_data_scss.one_add}>
+                            <li className={create_art_data_scss.one_add} key={index}>
                                 <div>{material}</div>
                                 <button>
                                     <Image src={delete_add_icon} alt={'delete_add_icon'}/>

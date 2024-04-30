@@ -20,9 +20,9 @@ export const YearFiltersComponent = () => {
             </header>
             {isOpen ?
                 <ul className={filters_scss.size_section + ' ' + filters_scss.checkbox_section + ' scrollbar'}>
-                    {date.map(oneDate => {
+                    {date.map((oneDate, index) => {
                         return (
-                            <li className={filters_scss.size_one_section}>
+                            <li className={filters_scss.size_one_section} key={index}>
                                 <input type={'checkbox'}/>
                                 <div>{oneDate}</div>
                             </li>

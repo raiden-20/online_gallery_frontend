@@ -7,11 +7,12 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
 import {CartInterface} from "@/interfaces/cartInterface";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 interface cartInterface {
     totalCount: number
     cart: CartInterface[]
     GetCart(): void
-    DeleteArtFromCart(artId: string): void
+    DeleteArtFromCart(artId: string, router: AppRouterInstance): void
     SetSelectedArts(arts: {[key: string]: boolean }): void
 }
 
@@ -27,6 +28,8 @@ export const CartComponent = (props: cartInterface) => {
             artId[oneArt.artId] = false
         })
         setArtId(artId)
+
+        props.GetCart()
     }, []);
 
 
@@ -48,11 +51,12 @@ export const CartComponent = (props: cartInterface) => {
             </section>
             <main className={cart_scss.main}>
                 <ul className={cart_scss.arts}>
-                    {props.cart.map((oneArt: CartInterface) => {
+                    {props.cart.map((oneArt: CartInterface, index) => {
                         return (
-                            <li>
+                            <li key={index}>
                                 <OneCartComponent isAllSelected={isAllSelected} oneArt={oneArt}
-                                                  setArtId={setArtId} artId={artId}/>
+                                                  setArtId={setArtId} artId={artId}
+                                                  DeleteArtFromCart={props.DeleteArtFromCart}/>
                             </li>
                         )
                     })}

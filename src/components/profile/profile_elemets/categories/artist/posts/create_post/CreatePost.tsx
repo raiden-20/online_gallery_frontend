@@ -8,13 +8,13 @@ import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-
 
 interface CreatePostInterface {
     setIsCreatePost(isCreatePost: boolean): void
-    CreatePrivatePost(title: string, text: string, photos: File[], router: AppRouterInstance): void
+    CreatePrivatePost(title: string, text: string, photos: File[], router: AppRouterInstance, setIsCreatePost: (flag: boolean) => void ): void
 }
 
 export const CreatePost = (props: CreatePostInterface) => {
     const router = useRouter()
 
-    const [photoArraySrc, setPhotoArraySrc] = useState<string[]>([])
+    const [photoArraySrc, setPhotoArraySrc] = useState<{[key: string]: string}>({})
     const [photoArrayFile, setPhotoArrayFile] = useState<File[]>([])
 
     const [input_title, setInput_title] = useState('')
@@ -28,15 +28,17 @@ export const CreatePost = (props: CreatePostInterface) => {
         setMessage('')
         if (photoFile !== null) {
             const file = photoFile[0];
-            if (photoArraySrc?.length === 4) {
+            if (Object.keys(photoArraySrc).length === 4) {
                 setMessage('Масимальное кол-во фото: 4')
             } else if (photoFile[0].size <= fileSize) {
                 const reader = new FileReader();
 
                 reader.onload = (event) => {
                     if (event.target !== null && event.target.result !== null) {
-                        // @ts-ignore
-                        setPhotoArraySrc(prevItems => [...prevItems, event.target.result.toString()]);
+                        const img = event.target.result.toString()
+                        const newPhotoScr = {...photoArraySrc}
+                        newPhotoScr[img] = img
+                        setPhotoArraySrc(newPhotoScr);
                     }
 
                 };
@@ -50,23 +52,23 @@ export const CreatePost = (props: CreatePostInterface) => {
 
     useEffect(() => {
         if (createPostClicked) {
-            if (photoArrayFile.length !== 0 || input_text !== '') {
+            if (photoArrayFile.length !== 0 && input_text !== '') {
                 if (input_title !== '') {
-                    props.CreatePrivatePost(input_title, input_text, photoArrayFile, router)
+                    props.CreatePrivatePost(input_title, input_text, photoArrayFile, router, props.setIsCreatePost)
                 } else {
                     setMessage('Введите заголовок поста')
                 }
             } else {
-                setMessage('В посте обязательно должно быть или фото или текст')
+                setMessage('В посте обязательно должно быть  фото и текст')
             }
             setCreatePostClicked(false)
         }
     }, [createPostClicked]);
 
-    const deleteInputPhoto = (index: number) => {
-        const newPhotoSrc = [...photoArraySrc];
+    const deleteInputPhoto = (key: string, index: number) => {
+        const newPhotoSrc = {...photoArraySrc};
         const newPhotoFile = [...photoArrayFile];
-        newPhotoSrc.splice(index, 1);
+        delete newPhotoSrc[key]
         newPhotoFile.splice(index, 1);
         setPhotoArraySrc(newPhotoSrc);
         setPhotoArrayFile(newPhotoFile);

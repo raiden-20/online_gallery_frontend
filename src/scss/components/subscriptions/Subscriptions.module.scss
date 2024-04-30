@@ -54,13 +54,18 @@ $artist-private-img-size: 70px;
 }
 
 
+
+
 .one_private_subscription_artists {
+  height: $artist-private-img-size;
+
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: center;
 
   .artist_data_private {
+    height: max-content;
     display: flex;
     gap: $gap-xxxs;
     align-items: center;
@@ -71,6 +76,11 @@ $artist-private-img-size: 70px;
       object-fit: cover;
 
       border-radius: $radius-big;
+    }
+
+    button {
+      padding: 0;
+      height: min-content;
     }
 
     div {

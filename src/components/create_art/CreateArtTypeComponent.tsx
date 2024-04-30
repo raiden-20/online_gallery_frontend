@@ -37,27 +37,27 @@ export const CreateArtTypeComponent = (props: createArtInterface) => {
     const [isFrame, setIsFrame] = useState(false)
     const [, setIsChangeMainPhoto] = useState(false)
 
-
-
     const [createArt, setCreateArt] = useState(false)
 
     const setCountPage = () => {
         if (page - 1 !== 0) {
             setPage(page - 1)
         } else {
-            router.push(MAIN_PATHS.PROFILE_ARTIST + `${Cookies.get('artistId')}`)
+            router.push(MAIN_PATHS.PROFILE_ARTIST + `/${Cookies.get('artistId')}`)
         }
     }
 
 
     useEffect(() => {
         if (createArt) {
-            const size = input_height + 'x' + input_width
-            props.CreateArt(input_name, input_type, photoArrayFile, input_price, input_createDate, input_description, size, tags,
-                materials, isPrivate, isFrame, router)
-            setCreateArt(false)
+            if (Number.parseInt(input_createDate) > 0 && Number.parseInt(input_createDate) <= 2024) {
+                const size = input_height + 'x' + input_width
+                props.CreateArt(input_name, input_type, photoArrayFile, input_price, input_createDate + '-01-01', input_description, size, tags,
+                    materials, isPrivate, isFrame, router)
+                setCreateArt(false)
+            }
         }
-    }, [setCreateArt]);
+    }, [createArt]);
 
     return (
         <section className={create_art_scss.root}>

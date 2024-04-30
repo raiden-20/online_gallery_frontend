@@ -8,26 +8,32 @@ import {
     SubscriptionsArtistPrivate
 } from "@/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate";
 import {SubscriptionsArtistPublic} from "@/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic";
-import {SubscriptionsArtistsPrivate, SubscriptionsUsers} from "@/interfaces/subscriptions";
+import {
+    SubscriptionsArtistsPrivate,
+    SubscriptionsCustomers,
+    SubscriptionsPublicArtists
+} from "@/interfaces/subscriptions";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import Cookies from "js-cookie";
 import {ROLES} from "@/paths/main";
 import {useRouter} from "next/navigation";
+import {
+    SubscriptionsCustomerPrivate
+} from "@/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPrivate";
+import {
+    SubscriptionsCustomerPublic
+} from "@/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPublic";
 
 interface subscriptionsInterface {
     subscriptionsArtistsPrivate: SubscriptionsArtistsPrivate[]
-    subscriptionsArtistsPublic: SubscriptionsUsers[]
-    subscriptionsCustomersPrivate: SubscriptionsUsers[]
-    subscriptionsCustomersPublic: SubscriptionsUsers[]
+    subscriptionsArtistsPublic: SubscriptionsPublicArtists[]
+    subscriptionsCustomersPrivate: SubscriptionsCustomers[]
+    subscriptionsCustomersPublic: SubscriptionsCustomers[]
 
     PrivateSubscriptionsArtists(router: AppRouterInstance): void,
-
     PublicSubscriptionsArtists(router: AppRouterInstance): void,
-
     PrivateSubscribersCustomers(router: AppRouterInstance): void,
-
     PublicSubscribersCustomers(router: AppRouterInstance): void,
-
     SearchSubscriptions(role: string, subscription: string, input: string, router: AppRouterInstance): void
 }
 
@@ -41,17 +47,19 @@ export const SubscriptionsComponent = (props: subscriptionsInterface) => {
     const [role] = useState(Cookies.get('role') as string)
 
     useEffect(() => {
-        if (role === ROLES.CUSTOMER) {
-            if (whoIsClicked === 1) {
-                props.SearchSubscriptions(ROLES.CUSTOMER, 'private', input, router)
+        if (input !== '') {
+            if (role === ROLES.CUSTOMER) {
+                if (whoIsClicked === 1) {
+                    props.SearchSubscriptions(ROLES.CUSTOMER, 'private', input, router)
+                } else {
+                    props.SearchSubscriptions(ROLES.CUSTOMER, 'public', input, router)
+                }
             } else {
-                props.SearchSubscriptions(ROLES.CUSTOMER, 'public', input, router)
-            }
-        } else {
-            if (whoIsClicked === 1) {
-                props.SearchSubscriptions(ROLES.ARTIST, 'private', input, router)
-            } else {
-                props.SearchSubscriptions(ROLES.ARTIST, 'public', input, router)
+                if (whoIsClicked === 2) {
+                    props.SearchSubscriptions(ROLES.ARTIST, 'public', input, router)
+                } else {
+                    props.SearchSubscriptions(ROLES.ARTIST, 'private', input, router)
+                }
             }
         }
     }, [input]);
@@ -61,13 +69,13 @@ export const SubscriptionsComponent = (props: subscriptionsInterface) => {
             <header className={subscriptions_scss.header}>Подписки</header>
             <ul className={nav_profile_scss.root}>
                 <li className={whoIsClicked === 1 ? nav_profile_scss.active : undefined}
-                    onClick={() => setWhoIsClicked(1)}>
+                    onClick={() => setWhoIsClicked(1)} key={0}>
                     <button className={nav_profile_scss.button}>
                         Платная подписка
                     </button>
                 </li>
                 <li className={whoIsClicked === 2 ? nav_profile_scss.active : undefined}
-                    onClick={() => setWhoIsClicked(2)}>
+                    onClick={() => setWhoIsClicked(2)} key={1}>
                     <button className={nav_profile_scss.button}>
                         Уведомления
                     </button>
@@ -83,16 +91,16 @@ export const SubscriptionsComponent = (props: subscriptionsInterface) => {
                     <SubscriptionsArtistPrivate PrivateSubscriptionsArtists={props.PrivateSubscriptionsArtists}
                                                 subscriptionsArtistsPrivate={props.subscriptionsArtistsPrivate}/>
                     :
-                    <SubscriptionsArtistPublic PublicSubscriptions={props.PublicSubscriptionsArtists}
-                                               subscriptions={props.subscriptionsArtistsPublic}/>
+                    <SubscriptionsCustomerPrivate PublicSubscriptions={props.PrivateSubscribersCustomers}
+                                                  subscriptions={props.subscriptionsCustomersPrivate}/>
                 : whoIsClicked === 2 ?
                     role === ROLES.CUSTOMER ?
-                        <SubscriptionsArtistPublic PublicSubscriptions={props.PrivateSubscribersCustomers}
-                                                   subscriptions={props.subscriptionsCustomersPrivate}/>
+                        <SubscriptionsArtistPublic PublicSubscriptions={props.PublicSubscriptionsArtists}
+                                                   subscriptions={props.subscriptionsArtistsPublic}/>
                         :
-                        <SubscriptionsArtistPublic PublicSubscriptions={props.PublicSubscribersCustomers}
-                                                   subscriptions={props.subscriptionsCustomersPublic}/>
-                    : null}
+                        <SubscriptionsCustomerPublic PublicSubscriptions={props.PublicSubscribersCustomers}
+                                                     subscriptions={props.subscriptionsCustomersPublic}/>
+                : null}
         </section>
     )
 }

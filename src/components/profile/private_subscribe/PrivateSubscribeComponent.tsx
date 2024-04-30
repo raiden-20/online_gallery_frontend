@@ -9,6 +9,8 @@ import edit_icon from "@/assets/icons/create_order/edit.svg";
 import settings_scss from "@/scss/components/settings/Settings.module.scss";
 import {CardEditContainer} from "@/components/create_order/edit/cart/CardEditContainer";
 import {OneCardInterface} from "@/interfaces/credentials";
+import {getCards} from "@/store/thunks/credentialsThunk";
+import mark_icon from "@/assets/icons/settings/mark.svg";
 
 interface privateSubscribeInterface {
     price: string
@@ -16,8 +18,9 @@ interface privateSubscribeInterface {
     cards: OneCardInterface[]
 
     setSubscribe(flag: boolean): void
-    PrivateSubscribe(artistId: string, cardId: string, router: AppRouterInstance): void
+    PrivateSubscribe(artistId: string, cardId: string, router: AppRouterInstance, setSubscribe: (flag: boolean) => void): void
     PrivateGetData(artistId: string, router: AppRouterInstance): void
+    getCards(router: AppRouterInstance): void
 }
 
 export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
@@ -25,6 +28,7 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
 
     useEffect(() => {
         props.PrivateGetData(Cookies.get('currentId') as string, router)
+        props.getCards(router)
     }, []);
 
     const [input_price, setInput_price] = useState('')
@@ -39,7 +43,7 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
                     cardId = oneCard.cardId
                 }
             })
-            props.PrivateSubscribe(Cookies.get('currentId') as string, cardId, router)
+            props.PrivateSubscribe(Cookies.get('currentId') as string, cardId, router, props.setSubscribe)
         }
     }, [isSubscribe]);
 
@@ -53,22 +57,35 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
                         Поддержать {props.artistName}?
                     </header>
                     <p>Оформив ежемесячную подписку на Linko, Вы получите доступ к эксклюзивному контенту</p>
-                    <input placeholder={'Имя покупателя'} value={input_price}
+                    <input placeholder={'Сумма, ₽ '} value={input_price}
                            onChange={(event) => setInput_price(event.target.value)}/>
-                    <p>Минимальная сумма – {props.price} ₽ в месяц</p>
-                    <section className={create_order_scss.one_data_header}>
-                        <div>Способ оплаты</div>
-                        <button onClick={() => setIsCardEdit(true)}>
-                            <Image src={edit_icon} alt={'edit_icon'}/>
-                        </button>
+                    <p className={create_order_scss.no_important}>Минимальная сумма – {props.price} ₽ в месяц</p>
+                    <section className={create_order_scss.one_data}>
+                        <section className={create_order_scss.one_data_card_header}>
+                            <div className={create_order_scss.weight}>Способ оплаты</div>
+                            <button onClick={() => setIsCardEdit(true)}>
+                                <Image src={edit_icon} alt={'edit_icon'}/>
+                            </button>
+                        </section>
+
                         {props.cards.map((oneCard: OneCardInterface) => {
                             if (oneCard.isDefault) {
                                 return (
                                     <section
-                                        className={create_order_scss.data + ' ' + create_order_scss.card_data + ' ' + settings_scss.p}>
-                                        <div>{oneCard.type}</div>
-                                        <div>•••• •••• ••••
-                                            {oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length - 1)}</div>
+                                        className={create_order_scss.data + ' ' + settings_scss.p}>
+                                        <section className={settings_scss.address}>
+                                            <Image src={mark_icon}
+                                                   className={!oneCard.isDefault ? settings_scss.hide : undefined}
+                                                   alt={'mark_icon'}/>
+                                            <section className={settings_scss.p}>
+                                                <section className={settings_scss.card_data}>
+                                                    <div>{oneCard.type === '' ? 'MIR' : oneCard.type}</div>
+                                                    <div>•••• •••• ••••
+                                                        {oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length - 1)}
+                                                    </div>
+                                                </section>
+                                            </section>
+                                        </section>
                                     </section>
                                 )
                             }

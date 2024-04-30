@@ -2,16 +2,9 @@ import {connect} from "react-redux";
 import {DeleteCard} from "@/store/thunks/credentialsThunk";
 import {DeleteCardModalWindow} from "@/components/settings/categories/pay/deleteCard/DeleteCardModalWindow";
 
-interface state {
-    profile: {
-        customerName: string
-    }
-}
 
-
-const mapStateToProps = (state: state) => {
+const mapStateToProps = () => {
     return {
-        customerName: state.profile.customerName
     }
 }
 

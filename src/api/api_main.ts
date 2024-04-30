@@ -42,21 +42,19 @@ export const instance = axios.create({
     baseURL: PathsAPI.BASE,
     headers: {
         'Content-Type': 'application/json',
-        'Authorization' : `Bearer `
     }
 });
 export const instanceFile = axios.create({
     baseURL: PathsAPI.BASE,
     headers: {
         'Content-Type': 'multipart/form-data; boundary=---------------------------123456789012345678901234567',
-        'Authorization' : `Bearer `
     }
 });
 
 export const instanceWithoutToken = axios.create({
     baseURL: PathsAPI.BASE,
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     }
 });
 
@@ -66,7 +64,7 @@ instance.interceptors.response.use((response) => response,
         if (error.response.status === 401 && !prev.sent) {
             prev.sent = true;
             const token = localStorage.getItem('access_token') as string
-            prev.headers['Authorization'] = `Bearer ${decrypt(token)}`;
+            prev.headers['Authorization'] = `Bearer ${token}`;
 
             return instance(prev);
         }
@@ -79,10 +77,15 @@ instanceFile.interceptors.response.use((response) => response,
         if (error.response.status === 401 && !prev.sent) {
             prev.sent = true;
             const token = localStorage.getItem('access_token') as string
-            prev.headers['Authorization'] = `Bearer ${decrypt(token)}`;
+            prev.headers['Authorization'] = `Bearer ${token}`;
 
             return instanceFile(prev);
         }
     }
 )
+
+export const setToken = (token: string) => {
+    instance.defaults.headers['Authorization'] = `Bearer ${token}`;
+    instanceFile.defaults.headers['Authorization'] = `Bearer ${token}`;
+}
 

@@ -6,14 +6,18 @@ import {
     PublicSubscriptionsArtists, SearchSubscriptions
 } from "@/store/thunks/subscriptionsThunk";
 import {SubscriptionsComponent} from "@/components/subscribers/SubscriptionsComponent";
-import {SubscriptionsArtistsPrivate, SubscriptionsUsers} from "@/interfaces/subscriptions";
+import {
+    SubscriptionsArtistsPrivate,
+    SubscriptionsCustomers,
+    SubscriptionsPublicArtists
+} from "@/interfaces/subscriptions";
 
 interface containerState {
     subscriptions: {
         subscriptionsArtistsPrivate: SubscriptionsArtistsPrivate[]
-        subscriptionsArtistsPublic: SubscriptionsUsers[]
-        subscriptionsCustomersPrivate: SubscriptionsUsers[]
-        subscriptionsCustomersPublic: SubscriptionsUsers[]
+        subscriptionsArtistsPublic: SubscriptionsPublicArtists[]
+        subscriptionsCustomersPrivate: SubscriptionsCustomers[]
+        subscriptionsCustomersPublic: SubscriptionsCustomers[]
     }
 }
 

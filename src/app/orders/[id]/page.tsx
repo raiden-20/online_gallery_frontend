@@ -1,7 +1,7 @@
 import {RootContainer} from "@/components/main/main/RootContainer";
 
-const OneSculpture = () => {
+const Orders = () => {
     return <RootContainer/>
 }
 
-export default OneSculpture
+export default Orders

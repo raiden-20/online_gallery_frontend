@@ -10,7 +10,9 @@ import {OneCardContainer} from "@/components/settings/categories/pay/oneCard/One
 
 interface paySettingsInterface {
     setWhoIsClickedMobile(num: number): void
+
     cards: OneCardInterface[]
+
     getCards(router: AppRouterInstance): void
 }
 
@@ -36,8 +38,8 @@ export const PaySettingsComponent = (props: paySettingsInterface) => {
                         </li>
                     )
                 })}
-                <li className={settings_scss.grey_bgc}>
-                <AddCardContainer/>
+                <li className={settings_scss.grey_bgc} key={0}>
+                    <AddCardContainer/>
                 </li>
             </ul>
         </section>

@@ -1,6 +1,11 @@
 @import "@/scss/globals/main_values";
 
 $padding: 150px 0 150px 0;
+$img-size: 125px;
+
+.page {
+  display: grid;
+}
 
 .root {
   padding: $padding;
@@ -14,7 +19,7 @@ $padding: 150px 0 150px 0;
   gap: $gap-xl;
 
   img {
-    width: $section-action-img-width;
+    width: $img-size;
   }
 }
 
@@ -43,4 +48,8 @@ $padding: 150px 0 150px 0;
     flex-flow: column;
     gap: $gap-s;
   }
+}
+
+.underline {
+  text-decoration: underline;
 }

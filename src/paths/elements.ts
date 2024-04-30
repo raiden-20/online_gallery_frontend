@@ -4,6 +4,12 @@ export const ART_TYPES = {
     SCULPTURE: 'SCULPTURE'
 }
 
+export const ART_TYPES_MANY = {
+    PAINTINGS: 'paintings',
+    PHOTOS: 'photos',
+    SCULPTURES: 'sculptures'
+}
+
 export const ART_STATUS = {
     AVAILABLE: 'AVAILABLE',
     SOLD: 'SOLD',

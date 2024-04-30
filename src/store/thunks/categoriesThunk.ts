@@ -42,7 +42,7 @@ export const getAllArts = (type: string, router: AppRouterInstance) =>
                 switch (response[0]) {
                     case 200 : {
                         dispatch(clearCategoriesReducer())
-                        dispatch(setArts(response[1]))
+                        dispatch(setSearch(response[1]))
                     }
                 }
             }).catch(error => {

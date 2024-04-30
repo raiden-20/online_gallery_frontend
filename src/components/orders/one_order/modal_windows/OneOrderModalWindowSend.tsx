@@ -2,14 +2,17 @@ import delete_account_scss from "@/scss/components/settings/DeleteAccount.module
 import React, {useEffect, useState} from "react";
 
 import one_order_scss from '@/scss/components/orders/oneOrder/OneOrder.module.scss'
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from "next/navigation";
 
 interface OneOrderModalWindowInterface {
     orderId: string
     setIsClicked(isClicked: boolean): void
-    SetOrder(orderId: string, comment: string): void
+    SetOrder(orderId: string, comment: string, router: AppRouterInstance): void
 }
 
 export const OneOrderModalWindowSend = (props: OneOrderModalWindowInterface) => {
+    const router = useRouter()
 
     const [message, setMessage] = useState('')
     const [isButtonCLicked, setIsButtonCLicked] = useState(false)
@@ -18,7 +21,7 @@ export const OneOrderModalWindowSend = (props: OneOrderModalWindowInterface) => 
     useEffect(() => {
         if (isButtonCLicked) {
             if (input_message !== '') {
-                props.SetOrder(props.orderId, input_message)
+                props.SetOrder(props.orderId, input_message, router)
             } else {
                 setMessage('Введите сообщение')
             }

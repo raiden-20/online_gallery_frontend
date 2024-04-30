@@ -1,13 +1,25 @@
-
 import delete_account_scss from "@/scss/components/settings/DeleteAccount.module.scss";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import subscriptions_scss from "@/scss/components/subscriptions/Subscriptions.module.scss";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from "next/navigation";
 
 interface cancelInterface {
+    artistId: string
     setIsCanceledClicked(isCanceledClicked: boolean): void
+    PrivateUnsubscribe(artistId: string, router: AppRouterInstance): void
 }
 
 export const CancelSubscriptionComponent = (props: cancelInterface) => {
+    const router = useRouter()
+    const [isDelete, setIsDelete] = useState(false)
+
+    useEffect(() => {
+        if (isDelete) {
+            props.PrivateUnsubscribe(props.artistId, router)
+        }
+    }, [isDelete]);
+
     return (
         <section className={'page_modal_window'}>
             <section className={'bg2'}
@@ -22,7 +34,7 @@ export const CancelSubscriptionComponent = (props: cancelInterface) => {
                         <button className={'cancel_button'} onClick={() => props.setIsCanceledClicked(false)}>
                             Оставить подписку
                         </button>
-                        <button className={'main_button'}>
+                        <button className={'main_button'} onClick={() => setIsDelete(true)}>
                             Отменить подписку
                         </button>
                     </footer>

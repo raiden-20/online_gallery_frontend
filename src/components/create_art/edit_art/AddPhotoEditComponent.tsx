@@ -74,8 +74,8 @@ export const AddPhotoEditComponent = (props: mainPhotoInterface) => {
                         onClick={() => deleteInputPhoto(index)}>
                         <Image src={delete_photo_icon} alt={'delete_photo_icon'}/>
                         </button>
-                        <Image src={onePhoto} className={create_post_scss.onePhoto}
-                        alt={'photo'} width={0} height={0}/>
+                        <img src={onePhoto} className={create_post_scss.onePhoto}
+                        alt={'photo'}/>
                         </section>
                     )
                     }

@@ -19,14 +19,17 @@ export const credentialsReducer = (state = initialState, action: any) => {
     switch (action.type) {
 
         case SET_ADDRESSES: {
-            action.addresses.isDefault = action.addresses.isDefault === 'true'
             stateCopy.addresses = action.addresses
 
             return stateCopy
         }
 
         case SET_CARDS: {
-            action.cards.isDefault = action.cards.isDefault === 'true'
+            for (let i = 0; i < action.cards.length ; i++) {
+                const dateArr = action.cards[i].date.split('-')
+                const a = dateArr[0].split('').splice(2, 2).join('')
+                action.cards[i].date = dateArr[1] + '/' + a
+            }
             stateCopy.cards = action.cards
 
             return stateCopy

@@ -42,6 +42,10 @@ $blur: 10px;
   }
 
   .one_work_img_not_available {
+    position: relative;
+    width: 100%;
+
+    border-radius: $radius-xm;
     filter: blur($blur);
   }
 

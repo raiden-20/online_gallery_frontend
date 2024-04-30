@@ -73,7 +73,7 @@ export const AuthConfig: AuthOptions = {
         async session({session, token}) {
 
             // @ts-ignore
-            session.access_token = encrypt(token.accessToken)
+            session.access_token = token.accessToken
             // @ts-ignore
             session.id_token = encrypt(token.id_token)
             // @ts-ignore

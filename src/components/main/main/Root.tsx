@@ -27,15 +27,15 @@ import {CartContainer} from "@/components/cart/CartContainer";
 import {CreateOrderContainer} from "@/components/create_order/CreateOrderContainer";
 import {OrdersContainer} from "@/components/orders/OrdersContainer";
 import {OneOrderContainer} from "@/components/orders/one_order/OneOrderContainer";
+import {EditArtContainer} from "@/components/create_art/edit_art/EditArtContainer";
+import {setToken} from "@/api/api_main";
 
 interface RootInterface {
     artist_data: Artist
     customer_data: Customer
 
     isCustomerCreate(router: AppRouterInstance): void,
-
     getCustomerProfileData(id: string, router: AppRouterInstance): void
-
     getArtistProfileData(id: string, router: AppRouterInstance): void
 }
 
@@ -67,10 +67,10 @@ export const Root = (props: RootInterface) => {
                         props.getArtistProfileData(Cookies.get('artistId') as string, router)
                     }
                 }
+                setToken(localStorage.getItem('access_token') as string)
             }
         }
     }, [session]);
-
 
     return (
         <section className={root_scss.page}>
@@ -90,18 +90,17 @@ export const Root = (props: RootInterface) => {
                         pathname === MAIN_PATHS.CREATE_ARTIST ? <Auth_main/> :
                         pathname === MAIN_PATHS.CREATE_CUSTOMER ? <Auth_main/> :
                         pathname === PATHS_CATEGORY.ARTISTS ? <ArtistsContainer/> :
-                        pathname === PATHS_CATEGORY.PAINTINGS ? <WorkRootContainer/> :
-                        pathname === PATHS_CATEGORY.PHOTO ? <WorkRootContainer/> :
-                        pathname === PATHS_CATEGORY.SCULPTURES ? <WorkRootContainer/> :
+                        main_path === PATHS_CATEGORY.PAINTINGS ? <WorkRootContainer/> :
+                        main_path === PATHS_CATEGORY.PHOTOS ? <WorkRootContainer/> :
+                        main_path === PATHS_CATEGORY.SCULPTURES ? <WorkRootContainer/> :
+                        main_path === PATHS_CATEGORY.ARTS ? <OneWorkContainer/> :
                         pathname === PATHS_CATEGORY.SEARCH ? <SearchContainer/> :
-                        pathname === MAIN_PATHS.ONE_PHOTO ? <OneWorkContainer/> :
-                        pathname === MAIN_PATHS.ONE_PAINTING ? <OneWorkContainer/> :
                         pathname === MAIN_PATHS.CREATE_ART ? <CreateArtContainer/> :
-                        pathname === MAIN_PATHS.ONE_SCULPTURE ? <OneWorkContainer/> :
+                        main_path === PATHS_CATEGORY.EDIT ? <EditArtContainer/> :
                         pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderContainer/> :
                         pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
                         pathname === MAIN_PATHS.ORDERS ? <OrdersContainer/> :
-                        pathname === MAIN_PATHS.ONE_ORDER ? <OneOrderContainer/> :
+                        main_path === PATHS_CATEGORY.ORDERS ? <OneOrderContainer/> :
                     main_path === PATHS_CATEGORY.CART ? <CartContainer/> :
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsContainer/> : null
                     }

@@ -2,6 +2,7 @@ import {Dispatch} from "redux";
 import {CredentialsAndAddressAPI} from "@/api/credentialsAndAddressAPI";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {setAddresses, setCards} from "@/store/reducers/credentialsReducer";
+import {rotate} from "next/dist/server/lib/squoosh/impl";
 
 export const AddAddress = (name: string, country: string, region: string, city: string,
                            index: string, location: string, isDefault: boolean,
@@ -11,6 +12,7 @@ export const AddAddress = (name: string, country: string, region: string, city: 
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -25,6 +27,7 @@ export const EditAddress = (addressId: string, name: string, country: string, re
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -52,6 +55,7 @@ export const DeleteAddress = (id: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -66,6 +70,7 @@ export const AddCard = (number: string, date: string, cvv: string, isDefault: bo
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -79,6 +84,7 @@ export const EditCard = (cardId: string, type: string, number: string, date: str
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {
@@ -88,7 +94,7 @@ export const EditCard = (cardId: string, type: string, number: string, date: str
 
 export const getCards = (router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        CredentialsAndAddressAPI.GetAddressesAPI()
+        CredentialsAndAddressAPI.GetCardsAPI()
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
@@ -106,6 +112,7 @@ export const DeleteCard = (id: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+                        router.refresh()
                     }
                 }
             }).catch(error => {

@@ -38,7 +38,7 @@ export const ActionsAPI = {
                 PathsAPI.PRIVATE + PathsAPI.UNSUBSCRIBE,
                 {
                     data: {
-                        artistId
+                        id: artistId
                     }
                 }
             );
@@ -91,7 +91,7 @@ export const ActionsAPI = {
     async PrivatePostsPlaceData(artistId: string) {
         try {
             const response = await instance.get(
-                PathsAPI.PRIVATE + artistId,
+                PathsAPI.PRIVATE + `/${artistId}`,
             )
             return [response.status, response.data];
         } catch (error: any) {
@@ -164,8 +164,8 @@ export const ActionsAPI = {
         try {
             const formData = new FormData()
             const dto_object = new Blob([JSON.stringify({
-                title: title,
-                text: text
+                title,
+                text
             })], {
                 type: 'application/json'
             })
@@ -173,12 +173,9 @@ export const ActionsAPI = {
             photos.forEach(img => {
                 formData.append("photos", img)
             })
-
             const response = await instanceFile.post(
                 PathsAPI.POST,
-                {
-                    formData
-                }
+                formData
             )
             return [response.status, response.data];
         } catch (error: any) {
@@ -192,23 +189,24 @@ export const ActionsAPI = {
             const formData = new FormData()
 
             const dto_object = new Blob([JSON.stringify({
-                postId: postId,
-                title: title,
-                text: text,
-                deletePhotoUrls: deletePhotoUrls
+                postId,
+                title,
+                text,
+                deletePhotoUrls
             })], {
                 type: 'application/json'
             })
-            formData.append('PostCreateDTO', dto_object)
+            formData.append('PostChangeDTO', dto_object)
             newPhotos.forEach(img => {
-                formData.append("photos", img)
+                formData.append("newPhotos", img)
             })
+            if (newPhotos.length === 0) {
+                formData.append("newPhotos", ' ')
+            }
 
             const response = await instanceFile.put(
                 PathsAPI.POST,
-                {
-                    formData
-                }
+                formData
             )
             return [response.status, response.data];
         } catch (error: any) {

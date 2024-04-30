@@ -14,7 +14,7 @@ interface addressEditInterface {
 
 export const CardEditComponent = (props: addressEditInterface) => {
     return (
-        <section className={'page_modal_window'}>
+        <section className={'page_modal_window ' + create_order_scss.z}>
             <section className={'bg2'}
                      onClick={() => props.setIsCardEdit(false)}></section>
             <main className={'modal_window'}>
@@ -32,7 +32,7 @@ export const CardEditComponent = (props: addressEditInterface) => {
                                 )
                             })}
                         </section>
-                        <li className={settings_scss.grey_bgc}>
+                        <li className={settings_scss.grey_bgc} key={0}>
                             <AddCardContainer/>
                         </li>
                     </ul>

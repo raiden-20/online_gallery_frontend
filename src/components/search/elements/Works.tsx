@@ -1,9 +1,9 @@
-import {useEffect, useState} from "react";
-import {Works} from "@/components/categories/works/works/Works";
+import {useEffect} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
 import {ArtShortInterface} from "@/interfaces/artInterface";
-import {ART_TYPES} from "@/paths/elements";
+import {ART_TYPES_MANY} from "@/paths/elements";
+import {WorksArts} from "@/components/categories/works/works/WorksArts";
 
 interface WorksInterface {
     whoIsClicked: number
@@ -18,36 +18,33 @@ export const Works = (props: WorksInterface) => {
 
     const router = useRouter()
 
-    const [category, setCategory] = useState(ART_TYPES.PAINTING)
 
     useEffect(() => {
         let type = ''
         switch (props.whoIsClicked) {
             case 3 : {
-                setCategory(ART_TYPES.PAINTING)
+                type = ART_TYPES_MANY.PAINTINGS
                 break
             }
             case 4 : {
-                setCategory(ART_TYPES.PHOTO)
+                type = ART_TYPES_MANY.PHOTOS
                 break
             }
             case 5 : {
-                setCategory(ART_TYPES.SCULPTURE)
+                type = ART_TYPES_MANY.SCULPTURES
                 break
             }
         }
-        if (props.input_name === '') {
-            props.getAllArts(type, router)
-        }else {
-            props.getSmthByName(props.input_name, 'art')
+        if (type !== '') {
+            if (props.input_name === '') {
+                props.getAllArts(type, router)
+            }else {
+                props.getSmthByName(props.input_name, type)
+            }
         }
-    }, [props.input_name]);
-
-    useEffect(() => {
-        props.getAllArts('paintings', router)
-    }, []);
+    }, [props.input_name, props.whoIsClicked]);
 
     return (
-        <Works GetArtsCategories={props.getAllArts} arts={props.search} category={category}/>
+        <WorksArts arts={props.search}/>
     )
 }

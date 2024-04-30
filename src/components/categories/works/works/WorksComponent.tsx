@@ -6,11 +6,12 @@ interface workInterface {
 }
 
 export const WorksComponent = (props: workInterface) => {
+    console.log(props.arts)
     return (
         <ul className={works_profile_scss.root}>
-            {props.arts.map((oneArt: ArtShortInterface) => {
+            {props.arts.map((oneArt: ArtShortInterface, index) => {
                 return (
-                    <li>
+                    <li key={index}>
                         <OneWorkCategoriesComponent oneArt={oneArt}/>
                     </li>
                 )

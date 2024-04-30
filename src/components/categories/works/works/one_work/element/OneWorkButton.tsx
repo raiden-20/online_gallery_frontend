@@ -6,12 +6,13 @@ import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
 import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 interface oneWorkInterface {
     artId: string
     status: string,
     artistId: string,
-    AddArtToCart(artId: string): void
+    AddArtToCart(artId: string, router: AppRouterInstance): void
 }
 
 export const OneWorkButton = (props: oneWorkInterface) => {
@@ -23,7 +24,7 @@ export const OneWorkButton = (props: oneWorkInterface) => {
 
     useEffect(() => {
         if (addToCart) {
-            props.AddArtToCart(props.artId)
+            props.AddArtToCart(props.artId, router)
             setAddToCart(false)
         }
     }, [addToCart]);
@@ -44,7 +45,7 @@ export const OneWorkButton = (props: oneWorkInterface) => {
                     </button>
                 :
                     props.status === ART_STATUS.CART ?
-                        <button className={'cansel_button ' + one_work_scss.add_to_cart}
+                        <button className={'cancel_button ' + one_work_scss.add_to_cart}
                                 onClick={() => {
                                     if (status === 'authenticated') {
                                         router.push(MAIN_PATHS.CART)

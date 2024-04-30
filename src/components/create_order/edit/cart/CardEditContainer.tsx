@@ -3,15 +3,9 @@ import {OneCardInterface} from "@/interfaces/credentials";
 import {getCards} from "@/store/thunks/credentialsThunk";
 import {CardEditComponent} from "@/components/create_order/edit/cart/CardEditComponent";
 
-interface containerState {
-    credentials: {
-        cards: OneCardInterface[]
-    }
-}
 
-const mapStateToProps = (state: containerState) => {
+const mapStateToProps = () => {
     return {
-        cards: state.credentials.cards
     }
 }
 

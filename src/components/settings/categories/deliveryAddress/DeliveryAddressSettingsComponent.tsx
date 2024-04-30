@@ -3,7 +3,6 @@ import {useEffect} from "react";
 import Image from "next/image";
 import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {getAddresses} from "@/store/thunks/credentialsThunk";
 import {useRouter} from "next/navigation";
 import {OneAddressInterface} from "@/interfaces/credentials";
 import {AddAddressContainer} from "@/components/settings/categories/deliveryAddress/addAddress/AddAddressContainer";
@@ -21,7 +20,7 @@ export const DeliveryAddressSettingsComponent = (props: deliverySettingsInterfac
     const router = useRouter()
 
     useEffect(() => {
-        getAddresses(router)
+        props.getAddresses(router)
     }, []);
 
     return (
@@ -39,7 +38,7 @@ export const DeliveryAddressSettingsComponent = (props: deliverySettingsInterfac
                         </li>
                     )
                 })}
-                <li className={settings_scss.grey_bgc}>
+                <li className={settings_scss.grey_bgc} key={0}>
                     <AddAddressContainer/>
                 </li>
             </ul>

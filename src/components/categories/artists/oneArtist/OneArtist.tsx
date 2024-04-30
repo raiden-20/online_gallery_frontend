@@ -5,6 +5,7 @@ import React from "react";
 import {UserShort} from "@/interfaces/artistInterface";
 import {useRouter} from "next/navigation";
 import {PhotoSection} from "@/components/categories/artists/oneArtist/PhotoSection";
+import {NULL} from "@/paths/elements";
 
 interface OneArtistsInterface {
     oneArtist: UserShort,
@@ -34,7 +35,10 @@ export const OneArtist = (props: OneArtistsInterface) => {
                 </section>
                 <div className={artists_scss.one_user_name}>{props.oneArtist.artistName}</div>
             </section>
-            <PhotoSection photos={props.oneArtist.photos}/>
+            {props.oneArtist.photos !== undefined ?
+                <PhotoSection photos={props.oneArtist.photos}/>
+                : null
+            }
         </li>
     )
 }

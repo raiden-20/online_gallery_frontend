@@ -10,13 +10,14 @@ import {OnePostInterface} from "@/interfaces/PostsInterface";
 interface EditPostInterface {
     onePost: OnePostInterface
     setIsCreatePost(isCreatePost: boolean): void
-    EditPrivatePost(postId: string, title: string, text: string, newPhotos: File[], deletePhotoUrls: string[], router: AppRouterInstance): void
+    EditPrivatePost(postId: string, title: string, text: string, newPhotos: File[], deletePhotoUrls: string[],
+                    router: AppRouterInstance, setIsEditPost: (flag: boolean) => void ): void
 }
 
 export const EditPost = (props: EditPostInterface) => {
     const router = useRouter()
 
-    const [photoArraySrc, setPhotoArraySrc] = useState<string[]>(props.onePost.photoUrls)
+    const [photoArraySrc, setPhotoArraySrc] = useState<{[key: string]: string}>(props.onePost.photoUrls)
     const [photoArrayFile, setPhotoArrayFile] = useState<File[]>([])
     const [deletePhotoUrls, setDeletePhotoUrls] = useState<string[]>([])
 
@@ -31,15 +32,17 @@ export const EditPost = (props: EditPostInterface) => {
         setMessage('')
         if (photoFile !== null) {
             const file = photoFile[0];
-            if (photoArraySrc?.length === 4) {
+            if (Object.keys(photoArraySrc).length === 4) {
                 setMessage('Масимальное кол-во фото: 4')
             } else if (photoFile[0].size <= fileSize) {
                 const reader = new FileReader();
 
                 reader.onload = (event) => {
                     if (event.target !== null && event.target.result !== null) {
-                        // @ts-ignore
-                        setPhotoArraySrc(prevItems => [...prevItems, event.target.result.toString()]);
+                        const img = event.target.result.toString()
+                        const newPhotoScr = {...photoArraySrc}
+                        newPhotoScr[img] = img
+                        setPhotoArraySrc(newPhotoScr);
                     }
 
                 };
@@ -55,7 +58,8 @@ export const EditPost = (props: EditPostInterface) => {
         if (editPostClicked) {
             if (photoArrayFile.length !== 0 || input_text !== '') {
                 if (input_title !== '') {
-                    props.EditPrivatePost(props.onePost.postId, input_title, input_text, photoArrayFile, deletePhotoUrls, router)
+                    props.EditPrivatePost(props.onePost.postId, input_title, input_text,
+                        photoArrayFile, deletePhotoUrls, router, props.setIsCreatePost)
                 } else {
                     setMessage('Введите заголовок поста')
                 }
@@ -66,18 +70,18 @@ export const EditPost = (props: EditPostInterface) => {
         }
     }, [editPostClicked]);
 
-    const deleteInputPhoto = (index: number) => {
-        const newPhotoSrc = [...photoArraySrc];
+    const deleteInputPhoto = (key: string, index: number) => {
+        const newPhotoSrc = {...photoArraySrc};
         const newPhotoFile = [...photoArrayFile];
-        newPhotoSrc.splice(index, 1);
+        delete newPhotoSrc[key]
         newPhotoFile.splice(index, 1);
         setPhotoArraySrc(newPhotoSrc);
         setPhotoArrayFile(newPhotoFile);
 
-        props.onePost.photoUrls.forEach((photo: string) => {
-            if (photo === photoArraySrc[index]) {
+        Object.values(props.onePost.photoUrls).forEach((value: string) => {
+            if (value === photoArraySrc[key]) {
                 const newDeleteUrls = deletePhotoUrls
-                newDeleteUrls.push(index.toString())
+                newDeleteUrls.push(key.toString())
                 setDeletePhotoUrls(newDeleteUrls)
             }
         })

@@ -23,6 +23,10 @@
   }
 }
 
+.non {
+  visibility: hidden;
+}
+
 @media screen and (max-width: $max-device-width){
   .root {
     gap: $gap-l2;

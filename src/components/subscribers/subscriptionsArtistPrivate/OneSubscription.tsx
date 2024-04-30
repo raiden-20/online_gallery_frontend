@@ -1,11 +1,11 @@
 import subscriptions_scss from '@/scss/components/subscriptions/Subscriptions.module.scss'
 import {useState} from "react";
-import {
-    CancelSubscriptionComponent
-} from "@/components/subscribers/subscriptionsArtistPrivate/CancelSubscriptionComponent";
 import {SubscriptionsArtistsPrivate} from "@/interfaces/subscriptions";
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
+import {
+    CancelSubscriptionsContainer,
+} from "@/components/subscribers/subscriptionsArtistPrivate/cancel/CancelSubscriptionContainer";
 
 export const OneSubscription = (props: {oneArtist: SubscriptionsArtistsPrivate}) => {
     const router = useRouter()
@@ -27,7 +27,8 @@ export const OneSubscription = (props: {oneArtist: SubscriptionsArtistsPrivate})
                 Отменить
             </button>
             {isCanceledClicked ?
-                <CancelSubscriptionComponent setIsCanceledClicked={setIsCanceledClicked}/>
+                <CancelSubscriptionsContainer setIsCanceledClicked={setIsCanceledClicked}
+                                              artistId={props.oneArtist.artistId}/>
             : null}
         </section>
     )

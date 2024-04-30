@@ -1,4 +1,4 @@
-import {instance, instanceFile, PathsAPI} from "@/api/api_main";
+import {instance, instanceFile, instanceWithoutToken, PathsAPI} from "@/api/api_main";
 
 export const ArtsAPI = {
     async CreateArtAPI(name: string, type: string, photos: File[], price: string,
@@ -10,14 +10,14 @@ export const ArtsAPI = {
             const dto_object = new Blob([JSON.stringify({
                 name,
                 type,
-                isPrivate: isPrivate ? 'true': 'false',
+                isPrivate,
                 price,
                 description,
                 createDate,
                 size,
                 tags,
                 materials,
-                frame: frame ? 'true': 'false'
+                frame
             })], {
                 type: 'application/json'
             })
@@ -28,7 +28,6 @@ export const ArtsAPI = {
             photos.forEach(img => {
                 formData.append("photos", img)
             })
-
             const response = await instanceFile.post(
                 PathsAPI.ART,
                 formData
@@ -42,9 +41,9 @@ export const ArtsAPI = {
 
     async GetArtAPI(artId: string, currentId: string) {
         try {
-
-            const response = await instance.get(
-                PathsAPI.ART + `/artId=${artId}&currentId=${currentId}`,
+            const id = currentId === undefined ? null : currentId
+            const response = await instanceWithoutToken.get(
+                PathsAPI.ART + `/artId=${artId}&currentId=${id}`,
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -65,24 +64,27 @@ export const ArtsAPI = {
                 type,
                 changeMainPhoto,
                 deletePhotoUrls,
-                isPrivate: isPrivate ? 'true': 'false',
+                isPrivate,
                 price,
                 description,
                 createDate,
                 size,
                 tags,
                 materials,
-                frame: frame ? 'true': 'false'
+                frame: frame
             })], {
                 type: 'application/json'
             })
 
-
-            formData.append('ArtCreateDTO', dto_object);
+            formData.append('ArtChangeDTO', dto_object);
 
             newPhotos.forEach(img => {
-                formData.append("photos", img)
+                formData.append("newPhotos", img)
             })
+
+            if (newPhotos.length  === 0) {
+                formData.append("newPhotos", '')
+            }
 
             const response = await instanceFile.put(
                 PathsAPI.ART,
@@ -115,8 +117,7 @@ export const ArtsAPI = {
 
     async GetAllArtAPI(type: string) {
         try {
-
-            const response = await instance.get(
+            const response = await instanceWithoutToken.get(
                 `/${type}`,
             );
             return [response.status, response.data];
@@ -128,9 +129,9 @@ export const ArtsAPI = {
 
     async GetAllArtistArtsAPI(artistId: string, currentId: string) {
         try {
-
-            const response = await instance.get(
-                PathsAPI.ART + PathsAPI.ARTIST + `/artistId=${artistId}&currentId=${currentId}`,
+            const id = currentId === undefined ? null : currentId
+            const response = await instanceWithoutToken.get(
+                PathsAPI.ART + PathsAPI.ARTIST + `/artistId=${artistId}&currentId=${id}`,
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -141,8 +142,7 @@ export const ArtsAPI = {
 
     async GetAllCustomerArtsAPI(customerId: string) {
         try {
-
-            const response = await instance.get(
+            const response = await instanceWithoutToken.get(
                 PathsAPI.ART + PathsAPI.CUSTOMER + `/${customerId}`,
             );
             return [response.status, response.data];

@@ -34,26 +34,34 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
     const [isCardEdit, setIsCardEdit] = useState(false)
     const [buy, setBuy] = useState(false)
 
+    const [message, setMessage] = useState('')
+
     useEffect(() => {
         props.getAddresses(router)
         props.getCards(router)
     }, []);
 
     useEffect(() => {
-        let addressId = ''
-        let cardId = ''
-        {props.addresses.map((oneAddress: OneAddressInterface) => {
-            if (oneAddress.isDefault) {
-                addressId = oneAddress.addressId
+        if (buy) {
+            let addressId = ''
+            let cardId = ''
+            {props.addresses.map((oneAddress: OneAddressInterface) => {
+                if (oneAddress.isDefault) {
+                    addressId = oneAddress.addressId
+                }
+            })}
+            {props.cards.map((oneCard: OneCardInterface) => {
+                if (oneCard.isDefault) {
+                    cardId = oneCard.cardId
+                }
+            })}
+            if (addressId !== '' && cardId !== '') {
+                debugger
+                props.BuyCart(props.selectedArts, cardId, addressId, router)
+            } else {
+                setMessage('Заполните для данные для оформление заказа')
             }
-        })}
-        {props.cards.map((oneCard: OneCardInterface) => {
-            if (oneCard.isDefault) {
-                cardId = oneCard.cardId
-            }
-        })}
-
-        props.BuyCart(props.selectedArts, cardId, addressId, router)
+        }
     }, [buy]);
 
     return (
@@ -73,20 +81,18 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                                 <Image src={edit_icon} alt={'edit_icon'}/>
                             </button>
                         </header>
-                        <section className={create_order_scss.data}>
-
-                            {props.addresses.map((oneAddress: OneAddressInterface) => {
-                                if (oneAddress.isDefault) {
-                                    return (
+                        {props.addresses.map((oneAddress: OneAddressInterface) => {
+                            if (oneAddress.isDefault) {
+                                return (
+                                    <section className={create_order_scss.data}>
                                         <p className={create_order_scss.p}>
                                             {oneAddress.location}, {oneAddress.city},
                                             {oneAddress.region}, {oneAddress.country}, {oneAddress.name}
                                         </p>
-                                    )
-                                }
-                            })}
-
-                        </section>
+                                    </section>
+                                )
+                            }
+                        })}
                     </section>
                     <section className={create_order_scss.one_data}>
                         <header className={create_order_scss.one_data_header}>
@@ -108,6 +114,7 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                             }
                         })}
                     </section>
+                    <p className={'message'}>{message}</p>
                 </section>
                 <section className={create_order_scss.total_section + ' ' + create_order_scss.data}>
                     <section className={create_order_scss.total_data}>
@@ -121,11 +128,11 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                 </section>
             </main>
             {isAddressEdit ?
-                <AddressEditContainer setIsAddressEdit={setIsAddressEdit}/>
+                <AddressEditContainer setIsAddressEdit={setIsAddressEdit} address={props.addresses}/>
             : null}
 
             {isCardEdit ?
-                <CardEditContainer setIsCardEdit={setIsCardEdit}/>
+                <CardEditContainer setIsCardEdit={setIsCardEdit} cards={props.cards}/>
             : null}
         </section>
     )

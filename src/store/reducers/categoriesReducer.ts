@@ -26,13 +26,13 @@ export const categoriesReducer = (state = initialState, action: any) => {
 
         case SET_ARTISTS: {
             stateCopy.artists = action.artists
-
+            stateCopy.search = action.artists
             return stateCopy
         }
 
         case SET_ARTS: {
             stateCopy.arts = action.arts
-
+            stateCopy.search = action.arts
             return stateCopy
         }
 

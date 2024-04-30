@@ -2,28 +2,37 @@ import works_profile_scss from '@/scss/components/profile/categories/WorksProfil
 import {
     OneWorkArtistProfileComponent
 } from "@/components/profile/profile_elemets/categories/artist/artist_works/OneWorkArtistProfileComponent";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 
 import create_art_icon from '@/assets/icons/profile/create_art_button.svg'
 import Image from "next/image";
 import {ArtArtistInterface} from "@/interfaces/artInterface";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from "next/navigation";
 
 interface worksProfileInterface {
-    arts: ArtArtistInterface[]
+    arts_artist: ArtArtistInterface[]
     artistName: string
+    GetArtsArtist(artistId: string, router: AppRouterInstance): void
 }
 
 export const WorksArtistProfileComponent = (props: worksProfileInterface) => {
+    const router = useRouter()
 
-    const [artistId] = useState(Cookies.get('artistId'))
-    const [currentId] = useState(Cookies.get('currentId'))
+    const [currentId] = useState(Cookies.get('currentId') as string)
+    const [artistId] = useState(Cookies.get('artistId') as string)
+
+    useEffect(() => {
+        props.GetArtsArtist(currentId,  router)
+    }, []);
+
 
     return (
         <ul className={works_profile_scss.root}>
-            {props.arts.map((oneArt: ArtArtistInterface) => {
+            {props.arts_artist.map((oneArt: ArtArtistInterface, index) => {
                 return (
-                    <li>
+                    <li key={index}>
                         <OneWorkArtistProfileComponent artistName={props.artistName} oneArt={oneArt}/>
                     </li>
                 )

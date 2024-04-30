@@ -3,17 +3,11 @@
 
 $root-height: 70px;
 $root-height-mobile: 97px;
-$root-padding: 15px 0 25px 0;
 $root-max-width: 1065px;
-
-$nav-gap: 35px;
-$nav-gap-mobile-column: 24px;
-$nav-gap-mobile-row: 4px;
-
 $github-image-size: 30px;
 
 .root {
-  padding: $root-padding;
+  padding: $padding-4;
 
   height: $root-height;
   width: 100%;
@@ -28,14 +22,14 @@ $github-image-size: 30px;
 
   .nav {
     display: flex;
-    column-gap: $nav-gap;
+    column-gap: $gap-xxl;
 
     flex-wrap: wrap;
 
     align-items: center;
 
     li, a {
-      font-size: $font-size-footer;
+      font-size: $font-size-xs;
     }
 
 
@@ -61,8 +55,8 @@ $github-image-size: 30px;
     height: auto;
 
     .nav {
-      column-gap: $nav-gap-mobile-column;
-      row-gap: $nav-gap-mobile-row;
+      column-gap: $gap-l1;
+      row-gap: $gap-xxxxxs;
 
       .first {
         width: 100%;

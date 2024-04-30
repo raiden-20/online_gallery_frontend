@@ -20,11 +20,11 @@ export const PriceFiltersComponent = () => {
             </header>
             {isOpen ?
                 <ul className={filters_scss.price_section}>
-                    <li className={filters_scss.price_one_section}>
+                    <li className={filters_scss.price_one_section} key={0}>
                         <header className={filters_scss.price_one_section_title}>От</header>
                         <input placeholder={'0'}/>
                     </li>
-                    <li className={filters_scss.price_one_section}>
+                    <li className={filters_scss.price_one_section} key={1}>
                         <header className={filters_scss.price_one_section_title}>До</header>
                         <input placeholder={'1 000 000'}/>
                     </li>

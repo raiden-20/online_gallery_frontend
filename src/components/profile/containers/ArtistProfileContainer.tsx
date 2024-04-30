@@ -17,7 +17,7 @@ const mapStateToProps = (state: containerState) => {
 
 const mapDispatchToProps = {
     getArtistProfileData,
-    changeArtistProfileData
+    changeArtistProfileData,
 }
 
 export const ArtistProfileContainer = connect(mapStateToProps, mapDispatchToProps)(ArtistProfileComponent)

@@ -38,18 +38,18 @@ export const Artists = (props: ArtistsInterface) => {
 
     return (
         <ul>
-            {props.search.map((oneElement:SearchCustomers) => {
+            {props.search.map((oneElement:SearchCustomers, index) => {
                 return (
-                    <li className={search_scss.one_element}
+                    <li className={search_scss.one_element} key={index}
                         onClick={() => {
                             router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + oneElement.artistId)
                             Cookies.set("currentRole", ROLES.ARTIST)
                             Cookies.set("currentId", oneElement.artistId)
                         }
                     }>
-                        <img src={oneElement.avatarUrl === '' ? "/default_ava_nav.jpg" : oneElement.avatarUrl}
+                        <img src={oneElement.avatarUrl === '' ? '/default_avatar_profile.svg' : oneElement.avatarUrl}
                              className={search_scss.one_element_photo}
-                             alt={'avatar'}/>
+                             alt={'avatar'} crossOrigin="anonymous"/>
                         <div className={search_scss.one_element_name}>{oneElement.artistName}</div>
                     </li>
                 )

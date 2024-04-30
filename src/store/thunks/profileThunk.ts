@@ -1,7 +1,6 @@
 import {Dispatch} from "redux";
 import {ProfileAPI} from "@/api/profileAPI";
 import {
-    clearProfileReducer,
     setArtistData,
     setCustomerData,
     setMyArtistData,
@@ -10,7 +9,7 @@ import {
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
-import {Customer} from "@/interfaces/customerInterface";
+import {NULL} from "@/paths/elements";
 
 
 export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
@@ -19,8 +18,10 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        if (id === Cookies.get('customerId') && response[1].artistId) {
+                        if (id === Cookies.get('customerId') && response[1].artistId !== null) {
                             Cookies.set('artistId', response[1].artistId)
+                            Cookies.set('customerName', response[1].customerName)
+                            Cookies.set('customerUrl', response[1].avatarUrl)
                         }
                         if (id === Cookies.get('customerId')) {
                             dispatch(setMyCustomerData(response[1]))
@@ -41,12 +42,13 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
 
 export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ProfileAPI.ArtistDataAPI(id)
+        ProfileAPI.ArtistDataAPI(id, Cookies.get('customerId') as string)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
                         if (id === Cookies.get('artistId')) {
                             dispatch(setMyArtistData(response[1]))
+                            Cookies.set('artistName', response[1].artistName)
                         }
                         dispatch(setArtistData(response[1]))
                         break

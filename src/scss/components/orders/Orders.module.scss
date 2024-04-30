@@ -1,0 +1,25 @@
+@import "@/scss/globals/main_values";
+
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-s;
+}
+
+.header {
+  font-size: $font-size-xxl;
+  font-weight: $weight;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-l1;
+}
+
+.li {
+  * {
+    cursor: pointer;
+  }
+}

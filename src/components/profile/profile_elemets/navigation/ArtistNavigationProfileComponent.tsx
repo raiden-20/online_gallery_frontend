@@ -1,41 +1,51 @@
 import nav_profile_scss from '@/scss/components/profile/Navigation.module.scss'
+import {useState} from "react";
+import Cookies from "js-cookie";
 
-export interface ProfileNavInterface {
+interface ProfileNavInterface {
+    countSubscribers: string
     whoIsClicked: number
     setWhoIsClicked(whoIsClicked: number): void
 }
 
 export const ArtistNavigationProfileComponent = (props: ProfileNavInterface) => {
+    const elements = ['Работы', 'Аукционы', 'Посты', 'О себе']
+
+    const [currentId] = useState(Cookies.get('currentId') as string)
+    const [artistId] = useState(Cookies.get('artistId') as string)
 
     return (
         <ul className={nav_profile_scss.root}>
-            <li className={props.whoIsClicked === 1 ? nav_profile_scss.active : undefined}
-                onClick={() => props.setWhoIsClicked(1)}>
-                <button className={nav_profile_scss.button}>
-                    Работы
-                </button>
-            </li>
-            <li className={props.whoIsClicked === 2 ? nav_profile_scss.active : undefined}
-                onClick={() => props.setWhoIsClicked(2)}>
-                <button className={nav_profile_scss.button}>
-                    Аукционы
-                </button>
-            </li>
-            <li className={props.whoIsClicked === 3 ? nav_profile_scss.active : undefined}
-                onClick={() => props.setWhoIsClicked(3)}>
-                <button className={nav_profile_scss.button}>
-                    Посты
-                </button>
-            </li>
-            <li className={props.whoIsClicked === 4 ? nav_profile_scss.active : undefined}
-                onClick={() => {
-                    props.setWhoIsClicked(4)}
-
-                }>
-                <button className={nav_profile_scss.button}>
-                    О себе
-                </button>
-            </li>
+            {elements.map((oneElement: string, index) => {
+                if (index === 2) {
+                    if (artistId === currentId && props.countSubscribers !== null) {
+                        return (
+                            <li className={props.whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}
+                                onClick={() => props.setWhoIsClicked(index + 1)} key={index}>
+                                <button className={nav_profile_scss.button}>
+                                    {oneElement}
+                                </button>
+                            </li>
+                        )
+                    }
+                    return (
+                        <li className={props.whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}
+                            onClick={() => props.setWhoIsClicked(index + 1)} key={index}>
+                            <button className={nav_profile_scss.button}>
+                                {oneElement}
+                            </button>
+                        </li>
+                    )
+                }
+                return (
+                    <li className={props.whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}
+                        onClick={() => props.setWhoIsClicked(index + 1)} key={index}>
+                        <button className={nav_profile_scss.button}>
+                            {oneElement}
+                        </button>
+                    </li>
+                )
+            })}
         </ul>
     )
 }

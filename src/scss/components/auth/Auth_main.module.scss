@@ -2,15 +2,9 @@
 @import "@/scss/globals/color";
 
 $root-width: 500px;
-$root-padding: 35px;
-
-$auth-gap: 25px;
-
-$form-gap: 10px;
-$buttons-gap: 16px;
 $button-width: 232px;
 
-.page {
+.page{
   width: 100%;
   height: 100%;
 
@@ -21,59 +15,54 @@ $button-width: 232px;
 
 .root {
   width: $root-width;
-  padding: $root-padding;
+  padding: $auth-padding;
+}
 
-  .auth {
+.auth {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-l;
+}
+
+.header {
+  font-size: $font-size-xxxl;
+
+  display: grid;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+
+  gap: $gap-xxs;
+
+  .section_for_small_button {
     display: flex;
-    flex-flow: column;
-    gap: $auth-gap;
+    justify-content: end;
+  }
 
+  .button_small {
+    width: max-content;
+    height: min-content;
+  }
 
-    .header {
-      font-size: $title-auth-size;
+  .p {
+    text-align: center;
+  }
 
-      display: grid;
-      justify-content: center;
-    }
+  .button_left {
+    display: flex;
+    justify-self: start;
+  }
+}
 
-    .form {
-      display: flex;
-      flex-flow: column;
+.button_section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: $gap-s;
 
-      gap: $form-gap;
-
-      .section_for_small_button {
-        display: flex;
-        justify-content: end;
-      }
-
-      .button_small {
-        width: max-content;
-        height: min-content;
-      }
-
-      .p {
-        text-align: center;
-      }
-
-      .button_left {
-        display: flex;
-        justify-self: start;
-      }
-    }
-
-    .message {
-      color: $red-color
-    }
-
-    .button_section {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: $buttons-gap;
-
-      button {
-        width: $button-width;
-      }
-    }
+  button {
+    width: $button-width;
   }
 }

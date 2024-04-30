@@ -4,7 +4,153 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="testing" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="testings 2 sprint">
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/profile/create_post/not_available.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscriptionOnArtist.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/cancel/CancelSubscriptionContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPrivate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPublic.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/actionsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/actionsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/artsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/artsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/credentialsAndAddressAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/credentialsAndAddressAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/profileAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/art/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/paintings/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/arts/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/photo/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/orders/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/photo/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/photos/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sculptures/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/profile/bell_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/icons/profile/bell_icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/PhotoSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/PhotoSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/FrameFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/FrameFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/MaterialsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/MaterialsFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/PriceFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/PriceFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/TagsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/TagsFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/YearFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/YearFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/Works.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/WorksComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkCategoriesComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkCategoriesComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/AddPhotoEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/AddPhotoEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/EditArt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/EditArt.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/MainPhotoEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/MainPhotoEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/CreateArtFirstPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/CreateArtFirstPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddInformationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/AddInformationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/success/CreateOrderSuccessComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/success/CreateOrderSuccessComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/actions/ActionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/actions/ActionComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/artists/ArtistsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/artists/ArtistsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/popular_auctions/PopularAndAuctionsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/popular_auctions/PopularAndAuctionsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/FooterComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/FooterComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav_elements/NavigationElementsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav_elements/NavigationElementsMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/orders/OrdersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/OrdersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowChange.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowChange.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowSend.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/modal_windows/OneOrderModalWindowSend.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionButtonsHeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionButtonsHeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/OneWorkArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/OneWorkArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/MainPostsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/MainPostsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePostsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePostsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePrivateContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePrivateContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPostContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPostContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OneOpenedPhotoPostComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OneOpenedPhotoPostComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OnePostArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OnePostArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/PostsArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/PostsArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscribeOnArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscribeOnArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/CustomerWorksContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/CustomerWorksContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/OneWorkCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/OneWorkCustomerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/WorksCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/WorksCustomerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/works/WorksComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/works/WorksComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/CustomerNavigationProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/CustomerNavigationProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Customers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Works.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Works.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/addCard/AddCardComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/addCard/AddCardComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/SubscriptionsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/CancelSubscriptionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/cancel/CancelSubscriptionComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/PostsInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/PostsInterface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/subscriptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/subscriptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/elements.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/elements.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/cart/OneCart.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_order/CreateOder.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/OneOrder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/OneOrder.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/orders/oneOrder/OneOrder.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/AboutArtist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/AboutArtist.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/SuggestionSubscribeOnArtist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/SuggestionSubscribeOnArtist.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/settings/Settings.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/artReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/artReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/credentialsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/credentialsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/orderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/orderReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/postsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/postsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/subscriptionsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/subscriptionsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/actionsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/actionsThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/ordersThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/ordersThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/postsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/postsThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/subscriptionsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/subscriptionsThunk.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,31 +159,31 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="tsconfig.json" />
+        <option value="SCSS File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
-        <option value="SCSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fcf1adb7bf818978f765a404012befed4d1db99b" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2eKjSqjTwfMeipFvoxTI4iRfhmG" />
+  <component name="ProjectId" id="2fQY0BAOwtfmDX7KlTZ2rIRWPqn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,11 +192,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/profile",
+    "git-widget-placeholder": "feature__store__thunk",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app/orders/[id]",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -60,445 +205,275 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\orders\[id]" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\subscribers\subscriptionsArtistPublic" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile\create_post" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist\posts\subscribe" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\arts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\header\elements" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\categories" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\subscribers\subscriptionsArtistPrivate\cancel" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\edit\art\[id]" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\edit\art" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_order\edit\address" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_order\edit\cart" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e322ac19-d7e1-43e7-b903-973d7e651d51" name="Changes" comment="" />
-      <created>1711660166738</created>
+      <changelist id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="commit workspace.xml" />
+      <created>1713734544263</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1711660166738</updated>
-      <workItem from="1711660167807" duration="4294000" />
-      <workItem from="1711714656290" duration="6396000" />
-      <workItem from="1711721074754" duration="2087000" />
-      <workItem from="1711728951489" duration="15773000" />
-      <workItem from="1711795460749" duration="4465000" />
-      <workItem from="1711806296525" duration="1222000" />
-      <workItem from="1711883202376" duration="1211000" />
-      <workItem from="1711915590160" duration="10805000" />
-      <workItem from="1711970391574" duration="7668000" />
-      <workItem from="1712001250172" duration="4519000" />
-      <workItem from="1712005916393" duration="4304000" />
-      <workItem from="1712047966179" duration="10977000" />
-      <workItem from="1712083573994" duration="12128000" />
-      <workItem from="1712150526363" duration="24784000" />
-      <workItem from="1712206273644" duration="7428000" />
-      <workItem from="1712217976052" duration="19000" />
-      <workItem from="1712242729661" duration="3716000" />
-      <workItem from="1712246464771" duration="15306000" />
-      <workItem from="1712306041071" duration="718000" />
-      <workItem from="1712308894572" duration="343000" />
-      <workItem from="1712309468075" duration="5776000" />
-      <workItem from="1712565184162" duration="35119000" />
-      <workItem from="1712648040689" duration="2460000" />
-      <workItem from="1712664492485" duration="25168000" />
-      <workItem from="1712740730752" duration="29141000" />
-      <workItem from="1712826359564" duration="4000" />
-      <workItem from="1712831188424" duration="996000" />
-      <workItem from="1712832199169" duration="2795000" />
-      <workItem from="1712853423386" duration="1672000" />
-      <workItem from="1712893848533" duration="14165000" />
-      <workItem from="1713190421846" duration="18212000" />
-      <workItem from="1713270577330" duration="11689000" />
-      <workItem from="1713362698298" duration="17017000" />
-      <workItem from="1713418643299" duration="3811000" />
-      <workItem from="1713467453029" duration="5264000" />
-      <workItem from="1713521797692" duration="2000" />
-      <workItem from="1713532780001" duration="3000" />
-      <workItem from="1713637699914" duration="3420000" />
-      <workItem from="1713696155149" duration="22271000" />
+      <updated>1713734544263</updated>
+      <workItem from="1713734546760" duration="8478000" />
+      <workItem from="1713780008251" duration="31688000" />
+      <workItem from="1713865933149" duration="14261000" />
+      <workItem from="1713952774723" duration="12228000" />
+      <workItem from="1714034356332" duration="15635000" />
+      <workItem from="1714132913798" duration="565000" />
+      <workItem from="1714214693084" duration="2899000" />
+      <workItem from="1714242760574" duration="10282000" />
+      <workItem from="1714254685340" duration="9252000" />
+      <workItem from="1714292017854" duration="94000" />
+      <workItem from="1714381792037" duration="41705000" />
+      <workItem from="1714458027253" duration="13733000" />
+      <workItem from="1714472727662" duration="29567000" />
     </task>
-    <task id="LOCAL-00001" summary="prepare app for working">
+    <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
-      <created>1711661315735</created>
+      <created>1713735783410</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1711661315735</updated>
+      <updated>1713735783410</updated>
     </task>
-    <task id="LOCAL-00002" summary="create necessary pages for first sprint">
+    <task id="LOCAL-00002" summary="created delete account modal window and mobile version">
       <option name="closed" value="true" />
-      <created>1711661833618</created>
+      <created>1713737863407</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1711661833618</updated>
+      <updated>1713737863407</updated>
     </task>
-    <task id="LOCAL-00003" summary="delete some pages">
+    <task id="LOCAL-00003" summary="design for cart">
       <option name="closed" value="true" />
-      <created>1711661953528</created>
+      <created>1713782717045</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1711661953528</updated>
+      <updated>1713782717045</updated>
     </task>
-    <task id="LOCAL-00004" summary="add all necessary images for 1 sprint">
+    <task id="LOCAL-00004" summary="design for subscriptions">
       <option name="closed" value="true" />
-      <created>1711661997845</created>
+      <created>1713791959305</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1711661997845</updated>
+      <updated>1713791959305</updated>
     </task>
-    <task id="LOCAL-00005" summary="changed paths">
+    <task id="LOCAL-00005" summary="changed design for navigation">
       <option name="closed" value="true" />
-      <created>1711662065027</created>
+      <created>1713793322560</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1711662065027</updated>
+      <updated>1713793322560</updated>
     </task>
-    <task id="LOCAL-00006" summary="components design and routing for first sprint">
+    <task id="LOCAL-00006" summary="design for one art">
       <option name="closed" value="true" />
-      <created>1711662175037</created>
+      <created>1713794807390</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1711662175037</updated>
+      <updated>1713794807390</updated>
     </task>
-    <task id="LOCAL-00007" summary="fixed bugs">
+    <task id="LOCAL-00007" summary="fixed sign in">
       <option name="closed" value="true" />
-      <created>1711663042542</created>
+      <created>1713795067854</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1711663042542</updated>
+      <updated>1713795067854</updated>
     </task>
-    <task id="LOCAL-00008" summary="set up a keycloak">
+    <task id="LOCAL-00008" summary="added to one art page edit and delete buttons">
       <option name="closed" value="true" />
-      <created>1712050247246</created>
+      <created>1713801109823</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1712050247246</updated>
+      <updated>1713801109823</updated>
     </task>
-    <task id="LOCAL-00009" summary="created redux store, thunks and API for first sprint">
+    <task id="LOCAL-00009" summary="created create art page">
       <option name="closed" value="true" />
-      <created>1712083749195</created>
+      <created>1713821651178</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1712083749195</updated>
+      <updated>1713821651178</updated>
     </task>
-    <task id="LOCAL-00010" summary="created artists page">
+    <task id="LOCAL-00010" summary="create page create order and success order">
       <option name="closed" value="true" />
-      <created>1712086866427</created>
+      <created>1713825928774</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1712086866427</updated>
+      <updated>1713825928774</updated>
     </task>
-    <task id="LOCAL-00011" summary="changed account navigation design">
+    <task id="LOCAL-00011" summary="created orders pages">
       <option name="closed" value="true" />
-      <created>1712087597180</created>
+      <created>1713953187979</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1712087597180</updated>
+      <updated>1713953187979</updated>
     </task>
-    <task id="LOCAL-00012" summary="created search page">
+    <task id="LOCAL-00012" summary="redo scss files (variables)">
       <option name="closed" value="true" />
-      <created>1712094780988</created>
+      <created>1713989398479</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1712094780988</updated>
+      <updated>1713989398479</updated>
     </task>
-    <task id="LOCAL-00013" summary="changes categories API">
+    <task id="LOCAL-00013" summary="add oneOpenPhoto">
       <option name="closed" value="true" />
-      <created>1712095639539</created>
+      <created>1714073623572</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1712095639539</updated>
+      <updated>1714073623572</updated>
     </task>
-    <task id="LOCAL-00014" summary="changed profile API">
+    <task id="LOCAL-00014" summary="fixed profile navigation font size">
       <option name="closed" value="true" />
-      <created>1712096294509</created>
+      <created>1714073861231</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1712096294509</updated>
+      <updated>1714073861231</updated>
     </task>
-    <task id="LOCAL-00015" summary="fixed keycloak">
+    <task id="LOCAL-00015" summary="set default photo">
       <option name="closed" value="true" />
-      <created>1712154855629</created>
+      <created>1714076544424</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1712154855629</updated>
+      <updated>1714076544424</updated>
     </task>
-    <task id="LOCAL-00016" summary="changed settings design">
+    <task id="LOCAL-00016" summary="fix one open photo visibility">
       <option name="closed" value="true" />
-      <created>1712157061143</created>
+      <created>1714077027282</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1712157061143</updated>
+      <updated>1714077027282</updated>
     </task>
-    <task id="LOCAL-00017" summary="react-redux connection">
+    <task id="LOCAL-00017" summary="created private posts components">
       <option name="closed" value="true" />
-      <created>1712181573536</created>
+      <created>1714080916872</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1712181573537</updated>
+      <updated>1714080916872</updated>
     </task>
-    <task id="LOCAL-00018" summary="react-redux connection 2">
+    <task id="LOCAL-00018" summary="small changes in all">
       <option name="closed" value="true" />
-      <created>1712565470138</created>
+      <created>1714084678573</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1712565470138</updated>
+      <updated>1714084678574</updated>
     </task>
-    <task id="LOCAL-00019" summary="adapting navigation for mobile resolution">
+    <task id="LOCAL-00019" summary="change who buy art section size">
       <option name="closed" value="true" />
-      <created>1712571978340</created>
+      <created>1714085094938</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1712571978340</updated>
+      <updated>1714085094938</updated>
     </task>
-    <task id="LOCAL-00020" summary="adapting navigation for mobile resolution v2">
+    <task id="LOCAL-00020" summary="add input checkbox css settings">
       <option name="closed" value="true" />
-      <created>1712575575017</created>
+      <created>1714085251225</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1712575575017</updated>
+      <updated>1714085251225</updated>
     </task>
-    <task id="LOCAL-00021" summary="adapting settings for mobile resolution">
+    <task id="LOCAL-00021" summary="test one api">
       <option name="closed" value="true" />
-      <created>1712578109685</created>
+      <created>1714247595648</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1712578109685</updated>
+      <updated>1714247595648</updated>
     </task>
-    <task id="LOCAL-00022" summary="fixed app width">
+    <task id="LOCAL-00022" summary="test one api 2">
       <option name="closed" value="true" />
-      <created>1712578506292</created>
+      <created>1714247977601</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1712578506292</updated>
+      <updated>1714247977601</updated>
     </task>
-    <task id="LOCAL-00023" summary="testing part 1">
+    <task id="LOCAL-00023" summary="test one api 3">
       <option name="closed" value="true" />
-      <created>1712893997289</created>
+      <created>1714252121857</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1712893997290</updated>
+      <updated>1714252121857</updated>
     </task>
-    <task id="LOCAL-00024" summary="design mobile version for profile">
+    <task id="LOCAL-00024" summary="main page design">
       <option name="closed" value="true" />
-      <created>1712900431922</created>
+      <created>1714261248688</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1712900431922</updated>
+      <updated>1714261248688</updated>
     </task>
-    <task id="LOCAL-00025" summary="design mobile version for footer">
+    <task id="LOCAL-00025" summary="last design details">
       <option name="closed" value="true" />
-      <created>1712903920784</created>
+      <created>1714262555586</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1712903920784</updated>
+      <updated>1714262555586</updated>
     </task>
-    <task id="LOCAL-00026" summary="design works in profile">
+    <task id="LOCAL-00026" summary="last design details 2">
       <option name="closed" value="true" />
-      <created>1712905322600</created>
+      <created>1714263909625</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1712905322600</updated>
+      <updated>1714263909625</updated>
     </task>
-    <task id="LOCAL-00027" summary="fix design about artist">
+    <task id="LOCAL-00027" summary="commit css">
       <option name="closed" value="true" />
-      <created>1712905576694</created>
+      <created>1714293991569</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1712905576694</updated>
+      <updated>1714293991569</updated>
     </task>
-    <task id="LOCAL-00028" summary="fix design works profile">
+    <task id="LOCAL-00028" summary="created all stores and connected with components">
       <option name="closed" value="true" />
-      <created>1712906013408</created>
+      <created>1714410775801</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1712906013408</updated>
+      <updated>1714410775801</updated>
     </task>
-    <task id="LOCAL-00029" summary="design for artist posts">
+    <task id="LOCAL-00029" summary="added 2 files to last commit">
       <option name="closed" value="true" />
-      <created>1712907750326</created>
+      <created>1714410803589</created>
       <option name="number" value="00029" />
       <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1712907750326</updated>
+      <updated>1714410803589</updated>
     </task>
-    <task id="LOCAL-00030" summary="design for filters">
-      <option name="closed" value="true" />
-      <created>1713271743845</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1713271743845</updated>
-    </task>
-    <task id="LOCAL-00031" summary="buttons for artist actions in profile">
-      <option name="closed" value="true" />
-      <created>1713272556862</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1713272556862</updated>
-    </task>
-    <task id="LOCAL-00032" summary="sorted header profile out by elements">
-      <option name="closed" value="true" />
-      <created>1713273754538</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1713273754538</updated>
-    </task>
-    <task id="LOCAL-00033" summary="sorted header profile out by elements 2">
-      <option name="closed" value="true" />
-      <created>1713273989235</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1713273989235</updated>
-    </task>
-    <task id="LOCAL-00034" summary="design for create post page">
-      <option name="closed" value="true" />
-      <created>1713285292226</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1713285292226</updated>
-    </task>
-    <task id="LOCAL-00035" summary="changed state for open create page (false)">
-      <option name="closed" value="true" />
-      <created>1713285338469</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1713285338469</updated>
-    </task>
-    <task id="LOCAL-00036" summary="design for opened post photo">
-      <option name="closed" value="true" />
-      <created>1713286310553</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1713286310553</updated>
-    </task>
-    <task id="LOCAL-00037" summary="change state filter opened on false">
-      <option name="closed" value="true" />
-      <created>1713286367021</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1713286367021</updated>
-    </task>
-    <task id="LOCAL-00038" summary="create one art page and make routes">
-      <option name="closed" value="true" />
-      <created>1713364206191</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1713364206191</updated>
-    </task>
-    <task id="LOCAL-00039" summary="design for one art page">
-      <option name="closed" value="true" />
-      <created>1713369998047</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1713369998047</updated>
-    </task>
-    <task id="LOCAL-00040" summary="design for one art page 2">
-      <option name="closed" value="true" />
-      <created>1713371122005</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1713371122005</updated>
-    </task>
-    <task id="LOCAL-00041" summary="design for settings (+ mobile)">
-      <option name="closed" value="true" />
-      <created>1713384635869</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1713384635869</updated>
-    </task>
-    <task id="LOCAL-00042" summary="design for header profile">
-      <option name="closed" value="true" />
-      <created>1713386138180</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1713386138180</updated>
-    </task>
-    <task id="LOCAL-00043" summary="create cart page and design">
-      <option name="closed" value="true" />
-      <created>1713421182830</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1713421182830</updated>
-    </task>
-    <task id="LOCAL-00044" summary="change subscriber word on support">
-      <option name="closed" value="true" />
-      <created>1713421434075</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1713421434075</updated>
-    </task>
-    <task id="LOCAL-00045" summary="hide scroll">
-      <option name="closed" value="true" />
-      <created>1713421603939</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1713421603939</updated>
-    </task>
-    <task id="LOCAL-00046" summary="design for main page (v1)">
-      <option name="closed" value="true" />
-      <created>1713472595037</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1713472595037</updated>
-    </task>
-    <task id="LOCAL-00047" summary="testing">
-      <option name="closed" value="true" />
-      <created>1713730990084</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1713730990084</updated>
-    </task>
-    <option name="localTasksCounter" value="48" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +490,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develop" />
+                        <option value="feature_store_thunk" />
                       </list>
                     </value>
                   </entry>
@@ -528,31 +503,42 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testing part 1" />
-    <MESSAGE value="design mobile version for profile" />
-    <MESSAGE value="design mobile version for footer" />
-    <MESSAGE value="design works in profile" />
-    <MESSAGE value="fix design about artist" />
-    <MESSAGE value="fix design works profile" />
-    <MESSAGE value="design for artist posts" />
-    <MESSAGE value="design for filters" />
-    <MESSAGE value="buttons for artist actions in profile" />
-    <MESSAGE value="sorted header profile out by elements" />
-    <MESSAGE value="sorted header profile out by elements 2" />
-    <MESSAGE value="design for create post page" />
-    <MESSAGE value="changed state for open create page (false)" />
-    <MESSAGE value="design for opened post photo" />
-    <MESSAGE value="change state filter opened on false" />
-    <MESSAGE value="create one art page and make routes" />
-    <MESSAGE value="design for one art page" />
-    <MESSAGE value="design for one art page 2" />
-    <MESSAGE value="design for settings (+ mobile)" />
-    <MESSAGE value="design for header profile" />
-    <MESSAGE value="create cart page and design" />
-    <MESSAGE value="change subscriber word on support" />
-    <MESSAGE value="hide scroll" />
-    <MESSAGE value="design for main page (v1)" />
+    <MESSAGE value="fixed sign in" />
+    <MESSAGE value="added to one art page edit and delete buttons" />
+    <MESSAGE value="created create art page" />
+    <MESSAGE value="create page create order and success order" />
+    <MESSAGE value="created orders pages" />
+    <MESSAGE value="redo scss files (variables)" />
+    <MESSAGE value="add oneOpenPhoto" />
+    <MESSAGE value="fixed profile navigation font size" />
+    <MESSAGE value="set default photo" />
+    <MESSAGE value="fix one open photo visibility" />
+    <MESSAGE value="created private posts components" />
+    <MESSAGE value="small changes in all" />
+    <MESSAGE value="change who buy art section size" />
+    <MESSAGE value="add input checkbox css settings" />
+    <MESSAGE value="test one api" />
+    <MESSAGE value="test one api 2" />
+    <MESSAGE value="test one api 3" />
+    <MESSAGE value="main page design" />
+    <MESSAGE value="last design details" />
+    <MESSAGE value="last design details 2" />
     <MESSAGE value="testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing" />
+    <MESSAGE value="commit css" />
+    <MESSAGE value="created all stores and connected with components" />
+    <MESSAGE value="added 2 files to last commit" />
+    <MESSAGE value="testings 2 sprint" />
+    <option name="LAST_COMMIT_MESSAGE" value="testings 2 sprint" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

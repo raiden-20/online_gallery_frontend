@@ -1,6 +1,6 @@
 import {AuthAPI} from "@/api/authAPI";
-import {signOut} from "next-auth/react";
-import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
+import {signIn, signOut} from "next-auth/react";
+import {MAIN_PATHS, PATHS_CATEGORY, ROLES} from "@/paths/main";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
@@ -10,6 +10,14 @@ export const keycloakSessionLogOut = async () => {
     } catch (error: any) {
         console.log(error)
     }
+}
+
+export const signin = () => {
+    signIn('keycloak')
+        .then(() => {
+            Cookies.set('role', ROLES.CUSTOMER)
+            Cookies.set('status', 'authenticated')
+        })
 }
 
 export const deleteCookies = () => {

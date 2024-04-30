@@ -1,19 +1,27 @@
 import settings_scss from "@/scss/components/settings/Settings.module.scss";
-import {useState} from "react";
-
-import add_icon from '@/assets/icons/settings/add.svg'
-import open_icon from '@/assets/icons/settings/open.svg'
-import close_icon from '@/assets/icons/settings/close.svg'
+import {useEffect} from "react";
 import Image from "next/image";
-import {OneAddressSettingsComponent} from "@/components/settings/categories/deliveryAddress/OneAddressSettingsComponent";
 import cancel_icon from "@/assets/icons/settings/cancel.svg";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {useRouter} from "next/navigation";
+import {OneAddressInterface} from "@/interfaces/credentials";
+import {AddAddressContainer} from "@/components/settings/categories/deliveryAddress/addAddress/AddAddressContainer";
+import {OneAddressContainer} from "@/components/settings/categories/deliveryAddress/oneAddress/OneAddressContainer";
 
 interface deliverySettingsInterface {
+    addresses: OneAddressInterface[]
+
     setWhoIsClickedMobile(num: number): void
+
+    getAddresses(router: AppRouterInstance): void
 }
 
 export const DeliveryAddressSettingsComponent = (props: deliverySettingsInterface) => {
-    const [isOpen, setIsOpen] = useState(false)
+    const router = useRouter()
+
+    useEffect(() => {
+        props.getAddresses(router)
+    }, []);
 
     return (
         <section>
@@ -23,36 +31,15 @@ export const DeliveryAddressSettingsComponent = (props: deliverySettingsInterfac
                 <div>Назад</div>
             </button>
             <ul className={settings_scss.address_root}>
-                <li className={settings_scss.grey_bgc}>
-                    <OneAddressSettingsComponent/>
-                </li>
-                <li className={settings_scss.grey_bgc}>
-                    <header className={settings_scss.address_header}>
-                        <button className={settings_scss.add_address}
-                                onClick={() => setIsOpen(!isOpen)}>
-                            <Image src={add_icon} alt={'add_icon'}/>
-                            <div>Добавить новый адрес</div>
-                        </button>
-                        <button onClick={() => setIsOpen(!isOpen)}>
-                            <Image src={isOpen ? open_icon : close_icon} className={settings_scss.icon}
-                                   alt={'open close icon'}/>
-                        </button>
-                    </header>
-                    {isOpen ?
-                        <section className={settings_scss.address_pay_main}>
-                            <input placeholder={'ФИО'}/>
-                            <section className={settings_scss.input_section}>
-                                <input placeholder={'Страна'}/>
-                                <input placeholder={'Область'}/>
-                            </section>
-                            <section className={settings_scss.input_section}>
-                                <input placeholder={'Город'}/>
-                                <input placeholder={'Индекс'}/>
-                            </section>
-                            <input placeholder={'Адрес'}/>
-                            <button className={'main_button'}>Добавить адрес</button>
-                        </section>
-                        : null}
+                {props.addresses.map((oneAddress: OneAddressInterface, index) => {
+                    return (
+                        <li className={settings_scss.grey_bgc} key={index}>
+                            <OneAddressContainer oneAddress={oneAddress}/>
+                        </li>
+                    )
+                })}
+                <li className={settings_scss.grey_bgc} key={0}>
+                    <AddAddressContainer/>
                 </li>
             </ul>
         </section>

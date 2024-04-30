@@ -1,47 +1,17 @@
-.root {
-  display: flex;
-  flex-flow: column;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import '@/scss/globals/main_values';
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   Search.module.scss 1:9  root stylesheet */
 
-.header {
-  display: grid;
-  grid-template-columns: min-content auto min-content;
-  gap: 12px;
-  align-items: center;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import '@/scss/globals/main_values';\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Search.module.scss 1:9  root stylesheet";
 }
-.header .img {
-  width: 19px;
-  height: 19px;
-}
-.header .input {
-  border: none;
-  padding: 0;
-  width: auto;
-}
-
-.nav {
-  height: min-content;
-  padding: 0;
-}
-
-.one_element {
-  cursor: pointer;
-  padding: 12px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.one_element .one_element_photo {
-  cursor: pointer;
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-.one_element .one_element_name {
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-/*# sourceMappingURL=Search.module.css.map */

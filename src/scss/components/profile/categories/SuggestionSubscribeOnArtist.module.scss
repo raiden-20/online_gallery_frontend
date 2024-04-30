@@ -1,0 +1,55 @@
+@import "@/scss/globals/main_values";
+
+$padding: 150px 0 150px 0;
+$img-size: 125px;
+
+.page {
+  display: grid;
+}
+
+.root {
+  padding: $padding;
+  max-width: $photo-section-width;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+
+  justify-items: center;
+
+  gap: $gap-xl;
+
+  img {
+    width: $img-size;
+  }
+}
+
+.main {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: $gap-s;
+
+  p {
+    text-align: center;
+  }
+
+  button {
+    width: max-content;
+  }
+}
+
+.modal_window_main {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xl;
+
+  .set_data {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}

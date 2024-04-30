@@ -1,7 +1,6 @@
 import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
-import {AUTH_PATHS} from "@/paths/auth";
 import {useRouter} from "next/navigation";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 interface CreateCustomerInterface {
@@ -21,12 +20,17 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
     const [message, setMessage] = useState('')
 
     useEffect(() => {
-        if (isButtonClicked && (input_name !== '' && input_date !== '' && input_gender !== '')) {
-            props.createCustomerProfile(input_name, input_date, input_gender, setMessage, router)
+        if (input_name !== '') {
+            if (input_date !== '') {
+                props.createCustomerProfile(input_name, input_date, input_gender, setMessage, router)
 
-            router.push(AUTH_PATHS.CREATE_ARTIST)
-            setIsButtonClicked(false)
+            } else {
+                setMessage('Введите дату рождения')
+            }
+        } else {
+            setMessage('Введите имя')
         }
+        setIsButtonClicked(false)
     }, [isButtonClicked]);
 
 
@@ -54,7 +58,7 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
                     onClick={() => setIsButtonClicked(true)}>
                 Зарегистрироваться
             </button>
-            <p className={auth_main_scss.message}>{message}</p>
+            <p className={'message'}>{message}</p>
         </main>
     )
 }

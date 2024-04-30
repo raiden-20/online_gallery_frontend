@@ -5,37 +5,12 @@ $cover-height: 250px;
 
 $change-cover-top: 25px;
 $change-cover-gap: 20px;
-$change-cover-padding-right: 24px;
-
-$change-avatar-top: -25px;
-
-$data-gap: 12px;
-
-$avatar-radius: 15px;
-$avatar-size: 200px;
+$change-avatar-top: -10px;
 $avatar-top: -110px;
-
-$subscriber-section-gap: 15px;
-
 $button-bell-width: 43px;
-
-$bell-width: 23px;
-$bell-height: 25px;
-$bell-width-mobile: 19px;
-$bell-height-mobile: 20px;
-
-$change-window-padding: 32px;
 $change-window-bottom: 30px;
-$change-window-gap: 32px;
-$change-window-text-gap: 4px;
-$change-window-buttons-gap: 16px;
-$change-window-radius: 12px;
-$change-window-shadow: 0 0 10px 0 $shadow-color;
-
 $change-cover-img-width: 200px;
 $delete-img-width: 34px;
-
-$artist-action-section-gap: 15px;
 
 
 .page {
@@ -69,7 +44,7 @@ $artist-action-section-gap: 15px;
     }
 
     .change_cover {
-      padding-right: $change-cover-padding-right;
+      padding-right: $padding-24;
 
       position: absolute;
       top: $change-cover-top;
@@ -88,7 +63,7 @@ $artist-action-section-gap: 15px;
 
   .profile_data {
     display: grid;
-    gap: $data-gap;
+    gap: $gap-xs;
 
     justify-self: center;
     justify-items: center;
@@ -98,7 +73,7 @@ $artist-action-section-gap: 15px;
 
       position: relative;
 
-      height: $avatar-size - 94px;
+      height: $img-size-big - 94px;
 
       z-index: $z-index-middle;
 
@@ -106,18 +81,18 @@ $artist-action-section-gap: 15px;
         position: relative;
         top: $avatar-top;
 
-        width: $avatar-size;
-        height: $avatar-size;
+        width: $img-size-big;
+        height: $img-size-big;
 
         border: $border-white;
-        border-radius: $avatar-radius;
+        border-radius: $radius-big;
 
         img {
           width: 100%;
           height: 100%;
 
           object-fit: cover;
-          border-radius: $avatar-radius;
+          border-radius: $radius-big;
         }
       }
 
@@ -149,8 +124,8 @@ $artist-action-section-gap: 15px;
       word-break: break-all;
 
       .name {
-        font-size: $profile-name-size;
-        font-weight: $profile-name-weight;
+        font-size: $font-size-xxl;
+        font-weight: $weight;
       }
 
       .name_mobile {
@@ -163,14 +138,15 @@ $artist-action-section-gap: 15px;
 }
 
 .subscriber_section {
-  height: max-content;
+  height: min-content;
+  width: max-content;
   display: flex;
-  gap: $subscriber-section-gap;
+  gap: $gap-s;
 
   align-items: center;
 
   img {
-    width: $button-bell-width;
+    width: min-content;
 
     display: grid;
     justify-self: center;
@@ -178,14 +154,14 @@ $artist-action-section-gap: 15px;
 
     .bell_image {
       width: $bell-width;
-      height: $bell-height;
+      height: $icon-height;
     }
   }
 }
 
 .artist_action_section {
   display: flex;
-  gap: $artist-action-section-gap;
+  gap: $gap-s;
 }
 
 .change_data_window {
@@ -198,25 +174,25 @@ $artist-action-section-gap: 15px;
 
   z-index: $z-index-up;
 
-  padding: $change-window-padding;
+  padding: $gap-xl;
 
   justify-items: center;
-  row-gap: $change-window-gap;
+  row-gap: $gap-xl;
 
   background-color: $white-color;
-  box-shadow: $change-window-shadow;
+  box-shadow: $shadow;
 
-  border-radius: $change-window-radius;
+  border-radius: $radius-m;
 
   .change_data_window_data {
     display: flex;
     align-items: center;
-    gap: $change-window-text-gap;
+    gap: $gap-xxxxxs;
   }
 
   .change_data_window_buttons {
     display: flex;
-    gap: $change-window-buttons-gap;
+    gap: $gap-s;
   }
 }
 
@@ -271,7 +247,7 @@ $artist-action-section-gap: 15px;
     .profile_data {
       .name_section {
         .name {
-          font-size: $profile-name-size-mobile;
+          font-size: $font-size-l;
         }
       }
     }

@@ -19,10 +19,11 @@ export const ProfileAPI = {
         }
     },
 
-    async ArtistDataAPI(id: string) {
+    async ArtistDataAPI(artistId: string, currentId: string) {
         try {
+            const id = currentId === undefined ? null : currentId
             const response = await instanceWithoutToken.get(
-                PathsAPI.ARTIST + '/' + id,
+                PathsAPI.ARTIST + `/artistId=${artistId}&currentId=${id}`,
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -34,7 +35,7 @@ export const ProfileAPI = {
     async IsCustomerAPI() {
         try {
             const response = await instance.get(
-                PathsAPI.CUSTOMER + '/' + Cookies.get('customerId') as string + '/first-entry',
+                PathsAPI.CUSTOMER + '/first-entry',
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -46,18 +47,15 @@ export const ProfileAPI = {
     async ChangeCustomerDataAPI(customerName: string, birthDate: string, gender: string, description: string,
                                 avatarUrl: string, coverUrl: string, avatar: File | string, cover: File | string) {
         const formData = new FormData()
-        const id = Cookies.get('customerId') as string
 
-        formData.append('customerId', id)
         formData.append('customerName', customerName)
         formData.append('birthDate', birthDate)
         formData.append('gender', gender)
-        formData.append('description', description)
+        formData.append('description', description === '' ? ' ' : description)
         formData.append('avatarUrl', avatarUrl)
         formData.append('coverUrl', coverUrl)
-        formData.append('avatar', avatar === ' ' ? new File([], 'empty.txt', { type: 'text/plain' }) : avatar)
-        formData.append('cover', cover === ' ' ? new File([], 'empty.txt', { type: 'text/plain' }) : cover)
-
+        formData.append('avatar', avatar === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : avatar)
+        formData.append('cover', cover === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : cover)
         try {
             const response = await instanceFile.put(
                 PathsAPI.CUSTOMER + PathsAPI.DATA,
@@ -71,16 +69,15 @@ export const ProfileAPI = {
     },
 
     async ChangeArtistDataAPI(artistName: string, avatarUrl: string, coverUrl: string,
-                              avatar: File | string, cover: File | string ,description: string) {
+                              avatar: File | string, cover: File | string, description: string) {
         const formData = new FormData()
 
-        formData.append('artistId', Cookies.get('artistId') as string)
         formData.append('artistName', artistName)
         formData.append('avatarUrl', avatarUrl)
         formData.append('coverUrl', coverUrl)
         formData.append('description', description)
-        formData.append('avatar', avatar === ' ' ? new File([], 'empty.txt', { type: 'text/plain' }) : avatar)
-        formData.append('cover', cover === ' ' ? new File([], 'empty.txt', { type: 'text/plain' }) : cover)
+        formData.append('avatar', avatar === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : avatar)
+        formData.append('cover', cover === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : cover)
         try {
             const response = await instanceFile.put(
                 PathsAPI.ARTIST + PathsAPI.DATA,
@@ -98,7 +95,6 @@ export const ProfileAPI = {
             const response = await instance.post(
                 PathsAPI.ARTIST + PathsAPI.CREATE,
                 {
-                    customerId: Cookies.get('customerId') as string,
                     artistName
                 }
             );
@@ -114,7 +110,6 @@ export const ProfileAPI = {
             const response = await instance.post(
                 PathsAPI.CUSTOMER + PathsAPI.CREATE,
                 {
-                    customerId: Cookies.get('customerId') as string,
                     customerName,
                     birthDate,
                     gender
@@ -125,6 +120,5 @@ export const ProfileAPI = {
             console.error(error)
             return [error.response.status, error.response.data];
         }
-    }
-
+    },
 }

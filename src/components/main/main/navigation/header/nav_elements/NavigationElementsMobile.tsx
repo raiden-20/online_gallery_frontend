@@ -15,7 +15,7 @@ export const NavigationElementsMobile = (props: {setIsMenuClicked(isMenuClicked:
                        width={0} height={0} className={navigation_scss.img}/>
             </button>
             <ul className={navigation_scss.menu_full}>
-                <li className={navigation_scss.visible_various}>
+                <li className={navigation_scss.visible_various} key={0}>
                     <button onClick={() => router.push(MAIN_PATHS.ARTISTS)}>
                         Художники
                     </button>
@@ -25,22 +25,22 @@ export const NavigationElementsMobile = (props: {setIsMenuClicked(isMenuClicked:
                         Картины
                     </button>
                 </li>
-                <li className={navigation_scss.visible_various}>
+                <li className={navigation_scss.visible_various} key={1}>
                     <button onClick={() => router.push(MAIN_PATHS.PHOTO)}>
                         Фотографии
                     </button>
                 </li>
-                <li className={navigation_scss.visible_various}>
+                <li className={navigation_scss.visible_various} key={2}>
                     <button onClick={() => router.push(MAIN_PATHS.SCULPTURES)}>
                         Скульптуры
                     </button>
                 </li>
-                <li className={navigation_scss.visible_various}>
+                <li className={navigation_scss.visible_various} key={3}>
                     <button>
                         Аукционы
                     </button>
                 </li>
-                <li className={navigation_scss.visible_various}>
+                <li className={navigation_scss.visible_various} key={4}>
                     <button>
                         События
                     </button>

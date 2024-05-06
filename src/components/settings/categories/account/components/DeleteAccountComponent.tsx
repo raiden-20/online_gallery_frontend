@@ -4,6 +4,7 @@ import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-
 import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import {Customer} from "@/interfaces/customerInterface";
 import {useRouter} from "next/navigation";
+import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface deleteAccountInterface {
     customer_data: Customer,
@@ -35,6 +36,7 @@ export const DeleteAccountComponent = (props: deleteAccountInterface) => {
         <section className={'page_modal_window'}>
             <section className={'bg2'} onClick={() => props.setIsDeleteClicked(false)}></section>
             <main className={'modal_window'}>
+                <Cancel_ButtonComponent setCancel={props.setIsDeleteClicked} whatSet={false}/>
                 <section className={delete_account_scss.root}>
                     <header className={delete_account_scss.header}>
                         Удалить аккаунт?
@@ -42,7 +44,7 @@ export const DeleteAccountComponent = (props: deleteAccountInterface) => {
                     <p>Вся информация о Вашем аккаунте будет удалена. После удаления аккаунта Вы не сможете его
                         восстановить. При наличии аккаунта художника он тоже будет удален. Хотите продолжить?</p>
                     <p className={delete_account_scss.main_p}>Для продолжения введите Ваше имя покупателя:</p>
-                    <input placeholder={'Имя покупателя'} value={input_name}
+                    <input placeholder={'Имя покупателя'} value={input_name} className={delete_account_scss.input}
                            onChange={(event) => setInput_name(event.target.value)}/>
                     {message !== '' ?
                         <p className={'message'}>{message}</p>

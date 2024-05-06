@@ -67,9 +67,9 @@
 
   .data {
     height: min-content;
+    width: 100%;
     display: grid;
     grid-template-columns: auto max-content;
-    align-self: center;
 
     .section_name {
       display: grid;
@@ -85,5 +85,18 @@
       font-size: $font-size-l;
     }
   }
+}
 
+@media screen and (orientation: portrait) {
+  .order_data {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+
+  .data_address {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
 }

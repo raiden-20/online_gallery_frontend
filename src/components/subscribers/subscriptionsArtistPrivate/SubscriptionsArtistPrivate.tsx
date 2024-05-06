@@ -6,6 +6,7 @@ import {useRouter} from "next/navigation";
 import {OneSubscription} from "@/components/subscribers/subscriptionsArtistPrivate/OneSubscription";
 
 interface subscriptionsInterface {
+    input: string
     subscriptionsArtistsPrivate: SubscriptionsArtistsPrivate[]
     PrivateSubscriptionsArtists(router: AppRouterInstance): void,
 }
@@ -15,8 +16,11 @@ export const SubscriptionsArtistPrivate = (props: subscriptionsInterface) => {
     const router = useRouter()
 
     useEffect(() => {
-        props.PrivateSubscriptionsArtists(router)
-    }, []);
+        if (props.input === '') {
+            props.PrivateSubscriptionsArtists(router)
+        }
+
+    }, [props.input]);
 
     return (
         <main>

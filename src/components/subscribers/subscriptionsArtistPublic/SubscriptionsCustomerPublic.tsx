@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
 
 interface subscriptionsInterface {
-
+    input: string
     subscriptions: SubscriptionsCustomers[]
     PublicSubscriptions(router: AppRouterInstance): void,
 }
@@ -15,9 +15,14 @@ interface subscriptionsInterface {
 export const SubscriptionsCustomerPublic = (props: subscriptionsInterface) => {
     const router = useRouter()
     const [role] = useState(Cookies.get('role') as string)
+
     useEffect(() => {
-        props.PublicSubscriptions(router)
-    }, []);
+        if (props.input === '') {
+            props.PublicSubscriptions(router)
+        }
+
+    }, [props.input]);
+
     return (
         <ul className={subscriptions_scss.subscription_public_section}>
             {props.subscriptions.map((one: SubscriptionsCustomers, index) => {

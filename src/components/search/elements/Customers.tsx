@@ -42,6 +42,9 @@ export const Customers = (props: CustomersInterface) => {
                         router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + oneElement.customerId)
                         Cookies.set("currentRole", ROLES.CUSTOMER)
                         Cookies.set("currentId", oneElement.customerId)
+                        if (Cookies.get('customerId') === oneElement.customerId) {
+                            Cookies.set("role", ROLES.CUSTOMER)
+                        }
                     }}>
                         <img src={oneElement.avatarUrl === '' ? '/default_avatar_profile.svg' : oneElement.avatarUrl} className={search_scss.one_element_photo}
                              alt={'avatar'} crossOrigin="anonymous"/>

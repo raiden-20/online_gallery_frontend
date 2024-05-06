@@ -57,7 +57,6 @@ export const ArtsAPI = {
                      tags: string[], materials: string[], isPrivate: boolean, frame: boolean) {
         try {
             const formData = new FormData()
-
             const dto_object = new Blob([JSON.stringify({
                 artId,
                 name,
@@ -83,7 +82,7 @@ export const ArtsAPI = {
             })
 
             if (newPhotos.length  === 0) {
-                formData.append("newPhotos", '')
+                formData.append("newPhotos", new File([], 'empty.txt', {type: 'text/plain'}))
             }
 
             const response = await instanceFile.put(

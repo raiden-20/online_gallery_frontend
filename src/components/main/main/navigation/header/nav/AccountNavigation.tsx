@@ -56,7 +56,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                  crossOrigin="anonymous"
                                  alt={'avatar'}/>
                             <section className={accountNavigation_scss.name_section}>
-                                <div className={accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
+                                <div className={'p ' + accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
                                 <button className={accountNavigation_scss.button}>
                                     Покупатель
                                 </button>
@@ -78,7 +78,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                  crossOrigin="anonymous"
                                  alt={'avatar'}/>
                             <section className={accountNavigation_scss.name_section}>
-                                <div className={accountNavigation_scss.name}>{props.my_artist_data.artistName}</div>
+                                <div className={'p ' + accountNavigation_scss.name}>{props.my_artist_data.artistName}</div>
                                 <button className={accountNavigation_scss.button}>
                                     Художник
                                 </button>
@@ -97,7 +97,13 @@ export const AccountNavigation = (props: accountNavInterface) => {
                     }
                     <li key={3}>
                         <button className={accountNavigation_scss.button}
-                                onClick={() => router.push(MAIN_PATHS.CART)}>
+                                onClick={() => {
+                                    router.push(MAIN_PATHS.CART)
+                                    Cookies.set('role', ROLES.CUSTOMER)
+                                    Cookies.set('currentRole', ROLES.CUSTOMER)
+                                    Cookies.set('currentId', Cookies.get('customerId') as string)
+                                }
+                                }>
                             Корзина
                         </button>
                     </li>
@@ -120,7 +126,12 @@ export const AccountNavigation = (props: accountNavInterface) => {
                     </li>
                     <li key={7}>
                         <button className={accountNavigation_scss.button}
-                                onClick={() => router.push(MAIN_PATHS.SETTINGS)}>
+                                onClick={() => {
+                                    router.push(MAIN_PATHS.SETTINGS)
+                                    Cookies.set('role', ROLES.CUSTOMER)
+                                    Cookies.set('currentRole', ROLES.CUSTOMER)
+                                    Cookies.set('currentId', Cookies.get('customerId') as string)
+                                }}>
                             Настройки
                         </button>
                     </li>

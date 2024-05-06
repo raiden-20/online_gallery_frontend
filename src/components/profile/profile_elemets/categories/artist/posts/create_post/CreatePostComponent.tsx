@@ -34,16 +34,18 @@ export const CreatePostComponent = (props: createPostProfile) => {
                     {Object.keys(props.photoArraySrc).length > 0 ?
                         <ul className={create_post_scss.photo_section}>
                             {Object.keys(props.photoArraySrc).map((key: string, index) => {
-                                return (
-                                    <li className={create_post_scss.onePhoto_section} key={index}>
-                                        <button className={create_post_scss.delete_button}
-                                                onClick={() => props.deleteInputPhoto(key, index)}>
-                                            <Image src={delete_photo_icon} alt={'delete_photo_icon'}/>
-                                        </button>
-                                        <img src={props.photoArraySrc[key]} className={create_post_scss.onePhoto}
-                                               alt={'photo'} crossOrigin={'anonymous'}/>
-                                    </li>
-                                )
+                                if (props.photoArraySrc[key] !== 'http://localhost:9000/picture/empty.txt') {
+                                    return (
+                                        <li className={create_post_scss.onePhoto_section} key={index}>
+                                            <button className={create_post_scss.delete_button}
+                                                    onClick={() => props.deleteInputPhoto(key, index)}>
+                                                <Image src={delete_photo_icon} alt={'delete_photo_icon'}/>
+                                            </button>
+                                            <img src={props.photoArraySrc[key]} className={create_post_scss.onePhoto}
+                                                 alt={'photo'} crossOrigin={'anonymous'}/>
+                                        </li>
+                                    )
+                                }
                             })}
                         </ul>
                         : null}

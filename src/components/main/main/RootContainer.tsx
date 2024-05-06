@@ -8,15 +8,15 @@ import {Customer} from "@/interfaces/customerInterface";
 
 interface containerState {
     profile: {
-        artist_data: Artist
-        customer_data: Customer
+        my_customer_data: Customer,
+        my_artist_data: Artist
     }
 }
 
 const mapStateToProps = (state: containerState) => {
     return {
-        artist_data: state.profile.artist_data,
-        customer_data: state.profile.customer_data
+        artist_data: state.profile.my_artist_data,
+        customer_data: state.profile.my_customer_data
     }
 }
 

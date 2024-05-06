@@ -5,7 +5,6 @@ import React from "react";
 import {UserShort} from "@/interfaces/artistInterface";
 import {useRouter} from "next/navigation";
 import {PhotoSection} from "@/components/categories/artists/oneArtist/PhotoSection";
-import {NULL} from "@/paths/elements";
 
 interface OneArtistsInterface {
     oneArtist: UserShort,
@@ -21,6 +20,9 @@ export const OneArtist = (props: OneArtistsInterface) => {
                 <section className={artists_scss.one_user_avatar}
                          onClick={() => {
                              Cookies.set('currentRole', ROLES.ARTIST)
+                             if (Cookies.get('artistId') === props.oneArtist.artistId) {
+                                 Cookies.set('role', ROLES.ARTIST)
+                             }
                              Cookies.set('currentId', props.oneArtist.artistId)
                              router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + props.oneArtist.artistId)
                          }
@@ -33,10 +35,10 @@ export const OneArtist = (props: OneArtistsInterface) => {
                              alt={'default_ava'}/>
                     }
                 </section>
-                <div className={artists_scss.one_user_name}>{props.oneArtist.artistName}</div>
+                <div className={'p ' + artists_scss.one_user_name}>{props.oneArtist.artistName}</div>
             </section>
-            {props.oneArtist.photos !== undefined ?
-                <PhotoSection photos={props.oneArtist.photos}/>
+            {props.oneArtist.arts !== undefined ?
+                <PhotoSection photos={props.oneArtist.arts}/>
                 : null
             }
         </li>

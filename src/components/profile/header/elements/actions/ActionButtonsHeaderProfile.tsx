@@ -17,6 +17,7 @@ import {
 import {useSession} from "next-auth/react";
 
 interface actionButtonsInterface {
+    countSubscribers: string
     isEditMobile: boolean
 
     isPublicSubscribe: boolean
@@ -39,17 +40,14 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
     const [role] = useState(Cookies.get('role') as string)
     const {  data: session, status } = useSession();
 
-
-
-
     const [isCreatePost, setIsCreatePost] = useState(false)
     const [Subscribe, setSubscribe] = useState(false)
-
     return (
         <section>
             {(artistId !== currentId) && role !== ROLES.ARTIST && currentRole === ROLES.ARTIST ?
                 <section className={header_profile_scss.subscriber_section}>
-                    {!props.isPrivateSubscribe ?
+                    {props.isPrivateSubscribe !== null && status === 'authenticated' ?
+                        !props.isPrivateSubscribe && props.countSubscribers !== null ?
                         <button className={'main_button'}
                                 onClick={() => {
                                     if (status === 'authenticated') {
@@ -70,12 +68,16 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                                     }
                                 }}>
                             Отменить поддержку
-                        </button>
+                        </button> : null
                     }
                     {!props.isPublicSubscribe ?
                         <button className={header_profile_scss.button_bell}
                                 onClick={() => {
-                                    props.PublicAction(currentId, router)
+                                    if (status === 'authenticated') {
+                                        props.PublicAction(currentId, router)
+                                    } else {
+                                        signin()
+                                    }
                                 }}>
                             <Image src={bell_icon} className={header_profile_scss.bell_image}
                                    alt={'bell_icon'} width={0} height={0}/>

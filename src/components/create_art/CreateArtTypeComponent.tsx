@@ -9,11 +9,13 @@ import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
 import Cookies from "js-cookie";
+import {containsOnlyDigits, removeSpaces} from "../../../utils/tests";
 
 interface createArtInterface {
     CreateArt(name: string, type: string, photos: File[], price: string,
               createDate: string, description: string, size: string,
-              tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance): void
+              tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance,
+              setMessage : (message: string) => void): void
 }
 
 export const CreateArtTypeComponent = (props: createArtInterface) => {
@@ -36,6 +38,7 @@ export const CreateArtTypeComponent = (props: createArtInterface) => {
     const [isPrivate, setIsPrivate] = useState(false)
     const [isFrame, setIsFrame] = useState(false)
     const [, setIsChangeMainPhoto] = useState(false)
+    const [message, setMessage] = useState('')
 
     const [createArt, setCreateArt] = useState(false)
 
@@ -50,10 +53,11 @@ export const CreateArtTypeComponent = (props: createArtInterface) => {
 
     useEffect(() => {
         if (createArt) {
-            if (Number.parseInt(input_createDate) > 0 && Number.parseInt(input_createDate) <= 2024) {
+            if (Number.parseInt(input_createDate) > 999 && Number.parseInt(input_createDate) <= 2024
+            && containsOnlyDigits(input_height) && containsOnlyDigits(input_width)) {
                 const size = input_height + 'x' + input_width
-                props.CreateArt(input_name, input_type, photoArrayFile, input_price, input_createDate + '-01-01', input_description, size, tags,
-                    materials, isPrivate, isFrame, router)
+                props.CreateArt(input_name, input_type, photoArrayFile, removeSpaces(input_price.toString()), removeSpaces(input_createDate.toString()) + '-01-01', input_description, size, tags,
+                    materials, isPrivate, isFrame, router, setMessage)
                 setCreateArt(false)
             }
         }
@@ -81,7 +85,7 @@ export const CreateArtTypeComponent = (props: createArtInterface) => {
                                                  setInput_width={setInput_width} setTags={setTags} setMaterials={setMaterials}
                                                  setIsPrivate={setIsPrivate} setIsFrame={setIsFrame} setCreateArt={setCreateArt}
                                                  setDeletePhotoUrls={setDeletePhotoUrls} deletePhotoUrls={deletePhotoUrls} photoUrls={[]}
-                                                 setIsChangeMainPhoto={setIsChangeMainPhoto}/>
+                                                 setIsChangeMainPhoto={setIsChangeMainPhoto} message={message}/>
                  :
             null}
         </section>

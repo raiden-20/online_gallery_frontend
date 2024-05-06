@@ -6,12 +6,13 @@ $who-buy-img-size: 35px;
 
 $star-width: 197px;
 
-$blur: 10px;
+$blur: 30px;
 
 .root {
   width: 100%;
 
   display: flex;
+  flex-flow: column;
   flex-wrap: wrap;
 
   column-gap: $gap-s;
@@ -21,6 +22,12 @@ $blur: 10px;
 .img_section {
   position: relative;
   display: grid;
+}
+
+.img_border {
+  display: grid;
+  overflow: hidden;
+  border-radius: $radius-xm;
 }
 
 .one_work {
@@ -56,6 +63,20 @@ $blur: 10px;
   }
 
   .one_work_weight {
+    font-weight: $weight;
+  }
+}
+
+.zamok {
+  position: absolute;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  justify-items: center;
+  row-gap: $gap-l1;
+
+  div {
+    color: $white-color;
     font-weight: $weight;
   }
 }

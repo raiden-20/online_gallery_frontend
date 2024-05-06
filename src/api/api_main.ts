@@ -1,5 +1,4 @@
 import axios from "axios";
-import {decrypt} from "../../utils/encryption";
 
 export const PathsAPI = {
     BASE: 'http://localhost:8080',

@@ -33,7 +33,6 @@ export const OneCartComponent = (props: oneCartInterface) => {
 
     useEffect(() => {
         const artData = props.artId
-        debugger
         if (isSelected) {
             // @ts-ignore
             artData[props.oneArt.artId] = isAnonymous

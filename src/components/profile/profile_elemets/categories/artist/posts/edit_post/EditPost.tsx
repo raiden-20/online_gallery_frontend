@@ -81,7 +81,7 @@ export const EditPost = (props: EditPostInterface) => {
         Object.values(props.onePost.photoUrls).forEach((value: string) => {
             if (value === photoArraySrc[key]) {
                 const newDeleteUrls = deletePhotoUrls
-                newDeleteUrls.push(key.toString())
+                newDeleteUrls.push(value)
                 setDeletePhotoUrls(newDeleteUrls)
             }
         })

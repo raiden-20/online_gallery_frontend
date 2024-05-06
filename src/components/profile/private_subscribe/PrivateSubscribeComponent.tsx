@@ -9,7 +9,6 @@ import edit_icon from "@/assets/icons/create_order/edit.svg";
 import settings_scss from "@/scss/components/settings/Settings.module.scss";
 import {CardEditContainer} from "@/components/create_order/edit/cart/CardEditContainer";
 import {OneCardInterface} from "@/interfaces/credentials";
-import {getCards} from "@/store/thunks/credentialsThunk";
 import mark_icon from "@/assets/icons/settings/mark.svg";
 
 interface privateSubscribeInterface {
@@ -35,6 +34,8 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
     const [isSubscribe, setIsSubscribe] = useState(false)
     const [isCardEdit, setIsCardEdit] = useState(false)
 
+    const [message, setMessage] = useState('')
+
     useEffect(() => {
         if (isSubscribe) {
             let cardId= ''
@@ -43,7 +44,17 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
                     cardId = oneCard.cardId
                 }
             })
-            props.PrivateSubscribe(Cookies.get('currentId') as string, cardId, router, props.setSubscribe)
+            if (cardId !== '') {
+                if (input_price >= props.price) {
+                    props.PrivateSubscribe(Cookies.get('currentId') as string, cardId, router, props.setSubscribe)
+                } else {
+                    setMessage('Минимальная сумма поддержки ' + props.price + ' ₽ в месяц')
+                }
+
+            } else {
+                setMessage('Выберите карту или создайте')
+            }
+
         }
     }, [isSubscribe]);
 
@@ -91,6 +102,7 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
                             }
                         })}
                     </section>
+                    <p className={'message'}>{message}</p>
                     <footer className={delete_account_scss.footer_buttons}>
                         <button className={'cancel_button'} onClick={() => props.setSubscribe(false)}>
                             Отменить
@@ -102,7 +114,7 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
                 </section>
             </main>
             {isCardEdit ?
-                <CardEditContainer setIsCardEdit={setIsCardEdit}/>
+                <CardEditContainer setIsCardEdit={setIsCardEdit} cards={props.cards}/>
                 : null}
         </section>
     )

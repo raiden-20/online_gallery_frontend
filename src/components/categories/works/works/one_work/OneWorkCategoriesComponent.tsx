@@ -26,9 +26,11 @@ export const OneWorkCategoriesComponent = (props: oneWorkInterface) => {
         <section className={works_profile_scss.one_work}
                  onClick={toOneArt}>
             <section className={works_profile_scss.img_section}>
-                <img src={props.oneArt.photoUrl} className={works_profile_scss.one_work_img}
-                     alt={'one work'}
-                     crossOrigin="anonymous"/>
+                <section className={works_profile_scss.img_border}>
+                    <img src={props.oneArt.photoUrl} className={works_profile_scss.one_work_img}
+                         alt={'one work'}
+                         crossOrigin="anonymous"/>
+                </section>
                 {props.oneArt.customerId !== null ?
                     <section className={works_profile_scss.who_buy_section}
                              onMouseEnter={() => setIsHoverWhoBuy(true)}
@@ -57,8 +59,8 @@ export const OneWorkCategoriesComponent = (props: oneWorkInterface) => {
                 }
             </section>
             <section className={works_profile_scss.one_work_names}>
-                <div className={works_profile_scss.one_work_weight}>{props.oneArt.artistName}</div>
-                <div>{props.oneArt.name}</div>
+                <div className={'p ' + works_profile_scss.one_work_weight}>{props.oneArt.artistName}</div>
+                <div className={'p'}>{props.oneArt.name}</div>
             </section>
             <div className={works_profile_scss.one_work_weight}>{props.oneArt.price} ₽</div>
         </section>

@@ -51,7 +51,7 @@ export const Search = (props: SearchInterface) => {
                     })}
                 </ul>
             </nav>
-            <main>
+            <main className={search_scss.main}>
                 {whoIsClicked === 1 ? <Artists search={props.search}
                                                input_name={input_name}
                                                getAllArtists={props.getAllArtists}

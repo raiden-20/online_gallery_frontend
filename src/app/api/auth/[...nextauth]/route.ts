@@ -1,7 +1,7 @@
 import NextAuth, {AuthOptions} from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
 
-import {decrypt, encrypt} from "../../../../../utils/encryption";
+import {encrypt} from "../../../../../utils/encryption";
 import {JWT} from "next-auth/jwt";
 import {jwtDecode} from "jwt-decode";
 import Cookies from "js-cookie";
@@ -85,8 +85,6 @@ export const AuthConfig: AuthOptions = {
 
             console.log('SESSION', session)
 
-            // @ts-ignore
-            Cookies.set('id', session.providerAccountId)
             return session
         }
     }

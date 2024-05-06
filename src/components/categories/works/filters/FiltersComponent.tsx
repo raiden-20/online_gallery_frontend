@@ -5,19 +5,58 @@ import Image from "next/image";
 import close_icon from '@/assets/icons/categories/close.svg'
 import {PriceFiltersComponent} from "@/components/categories/works/filters/categories/PriceFiltersComponent";
 import {SizeFiltersComponent} from "@/components/categories/works/filters/categories/SizeFiltersComponent";
-import {ArtistsFiltersComponent} from "@/components/categories/works/filters/categories/ArtistsFiltersComponent";
-import {YearFiltersComponent} from "@/components/categories/works/filters/categories/YearFiltersComponent";
-import {MaterialsFiltersComponent} from "@/components/categories/works/filters/categories/MaterialsFiltersComponent";
-import {TagsFiltersComponent} from "@/components/categories/works/filters/categories/TagsFiltersComponent";
 import {FrameFiltersComponent} from "@/components/categories/works/filters/categories/FrameFiltersComponent";
 import {StatusFilterComponent} from "@/components/categories/works/filters/categories/StatusFilterComponent";
+import {Filters} from "@/interfaces/filters";
+import {
+    ArtistsFiltersContainer
+} from "@/components/categories/works/filters/categories/artists/ArtistsFiltersContainer";
+import {YearFiltersContainer} from "@/components/categories/works/filters/categories/year/YearFiltersContainer";
+import {
+    MaterialsFiltersContainer
+} from "@/components/categories/works/filters/categories/materials/MaterialsFiltersContainer";
+import {TagsFiltersContainer} from "@/components/categories/works/filters/categories/tags/TagsFiltersContainer";
+import {useCallback} from "react";
 
 interface filtersInterface {
     setIsFiltersOpen(isFiltersOpen: boolean): void
+
+    currentFilters: Filters
+
+    setFiltersPriceStartThunk(priceStart: string): void
+
+    setFiltersPriceEndThunk(priceEnd: string): void
+
+    setFiltersSizeThunk(size: string[]): void
+
+    setFiltersArtistsThunk(artists: string[]): void
+
+    setFiltersYearThunk(year: string[]): void
+
+    setFiltersMaterialsThunk(materials: string[]): void
+
+    setFiltersTagsThunk(tags: string[]): void
+
+    setFiltersFrameThunk(frame: boolean | null): void
+
+    setFiltersStatusThunk(status: boolean | null): void
 }
 
 export const FiltersComponent = (props: filtersInterface) => {
 
+    const clearFilters = useCallback(() => {
+        props.setFiltersPriceStartThunk('')
+        props.setFiltersPriceEndThunk('')
+        props.setFiltersSizeThunk([])
+        props.setFiltersArtistsThunk([])
+        props.setFiltersYearThunk([])
+        props.setFiltersMaterialsThunk([])
+        props.setFiltersTagsThunk([])
+        props.setFiltersFrameThunk(null)
+        props.setFiltersStatusThunk(null)
+    }, [])
+
+    // todo фльтры применить
 
     return (
         <section className={filters_scss.page}>
@@ -31,32 +70,42 @@ export const FiltersComponent = (props: filtersInterface) => {
                 </header>
                 <ul className={filters_scss.main}>
                     <li key={0}>
-                        <PriceFiltersComponent/>
+                        <PriceFiltersComponent currentFilters={props.currentFilters}
+                                               setFiltersPriceStartThunk={props.setFiltersPriceStartThunk}
+                                               setFiltersPriceEndThunk={props.setFiltersPriceEndThunk}/>
                     </li>
                     <li key={1}>
-                        <SizeFiltersComponent/>
+                        <SizeFiltersComponent currentFilters={props.currentFilters}
+                                              setFiltersSizeThunk={props.setFiltersSizeThunk}/>
                     </li>
                     <li key={2}>
-                        <ArtistsFiltersComponent/>
+                        <ArtistsFiltersContainer currentFilters={props.currentFilters}
+                                                 setFiltersArtistsThunk={props.setFiltersArtistsThunk}/>
                     </li>
                     <li key={3}>
-                        <YearFiltersComponent/>
+                        <YearFiltersContainer currentFilters={props.currentFilters}
+                                              setFiltersYearThunk={props.setFiltersYearThunk}/>
                     </li>
                     <li key={4}>
-                        <MaterialsFiltersComponent/>
+                        <MaterialsFiltersContainer currentFilters={props.currentFilters}
+                                                   setFiltersMaterialsThunk={props.setFiltersMaterialsThunk}/>
                     </li>
                     <li key={5}>
-                        <TagsFiltersComponent/>
+                        <TagsFiltersContainer currentFilters={props.currentFilters}
+                                              setFiltersTagsThunk={props.setFiltersTagsThunk}/>
                     </li>
                     <li key={6}>
-                        <FrameFiltersComponent/>
+                        <FrameFiltersComponent currentFilters={props.currentFilters}
+                                               setFiltersFrameThunk={props.setFiltersFrameThunk}/>
                     </li>
                     <li key={7}>
-                        <StatusFilterComponent/>
+                        <StatusFilterComponent currentFilters={props.currentFilters}
+                                               setFiltersStatusThunk={props.setFiltersStatusThunk}/>
                     </li>
                 </ul>
                 <footer className={filters_scss.footer}>
-                    <button className={'cancel_button'}>
+                    <button className={'cancel_button'}
+                            onClick={clearFilters}>
                         Сбросить все
                     </button>
                     <button className={'main_button'}>

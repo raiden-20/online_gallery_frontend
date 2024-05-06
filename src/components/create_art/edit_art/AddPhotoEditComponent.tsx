@@ -56,7 +56,7 @@ export const AddPhotoEditComponent = (props: mainPhotoInterface) => {
         props.photoUrls.forEach((one: string) => {
             if (props.photoArraySrc[index] === one) {
                 const urls = props.deletePhotoUrls
-                urls.splice(index, 1)
+                urls.push(props.photoArraySrc[index])
                 props.setDeletePhotoUrls(urls)
             }
         })
@@ -67,7 +67,7 @@ export const AddPhotoEditComponent = (props: mainPhotoInterface) => {
     {props.photoArraySrc.length > 0 ?
         <section className={create_post_scss.photo_section}>
             {props.photoArraySrc.map((onePhoto: string, index) => {
-                    if (index !== 0) {
+                    if (index !== 0 && onePhoto !== 'http://localhost:9000/picture/empty.txt') {
                         return (
                             <section className={create_post_scss.onePhoto_section}>
                             <button className={create_post_scss.delete_button}

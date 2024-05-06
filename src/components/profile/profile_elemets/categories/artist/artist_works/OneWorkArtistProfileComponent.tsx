@@ -6,6 +6,7 @@ import {ArtArtistInterface} from "@/interfaces/artInterface";
 
 import star_icon from '@/assets/icons/art/star.svg'
 import Image from "next/image";
+import zamok_icon from '@/assets/icons/art/zamok.svg'
 
 interface oneWorkInterface {
     oneArt: ArtArtistInterface
@@ -18,17 +19,28 @@ export const OneWorkArtistProfileComponent = (props: oneWorkInterface) => {
     const [isHoverWhoBuy, setIsHoverWhoBuy] = useState(false)
     const [isHoverStar, setIsHoveStart] = useState(false)
     const toOneArt = () => {
-        router.push(MAIN_PATHS.ONE_ART + `/${props.oneArt.artId}`)
+        if (props.oneArt.available) {
+            router.push(MAIN_PATHS.ONE_ART + `/${props.oneArt.artId}`)
+        }
     }
 
     return (
         <section className={works_profile_scss.one_work}
                  onClick={toOneArt}>
             <section className={works_profile_scss.img_section}>
-                <img src={props.oneArt.photoUrl}
-                     className={!props.oneArt.available ? works_profile_scss.one_work_img_not_available: works_profile_scss.one_work_img}
-                     alt={'one work'}
-                     crossOrigin="anonymous"/>
+                <section className={works_profile_scss.img_border}>
+                    <img src={props.oneArt.photoUrl}
+                         className={!props.oneArt.available ? works_profile_scss.one_work_img_not_available : works_profile_scss.one_work_img}
+                         alt={'one work'}
+                         crossOrigin="anonymous"/>
+                    {!props.oneArt.available ?
+                    <section className={works_profile_scss.zamok}>
+                        <Image src={zamok_icon} alt={'zamok_icon'} width={0} height={0}/>
+                        <div>Только для поддержавших</div>
+                    </section>
+                    : null}
+                </section>
+
                 {props.oneArt.customerId !== null ?
                     <section className={works_profile_scss.who_buy_section}
                              onMouseEnter={() => setIsHoverWhoBuy(true)}

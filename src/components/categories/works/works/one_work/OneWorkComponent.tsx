@@ -10,7 +10,8 @@ import {OneWorkButton} from "@/components/categories/works/works/one_work/elemen
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {ArtInterface} from "@/interfaces/artInterface";
 import {usePathname, useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/paths/main";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
+import {useSession} from "next-auth/react";
 
 interface oneWorkInterface {
     one_work: ArtInterface
@@ -26,6 +27,12 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
 
     const pathname = usePathname()
     const lastPath = pathname.split('/')[2]
+    const {status} = useSession();
+
+    const [artistId] = useState(Cookies.get('artistId') as string)
+    const [role] = useState(Cookies.get('role') as string)
+
+
 
     useEffect(() => {
 
@@ -39,8 +46,6 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
         }
     }, [deleteArt]);
 
-    console.log(props.one_work.customerId !== '' && props.one_work.customerId !== null)
-
     return (
         <section className={one_work_scss.root}>
             <ul className={one_work_scss.photo_section}>
@@ -53,8 +58,8 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
             </ul>
             <main className={one_work_scss.art_info}>
                 <header className={one_work_scss.art_info_header}>
-                    <div className={one_work_scss.art_artist}>{props.one_work.artistName}</div>
-                    <div className={one_work_scss.art_name}>{props.one_work.name},
+                    <div className={'p ' + one_work_scss.art_artist}>{props.one_work.artistName}</div>
+                    <div className={'p ' + one_work_scss.art_name}>{props.one_work.name},
                         {props.one_work.createDate.substring(0, 4)}</div>
                 </header>
                 <section className={one_work_scss.art_price}>
@@ -65,7 +70,8 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
                                AddArtToCart={props.AddArtToCart}
                                artId={props.one_work.artId}/>
                 <OneWorkData one_work={props.one_work}/>
-                {currentId === props.one_work.artistId && (props.one_work.customerId === '' || props.one_work.customerId === null ) ?
+                {status === 'authenticated' && artistId === props.one_work.artistId && (props.one_work.customerId === '' || props.one_work.customerId === null )
+                && role === ROLES.ARTIST?
                     <footer className={one_work_scss.footer}>
                         <button className={'no_main_color'}
                             onClick={() => router.push(MAIN_PATHS.EDIT_ART + `/${lastPath}`)}>

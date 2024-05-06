@@ -10,8 +10,10 @@ import Image from "next/image";
 interface oneOpenedPhotoInterface {
     openedPhotoSrc: {[key: string]: string }
     setOpenedPhotoSrc(openedPhotoSrc: {[key: string]: string }): void
-    indexOpened: string
-    setIndexOpened(indexOpened: string): void
+    indexOpened: number
+    setIndexOpened(indexOpened: number): void
+    index: number
+    setIndex(index: number): void
 }
 
 export const OneOpenedPhotoPostComponent = (props: oneOpenedPhotoInterface) => {
@@ -27,10 +29,11 @@ export const OneOpenedPhotoPostComponent = (props: oneOpenedPhotoInterface) => {
             <button className={posts_artist_module.button_next}
                     onClick={() => {
                         const keys = Object.keys(props.openedPhotoSrc);
-                        const currentIndex = keys.indexOf(props.indexOpened);
-                        if (currentIndex < keys.length - 1) {
-                            const nextProp = keys[currentIndex + 1];
-                            props.setIndexOpened(nextProp)
+                        const nextProp = keys[props.index + 1];
+                        if (props.index < keys.length - 1 && props.openedPhotoSrc[nextProp] !== 'http://localhost:9000/picture/empty.txt') {
+
+                            props.setIndex(props.index + 1)
+                            props.setIndexOpened(Number.parseInt(nextProp))
                         }
                     }}>
                 <Image src={next_icon} alt={'close_icon'} width={0} height={0}/>
@@ -38,10 +41,10 @@ export const OneOpenedPhotoPostComponent = (props: oneOpenedPhotoInterface) => {
             <button className={posts_artist_module.button_prev}
                     onClick={() => {
                         const keys = Object.keys(props.openedPhotoSrc);
-                        const currentIndex = keys.indexOf(props.indexOpened);
-                        if (currentIndex > 0) {
-                            const nextProp = keys[currentIndex + 1];
-                            props.setIndexOpened(nextProp)
+                        if (props.index > 0) {
+                            const nextProp = keys[props.index - 1];
+                            props.setIndex(props.index - 1)
+                            props.setIndexOpened(Number.parseInt(nextProp))
                         }
                     }}>
                 <Image src={prev_icon} alt={'prev_icon'} width={0} height={0}/>

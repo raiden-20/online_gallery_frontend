@@ -10,11 +10,8 @@ import {useRouter} from "next/navigation";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {signIn, useSession} from "next-auth/react";
 import Cookies from "js-cookie";
-import {AccountNavigation} from "@/components/main/main/navigation/header/nav/AccountNavigation";
 import {NavigationElementsMobile} from "@/components/main/main/navigation/header/nav_elements/NavigationElementsMobile";
 import {AccountNavigationContainer} from "@/components/main/main/navigation/header/AccountNavigationContainer";
-import {Artist} from "@/interfaces/artistInterface";
-import {Customer} from "@/interfaces/customerInterface";
 import {signin} from "@/store/thunks/authThunk";
 
 interface navigationInterface {

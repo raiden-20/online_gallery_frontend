@@ -72,6 +72,10 @@
   width: max-content;
 }
 
+.button_add {
+  width: min-content;
+}
+
 .button_img {
   width: max-content;
   display: flex;
@@ -83,6 +87,7 @@
 }
 
 .add_section {
+  position: relative;
   display: flex;
   flex-flow: column;
   gap: $gap-s;
@@ -92,6 +97,7 @@
 
 .add_section_ul {
   display: flex;
+  flex-wrap: wrap;
   gap: $gap-s;
 }
 
@@ -106,4 +112,9 @@
   display: flex;
   gap: $gap-xxs;
   align-items: center;
+}
+
+.section_input {
+  position: relative;
+  z-index: $z-index-middle;
 }

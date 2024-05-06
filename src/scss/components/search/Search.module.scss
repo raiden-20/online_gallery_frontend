@@ -8,6 +8,11 @@ $one-element-img-size: 70px;
   flex-flow: column;
 }
 
+.root_main {
+  display: flex;
+  flex-flow: column;
+}
+
 .header {
   display: grid;
   grid-template-columns: min-content auto min-content;
@@ -60,5 +65,42 @@ $one-element-img-size: 70px;
     cursor: pointer;
     font-size: $font-size-l;
     font-weight: $weight;
+  }
+}
+
+@media screen and (orientation: portrait) {
+
+  .root_main {
+    display: flex;
+    flex-flow: row;
+    gap: $gap-l2;
+  }
+
+  .nav {
+    display: grid;
+    width: max-content;
+    height: max-content;
+    padding: 0;
+  }
+
+  .one_element {
+    display: grid;
+
+    .one_element_photo {
+      cursor: pointer;
+
+      width: $one-photo-size;
+      height: $one-photo-size;
+
+      object-fit: cover;
+
+      border-radius: $elements-radius;
+    }
+
+    .one_element_name {
+      cursor: pointer;
+      font-size: $font-size-l0;
+      font-weight: $weight;
+    }
   }
 }

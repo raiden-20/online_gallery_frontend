@@ -93,11 +93,15 @@ export const ArtDataComponent = (props: artDataInterface) => {
             <footer className={create_art_data_scss.footer}>
                 <input type={'checkbox'}
                        onChange={() => props.setIsPrivate(!props.isPrivate)}/>
-                <div>Сделать доступным только для пользователей с ежемесячной подпиской</div>
-                <button onMouseOver={() => setIsHover(true)}
-                        onMouseLeave={() => setIsHover(false)}>
-                <Image src={add_info_icon} alt={'add_info_icon'}/>
-                </button>
+                <section className={create_art_data_scss.footer_add_data}>
+                    <div className={create_art_data_scss.footer_private}>Сделать доступным только для пользователей с
+                        ежемесячной подпиской
+                    </div>
+                    <button onMouseOver={() => setIsHover(true)}
+                            onMouseLeave={() => setIsHover(false)}>
+                        <Image src={add_info_icon} alt={'add_info_icon'}/>
+                    </button>
+                </section>
                 {isHover ?
                     <section className={create_art_data_scss.hover_section}>
                         <p className={create_art_data_scss.add_text}>Просматривать и покупать товар смогут только

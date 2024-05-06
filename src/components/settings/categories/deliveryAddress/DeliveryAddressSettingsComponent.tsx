@@ -7,6 +7,7 @@ import {useRouter} from "next/navigation";
 import {OneAddressInterface} from "@/interfaces/credentials";
 import {AddAddressContainer} from "@/components/settings/categories/deliveryAddress/addAddress/AddAddressContainer";
 import {OneAddressContainer} from "@/components/settings/categories/deliveryAddress/oneAddress/OneAddressContainer";
+import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface deliverySettingsInterface {
     addresses: OneAddressInterface[]
@@ -25,11 +26,8 @@ export const DeliveryAddressSettingsComponent = (props: deliverySettingsInterfac
 
     return (
         <section>
-            <button className={settings_scss.back}
-                    onClick={() => props.setWhoIsClickedMobile(0)}>
-                <Image src={cancel_icon} alt={'cancel_icon'} width={19} height={10}/>
-                <div>Назад</div>
-            </button>
+            <Cancel_ButtonComponent setCancel={props.setWhoIsClickedMobile}
+                                    whatSet={0}/>
             <ul className={settings_scss.address_root}>
                 {props.addresses.map((oneAddress: OneAddressInterface, index) => {
                     return (

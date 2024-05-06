@@ -1,6 +1,7 @@
 import {Dispatch} from "redux";
 import {ProfileAPI} from "@/api/profileAPI";
 import {
+    clearProfileReducer,
     setArtistData,
     setCustomerData,
     setMyArtistData,
@@ -26,6 +27,7 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
                         if (id === Cookies.get('customerId')) {
                             dispatch(setMyCustomerData(response[1]))
                         }
+                        dispatch(clearProfileReducer())
                         dispatch(setCustomerData(response[1]))
 
                         break
@@ -50,6 +52,7 @@ export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
                             dispatch(setMyArtistData(response[1]))
                             Cookies.set('artistName', response[1].artistName)
                         }
+                        dispatch(clearProfileReducer())
                         dispatch(setArtistData(response[1]))
                         break
                     }

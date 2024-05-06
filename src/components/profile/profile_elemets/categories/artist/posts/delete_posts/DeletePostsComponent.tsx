@@ -4,6 +4,10 @@ import React, {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
 import Cookies from "js-cookie";
+import settings_scss from "@/scss/components/settings/Settings.module.scss";
+import Image from "next/image";
+import cancel_icon from "@/assets/icons/settings/cancel.svg";
+import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface deletePostsInterface {
     setIsDeletePosts(isDeletePosts: boolean): void
@@ -36,13 +40,15 @@ export const DeletePostsComponent = (props: deletePostsInterface) => {
         <section className={'page_modal_window'}>
             <section className={'bg2'} onClick={() => props.setIsDeletePosts(false)}></section>
             <main className={'modal_window'}>
+                <Cancel_ButtonComponent setCancel={props.setIsDeletePosts} whatSet={false}/>
                 <section className={delete_account_scss.root}>
                     <header className={delete_account_scss.header}>
                         Отключение ежемесячной подписки
                     </header>
-                    <p className={posts_artist_module.p}>Все Ваши посты будут удалены, а товары для поддержавших перейдут в публичный доступ</p>
+                    <p className={posts_artist_module.p}>Все Ваши посты будут удалены, а товары для поддержавших
+                        перейдут в публичный доступ</p>
                     <p className={delete_account_scss.main_p}>Для продолжения введите Ваше имя покупателя:</p>
-                    <input placeholder={'Имя покупателя'} value={input_name}
+                    <input placeholder={'Имя покупателя'} value={input_name} className={delete_account_scss.input}
                            onChange={(event) => setInput_name(event.target.value)}/>
                     {message !== '' ?
                         <p className={'message'}>{message}</p>
@@ -52,8 +58,8 @@ export const DeletePostsComponent = (props: deletePostsInterface) => {
                             Отмена
                         </button>
                         <button className={'second_plan_button'}
-                        onClick={() => setIsDelete(true) }>
-                            Удалить
+                                onClick={() => setIsDelete(true)}>
+                            Отключить
                         </button>
                     </footer>
                 </section>

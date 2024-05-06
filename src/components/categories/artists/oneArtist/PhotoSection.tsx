@@ -41,7 +41,7 @@ export const PhotoSection = (props: photoInterface) => {
     return (
         <section>
             <ul ref={listRef}
-                className={artists_scss.one_user_photo}
+                className={artists_scss.one_user_photo + ' scrollbarNone'}
                 onMouseOver={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}>
                 {isHover ?

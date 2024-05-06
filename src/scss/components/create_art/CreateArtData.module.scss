@@ -39,10 +39,19 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: min-content max-content min-content;
+  grid-template-columns: min-content auto;
   column-gap: $gap-xs;
 
-  align-items: center;
+  justify-items: start;
+}
+
+.footer_add_data {
+  display: flex;
+  gap: $gap-xs;
+}
+
+.footer_private {
+  word-break: break-word;
 }
 
 .hover_section {
@@ -117,4 +126,13 @@
 .section_input {
   position: relative;
   z-index: $z-index-middle;
+}
+
+@media screen and (orientation: portrait) {
+  .inputs_section {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+
 }

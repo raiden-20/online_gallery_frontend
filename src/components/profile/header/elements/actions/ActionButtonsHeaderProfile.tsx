@@ -30,7 +30,6 @@ interface actionButtonsInterface {
 }
 
 export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
-
     const router = useRouter()
 
     const [artistId] = useState(Cookies.get('artistId') as string)
@@ -38,10 +37,11 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
     const [currentId] = useState(Cookies.get('currentId') as string)
     const [currentRole] = useState(Cookies.get('currentRole') as string)
     const [role] = useState(Cookies.get('role') as string)
-    const {  data: session, status } = useSession();
+    const {status } = useSession();
 
     const [isCreatePost, setIsCreatePost] = useState(false)
     const [Subscribe, setSubscribe] = useState(false)
+
     return (
         <section>
             {(artistId !== currentId) && role !== ROLES.ARTIST && currentRole === ROLES.ARTIST ?
@@ -70,7 +70,7 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                             Отменить поддержку
                         </button> : null
                     }
-                    {!props.isPublicSubscribe ?
+                    {!props.isPublicSubscribe?
                         <button className={header_profile_scss.button_bell}
                                 onClick={() => {
                                     if (status === 'authenticated') {
@@ -94,7 +94,8 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                 </section>
                 :
                 artistId && artistId === currentId && currentRole === ROLES.ARTIST ?
-                    <button className={'main_button ' + header_profile_scss.subscriber_section}
+                    <button className={'main_button ' + header_profile_scss.subscriber_section
+                                        + ' ' + header_profile_scss.hidden}
                             onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
                         <Image src={art_icon} alt={'art_icon'}/>
                         <div>Выставить работу</div>

@@ -174,3 +174,24 @@
   background: $grey-date;
   border-radius: 0;
 }
+
+.scrollbarNone::-webkit-scrollbar {
+  width: 0;
+}
+
+.scrollbarNone::-webkit-scrollbar-track {
+  background: none;
+}
+
+
+@media screen and (orientation: portrait){
+  .modal_window {
+    border-radius: 0;
+    padding: $section-padding-s;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: min-content auto;
+    align-items: start;
+    row-gap: $gap-s;
+  }
+}

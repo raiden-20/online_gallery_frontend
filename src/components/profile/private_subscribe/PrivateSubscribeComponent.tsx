@@ -10,6 +10,7 @@ import settings_scss from "@/scss/components/settings/Settings.module.scss";
 import {CardEditContainer} from "@/components/create_order/edit/cart/CardEditContainer";
 import {OneCardInterface} from "@/interfaces/credentials";
 import mark_icon from "@/assets/icons/settings/mark.svg";
+import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface privateSubscribeInterface {
     price: string
@@ -63,12 +64,13 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
         <section className={'page_modal_window'}>
             <section className={'bg2'} onClick={() => props.setSubscribe(false)}></section>
             <main className={'modal_window'}>
+                <Cancel_ButtonComponent setCancel={props.setSubscribe} whatSet={false}/>
                 <section className={delete_account_scss.root}>
                     <header className={delete_account_scss.header}>
                         Поддержать {props.artistName}?
                     </header>
-                    <p>Оформив ежемесячную подписку на Linko, Вы получите доступ к эксклюзивному контенту</p>
-                    <input placeholder={'Сумма, ₽ '} value={input_price}
+                    <p>Оформив ежемесячную подписку на художника, Вы получите доступ к эксклюзивному контенту</p>
+                    <input placeholder={'Сумма, ₽ '} value={input_price} className={delete_account_scss.input}
                            onChange={(event) => setInput_price(event.target.value)}/>
                     <p className={create_order_scss.no_important}>Минимальная сумма – {props.price} ₽ в месяц</p>
                     <section className={create_order_scss.one_data}>

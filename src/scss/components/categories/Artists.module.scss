@@ -18,6 +18,7 @@ $photo-max-width: 796px;
 
   .page_title {
     font-size: $font-size-xxl;
+    font-weight: $weight;
   }
 }
 
@@ -166,10 +167,15 @@ $photo-max-width: 796px;
 
   .one_user_photo {
     max-width: calc(100vw - 50px);
+    overflow-x: auto;
 
     .onePhoto {
       width: $artist-photo-size;
       height: $artist-photo-size;
     }
+  }
+
+  .next_icon, .back_icon {
+    display: none;
   }
 }

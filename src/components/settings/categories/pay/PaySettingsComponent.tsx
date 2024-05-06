@@ -7,6 +7,7 @@ import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-
 import {useRouter} from "next/navigation";
 import {AddCardContainer} from "@/components/settings/categories/pay/addCard/AddCardContainer";
 import {OneCardContainer} from "@/components/settings/categories/pay/oneCard/OneCardContainer";
+import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface paySettingsInterface {
     setWhoIsClickedMobile(num: number): void
@@ -25,11 +26,8 @@ export const PaySettingsComponent = (props: paySettingsInterface) => {
 
     return (
         <section>
-            <button className={settings_scss.back}
-                    onClick={() => props.setWhoIsClickedMobile(0)}>
-                <Image src={cancel_icon} alt={'cancel_icon'} width={19} height={10}/>
-                <div>Назад</div>
-            </button>
+            <Cancel_ButtonComponent setCancel={props.setWhoIsClickedMobile}
+                                    whatSet={0}/>
             <ul className={settings_scss.address_root}>
                 {props.cards.map((oneCard: OneCardInterface, index) => {
                     return (

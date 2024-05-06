@@ -29,8 +29,22 @@
 }
 
 @media screen and (orientation: portrait){
-  .modal_window {
+  .root {
+    display: grid;
+    justify-items: start;
+
+    .header {
+      text-align: start;
+    }
+
+    .footer_buttons {
+      display: flex;
+      flex-flow: column-reverse;
+      gap: $gap-s;
+    }
+  }
+
+  .input {
     width: 100%;
-    height: 100%;
   }
 }

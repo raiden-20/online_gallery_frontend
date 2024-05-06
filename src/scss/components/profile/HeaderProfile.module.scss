@@ -124,6 +124,7 @@ $delete-img-width: 34px;
       word-break: break-all;
 
       .name {
+        height: max-content;
         font-size: $font-size-xxl;
         font-weight: $weight;
       }
@@ -231,6 +232,8 @@ $delete-img-width: 34px;
   .artist_action_section {
     display: none;
   }
+
+
 }
 
 @media screen and (max-width: $max-device-width) {
@@ -250,18 +253,6 @@ $delete-img-width: 34px;
           font-size: $font-size-l;
         }
       }
-    }
-  }
-
-  .subscriber_section {
-
-    img {
-      width: $bell-width-mobile;
-      height: $bell-height-mobile;
-    }
-
-    div {
-      font-size: 14px;
     }
   }
 }

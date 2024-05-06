@@ -5,6 +5,7 @@ import {OneCardContainer} from "@/components/settings/categories/pay/oneCard/One
 import {AddCardContainer} from "@/components/settings/categories/pay/addCard/AddCardContainer";
 import {OneCardInterface} from "@/interfaces/credentials";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface addressEditInterface {
     setIsCardEdit(isCardEdit: boolean): void
@@ -18,6 +19,7 @@ export const CardEditComponent = (props: addressEditInterface) => {
             <section className={'bg2'}
                      onClick={() => props.setIsCardEdit(false)}></section>
             <main className={'modal_window'}>
+                <Cancel_ButtonComponent setCancel={props.setIsCardEdit} whatSet={false}/>
                 <section className={create_order_scss.root_window}>
                     <header className={create_order_scss.header_window}>
                         Выберите карту

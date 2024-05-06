@@ -79,7 +79,7 @@ export const OnePostArtistComponent = (props: OnePostComponentInterface) => {
                     <div>{props.onePost.date}</div>
                 </footer>
                 :
-                <footer className={posts_artist_module.one_post_date}>9 апреля, 02:33</footer>
+                <footer className={posts_artist_module.one_post_date}>{props.onePost.date}</footer>
             }
             {Object.keys(openedPhotoSrc).length !== 0 ?
                 <OneOpenedPhotoPostComponent setOpenedPhotoSrc={setOpenedPhotoSrc} openedPhotoSrc={openedPhotoSrc}

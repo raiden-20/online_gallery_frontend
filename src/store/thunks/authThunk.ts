@@ -28,6 +28,9 @@ export const deleteCookies = () => {
     Cookies.remove('registrationFlag');
     Cookies.remove('currentRole');
     Cookies.remove('status');
+    Cookies.remove('artistName');
+    Cookies.remove('customerName');
+    Cookies.remove('customerUrl');
     localStorage.removeItem('access_token')
 }
 

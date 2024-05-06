@@ -70,7 +70,9 @@ export const CartComponent = (props: cartInterface) => {
                     <button className={'main_button'}
                             onClick={() => {
                                 props.SetSelectedArts(artId)
-                                router.push(MAIN_PATHS.CREATE_ORDER)}
+                                if (props.totalCount > 0) {
+                                    router.push(MAIN_PATHS.CREATE_ORDER)}
+                                }
                             }>
                         К оформлению
                     </button>

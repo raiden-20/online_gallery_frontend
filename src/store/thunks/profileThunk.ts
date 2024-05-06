@@ -71,6 +71,7 @@ export const changeCustomerProfileData = (customerName: string, birthDate: strin
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
+
                         router.refresh()
 
                         break

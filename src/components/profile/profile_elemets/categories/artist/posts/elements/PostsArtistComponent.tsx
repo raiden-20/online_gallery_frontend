@@ -51,7 +51,7 @@ export const PostsArtistComponent = (props: PostArtistInterface) => {
             <ul className={posts_artist_module.root}>
                 {props.posts.map((onePost: OnePostInterface, index) => {
                     return (
-                        <li key={index}>
+                        <li key={index} className={index != 0 ? posts_artist_module.border : undefined}>
                             <OnePostArtistComponent onePost={onePost} DeletePrivatePost={props.DeletePrivatePost}/>
                         </li>
                     )

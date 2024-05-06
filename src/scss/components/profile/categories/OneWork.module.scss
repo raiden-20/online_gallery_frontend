@@ -69,6 +69,7 @@
 }
 
 .details_section {
+
   display: grid;
   grid-template-columns: 1.1fr 2fr;
   gap: $gap-xl;
@@ -109,6 +110,7 @@
 }
 
 .underline {
+  cursor: pointer;
   font-size: $font-size-xs;
   text-decoration: underline;
 }

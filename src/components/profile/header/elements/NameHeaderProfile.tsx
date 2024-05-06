@@ -24,8 +24,10 @@ export const NameHeaderProfile = (props: nameHeaderProfileInterface) => {
                 <section>
                     <input value={props.input_name} className={header_profile_scss.input_name}
                            onChange={(event) => {
-                               props.setInput_name(event.target.value)
-                               props.setIsNeedChangeData(true)
+                               if (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId')) {
+                                   props.setInput_name(event.target.value)
+                                   props.setIsNeedChangeData(true)
+                               }
                            }}/>
                 </section>
 

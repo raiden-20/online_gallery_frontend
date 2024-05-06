@@ -2,11 +2,11 @@ import create_art_data_scss from '@/scss/components/create_art/CreateArtData.mod
 import {ArtDataComponent} from "@/components/create_art/pages/data/elements/ArtDataComponent";
 import {MainPhotoComponent} from "@/components/create_art/pages/data/elements/MainPhotoComponent";
 import {AddPhotoComponent} from "@/components/create_art/pages/data/elements/AddPhotoComponent";
-import {AddInformationComponent} from "@/components/create_art/pages/data/elements/AddInformationComponent";
 import {usePathname} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
 import {MainPhotoEditComponent} from "@/components/create_art/edit_art/MainPhotoEditComponent";
 import {AddPhotoEditComponent} from "@/components/create_art/edit_art/AddPhotoEditComponent";
+import {AddInformationContainer} from "@/components/create_art/pages/data/elements/add_info/AddInformationContainer";
 
 interface createArtDataInterface {
     photoArraySrc: string[]
@@ -30,8 +30,8 @@ interface createArtDataInterface {
     setInput_description(input_name: string): void
     setInput_height(input_name: string): void
     setInput_width(input_name: string): void
-    setTags(tags: string[]): void
-    setMaterials(materials: string[]): void
+    setTags(tags: (prevState: string[]) => (string)[]): void
+    setMaterials(materials: (prevState: string[]) => (string)[]): void
     setIsPrivate(isPrivate: boolean): void
     setIsFrame(isFrame: boolean): void
     setCreateArt(createArt: boolean): void
@@ -39,12 +39,12 @@ interface createArtDataInterface {
     deletePhotoUrls: string[]
     setIsChangeMainPhoto(flag: boolean): void
     setIsChangeMainPhoto(flag: boolean): void
+    message: string
 }
 
 export const CreateArtDataComponent = (props: createArtDataInterface) => {
 
     const pathname = usePathname()
-
     return (
         <section className={create_art_data_scss.root}>
             <ArtDataComponent input_name={props.input_name} setInput_name={props.setInput_name}
@@ -76,9 +76,12 @@ export const CreateArtDataComponent = (props: createArtDataInterface) => {
                                    photoUrls={props.photoUrls} setDeletePhotoUrls={props.setDeletePhotoUrls}
                                    deletePhotoUrls={props.deletePhotoUrls}/>
             }
-            <AddInformationComponent tags={props.tags} setTags={props.setTags}
+            <AddInformationContainer tags={props.tags} setTags={props.setTags}
                                      materials={props.materials} setMaterials={props.setMaterials}
                                      isFrame={props.isFrame} setIsFrame={props.setIsFrame}/>
+            {props.message !== '' ?
+                <p className={'message'}>{props.message}</p>
+                : null}
             <button className={'main_button'}
                     onClick={() => {
                         props.setCreateArt(true)}

@@ -2,7 +2,7 @@ import Image from "next/image";
 import prev_icon from "@/assets/icons/main/prev.svg";
 import next_icon from "@/assets/icons/main/next.svg";
 
-import {useRef, useState} from "react";
+import {useRef} from "react";
 import popular_scss from "@/scss/components/main/main_page/Popular.module.scss";
 import main_scss from "@/scss/components/main/main_page/Main.module.scss";
 

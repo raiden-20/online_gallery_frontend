@@ -3,12 +3,13 @@ import {useEffect, useState} from "react";
 import {ArtInterface} from "@/interfaces/artInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
+import {removeSpaces} from "../../../../utils/tests";
 
 interface editArtInterface {
     oneArt: ArtInterface
     EditArt(artId: string, name: string, type: string, changeMainPhoto: boolean, newPhotos: File[],
             deletePhotoUrls: string[], price: string, createDate: string, description: string, size: string,
-            tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance): void
+            tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance, setMessage : (message: string) => void): void
 }
 
 export const EditArtComponent = (props: editArtInterface) => {
@@ -27,6 +28,7 @@ export const EditArtComponent = (props: editArtInterface) => {
     const [materials, setMaterials] = useState<string[]>(props.oneArt.materials)
     const [isPrivate, setIsPrivate] = useState(props.oneArt.isPrivate)
     const [isFrame, setIsFrame] = useState(props.oneArt.frame)
+    const [message, setMessage] = useState('')
 
     const [isChangeMainPhoto, setIsChangeMainPhoto] = useState(false)
 
@@ -47,10 +49,13 @@ export const EditArtComponent = (props: editArtInterface) => {
 
     useEffect(() => {
         if (editArt) {
-            props.EditArt(props.oneArt.artId, input_name, props.oneArt.type, isChangeMainPhoto, photoArrayFile,
-                deletePhotoUrls, input_price, input_createDate + '-01-01', input_description, input_height + 'x' + input_width
-                , tags, materials,  isPrivate ,isFrame, router)
-            setEditArt(false)
+            if (Number.parseInt(input_createDate) > 999 && Number.parseInt(input_createDate) <= 2024) {
+                props.EditArt(props.oneArt.artId, input_name, props.oneArt.type, isChangeMainPhoto, photoArrayFile,
+                    deletePhotoUrls, removeSpaces(input_price.toString()), removeSpaces(input_createDate.toString()) + '-01-01', input_description,
+                    removeSpaces(input_height.toString()) + 'x' + removeSpaces(input_width.toString()), tags, materials,  isPrivate ,isFrame, router,
+                    setMessage)
+                setEditArt(false)
+            }
         }
     }, [editArt]);
 
@@ -67,5 +72,5 @@ export const EditArtComponent = (props: editArtInterface) => {
                                    setIsPrivate={setIsPrivate} setIsFrame={setIsFrame} setCreateArt={setEditArt}
                                    setDeletePhotoUrls={setDeletePhotoUrls}
                                    photoUrls={props.oneArt.photoUrls} deletePhotoUrls={deletePhotoUrls}
-                                   setIsChangeMainPhoto={setIsChangeMainPhoto}/>
+                                   setIsChangeMainPhoto={setIsChangeMainPhoto} message={message}/>
 }

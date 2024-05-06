@@ -21,24 +21,24 @@ const initialState: ArtReducerInterface = {
     arts_artist: [],
     arts_customer: [],
     oneArt: {
-        artId: '',
-        artistName: '',
-        name: '',
+        artId: '0',
+        artistName: 'Имя артиста',
+        name: 'Имя товара',
         type: '',
-        photoUrls: [],
-        price: '',
+        photoUrls: ['/default_art_photo.jpg', '/default_art_photo.jpg'],
+        price: '0',
         artistId: '',
         status: '',
         isPrivate: false,
         customerId: '',
         customerName: '',
-        description: '',
-        size: '',
-        createDate: '',
+        description: 'Тут описание',
+        size: '0х0',
+        createDate: '1970',
         tags: [],
         materials: [],
         frame: false,
-        publishDate: ''
+        publishDate: '1970-01-01'
     }
 }
 

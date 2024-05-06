@@ -127,7 +127,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                                     isEditMobile={isEditMobile}
                                     setIsEditMobile={setIsEditMobile}
                                     isPrivateSubscribe={props.artist_data.isPrivateSubscribe}
-                                    isPublicSubscribe={props.artist_data.isPublicSubscribe}/>
+                                    isPublicSubscribe={props.artist_data.isPublicSubscribe} countSubscribers={props.artist_data.countSubscribers}/>
             <ArtistCategoriesProfile input_description={input_description} setInput_description={setInput_description}
                                      setIsNeedChangeData={setIsNeedChangeData}
                                      isEditMobile={isEditMobile}

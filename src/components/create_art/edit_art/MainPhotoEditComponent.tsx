@@ -22,7 +22,6 @@ interface mainPhotoInterface {
 export const MainPhotoEditComponent = (props: mainPhotoInterface) => {
 
     const [message, setMessage] = useState('')
-
     const setPhotoArr = (photoFile: FileList) => {
         setMessage('')
         if (photoFile !== null) {

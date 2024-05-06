@@ -1,5 +1,6 @@
 import about_artist_scss from '@/scss/components/profile/categories/AboutArtist.module.scss'
 import {useState} from "react";
+import Cookies from "js-cookie";
 
 interface AboutInterface {
     input_description: string
@@ -14,12 +15,11 @@ interface AboutInterface {
 export const AboutCustomer = (props: AboutInterface) => {
 
     const [isClicked, setIsClicked] = useState(false)
-
-    console.log(typeof props.input_description)
+    console.log(Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId'))
 
     return (
         <section className={about_artist_scss.root}>
-            {(isClicked || props.isEditMobile) || props.input_description === '' ?
+            {((isClicked || props.isEditMobile) || props.input_description === '') && (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId'))?
                 <textarea placeholder={'Введите информацию о себе'}
                 onChange={(event) => {
                     if (props.input_description.length < 200) {
@@ -28,7 +28,11 @@ export const AboutCustomer = (props: AboutInterface) => {
                     }
                 }}>{props.input_description}</textarea>
                 :
-                <p onClick={() => setIsClicked(true)}>{props.input_description}</p>
+                <p onClick={() => {
+                    if (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId')) {
+                        setIsClicked(true)
+                    }
+                }}>{props.input_description}</p>
             }
         </section>
     )

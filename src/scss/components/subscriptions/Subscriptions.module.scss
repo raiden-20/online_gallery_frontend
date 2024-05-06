@@ -16,15 +16,11 @@ $artist-private-img-size: 70px;
 }
 
 .search_section {
-  height: min-content;
-
-  padding: $padding-8;
-  border: 1px solid $grey;
-  border-radius: $elements-radius;
-
   display: grid;
   grid-template-columns: min-content auto;
   align-items: center;
+
+  gap: $gap-s;
 
   input {
     height: min-content;
@@ -109,6 +105,7 @@ $artist-private-img-size: 70px;
       cursor: pointer;
     }
 
+    width: min-content;
     display: grid;
     justify-items: center;
     gap: $gap-xs;

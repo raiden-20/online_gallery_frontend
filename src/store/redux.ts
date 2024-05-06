@@ -9,6 +9,7 @@ import {credentialsReducer} from "@/store/reducers/credentialsReducer";
 import {artReducer} from "@/store/reducers/artReducer";
 import {cartReducer} from "@/store/reducers/cartReducer";
 import {orderReducer} from "@/store/reducers/orderReducer";
+import {filtersReducer} from "@/store/reducers/filtersReducer";
 
 let reducers = combineReducers({
     profile: profileReducer,
@@ -19,7 +20,8 @@ let reducers = combineReducers({
     credentials: credentialsReducer,
     art: artReducer,
     cart: cartReducer,
-    order: orderReducer
+    order: orderReducer,
+    filters: filtersReducer
 })
 
 export const reduxStore = createStore(reducers, applyMiddleware(thunk))

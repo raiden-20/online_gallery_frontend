@@ -2,28 +2,44 @@ import create_art_data_scss from '@/scss/components/create_art/CreateArtData.mod
 import Image from "next/image";
 import add_info_icon from "@/assets/icons/cart/add_info.svg";
 import React, {useState} from "react";
+import {containsOnlyDigits} from "../../../../../../utils/tests";
 
 interface artDataInterface {
     input_name: string
+
     setInput_name(input_name: string): void
+
     input_price: string
+
     setInput_price(input_price: string): void
+
     input_year: string
+
     setInput_year(input_year: string): void
+
     input_description: string
+
     setInput_description(input_description: string): void
+
     input_height: string
+
     setInput_height(input_height: string): void
+
     input_width: string
+
     setInput_width(input_height: string): void
+
     isPrivate: boolean
+
     setIsPrivate(isPrivate: boolean): void
 }
 
 export const ArtDataComponent = (props: artDataInterface) => {
     const [isHover, setIsHover] = useState(false)
 
-    const [message, setMessage] = useState('')
+    const [messageDate, setMessageDate] = useState('')
+    const [messageHeight, setMessageHeight] = useState('')
+    const [messageWidth, setMessageWidth] = useState('')
 
     return (
         <section className={create_art_data_scss.section_root}>
@@ -36,23 +52,43 @@ export const ArtDataComponent = (props: artDataInterface) => {
                 <section>
                     <input placeholder={'Год создания'} value={props.input_year}
                            onChange={(event) => {
-                               setMessage('')
+                               setMessageDate('')
                                props.setInput_year(event.target.value)
-                               if (Number.parseInt(event.target.value) < 0 || Number.parseInt(event.target.value) > 2024) {
-                                   setMessage('Неправильная дата')
+                               if (Number.parseInt(event.target.value) < 1000 || Number.parseInt(event.target.value) > 2024) {
+                                   setMessageDate('Неправильная дата')
                                }
                            }
                            }/>
-                    <p className={'message'}>{message}</p>
+                    <p className={'message'}>{messageDate}</p>
                 </section>
             </section>
             <textarea placeholder={'Описание'} value={props.input_description}
                       onChange={(event) => props.setInput_description(event.target.value)}></textarea>
             <section className={create_art_data_scss.inputs_section}>
-                <input placeholder={'Длина, см'} value={props.input_height}
-                       onChange={(event) => props.setInput_height(event.target.value)}/>
-                <input placeholder={'Ширина, см'} value={props.input_width}
-                       onChange={(event) => props.setInput_width(event.target.value)}/>
+                <section>
+                    <input placeholder={'Длина, см'} value={props.input_height}
+                           onChange={(event) => {
+                               setMessageHeight('')
+                               if (!containsOnlyDigits(event.target.value)) {
+                                   setMessageHeight('Неправильный формат')
+                               }
+                               props.setInput_height(event.target.value)
+                           }
+                           }/>
+                    <p className={'message'}>{messageHeight}</p>
+                </section>
+                <section>
+                    <input placeholder={'Ширина, см'} value={props.input_width}
+                           onChange={(event) => {
+                               setMessageWidth('')
+                               props.setInput_width(event.target.value)
+                               if (!containsOnlyDigits(event.target.value)) {
+                                   setMessageWidth('Неправильный формат')
+                               }
+                           }
+                           }/>
+                    <p className={'message'}>{messageWidth}</p>
+                </section>
             </section>
             <footer className={create_art_data_scss.footer}>
                 <input type={'checkbox'}
@@ -60,7 +96,7 @@ export const ArtDataComponent = (props: artDataInterface) => {
                 <div>Сделать доступным только для пользователей с ежемесячной подпиской</div>
                 <button onMouseOver={() => setIsHover(true)}
                         onMouseLeave={() => setIsHover(false)}>
-                    <Image src={add_info_icon} alt={'add_info_icon'}/>
+                <Image src={add_info_icon} alt={'add_info_icon'}/>
                 </button>
                 {isHover ?
                     <section className={create_art_data_scss.hover_section}>

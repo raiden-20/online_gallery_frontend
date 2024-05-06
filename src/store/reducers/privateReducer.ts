@@ -1,4 +1,3 @@
-import {Artist, ArtShortCategories, UserShort} from "@/interfaces/artistInterface";
 
 const SET_PRICE = 'SET_PRICE'
 

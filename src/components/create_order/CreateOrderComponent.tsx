@@ -56,7 +56,6 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                 }
             })}
             if (addressId !== '' && cardId !== '') {
-                debugger
                 props.BuyCart(props.selectedArts, cardId, addressId, router)
             } else {
                 setMessage('Заполните для данные для оформление заказа')
@@ -106,7 +105,7 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                                 return (
                                     <section
                                         className={create_order_scss.data + ' ' + create_order_scss.card_data + ' ' + settings_scss.p}>
-                                        <div>{oneCard.type}</div>
+                                        <div>{oneCard.type === '' ? 'MIR' : oneCard.type}</div>
                                         <div>•••• •••• ••••
                                             {oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length - 1)}</div>
                                     </section>

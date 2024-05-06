@@ -32,7 +32,7 @@ export const SubscriptionsCustomerPrivate = (props: subscriptionsInterface) => {
                         }
                     }}>
                         <img src={one.avatarUrl} alt={'avatar'} crossOrigin="anonymous"/>
-                        <div>{one.customerName}</div>
+                        <div className={'p'}>{one.customerName}</div>
                     </li>
                 )
             })}

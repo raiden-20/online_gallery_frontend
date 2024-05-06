@@ -9,6 +9,7 @@ import header_profile_scss from '@/scss/components/profile/HeaderProfile.module.
 import {ActionProfileContainer} from "@/components/profile/header/elements/actions/ActionProfileContainer";
 
 interface HeaderProfileInterface {
+    countSubscribers: string
     input_coverUrl: string,
     input_avatarUrl: string,
     input_name: string,
@@ -58,7 +59,8 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                     <ActionProfileContainer isEditMobile={props.isEditMobile}
                                                 setIsEditMobile={props.setIsEditMobile}
                                                 isPrivateSubscribe={props.isPrivateSubscribe}
-                                                isPublicSubscribe={props.isPublicSubscribe}/>
+                                                isPublicSubscribe={props.isPublicSubscribe}
+                                            countSubscribers={props.countSubscribers}/>
                 </section>
             </section>
             {props.isNeedChangeData ?

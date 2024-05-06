@@ -16,7 +16,8 @@ export interface UserShort {
     artistName: string,
     avatarUrl: string,
     viewsCount: string,
-    photos: { artId: string }
+    arts: { artId: string }
+    isActive: boolean
 }
 
 export interface ArtShortSearch {

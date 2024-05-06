@@ -19,6 +19,8 @@ export const OneWorkButton = (props: oneWorkInterface) => {
     const router = useRouter()
     const {status} = useSession();
     const [currentId] = useState(Cookies.get('currentId') as string)
+    const [customerId] = useState(Cookies.get('customerId') as string)
+    const [artistId] = useState(Cookies.get('artistId') as string)
 
     const [addToCart, setAddToCart] = useState(false)
 
@@ -31,7 +33,7 @@ export const OneWorkButton = (props: oneWorkInterface) => {
 
     return (
         <section>
-            {currentId !== props.artistId ?
+            {artistId !== props.artistId ?
                 props.status === ART_STATUS.AVAILABLE ?
                     <button className={'main_button ' + one_work_scss.add_to_cart}
                             onClick={() => {

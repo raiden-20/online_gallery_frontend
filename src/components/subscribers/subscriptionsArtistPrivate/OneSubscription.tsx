@@ -18,7 +18,7 @@ export const OneSubscription = (props: {oneArtist: SubscriptionsArtistsPrivate})
                 <button onClick={() => router.push(MAIN_PATHS.PROFILE_ARTIST + `/${props.oneArtist.artistId}`)}>
                     <img src={props.oneArtist.avatarUrl} alt={'avatar'} crossOrigin="anonymous"/>
                 </button>
-                <div>{props.oneArtist.artistName}</div>
+                <div className={'p'}>{props.oneArtist.artistName}</div>
             </section>
             <div>{props.oneArtist.price} ₽</div>
             <div>{props.oneArtist.payDate}</div>

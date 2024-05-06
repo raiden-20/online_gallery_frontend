@@ -6,7 +6,7 @@ export async function getAccessToken() {
     const session = await getServerSession(AuthConfig)
     if (session) {
         // @ts-ignore
-        return decrypt(session.access_token)
+        return session.access_token
     }
     return null
 }

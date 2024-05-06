@@ -8,7 +8,6 @@ export const AuthAPI = {
             const response = await instance.put(
                 PathsAPI.CHANGE + PathsAPI.EMAIL,
                 {
-                    id: Cookies.get('customerId') as string,
                     email
                 }
             );
@@ -27,7 +26,6 @@ export const AuthAPI = {
             const response = await instance.put(
                 PathsAPI.CHANGE + PathsAPI.PASSWORD,
                 {
-                    id: Cookies.get('customerId') as string,
                     password
                 }
             );
@@ -41,11 +39,7 @@ export const AuthAPI = {
     async DeleteAccountAPI() {
         try {
             const response = await instance.delete(
-                PathsAPI.ACCOUNT,
-                {
-                    data: {
-                        id: Cookies.get('customerId') as string
-                    }}
+                PathsAPI.ACCOUNT
             );
             return [response.status, response.data];
         } catch (error: any) {

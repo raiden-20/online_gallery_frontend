@@ -58,7 +58,8 @@ export const NavigationComponentMobile = (props: navigationInterface) => {
                     }
                 }
                 }>
-                    {status === 'authenticated' ?
+                    { // @ts-ignore
+                        status === 'authenticated' && session.error === undefined ?
                         <img src={role === ROLES.CUSTOMER ? props.customer_avatar : props.artist_avatar}
                              alt={'account_icon'} className={navigation_scss.avatar}
                              crossOrigin="anonymous"/>

@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="mobile design for cart orders and subscribers">
-      <change afterPath="$PROJECT_DIR$/public/banner1_mobile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/banner2_mobile.svg" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="mobile design for private subscriptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionButtonsHeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionButtonsHeaderProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Main.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/Root.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/Root.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Artists.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Artists.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Main.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Popular.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Popular.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Navigation.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/HeaderProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/pages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +111,7 @@
       <workItem from="1714902460805" duration="25254000" />
       <workItem from="1714990550069" duration="3889000" />
       <workItem from="1715036248106" duration="2000" />
-      <workItem from="1715099624823" duration="5135000" />
+      <workItem from="1715099624823" duration="6748000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -387,7 +369,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715021135715</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="mobile design for private subscriptions">
+      <option name="closed" value="true" />
+      <created>1715114792962</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1715114792962</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +407,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created create art page" />
     <MESSAGE value="create page create order and success order" />
     <MESSAGE value="created orders pages" />
     <MESSAGE value="redo scss files (variables)" />
@@ -442,6 +431,7 @@
     <MESSAGE value="testings 2 sprint" />
     <MESSAGE value="mobile design for profile posts, categories, create art" />
     <MESSAGE value="mobile design for cart orders and subscribers" />
-    <option name="LAST_COMMIT_MESSAGE" value="mobile design for cart orders and subscribers" />
+    <MESSAGE value="mobile design for private subscriptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="mobile design for private subscriptions" />
   </component>
 </project>

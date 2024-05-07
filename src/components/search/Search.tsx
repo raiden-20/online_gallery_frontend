@@ -40,7 +40,7 @@ export const Search = (props: SearchInterface) => {
             </section>
             <section className={search_scss.root_main}>
                 <nav>
-                    <ul className={nav_profile_scss.root + ' ' + search_scss.nav}>
+                    <ul className={nav_profile_scss.root + ' ' + search_scss.nav + ' scrollbarNone'}>
                         {categories.map((one: string, index) => {
                             return (
                                 <li className={whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}>

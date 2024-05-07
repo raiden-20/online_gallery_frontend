@@ -60,7 +60,6 @@ $delete-img-width: 34px;
     display: none;
   }
 
-
   .profile_data {
     display: grid;
     gap: $gap-xs;
@@ -209,6 +208,10 @@ $delete-img-width: 34px;
 }
 
 @media screen and (orientation: portrait){
+  .hidden_button {
+    display: none;
+  }
+
   .edit_button {
     display: flex;
     gap: 10px;

@@ -1,6 +1,7 @@
 @import "@/scss/globals/main_values";
 
 $height: 325px;
+$width-action: 696px;
 
 .ul {
   display: grid;
@@ -8,8 +9,6 @@ $height: 325px;
 }
 
 .one_action {
-  height: $height;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,5 +22,140 @@ $height: 325px;
 
   div {
     font-size: $font-size-xxxxl;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .one_action {
+    img {
+      width: $width-action / 1.2;
+    }
+  }
+
+  .date_section {
+
+    div {
+      font-size: $font-size-xxxl;
+    }
+  }
+}
+
+@media screen and (orientation: portrait){
+  .one_action {
+    img {
+      width: $width-action / 1.4;
+    }
+  }
+
+  .date_section {
+
+    div {
+      font-size: $font-size-xxxl;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .one_action {
+    img {
+      width: $width-action / 1.5;
+    }
+  }
+
+  .date_section {
+
+    div {
+      font-size: $font-size-xxl;
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .one_action {
+    img {
+      width: $width-action / 1.6;
+    }
+  }
+
+  .date_section {
+
+    div {
+      font-size: $font-size-xxl;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .one_action {
+    img {
+      width: $width-action / 1.8;
+    }
+  }
+
+  .date_section {
+
+    div {
+      font-size: $font-size-l;
+    }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .one_action {
+    img {
+      width: $width-action / 2;
+    }
+  }
+
+  .date_section {
+
+    div {
+      font-size: $font-size-l;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .one_action {
+    img {
+      width: $width-action / 2.2;
+    }
+  }
+
+  .date_section {
+
+    div {
+      font-size: $font-size-l0;
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .one_action {
+    img {
+      width: $width-action / 2.4;
+    }
+  }
+
+  .date_section {
+
+    div {
+      font-size: $font-size-l0;
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .one_action {
+    img {
+      width: $width-action / 2.7;
+    }
+  }
+
+  .date_section {
+
+    div {
+      font-size: $font-size;
+    }
   }
 }

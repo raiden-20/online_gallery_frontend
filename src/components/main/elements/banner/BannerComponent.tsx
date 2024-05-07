@@ -8,28 +8,44 @@ import banner_scss from '@/scss/components/main/main_page/Banner.module.scss'
 
 export const BannerComponent = () => {
     const bannersArr = ['/banner1.svg', '/banner2.svg']
+    const bannersArrMobile = ['/banner1_mobile.svg', '/banner2_mobile.svg']
 
     const BannerRef = useRef<HTMLUListElement>(null);
+    const BannerRef_mobile = useRef<HTMLUListElement>(null);
 
     const scrollToNextPhoto = () => {
-        if (BannerRef.current) {
+        if (BannerRef.current && BannerRef_mobile.current) {
             const galleryWidth = BannerRef.current.offsetWidth;
             const scrollLeft = BannerRef.current.scrollLeft;
 
+            const galleryWidthMobile = BannerRef_mobile.current.offsetWidth;
+            const scrollLeftMobile = BannerRef_mobile.current.scrollLeft;
+
             BannerRef.current.scrollTo({
                 left: scrollLeft + galleryWidth + 30,
+                behavior: 'smooth',
+            });
+            BannerRef_mobile.current.scrollTo({
+                left: scrollLeftMobile + galleryWidthMobile + 30,
                 behavior: 'smooth',
             });
         }
     };
 
     const scrollToPreviousPhoto = () => {
-        if (BannerRef.current) {
+        if (BannerRef.current && BannerRef_mobile.current) {
             const galleryWidth = BannerRef.current.offsetWidth;
             const scrollLeft = BannerRef.current.scrollLeft;
 
+            const galleryWidthMobile = BannerRef_mobile.current.offsetWidth;
+            const scrollLeftMobile = BannerRef_mobile.current.scrollLeft;
+
             BannerRef.current.scrollTo({
                 left: scrollLeft - galleryWidth - 30,
+                behavior: 'smooth',
+            });
+            BannerRef_mobile.current.scrollTo({
+                left: scrollLeftMobile - galleryWidthMobile - 30,
                 behavior: 'smooth',
             });
         }
@@ -49,6 +65,16 @@ export const BannerComponent = () => {
             </section>
             <ul className={banner_scss.ul} ref={BannerRef}>
                 {bannersArr.map((banner, index) => {
+                    return (
+                        <li className={banner_scss.main} key={index}>
+                            <img src={banner} className={banner_scss.banner_img}
+                                 alt={'banner'} crossOrigin={'anonymous'}/>
+                        </li>
+                    )
+                })}
+            </ul>
+            <ul className={banner_scss.ul_mobile} ref={BannerRef_mobile}>
+                {bannersArrMobile.map((banner, index) => {
                     return (
                         <li className={banner_scss.main} key={index}>
                             <img src={banner} className={banner_scss.banner_img}

@@ -20,8 +20,12 @@ export const OneSubscription = (props: {oneArtist: SubscriptionsArtistsPrivate})
                 </button>
                 <div className={'p'}>{props.oneArtist.artistName}</div>
             </section>
-            <div>{props.oneArtist.price} ₽</div>
-            <div>{props.oneArtist.payDate}</div>
+            <div className={subscriptions_scss.mobile_hidden}>{props.oneArtist.price} ₽</div>
+            <div className={subscriptions_scss.mobile_hidden}>{props.oneArtist.payDate}</div>
+            <section className={subscriptions_scss.data}>
+                <div>{props.oneArtist.price} ₽</div>
+                <div>{props.oneArtist.payDate}</div>
+            </section>
             <button className={'cancel_button'}
                     onClick={() => setIsCanceledClicked(true)}>
                 Отменить
@@ -29,7 +33,7 @@ export const OneSubscription = (props: {oneArtist: SubscriptionsArtistsPrivate})
             {isCanceledClicked ?
                 <CancelSubscriptionsContainer setIsCanceledClicked={setIsCanceledClicked}
                                               artistId={props.oneArtist.artistId}/>
-            : null}
+                : null}
         </section>
     )
 }

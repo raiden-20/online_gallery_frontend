@@ -19,4 +19,31 @@
   font-family: 'New Mexika', sans-serif;
   font-size: $font-size-64;
   text-align: center;
+
+  display: grid;
+  align-self: center;
+}
+
+@media screen and (orientation: portrait){
+  .header {
+    font-size: $font-size-xxxxl;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    font-size: $font-size-xxxl;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    font-size: $font-size-l;
+  }
+}
+
+@media screen and (orientation: portrait){
+  .root {
+    padding: $padding-32;
+  }
 }

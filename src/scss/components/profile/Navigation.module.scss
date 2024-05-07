@@ -28,6 +28,8 @@ $root-height: 96px;
 
 @media screen and (max-width: 550px) {
   .root {
+    padding: $filters-padding-16-6;
+    height: min-content;
 
     .button {
       font-size: $font-size-xs;

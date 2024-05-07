@@ -17,7 +17,7 @@ $img-size-big: 200px;
 $artist-photo-size: 245px;
 $cover-height: 250px;
 $img-size-biggest: 307px;
-$one-work-width: 344px;
+$one-work-width: 328px;
 $hover-section-width: 400px;
 $section-action-img-width: 500px;
 $section-main-data-img-size: 510px;
@@ -27,6 +27,9 @@ $root-width-window: 800px;
 $max-device-width: 830px;
 $width: 1065px;
 $width-padding: 1113px;
+
+$button-height-main-button: 58px;
+$button-width-main-button: 158px;
 
 //height
 $input-height-small: 19px;
@@ -45,6 +48,7 @@ $font-size-xxs: 0.7em; // 15px
 $font-size-xs: 0.8em; // 16px
 $font-size-s: 0.9em; // 18px
 $font-size-m: 0.95em; // 19px
+$font-size-l22: 1.1em; // 22px
 $font-size-l0: 1.2em; // 24px
 $font-size-l: 1.4em; // 28px
 $font-size-xxl: 1.6em; // 32px
@@ -81,13 +85,17 @@ $main-padding: 0 24px;
 $padding-2: 4px 16px;
 $padding-1: 6px 16px;
 $search-padding: 8px 16px;
+$button-padding-9-20: 4px 20px;
 $button-padding: 9px 24px;
+$button-padding-6-27: 6px 32px;
 $textarea-padding: 10px 16px;
 $padding-7: 12px 0;
 $padding-8: 12px 16px;
 $padding-12-32: 12px 32px;
 $filters-padding: 16px 0;
+$filters-padding-16-6: 16px 6px;
 $padding-filters: 24px 48px;
+$padding-32: 32px 0;
 $padding-l: 35px 0;
 $padding-5: 45px 0;
 $padding-64: 64px 0;

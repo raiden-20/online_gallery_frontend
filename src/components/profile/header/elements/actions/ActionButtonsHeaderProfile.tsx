@@ -95,7 +95,7 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                 :
                 artistId && artistId === currentId && currentRole === ROLES.ARTIST ?
                     <button className={'main_button ' + header_profile_scss.subscriber_section
-                                        + ' ' + header_profile_scss.hidden}
+                                        + ' ' + header_profile_scss.hidden_button}
                             onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
                         <Image src={art_icon} alt={'art_icon'}/>
                         <div>Выставить работу</div>

@@ -3,7 +3,7 @@ import {useSession} from "next-auth/react";
 import {signin} from "@/store/thunks/authThunk";
 import {ART_STATUS} from "@/paths/elements";
 import {useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/paths/main";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -18,7 +18,7 @@ interface oneWorkInterface {
 export const OneWorkButton = (props: oneWorkInterface) => {
     const router = useRouter()
     const {status} = useSession();
-    const [currentId] = useState(Cookies.get('currentId') as string)
+    const [role] = useState(Cookies.get('role') as string)
     const [customerId] = useState(Cookies.get('customerId') as string)
     const [artistId] = useState(Cookies.get('artistId') as string)
 
@@ -33,7 +33,7 @@ export const OneWorkButton = (props: oneWorkInterface) => {
 
     return (
         <section>
-            {artistId !== props.artistId ?
+            {artistId !== props.artistId && role !== ROLES.ARTIST ?
                 props.status === ART_STATUS.AVAILABLE ?
                     <button className={'main_button ' + one_work_scss.add_to_cart}
                             onClick={() => {

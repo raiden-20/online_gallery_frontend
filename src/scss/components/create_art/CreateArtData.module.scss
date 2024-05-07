@@ -135,4 +135,10 @@
     gap: $gap-s;
   }
 
+  .section_root {
+    .header {
+      font-size: $font-size-l0;
+      font-weight: $weight;
+    }
+  }
 }

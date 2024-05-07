@@ -127,3 +127,28 @@
     align-items: center;
   }
 }
+
+@media screen and (max-width: $width){
+  .root {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+
+  .photo_section {
+    width: 100%;
+    height: 50vh;
+
+    display: flex;
+    flex-flow: column;
+    gap: $gap-l1;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .one_photo {
+      width: 100%;
+    }
+  }
+
+}

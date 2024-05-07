@@ -70,7 +70,9 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
                                AddArtToCart={props.AddArtToCart}
                                artId={props.one_work.artId}/>
                 <OneWorkData one_work={props.one_work}/>
-                {status === 'authenticated' && artistId === props.one_work.artistId && (props.one_work.customerId === '' || props.one_work.customerId === null )
+                {status === 'authenticated' && currentId === artistId &&
+                artistId === props.one_work.artistId && (props.one_work.customerId === '' ||
+                    props.one_work.customerId === null )
                 && role === ROLES.ARTIST?
                     <footer className={one_work_scss.footer}>
                         <button className={'no_main_color'}

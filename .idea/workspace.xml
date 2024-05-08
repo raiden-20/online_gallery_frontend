@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="mobile design for avatar profile and one art" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit first login">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/logout/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/logout/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +115,7 @@
       <workItem from="1714902460805" duration="25254000" />
       <workItem from="1714990550069" duration="3889000" />
       <workItem from="1715036248106" duration="2000" />
-      <workItem from="1715099624823" duration="9091000" />
+      <workItem from="1715099624823" duration="18434000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -390,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715118793912</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="edit first login">
+      <option name="closed" value="true" />
+      <created>1715119531683</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1715119531683</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +435,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="redo scss files (variables)" />
     <MESSAGE value="add oneOpenPhoto" />
     <MESSAGE value="fixed profile navigation font size" />
     <MESSAGE value="set default photo" />
@@ -445,6 +459,7 @@
     <MESSAGE value="mobile design for private subscriptions" />
     <MESSAGE value="mobile design for search section" />
     <MESSAGE value="mobile design for avatar profile and one art" />
-    <option name="LAST_COMMIT_MESSAGE" value="mobile design for avatar profile and one art" />
+    <MESSAGE value="edit first login" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit first login" />
   </component>
 </project>

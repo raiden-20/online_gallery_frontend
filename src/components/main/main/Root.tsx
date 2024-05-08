@@ -16,7 +16,7 @@ import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-
 import {NavigationComponentMobile} from "@/components/main/main/navigation/header/nav/NavigationComponentMobile";
 import {Artist} from "@/interfaces/artistInterface";
 import {Customer} from "@/interfaces/customerInterface";
-import {useSession} from "next-auth/react";
+import {signOut, useSession} from "next-auth/react";
 import {MainComponent} from "@/components/main/MainComponent";
 import {CreateOrderSuccessComponent} from "@/components/create_order/success/CreateOrderSuccessComponent";
 import {SubscriptionsContainer} from "@/components/subscribers/SubscriptionsContainer";
@@ -29,6 +29,7 @@ import {OrdersContainer} from "@/components/orders/OrdersContainer";
 import {OneOrderContainer} from "@/components/orders/one_order/OneOrderContainer";
 import {EditArtContainer} from "@/components/create_art/edit_art/EditArtContainer";
 import {setToken} from "@/api/api_main";
+import {deleteCookies, keycloakSessionLogOut} from "@/store/thunks/authThunk";
 
 interface RootInterface {
     artist_data: Artist
@@ -52,22 +53,33 @@ export const Root = (props: RootInterface) => {
         if (Cookies.get('status') === 'authenticated') {
             if (session) {
                 // @ts-ignore
-                localStorage.setItem('access_token', session.access_token)
-                if (!Cookies.get('registrationFlag')) {
-                    // @ts-ignore
-                    Cookies.set('customerId', session.providerAccountId)
-                    props.isCustomerCreate(router)
-                }
-                props.getCustomerProfileData(Cookies.get('customerId') as string, router)
-                if (Cookies.get('artistId')) {
-                    props.getArtistProfileData(Cookies.get('artistId') as string, router)
+                if (session.error !== undefined) {
+                    keycloakSessionLogOut()
+                        .then(() => {
+                            deleteCookies()
+                            signOut({callbackUrl: MAIN_PATHS.MAIN})
+                        })
                 } else {
-                    if (props.customer_data.artistId !== '' && props.customer_data.artistId !== null) {
-                        Cookies.set('artistId', props.customer_data.artistId)
-                        props.getArtistProfileData(Cookies.get('artistId') as string, router)
+                    // @ts-ignore
+                    localStorage.setItem('access_token', session.accessToken)
+
+                    localStorage.setItem('session', JSON.stringify(session))
+                    if (!Cookies.get('registrationFlag')) {
+                        // @ts-ignore
+                        Cookies.set('customerId', session.providerAccountId)
+                        props.isCustomerCreate(router)
                     }
+                    props.getCustomerProfileData(Cookies.get('customerId') as string, router)
+                    if (Cookies.get('artistId')) {
+                        props.getArtistProfileData(Cookies.get('artistId') as string, router)
+                    } else {
+                        if (props.customer_data.artistId !== '' && props.customer_data.artistId !== null) {
+                            Cookies.set('artistId', props.customer_data.artistId)
+                            props.getArtistProfileData(Cookies.get('artistId') as string, router)
+                        }
+                    }
+                    setToken(localStorage.getItem('access_token') as string)
                 }
-                setToken(localStorage.getItem('access_token') as string)
             }
         }
     }, [session]);

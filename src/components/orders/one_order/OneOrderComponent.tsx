@@ -42,8 +42,8 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
                         <li className={one_order_scss.table} key={0}>
                             <div className={one_order_scss.table_title}>Адрес</div>
                             <p className={one_order_scss.address}>
-                                {props.oneOrder.location}, {props.oneOrder.city}, {props.oneOrder.region},
-                                {props.oneOrder.city}, {props.oneOrder.name}
+                                {props.oneOrder.location}, {' ' + props.oneOrder.city}, {' ' + props.oneOrder.region},
+                                {' ' + props.oneOrder.city}, {' ' + props.oneOrder.name}
                             </p>
                         </li>
                         <li className={one_order_scss.table} key={1}>
@@ -67,7 +67,7 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
                         <img src={props.oneOrder.artUrl} className={one_order_scss.img}
                              alt={'photo'}/>
                         <section className={one_order_scss.art_data_name}>
-                            <div>{props.oneOrder.artName}</div>
+                            <div className={'p'}>{props.oneOrder.artName}</div>
                             <div className={one_order_scss.price}>{props.oneOrder.price} ₽</div>
                         </section>
                     </section>
@@ -91,7 +91,7 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
                                      text={props.oneOrder.artistComment}/>
                 </section>
             </section>
-            <p>Возникли проблемы? <button>Обратитесь в техническую поддержку</button></p>
+            <p className={one_order_scss.p}>Возникли проблемы? <button>Обратитесь в техническую поддержку</button></p>
         </section>
     )
 }

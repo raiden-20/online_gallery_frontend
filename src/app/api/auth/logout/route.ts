@@ -7,7 +7,7 @@ export async function GET() {
 
     if (session) {
         const idToken = await getIdToken()
-        let url = `${process.env.END_SESSION_URL}?id_token_hint=${idToken}&post_logout_redirect_uri=${encodeURIComponent('http://localhost:3000')}`
+        let url = `http://localhost:8000/realms/online_gallery/protocol/openid-connect/logout?id_token_hint=${idToken}&post_logout_redirect_uri=http://localhost:3000`
 
         try {
             const resp = await fetch(url, {method: "GET"})

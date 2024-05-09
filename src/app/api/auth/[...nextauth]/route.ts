@@ -4,7 +4,6 @@ import KeycloakProvider from "next-auth/providers/keycloak";
 import {encrypt} from "../../../../../utils/encryption";
 import {JWT} from "next-auth/jwt";
 import {jwtDecode} from "jwt-decode";
-import Cookies from "js-cookie";
 
 async function refreshAccessToken(token: JWT) {
     const resp = await fetch(`${process.env.REFRESH_TOKEN_URL}`, {
@@ -19,15 +18,15 @@ async function refreshAccessToken(token: JWT) {
         }),
         method: 'POST'
     })
-    // @ts-ignore
+
     const refreshToken = await resp.json()
-    // @ts-ignore
+
     if (!resp.ok) throw refreshToken
 
     console.log('token was refreshed')
     return {
         ...token,
-        access_token: refreshToken.access_token,
+        accessToken: refreshToken.access_token,
         decoded: jwtDecode(refreshToken.access_token as string),
         id_token: refreshToken.id_token,
         expires_at: Math.floor(Date.now() / 1000) + refreshToken.expires_at,
@@ -73,7 +72,7 @@ export const AuthConfig: AuthOptions = {
         async session({session, token}) {
 
             // @ts-ignore
-            session.access_token = token.accessToken
+            session.accessToken = token.accessToken
             // @ts-ignore
             session.id_token = encrypt(token.id_token)
             // @ts-ignore
@@ -82,6 +81,8 @@ export const AuthConfig: AuthOptions = {
             session.error = token.error
             // @ts-ignore
             session.providerAccountId = token.providerAccountId
+            // @ts-ignore
+            session.refresh_token = token.refresh_token
 
             console.log('SESSION', session)
 

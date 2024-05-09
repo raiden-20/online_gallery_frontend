@@ -203,10 +203,15 @@ $auth-data-height: 56px;
   }
 
   .back {
-    display: flex;
+    display: grid;
+    grid-template-columns: min-content min-content;
     gap: 10px;
 
     align-items: center;
+
+    img {
+      width: $img-size;
+    }
   }
 
   .input_section {

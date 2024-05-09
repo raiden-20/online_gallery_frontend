@@ -61,9 +61,11 @@ instance.interceptors.response.use((response) => response,
     async (error) => {
         const prev = error.config
         if (error.response.status === 401 && !prev.sent) {
+
             prev.sent = true;
-            const token = localStorage.getItem('access_token') as string
-            prev.headers['Authorization'] = `Bearer ${token}`;
+
+            const res = await refreshTokenFn()
+            prev.headers['Authorization'] = `Bearer ${res.access_token}`;
 
             return instance(prev);
         }
@@ -75,8 +77,9 @@ instanceFile.interceptors.response.use((response) => response,
         const prev = error.config
         if (error.response.status === 401 && !prev.sent) {
             prev.sent = true;
-            const token = localStorage.getItem('access_token') as string
-            prev.headers['Authorization'] = `Bearer ${token}`;
+
+            const res = await refreshTokenFn()
+            prev.headers['Authorization'] = `Bearer ${res.access_token}`;
 
             return instanceFile(prev);
         }
@@ -87,4 +90,41 @@ export const setToken = (token: string) => {
     instance.defaults.headers['Authorization'] = `Bearer ${token}`;
     instanceFile.defaults.headers['Authorization'] = `Bearer ${token}`;
 }
+
+const refreshTokenFn = async () => {
+    // @ts-ignore
+    const session = JSON.parse(localStorage.getItem("session"));
+
+    try {
+        // @ts-ignore
+        const refresh = session.refresh_token
+        // @ts-ignore
+        const resp = await fetch(`http://localhost:8000/realms/online_gallery/protocol/openid-connect/token`, {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams({
+                client_id: 'frontend',
+                client_secret: 'M6qi9XuMsrQ6Q3Q4itcadsfsnuET0VvD',
+                grant_type: 'refresh_token',
+                refresh_token: refresh
+            }),
+            method: 'POST'
+        })
+
+        // @ts-ignore
+        const session_new = await resp.json();
+
+        if (!session_new?.access_token) {
+            localStorage.removeItem("session");
+        }
+
+        localStorage.setItem("session", JSON.stringify(session_new));
+        localStorage.setItem("access_token", JSON.stringify(session_new.access_token));
+
+        return session_new;
+    } catch (error) {
+        localStorage.removeItem("session");
+    }
+};
 

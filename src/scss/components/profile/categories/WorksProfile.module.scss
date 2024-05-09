@@ -12,7 +12,6 @@ $blur: 30px;
   width: 100%;
 
   display: flex;
-  flex-flow: column;
   flex-wrap: wrap;
 
   column-gap: $gap-s;
@@ -169,7 +168,7 @@ $blur: 30px;
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (orientation: portrait){
   .create_art_button {
     img {
       width: 90px;
@@ -178,7 +177,7 @@ $blur: 30px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) and (orientation: portrait) {
   .create_art_button {
     img {
       width: 70px;

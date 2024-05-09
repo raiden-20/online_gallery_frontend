@@ -53,3 +53,9 @@
   justify-content: space-between;
   align-items: center;
 }
+
+@media screen and (orientation: portrait) {
+  .header {
+    font-size: $font-size-l0;
+  }
+}

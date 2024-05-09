@@ -8,12 +8,18 @@ $one-element-img-size: 70px;
   flex-flow: column;
 }
 
+.root_main {
+  display: flex;
+  flex-flow: column;
+}
+
 .header {
   display: grid;
   grid-template-columns: min-content auto min-content;
   gap: $gap-xs;
 
   align-items: center;
+
 
   .img {
     width: $img-size;
@@ -41,7 +47,8 @@ $one-element-img-size: 70px;
   cursor: pointer;
   padding: $padding-7;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content auto;
   align-items: center;
   gap: $gap-xxs;
 
@@ -60,5 +67,25 @@ $one-element-img-size: 70px;
     cursor: pointer;
     font-size: $font-size-l;
     font-weight: $weight;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .nav {
+    width: calc(100vw - 2 * $padding-24);
+    overflow-x: auto;
+
+    li {
+      margin: $input-padding;
+    }
+  }
+
+  .one_element {
+
+    .one_element_name {
+      cursor: pointer;
+      font-size: $font-size-l0;
+      font-weight: $weight;
+    }
   }
 }

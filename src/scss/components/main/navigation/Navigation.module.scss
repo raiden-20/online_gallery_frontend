@@ -53,10 +53,6 @@ $nav-height-mobile: 65px;
 }
 
 @media screen and (orientation: portrait){
-  .nav {
-    height: 65px;
-  }
-
   .nav_mobile {
     display: flex;
     gap: 16px;

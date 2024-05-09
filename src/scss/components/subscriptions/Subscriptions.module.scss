@@ -84,6 +84,10 @@ $artist-private-img-size: 70px;
     }
   }
 
+  .data {
+    display: none;
+  }
+
   button {
     width: min-content;
 
@@ -105,7 +109,7 @@ $artist-private-img-size: 70px;
       cursor: pointer;
     }
 
-    width: min-content;
+    width: $img-size-medium;
     display: grid;
     justify-items: center;
     gap: $gap-xs;
@@ -120,12 +124,72 @@ $artist-private-img-size: 70px;
     }
 
     div {
-      font-size: $font-size-xxl;
+      font-size: $font-size-l;
       font-weight: $weight;
     }
   }
 }
 
+.desktop_hidden {
+  display: none;
+}
+
 .p {
   text-align: center;
+}
+
+@media screen and (orientation: portrait) {
+  .mobile_hidden {
+    display: none;
+  }
+
+  .desktop_hidden {
+    display: grid;
+  }
+
+  .section_title {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+
+    div {
+      font-size: $font-size-l22;
+    }
+  }
+
+  .one_private_subscription_artists {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+
+    .artist_data_private {
+      height: max-content;
+      width: 70px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      gap: $gap-xxxs;
+    }
+
+    .data {
+      width: max-content;
+      height: max-content;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: $gap-xxxs;
+    }
+
+    button {
+      display: grid;
+      justify-self: center;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .one_private_subscription_artists {
+
+    button {
+      padding: $search-padding;
+    }
+  }
 }

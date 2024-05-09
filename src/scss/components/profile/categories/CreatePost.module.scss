@@ -16,6 +16,7 @@ $title-max-height: 84px;
   }
 
   .title {
+    width: 100%;
     min-height: min-content;
     max-height: $title-max-height;
 
@@ -50,6 +51,7 @@ $title-max-height: 84px;
 
 .photo_section {
   display: flex;
+  flex-wrap: wrap;
   gap: $gap-xxxs;
 
   .onePhoto_section {
@@ -79,4 +81,49 @@ $title-max-height: 84px;
 
 .forbidden {
   color: $grey-date;
+}
+
+@media screen and (orientation: portrait) {
+  .root {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: min-content auto min-content min-content;
+
+    .cancel {
+      display: none;
+    }
+
+    .textarea {
+      padding: 0;
+      height: 100%;
+    }
+
+    .buttons_section {
+      max-width: 100%;
+      height: min-content;
+      display: grid;
+      grid-template-columns: min-content auto;
+      justify-content: normal;
+      column-gap: $gap-s;
+
+      button {
+        width: 100%;
+      }
+
+      .button_images {
+        width: 40px;
+        height: 40px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        div {
+          display: none;
+        }
+      }
+    }
+  }
 }

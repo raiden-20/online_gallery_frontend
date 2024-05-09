@@ -23,6 +23,9 @@ import {
 import {
     SubscriptionsCustomerPublic
 } from "@/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPublic";
+import search_scss from "@/scss/components/search/Search.module.scss";
+import delete_icon from "@/assets/icons/search/delete.svg";
+import filters_scss from "@/scss/components/categories/Filters.module.scss";
 
 interface subscriptionsInterface {
     subscriptionsArtistsPrivate: SubscriptionsArtistsPrivate[]
@@ -81,26 +84,32 @@ export const SubscriptionsComponent = (props: subscriptionsInterface) => {
                     </button>
                 </li>
             </ul>
-            <section className={subscriptions_scss.search_section}>
+            <section className={filters_scss.search}>
                 <Image src={search_icon} alt={'search_icon'}/>
-                <input value={input} onChange={(event) => setInput(event.target.value)}
-                       placeholder={'Поиск'}/>
+                <input value={input}
+                       placeholder={'Поиск'}
+                       onChange={(event) =>
+                           setInput(event.target.value)}/>
             </section>
             {whoIsClicked === 1 ?
                 role === ROLES.CUSTOMER ?
                     <SubscriptionsArtistPrivate PrivateSubscriptionsArtists={props.PrivateSubscriptionsArtists}
-                                                subscriptionsArtistsPrivate={props.subscriptionsArtistsPrivate}/>
+                                                subscriptionsArtistsPrivate={props.subscriptionsArtistsPrivate}
+                                                input={input}/>
                     :
                     <SubscriptionsCustomerPrivate PublicSubscriptions={props.PrivateSubscribersCustomers}
-                                                  subscriptions={props.subscriptionsCustomersPrivate}/>
+                                                  subscriptions={props.subscriptionsCustomersPrivate}
+                                                  input={input}/>
                 : whoIsClicked === 2 ?
                     role === ROLES.CUSTOMER ?
                         <SubscriptionsArtistPublic PublicSubscriptions={props.PublicSubscriptionsArtists}
-                                                   subscriptions={props.subscriptionsArtistsPublic}/>
+                                                   subscriptions={props.subscriptionsArtistsPublic}
+                                                   input={input}/>
                         :
                         <SubscriptionsCustomerPublic PublicSubscriptions={props.PublicSubscribersCustomers}
-                                                     subscriptions={props.subscriptionsCustomersPublic}/>
-                : null}
+                                                     subscriptions={props.subscriptionsCustomersPublic}
+                                                     input={input}/>
+                    : null}
         </section>
     )
 }

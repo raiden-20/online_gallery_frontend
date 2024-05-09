@@ -8,7 +8,6 @@ import {useState} from "react";
 
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
-import {signIn} from "next-auth/react";
 import {useSession} from "next-auth/react";
 import Cookies from "js-cookie";
 import {AccountNavigationContainer} from "@/components/main/main/navigation/header/AccountNavigationContainer";

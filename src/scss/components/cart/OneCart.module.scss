@@ -13,6 +13,17 @@ $hover-section-width: 400px;
   grid-template-columns: min-content auto max-content;
   column-gap: $gap-s;
 
+  .data_root {
+    display: grid;
+    column-gap: $gap-s;
+  }
+
+  .data_main {
+    display: grid;
+    grid-template-columns: auto max-content;
+    gap: $gap-s;
+  }
+
   .img {
     width: $img-size-medium;
     object-fit: cover;
@@ -45,6 +56,7 @@ $hover-section-width: 400px;
   }
 
   .section {
+    padding: $padding-16-0-0-0;
     display: grid;
     align-self: end;
   }
@@ -93,4 +105,38 @@ $hover-section-width: 400px;
   display: grid;
   align-self: start;
   justify-self: start;
+}
+
+@media screen and (orientation: portrait) {
+  .root {
+
+    .text, .name {
+      font-size: $font-size;
+    }
+
+    .img {
+      width: $one-photo-size;
+      object-fit: cover;
+    }
+
+    .data_main {
+      display: flex;
+      flex-flow: column;
+
+      gap: $gap-s;
+    }
+
+    .delete_img {
+      width: $img_button-width-35;
+    }
+
+    .price_section {
+      height: min-content;
+
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }

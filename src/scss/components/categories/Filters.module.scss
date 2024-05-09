@@ -131,24 +131,24 @@ $checkbox-section-height: 179px;
       flex-flow: column;
       gap: $gap-s;
     }
+  }
+}
 
-    .search {
-      padding: $search-padding;
+.search {
+  padding: $search-padding;
 
-      display: flex;
-      gap: $gap-xs;
+  display: flex;
+  gap: $gap-xs;
 
-      border: 1px solid $grey-filter-price-border;
-      border-radius: $elements-radius;
+  border: 1px solid $grey-filter-price-border;
+  border-radius: $elements-radius;
 
-      input {
-        border: none;
-        height: min-content;
-        width: 100%;
+  input {
+    border: none;
+    height: min-content;
+    width: 100%;
 
-        padding: 0;
-      }
-    }
+    padding: 0;
   }
 }
 

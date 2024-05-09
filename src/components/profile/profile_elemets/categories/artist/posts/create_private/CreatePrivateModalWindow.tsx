@@ -5,6 +5,7 @@ import suggestion_scss from '@/scss/components/profile/categories/SuggestionSubs
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import Cookies from "js-cookie";
 import {useRouter} from "next/navigation";
+import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface createPrivateInterface {
     setIsClicked(isClicked: boolean): void
@@ -34,6 +35,7 @@ export const CreatePrivateModalWindow = (props: createPrivateInterface) => {
         <section className={'page_modal_window'}>
             <section className={'bg2'} onClick={() => props.setIsClicked(false)}></section>
             <main className={'modal_window'}>
+                <Cancel_ButtonComponent setCancel={props.setIsClicked} whatSet={false}/>
                 <section className={delete_account_scss.root}>
                     <header className={delete_account_scss.header}>
                         Подключение ежемесячной подписки

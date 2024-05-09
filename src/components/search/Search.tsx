@@ -38,35 +38,38 @@ export const Search = (props: SearchInterface) => {
                            alt={'search_icon'} width={0} height={0}/>
                 </button>
             </section>
-            <nav>
-                <ul className={nav_profile_scss.root + ' ' + search_scss.nav}>
-                    {categories.map((one: string, index)  => {
-                        return (
-                            <li className={whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}>
-                                <button onClick={() => setWhoIsClicked(index + 1)} key={index}>
-                                    {one}
-                                </button>
-                            </li>
-                        )
-                    })}
-                </ul>
-            </nav>
-            <main className={search_scss.main}>
-                {whoIsClicked === 1 ? <Artists search={props.search}
-                                               input_name={input_name}
-                                               getAllArtists={props.getAllArtists}
-                                               getSmthByName={props.getSmthByName}/> :
-                whoIsClicked === 2 ? <Customers search={props.search}
-                                                input_name={input_name}
-                                                getAllCustomers={props.getAllCustomers}
-                                                getSmthByName={props.getSmthByName}/> :
-                whoIsClicked === 3 || whoIsClicked === 4 || whoIsClicked === 5
-                    ? <Works search={props.search}
-                             input_name={input_name}
-                             getAllArts={props.getAllArts}
-                             getSmthByName={props.getSmthByName}
-                             whoIsClicked={whoIsClicked}/> : null}
-            </main>
+            <section className={search_scss.root_main}>
+                <nav>
+                    <ul className={nav_profile_scss.root + ' ' + search_scss.nav + ' scrollbarNone'}>
+                        {categories.map((one: string, index) => {
+                            return (
+                                <li className={whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}>
+                                    <button onClick={() => setWhoIsClicked(index + 1)} key={index}>
+                                        {one}
+                                    </button>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </nav>
+                <main className={search_scss.main}>
+                    {whoIsClicked === 1 ? <Artists search={props.search}
+                                                   input_name={input_name}
+                                                   getAllArtists={props.getAllArtists}
+                                                   getSmthByName={props.getSmthByName}/> :
+                        whoIsClicked === 2 ? <Customers search={props.search}
+                                                        input_name={input_name}
+                                                        getAllCustomers={props.getAllCustomers}
+                                                        getSmthByName={props.getSmthByName}/> :
+                            whoIsClicked === 3 || whoIsClicked === 4 || whoIsClicked === 5
+                                ? <Works search={props.search}
+                                         input_name={input_name}
+                                         getAllArts={props.getAllArts}
+                                         getSmthByName={props.getSmthByName}
+                                         whoIsClicked={whoIsClicked}/> : null}
+                </main>
+            </section>
+
         </section>
     )
 }

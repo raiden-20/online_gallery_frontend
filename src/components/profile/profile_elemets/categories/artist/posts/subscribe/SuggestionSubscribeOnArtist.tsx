@@ -19,7 +19,7 @@ export const SuggestionSubscribeOnArtist = () => {
     return (
         <section className={suggestion_scss.root}>
             <main className={suggestion_scss.main}>
-                <Image src={not_available} alt={'not_available'} width={0} height={0}/>
+                <Image src={not_available} className={suggestion_scss.img} alt={'not_available'} width={0} height={0}/>
                 <p>Чтобы просматривать эксклюзивный контент,
                     необходимо
                     <button className={suggestion_scss.underline}

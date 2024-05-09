@@ -14,6 +14,7 @@ import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import {MAIN_PATHS} from "@/paths/main";
 import Cookies from "js-cookie";
 import {DeleteAccountComponent} from "@/components/settings/categories/account/components/DeleteAccountComponent";
+import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface AccountSettingsInterface {
     customer_data: Customer,
@@ -45,11 +46,8 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
 
     return (
         <section>
-            <button className={settings_scss.back}
-            onClick={() => props.setWhoIsClickedMobile(0)}>
-                <Image src={cancel_icon} alt={'cancel_icon'} width={19} height={10}/>
-                <div>Назад</div>
-            </button>
+            <Cancel_ButtonComponent setCancel={props.setWhoIsClickedMobile}
+                                    whatSet={0}/>
 
             {isEmailSection ? <EmailComponent setIsEmailSection={setIsEmailSection}
                                               changeEmail={props.changeEmail}/> :

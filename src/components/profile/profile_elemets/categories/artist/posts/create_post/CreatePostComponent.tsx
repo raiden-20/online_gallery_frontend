@@ -4,6 +4,7 @@ import download_photo_icon from '@/assets/icons/profile/download_photo.svg'
 import delete_photo_icon from '@/assets/icons/profile/create_post/delete.svg'
 import Image from "next/image";
 import React from "react";
+import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface createPostProfile {
     setIsCreatePost(isCreatePost: boolean): void
@@ -23,6 +24,8 @@ export const CreatePostComponent = (props: createPostProfile) => {
         <section className={'page_modal_window'}>
             <section className={'bg2'} onClick={() => props.setIsCreatePost(false)}></section>
             <main className={'modal_window'}>
+                <Cancel_ButtonComponent setCancel={props.setIsCreatePost}
+                                        whatSet={false}/>
                 <section className={create_post_scss.root}>
                     <button className={create_post_scss.cancel} onClick={() => props.setIsCreatePost(false)}>
                         <Image src={cancel_icon} alt={'cancel_icon'}/>
@@ -64,7 +67,9 @@ export const CreatePostComponent = (props: createPostProfile) => {
                                 </div>
                             </label>
                         </button>
-                        <button className={'main_button'}
+                        <button className={Object.keys(props.photoArraySrc).length > 0 &&
+                                            props.input_text !== '' && props.input_title !== '' ? 'main_button'
+                                            : 'second_plan_button'}
                                 onClick={() => props.setCreatePostClicked(true)}>
                             Опубликовать
                         </button>

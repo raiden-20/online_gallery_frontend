@@ -36,7 +36,7 @@ export const ArtistsComponent = (props: artistsMain) => {
                             Cookies.set('currentId', oneArtist.artistId)
                             router.push(MAIN_PATHS.PROFILE_ARTIST + `/${oneArtist.artistId}`)
                         }}>
-                            <img src={oneArtist.avatarUrl} className={artists_scss.one_artist_img}
+                            <img src={oneArtist.avatarUrl === '' ? '/default_avatar_profile.svg' : oneArtist.avatarUrl} className={artists_scss.one_artist_img}
                                  alt={'one work'}
                                  crossOrigin="anonymous"/>
                             <section className={artists_scss.one_artist_name_section}>

@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit first login">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit refresh token">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/logout/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/logout/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePostsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/delete_posts/DeletePostsComponent.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +111,11 @@
       <workItem from="1714902460805" duration="25254000" />
       <workItem from="1714990550069" duration="3889000" />
       <workItem from="1715036248106" duration="2000" />
-      <workItem from="1715099624823" duration="18434000" />
+      <workItem from="1715099624823" duration="18766000" />
+      <workItem from="1715184356232" duration="602000" />
+      <workItem from="1715258660058" duration="2000" />
+      <workItem from="1715262112681" duration="3000" />
+      <workItem from="1715267426362" duration="2504000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -405,7 +405,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715119531683</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="edit refresh token">
+      <option name="closed" value="true" />
+      <created>1715128840584</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1715128840584</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +443,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add oneOpenPhoto" />
     <MESSAGE value="fixed profile navigation font size" />
     <MESSAGE value="set default photo" />
     <MESSAGE value="fix one open photo visibility" />
@@ -460,6 +467,7 @@
     <MESSAGE value="mobile design for search section" />
     <MESSAGE value="mobile design for avatar profile and one art" />
     <MESSAGE value="edit first login" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit first login" />
+    <MESSAGE value="edit refresh token" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit refresh token" />
   </component>
 </project>

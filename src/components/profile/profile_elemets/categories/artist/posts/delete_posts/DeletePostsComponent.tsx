@@ -48,7 +48,7 @@ export const DeletePostsComponent = (props: deletePostsInterface) => {
                     <p className={posts_artist_module.p}>Все Ваши посты будут удалены, а товары для поддержавших
                         перейдут в публичный доступ</p>
                     <p className={delete_account_scss.main_p}>Для продолжения введите Ваше имя покупателя:</p>
-                    <input placeholder={'Имя покупателя'} value={input_name} className={delete_account_scss.input}
+                    <input placeholder={'Имя художника'} value={input_name} className={delete_account_scss.input}
                            onChange={(event) => setInput_name(event.target.value)}/>
                     {message !== '' ?
                         <p className={'message'}>{message}</p>

@@ -43,7 +43,7 @@ export const NavigationComponentMobile = (props: navigationInterface) => {
                            width={0} height={0}/>
                 </button>
                 {isMenuClicked ?
-                <NavigationElementsMobile setIsMenuClicked={setIsMenuClicked}/> : null}
+                    <NavigationElementsMobile setIsMenuClicked={setIsMenuClicked}/> : null}
             </section>
             <section className={navigation_scss.nav_mobile}>
                 <button onClick={() => router.push(MAIN_PATHS.SEARCH)}>
@@ -62,7 +62,7 @@ export const NavigationComponentMobile = (props: navigationInterface) => {
                         <img src={role === ROLES.CUSTOMER ? props.customer_avatar : props.artist_avatar}
                              alt={'account_icon'} className={navigation_scss.avatar}
                              crossOrigin="anonymous"/>
-                    :
+                        :
                         <Image src={account_icon} alt={'account_icon'} className={navigation_scss.img}
                                width={0} height={0}/>
                     }

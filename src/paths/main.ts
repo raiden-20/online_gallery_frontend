@@ -28,6 +28,7 @@ export const PATHS_CATEGORY = {
     ORDER: '/order',
     ORDERS: '/orders',
     SUBSCRIPTIONS: '/subscriptions',
+    NOTIFICATIONS: '/notifications',
 
     ERROR_404: '/404',
     SUCCESS: '/success'
@@ -61,6 +62,8 @@ export const MAIN_PATHS = {
     ORDERS: PATHS_CATEGORY.ORDERS,
     ONE_ORDER: PATHS_CATEGORY.ORDERS,
     SUBSCRIPTIONS: PATHS_CATEGORY.SUBSCRIPTIONS,
+
+    NOTIFICATIONS: PATHS_CATEGORY.NOTIFICATIONS,
 
     ONE_ART: PATHS_CATEGORY.ARTS
 }

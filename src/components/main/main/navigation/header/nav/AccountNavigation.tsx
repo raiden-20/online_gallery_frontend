@@ -51,12 +51,14 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + Cookies.get('customerId'))
                             }
                             }>
-                            <img src={props.my_customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_customer_data.avatarUrl }
-                                 className={accountNavigation_scss.avatar}
-                                 crossOrigin="anonymous"
-                                 alt={'avatar'}/>
+                            <img
+                                src={props.my_customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_customer_data.avatarUrl}
+                                className={accountNavigation_scss.avatar}
+                                crossOrigin="anonymous"
+                                alt={'avatar'}/>
                             <section className={accountNavigation_scss.name_section}>
-                                <div className={'p ' + accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
+                                <div
+                                    className={'p ' + accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
                                 <button className={accountNavigation_scss.button}>
                                     Покупатель
                                 </button>
@@ -73,12 +75,14 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + Cookies.get('artistId'))
                             }
                             }>
-                            <img src={props.my_artist_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_artist_data.avatarUrl}
-                                 className={accountNavigation_scss.avatar}
-                                 crossOrigin="anonymous"
-                                 alt={'avatar'}/>
+                            <img
+                                src={props.my_artist_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_artist_data.avatarUrl}
+                                className={accountNavigation_scss.avatar}
+                                crossOrigin="anonymous"
+                                alt={'avatar'}/>
                             <section className={accountNavigation_scss.name_section}>
-                                <div className={'p ' + accountNavigation_scss.name}>{props.my_artist_data.artistName}</div>
+                                <div
+                                    className={'p ' + accountNavigation_scss.name}>{props.my_artist_data.artistName}</div>
                                 <button className={accountNavigation_scss.button}>
                                     Художник
                                 </button>
@@ -89,7 +93,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                             <button className={accountNavigation_scss.buttonAdd}>
                                 <div className={accountNavigation_scss.plus}>+</div>
                                 <div className={accountNavigation_scss.artist_button}
-                                    onClick={() => router.push(MAIN_PATHS.CREATE_ARTIST)}>
+                                     onClick={() => router.push(MAIN_PATHS.CREATE_ARTIST)}>
                                     Художник
                                 </div>
                             </button>
@@ -109,12 +113,13 @@ export const AccountNavigation = (props: accountNavInterface) => {
                     </li>
                     <li key={4}>
                         <button className={accountNavigation_scss.button}
-                        onClick={() => router.push(MAIN_PATHS.ORDERS)}>
+                                onClick={() => router.push(MAIN_PATHS.ORDERS)}>
                             Заказы
                         </button>
                     </li>
                     <li key={5}>
-                        <button className={accountNavigation_scss.button}>
+                        <button className={accountNavigation_scss.button}
+                                onClick={() => router.push(MAIN_PATHS.NOTIFICATIONS)}>
                             Уведомления
                         </button>
                     </li>
@@ -141,7 +146,6 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                     keycloakSessionLogOut()
                                         .then(() => {
                                             deleteCookies()
-
                                             signOut({callbackUrl: MAIN_PATHS.MAIN})
                                         })
                                 }}>

@@ -6,7 +6,9 @@ import '@/scss/globals/globals.scss'
 import '@/scss/globals/pages.scss'
 import {ProviderMain} from "../../utils/providerMain";
 
-const inter = Roboto({weight: '400', subsets: ["latin"]});
+const inter = Roboto({
+    weight: ["500", "700", "900"],
+    subsets: ["latin"]});
 
 export const metadata: Metadata = {
     title: "Lindéro | online gallery",

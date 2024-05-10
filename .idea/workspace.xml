@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit main page artists avatar">
-      <change afterPath="$PROJECT_DIR$/src/app/notifications/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/main/close_icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/notifications/NotificationsComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/notifications/one_popup_notification/OnePopUpNotificationComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/notifications/Notifications.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/notifications/PopUpNotification.module.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add notifications_design 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +51,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Rebasing develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/main",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,10 +64,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\main" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile\create_post" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\art" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\orders\[id]" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\subscribers\subscriptionsArtistPublic" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\tags" />
@@ -126,7 +117,7 @@
       <workItem from="1715258660058" duration="2000" />
       <workItem from="1715262112681" duration="3000" />
       <workItem from="1715267426362" duration="2504000" />
-      <workItem from="1715297441028" duration="1233000" />
+      <workItem from="1715297441028" duration="2007000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -432,7 +423,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715297937282</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="add notifications_design">
+      <option name="closed" value="true" />
+      <created>1715298975007</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1715298975007</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add notifications_design 2">
+      <option name="closed" value="true" />
+      <created>1715298994758</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1715298994758</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +456,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature_store_thunk" />
+                        <option value="feature_design_notifications" />
                       </list>
                     </value>
                   </entry>
@@ -462,8 +469,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="set default photo" />
-    <MESSAGE value="fix one open photo visibility" />
     <MESSAGE value="created private posts components" />
     <MESSAGE value="small changes in all" />
     <MESSAGE value="change who buy art section size" />
@@ -487,6 +492,8 @@
     <MESSAGE value="edit first login" />
     <MESSAGE value="edit refresh token" />
     <MESSAGE value="edit main page artists avatar" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit main page artists avatar" />
+    <MESSAGE value="add notifications_design" />
+    <MESSAGE value="add notifications_design 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="add notifications_design 2" />
   </component>
 </project>

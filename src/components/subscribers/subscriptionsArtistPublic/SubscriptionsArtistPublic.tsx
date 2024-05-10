@@ -29,9 +29,9 @@ export const SubscriptionsArtistPublic = (props: subscriptionsInterface) => {
                     <li className={subscriptions_scss.one_artist_public} key={index}
                     onClick={() => {
                         if (role === ROLES.CUSTOMER) {
+                            Cookies.set('currentRole', ROLES.ARTIST)
+                            Cookies.set('currentId', one.artistId)
                             router.push(MAIN_PATHS.PROFILE_ARTIST + `/${one.artistId}`)
-                        } else {
-                            router.push(MAIN_PATHS.PROFILE_CUSTOMER + `/${one.artistId}`)
                         }
                     }}>
                         <img src={one.avatarUrl} alt={'avatar'} crossOrigin="anonymous"/>

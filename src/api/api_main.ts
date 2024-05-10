@@ -79,6 +79,7 @@ instanceFile.interceptors.response.use((response) => response,
             prev.sent = true;
 
             const res = await refreshTokenFn()
+            console.log(res.access_token)
             prev.headers['Authorization'] = `Bearer ${res.access_token}`;
 
             return instanceFile(prev);

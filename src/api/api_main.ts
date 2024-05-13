@@ -60,11 +60,13 @@ export const instanceWithoutToken = axios.create({
 instance.interceptors.response.use((response) => response,
     async (error) => {
         const prev = error.config
-        if (error.response.status === 401 && !prev.sent) {
+        if ((error.response.status === 401 || error.response.status === 400) && !prev.sent) {
 
             prev.sent = true;
 
             const res = await refreshTokenFn()
+            console.log(res.access_token)
+            debugger
             prev.headers['Authorization'] = `Bearer ${res.access_token}`;
 
             return instance(prev);
@@ -75,7 +77,7 @@ instance.interceptors.response.use((response) => response,
 instanceFile.interceptors.response.use((response) => response,
     async (error) => {
         const prev = error.config
-        if (error.response.status === 401 && !prev.sent) {
+        if ((error.response.status === 401 || error.response.status === 400) && !prev.sent) {
             prev.sent = true;
 
             const res = await refreshTokenFn()

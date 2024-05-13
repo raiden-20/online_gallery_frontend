@@ -83,14 +83,14 @@ export const NavigationComponent = (props: navigationInterface) => {
             </li>
             <li key={1}>
                 <button onClick={() => {
-                    if ((status === 'unauthenticated' || session === null)) {
+                    if ((status === 'unauthenticated' || session === null || !role)) {
                         signin()
                      } else {
                         setIsAccountClicked(!isAccountClicked)
                     }
                 }
                 }>
-                    {status === 'authenticated' ?
+                    {status === 'authenticated' && role ?
                         <img src={role === ROLES.CUSTOMER ? props.customer_avatar : props.artist_avatar}
                              alt={'account_icon'} className={navigation_scss.avatar}
                              crossOrigin="anonymous"/>

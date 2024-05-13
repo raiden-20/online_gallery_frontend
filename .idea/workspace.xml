@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add notifications_design 2">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add routing to subscriptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/actionsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/actionsAPI.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +51,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing develop",
+    "git-widget-placeholder": "Rebasing feature__app__improvement",
     "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
@@ -117,7 +118,10 @@
       <workItem from="1715258660058" duration="2000" />
       <workItem from="1715262112681" duration="3000" />
       <workItem from="1715267426362" duration="2504000" />
-      <workItem from="1715297441028" duration="2007000" />
+      <workItem from="1715297441028" duration="2376000" />
+      <workItem from="1715370288911" duration="3000" />
+      <workItem from="1715459902866" duration="3000" />
+      <workItem from="1715632030661" duration="945000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -439,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715298994758</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="add routing to subscriptions">
+      <option name="closed" value="true" />
+      <created>1715299770197</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1715299770197</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created private posts components" />
     <MESSAGE value="small changes in all" />
     <MESSAGE value="change who buy art section size" />
     <MESSAGE value="add input checkbox css settings" />
@@ -494,6 +505,7 @@
     <MESSAGE value="edit main page artists avatar" />
     <MESSAGE value="add notifications_design" />
     <MESSAGE value="add notifications_design 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="add notifications_design 2" />
+    <MESSAGE value="add routing to subscriptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="add routing to subscriptions" />
   </component>
 </project>

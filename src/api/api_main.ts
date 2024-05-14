@@ -66,7 +66,6 @@ instance.interceptors.response.use((response) => response,
 
             const res = await refreshTokenFn()
             console.log(res.access_token)
-            debugger
             prev.headers['Authorization'] = `Bearer ${res.access_token}`;
 
             return instance(prev);

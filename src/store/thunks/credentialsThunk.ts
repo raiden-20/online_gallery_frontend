@@ -1,18 +1,29 @@
 import {Dispatch} from "redux";
 import {CredentialsAndAddressAPI} from "@/api/credentialsAndAddressAPI";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {setAddresses, setCards} from "@/store/reducers/credentialsReducer";
-import {rotate} from "next/dist/server/lib/squoosh/impl";
+import {addAddresses, setAddresses, setCards} from "@/store/reducers/credentialsReducer";
+import {OneAddressInterface} from "@/interfaces/credentials";
 
 export const AddAddress = (name: string, country: string, region: string, city: string,
                            index: string, location: string, isDefault: boolean,
                            router: AppRouterInstance) =>
-    () => {
+    (dispatch: Dispatch) => {
         CredentialsAndAddressAPI.AddAddressAPI(name, country, region, city, index, location, isDefault)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        router.refresh()
+                        debugger
+                        const address : OneAddressInterface = {
+                            addressId: '',
+                            name: name,
+                            country: country,
+                            region: region,
+                            city: city,
+                            index: index,
+                            location: location,
+                            isDefault: isDefault
+                        }
+                        dispatch(addAddresses(address))
                     }
                 }
             }).catch(error => {
@@ -22,7 +33,7 @@ export const AddAddress = (name: string, country: string, region: string, city: 
 export const EditAddress = (addressId: string, name: string, country: string, region: string, city: string,
                            index: string, location: string, isDefault: boolean,
                             router: AppRouterInstance) =>
-    () => {
+    (dispatch: Dispatch) => {
         CredentialsAndAddressAPI.EditAddressAPI(addressId, name, country, region, city, index, location, isDefault)
             .then(response => {
                 switch (response[0]) {
@@ -50,7 +61,7 @@ export const getAddresses = (router: AppRouterInstance) =>
     }
 
 export const DeleteAddress = (id: string, router: AppRouterInstance) =>
-    () => {
+    (dispatch: Dispatch) => {
         CredentialsAndAddressAPI.DeleteAddressAPI(id)
             .then(response => {
                 switch (response[0]) {
@@ -65,7 +76,7 @@ export const DeleteAddress = (id: string, router: AppRouterInstance) =>
 
 export const AddCard = (number: string, date: string, cvv: string, isDefault: boolean,
                         router: AppRouterInstance) =>
-    () => {
+    (dispatch: Dispatch) => {
         CredentialsAndAddressAPI.AddCardAPI(number, date, cvv, isDefault)
             .then(response => {
                 switch (response[0]) {
@@ -79,7 +90,7 @@ export const AddCard = (number: string, date: string, cvv: string, isDefault: bo
     }
 export const EditCard = (cardId: string, type: string, number: string, date: string, cvv: string, isDefault: boolean,
                          router: AppRouterInstance) =>
-    () => {
+    (dispatch: Dispatch) => {
         CredentialsAndAddressAPI.EditCardAPI(cardId, type, number, date, cvv, isDefault)
             .then(response => {
                 switch (response[0]) {
@@ -107,7 +118,7 @@ export const getCards = (router: AppRouterInstance) =>
     }
 
 export const DeleteCard = (id: string, router: AppRouterInstance) =>
-    () => {
+    (dispatch: Dispatch) => {
         CredentialsAndAddressAPI.DeleteCardAPI(id)
             .then(response => {
                 switch (response[0]) {

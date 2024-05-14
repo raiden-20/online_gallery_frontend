@@ -28,6 +28,7 @@ export const NavigationComponent = (props: navigationInterface) => {
 
     const [role] = useState(Cookies.get('role'))
 
+
     return (
         <ul className={navigation_scss.nav}>
             <li key={0}>
@@ -83,14 +84,14 @@ export const NavigationComponent = (props: navigationInterface) => {
             </li>
             <li key={1}>
                 <button onClick={() => {
-                    if ((status === 'unauthenticated' || session === null || !role)) {
+                    if ((status === 'unauthenticated' || session === null)) {
                         signin()
                      } else {
                         setIsAccountClicked(!isAccountClicked)
                     }
                 }
                 }>
-                    {status === 'authenticated' && role ?
+                    {status === 'authenticated' ?
                         <img src={role === ROLES.CUSTOMER ? props.customer_avatar : props.artist_avatar}
                              alt={'account_icon'} className={navigation_scss.avatar}
                              crossOrigin="anonymous"/>

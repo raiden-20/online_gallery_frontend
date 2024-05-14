@@ -29,6 +29,8 @@ export const WorksArtistProfileComponent = (props: worksProfileInterface) => {
         props.GetArtsArtist(currentId, router)
     }, []);
 
+    debugger
+
 
     return (
         <ul className={works_profile_scss.root}>

@@ -117,7 +117,6 @@ export const ActionsAPI = {
             const response = await instance.get(
                 PathsAPI.PRIVATE + PathsAPI.SUBSCRIBERS,
             )
-            debugger
             return [response.status, response.data];
         } catch (error: any) {
             console.error(error)
@@ -130,10 +129,8 @@ export const ActionsAPI = {
             const response = await instance.get(
                 PathsAPI.PUBLIC + PathsAPI.SUBSCRIBERS,
             )
-            debugger
             return [response.status, response.data];
         } catch (error: any) {
-            debugger
             console.error(error)
             return [error.response.status, error.response.data];
         }

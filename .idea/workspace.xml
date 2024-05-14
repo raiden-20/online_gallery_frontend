@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add routing to subscriptions">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit refresh token">
+      <change afterPath="$PROJECT_DIR$/src/app/profile/artist/[id]/posts/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/time/TimeComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/actionsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/actionsAPI.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileRoot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OnePostArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/elements/OnePostArtistComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/about/AboutCustomer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/about/AboutCustomer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/credentialsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/credentialsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,35 +66,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing feature__app__improvement",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rebasing feature__app__improvement&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist\[id]\posts" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\main" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile\create_post" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\art" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\orders\[id]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\tags" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\material" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\year" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\artists" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\pages\data\elements\add_info\elements" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -121,7 +140,9 @@
       <workItem from="1715297441028" duration="2376000" />
       <workItem from="1715370288911" duration="3000" />
       <workItem from="1715459902866" duration="3000" />
-      <workItem from="1715632030661" duration="945000" />
+      <workItem from="1715632030661" duration="6989000" />
+      <workItem from="1715679725083" duration="320000" />
+      <workItem from="1715680243729" duration="2299000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -451,7 +472,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715299770197</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="edit refresh token">
+      <option name="closed" value="true" />
+      <created>1715633059643</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1715633059643</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,11 +530,11 @@
     <MESSAGE value="mobile design for search section" />
     <MESSAGE value="mobile design for avatar profile and one art" />
     <MESSAGE value="edit first login" />
-    <MESSAGE value="edit refresh token" />
     <MESSAGE value="edit main page artists avatar" />
     <MESSAGE value="add notifications_design" />
     <MESSAGE value="add notifications_design 2" />
     <MESSAGE value="add routing to subscriptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="add routing to subscriptions" />
+    <MESSAGE value="edit refresh token" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit refresh token" />
   </component>
 </project>

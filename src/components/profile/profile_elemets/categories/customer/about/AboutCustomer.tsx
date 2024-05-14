@@ -19,7 +19,7 @@ export const AboutCustomer = (props: AboutInterface) => {
 
     return (
         <section className={about_artist_scss.root}>
-            {((isClicked || props.isEditMobile) || props.input_description === '') && (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId'))?
+            {((isClicked || props.isEditMobile) || (props.input_description === '' || props.input_description === ' ' )) && (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId'))?
                 <textarea placeholder={'Введите информацию о себе'}
                 onChange={(event) => {
                     if (props.input_description.length < 200) {

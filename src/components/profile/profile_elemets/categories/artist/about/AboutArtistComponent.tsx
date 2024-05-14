@@ -5,7 +5,6 @@ import sale_paintings_icon from '@/assets/icons/profile/artist_info/saled_painti
 import count_sale_icon from '@/assets/icons/profile/artist_info/count_saled.svg'
 import subscribers_icon from '@/assets/icons/profile/artist_info/subscribers.svg'
 import Image from "next/image";
-import {NULL} from "@/paths/elements";
 import Cookies from "js-cookie";
 
 interface AboutInterface {
@@ -39,7 +38,8 @@ export const AboutArtistComponent = (props: AboutInterface) => {
     const [isClicked, setIsClicked] = useState(false)
     return (
         <section className={about_artist_scss.root}>
-            {((isClicked || props.isEditMobile) || props.input_description === '')&& (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId')) ?
+            {((isClicked || props.isEditMobile) || (props.input_description === '' || props.input_description === ' ' ))&&
+            (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId')) ?
                 <textarea placeholder={'Введите информацию о себе'}
                           onChange={(event) => {
                               if (props.input_description.length < 200) {

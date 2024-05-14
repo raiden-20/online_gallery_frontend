@@ -37,7 +37,6 @@ export const GetArt = (artId: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        debugger
                         response[1].artId = artId
                         dispatch(clearOneArt())
                         dispatch(setOneArt(response[1]))

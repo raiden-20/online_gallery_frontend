@@ -4,32 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit one pup up notifications margin">
-      <change afterPath="$PROJECT_DIR$/src/app/settings/addresses/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/settings/cards/page.tsx" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit settings pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/artist/CreateArtistComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/forms/customer/CreateCustomerComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetMaterialsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetMaterialsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetTagsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetTagsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/posts/create_post/CreatePostComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/about/AboutCustomer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/about/AboutCustomer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/SettingsRoot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/addAddress/AddAddressComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/addAddress/AddAddressComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/addCard/AddCardComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/addCard/AddCardComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/nav/NavigationSettingsComponentMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/elements.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/elements.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/credentialsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/credentialsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +55,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -144,7 +141,7 @@
       <workItem from="1715459902866" duration="3000" />
       <workItem from="1715632030661" duration="6989000" />
       <workItem from="1715679725083" duration="320000" />
-      <workItem from="1715680243729" duration="8122000" />
+      <workItem from="1715680243729" duration="12007000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -506,7 +503,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715683429453</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="edit settings pages">
+      <option name="closed" value="true" />
+      <created>1715689840077</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1715689840077</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +528,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature_design_notifications" />
+                        <option value="feature_app_improvement" />
                       </list>
                     </value>
                   </entry>
@@ -536,7 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test one api" />
     <MESSAGE value="test one api 2" />
     <MESSAGE value="test one api 3" />
     <MESSAGE value="main page design" />
@@ -561,6 +565,7 @@
     <MESSAGE value="edit page render" />
     <MESSAGE value="edit page render 2" />
     <MESSAGE value="edit one pup up notifications margin" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit one pup up notifications margin" />
+    <MESSAGE value="edit settings pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit settings pages" />
   </component>
 </project>

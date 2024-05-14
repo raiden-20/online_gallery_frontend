@@ -39,7 +39,7 @@ export const cartReducer = (state = initialState, action: any) => {
         }
 
         case DELETE_FROM_CART: {
-            const copy_cart: CartInterface[] = stateCopy.cart
+            const copy_cart: CartInterface[] = [...stateCopy.cart]
             for (let i = 0; i < copy_cart.length; i++) {
                 if (copy_cart[i].artId  === action.artId) {
                     copy_cart.splice(i, 1)

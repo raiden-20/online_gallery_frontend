@@ -20,7 +20,7 @@ interface privateSubscribeInterface {
     setSubscribe(flag: boolean): void
     PrivateSubscribe(artistId: string, cardId: string, router: AppRouterInstance, setSubscribe: (flag: boolean) => void): void
     PrivateGetData(artistId: string, router: AppRouterInstance): void
-    getCards(router: AppRouterInstance): void
+    getCards(): void
 }
 
 export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
@@ -28,7 +28,7 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
 
     useEffect(() => {
         props.PrivateGetData(Cookies.get('currentId') as string, router)
-        props.getCards(router)
+        props.getCards()
     }, []);
 
     const [input_price, setInput_price] = useState('')

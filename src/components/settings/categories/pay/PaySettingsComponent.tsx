@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, {useEffect} from "react";
 import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import {OneCardInterface} from "@/interfaces/credentials";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
 import {AddCardContainer} from "@/components/settings/categories/pay/addCard/AddCardContainer";
 import {OneCardContainer} from "@/components/settings/categories/pay/oneCard/OneCardContainer";
@@ -14,14 +13,14 @@ interface paySettingsInterface {
 
     cards: OneCardInterface[]
 
-    getCards(router: AppRouterInstance): void
+    getCards(): void
 }
 
 export const PaySettingsComponent = (props: paySettingsInterface) => {
     const router = useRouter()
 
     useEffect(() => {
-        props.getCards(router)
+        props.getCards()
     }, []);
 
     return (

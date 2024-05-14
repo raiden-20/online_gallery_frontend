@@ -9,7 +9,6 @@ import create_order_scss from '@/scss/components/create_order/CreateOder.module.
 import edit_icon from '@/assets/icons/create_order/edit.svg'
 import settings_scss from "@/scss/components/settings/Settings.module.scss";
 import {useEffect, useState} from "react";
-import {AddressEditComponent} from "@/components/create_order/edit/address/AddressEditComponent";
 import {CardEditContainer} from "@/components/create_order/edit/cart/CardEditContainer";
 import {OneAddressInterface, OneCardInterface} from "@/interfaces/credentials";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -22,9 +21,10 @@ interface createOrderInterface {
     addresses: OneAddressInterface[]
     cards: OneCardInterface[]
 
-    BuyCart(arts: {[key: string]: boolean }, cardId: string, addressId: string, router: AppRouterInstance): void,
-    getAddresses(router: AppRouterInstance): void,
-    getCards(router: AppRouterInstance): void
+    BuyCart(arts: {[key: string]: boolean }, cardId: string, addressId: string,
+            router: AppRouterInstance, setMessage: (message: string) => void): void,
+    getAddresses(): void,
+    getCards(): void
 }
 
 export const CreateOrderComponent = (props: createOrderInterface) => {
@@ -37,8 +37,8 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
     const [message, setMessage] = useState('')
 
     useEffect(() => {
-        props.getAddresses(router)
-        props.getCards(router)
+        props.getAddresses()
+        props.getCards()
     }, []);
 
     useEffect(() => {
@@ -56,7 +56,7 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                 }
             })}
             if (addressId !== '' && cardId !== '') {
-                props.BuyCart(props.selectedArts, cardId, addressId, router)
+                props.BuyCart(props.selectedArts, cardId, addressId, router, setMessage)
             } else {
                 setMessage('Заполните для данные для оформление заказа')
             }

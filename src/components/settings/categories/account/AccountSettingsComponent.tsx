@@ -14,7 +14,6 @@ import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import {MAIN_PATHS} from "@/paths/main";
 import Cookies from "js-cookie";
 import {DeleteAccountComponent} from "@/components/settings/categories/account/components/DeleteAccountComponent";
-import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface AccountSettingsInterface {
     customer_data: Customer,
@@ -25,7 +24,7 @@ interface AccountSettingsInterface {
                               router: AppRouterInstance, setMessage:(message: string) => void): void
     changeEmail(input_email: string, setMessage:(message: string) => void): void
     changePassword(input_password: string): void
-    deleteAccount(router: AppRouterInstance): void
+    deleteAccount(setMessage:(message: string) => void): void
 
     setWhoIsClickedMobile(flag: number): void
 }

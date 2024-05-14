@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from "react";
 import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import {useRouter} from "next/navigation";
-import {AUTH_PATHS} from "@/paths/auth";
-import {createArtistProfile} from "@/store/thunks/profileThunk";
 import {MAIN_PATHS} from "@/paths/main";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface CreateArtistInterface {
     createArtistProfile(artistName: string, setMessage:(message: string) => void, router: AppRouterInstance): void
@@ -37,8 +36,8 @@ export const CreateArtistComponent = (props: CreateArtistInterface) => {
                     <p>Введите имя для аккаунта художника</p>
                     <input value={input_name}
                            onChange={(event) => {
-                               if (event.target.value.length > 200) {
-                                   setMessage('Лимит на имя 200 символов')
+                               if (event.target.value.length > CHARACTER_RESTRICTION.ARTIST_NAME) {
+                                   setMessage('Лимит на имя 100 символов')
                                } else {
                                    setMessage('')
                                    setInput_name(event.target.value)

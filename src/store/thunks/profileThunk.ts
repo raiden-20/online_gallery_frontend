@@ -10,7 +10,6 @@ import {
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
-import {NULL} from "@/paths/elements";
 
 
 export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
@@ -74,9 +73,7 @@ export const changeCustomerProfileData = (customerName: string, birthDate: strin
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-
                         router.refresh()
-
                         break
                     }
                     case 404 : {

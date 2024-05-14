@@ -32,14 +32,17 @@ export const AddArtToCart = (artId: string, router: AppRouterInstance) =>
         })
     }
 
-export const DeleteArtFromCart = (artId: string, router: AppRouterInstance) =>
+export const DeleteArtFromCart = (artId: string, setMessage: (message: string) => void) =>
     (dispatch: Dispatch) => {
         CartAPI.DeleteArtFromCartAPI(artId)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        router.refresh()
-                        //dispatch(deleteFromCart(artId))
+                        dispatch(deleteFromCart(artId))
+                        break
+                    }
+                    case 409 : {
+                        setMessage('Товар не может быть удален, его нет в корзине')
                     }
                 }
             }).catch(error => {
@@ -47,13 +50,19 @@ export const DeleteArtFromCart = (artId: string, router: AppRouterInstance) =>
         })
     }
 
-export const BuyCart = (arts: {[key: string]: boolean }, cardId: string, addressId: string, router: AppRouterInstance) =>
+export const BuyCart = (arts: { [key: string]: boolean }, cardId: string, addressId: string, router: AppRouterInstance
+                        , setMessage: (message: string) => void) =>
     () => {
         CartAPI.BuyCartAPI(arts, cardId, addressId)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
                         router.push(MAIN_PATHS.SUCCESS_ORDER)
+                        break
+                    }
+                    case 400 : {
+                        setMessage('Ошибка оформления заказа, повторите попытку')
+                        break
                     }
                 }
             }).catch(error => {
@@ -61,7 +70,7 @@ export const BuyCart = (arts: {[key: string]: boolean }, cardId: string, address
         })
     }
 
-export const SetSelectedArts = (arts: {[key: string]: boolean }) =>
+export const SetSelectedArts = (arts: { [key: string]: boolean }) =>
     (dispatch: Dispatch) => {
         dispatch(setSelectedArts(arts))
     }

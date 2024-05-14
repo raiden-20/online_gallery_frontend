@@ -1,5 +1,5 @@
 import {ArtistNavigationProfileComponent} from "@/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {AboutArtistComponent} from "@/components/profile/profile_elemets/categories/artist/about/AboutArtistComponent";
 import {MainPostContainer} from "@/components/profile/profile_elemets/categories/artist/posts/MainPostContainer";
 import {
@@ -13,6 +13,8 @@ import Cookies from "js-cookie";
 import {
     SuggestionSubscribeOnArtist
 } from "@/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscribeOnArtist";
+import {usePathname} from "next/navigation";
+import {PATHS_CATEGORY} from "@/paths/main";
 
 interface ArtistCategoryInterface {
     input_description: string
@@ -31,10 +33,20 @@ interface ArtistCategoryInterface {
 
 export const ArtistCategoriesProfile = (props: ArtistCategoryInterface) => {
 
+    const path = '/' + usePathname().split('/')[3]
+
     const [whoIsClicked, setWhoIsClicked] = useState(1)
     const [artistId] = useState(Cookies.get('artistId') as string)
     const [customerId] = useState(Cookies.get('customerId') as string)
     const [currentId] = useState(Cookies.get('currentId') as string)
+
+    useEffect(() => {
+        switch (path) {
+            case PATHS_CATEGORY.POSTS : {
+                setWhoIsClicked(3)
+            }
+        }
+    }, []);
 
     return (
         <section className={suggestion_scss.page}>

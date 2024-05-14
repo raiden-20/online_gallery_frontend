@@ -14,6 +14,7 @@ import {useRouter} from "next/navigation";
 import {
     EditPostContainer
 } from "@/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPostContainer";
+import TimeComponent from "@/components/time/TimeComponent";
 
 interface OnePostComponentInterface {
     onePost: OnePostInterface
@@ -76,7 +77,7 @@ export const OnePostArtistComponent = (props: OnePostComponentInterface) => {
                             <div>Удалить</div>
                         </button>
                     </section>
-                    <div>{props.onePost.date}</div>
+                    <TimeComponent time={props.onePost.date}/>
                 </footer>
                 :
                 <footer className={posts_artist_module.one_post_date}>{props.onePost.date}</footer>

@@ -1,21 +1,16 @@
 import delete_account_scss from '@/scss/components/settings/DeleteAccount.module.scss'
 import React, {useEffect, useState} from "react";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import {Customer} from "@/interfaces/customerInterface";
-import {useRouter} from "next/navigation";
 import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface deleteAccountInterface {
     customer_data: Customer,
     
     setIsDeleteClicked(isDeleteClicked: boolean): void
-    deleteAccount(router: AppRouterInstance): void
+    deleteAccount(setMessage:(message: string) => void): void
 }
 
 export const DeleteAccountComponent = (props: deleteAccountInterface) => {
-    const router = useRouter()
-
     const [message, setMessage] = useState('')
     const [isDelete, setIsDelete] = useState(false)
 
@@ -23,8 +18,9 @@ export const DeleteAccountComponent = (props: deleteAccountInterface) => {
 
     useEffect(() => {
         if (isDelete) {
+            setMessage('')
             if (input_name === props.customer_data.customerName) {
-                props.deleteAccount(router)
+                props.deleteAccount(setMessage)
             } else {
                 setMessage('Имена не совпадают')
             }
@@ -48,7 +44,8 @@ export const DeleteAccountComponent = (props: deleteAccountInterface) => {
                            onChange={(event) => setInput_name(event.target.value)}/>
                     {message !== '' ?
                         <p className={'message'}>{message}</p>
-                        : null}
+                        : null
+                    }
                     <footer className={delete_account_scss.footer_buttons}>
                         <button className={'cancel_button'} onClick={() => props.setIsDeleteClicked(false)}>
                             Отменить

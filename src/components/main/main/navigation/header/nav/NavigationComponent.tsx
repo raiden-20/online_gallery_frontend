@@ -28,6 +28,7 @@ export const NavigationComponent = (props: navigationInterface) => {
 
     const [role] = useState(Cookies.get('role'))
 
+
     return (
         <ul className={navigation_scss.nav}>
             <li key={0}>

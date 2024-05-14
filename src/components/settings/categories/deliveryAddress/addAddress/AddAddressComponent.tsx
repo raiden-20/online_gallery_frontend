@@ -6,6 +6,7 @@ import close_icon from "@/assets/icons/settings/close.svg";
 import {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface addAddressInterface {
     AddAddress(name: string, country: string, region: string, city: string,
@@ -51,26 +52,46 @@ export const AddAddressComponent = (props: addAddressInterface) => {
             {isOpen ?
                 <section className={settings_scss.address_pay_main}>
                     <input value={input_name}
-                           onChange={(event) => setInput_name(event.target.value)}
+                           onChange={(event) => {
+                               if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_NAME) {
+                                   setInput_name(event.target.value)
+                               }
+                           }}
                            placeholder={'ФИО'}/>
                     <section className={settings_scss.input_section}>
                         <input value={input_country}
-                               onChange={(event) => setInput_country(event.target.value)}
+                               onChange={(event) => {
+                                   if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_COUNTRY) {
+                                       setInput_country(event.target.value)
+                                   }
+                               }}
                                placeholder={'Страна'}/>
                         <input value={input_region}
-                               onChange={(event) => setInput_region(event.target.value)}
+                               onChange={(event) => {
+                                   if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_REGION) {
+                                       setInput_region(event.target.value)
+                                   }
+                               }}
                                placeholder={'Область'}/>
                     </section>
                     <section className={settings_scss.input_section}>
                         <input value={input_city}
-                               onChange={(event) => setInput_city(event.target.value)}
+                               onChange={(event) => {
+                                   if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_CITY) {
+                                       setInput_city(event.target.value)
+                                   }
+                               }}
                                placeholder={'Город'}/>
                         <input  value={input_index}
                                 onChange={(event) => setInput_index(event.target.value)}
                                 placeholder={'Индекс'}/>
                     </section>
                     <input value={input_location}
-                           onChange={(event) => setInput_location(event.target.value)}
+                           onChange={(event) => {
+                               if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_LOCATION) {
+                                   setInput_location(event.target.value)
+                               }
+                           }}
                            placeholder={'Адрес'}/>
                     <section className={settings_scss.checkbox_section}>
                         <input onClick={() => setInput_isDefault(!input_isDefault)}

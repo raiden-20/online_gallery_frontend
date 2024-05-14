@@ -1,5 +1,6 @@
 import {Customer} from "@/interfaces/customerInterface";
 import {Artist} from "@/interfaces/artistInterface";
+import {isEqualObject} from "../../../utils/tests";
 
 const SET_CUSTOMER_DATA = 'SET_CUSTOMER_DATA'
 const SET_ARTIST_DATA = 'SET_ARTIST_DATA'
@@ -19,20 +20,20 @@ interface ProfileReducerInterface {
 
 const initialState: ProfileReducerInterface = {
     customer_data: {
-        customerName: "",
+        customerName: "Пользователь",
         birthDate: "",
         gender: "",
         avatarUrl: "",
         coverUrl: "",
-        description: "",
+        description: " ",
         artistId: ""
     },
     artist_data: {
-        artistName: "",
+        artistName: "Пользователь",
         avatarUrl: "",
         coverUrl: "",
         customerId: "",
-        description: "",
+        description: " ",
         countSoldArts: "",
         salesAmount: "",
         countSubscribers: "",
@@ -46,7 +47,7 @@ const initialState: ProfileReducerInterface = {
         gender: "",
         avatarUrl: "",
         coverUrl: "",
-        description: "",
+        description: " ",
         artistId: ""
     },
     my_artist_data: {
@@ -54,7 +55,7 @@ const initialState: ProfileReducerInterface = {
         avatarUrl: "",
         coverUrl: "",
         customerId: "",
-        description: "",
+        description: " ",
         countSoldArts: "",
         salesAmount: "",
         countSubscribers: "",
@@ -69,34 +70,40 @@ export const profileReducer = (state = initialState, action: any) => {
 
         case SET_CUSTOMER_DATA: {
             const time = action.customer_data.birthDate.substring(0, 10);
+            action.customer_data.birthDate = time
 
-            stateCopy.customer_data = {
-                customerName: action.customer_data.customerName,
-                birthDate: time,
-                gender: action.customer_data.gender,
-                avatarUrl: action.customer_data.avatarUrl,
-                coverUrl: action.customer_data.coverUrl,
-                description: action.customer_data.description === ' ' || action.customer_data.description === null ? ''
-                                                                    : action.customer_data.description,
-                artistId: action.customer_data.artistId
+
+            if (!isEqualObject(stateCopy.customer_data, action.customer_data)) {
+                stateCopy.customer_data = {
+                    customerName: action.customer_data.customerName,
+                    birthDate: time,
+                    gender: action.customer_data.gender,
+                    avatarUrl: action.customer_data.avatarUrl,
+                    coverUrl: action.customer_data.coverUrl,
+                    description: action.customer_data.description,
+                    artistId: action.customer_data.artistId
+                }
             }
+
 
             return stateCopy
         }
 
         case SET_ARTIST_DATA: {
-            stateCopy.artist_data = {
-                artistName: action.artist_data.artistName,
-                avatarUrl: action.artist_data.avatarUrl,
-                coverUrl: action.artist_data.coverUrl,
-                customerId: action.artist_data.customerId,
-                description: action.artist_data.description === ' ' ? '' : action.artist_data.description,
+            if (!isEqualObject(stateCopy.artist_data, action.artist_data)) {
+                stateCopy.artist_data = {
+                    artistName: action.artist_data.artistName,
+                    avatarUrl: action.artist_data.avatarUrl,
+                    coverUrl: action.artist_data.coverUrl,
+                    customerId: action.artist_data.customerId,
+                    description: action.artist_data.description === ' ' ? '' : action.artist_data.description,
 
-                countSoldArts: action.artist_data.countSoldArts,
-                salesAmount: action.artist_data.salesAmount,
-                countSubscribers: action.artist_data.countSubscribers,
-                isPublicSubscribe: action.artist_data.isPublicSubscribe,
-                isPrivateSubscribe: action.artist_data.isPrivateSubscribe,
+                    countSoldArts: action.artist_data.countSoldArts,
+                    salesAmount: action.artist_data.salesAmount,
+                    countSubscribers: action.artist_data.countSubscribers,
+                    isPublicSubscribe: action.artist_data.isPublicSubscribe,
+                    isPrivateSubscribe: action.artist_data.isPrivateSubscribe,
+                }
             }
 
             return stateCopy
@@ -104,33 +111,38 @@ export const profileReducer = (state = initialState, action: any) => {
 
         case SET_MY_CUSTOMER_DATA: {
             const time = action.customer_data.birthDate.substring(0, 10);
+            action.customer_data.birthDate = time
 
-            stateCopy.my_customer_data = {
-                customerName: action.customer_data.customerName,
-                birthDate: time,
-                gender: action.customer_data.gender,
-                avatarUrl: action.customer_data.avatarUrl,
-                coverUrl: action.customer_data.coverUrl,
-                description: action.customer_data.description === ' ' ? '' : action.customer_data.description,
-                artistId: action.customer_data.artistId
+            if (!isEqualObject(stateCopy.my_customer_data, action.customer_data)) {
+                stateCopy.my_customer_data = {
+                    customerName: action.customer_data.customerName,
+                    birthDate: time,
+                    gender: action.customer_data.gender,
+                    avatarUrl: action.customer_data.avatarUrl,
+                    coverUrl: action.customer_data.coverUrl,
+                    description: action.customer_data.description === ' ' ? '' : action.customer_data.description,
+                    artistId: action.customer_data.artistId
+                }
             }
 
             return stateCopy
         }
 
         case SET_MY_ARTIST_DATA: {
-            stateCopy.my_artist_data = {
-                artistName: action.artist_data.artistName,
-                avatarUrl: action.artist_data.avatarUrl,
-                coverUrl: action.artist_data.coverUrl,
-                customerId: action.artist_data.customerId,
-                description: action.artist_data.description === ' ' ? '' : action.artist_data.description,
+            if (!isEqualObject(stateCopy.my_artist_data, action.artist_data)) {
+                stateCopy.my_artist_data = {
+                    artistName: action.artist_data.artistName,
+                    avatarUrl: action.artist_data.avatarUrl,
+                    coverUrl: action.artist_data.coverUrl,
+                    customerId: action.artist_data.customerId,
+                    description: action.artist_data.description === ' ' ? '' : action.artist_data.description,
 
-                countSoldArts: action.artist_data.countSoldArts,
-                salesAmount: action.artist_data.salesAmount,
-                countSubscribers: action.artist_data.countSubscribers,
-                isPublicSubscribe: action.artist_data.isPublicSubscribe,
-                isPrivateSubscribe: action.artist_data.isPrivateSubscribe,
+                    countSoldArts: action.artist_data.countSoldArts,
+                    salesAmount: action.artist_data.salesAmount,
+                    countSubscribers: action.artist_data.countSubscribers,
+                    isPublicSubscribe: action.artist_data.isPublicSubscribe,
+                    isPrivateSubscribe: action.artist_data.isPrivateSubscribe,
+                }
             }
 
             return stateCopy

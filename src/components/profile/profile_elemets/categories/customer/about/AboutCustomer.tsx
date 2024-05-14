@@ -1,6 +1,7 @@
 import about_artist_scss from '@/scss/components/profile/categories/AboutArtist.module.scss'
 import {useState} from "react";
 import Cookies from "js-cookie";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface AboutInterface {
     input_description: string
@@ -19,10 +20,10 @@ export const AboutCustomer = (props: AboutInterface) => {
 
     return (
         <section className={about_artist_scss.root}>
-            {((isClicked || props.isEditMobile) || props.input_description === '') && (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId'))?
+            {((isClicked || props.isEditMobile) || (props.input_description === '' || props.input_description === ' ' )) && (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId'))?
                 <textarea placeholder={'Введите информацию о себе'}
                 onChange={(event) => {
-                    if (props.input_description.length < 200) {
+                    if (props.input_description.length < CHARACTER_RESTRICTION.CUSTOMER_DESCRIPTION) {
                         props.setInput_description(event.target.value)
                         props.setIsNeedChangeData(true)
                     }

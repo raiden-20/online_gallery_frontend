@@ -12,7 +12,7 @@ interface cartInterface {
     totalCount: number
     cart: CartInterface[]
     GetCart(): void
-    DeleteArtFromCart(artId: string, router: AppRouterInstance): void
+    DeleteArtFromCart(artId: string, setMessage: (message: string) => void): void
     SetSelectedArts(arts: {[key: string]: boolean }): void
 }
 

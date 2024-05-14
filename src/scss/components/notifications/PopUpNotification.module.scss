@@ -5,8 +5,8 @@ $width: 600px;
 
 .root {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: $gap-s;
+  right: $gap-s;
 
   max-width: $width;
   background-color: $grey-who;

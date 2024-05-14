@@ -5,21 +5,18 @@ import add_info_icon from '@/assets/icons/cart/add_info.svg'
 import delete_one_art_icon from '@/assets/icons/cart/delete_one.svg'
 import Image from "next/image";
 import {CartInterface} from "@/interfaces/cartInterface";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {useRouter} from "next/navigation";
-import {debug} from "node:util";
-
 interface oneCartInterface {
     oneArt: CartInterface
     isAllSelected: boolean
 
     setArtId(artId: {[key: string]: boolean }): void
-    DeleteArtFromCart(artId: string, router: AppRouterInstance): void
+    DeleteArtFromCart(artId: string, setMessage: (message: string) => void): void
     artId: {[key: string]: boolean } | undefined
 }
 
 export const OneCartComponent = (props: oneCartInterface) => {
-    const router = useRouter()
+    const [message, setMessage] = useState('')
+
     const [isSelected, setIsSelected] = useState(props.isAllSelected)
     const [isAnonymous, setIsAnonymous] = useState(false)
 
@@ -48,7 +45,8 @@ export const OneCartComponent = (props: oneCartInterface) => {
 
     useEffect(() => {
         if (isDelete) {
-            props.DeleteArtFromCart(props.oneArt.artId, router)
+            setMessage('')
+            props.DeleteArtFromCart(props.oneArt.artId, setMessage)
             setIsDelete(false)
         }
     }, [isDelete]);
@@ -107,6 +105,9 @@ export const OneCartComponent = (props: oneCartInterface) => {
                             </button>
                         </section>
                     </section>
+                    {message !== '' ?
+                        <p className={'message'}>{message}</p>
+                    : null}
                 </section>
             </section>
         </section>

@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add notifications_design 2">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit settings pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +37,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -36,7 +55,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -50,8 +69,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
+    "git-widget-placeholder": "Rebasing feature__app__improvement",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app/settings/cards",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,18 +82,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\main" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\profile\create_post" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\art" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\orders\[id]" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\settings\cards" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\settings\addresses" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist\[id]\posts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\tags" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\material" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\year" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\artists" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\pages\data\elements\add_info\elements" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -117,7 +136,12 @@
       <workItem from="1715258660058" duration="2000" />
       <workItem from="1715262112681" duration="3000" />
       <workItem from="1715267426362" duration="2504000" />
-      <workItem from="1715297441028" duration="2007000" />
+      <workItem from="1715297441028" duration="2376000" />
+      <workItem from="1715370288911" duration="3000" />
+      <workItem from="1715459902866" duration="3000" />
+      <workItem from="1715632030661" duration="6989000" />
+      <workItem from="1715679725083" duration="320000" />
+      <workItem from="1715680243729" duration="12007000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -439,7 +463,55 @@
       <option name="project" value="LOCAL" />
       <updated>1715298994758</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="add routing to subscriptions">
+      <option name="closed" value="true" />
+      <created>1715299770197</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1715299770197</updated>
+    </task>
+    <task id="LOCAL-00042" summary="edit refresh token">
+      <option name="closed" value="true" />
+      <created>1715633059643</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1715633059643</updated>
+    </task>
+    <task id="LOCAL-00043" summary="edit page render">
+      <option name="closed" value="true" />
+      <created>1715682963526</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1715682963526</updated>
+    </task>
+    <task id="LOCAL-00044" summary="edit page render 2">
+      <option name="closed" value="true" />
+      <created>1715682971707</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1715682971707</updated>
+    </task>
+    <task id="LOCAL-00045" summary="edit one pup up notifications margin">
+      <option name="closed" value="true" />
+      <created>1715683429453</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1715683429453</updated>
+    </task>
+    <task id="LOCAL-00046" summary="edit settings pages">
+      <option name="closed" value="true" />
+      <created>1715689840077</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1715689840077</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +528,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature_design_notifications" />
+                        <option value="feature_app_improvement" />
                       </list>
                     </value>
                   </entry>
@@ -469,11 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created private posts components" />
-    <MESSAGE value="small changes in all" />
-    <MESSAGE value="change who buy art section size" />
-    <MESSAGE value="add input checkbox css settings" />
-    <MESSAGE value="test one api" />
     <MESSAGE value="test one api 2" />
     <MESSAGE value="test one api 3" />
     <MESSAGE value="main page design" />
@@ -490,10 +557,15 @@
     <MESSAGE value="mobile design for search section" />
     <MESSAGE value="mobile design for avatar profile and one art" />
     <MESSAGE value="edit first login" />
-    <MESSAGE value="edit refresh token" />
     <MESSAGE value="edit main page artists avatar" />
     <MESSAGE value="add notifications_design" />
     <MESSAGE value="add notifications_design 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="add notifications_design 2" />
+    <MESSAGE value="add routing to subscriptions" />
+    <MESSAGE value="edit refresh token" />
+    <MESSAGE value="edit page render" />
+    <MESSAGE value="edit page render 2" />
+    <MESSAGE value="edit one pup up notifications margin" />
+    <MESSAGE value="edit settings pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit settings pages" />
   </component>
 </project>

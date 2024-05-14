@@ -2,7 +2,7 @@ import settings_scss from '@/scss/components/settings/Settings.module.scss'
 
 import more_icon from '@/assets/icons/settings/more.svg'
 import Image from "next/image";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Customer} from "@/interfaces/customerInterface";
 import {EmailComponent} from "@/components/settings/categories/account/components/EmailComponent";
 import {PasswordComponent} from "@/components/settings/categories/account/components/PasswordComponent";
@@ -14,7 +14,6 @@ import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import {MAIN_PATHS} from "@/paths/main";
 import Cookies from "js-cookie";
 import {DeleteAccountComponent} from "@/components/settings/categories/account/components/DeleteAccountComponent";
-import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface AccountSettingsInterface {
     customer_data: Customer,
@@ -25,7 +24,7 @@ interface AccountSettingsInterface {
                               router: AppRouterInstance, setMessage:(message: string) => void): void
     changeEmail(input_email: string, setMessage:(message: string) => void): void
     changePassword(input_password: string): void
-    deleteAccount(router: AppRouterInstance): void
+    deleteAccount(setMessage:(message: string) => void): void
 
     setWhoIsClickedMobile(flag: number): void
 }
@@ -46,8 +45,11 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
 
     return (
         <section>
-            <Cancel_ButtonComponent setCancel={props.setWhoIsClickedMobile}
-                                    whatSet={0}/>
+            <button className={settings_scss.back}
+                    onClick={() => props.setWhoIsClickedMobile(0)}>
+                <Image src={cancel_icon} alt={'cancel_icon'} width={19} height={10}/>
+                <div>Назад</div>
+            </button>
 
             {isEmailSection ? <EmailComponent setIsEmailSection={setIsEmailSection}
                                               changeEmail={props.changeEmail}/> :
@@ -86,7 +88,7 @@ export const AccountSettingsComponent = (props: AccountSettingsInterface) => {
                                     : null}
                                 <button className={settings_scss.delete_button}
                                         onClick={() => setIsDeleteClicked(true)}>
-                                Удалить аккаунт
+                                    Удалить аккаунт
                                 </button>
                             </section>
                         </section>

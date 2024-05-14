@@ -22,15 +22,14 @@ export const ORDER_STATUS = {
     FINISHED: 'FINISHED'
 }
 
-export const NULL = 'null'
-
 export const CHARACTER_RESTRICTION = {
     ARTIST_NAME: 100,
     ARTIST_DESCRIPTIONS: 500,
-    NAME: 100,
     CUSTOMER_DESCRIPTION: 200,
     ART_NAME: 200,
     ART_DESCRIPTION: 500,
+    MIN_YEAR: 1000,
+    MAX_YEAR: new Date().getFullYear(),
     TAG_LENGTH: 30,
     TAG_COUNT: 22,
     MATERIAL_LENGTH: 20,

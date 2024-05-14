@@ -17,9 +17,7 @@ interface accountNavInterface {
     my_artist_data: Artist
 
     getCustomerProfileData(id: string, router: AppRouterInstance): void
-
     getArtistProfileData(id: string, router: AppRouterInstance): void
-
     setIsMenuClicked(isMenuClicked: boolean): void
 }
 
@@ -28,11 +26,6 @@ export const AccountNavigation = (props: accountNavInterface) => {
 
     const [artistId] = useState(Cookies.get('artistId'))
     const [registrationFlag] = useState(Cookies.get('registrationFlag'))
-
-    useEffect(() => {
-        props.getCustomerProfileData(Cookies.get('customerId') as string, router)
-        props.getArtistProfileData(Cookies.get('artistId') as string, router)
-    }, []);
 
     return (
         <section className={accountNavigation_scss.account_section}>

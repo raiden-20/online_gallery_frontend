@@ -6,6 +6,7 @@ import delete_add_icon from "@/assets/icons/create_art/delete_add.svg";
 import React, {useCallback, useState} from "react";
 import Select, {SingleValue} from "react-select";
 import {SelectInterface} from "@/interfaces/filters";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface setMaterialsInterface {
     tags: string[]
@@ -62,9 +63,11 @@ export const SetTagsComponent = (props: setMaterialsInterface) => {
                             <li className={create_art_data_scss.one_add} key={index}>
                                 <div>{tag}</div>
                                 <button onClick={() => {
-                                    let new_material = [...props.tags]
-                                    new_material.splice(index, 1)
-                                    props.setTags(() => new_material)
+                                    if (props.tags.length < CHARACTER_RESTRICTION.TAG_COUNT) {
+                                        let new_material = [...props.tags]
+                                        new_material.splice(index, 1)
+                                        props.setTags(() => new_material)
+                                    }
                                 }}>
                                     <Image src={delete_add_icon} alt={'delete_add_icon'}/>
                                 </button>

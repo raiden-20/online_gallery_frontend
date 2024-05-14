@@ -10,6 +10,7 @@ import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
 import Cookies from "js-cookie";
 import {containsOnlyDigits, removeSpaces} from "../../../utils/tests";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface createArtInterface {
     CreateArt(name: string, type: string, photos: File[], price: string,
@@ -53,7 +54,7 @@ export const CreateArtTypeComponent = (props: createArtInterface) => {
 
     useEffect(() => {
         if (createArt) {
-            if (Number.parseInt(input_createDate) > 999 && Number.parseInt(input_createDate) <= 2024
+            if (Number.parseInt(input_createDate) >= CHARACTER_RESTRICTION.MIN_YEAR && Number.parseInt(input_createDate) <= CHARACTER_RESTRICTION.MAX_YEAR
             && containsOnlyDigits(input_height) && containsOnlyDigits(input_width)) {
                 const size = input_height + 'x' + input_width
                 props.CreateArt(input_name, input_type, photoArrayFile, removeSpaces(input_price.toString()), removeSpaces(input_createDate.toString()) + '-01-01', input_description, size, tags,

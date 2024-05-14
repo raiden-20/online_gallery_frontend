@@ -1,5 +1,5 @@
 import settings_scss from "@/scss/components/settings/Settings.module.scss";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import Image from "next/image";
 import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -8,6 +8,7 @@ import {OneAddressInterface} from "@/interfaces/credentials";
 import {AddAddressContainer} from "@/components/settings/categories/deliveryAddress/addAddress/AddAddressContainer";
 import {OneAddressContainer} from "@/components/settings/categories/deliveryAddress/oneAddress/OneAddressContainer";
 import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
+import {MAIN_PATHS} from "@/paths/main";
 
 interface deliverySettingsInterface {
     addresses: OneAddressInterface[]
@@ -26,8 +27,11 @@ export const DeliveryAddressSettingsComponent = (props: deliverySettingsInterfac
 
     return (
         <section>
-            <Cancel_ButtonComponent setCancel={props.setWhoIsClickedMobile}
-                                    whatSet={0}/>
+            <button className={settings_scss.back}
+                    onClick={() => router.push(MAIN_PATHS.SETTINGS)}>
+                <Image src={cancel_icon} alt={'cancel_icon'} width={19} height={10}/>
+                <div>Назад</div>
+            </button>
             <ul className={settings_scss.address_root}>
                 {props.addresses.map((oneAddress: OneAddressInterface, index) => {
                     return (

@@ -3,34 +3,22 @@ import Image from "next/image";
 import add_info_icon from "@/assets/icons/cart/add_info.svg";
 import React, {useState} from "react";
 import {containsOnlyDigits} from "../../../../../../utils/tests";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface artDataInterface {
     input_name: string
-
     setInput_name(input_name: string): void
-
     input_price: string
-
     setInput_price(input_price: string): void
-
     input_year: string
-
     setInput_year(input_year: string): void
-
     input_description: string
-
     setInput_description(input_description: string): void
-
     input_height: string
-
     setInput_height(input_height: string): void
-
     input_width: string
-
     setInput_width(input_height: string): void
-
     isPrivate: boolean
-
     setIsPrivate(isPrivate: boolean): void
 }
 
@@ -45,7 +33,11 @@ export const ArtDataComponent = (props: artDataInterface) => {
         <section className={create_art_data_scss.section_root}>
             <header className={create_art_data_scss.header}>Данные товара</header>
             <input placeholder={'Название'} value={props.input_name}
-                   onChange={(event) => props.setInput_name(event.target.value)}/>
+                   onChange={(event) => {
+                       if (event.target.value.length <= CHARACTER_RESTRICTION.ART_NAME) {
+                           props.setInput_name(event.target.value)
+                       }
+                   }}/>
             <section className={create_art_data_scss.inputs_section}>
                 <input placeholder={'Цена, ₽'} value={props.input_price}
                        onChange={(event) => props.setInput_price(event.target.value)}/>
@@ -54,7 +46,8 @@ export const ArtDataComponent = (props: artDataInterface) => {
                            onChange={(event) => {
                                setMessageDate('')
                                props.setInput_year(event.target.value)
-                               if (Number.parseInt(event.target.value) < 1000 || Number.parseInt(event.target.value) > 2024) {
+                               if (Number.parseInt(event.target.value) < CHARACTER_RESTRICTION.MIN_YEAR ||
+                                   Number.parseInt(event.target.value) > CHARACTER_RESTRICTION.MAX_YEAR) {
                                    setMessageDate('Неправильная дата')
                                }
                            }

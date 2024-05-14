@@ -6,6 +6,7 @@ import close_icon from "@/assets/icons/settings/close.svg";
 import {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface addCardInterface {
     AddCard(number: string, date: string, cvv: string, isDefault: boolean,
@@ -49,7 +50,11 @@ export const AddCardComponent = (props: addCardInterface) => {
             {isOpen ?
                 <section className={settings_scss.address_pay_main}>
                     <input value={input_number}
-                           onChange={(event) => setInput_number(event.target.value)}
+                           onChange={(event) => {
+                               if (event.target.value.length < CHARACTER_RESTRICTION.CARD) {
+                                   setInput_number(event.target.value)}
+                               }
+                           }
                            placeholder={'Номер карты'}/>
                     <section className={settings_scss.input_section}>
                         <input value={input_date}

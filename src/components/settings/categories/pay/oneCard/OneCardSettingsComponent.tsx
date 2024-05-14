@@ -49,7 +49,7 @@ export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
                         <section className={settings_scss.card_data}>
                             <div>{props.oneCard.type === '' ? 'MIR' : props.oneCard.type}</div>
                             <div>•••• •••• ••••
-                                {props.oneCard.number.substring(props.oneCard.number.length - 4, props.oneCard.number.length - 1)}
+                                {' ' + props.oneCard.number.substring(props.oneCard.number.length - 4, props.oneCard.number.length)}
                             </div>
                         </section>
                     </section>

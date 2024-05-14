@@ -10,8 +10,6 @@ import {
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
-import {NULL} from "@/paths/elements";
-import {Customer} from "@/interfaces/customerInterface";
 
 
 export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>

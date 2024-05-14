@@ -6,6 +6,7 @@ import count_sale_icon from '@/assets/icons/profile/artist_info/count_saled.svg'
 import subscribers_icon from '@/assets/icons/profile/artist_info/subscribers.svg'
 import Image from "next/image";
 import Cookies from "js-cookie";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface AboutInterface {
     input_description: string
@@ -42,7 +43,7 @@ export const AboutArtistComponent = (props: AboutInterface) => {
             (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId')) ?
                 <textarea placeholder={'Введите информацию о себе'}
                           onChange={(event) => {
-                              if (props.input_description.length < 200) {
+                              if (props.input_description.length < CHARACTER_RESTRICTION.ARTIST_DESCRIPTIONS) {
                                   props.setInput_description(event.target.value)
                                   props.setIsNeedChangeData(true)
                               }

@@ -1,76 +1,76 @@
 import notifications_scss from '@/scss/components/notifications/Notifications.module.scss'
+import {NotificationsInterface, TYPES_NOTIFICATIONS} from "@/interfaces/notificationsInterface";
+import TimeComponent from "@/components/time/TimeComponent";
+import {useEffect, useState} from "react";
+import Cookies from "js-cookie";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
+import {useRouter} from "next/navigation";
 
-export const NotificationsComponent = () => {
+interface NotificationsComponentInterface {
+    notifications: NotificationsInterface[]
+    setAllArtistNotifications(): void,
+    setAllCustomerNotifications(): void
+}
+
+export const NotificationsComponent = (props: NotificationsComponentInterface) => {
+    const router = useRouter()
+
+    const [role] = useState(Cookies.get('role'))
+
+
+    useEffect(() => {
+        if (role === ROLES.ARTIST) {
+            props.setAllArtistNotifications()
+        } else if (role === ROLES.CUSTOMER) {
+            props.setAllCustomerNotifications()
+        }
+    }, []);
+
+    const goTo = (subjectId: string, type: string) => {
+        let url = ''
+        switch (type) {
+            case TYPES_NOTIFICATIONS.ART  : {
+                url = MAIN_PATHS.ONE_ART
+                router.push(url + `/${subjectId}`)
+                break
+            }
+            case TYPES_NOTIFICATIONS.POST  : {
+                url =  MAIN_PATHS.PROFILE_ARTIST + MAIN_PATHS.POSTS
+                router.push(url)
+                break
+            }
+            case TYPES_NOTIFICATIONS.AUCTION  : {
+                url = '' // todo
+                break
+            }
+            case TYPES_NOTIFICATIONS.ORDER  : {
+                url = MAIN_PATHS.ONE_ORDER
+                router.push(url + `/${subjectId}`)
+                break
+            }
+        }
+    }
 
     return (
         <section className={notifications_scss.root}>
             <header className={notifications_scss.header}>Уведомления</header>
             <ul className={notifications_scss.ul}>
-                <li className={notifications_scss.one_notification_root}>
-                    <img src={'/default_avatar_profile.svg'} className={notifications_scss.img}
-                         alt={'user photo'}/>
-                    <section className={notifications_scss.data_section}>
-                        <section className={notifications_scss.data_text}>
-                            <section className={notifications_scss.data_weight}>Вася Пупкин</section>
-                            <section>
-                                выставил(-а) новую работу:
+                {props.notifications.map((one: NotificationsInterface, index) => {
+                    return (
+                        <li className={notifications_scss.one_notification_root} key={index}
+                            onClick={() => goTo(one.subjectId, one.type)}>
+                            <img src={one.avatarUrl !== '' ? one.avatarUrl : '/default_avatar_profile.svg'}
+                                 className={notifications_scss.img}
+                                 alt={'user photo'}/>
+                            <section className={notifications_scss.data_section}>
+                                <p>{one.text}</p>
+                                <section className={notifications_scss.data_time}>
+                                    <TimeComponent time={one.date}/>
+                                </section>
                             </section>
-                            <section className={notifications_scss.data_weight}>Нереальный рисунок карандашом</section>
-                        </section>
-                        <section className={notifications_scss.data_time}>
-                            35 сек. назад
-                        </section>
-                    </section>
-                </li>
-                <li className={notifications_scss.one_notification_root}>
-                    <img src={'/default_avatar_profile.svg'} className={notifications_scss.img}
-                         alt={'user photo'}/>
-                    <section className={notifications_scss.data_section}>
-                        <section className={notifications_scss.data_text}>
-                            <section className={notifications_scss.data_weight}>Вася Пупкин</section>
-                            <section>
-                                выставил(-а) новую работу:
-                            </section>
-                            <section className={notifications_scss.data_weight}>Нереальный рисунок карандашом</section>
-                        </section>
-                        <section className={notifications_scss.data_time}>
-                            35 сек. назад
-                        </section>
-                    </section>
-                </li>
-                <li className={notifications_scss.one_notification_root}>
-                    <img src={'/default_avatar_profile.svg'} className={notifications_scss.img}
-                         alt={'user photo'}/>
-                    <section className={notifications_scss.data_section}>
-                        <section className={notifications_scss.data_text}>
-                            <section className={notifications_scss.data_weight}>Вася Пупкин</section>
-                            <section>
-                                выставил(-а) новую работу:
-                            </section>
-                            <section className={notifications_scss.data_weight}>Нереальный рисунок карандашом</section>
-                        </section>
-                        <section className={notifications_scss.data_time}>
-                            35 сек. назад
-                        </section>
-                    </section>
-                </li>
-                <li className={notifications_scss.one_notification_root}>
-                    <img src={'/default_system_notifications.svg'} className={notifications_scss.img}
-                         alt={'user photo'}/>
-                    <section className={notifications_scss.data_section}>
-                        <section className={notifications_scss.data_text}>
-                            <section className={notifications_scss.data_weight}>Вася Пупкин</section>
-                            <section>
-                                выставил(-а) новую работу:
-                            </section>
-                            <section className={notifications_scss.data_weight}>Нереальный рисунок карандашом</section>
-                        </section>
-                        <section className={notifications_scss.data_time}>
-                            35 сек. назад
-                        </section>
-                    </section>
-                </li>
-
+                        </li>
+                    )
+                }).reverse()}
             </ul>
         </section>
     )

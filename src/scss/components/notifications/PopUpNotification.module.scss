@@ -4,6 +4,7 @@
 $width: 600px;
 
 .root {
+
   position: fixed;
   bottom: $gap-s;
   right: $gap-s;
@@ -20,6 +21,8 @@ $width: 600px;
   padding: $section-padding-s;
 
   .data_img {
+    cursor: pointer;
+
     width: $mini-avatar-size;
     height: $mini-avatar-size;
 
@@ -30,15 +33,6 @@ $width: 600px;
   .data_text {
     height: min-content;
     color: $white-color;
-    display: flex;
-    flex-wrap: wrap;
-    gap: $gap-xxxxxs;
-
-    border-radius: $radius-m;
-
-    .data_weight {
-      font-weight: $weight;
-    }
   }
 
   .close {

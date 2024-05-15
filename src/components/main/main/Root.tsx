@@ -30,10 +30,8 @@ import {OneOrderContainer} from "@/components/orders/one_order/OneOrderContainer
 import {EditArtContainer} from "@/components/create_art/edit_art/EditArtContainer";
 import {setToken} from "@/api/api_main";
 import {deleteCookies, keycloakSessionLogOut} from "@/store/thunks/authThunk";
-import {
-    OnePopUpNotificationComponent
-} from "@/components/notifications/one_popup_notification/OnePopUpNotificationComponent";
-import {NotificationsComponent} from "@/components/notifications/NotificationsComponent";
+import {NotificationsContainer} from "@/components/notifications/NotificationsContainer";
+import {OnePopUpNotificationContainer} from "@/components/notifications/one_popup_notification/OnePopUpNotificationContainer";
 
 interface RootInterface {
     artist_data: Artist
@@ -121,12 +119,12 @@ export const Root = (props: RootInterface) => {
                         main_path === PATHS_CATEGORY.ORDERS ? <OneOrderContainer/> :
                     main_path === PATHS_CATEGORY.CART ? <CartContainer/> :
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsContainer/>  :
-                        main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsComponent/>
+                        main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsContainer/>
                             : null
                     }
                 </main>
                 <FooterComponent/>
-                <OnePopUpNotificationComponent/>
+                <OnePopUpNotificationContainer/>
             </section>
         </section>
 

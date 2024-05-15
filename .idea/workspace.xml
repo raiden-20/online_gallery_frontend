@@ -4,29 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit settings pages">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create notifications store and testing sse with backend">
+      <change afterPath="$PROJECT_DIR$/src/api/notificationsAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/notifications/NotificationsContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/notifications/one_popup_notification/OnePopUpNotificationContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/notificationsInterface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/notificationsReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/thunks/notificationsThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/CartComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/OneCartComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/CreateOrderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/address/AddressEditContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_order/edit/cart/CardEditContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/private_subscribe/PrivateSubscribeComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/WorksArtistProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/AccountSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/account/components/DeleteAccountComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/DeliveryAddressSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/deliveryAddress/oneAddress/OneAddressSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/PaySettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/deleteCard/DeleteCardModalWindow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/categories/pay/oneCard/OneCardSettingsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/authThunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/cartThunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/credentialsThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/notifications/NotificationsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/notifications/NotificationsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/notifications/one_popup_notification/OnePopUpNotificationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/notifications/one_popup_notification/OnePopUpNotificationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/notifications/PopUpNotification.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/notifications/PopUpNotification.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/redux.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/redux.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +30,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -69,8 +62,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing feature__app__improvement",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app/settings/cards",
+    "git-widget-placeholder": "Rebasing feature__store__notifications",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/test_sse_application",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -142,6 +135,10 @@
       <workItem from="1715632030661" duration="6989000" />
       <workItem from="1715679725083" duration="320000" />
       <workItem from="1715680243729" duration="12007000" />
+      <workItem from="1715716963287" duration="615000" />
+      <workItem from="1715719525134" duration="1858000" />
+      <workItem from="1715778361114" duration="725000" />
+      <workItem from="1715791508348" duration="14387000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -541,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test one api 2" />
     <MESSAGE value="test one api 3" />
     <MESSAGE value="main page design" />
     <MESSAGE value="last design details" />
@@ -566,6 +562,7 @@
     <MESSAGE value="edit page render 2" />
     <MESSAGE value="edit one pup up notifications margin" />
     <MESSAGE value="edit settings pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit settings pages" />
+    <MESSAGE value="create notifications store and testing sse with backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="create notifications store and testing sse with backend" />
   </component>
 </project>

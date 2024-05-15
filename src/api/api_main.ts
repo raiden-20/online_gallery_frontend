@@ -33,6 +33,9 @@ export const PathsAPI = {
     CART: '/cart',
     ORDER: '/order',
 
+    NOTIFICATION: '/notification',
+    SSE: '/sse',
+
     PUBLIC: '/public',
     PRIVATE: '/private'
 }
@@ -107,7 +110,7 @@ const refreshTokenFn = async () => {
             },
             body: new URLSearchParams({
                 client_id: 'frontend',
-                client_secret: 'M6qi9XuMsrQ6Q3Q4itcadsfsnuET0VvD',
+                client_secret: '1LqZnZS2ksjtAWcEwBjZRJMf9UXJod5K',
                 grant_type: 'refresh_token',
                 refresh_token: refresh
             }),

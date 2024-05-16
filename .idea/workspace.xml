@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create notifications store and testing sse with backend">
-      <change afterPath="$PROJECT_DIR$/src/api/notificationsAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/notifications/NotificationsContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/notifications/one_popup_notification/OnePopUpNotificationContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/notificationsInterface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/notificationsReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/thunks/notificationsThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/notifications/NotificationsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/notifications/NotificationsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/notifications/one_popup_notification/OnePopUpNotificationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/notifications/one_popup_notification/OnePopUpNotificationComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/notifications/PopUpNotification.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/notifications/PopUpNotification.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/redux.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/redux.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +49,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing feature__store__notifications",
+    "git-widget-placeholder": "Rebasing feature__app__improvement__2",
     "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/test_sse_application",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
@@ -139,6 +126,9 @@
       <workItem from="1715719525134" duration="1858000" />
       <workItem from="1715778361114" duration="725000" />
       <workItem from="1715791508348" duration="14387000" />
+      <workItem from="1715812299459" duration="8000" />
+      <workItem from="1715818313539" duration="2000" />
+      <workItem from="1715844931872" duration="946000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />

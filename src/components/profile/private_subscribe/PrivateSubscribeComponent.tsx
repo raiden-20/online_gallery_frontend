@@ -81,11 +81,11 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
                             </button>
                         </section>
 
-                        {props.cards.map((oneCard: OneCardInterface) => {
+                        {props.cards.map((oneCard: OneCardInterface, index) => {
                             if (oneCard.isDefault) {
                                 return (
                                     <section
-                                        className={create_order_scss.data + ' ' + settings_scss.p}>
+                                        className={create_order_scss.data + ' ' + settings_scss.p} key={index}>
                                         <section className={settings_scss.address}>
                                             <Image src={mark_icon}
                                                    className={!oneCard.isDefault ? settings_scss.hide : undefined}

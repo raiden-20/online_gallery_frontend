@@ -103,6 +103,7 @@ const refreshTokenFn = async () => {
     try {
         // @ts-ignore
         const refresh = session.refresh_token
+        const client = process.env.KEYCLOAK_CLIENT_SECRET as string
         // @ts-ignore
         const resp = await fetch(`http://localhost:8000/realms/online_gallery/protocol/openid-connect/token`, {
             headers: {
@@ -110,7 +111,7 @@ const refreshTokenFn = async () => {
             },
             body: new URLSearchParams({
                 client_id: 'frontend',
-                client_secret: process.env.KEYCLOAK_CLIENT_SECRET as string,
+                client_secret: client,
                 grant_type: 'refresh_token',
                 refresh_token: refresh
             }),

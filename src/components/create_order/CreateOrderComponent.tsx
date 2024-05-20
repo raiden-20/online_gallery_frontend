@@ -80,10 +80,10 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                                 <Image src={edit_icon} alt={'edit_icon'}/>
                             </button>
                         </header>
-                        {props.addresses.map((oneAddress: OneAddressInterface) => {
+                        {props.addresses.map((oneAddress: OneAddressInterface, index) => {
                             if (oneAddress.isDefault) {
                                 return (
-                                    <section className={create_order_scss.data}>
+                                    <section className={create_order_scss.data} key={index}>
                                         <p className={create_order_scss.p}>
                                             {oneAddress.location}, {oneAddress.city},
                                             {oneAddress.region}, {oneAddress.country}, {oneAddress.name}
@@ -100,10 +100,10 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                                 <Image src={edit_icon} alt={'edit_icon'}/>
                             </button>
                         </header>
-                        {props.cards.map((oneCard: OneCardInterface) => {
+                        {props.cards.map((oneCard: OneCardInterface, index) => {
                             if (oneCard.isDefault ) {
                                 return (
-                                    <section
+                                    <section key={index}
                                         className={create_order_scss.data + ' ' + create_order_scss.card_data + ' ' + settings_scss.p}>
                                         <div>{oneCard.type === '' ? 'MIR' : oneCard.type}</div>
                                         <div>•••• •••• ••••

@@ -10,6 +10,7 @@ import {fetchEventSource} from '@microsoft/fetch-event-source';
 import {useRouter} from "next/navigation";
 import {clearOnePopUpNotification} from "@/store/thunks/notificationsThunk";
 import {useSession} from "next-auth/react";
+import {PathsAPI} from "@/api/api_main";
 
 interface OnePopUpNotificationComponentInterface {
     popup_notification: PopUpNotificationInterface
@@ -38,7 +39,8 @@ export const OnePopUpNotificationComponent = (props: OnePopUpNotificationCompone
         const getNotificationSSE = async () => {
             const who = role === ROLES.CUSTOMER ? customerId : role === ROLES.ARTIST ? artistId : null
             Cookies.set('SSE', 'true')
-            await fetchEventSource('http://localhost:8080/notification/sse/' + who,
+            const url = PathsAPI.BASE + PathsAPI.NOTIFICATION + PathsAPI.SSE
+            await fetchEventSource(`${url}/` + who,
                 {
                     headers: {
                         'Content-Type': 'multipart/form-data; boundary=-------23456789012347',

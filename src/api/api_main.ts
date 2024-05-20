@@ -105,7 +105,8 @@ const refreshTokenFn = async () => {
         const refresh = session.refresh_token
         const client = process.env.KEYCLOAK_CLIENT_SECRET as string
         // @ts-ignore
-        const resp = await fetch(`http://localhost:8000/realms/online_gallery/protocol/openid-connect/token`, {
+        const refresh_token_url = process.env.REFRESH_TOKEN_URL as string
+        const resp = await fetch(refresh_token_url, {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },

@@ -28,7 +28,7 @@ export const AddressEditComponent = (props: addressEditInterface) => {
                     <header className={create_order_scss.header_window}>
                         Выберите адрес доставки
                     </header>
-                    <ul className={create_order_scss.window_height}>
+                    <section className={create_order_scss.window_height}>
                         <ul className={settings_scss.address_root}>
                             {props.address.map((oneAddress: OneAddressInterface, index) => {
                                 return (
@@ -39,10 +39,10 @@ export const AddressEditComponent = (props: addressEditInterface) => {
                             })
                             }
                         </ul>
-                        <li className={settings_scss.grey_bgc} key={0}>
+                        <section className={settings_scss.grey_bgc}>
                             <AddAddressContainer/>
-                        </li>
-                    </ul>
+                        </section>
+                    </section>
                     <footer className={create_order_scss.footer_buttons_window}>
                         <button className={'cancel_button'} onClick={() => props.setIsAddressEdit(false)}>
                             Отменить

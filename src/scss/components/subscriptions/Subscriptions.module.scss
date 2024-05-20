@@ -35,8 +35,8 @@ $artist-private-img-size: 70px;
 
   font-weight: $weight;
 
-  div {
-    font-size: $font-size-l;
+  section {
+    font-size: $font-size-l0;
   }
 
   button {
@@ -136,6 +136,7 @@ $artist-private-img-size: 70px;
 
 .p {
   text-align: center;
+  display: block;
 }
 
 @media screen and (orientation: portrait) {
@@ -151,7 +152,7 @@ $artist-private-img-size: 70px;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
 
-    div {
+    section {
       font-size: $font-size-l22;
     }
   }
@@ -162,7 +163,7 @@ $artist-private-img-size: 70px;
 
     .artist_data_private {
       height: max-content;
-      width: 70px;
+      width: 100px;
       display: flex;
       flex-flow: column;
       justify-content: center;
@@ -176,6 +177,13 @@ $artist-private-img-size: 70px;
       flex-flow: column;
       align-items: center;
       gap: $gap-xxxs;
+    }
+
+    .mobile_date {
+      color: $grey-date;
+
+      display: flex;
+      gap: $gap-xxxxxs;
     }
 
     button {

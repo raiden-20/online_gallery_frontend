@@ -53,7 +53,7 @@ export const PhotoSection = (props: photoInterface) => {
                     : null}
                 {Object.keys(props.photos).map((key, index) => {
                     return (
-                        <li key={index} onClick={() => {
+                        <li key={key} onClick={() => {
                             setOpenedPhotoSrc(props.photos)
                             setIndexOpened(Number.parseInt(key))
                             setIndex(index)

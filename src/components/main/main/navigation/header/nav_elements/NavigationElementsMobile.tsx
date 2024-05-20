@@ -14,38 +14,38 @@ export const NavigationElementsMobile = (props: {setIsMenuClicked(isMenuClicked:
                 <Image src={close} alt={'close'}
                        width={0} height={0} className={navigation_scss.img}/>
             </button>
-            <ul className={navigation_scss.menu_full}>
-                <li className={navigation_scss.visible_various} key={0}>
+            <section className={navigation_scss.menu_full}>
+                <section className={navigation_scss.visible_various}>
                     <button onClick={() => router.push(MAIN_PATHS.ARTISTS)}>
                         Художники
                     </button>
-                </li>
-                <li className={navigation_scss.visible_various}>
+                </section>
+                <section className={navigation_scss.visible_various}>
                     <button onClick={() => router.push(MAIN_PATHS.PAINTINGS)}>
                         Картины
                     </button>
-                </li>
-                <li className={navigation_scss.visible_various} key={1}>
+                </section>
+                <section className={navigation_scss.visible_various}>
                     <button onClick={() => router.push(MAIN_PATHS.PHOTO)}>
                         Фотографии
                     </button>
-                </li>
-                <li className={navigation_scss.visible_various} key={2}>
+                </section>
+                <section className={navigation_scss.visible_various}>
                     <button onClick={() => router.push(MAIN_PATHS.SCULPTURES)}>
                         Скульптуры
                     </button>
-                </li>
-                <li className={navigation_scss.visible_various} key={3}>
+                </section>
+                <section className={navigation_scss.visible_various}>
                     <button>
                         Аукционы
                     </button>
-                </li>
-                <li className={navigation_scss.visible_various} key={4}>
+                </section>
+                <section className={navigation_scss.visible_various}>
                     <button>
                         События
                     </button>
-                </li>
-            </ul>
+                </section>
+            </section>
         </section>
 
     )

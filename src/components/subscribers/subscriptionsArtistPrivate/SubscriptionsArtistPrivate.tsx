@@ -25,12 +25,12 @@ export const SubscriptionsArtistPrivate = (props: subscriptionsInterface) => {
     }, [props.input]);
 
     return (
-        <main>
+        <section>
             <header className={subscriptions_scss.section_title}>
-                <div>Художник</div>
-                <div className={subscriptions_scss.mobile_hidden}>Сумма</div>
-                <div className={subscriptions_scss.mobile_hidden}>Дата списания</div>
-                <div className={subscriptions_scss.desktop_hidden}>Платеж</div>
+                <section>Художник</section>
+                <section className={subscriptions_scss.mobile_hidden}>Сумма</section>
+                <section className={subscriptions_scss.mobile_hidden}>Дата списания</section>
+                <section className={subscriptions_scss.desktop_hidden}>Платеж</section>
                 <button className={'no_main_color'}></button>
             </header>
             <ul className={subscriptions_scss.subscriptions_private_section}>
@@ -48,6 +48,6 @@ export const SubscriptionsArtistPrivate = (props: subscriptionsInterface) => {
                 })
                 }
             </ul>
-        </main>
+        </section>
     )
 }

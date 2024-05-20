@@ -44,20 +44,20 @@ export const PriceFiltersComponent = (props: filterInterface) => {
                 </button>
             </header>
             {isOpen ?
-                <ul className={filters_scss.price_section}>
-                    <li className={filters_scss.price_one_section} key={0}>
+                <section className={filters_scss.price_section}>
+                    <section className={filters_scss.price_one_section}>
                         <header className={filters_scss.price_one_section_title}>От</header>
                         <input value={input_priceStart}
                                 onChange={(event) =>
                                     setPriceStart(event.target.value)}/>
-                    </li>
-                    <li className={filters_scss.price_one_section} key={1}>
+                    </section>
+                    <section className={filters_scss.price_one_section}>
                         <header className={filters_scss.price_one_section_title}>До</header>
                         <input value={input_priceEnd}
                                onChange={(event) =>
                                    setPriceEnd(event.target.value)}/>
-                    </li>
-                </ul>
+                    </section>
+                </section>
                 : null}
         </section>
     )

@@ -30,59 +30,59 @@ export const NavigationComponent = (props: navigationInterface) => {
 
 
     return (
-        <ul className={navigation_scss.nav}>
-            <li key={0}>
+        <section className={navigation_scss.nav}>
+            <section>
                 <button className={'title ' + navigation_scss.title}
                         onClick={() => router.push(MAIN_PATHS.MAIN)}>
                     Lindéro
                 </button>
-            </li>
-            <li className={navigation_scss.menu_li} key={1}>
+            </section>
+            <section className={navigation_scss.menu_li}>
                 <button onClick={() => router.push(MAIN_PATHS.MAIN)}>
                    <Image src={menu_icon} alt={'menu_icon'} className={navigation_scss.menu_img + ' ' + navigation_scss.img}
                           width={0} height={0}/>
                 </button>
-            </li>
-            <li className={navigation_scss.visible_various} key={2}>
+            </section>
+            <section className={navigation_scss.visible_various}>
                 <button onClick={() => router.push(MAIN_PATHS.ARTISTS)}>
                     Художники
                 </button>
-            </li>
-            <li className={navigation_scss.visible_various} key={3}>
+            </section>
+            <section className={navigation_scss.visible_various}>
                 <button onClick={() => router.push(MAIN_PATHS.PAINTINGS)}>
                     Картины
                 </button>
-            </li>
-            <li className={navigation_scss.visible_various} key={4}>
+            </section>
+            <section className={navigation_scss.visible_various}>
                 <button onClick={() => router.push(MAIN_PATHS.PHOTO)}>
                     Фотографии
                 </button>
-            </li>
-            <li className={navigation_scss.visible_various} key={5}>
+            </section>
+            <section className={navigation_scss.visible_various}>
                 <button onClick={() => router.push(MAIN_PATHS.SCULPTURES)}>
                     Скульптуры
                 </button>
-            </li>
-            <li className={navigation_scss.visible_various} key={6}>
+            </section>
+            <section className={navigation_scss.visible_various}>
                 <button>
                     Аукционы
                 </button>
-            </li>
-            <li className={navigation_scss.visible_various} key={7}>
+            </section>
+            <section className={navigation_scss.visible_various}>
                 <button>
                     События
                 </button>
-            </li>
+            </section>
             {isAccountClicked ?
                 <AccountNavigationContainer setIsMenuClicked={setIsAccountNavClicked}/>
                 : null}
-            <li className={navigation_scss.img_section} key={0}>
+            <section className={navigation_scss.img_section}>
                 <button onClick={() => router.push(MAIN_PATHS.SEARCH)}>
                     <Image src={search_icon} alt={'search_icon'} className={navigation_scss.img}
                            width={0} height={0}/>
                 </button>
-            </li>
-            <li key={1}>
+            </section>
+            <section>
                 <button onClick={() => {
                     if ((status === 'unauthenticated' || session === null)) {
                         signin()
@@ -101,7 +101,7 @@ export const NavigationComponent = (props: navigationInterface) => {
                     }
                 </button>
 
-            </li>
-        </ul>
+            </section>
+        </section>
     )
 }

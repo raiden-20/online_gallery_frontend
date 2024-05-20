@@ -53,7 +53,7 @@ export const CartComponent = (props: cartInterface) => {
                 <ul className={cart_scss.arts}>
                     {props.cart.map((oneArt: CartInterface, index) => {
                         return (
-                            <li key={index}>
+                            <li key={oneArt.artId}>
                                 <OneCartComponent isAllSelected={isAllSelected} oneArt={oneArt}
                                                   setArtId={setArtId} artId={artId}
                                                   DeleteArtFromCart={props.DeleteArtFromCart}/>

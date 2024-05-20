@@ -25,9 +25,9 @@ export const ArtistsComponent = (props: artistsMain) => {
         <section className={main_scss.root}>
             <header className={main_scss.header}>Художники</header>
             <ul className={artists_scss.ul}>
-                {props.artists.map((oneArtist : UserShort) => {
+                {props.artists.map((oneArtist : UserShort, index) => {
                     return (
-                        <li className={artists_scss.one_artist} key={0}
+                        <li className={artists_scss.one_artist} key={index}
                         onClick={() => {
                             Cookies.set('currentRole', ROLES.ARTIST)
                             if (Cookies.get('artistId') === oneArtist.artistId) {

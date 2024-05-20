@@ -3,7 +3,7 @@ import {WorksComponent} from "@/components/categories/works/works/WorksComponent
 import {Filters, SizeInterface} from "@/interfaces/filters";
 
 interface workInterface {
-    currentFilters: Filters
+    //currentFilters: Filters
     arts: ArtShortInterface[]
 }
 

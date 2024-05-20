@@ -66,7 +66,9 @@ export const WorksRoot = (props: workRootInterface) => {
             {/*        </select>*/}
             {/*    </section>*/}
             {/*</nav>*/}
-            <WorksArts arts={props.arts} currentFilters={props.currentFilters}/>
+
+            {/*currentFilters={props.currentFilters}*/}
+            <WorksArts arts={props.arts} />
         </section>
     )
 }

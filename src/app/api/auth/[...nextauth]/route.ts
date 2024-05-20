@@ -34,7 +34,7 @@ async function refreshAccessToken(token: JWT) {
     }
 }
 
-export const AuthConfig: AuthOptions = {
+const AuthConfig: AuthOptions = {
     providers: [
         KeycloakProvider({
             clientId: `${process.env.KEYCLOAK_CLIENT_ID}`,

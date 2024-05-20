@@ -1,5 +1,5 @@
 import NextAuth from "next-auth";
-import {AuthConfig} from "../../../../../utils/sessionTokenAccessor";
+import {AuthConfig} from "../../../../../utils/auth_config";
 
 
 

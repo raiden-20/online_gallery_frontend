@@ -1,6 +1,6 @@
 import {getServerSession} from "next-auth";
 import {getIdToken} from "../../../../../utils/sessionTokenAccessor";
-import {AuthConfig} from "@/app/api/auth/[...nextauth]/route";
+import {AuthConfig} from "../../../../../utils/auth_config";
 
 export async function GET() {
     const session = await getServerSession(AuthConfig)

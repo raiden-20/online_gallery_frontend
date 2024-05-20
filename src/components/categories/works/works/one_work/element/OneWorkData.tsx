@@ -13,12 +13,12 @@ export const OneWorkData = (props: oneWorkDataInterface) => {
 
     return (
         <section className={one_work_scss.art_info}>
-            <ul className={one_work_scss.art_table}>
-                <li className={one_work_scss.details_section} key={0}>
+            <section className={one_work_scss.art_table}>
+                <section className={one_work_scss.details_section}>
                     <div className={one_work_scss.more_info_noimp}>Тип</div>
                     <div className={one_work_scss.more_info_noimp_text}>{props.one_work.type}</div>
-                </li>
-                <li className={one_work_scss.details_section} key={1}>
+                </section>
+                <section className={one_work_scss.details_section}>
                     <div className={one_work_scss.more_info_noimp}>Материал</div>
                     <ul className={one_work_scss.materials_ul}>
                         {props.one_work.materials.map((oneMaterial: string, index) => {
@@ -29,21 +29,21 @@ export const OneWorkData = (props: oneWorkDataInterface) => {
                             )
                         })}
                     </ul>
-                </li>
-                <li className={one_work_scss.details_section} key={2}>
+                </section>
+                <section className={one_work_scss.details_section}>
                     <div className={one_work_scss.more_info_noimp}>Размер</div>
                     <div className={one_work_scss.more_info_noimp_text}>
                         {props.one_work.size}
                     </div>
-                </li>
-                <li className={one_work_scss.details_section} key={3}>
+                </section>
+                <section className={one_work_scss.details_section}>
                     <div className={one_work_scss.more_info_noimp}>Наличие рамы</div>
                     <div className={one_work_scss.more_info_noimp_text}>
                         {props.one_work.frame ? 'Да' : 'Нет'}
                     </div>
-                </li>
+                </section>
                 {props.one_work.customerId !== null ?
-                    <li className={one_work_scss.details_section} key={4}>
+                    <section className={one_work_scss.details_section}>
                         <div className={one_work_scss.more_info_noimp}>Владелец</div>
                         <div className={one_work_scss.underline}
                              onClick={() => {
@@ -57,9 +57,9 @@ export const OneWorkData = (props: oneWorkDataInterface) => {
                         }>
                             {props.one_work.customerName}
                         </div>
-                    </li>
+                    </section>
                     : null}
-            </ul>
+            </section>
             <p className={one_work_scss.info_text}>{props.one_work.description}</p>
             <ul className={one_work_scss.tags_section}>
                 {props.one_work.tags.map((tag: string, index) => {

@@ -68,41 +68,41 @@ export const FiltersComponent = (props: filtersInterface) => {
                         <Image src={close_icon} alt={'close icon'}/>
                     </button>
                 </header>
-                <ul className={filters_scss.main}>
-                    <li key={0}>
+                <section className={filters_scss.main}>
+                    <section>
                         <PriceFiltersComponent currentFilters={props.currentFilters}
                                                setFiltersPriceStartThunk={props.setFiltersPriceStartThunk}
                                                setFiltersPriceEndThunk={props.setFiltersPriceEndThunk}/>
-                    </li>
-                    <li key={1}>
+                    </section>
+                    <section>
                         <SizeFiltersComponent currentFilters={props.currentFilters}
                                               setFiltersSizeThunk={props.setFiltersSizeThunk}/>
-                    </li>
-                    <li key={2}>
+                    </section>
+                    <section>
                         <ArtistsFiltersContainer currentFilters={props.currentFilters}
                                                  setFiltersArtistsThunk={props.setFiltersArtistsThunk}/>
-                    </li>
-                    <li key={3}>
+                    </section>
+                    <section>
                         <YearFiltersContainer currentFilters={props.currentFilters}
                                               setFiltersYearThunk={props.setFiltersYearThunk}/>
-                    </li>
-                    <li key={4}>
+                    </section>
+                    <section>
                         <MaterialsFiltersContainer currentFilters={props.currentFilters}
                                                    setFiltersMaterialsThunk={props.setFiltersMaterialsThunk}/>
-                    </li>
-                    <li key={5}>
+                    </section>
+                    <section>
                         <TagsFiltersContainer currentFilters={props.currentFilters}
                                               setFiltersTagsThunk={props.setFiltersTagsThunk}/>
-                    </li>
-                    <li key={6}>
+                    </section>
+                    <section>
                         <FrameFiltersComponent currentFilters={props.currentFilters}
                                                setFiltersFrameThunk={props.setFiltersFrameThunk}/>
-                    </li>
-                    <li key={7}>
+                    </section>
+                    <section>
                         <StatusFilterComponent currentFilters={props.currentFilters}
                                                setFiltersStatusThunk={props.setFiltersStatusThunk}/>
-                    </li>
-                </ul>
+                    </section>
+                </section>
                 <footer className={filters_scss.footer}>
                     <button className={'cancel_button'}
                             onClick={clearFilters}>

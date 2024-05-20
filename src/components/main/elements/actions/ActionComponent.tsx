@@ -5,24 +5,24 @@ export const ActionComponent = () => {
     return (
         <section className={main_scss.root}>
             <header className={main_scss.header}>События</header>
-            <ul className={actions_scss.ul}>
-                <li className={actions_scss.one_action} key={0}>
+            <section className={actions_scss.ul}>
+                <section className={actions_scss.one_action}>
                     <img src={'/action1.jpg'} alt={'action'}/>
                     <section className={actions_scss.date_section}>
                         <div>26 апреля</div>
                         <div>―</div>
                         <div>10 мая</div>
                     </section>
-                </li>
-                <li className={actions_scss.one_action} key={1}>
+                </section>
+                <section className={actions_scss.one_action}>
                     <section className={actions_scss.date_section}>
                         <div>26 апреля</div>
                         <div>―</div>
                         <div>10 мая</div>
                     </section>
                     <img src={'/action2.jpg'} alt={'action'}/>
-                </li>
-            </ul>
+                </section>
+            </section>
         </section>
     )
 }

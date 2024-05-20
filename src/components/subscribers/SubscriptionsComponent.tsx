@@ -70,7 +70,7 @@ export const SubscriptionsComponent = (props: subscriptionsInterface) => {
     return (
         <section className={subscriptions_scss.root}>
             <header className={subscriptions_scss.header}>Подписки</header>
-            <ul className={nav_profile_scss.root}>
+            <section className={nav_profile_scss.root}>
                 <li className={whoIsClicked === 1 ? nav_profile_scss.active : undefined}
                     onClick={() => setWhoIsClicked(1)} key={0}>
                     <button className={nav_profile_scss.button}>
@@ -83,7 +83,7 @@ export const SubscriptionsComponent = (props: subscriptionsInterface) => {
                         Уведомления
                     </button>
                 </li>
-            </ul>
+            </section>
             <section className={filters_scss.search}>
                 <Image src={search_icon} alt={'search_icon'}/>
                 <input value={input}

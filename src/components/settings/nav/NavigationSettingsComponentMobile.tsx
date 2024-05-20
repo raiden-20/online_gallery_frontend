@@ -12,29 +12,29 @@ export const NavigationSettingsComponentMobile = (props: { setWhoIsClicked(whoIs
             <header className={settings_scss.section_name}>
                 Настройки
             </header>
-            <ul className={settings_scss.root_mobile}>
-                <li className={settings_scss.auth_data} onClick={() => props.setWhoIsClicked(1)} key={0}>
+            <section className={settings_scss.root_mobile}>
+                <section className={settings_scss.auth_data} onClick={() => props.setWhoIsClicked(1)}>
                     <header>Аккаунт</header>
                     <button>
                         <Image src={more_icon} alt={'more_icon'} className={settings_scss.icon}
                                width={0} height={0}/>
                     </button>
-                </li>
-                <li className={settings_scss.auth_data} onClick={() => router.push(MAIN_PATHS.ADDRESSES)} key={1}>
+                </section>
+                <section className={settings_scss.auth_data} onClick={() => router.push(MAIN_PATHS.ADDRESSES)}>
                     <header>Адрес доставки</header>
                     <button>
                         <Image src={more_icon} alt={'more_icon'} className={settings_scss.icon}
                                width={0} height={0}/>
                     </button>
-                </li>
-                <li className={settings_scss.auth_data} onClick={() => router.push(MAIN_PATHS.CARDS)} key={2}>
+                </section>
+                <section className={settings_scss.auth_data} onClick={() => router.push(MAIN_PATHS.CARDS)}>
                     <header>Способы оплаты</header>
                     <button>
                         <Image src={more_icon} alt={'more_icon'} className={settings_scss.icon}
                                width={0} height={0}/>
                     </button>
-                </li>
-            </ul>
+                </section>
+            </section>
         </section>
 
     )

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="commit" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="commit dev env file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +131,7 @@
       <workItem from="1715974808327" duration="613000" />
       <workItem from="1716025837180" duration="613000" />
       <workItem from="1716196546354" duration="192000" />
-      <workItem from="1716196968360" duration="309000" />
+      <workItem from="1716196968360" duration="518000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -517,7 +517,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716197273854</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="commit dev env file">
+      <option name="closed" value="true" />
+      <created>1716197375285</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1716197375285</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +555,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="last design details" />
     <MESSAGE value="last design details 2" />
     <MESSAGE value="testing" />
     <MESSAGE value="commit css" />
@@ -572,6 +579,7 @@
     <MESSAGE value="create notifications store and testing sse with backend" />
     <MESSAGE value="edit display css popup notification" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="commit dev env file" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit dev env file" />
   </component>
 </project>

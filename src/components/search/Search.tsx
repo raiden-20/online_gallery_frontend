@@ -43,8 +43,8 @@ export const Search = (props: SearchInterface) => {
                     <ul className={nav_profile_scss.root + ' ' + search_scss.nav + ' scrollbarNone'}>
                         {categories.map((one: string, index) => {
                             return (
-                                <li className={whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}>
-                                    <button onClick={() => setWhoIsClicked(index + 1)} key={index}>
+                                <li key={index} className={whoIsClicked === index + 1 ? nav_profile_scss.active : undefined}>
+                                    <button onClick={() => setWhoIsClicked(index + 1)}>
                                         {one}
                                     </button>
                                 </li>

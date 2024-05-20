@@ -54,7 +54,7 @@ export const StatusFilterComponent = (props: filterInterface) => {
                 <ul className={filters_scss.size_section + ' ' + filters_scss.checkbox_section + ' scrollbar'}>
                     {status.map((oneStatus, index) => {
                         return (
-                            <li className={filters_scss.size_one_section}>
+                            <li className={filters_scss.size_one_section} key={index}>
                                 <input type={'checkbox'}
                                        onClick={() => setStatus(oneStatus.isActive, oneStatus.name, index)}/>
                                 <div>{oneStatus.title}</div>

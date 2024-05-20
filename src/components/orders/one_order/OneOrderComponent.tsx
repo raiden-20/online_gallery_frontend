@@ -38,31 +38,31 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
             <header className={one_order_scss.header}>Заказ №0000{props.oneOrder.orderId}</header>
             <section className={one_order_scss.main}>
                 <section className={one_order_scss.section + ' ' + one_order_scss.data}>
-                    <ul className={one_order_scss.table_part}>
-                        <li className={one_order_scss.table} key={0}>
+                    <section className={one_order_scss.table_part}>
+                        <section className={one_order_scss.table}>
                             <div className={one_order_scss.table_title}>Адрес</div>
                             <p className={one_order_scss.address}>
                                 {props.oneOrder.location}, {' ' + props.oneOrder.city}, {' ' + props.oneOrder.region},
                                 {' ' + props.oneOrder.city}, {' ' + props.oneOrder.name}
                             </p>
-                        </li>
-                        <li className={one_order_scss.table} key={1}>
+                        </section>
+                        <section className={one_order_scss.table}>
                             <div className={one_order_scss.table_title}>Способ оплаты</div>
                             {props.oneOrder.number !== null ?
                                 <div>•••• •••• ••••
                                     {props.oneOrder.number.substring(props.oneOrder.number.length - 4, props.oneOrder.number.length - 1)}
                                 </div>
                                 : null}
-                        </li>
-                        <li className={one_order_scss.table} key={2}>
+                        </section>
+                        <section className={one_order_scss.table}>
                             <div className={one_order_scss.table_title}>Художник</div>
                             <div className={one_order_scss.table_name}>{props.oneOrder.artistName}</div>
-                        </li>
-                        <li className={one_order_scss.table} key={3}>
+                        </section>
+                        <section className={one_order_scss.table}>
                             <div className={one_order_scss.table_title}>Покупатель</div>
                             <div className={one_order_scss.table_name}>{props.oneOrder.customerName}</div>
-                        </li>
-                    </ul>
+                        </section>
+                    </section>
                     <section className={one_order_scss.art_data}>
                         <img src={props.oneOrder.artUrl} className={one_order_scss.img}
                              alt={'photo'}/>
@@ -73,16 +73,16 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
                     </section>
                 </section>
                 <section className={one_order_scss.section + ' ' + one_order_scss.condition}>
-                    <ul className={one_order_scss.table_part}>
-                        <li className={one_order_scss.table_condition} key={0}>
+                    <section className={one_order_scss.table_part}>
+                        <section className={one_order_scss.table_condition}>
                             <div className={one_order_scss.table_title}>Состояние</div>
                             <div>{props.oneOrder.status}</div>
-                        </li>
-                        <li className={one_order_scss.table_condition} key={1}>
+                        </section>
+                        <section className={one_order_scss.table_condition}>
                             <div className={one_order_scss.table_title}>Комментарий к доставке</div>
                             <div>{props.oneOrder.artistComment}</div>
-                        </li>
-                    </ul>
+                        </section>
+                    </section>
                     <OneOrderButtons status={props.oneOrder.status}
                                      ReceiveOrder={props.ReceiveOrder}
                                      SetOrder={props.SetOrder}

@@ -34,9 +34,9 @@ export const AccountNavigation = (props: accountNavInterface) => {
                     <Image src={close} alt={'close'}
                            width={0} height={0} className={navigation_scss.img}/>
                 </button>
-                <ul className={accountNavigation_scss.account_nav}>
+                <section className={accountNavigation_scss.account_nav}>
                     {registrationFlag === 'true' ?
-                        <li className={accountNavigation_scss.account_data} key={0}
+                        <section className={accountNavigation_scss.account_data}
                             onClick={() => {
                                 Cookies.set('role', ROLES.CUSTOMER)
                                 Cookies.set('currentRole', ROLES.CUSTOMER)
@@ -54,11 +54,11 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                     Покупатель
                                 </button>
                             </section>
-                        </li>
+                        </section>
                         : null
                     }
                     {artistId !== undefined ?
-                        <li className={accountNavigation_scss.account_data} key={1}
+                        <section className={accountNavigation_scss.account_data}
                             onClick={() => {
                                 Cookies.set('role', ROLES.ARTIST)
                                 Cookies.set('currentRole', ROLES.ARTIST)
@@ -76,9 +76,9 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                     Художник
                                 </button>
                             </section>
-                        </li>
+                        </section>
                         :
-                        <li key={2}>
+                        <section>
                             <button className={accountNavigation_scss.buttonAdd}>
                                 <div className={accountNavigation_scss.plus}>+</div>
                                 <div className={accountNavigation_scss.artist_button}
@@ -86,9 +86,9 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                     Художник
                                 </div>
                             </button>
-                        </li>
+                        </section>
                     }
-                    <li key={3}>
+                    <section>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => {
                                     router.push(MAIN_PATHS.CART)
@@ -99,26 +99,26 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 }>
                             Корзина
                         </button>
-                    </li>
-                    <li key={4}>
+                    </section>
+                    <section>
                         <button className={accountNavigation_scss.button}
                         onClick={() => router.push(MAIN_PATHS.ORDERS)}>
                             Заказы
                         </button>
-                    </li>
-                    <li key={5}>
+                    </section>
+                    <section>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => router.push(MAIN_PATHS.NOTIFICATIONS)}>
                             Уведомления
                         </button>
-                    </li>
-                    <li key={6}>
+                    </section>
+                    <section>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS + PATHS_CATEGORY.PRIVATE)}>
                             Подписки
                         </button>
-                    </li>
-                    <li key={7}>
+                    </section>
+                    <section>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => {
                                     router.push(MAIN_PATHS.SETTINGS)
@@ -128,8 +128,8 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 }}>
                             Настройки
                         </button>
-                    </li>
-                    <li key={8}>
+                    </section>
+                    <section>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => {
                                     keycloakSessionLogOut()
@@ -141,8 +141,8 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                 }}>
                             Выход
                         </button>
-                    </li>
-                </ul>
+                    </section>
+                </section>
             </section>
         </section>
     )

@@ -7,4 +7,6 @@ export default function Home() {
     const router = useRouter()
 
     router.push(MAIN_PATHS.MAIN)
+
+    return <></>
 }

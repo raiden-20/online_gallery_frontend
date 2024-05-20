@@ -7,7 +7,6 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
 import {CartInterface} from "@/interfaces/cartInterface";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 interface cartInterface {
     totalCount: number
     cart: CartInterface[]
@@ -41,7 +40,7 @@ export const CartComponent = (props: cartInterface) => {
             <section className={cart_scss.top_buttons_section}>
                 <section className={cart_scss.top_button_checkbox}>
                     <input type={'checkbox'}
-                           onClick={() => setIsAllSelected(!isAllSelected)} checked={isAllSelected}/>
+                           onChange={() => setIsAllSelected(!isAllSelected)} checked={isAllSelected}/>
                     <div>Выбрать все</div>
                 </section>
                 <button className={cart_scss.top_button_delete}>
@@ -51,12 +50,13 @@ export const CartComponent = (props: cartInterface) => {
             </section>
             <main className={cart_scss.main}>
                 <ul className={cart_scss.arts}>
-                    {props.cart.map((oneArt: CartInterface, index) => {
+                    {props.cart.map((oneArt: CartInterface) => {
                         return (
                             <li key={oneArt.artId}>
                                 <OneCartComponent isAllSelected={isAllSelected} oneArt={oneArt}
                                                   setArtId={setArtId} artId={artId}
-                                                  DeleteArtFromCart={props.DeleteArtFromCart}/>
+                                                  DeleteArtFromCart={props.DeleteArtFromCart}
+                                                  setIsAllSelected={setIsAllSelected}/>
                             </li>
                         )
                     })}

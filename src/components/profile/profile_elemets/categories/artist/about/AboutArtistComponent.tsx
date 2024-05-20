@@ -53,10 +53,10 @@ export const AboutArtistComponent = (props: AboutInterface) => {
                 <p onClick={() => setIsClicked(true)}>{props.input_description}</p>
             }
             <section className={about_artist_scss.info_section}>
-                {info.map((one_info: info) => {
+                {info.map((one_info: info, index) => {
                     if (one_info.data === null) {
                         return (
-                            <section className={about_artist_scss.one_info + ' ' + about_artist_scss.non}>
+                            <section className={about_artist_scss.one_info + ' ' + about_artist_scss.non} key={index}>
                                 <div>Запрещенные данные</div>
                                 <div></div>
                             </section>

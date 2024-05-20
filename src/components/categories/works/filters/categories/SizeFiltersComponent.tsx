@@ -51,7 +51,7 @@ export const SizeFiltersComponent = (props: filterInterface) => {
                 <ul className={filters_scss.size_section}>
                     {size.map((oneElement: { title: string, name: string, isActive: boolean }, index) => {
                         return (
-                            <li className={filters_scss.size_one_section}>
+                            <li className={filters_scss.size_one_section} key={index}>
                                 <input type={'checkbox'}
                                        onClick={() => setSize(oneElement.isActive, oneElement.name, index)}/>
                                 <div>{oneElement.title}</div>

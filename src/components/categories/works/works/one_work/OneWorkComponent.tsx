@@ -49,10 +49,10 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
     return (
         <section className={one_work_scss.root}>
             <ul className={one_work_scss.photo_section}>
-                {props.one_work.photoUrls.map((onePhoto: string) => {
+                {props.one_work.photoUrls.map((onePhoto: string, index) => {
                     return (
                         <img src={onePhoto} className={one_work_scss.one_photo} crossOrigin="anonymous"
-                             alt={'art photo'}/>
+                             alt={'art photo'} key={index}/>
                     )
                 })}
             </ul>

@@ -8,6 +8,7 @@ import {CartInterface} from "@/interfaces/cartInterface";
 interface oneCartInterface {
     oneArt: CartInterface
     isAllSelected: boolean
+    setIsAllSelected(isAllSelected: boolean): void
 
     setArtId(artId: {[key: string]: boolean }): void
     DeleteArtFromCart(artId: string, setMessage: (message: string) => void): void
@@ -60,7 +61,7 @@ export const OneCartComponent = (props: oneCartInterface) => {
     return (
         <section className={one_cart_scss.root}>
             <input type={'checkbox'} className={one_cart_scss.checkbox}
-                   onClick={() => setIsSelected(!isSelected)} checked={isSelected}/>
+                   onChange={() => setIsSelected(!isSelected)} checked={isSelected}/>
             <img src={props.oneArt.photoUrl} className={one_cart_scss.img} crossOrigin="anonymous"
                  alt={'art photo'}/>
             <section className={one_cart_scss.data_root}>
@@ -96,7 +97,7 @@ export const OneCartComponent = (props: oneCartInterface) => {
                 <section className={one_cart_scss.section}>
                     <section className={one_cart_scss.anonymous_section}>
                         <input type={'checkbox'}
-                               onClick={() => setIsAnonymous(!isAnonymous)} checked={isAnonymous}/>
+                               onChange={() => setIsAnonymous(!isAnonymous)} checked={isAnonymous}/>
                         <section className={one_cart_scss.anonymous_section_add}>
                             <div>Купить анонимно</div>
                             <button onMouseOver={handleMouseEnter}

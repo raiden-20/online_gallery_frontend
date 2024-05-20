@@ -49,7 +49,7 @@ export const Root = (props: RootInterface) => {
     const pathnameArr = pathname.split('/')
     const main_path = '/' + pathnameArr[1]
 
-    const {  data: session} = useSession();
+    const {  data: session, status} = useSession();
 
     useEffect(() => {
         if (Cookies.get('status') === 'authenticated') {
@@ -124,7 +124,9 @@ export const Root = (props: RootInterface) => {
                     }
                 </main>
                 <FooterComponent/>
-                <OnePopUpNotificationContainer/>
+                {status === 'authenticated' ?
+                    <OnePopUpNotificationContainer/>
+                : null}
             </section>
         </section>
 

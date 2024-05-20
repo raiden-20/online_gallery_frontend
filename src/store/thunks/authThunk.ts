@@ -30,6 +30,7 @@ export const deleteCookies = () => {
     Cookies.remove('artistName');
     Cookies.remove('customerName');
     Cookies.remove('customerUrl');
+    Cookies.remove('SSE');
     localStorage.removeItem('access_token')
     localStorage.removeItem('session')
 }

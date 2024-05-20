@@ -9,6 +9,7 @@ import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {fetchEventSource} from '@microsoft/fetch-event-source';
 import {useRouter} from "next/navigation";
 import {clearOnePopUpNotification} from "@/store/thunks/notificationsThunk";
+import {useSession} from "next-auth/react";
 
 interface OnePopUpNotificationComponentInterface {
     popup_notification: PopUpNotificationInterface
@@ -21,15 +22,22 @@ export const OnePopUpNotificationComponent = (props: OnePopUpNotificationCompone
 
     const router = useRouter()
 
+    const {status} = useSession()
+
     const [role] = useState(Cookies.get('role'))
-    const [customerId] = useState(Cookies.get('customerId'))
-    const [artistId] = useState(Cookies.get('artistId'))
+    const [customerId, setCustomerId] = useState('')
+    const [artistId, setArtistId] = useState('')
 
     const [isClear, setIsClear] = useState(false)
 
     useEffect(() => {
+
+        setCustomerId(Cookies.get('customerId') as string)
+        setArtistId(Cookies.get('artistId') as string)
+
         const getNotificationSSE = async () => {
             const who = role === ROLES.CUSTOMER ? customerId : role === ROLES.ARTIST ? artistId : null
+            Cookies.set('SSE', 'true')
             await fetchEventSource('http://localhost:8080/notification/sse/' + who,
                 {
                     headers: {
@@ -44,11 +52,12 @@ export const OnePopUpNotificationComponent = (props: OnePopUpNotificationCompone
                     },
 
                 })
+           
         }
-
-        getNotificationSSE()
-
-    }, []);
+        if (status === 'authenticated' && (customerId !== '' && customerId !== undefined) && Cookies.get('SSE') !== 'true') {
+            getNotificationSSE()
+        }
+    }, [status, customerId]);
 
     useEffect(() => {
         if (isClear) {

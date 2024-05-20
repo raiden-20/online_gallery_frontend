@@ -69,7 +69,7 @@ export const AddPhotoEditComponent = (props: mainPhotoInterface) => {
             {props.photoArraySrc.map((onePhoto: string, index) => {
                     if (index !== 0 && onePhoto !== 'http://localhost:9000/picture/empty.txt') {
                         return (
-                            <section className={create_post_scss.onePhoto_section}>
+                            <section className={create_post_scss.onePhoto_section} key={index}>
                             <button className={create_post_scss.delete_button}
                         onClick={() => deleteInputPhoto(index)}>
                         <Image src={delete_photo_icon} alt={'delete_photo_icon'}/>

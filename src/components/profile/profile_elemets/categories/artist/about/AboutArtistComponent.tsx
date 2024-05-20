@@ -63,7 +63,7 @@ export const AboutArtistComponent = (props: AboutInterface) => {
                         )
                     } else {
                         return (
-                            <section className={about_artist_scss.one_info}>
+                            <section className={about_artist_scss.one_info} key={index}>
                                 <Image src={one_info.icon} alt={'icon'} className={about_artist_scss.icon}/>
                                 <div>{one_info.title}</div>
                                 <div>{one_info.data}</div>

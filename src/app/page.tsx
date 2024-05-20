@@ -8,5 +8,5 @@ export default function Home() {
 
     router.push(MAIN_PATHS.MAIN)
 
-    return <></>
+    return <section></section>
 }

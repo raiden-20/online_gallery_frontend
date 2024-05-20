@@ -110,7 +110,7 @@ const refreshTokenFn = async () => {
             },
             body: new URLSearchParams({
                 client_id: 'frontend',
-                client_secret: '1LqZnZS2ksjtAWcEwBjZRJMf9UXJod5K',
+                client_secret: process.env.KEYCLOAK_CLIENT_SECRET as string,
                 grant_type: 'refresh_token',
                 refresh_token: refresh
             }),

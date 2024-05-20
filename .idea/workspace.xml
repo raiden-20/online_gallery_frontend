@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create notifications store and testing sse with backend">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit display css popup notification">
+      <change afterPath="$PROJECT_DIR$/src/app/subscriptions/private/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/subscriptions/public/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/notifications/PopUpNotification.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/notifications/PopUpNotification.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/SubscriptionsArtistPrivate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/subscriptions/Subscriptions.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Rebasing feature__app__improvement__2",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/test_sse_application",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/PROJECT/csf-exams-frontend",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,11 +69,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\subscriptions\public" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\subscriptions\private" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\settings\cards" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\settings\addresses" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist\[id]\posts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile" />
@@ -128,7 +135,12 @@
       <workItem from="1715791508348" duration="14387000" />
       <workItem from="1715812299459" duration="8000" />
       <workItem from="1715818313539" duration="2000" />
-      <workItem from="1715844931872" duration="946000" />
+      <workItem from="1715844931872" duration="3545000" />
+      <workItem from="1715940468404" duration="13000" />
+      <workItem from="1715943111057" duration="4761000" />
+      <workItem from="1715974808327" duration="613000" />
+      <workItem from="1716025837180" duration="613000" />
+      <workItem from="1716196546354" duration="192000" />
     </task>
     <task id="LOCAL-00001" summary="added button to settings card and address and ended mobile design">
       <option name="closed" value="true" />
@@ -498,7 +510,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715689840077</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="edit display css popup notification">
+      <option name="closed" value="true" />
+      <created>1715845968525</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1715845968525</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +548,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test one api 3" />
     <MESSAGE value="main page design" />
     <MESSAGE value="last design details" />
     <MESSAGE value="last design details 2" />
@@ -553,6 +572,7 @@
     <MESSAGE value="edit one pup up notifications margin" />
     <MESSAGE value="edit settings pages" />
     <MESSAGE value="create notifications store and testing sse with backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="create notifications store and testing sse with backend" />
+    <MESSAGE value="edit display css popup notification" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit display css popup notification" />
   </component>
 </project>

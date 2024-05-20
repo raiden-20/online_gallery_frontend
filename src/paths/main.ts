@@ -36,6 +36,9 @@ export const PATHS_CATEGORY = {
 
     CARDS: '/cards',
     ADDRESSES: '/addresses',
+
+    PRIVATE: '/private',
+    PUBLIC: '/public'
 }
 
 export const MAIN_PATHS = {

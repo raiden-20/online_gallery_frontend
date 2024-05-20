@@ -1,7 +1,7 @@
 import accountNavigation_scss from "@/scss/components/main/navigation/AccountNavigation.module.scss";
 import Image from "next/image";
 import Cookies from "js-cookie";
-import {MAIN_PATHS, ROLES} from "@/paths/main";
+import {MAIN_PATHS, PATHS_CATEGORY, ROLES} from "@/paths/main";
 import {deleteCookies, keycloakSessionLogOut} from "@/store/thunks/authThunk";
 import {signOut} from "next-auth/react";
 import {useRouter} from "next/navigation";
@@ -114,7 +114,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                     </li>
                     <li key={6}>
                         <button className={accountNavigation_scss.button}
-                                onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS)}>
+                                onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS + PATHS_CATEGORY.PRIVATE)}>
                             Подписки
                         </button>
                     </li>

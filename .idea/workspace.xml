@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create modal window for set auction rate">
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/pages/auction/CreateAuctionData.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/pages/auction/CreateAuctionDataComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/pages/auction/elements/AuctionConducting.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtData.tsx" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="page for create auction">
+      <change afterPath="$PROJECT_DIR$/src/api/auctionsAPI.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/CreateArtSecondPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/CreateArtSecondPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/ArtDataComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +18,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript File" />
         <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -166,15 +160,7 @@
       <workItem from="1716407653939" duration="3000" />
       <workItem from="1716412353441" duration="599000" />
       <workItem from="1716455038669" duration="4700000" />
-      <workItem from="1716462009937" duration="18235000" />
-    </task>
-    <task id="LOCAL-00017" summary="created private posts components">
-      <option name="closed" value="true" />
-      <created>1714080916872</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1714080916872</updated>
+      <workItem from="1716462009937" duration="19605000" />
     </task>
     <task id="LOCAL-00018" summary="small changes in all">
       <option name="closed" value="true" />
@@ -560,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716495585007</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="page for create auction">
+      <option name="closed" value="true" />
+      <created>1716501055821</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1716501055821</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit first login" />
     <MESSAGE value="edit main page artists avatar" />
     <MESSAGE value="add notifications_design" />
     <MESSAGE value="add notifications_design 2" />
@@ -615,6 +608,7 @@
     <MESSAGE value="create auction page in artist profile" />
     <MESSAGE value="add auctions in search" />
     <MESSAGE value="create modal window for set auction rate" />
-    <option name="LAST_COMMIT_MESSAGE" value="create modal window for set auction rate" />
+    <MESSAGE value="page for create auction" />
+    <option name="LAST_COMMIT_MESSAGE" value="page for create auction" />
   </component>
 </project>

@@ -30,6 +30,8 @@ export const PathsAPI = {
 
     POST: '/post',
     ART: '/art',
+    AUCTION: '/auction',
+    AUCTIONS: '/auctions',
     CART: '/cart',
     ORDER: '/order',
 

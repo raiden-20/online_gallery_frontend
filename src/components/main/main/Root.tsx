@@ -21,7 +21,7 @@ import {MainComponent} from "@/components/main/MainComponent";
 import {CreateOrderSuccessComponent} from "@/components/create_order/success/CreateOrderSuccessComponent";
 import {SubscriptionsContainer} from "@/components/subscribers/SubscriptionsContainer";
 import {CreateArtContainer} from "@/components/create_art/CreateArtContainer";
-import {OneWorkContainer} from "@/components/categories/works/works/one_work/element/OneWorkContainer";
+import {OneWorkContainer} from "@/components/categories/works/works/one_work/one_page/OneWorkContainer";
 import {WorkRootContainer} from "@/components/categories/works/WorkRootContainer";
 import {CartContainer} from "@/components/cart/CartContainer";
 import {CreateOrderContainer} from "@/components/create_order/CreateOrderContainer";
@@ -110,6 +110,7 @@ export const Root = (props: RootInterface) => {
                         main_path === PATHS_CATEGORY.PHOTOS ? <WorkRootContainer/> :
                         main_path === PATHS_CATEGORY.SCULPTURES ? <WorkRootContainer/> :
                         main_path === PATHS_CATEGORY.ARTS ? <OneWorkContainer/> :
+                        main_path === PATHS_CATEGORY.AUCTIONS ? <OneWorkContainer/> :
                         pathname === PATHS_CATEGORY.SEARCH ? <SearchContainer/> :
                         pathname === MAIN_PATHS.CREATE_ART ? <CreateArtContainer/> :
                         main_path === PATHS_CATEGORY.EDIT ? <EditArtContainer/> :

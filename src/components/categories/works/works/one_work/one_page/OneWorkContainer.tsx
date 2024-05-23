@@ -1,8 +1,8 @@
 import {connect} from "react-redux";
 import {ArtInterface} from "@/interfaces/artInterface";
 import {DeleteArt, GetArt} from "@/store/thunks/artThunk";
-import {OneWorkComponent} from "@/components/categories/works/works/one_work/OneWorkComponent";
 import {AddArtToCart} from "@/store/thunks/cartThunk";
+import {OneWork} from "@/components/categories/works/works/one_work/one_page/OneWork";
 
 interface state {
     art: {
@@ -22,4 +22,4 @@ const mapDispatchToProps = {
     AddArtToCart
 }
 
-export const OneWorkContainer = connect(mapStateToProps, mapDispatchToProps)(OneWorkComponent)
+export const OneWorkContainer = connect(mapStateToProps, mapDispatchToProps)(OneWork)

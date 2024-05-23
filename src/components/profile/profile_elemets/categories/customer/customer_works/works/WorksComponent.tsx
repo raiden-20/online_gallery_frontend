@@ -1,6 +1,6 @@
 import works_profile_scss from '@/scss/components/profile/categories/WorksProfile.module.scss'
 import {ArtShortInterface} from "@/interfaces/artInterface";
-import {OneWorkCategoriesComponent} from "@/components/categories/works/works/one_work/OneWorkCategoriesComponent";
+import {OneWorkCategoriesComponent} from "@/components/categories/works/works/one_work/category/OneWorkCategoriesComponent";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useEffect} from "react";
 import {useRouter} from "next/navigation";

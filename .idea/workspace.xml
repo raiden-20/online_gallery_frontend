@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit home page" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit home page">
+      <change afterPath="$PROJECT_DIR$/src/app/auctions/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/element/OneWorkPhoto.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/OneWorkComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +23,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="SCSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -46,13 +54,14 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing develop",
+    "git-widget-placeholder": "Rebasing feature__auction",
     "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
     "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -72,6 +81,23 @@
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\year" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\filters\categories\artists" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -132,6 +158,12 @@
       <workItem from="1716025837180" duration="613000" />
       <workItem from="1716196546354" duration="192000" />
       <workItem from="1716196968360" duration="518000" />
+      <workItem from="1716281079315" duration="1679000" />
+      <workItem from="1716321826639" duration="611000" />
+      <workItem from="1716398631286" duration="3000" />
+      <workItem from="1716407653939" duration="3000" />
+      <workItem from="1716412353441" duration="599000" />
+      <workItem from="1716455038669" duration="901000" />
     </task>
     <task id="LOCAL-00011" summary="created orders pages">
       <option name="closed" value="true" />
@@ -542,7 +574,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature_app_improvement" />
+                        <option value="origin/develop" />
                       </list>
                     </value>
                   </entry>

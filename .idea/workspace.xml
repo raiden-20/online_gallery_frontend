@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit main page and artist nav">
-      <change afterPath="$PROJECT_DIR$/src/scss/components/categories/Auction.module.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create auction page in artist profile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/artInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/artInterface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,15 +158,7 @@
       <workItem from="1716407653939" duration="3000" />
       <workItem from="1716412353441" duration="599000" />
       <workItem from="1716455038669" duration="4700000" />
-      <workItem from="1716462009937" duration="11099000" />
-    </task>
-    <task id="LOCAL-00014" summary="fixed profile navigation font size">
-      <option name="closed" value="true" />
-      <created>1714073861231</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1714073861231</updated>
+      <workItem from="1716462009937" duration="11957000" />
     </task>
     <task id="LOCAL-00015" summary="set default photo">
       <option name="closed" value="true" />
@@ -558,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716489048376</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="create auction page in artist profile">
+      <option name="closed" value="true" />
+      <created>1716492321729</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1716492321730</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +569,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/develop" />
+                        <option value="feature_auction" />
                       </list>
                     </value>
                   </entry>
@@ -588,7 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mobile design for private subscriptions" />
     <MESSAGE value="mobile design for search section" />
     <MESSAGE value="mobile design for avatar profile and one art" />
     <MESSAGE value="edit first login" />
@@ -613,6 +606,7 @@
     <MESSAGE value="edit one art page to using components for auction page" />
     <MESSAGE value="create pages and do design for auctions: one page, categories page" />
     <MESSAGE value="edit main page and artist nav" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit main page and artist nav" />
+    <MESSAGE value="create auction page in artist profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="create auction page in artist profile" />
   </component>
 </project>

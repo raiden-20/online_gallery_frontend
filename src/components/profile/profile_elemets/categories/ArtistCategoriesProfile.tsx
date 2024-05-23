@@ -15,6 +15,9 @@ import {
 } from "@/components/profile/profile_elemets/categories/artist/posts/subscribe/SuggestionSubscribeOnArtist";
 import {usePathname} from "next/navigation";
 import {PATHS_CATEGORY} from "@/paths/main";
+import {
+    AuctionsArtistProfileContainer
+} from "@/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileContainer";
 
 interface ArtistCategoryInterface {
     input_description: string
@@ -33,9 +36,9 @@ interface ArtistCategoryInterface {
 
 export const ArtistCategoriesProfile = (props: ArtistCategoryInterface) => {
 
-    const path = '/' + usePathname().split('/')[3]
+    const path = '/' + usePathname().split('/')[4]
 
-    const [whoIsClicked, setWhoIsClicked] = useState(1)
+    const [whoIsClicked, setWhoIsClicked] = useState(0)
     const [artistId] = useState(Cookies.get('artistId') as string)
     const [customerId] = useState(Cookies.get('customerId') as string)
     const [currentId] = useState(Cookies.get('currentId') as string)
@@ -44,6 +47,15 @@ export const ArtistCategoriesProfile = (props: ArtistCategoryInterface) => {
         switch (path) {
             case PATHS_CATEGORY.POSTS : {
                 setWhoIsClicked(3)
+                break
+            }
+            case PATHS_CATEGORY.AUCTIONS : {
+                setWhoIsClicked(2)
+                break
+            }
+
+            default: {
+                setWhoIsClicked(1)
             }
         }
     }, []);
@@ -55,6 +67,7 @@ export const ArtistCategoriesProfile = (props: ArtistCategoryInterface) => {
                                               countSubscribers={props.countSubscribers}
                                               isPrivateSubscribe={props.isPrivateSubscribe}/>
             {whoIsClicked === 1 ? <WorkArtistProfileContainer/> :
+            whoIsClicked === 2 ? <AuctionsArtistProfileContainer/> :
             whoIsClicked === 3 ?
                 props.countSubscribers !== '' && props.countSubscribers !== null ?
                     artistId === currentId || props.isPrivateSubscribe ? <MainPostContainer/> :

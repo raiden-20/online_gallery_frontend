@@ -19,7 +19,7 @@ $banner-height: 370px;
 }
 
 .ul {
-  width: $width;
+  width: $width - 2 * $padding-24;
   display: flex;
   gap: $gap-l1;
   overflow-x: hidden;
@@ -41,7 +41,7 @@ $banner-height: 370px;
 }
 
 .banner_img {
-  width: $width;
+  width: $width - 2 * $padding-24;
 }
 
 @media screen and (max-width: $width + 24px){

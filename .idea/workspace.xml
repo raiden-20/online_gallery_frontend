@@ -4,38 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit one art page to using components for auction page">
-      <change afterPath="$PROJECT_DIR$/src/app/auction/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/AuctionsComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/AuctionsContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/category/OneAuctionCategoriesComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/category/elements/OneAuctionCategoriesTime.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuction.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionButtons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionRates.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorkArtsContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/category/elements/OneWorkCategoriesData.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/category/elements/OneWorkCategoriesMainPhoto.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/category/elements/OneWorkCategoriesPrice.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/category/elements/OneWorkExclusive.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/category/elements/OneWorkWhoBuy.tsx" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create pages and do design for auctions: one page, categories page">
+      <change afterPath="$PROJECT_DIR$/src/app/profile/artist/[id]/auctions/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auctions/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auctions/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorkRootContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorkRootContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/category/OneWorkCategoriesComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/category/OneWorkCategoriesComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav_elements/NavigationElementsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav_elements/NavigationElementsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Works.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Works.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/OneWork.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/ArtistCategoriesProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/navigation/ArtistNavigationProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Popular.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Popular.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +58,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Rebasing feature__auction",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app/auction",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/profile/profile_elemets/categories/artist",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,11 +71,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist\[id]" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\auction" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\auctions\[id]" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions\one_auction\category" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions\one_auction" />
@@ -188,15 +167,7 @@
       <workItem from="1716407653939" duration="3000" />
       <workItem from="1716412353441" duration="599000" />
       <workItem from="1716455038669" duration="4700000" />
-      <workItem from="1716462009937" duration="4797000" />
-    </task>
-    <task id="LOCAL-00012" summary="redo scss files (variables)">
-      <option name="closed" value="true" />
-      <created>1713989398479</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1713989398479</updated>
+      <workItem from="1716462009937" duration="8164000" />
     </task>
     <task id="LOCAL-00013" summary="add oneOpenPhoto">
       <option name="closed" value="true" />
@@ -582,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716457063725</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="create pages and do design for auctions: one page, categories page">
+      <option name="closed" value="true" />
+      <created>1716468205173</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1716468205173</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +591,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mobile design for profile posts, categories, create art" />
     <MESSAGE value="mobile design for cart orders and subscribers" />
     <MESSAGE value="mobile design for private subscriptions" />
     <MESSAGE value="mobile design for search section" />
@@ -637,6 +615,7 @@
     <MESSAGE value="edit 404 page" />
     <MESSAGE value="edit home page" />
     <MESSAGE value="edit one art page to using components for auction page" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit one art page to using components for auction page" />
+    <MESSAGE value="create pages and do design for auctions: one page, categories page" />
+    <option name="LAST_COMMIT_MESSAGE" value="create pages and do design for auctions: one page, categories page" />
   </component>
 </project>

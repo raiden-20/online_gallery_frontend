@@ -31,6 +31,8 @@ export const PathsAPI = {
     POST: '/post',
     ART: '/art',
     AUCTION: '/auction',
+    RATE: '/rate',
+    MAX_RATE: '/maxrate',
     AUCTIONS: '/auctions',
     CART: '/cart',
     ORDER: '/order',
@@ -121,7 +123,6 @@ const refreshTokenFn = async () => {
             method: 'POST'
         })
 
-        // @ts-ignore
         const session_new = await resp.json();
 
         if (!session_new?.access_token) {

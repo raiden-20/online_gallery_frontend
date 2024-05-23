@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="page for create auction">
-      <change afterPath="$PROJECT_DIR$/src/api/auctionsAPI.ts" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create api file for auctions">
+      <change afterPath="$PROJECT_DIR$/src/interfaces/auctionInterface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/auctionReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/thunks/auctionsThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/auctionsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auctionsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/redux.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/redux.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +55,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Rebasing feature__auction",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/categories/works/auctions/one_auction/one_page/modal_windows",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/store/thunks",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,11 +68,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\store\thunks" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\store\reducers" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions\one_auction\one_page\modal_windows" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\search\elements" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist\[id]" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\auction" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\scss\components\categories\auctions" />
@@ -160,15 +164,7 @@
       <workItem from="1716407653939" duration="3000" />
       <workItem from="1716412353441" duration="599000" />
       <workItem from="1716455038669" duration="4700000" />
-      <workItem from="1716462009937" duration="19605000" />
-    </task>
-    <task id="LOCAL-00018" summary="small changes in all">
-      <option name="closed" value="true" />
-      <created>1714084678573</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1714084678574</updated>
+      <workItem from="1716462009937" duration="22342000" />
     </task>
     <task id="LOCAL-00019" summary="change who buy art section size">
       <option name="closed" value="true" />
@@ -554,7 +550,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716501055821</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="create api file for auctions">
+      <option name="closed" value="true" />
+      <created>1716502158363</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1716502158363</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +588,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit main page artists avatar" />
     <MESSAGE value="add notifications_design" />
     <MESSAGE value="add notifications_design 2" />
     <MESSAGE value="add routing to subscriptions" />
@@ -609,6 +612,7 @@
     <MESSAGE value="add auctions in search" />
     <MESSAGE value="create modal window for set auction rate" />
     <MESSAGE value="page for create auction" />
-    <option name="LAST_COMMIT_MESSAGE" value="page for create auction" />
+    <MESSAGE value="create api file for auctions" />
+    <option name="LAST_COMMIT_MESSAGE" value="create api file for auctions" />
   </component>
 </project>

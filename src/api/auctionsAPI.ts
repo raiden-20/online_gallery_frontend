@@ -131,4 +131,35 @@ export const AuctionsAPI = {
             return error;
         }
     },
+
+    async SetNewRateAuctionAPI(auctionId: string, isAnonymous: boolean) {
+        try {
+            return  await instanceWithoutToken.post(
+                PathsAPI.AUCTION + PathsAPI.RATE,
+                {
+                    auctionId,
+                    isAnonymous
+                }
+            );
+        } catch (error: any) {
+            console.error(error)
+            return error;
+        }
+    },
+
+    async SetMaxRateAuctionAPI(auctionId: string, isAnonymous: boolean, maxRate: string) {
+        try {
+            return  await instanceWithoutToken.post(
+                PathsAPI.AUCTION + PathsAPI.MAX_RATE,
+                {
+                    auctionId,
+                    maxRate,
+                    isAnonymous
+                }
+            );
+        } catch (error: any) {
+            console.error(error)
+            return error;
+        }
+    }
 }

@@ -1,7 +1,7 @@
 import {RootContainer} from "@/components/main/main/RootContainer";
 
-const AuctionsPage = () => {
+const OneAuctionPage = () => {
     return <RootContainer/>
 }
 
-export default AuctionsPage
+export default OneAuctionPage

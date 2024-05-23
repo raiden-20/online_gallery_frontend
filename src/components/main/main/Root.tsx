@@ -32,6 +32,7 @@ import {setToken} from "@/api/api_main";
 import {deleteCookies, keycloakSessionLogOut} from "@/store/thunks/authThunk";
 import {NotificationsContainer} from "@/components/notifications/NotificationsContainer";
 import {OnePopUpNotificationContainer} from "@/components/notifications/one_popup_notification/OnePopUpNotificationContainer";
+import {OneAuctionContainer} from "@/components/categories/works/auctions/one_auction/one_page/OneAuctionContainer";
 
 interface RootInterface {
     artist_data: Artist
@@ -109,8 +110,10 @@ export const Root = (props: RootInterface) => {
                         main_path === PATHS_CATEGORY.PAINTINGS ? <WorkRootContainer/> :
                         main_path === PATHS_CATEGORY.PHOTOS ? <WorkRootContainer/> :
                         main_path === PATHS_CATEGORY.SCULPTURES ? <WorkRootContainer/> :
+                        main_path === PATHS_CATEGORY.SCULPTURES ? <WorkRootContainer/> :
+                        main_path === PATHS_CATEGORY.AUCTIONS ? <WorkRootContainer/> :
                         main_path === PATHS_CATEGORY.ARTS ? <OneWorkContainer/> :
-                        main_path === PATHS_CATEGORY.AUCTIONS ? <OneWorkContainer/> :
+                        main_path === PATHS_CATEGORY.AUCTION ? <OneAuctionContainer/> :
                         pathname === PATHS_CATEGORY.SEARCH ? <SearchContainer/> :
                         pathname === MAIN_PATHS.CREATE_ART ? <CreateArtContainer/> :
                         main_path === PATHS_CATEGORY.EDIT ? <EditArtContainer/> :

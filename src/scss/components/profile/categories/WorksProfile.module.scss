@@ -145,6 +145,10 @@ $blur: 30px;
   display: none;
 }
 
+.auction_time_section {
+  font-size: $font-size-l0;
+}
+
 @media screen and (orientation: portrait) {
   .root {
     display: grid;

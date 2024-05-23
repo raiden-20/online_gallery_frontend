@@ -7,17 +7,18 @@ import {OneWorkWhoBuy} from "@/components/categories/works/works/one_work/catego
 import {OneWorkExclusive} from "@/components/categories/works/works/one_work/category/elements/OneWorkExclusive";
 import {OneWorkCategoriesData} from "@/components/categories/works/works/one_work/category/elements/OneWorkCategoriesData";
 import {OneWorkCategoriesPrice} from "@/components/categories/works/works/one_work/category/elements/OneWorkCategoriesPrice";
+import {OneAuctionCategoriesTime} from "@/components/categories/works/auctions/one_auction/category/elements/OneAuctionCategoriesTime";
 
 interface oneWorkInterface {
     oneArt: ArtShortInterface
 }
 
-export const OneWorkCategoriesComponent = (props: oneWorkInterface) => {
+export const OneAuctionCategoriesComponent = (props: oneWorkInterface) => {
 
     const router = useRouter()
 
     const toOneArt = () => {
-        router.push(MAIN_PATHS.ONE_ART + `/${props.oneArt.artId}`)
+        router.push(MAIN_PATHS.AUCTION + `/${props.oneArt.artId}`)
     }
 
     return (
@@ -31,6 +32,7 @@ export const OneWorkCategoriesComponent = (props: oneWorkInterface) => {
                 <OneWorkExclusive isPrivate={props.oneArt.isPrivate}
                                   customerId={props.oneArt.customerId}/>
             </section>
+            <OneAuctionCategoriesTime/>
             <OneWorkCategoriesData artistName={props.oneArt.artistName}
                                    name={props.oneArt.name}/>
             <OneWorkCategoriesPrice price={props.oneArt.price}/>

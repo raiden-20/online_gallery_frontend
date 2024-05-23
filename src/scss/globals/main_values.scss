@@ -7,6 +7,7 @@ $bell-width-mobile: 19px;
 $img-size: 20px;
 $bell-width: 23px;
 $img_button-width: 25px;
+$img_button-width-30: 30px;
 $img_button-width-35: 35px;
 $nav-avatar-size: 50px;
 $mini-avatar-size: 70px;
@@ -44,18 +45,18 @@ $textarea-height-2: 260px;
 
 // font-size
 $font-size: 20px;
-$font-size-xxxs: 0.6em; // 14px
-$font-size-xxs: 0.7em; // 15px
-$font-size-xs: 0.8em; // 16px
-$font-size-s: 0.9em; // 18px
-$font-size-m: 0.95em; // 19px
-$font-size-l22: 1.1em; // 22px
-$font-size-l0: 1.2em; // 24px
-$font-size-l: 1.4em; // 28px
-$font-size-xxl: 1.6em; // 32px
-$font-size-xxxl: 1.8em; // 36px
-$font-size-xxxxl: 2.4em; // 48px
-$font-size-64: 3.2em; // 64px
+$font-size-xxxs: 0.6rem; // 14px
+$font-size-xxs: 0.7rem; // 15px
+$font-size-xs: 0.8rem; // 16px
+$font-size-s: 0.9rem; // 18px
+$font-size-m: 0.95rem; // 19px
+$font-size-l22: 1.1rem; // 22px
+$font-size-l0: 1.2rem; // 24px
+$font-size-l: 1.4rem; // 28px
+$font-size-xxl: 1.6rem; // 32px
+$font-size-xxxl: 1.8rem; // 36px
+$font-size-xxxxl: 2.4rem; // 48px
+$font-size-64: 3.2rem; // 64px
 
 // font-weight
 $weight: 600;
@@ -72,6 +73,7 @@ $radius-20: 20px;
 $radius-48: 48px;
 
 // padding
+$padding-10: 10px;
 $padding-12: 12px;
 $padding-3: 15px;
 $section-padding-s: 16px;

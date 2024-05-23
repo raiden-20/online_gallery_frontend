@@ -64,7 +64,7 @@ export const NavigationComponent = (props: navigationInterface) => {
                 </button>
             </section>
             <section className={navigation_scss.visible_various}>
-                <button>
+                <button onClick={() => router.push(MAIN_PATHS.AUCTIONS)}>
                     Аукционы
                 </button>
             </section>

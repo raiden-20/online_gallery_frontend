@@ -43,6 +43,8 @@ $blur: 30px;
   .one_work_img {
     position: relative;
     width: 100%;
+    height: auto;
+    object-fit: cover;
 
     border-radius: $radius-xm;
   }

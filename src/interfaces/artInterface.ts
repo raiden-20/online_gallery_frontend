@@ -37,7 +37,7 @@ export interface ArtArtistInterface {
     name: string
     photoUrl: string
     price: string
-    isPrivate: string
+    isPrivate: boolean
     available: string
     customerId: string
     avatarUrl: string

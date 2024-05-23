@@ -1,4 +1,5 @@
 import works_profile_scss from "@/scss/components/profile/categories/WorksProfile.module.scss";
+import auction_profile_scss from '@/scss/components/categories/Auction.module.scss'
 import {MAIN_PATHS} from "@/paths/main";
 import {useRouter} from "next/navigation";
 import {useState} from "react";
@@ -7,6 +8,8 @@ import {ArtArtistInterface} from "@/interfaces/artInterface";
 import star_icon from '@/assets/icons/art/star.svg'
 import Image from "next/image";
 import zamok_icon from '@/assets/icons/art/zamok.svg'
+import {OneWorkWhoBuy} from "@/components/categories/works/works/one_work/category/elements/OneWorkWhoBuy";
+import {OneWorkExclusive} from "@/components/categories/works/works/one_work/category/elements/OneWorkExclusive";
 
 interface oneWorkInterface {
     oneArt: ArtArtistInterface
@@ -20,58 +23,40 @@ export const OneAuctionArtistProfileComponent = (props: oneWorkInterface) => {
     const [isHoverStar, setIsHoveStart] = useState(false)
     const toOneArt = () => {
         if (props.oneArt.available) {
-            router.push(MAIN_PATHS.ONE_ART + `/${props.oneArt.artId}`)
+            router.push(MAIN_PATHS.AUCTION + `/${props.oneArt.artId}`)
         }
     }
 
     return (
-        <section className={works_profile_scss.one_work}
+        <section className={auction_profile_scss.one_work}
                  onClick={toOneArt}>
-            <section className={works_profile_scss.img_section}>
-                <section className={works_profile_scss.img_border}>
-                    <img src={props.oneArt.photoUrl}
-                         className={!props.oneArt.available ? works_profile_scss.one_work_img_not_available : works_profile_scss.one_work_img}
-                         alt={'one work'}
-                         crossOrigin="anonymous"/>
-                    {!props.oneArt.available ?
-                    <section className={works_profile_scss.zamok}>
-                        <Image src={zamok_icon} alt={'zamok_icon'} width={0} height={0}/>
-                        <div>Только для поддержавших</div>
-                    </section>
-                    : null}
+            <section className={auction_profile_scss.img_section}>
+                <img src={props.oneArt.photoUrl}
+                     className={auction_profile_scss.img}
+                     alt={'one work'}
+                     crossOrigin="anonymous"/>
+                <OneWorkWhoBuy customerId={props.oneArt.customerId}
+                               avatarUrl={props.oneArt.avatarUrl}
+                               customerName={props.oneArt.customerName}/>
+                <OneWorkExclusive isPrivate={props.oneArt.isPrivate} customerId={props.oneArt.customerId}/>
+            </section>
+            <section className={auction_profile_scss.one_work_names}>
+                <section className={auction_profile_scss.name}>{props.oneArt.name + ', 2024'}</section>
+                <section className={auction_profile_scss.materials_tags}>
+                    <section>Масло, холст</section>
+                    <section>20 x 30 см</section>
                 </section>
+            </section>
+            <section className={auction_profile_scss.time}>
+                <section>до 20:00 МСК</section>
+            </section>
+            <section className={auction_profile_scss.price_section}>
+                <section className={auction_profile_scss.price}>{props.oneArt.price} ₽</section>
+                <section className={auction_profile_scss.materials_tags}>
+                    <section>3 ставки</section>
+                </section>
+            </section>
 
-                {props.oneArt.customerId !== null ?
-                    <section className={works_profile_scss.who_buy_section}
-                             onMouseEnter={() => setIsHoverWhoBuy(true)}
-                             onMouseLeave={() => setIsHoverWhoBuy(false)}>
-                        <section className={works_profile_scss.who_buy_data}>
-                            <img src={props.oneArt.avatarUrl} alt={'avatar'} crossOrigin={"anonymous"}/>
-                            <div className={!isHoverWhoBuy ? works_profile_scss.who_buy_name_hide : undefined}>
-                                {props.oneArt.customerName}
-                            </div>
-                        </section>
-                    </section>
-                    : null
-                }
-                {props.oneArt.isPrivate && props.oneArt.customerId !== null ?
-                    <section className={works_profile_scss.who_buy_section + ' ' + works_profile_scss.star_section}
-                             onMouseEnter={() => setIsHoveStart(true)}
-                             onMouseLeave={() => setIsHoveStart(false)}>
-                        <section className={works_profile_scss.who_buy_data}>
-                            <Image src={star_icon} alt={'star'} width={0} height={0}/>
-                            <div className={!isHoverStar ? works_profile_scss.who_buy_name_hide : undefined}>
-                                Только для поддержавших
-                            </div>
-                        </section>
-                    </section>
-                    : null}
-            </section>
-            <section className={works_profile_scss.one_work_names}>
-                <div className={works_profile_scss.one_work_weight}>{props.artistName}</div>
-                <div>{props.oneArt.name}</div>
-            </section>
-            <div className={works_profile_scss.one_work_weight}>{props.oneArt.price} ₽</div>
         </section>
     )
 }

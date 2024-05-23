@@ -1,5 +1,5 @@
 import works_profile_scss from "@/scss/components/profile/categories/WorksProfile.module.scss";
-import auction_profile_scss from '@/scss/components/categories/Auction.module.scss'
+import auction_profile_scss from '@/scss/components/categories/auctions/Auction.module.scss'
 import {MAIN_PATHS} from "@/paths/main";
 import {useRouter} from "next/navigation";
 import {useState} from "react";

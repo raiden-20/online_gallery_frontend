@@ -7,7 +7,13 @@ import {useSession} from "next-auth/react";
 import {useState} from "react";
 import Cookies from "js-cookie";
 
-export const OneAuctionButtons = () => {
+interface OneAuctionButtonsInterface {
+    setSetMaxRate(setMaxRate: boolean): void
+
+    setSetRate(setRate: boolean): void
+}
+
+export const OneAuctionButtons = (props: OneAuctionButtonsInterface) => {
 
     const router = useRouter()
     const {status} = useSession();
@@ -17,10 +23,12 @@ export const OneAuctionButtons = () => {
 
     return (
         <section className={one_work_scss.auction_buttons_section}>
-            <button className={'main_button ' + one_work_scss.add_to_cart}>
+            <button className={'main_button ' + one_work_scss.add_to_cart}
+                    onClick={() => props.setSetMaxRate(true)}>
                 Установить макс. ставку
             </button>
-            <button className={'cancel_button ' + one_work_scss.add_to_cart}>
+            <button className={'cancel_button ' + one_work_scss.add_to_cart}
+                    onClick={() => props.setSetRate(true)}>
                 Сделать ставку
             </button>
         </section>

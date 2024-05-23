@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create auction page in artist profile">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add auctions in search">
+      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/modal_windows/SetMaxRate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/modal_windows/SetRate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/categories/auctions/AuctionsModal.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Auctions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Auctions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Auction.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/auctions/Auction.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Auction.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/auctions/Auction.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Auction.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/auctions/Auction.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
       </list>
     </option>
@@ -49,7 +60,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Rebasing feature__auction",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/profile/profile_elemets/categories/artist",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/categories/works/auctions/one_auction/one_page/modal_windows",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,18 +73,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions\one_auction\one_page\modal_windows" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\search\elements" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\profile\profile_elemets\categories\artist" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist\[id]" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\auction" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\auctions\[id]" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions\one_auction\category" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\scss\components\categories\auctions" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\scss\components\categories" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions\one_auction" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions\one_auction\category\one_page" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\works\one_work\one_page" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\works\one_work\category" />
     </key>
   </component>
   <component name="RunManager">
@@ -158,15 +169,7 @@
       <workItem from="1716407653939" duration="3000" />
       <workItem from="1716412353441" duration="599000" />
       <workItem from="1716455038669" duration="4700000" />
-      <workItem from="1716462009937" duration="11957000" />
-    </task>
-    <task id="LOCAL-00015" summary="set default photo">
-      <option name="closed" value="true" />
-      <created>1714076544424</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1714076544424</updated>
+      <workItem from="1716462009937" duration="13851000" />
     </task>
     <task id="LOCAL-00016" summary="fix one open photo visibility">
       <option name="closed" value="true" />
@@ -552,7 +555,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716492321730</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="add auctions in search">
+      <option name="closed" value="true" />
+      <created>1716493310116</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1716493310117</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +593,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mobile design for search section" />
     <MESSAGE value="mobile design for avatar profile and one art" />
     <MESSAGE value="edit first login" />
     <MESSAGE value="edit main page artists avatar" />
@@ -607,6 +617,7 @@
     <MESSAGE value="create pages and do design for auctions: one page, categories page" />
     <MESSAGE value="edit main page and artist nav" />
     <MESSAGE value="create auction page in artist profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="create auction page in artist profile" />
+    <MESSAGE value="add auctions in search" />
+    <option name="LAST_COMMIT_MESSAGE" value="add auctions in search" />
   </component>
 </project>

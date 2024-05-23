@@ -1,4 +1,4 @@
-import auction_profile_scss from '@/scss/components/categories/Auction.module.scss'
+import auction_profile_scss from '@/scss/components/categories/auctions/Auction.module.scss'
 import works_profile_scss from '@/scss/components/profile/categories/WorksProfile.module.scss'
 import React, {useEffect, useState} from "react";
 import Cookies from "js-cookie";

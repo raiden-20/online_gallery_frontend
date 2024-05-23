@@ -11,6 +11,8 @@ import {
     OneAuctionButtons
 } from "@/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionButtons";
 import {OneAuctionRates} from "@/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionRates";
+import {SetMaxRate} from "@/components/categories/works/auctions/one_auction/one_page/modal_windows/SetMaxRate";
+import {SetRate} from "@/components/categories/works/auctions/one_auction/one_page/modal_windows/SetRate";
 
 interface oneWorkInterface {
     one_work: ArtInterface
@@ -23,6 +25,9 @@ export const OneAuctionComponent = (props: oneWorkInterface) => {
 
     const [navSide, setNavSide] = useState(1)
 
+    const [setMaxRate, setSetMaxRate] = useState(false)
+    const [setRate, setSetRate] = useState(false)
+
     return (
         <section className={one_work_scss.root}>
             <OneWorkPhoto photoUrls={props.one_work.photoUrls}/>
@@ -33,7 +38,8 @@ export const OneAuctionComponent = (props: oneWorkInterface) => {
                 <section className={one_work_scss.art_price}>
                     {props.one_work.price} ₽
                 </section>
-                <OneAuctionButtons/>
+                <OneAuctionButtons setSetMaxRate={setSetMaxRate}
+                                   setSetRate={setSetRate}/>
                 <section className={one_work_scss.auctions_section}>
                     <nav>
                         <ul className={nav_profile_scss.root + ' ' + one_work_scss.nav_section}>
@@ -59,12 +65,17 @@ export const OneAuctionComponent = (props: oneWorkInterface) => {
                             <OneAuctionRates/>
                             : null}
                 </section>
-
                 <OneWorkFooter artistId={props.one_work.artistId}
                                artId={props.one_work.artId}
                                customerId={props.one_work.customerId}
                                DeleteArt={props.DeleteArt}/>
             </main>
+            {setMaxRate ?
+                <SetMaxRate setSetMaxRate={setSetMaxRate}/>
+            : null}
+            {setRate ?
+                <SetRate setSetRate={setSetRate}/>
+                : null}
         </section>
     )
 }

@@ -19,27 +19,10 @@ export const Auctions = (props: AuctionsInterface) => {
     const router = useRouter()
 
     useEffect(() => {
-        let type = ''
-        switch (props.whoIsClicked) {
-            case 3 : {
-                type = ART_TYPES_MANY.PAINTINGS
-                break
-            }
-            case 4 : {
-                type = ART_TYPES_MANY.PHOTOS
-                break
-            }
-            case 5 : {
-                type = ART_TYPES_MANY.SCULPTURES
-                break
-            }
-        }
-        if (type !== '') {
-            if (props.input_name === '') {
-                props.getAllAuctions(type, router)
-            }else {
-                props.getSmthByName(props.input_name, type)
-            }
+        if (props.input_name === '') {
+            props.getAllAuctions('paintings', router)
+        }else {
+            props.getSmthByName(props.input_name, 'paintings')
         }
     }, [props.input_name, props.whoIsClicked]);
 

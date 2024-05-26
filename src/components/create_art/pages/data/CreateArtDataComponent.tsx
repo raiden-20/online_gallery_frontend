@@ -4,8 +4,8 @@ import {MainPhotoComponent} from "@/components/create_art/pages/data/elements/Ma
 import {AddPhotoComponent} from "@/components/create_art/pages/data/elements/AddPhotoComponent";
 import {usePathname} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
-import {MainPhotoEditComponent} from "@/components/create_art/edit_art/MainPhotoEditComponent";
-import {AddPhotoEditComponent} from "@/components/create_art/edit_art/AddPhotoEditComponent";
+import {MainPhotoEditComponent} from "@/components/create_art/edit_art/elements/MainPhotoEditComponent";
+import {AddPhotoEditComponent} from "@/components/create_art/edit_art/elements/AddPhotoEditComponent";
 import {AddInformationContainer} from "@/components/create_art/pages/data/elements/add_info/AddInformationContainer";
 
 interface createArtDataInterface {

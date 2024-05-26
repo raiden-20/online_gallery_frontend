@@ -27,12 +27,13 @@ import {CartContainer} from "@/components/cart/CartContainer";
 import {CreateOrderContainer} from "@/components/create_order/CreateOrderContainer";
 import {OrdersContainer} from "@/components/orders/OrdersContainer";
 import {OneOrderContainer} from "@/components/orders/one_order/OneOrderContainer";
-import {EditArtContainer} from "@/components/create_art/edit_art/EditArtContainer";
+import {EditArtContainer} from "@/components/create_art/edit_art/art/EditArtContainer";
 import {setToken} from "@/api/api_main";
 import {deleteCookies, keycloakSessionLogOut} from "@/store/thunks/authThunk";
 import {NotificationsContainer} from "@/components/notifications/NotificationsContainer";
 import {OnePopUpNotificationContainer} from "@/components/notifications/one_popup_notification/OnePopUpNotificationContainer";
 import {OneAuctionContainer} from "@/components/categories/works/auctions/one_auction/one_page/OneAuctionContainer";
+import {EditRoot} from "@/components/create_art/edit_art/EditRoot";
 
 interface RootInterface {
     artist_data: Artist
@@ -116,7 +117,7 @@ export const Root = (props: RootInterface) => {
                         main_path === PATHS_CATEGORY.AUCTION ? <OneAuctionContainer/> :
                         pathname === PATHS_CATEGORY.SEARCH ? <SearchContainer/> :
                         pathname === MAIN_PATHS.CREATE_ART ? <CreateArtContainer/> :
-                        main_path === PATHS_CATEGORY.EDIT ? <EditArtContainer/> :
+                        main_path === PATHS_CATEGORY.EDIT ? <EditRoot/> :
                         pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderContainer/> :
                         pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
                         pathname === MAIN_PATHS.ORDERS ? <OrdersContainer/> :

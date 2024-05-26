@@ -54,3 +54,9 @@ export interface CustomerRate {
     customerUrl: string
     rate: string
 }
+
+export const AUCTION_STATUS = {
+    WAIT: 'WAIT',
+    AVAILABLE: 'AVAILABLE',
+    SOLD: 'SOLD'
+}

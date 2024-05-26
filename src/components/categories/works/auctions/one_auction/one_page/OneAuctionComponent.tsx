@@ -1,7 +1,6 @@
 import one_work_scss from '@/scss/components/profile/categories/OneWork.module.scss'
 import {OneWorkData} from "@/components/categories/works/works/one_work/one_page/element/OneWorkData";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {ArtInterface} from "@/interfaces/artInterface";
 import {OneWorkPhoto} from "@/components/categories/works/works/one_work/one_page/element/OneWorkPhoto";
 import {OneWorkHeader} from "@/components/categories/works/works/one_work/one_page/element/OneWorkHeader";
 import {OneWorkFooter} from "@/components/categories/works/works/one_work/one_page/element/OneWorkFooter";
@@ -13,15 +12,20 @@ import {
 import {OneAuctionRates} from "@/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionRates";
 import {SetMaxRate} from "@/components/categories/works/auctions/one_auction/one_page/modal_windows/SetMaxRate";
 import {SetRate} from "@/components/categories/works/auctions/one_auction/one_page/modal_windows/SetRate";
+import {AuctionInterface} from "@/interfaces/auctionInterface";
+import {MAIN_PATHS} from "@/paths/main";
 
 interface oneWorkInterface {
-    one_work: ArtInterface
+    auction: AuctionInterface
+
     DeleteArt(artId: string, router: AppRouterInstance): void
-    AddArtToCart(artId: string, router: AppRouterInstance): void
+    SetNewRate(auctionId: string, isAnonymous: boolean, setSetRate: (setMaxRate: boolean) => void,
+               setMessage: (message: string) => void): void
+    SetMaxRate(auctionId: string, isAnonymous: boolean, maxRate: string, setSetRate: (setMaxRate: boolean) => void): void
 }
 
 export const OneAuctionComponent = (props: oneWorkInterface) => {
-    const categories = [ 'Информация' , 'Ставки']
+    const categories = ['Информация', 'Ставки']
 
     const [navSide, setNavSide] = useState(1)
 
@@ -30,16 +34,18 @@ export const OneAuctionComponent = (props: oneWorkInterface) => {
 
     return (
         <section className={one_work_scss.root}>
-            <OneWorkPhoto photoUrls={props.one_work.photoUrls}/>
+            <OneWorkPhoto photoUrls={props.auction.photoUrls}/>
             <main className={one_work_scss.art_info + ' ' + one_work_scss.auctions_gap}>
-                <OneWorkHeader artistName={props.one_work.artistName}
-                               name={props.one_work.name}
-                               createDate={props.one_work.createDate}/>
+                <OneWorkHeader artistName={props.auction.artistName}
+                               name={props.auction.name}
+                               createDate={props.auction.createDate}/>
                 <section className={one_work_scss.art_price}>
-                    {props.one_work.price} ₽
+                    {props.auction.lastPrice} ₽
                 </section>
                 <OneAuctionButtons setSetMaxRate={setSetMaxRate}
-                                   setSetRate={setSetRate}/>
+                                   setSetRate={setSetRate}
+                                   artistId={props.auction.artistId}
+                                   status={props.auction.status}/>
                 <section className={one_work_scss.auctions_section}>
                     <nav>
                         <ul className={nav_profile_scss.root + ' ' + one_work_scss.nav_section}>
@@ -47,7 +53,7 @@ export const OneAuctionComponent = (props: oneWorkInterface) => {
                                 return (
                                     <li className={navSide === index + 1 ? nav_profile_scss.active : undefined}
                                         onClick={() => setNavSide(index + 1)} key={index}>
-                                        <button className={nav_profile_scss.button + ' ' +  one_work_scss.auction_nav}>
+                                        <button className={nav_profile_scss.button + ' ' + one_work_scss.auction_nav}>
                                             {one_category}
                                         </button>
                                     </li>
@@ -56,25 +62,33 @@ export const OneAuctionComponent = (props: oneWorkInterface) => {
                         </ul>
                     </nav>
                     {navSide === 1 ?
-                        <OneWorkData type={props.one_work.type} materials={props.one_work.materials}
-                                     tags={props.one_work.tags} size={props.one_work.size}
-                                     frame={props.one_work.frame} customerId={props.one_work.customerId}
-                                     customerName={props.one_work.customerName}
-                                     description={props.one_work.description}/>
+                        <OneWorkData type={props.auction.type} materials={props.auction.materials}
+                                     tags={props.auction.tags} size={props.auction.size}
+                                     frame={props.auction.frame} customerId={props.auction.customerId}
+                                     customerName={props.auction.customerName}
+                                     description={props.auction.description}/>
                         : navSide === 2 ?
-                            <OneAuctionRates/>
+                            <OneAuctionRates rates={props.auction.customerRates}/>
                             : null}
                 </section>
-                <OneWorkFooter artistId={props.one_work.artistId}
-                               artId={props.one_work.artId}
-                               customerId={props.one_work.customerId}
-                               DeleteArt={props.DeleteArt}/>
+                <OneWorkFooter artistId={props.auction.artistId}
+                               status={props.auction.status}
+                               artId={props.auction.auctionId}
+                               customerId={props.auction.customerId}
+                               DeleteArt={props.DeleteArt}
+                               path={MAIN_PATHS.EDIT_AUCTION}/>
             </main>
             {setMaxRate ?
-                <SetMaxRate setSetMaxRate={setSetMaxRate}/>
-            : null}
+                <SetMaxRate setSetMaxRate={setSetMaxRate}
+                            SetMaxRate={props.SetMaxRate}
+                            auctionId={props.auction.auctionId}/>
+                : null}
             {setRate ?
-                <SetRate setSetRate={setSetRate}/>
+                <SetRate setSetRate={setSetRate}
+                         SetNewRate={props.SetNewRate}
+                         lastPrice={props.auction.lastPrice}
+                         rate={props.auction.rate}
+                         auctionId={props.auction.auctionId}/>
                 : null}
         </section>
     )

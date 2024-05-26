@@ -17,7 +17,7 @@ export const CreateAuction = (name: string, type: string, photos: File[], startP
             .then((response) => {
                 switch (response.status) {
                     case 200 : {
-                        router.push(MAIN_PATHS.AUCTION + `/${response.data.auctionId}`)
+                        router.push(MAIN_PATHS.AUCTION + `/${response.data}`)
                         break
                     }
                 }
@@ -37,10 +37,10 @@ export const GetAuction = (auctionId: string, currentId: string, router: AppRout
             })
     }
 
-export const EditArt = (auctionId: string, name: string, type: string, changeMainPhoto: boolean, newPhotos: File[],
-                        deletePhotoUrls: string[], startPrice: string, createDate: string, description: string, size: string,
-                        tags: string[], materials: string[], frame: boolean, startDate: string, endDate: string, router: AppRouterInstance,
-                        setMessage: (message: string) => void) =>
+export const EditAuctionThunk = (auctionId: string, name: string, type: string, changeMainPhoto: boolean, newPhotos: File[],
+                                 deletePhotoUrls: string[], startPrice: string, createDate: string, description: string, size: string,
+                                 tags: string[], materials: string[], frame: boolean, startDate: string, endDate: string, router: AppRouterInstance,
+                                 setMessage: (message: string) => void) =>
     () => {
         let typeEnum = ''
         switch (type) {
@@ -70,7 +70,7 @@ export const EditArt = (auctionId: string, name: string, type: string, changeMai
             })
     }
 
-export const DeleteArt = (id: string, router: AppRouterInstance) =>
+export const DeleteAuction = (id: string, router: AppRouterInstance) =>
     () => {
         AuctionsAPI.DeleteAuctionAPI(id)
             .then(response => {
@@ -106,10 +106,12 @@ export const GetArtistAuctions = (artistId: string, router: AppRouterInstance) =
             })
     }
 
-export const SetMaxRate = (auctionId: string, isAnonymous: boolean, maxRate: string) =>
+export const SetMaxRate = (auctionId: string, isAnonymous: boolean, maxRate: string,
+                           setSetRate: (setMaxRate: boolean) => void) =>
     () => {
         AuctionsAPI.SetMaxRateAuctionAPI(auctionId, isAnonymous, maxRate)
             .then(response => {
+                debugger
                 switch (response.status) {
                     case 200 : {
                     }
@@ -117,12 +119,14 @@ export const SetMaxRate = (auctionId: string, isAnonymous: boolean, maxRate: str
             })
     }
 
-export const SetNewRate = (auctionId: string, isAnonymous: boolean) =>
+export const SetNewRate = (auctionId: string, isAnonymous: boolean, setSetRate: (setMaxRate: boolean) => void,
+    setMessage: (message: string) => void) =>
     () => {
         AuctionsAPI.SetNewRateAuctionAPI(auctionId, isAnonymous)
             .then(response => {
                 switch (response.status) {
                     case 200 : {
+                        setSetRate(false)
                     }
                 }
             })

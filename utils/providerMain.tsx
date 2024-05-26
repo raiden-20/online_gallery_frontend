@@ -11,6 +11,8 @@ type Props = {
 
 export const ProviderMain = ({children}: Props) => {
 
+
+
     return <SessionProvider>
         <Provider store={reduxStore}>
             {children}

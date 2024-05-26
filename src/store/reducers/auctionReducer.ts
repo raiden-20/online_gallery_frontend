@@ -53,7 +53,7 @@ export const auctionReducer = (state = initialState, action: any) => {
         }
 
         case SET_ARTIST_AUCTIONS: {
-            stateCopy.auctions_artist = action.auction_artist
+            stateCopy.auctions_artist = action.auctions_artist
 
             return stateCopy
         }

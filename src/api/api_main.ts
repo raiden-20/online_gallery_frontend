@@ -1,7 +1,8 @@
 import axios from "axios";
+import dotenv from 'dotenv'
 
 export const PathsAPI = {
-    BASE: 'http://localhost:8080',
+    BASE: 'http://localhost:8080/api',
 
     CREATE: '/create',
     BUY: '/buy',
@@ -68,10 +69,9 @@ instance.interceptors.response.use((response) => response,
     async (error) => {
         const prev = error.config
         if ((error.response.status === 401 || error.response.status === 400) && !prev.sent) {
-
             prev.sent = true;
-
             const res = await refreshTokenFn()
+
             console.log(res.access_token)
             prev.headers['Authorization'] = `Bearer ${res.access_token}`;
 
@@ -107,9 +107,13 @@ const refreshTokenFn = async () => {
     try {
         // @ts-ignore
         const refresh = session.refresh_token
-        const client = process.env.KEYCLOAK_CLIENT_SECRET as string
-        // @ts-ignore
-        const refresh_token_url = process.env.REFRESH_TOKEN_URL as string
+
+        //const client = process.env.NEXTAUTH_URL as string
+        //const refresh_token_url = process.env.REFRESH_TOKEN_URL as string
+
+        const client = 'SuWauvFOpZ2rmoNJr02sCOrwhQlivH6r'
+        const refresh_token_url = 'http://localhost:8000/realms/online_gallery/protocol/openid-connect/token'
+
         const resp = await fetch(refresh_token_url, {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"

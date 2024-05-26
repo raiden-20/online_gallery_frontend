@@ -1,11 +1,11 @@
 import works_profile_scss from "@/scss/components/profile/categories/WorksProfile.module.scss";
-import {ArtShortInterface} from "@/interfaces/artInterface";
 import React from "react";
 import {
     OneAuctionCategoriesComponent
 } from "@/components/categories/works/auctions/one_auction/category/OneAuctionCategoriesComponent";
+import {AuctionCategoriesInterface} from "@/interfaces/auctionInterface";
 interface workInterface {
-    arts: ArtShortInterface[]
+    auctions: AuctionCategoriesInterface[]
 
 }
 
@@ -13,10 +13,10 @@ export const AuctionsComponent = (props: workInterface) => {
 
     return (
         <ul className={works_profile_scss.root}>
-            {props.arts.map((oneArt: ArtShortInterface, index) => {
+            {props.auctions.map((oneAuction, index) => {
                 return (
                     <li key={index}>
-                        <OneAuctionCategoriesComponent oneArt={oneArt}/>
+                        <OneAuctionCategoriesComponent oneAuction={oneAuction}/>
                     </li>
                 )
             })}

@@ -1,25 +1,25 @@
 import {connect} from "react-redux";
-import {ArtInterface} from "@/interfaces/artInterface";
-import {DeleteArt, GetArt} from "@/store/thunks/artThunk";
-import {AddArtToCart} from "@/store/thunks/cartThunk";
 import {OneAuction} from "@/components/categories/works/auctions/one_auction/one_page/OneAuction";
+import {DeleteAuction, GetAuction, SetMaxRate, SetNewRate} from "@/store/thunks/auctionsThunk";
+import {AuctionInterface} from "@/interfaces/auctionInterface";
 
 interface state {
-    art: {
-        oneArt: ArtInterface
+    auction: {
+        auction: AuctionInterface
     }
 }
 
 const mapStateToProps = (state: state) => {
     return {
-        one_work: state.art.oneArt
+        auction: state.auction.auction
     }
 }
 
 const mapDispatchToProps = {
-    GetArt,
-    DeleteArt,
-    AddArtToCart
+    GetAuction,
+    DeleteAuction,
+    SetMaxRate,
+    SetNewRate
 }
 
 export const OneAuctionContainer = connect(mapStateToProps, mapDispatchToProps)(OneAuction)

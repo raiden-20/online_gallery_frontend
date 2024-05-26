@@ -4,17 +4,16 @@ import React, {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import create_art_icon from '@/assets/icons/profile/create_art_button.svg'
 import Image from "next/image";
-import {ArtArtistInterface} from "@/interfaces/artInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
 import {OneAuctionArtistProfileComponent} from "@/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent";
+import {AUCTION_STATUS, AuctionCategoriesInterface} from "@/interfaces/auctionInterface";
 
 interface worksProfileInterface {
-    arts_artist: ArtArtistInterface[]
-    artistName: string
+    auctions_artist: AuctionCategoriesInterface[]
 
-    GetArtsArtist(artistId: string, router: AppRouterInstance): void
+    GetArtistAuctions(artistId: string, router: AppRouterInstance): void
 }
 
 export const AuctionsArtistProfileComponent = (props: worksProfileInterface) => {
@@ -24,71 +23,102 @@ export const AuctionsArtistProfileComponent = (props: worksProfileInterface) => 
     const [artistId] = useState(Cookies.get('artistId') as string)
 
     useEffect(() => {
-        props.GetArtsArtist(currentId, router)
+        props.GetArtistAuctions(currentId, router)
     }, []);
 
 
     return (
         <main className={auction_profile_scss.root}>
-            <section className={auction_profile_scss.one_section}>
-                <header className={auction_profile_scss.one_section_header}>Текущие аукционы</header>
-                <ul className={auction_profile_scss.ul}>
-                    {props.arts_artist.map((oneArt: ArtArtistInterface, index) => {
-                        return (
-                            <li key={index}>
-                                <OneAuctionArtistProfileComponent artistName={props.artistName} oneArt={oneArt}/>
-                            </li>
-                        )
-                    })
-                    }
-                    {currentId === artistId ? // todo
-                        <button className={works_profile_scss.create_art_button}
-                                onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
-                            <Image src={create_art_icon} alt={'create_art_icon'}/>
-                        </button>
-                        : null}
-                </ul>
-            </section>
-            <section className={auction_profile_scss.one_section}>
-                <header className={auction_profile_scss.one_section_header}>Предстоящие аукционы</header>
-                <ul className={auction_profile_scss.ul}>
-                    {props.arts_artist.map((oneArt: ArtArtistInterface, index) => {
-                        return (
-                            <li key={index}>
-                                <OneAuctionArtistProfileComponent artistName={props.artistName} oneArt={oneArt}/>
-                            </li>
-                        )
-                    })
-                    }
-                    {currentId === artistId ? // todo
-                        <button className={works_profile_scss.create_art_button}
-                                onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
-                            <Image src={create_art_icon} alt={'create_art_icon'}/>
-                        </button>
-                        : null}
-                </ul>
-            </section>
-            <section className={auction_profile_scss.one_section}>
-                <header className={auction_profile_scss.one_section_header}>Прошедшие аукционы</header>
-                <ul className={auction_profile_scss.ul}>
-                    {props.arts_artist.map((oneArt: ArtArtistInterface, index) => {
-                        return (
-                            <li key={index}>
-                                <OneAuctionArtistProfileComponent artistName={props.artistName} oneArt={oneArt}/>
-                            </li>
-                        )
-                    })
-                    }
-                    {currentId === artistId ? // todo
-                        <button className={works_profile_scss.create_art_button}
-                                onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
-                            <Image src={create_art_icon} alt={'create_art_icon'}/>
-                        </button>
-                        : null}
-                </ul>
-            </section>
+            {props.auctions_artist.filter((oneArt) =>
+                oneArt.status === AUCTION_STATUS.AVAILABLE)
+                .map((oneAuction, index) => {
+                    return (
+                        <li key={index}>
+                            <OneAuctionArtistProfileComponent oneAuction={oneAuction}/>
+                        </li>
+                    )
+                }).length !== 0 ?
+                <section className={auction_profile_scss.one_section}>
+                    <header className={auction_profile_scss.one_section_header}>Текущие аукционы</header>
+                    <ul className={auction_profile_scss.ul}>
+                        {props.auctions_artist.filter((oneArt) =>
+                            oneArt.status === AUCTION_STATUS.AVAILABLE)
+                            .map((oneAuction, index) => {
+                                return (
+                                    <li key={index}>
+                                        <OneAuctionArtistProfileComponent oneAuction={oneAuction}/>
+                                    </li>
+                                )
+                            })}
+                        {currentId === artistId ? // todo
+                            <button className={works_profile_scss.create_art_button}
+                                    onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
+                                <Image src={create_art_icon} alt={'create_art_icon'}/>
+                            </button>
+                            : null}
+                    </ul>
+                </section>
+                : null}
+            {props.auctions_artist.filter((oneArt) =>
+                oneArt.status === AUCTION_STATUS.WAIT)
+                .map((oneAuction, index) => {
+                    return (
+                        <li key={index}>
+                            <OneAuctionArtistProfileComponent oneAuction={oneAuction}/>
+                        </li>
+                    )
+                }).length !== 0 ?
+                <section className={auction_profile_scss.one_section}>
+                    <header className={auction_profile_scss.one_section_header}>Предстоящие аукционы</header>
+                    <ul className={auction_profile_scss.ul}>
+                        {props.auctions_artist.filter((oneArt) =>
+                            oneArt.status === AUCTION_STATUS.WAIT)
+                            .map((oneAuction, index) => {
+                                return (
+                                    <li key={index}>
+                                        <OneAuctionArtistProfileComponent oneAuction={oneAuction}/>
+                                    </li>
+                                )
+                            })}
+                        {currentId === artistId ?
+                            <button className={works_profile_scss.create_art_button}
+                                    onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
+                                <Image src={create_art_icon} alt={'create_art_icon'}/>
+                            </button>
+                            : null}
+                    </ul>
+                </section>
+                : null}
+            {props.auctions_artist.filter((oneArt) =>
+                oneArt.status === AUCTION_STATUS.SOLD)
+                .map((oneAuction, index) => {
+                    return (
+                        <li key={index}>
+                            <OneAuctionArtistProfileComponent oneAuction={oneAuction}/>
+                        </li>
+                    )
+                }).length !== 0 ?
+                <section className={auction_profile_scss.one_section}>
+                    <header className={auction_profile_scss.one_section_header}>Прошедшие аукционы</header>
+                    <ul className={auction_profile_scss.ul}>
+                        {props.auctions_artist.filter((oneArt) =>
+                            oneArt.status === AUCTION_STATUS.SOLD)
+                            .map((oneAuction, index) => {
+                                return (
+                                    <li key={index}>
+                                        <OneAuctionArtistProfileComponent oneAuction={oneAuction}/>
+                                    </li>
+                                )
+                            })}
+                        {currentId === artistId ?
+                            <button className={works_profile_scss.create_art_button}
+                                    onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
+                                <Image src={create_art_icon} alt={'create_art_icon'}/>
+                            </button>
+                            : null}
+                    </ul>
+                </section>
+                : null}
         </main>
-
-
     )
 }

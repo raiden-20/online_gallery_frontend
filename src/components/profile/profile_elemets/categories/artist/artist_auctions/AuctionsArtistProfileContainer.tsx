@@ -1,26 +1,22 @@
 import {connect} from "react-redux";
-import {GetArtsArtist} from "@/store/thunks/artThunk";
-import {ArtArtistInterface} from "@/interfaces/artInterface";
 import {AuctionsArtistProfileComponent} from "@/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileComponent";
+import {GetArtistAuctions} from "@/store/thunks/auctionsThunk";
+import {AuctionCategoriesInterface} from "@/interfaces/auctionInterface";
 
 interface state {
-    art : {
-        arts_artist: ArtArtistInterface[]
-    }
-    profile: {
-        artistName: string
+    auction : {
+        auctions_artist: AuctionCategoriesInterface[]
     }
 }
 
 const mapStateToProps = (state: state) => {
     return {
-        arts_artist: state.art.arts_artist,
-        artistName: state.profile.artistName
+        auctions_artist: state.auction.auctions_artist,
     }
 }
 
 const mapDispatchToProps = {
-    GetArtsArtist
+    GetArtistAuctions
 }
 
 export const AuctionsArtistProfileContainer = connect(mapStateToProps, mapDispatchToProps)(AuctionsArtistProfileComponent)

@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {ArtInterface} from "@/interfaces/artInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
-import {removeSpaces} from "../../../../utils/tests";
+import {removeSpaces} from "../../../../../utils/tests";
 
 interface editArtInterface {
     oneArt: ArtInterface

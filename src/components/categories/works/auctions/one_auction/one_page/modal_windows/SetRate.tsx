@@ -1,16 +1,30 @@
 import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 import delete_account_scss from "@/scss/components/settings/DeleteAccount.module.scss";
 import auctions_modal_scss from '@/scss/components/categories/auctions/AuctionsModal.module.scss'
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import {addRateToPrice} from "../../../../../../../../utils/tests";
 
-interface SetMaxRate {
+interface SetRate {
+    auctionId: string
+    lastPrice: string
+    rate: string
+
     setSetRate(setMaxRate: boolean): void
+    SetNewRate(auctionId: string, isAnonymous: boolean, setSetRate: (setMaxRate: boolean) => void,
+               setMessage: (message: string) => void): void
 }
 
-export const SetRate = (props: SetMaxRate) => {
-
-    const [input_amount, setInput_amount] = useState('')
+export const SetRate = (props: SetRate) => {
+    const [isAnonymous, setIsAnonymous] = useState(false)
+    const [setRateButton, setSetRateButton] = useState(false)
     const [message, setMessage] = useState('')
+
+    useEffect(() => {
+        if (setRateButton) {
+            props.SetNewRate(props.auctionId, isAnonymous, props.setSetRate, setMessage)
+        }
+        setSetRateButton(false)
+    }, [setRateButton]);
 
     return (
         <section className={'page_modal_window'}>
@@ -20,9 +34,14 @@ export const SetRate = (props: SetMaxRate) => {
                 <section className={delete_account_scss.root}>
                     <section className={auctions_modal_scss.set_rate_section}>
                         <header className={auctions_modal_scss.set_rate_header}>Следующий шаг</header>
-                        <section className={auctions_modal_scss.set_rate_price}>105 000 ₽</section>
+                        <section className={auctions_modal_scss.set_rate_price}>
+                            {addRateToPrice(props.rate, props.lastPrice)} ₽
+                        </section>
                         <section className={auctions_modal_scss.checkbox}>
-                            <input type={'checkbox'}/>
+                            <input checked={isAnonymous}
+                                   type={'checkbox'}
+                                   onChange={(event) =>
+                                       setIsAnonymous(event.target.checked)}/>
                             <section>Участвовать анонимно</section>
                         </section>
                     </section>
@@ -34,7 +53,8 @@ export const SetRate = (props: SetMaxRate) => {
                         <button className={'cancel_button'} onClick={() => props.setSetRate(false)}>
                             Отмена
                         </button>
-                        <button className={'main_button'}>
+                        <button className={'main_button'}
+                                onClick={() => setSetRateButton(true)}>
                             Установить
                         </button>
                     </footer>

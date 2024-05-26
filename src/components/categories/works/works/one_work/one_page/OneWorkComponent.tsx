@@ -6,6 +6,7 @@ import {ArtInterface} from "@/interfaces/artInterface";
 import {OneWorkPhoto} from "@/components/categories/works/works/one_work/one_page/element/OneWorkPhoto";
 import {OneWorkHeader} from "@/components/categories/works/works/one_work/one_page/element/OneWorkHeader";
 import {OneWorkFooter} from "@/components/categories/works/works/one_work/one_page/element/OneWorkFooter";
+import {MAIN_PATHS} from "@/paths/main";
 
 interface oneWorkInterface {
     one_work: ArtInterface
@@ -36,7 +37,9 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
                 <OneWorkFooter artistId={props.one_work.artistId}
                                artId={props.one_work.artId}
                                customerId={props.one_work.customerId}
-                               DeleteArt={props.DeleteArt}/>
+                               DeleteArt={props.DeleteArt}
+                               status={props.one_work.status}
+                               path={MAIN_PATHS.EDIT_ART}/>
             </main>
         </section>
     )

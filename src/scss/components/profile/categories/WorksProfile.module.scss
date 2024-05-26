@@ -151,6 +151,15 @@ $blur: 30px;
   font-size: $font-size-l0;
 }
 
+.auction_active {
+  color: $active;
+  font-weight: $weight;
+}
+
+.auction_no_active {
+  color: $grey-date;
+}
+
 @media screen and (orientation: portrait) {
   .root {
     display: grid;

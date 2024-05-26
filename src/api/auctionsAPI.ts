@@ -29,6 +29,7 @@ export const AuctionsAPI = {
             photos.forEach(img => {
                 formData.append("photos", img)
             })
+
             return await instanceFile.post(
                 PathsAPI.AUCTION,
                 formData
@@ -124,7 +125,7 @@ export const AuctionsAPI = {
     async GetAllArtistAuctionAPI(artistId: string) {
         try {
             return  await instanceWithoutToken.get(
-                PathsAPI.AUCTION + PathsAPI.ARTIST +`${artistId}`,
+                PathsAPI.AUCTION + PathsAPI.ARTIST +`/${artistId}`,
             );
         } catch (error: any) {
             console.error(error)
@@ -134,7 +135,7 @@ export const AuctionsAPI = {
 
     async SetNewRateAuctionAPI(auctionId: string, isAnonymous: boolean) {
         try {
-            return  await instanceWithoutToken.post(
+            return  await instance.post(
                 PathsAPI.AUCTION + PathsAPI.RATE,
                 {
                     auctionId,
@@ -149,7 +150,7 @@ export const AuctionsAPI = {
 
     async SetMaxRateAuctionAPI(auctionId: string, isAnonymous: boolean, maxRate: string) {
         try {
-            return  await instanceWithoutToken.post(
+            return  await instance.post(
                 PathsAPI.AUCTION + PathsAPI.MAX_RATE,
                 {
                     auctionId,

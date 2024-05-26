@@ -8,11 +8,16 @@ import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {usePathname, useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {AUCTION_STATUS} from "@/interfaces/auctionInterface";
+import {ART_STATUS} from "@/paths/elements";
 
 interface OneWorkFooterInterface {
     artistId: string,
     artId: string,
     customerId: string,
+    status: string,
+    path: string
+
     DeleteArt(artId: string, router: AppRouterInstance): void
 }
 
@@ -36,11 +41,10 @@ export const OneWorkFooter = (props: OneWorkFooterInterface) => {
         }
     }, [deleteArt]);
 
-
-    if (status === 'authenticated' && currentId === artistId &&
-    artistId === props.artistId && (props.customerId === '' ||
-        props.customerId === null )
-    && role === ROLES.ARTIST ) {
+    if (((props.path === MAIN_PATHS.EDIT_ART && props.status === ART_STATUS.AVAILABLE) ||
+            (props.path === MAIN_PATHS.EDIT_AUCTION && props.status === AUCTION_STATUS.WAIT))
+        && status === 'authenticated' && currentId === artistId &&
+        artistId === props.artistId && role === ROLES.ARTIST) {
         return (
             <footer className={one_work_scss.footer}>
                 <button className={'no_main_color'}

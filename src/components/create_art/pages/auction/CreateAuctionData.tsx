@@ -1,10 +1,20 @@
 import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
 import {CHARACTER_RESTRICTION} from "@/paths/elements";
-import {containsOnlyDigits} from "../../../../../utils/tests";
+import {containsOnlyDigits, removeSpaces} from "../../../../../utils/tests";
 import {CreateAuctionDataComponent} from "@/components/create_art/pages/auction/CreateAuctionDataComponent";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
-export const CreateAuctionData = () => {
+interface CreateAuctionDataInterface {
+    input_type: string
+    CreateAuction(name: string, type: string, photos: File[], startPrice: string,
+                  createDate: string, description: string, size: string,
+                  tags: string[], materials: string[], startDate: string,
+                  endDate: string, frame: boolean, router: AppRouterInstance,
+                  setMessage: (message: string) => void): void
+}
+
+export const CreateAuctionData = (props: CreateAuctionDataInterface) => {
     const router = useRouter()
 
     const [photoArraySrc, setPhotoArraySrc] = useState<string[]>([])
@@ -33,8 +43,10 @@ export const CreateAuctionData = () => {
             if (Number.parseInt(input_createDate) >= CHARACTER_RESTRICTION.MIN_YEAR && Number.parseInt(input_createDate) <= CHARACTER_RESTRICTION.MAX_YEAR
                 && containsOnlyDigits(input_height) && containsOnlyDigits(input_width)) {
                 const size = input_height + 'x' + input_width
-                // props.CreateArt(input_name, props.input_type, photoArrayFile, removeSpaces(input_price.toString()), removeSpaces(input_createDate.toString()) + '-01-01', input_description, size, tags,
-                //     materials, isPrivate, isFrame, router, setMessage)
+                props.CreateAuction(input_name, props.input_type, photoArrayFile, removeSpaces(input_price.toString()),
+                    removeSpaces(input_createDate.toString()) + '-01-01',
+                    input_description, size, tags,
+                    materials, startTime, endTime, isFrame, router, setMessage)
                 setCreateArt(false)
             }
         }

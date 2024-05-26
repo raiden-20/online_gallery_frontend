@@ -1,22 +1,22 @@
 import {connect} from "react-redux";
-import {GetArtsCategories} from "@/store/thunks/artThunk";
-import {ArtShortInterface} from "@/interfaces/artInterface";
 import {Auctions} from "@/components/categories/works/auctions/Auctions";
+import {GetAuctionsCategories} from "@/store/thunks/auctionsThunk";
+import {AuctionCategoriesInterface} from "@/interfaces/auctionInterface";
 
 interface state {
-    art : {
-        arts: ArtShortInterface[]
+    auction : {
+        auctions: AuctionCategoriesInterface[]
     }
 }
 
 const mapStateToProps = (state: state) => {
     return {
-        arts: state.art.arts
+        auctions: state.auction.auctions
     }
 }
 
 const mapDispatchToProps = {
-    GetArtsCategories
+    GetAuctionsCategories
 }
 
 export const AuctionsContainer = connect(mapStateToProps, mapDispatchToProps)(Auctions)

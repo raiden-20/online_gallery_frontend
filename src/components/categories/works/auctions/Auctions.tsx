@@ -4,11 +4,12 @@ import {AuctionsComponent} from "@/components/categories/works/auctions/Auctions
 import {useEffect} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {usePathname, useRouter} from "next/navigation";
+import {AuctionCategoriesInterface} from "@/interfaces/auctionInterface";
 
 interface workInterface {
     //currentFilters: Filters
-    arts: ArtShortInterface[]
-    GetArtsCategories(type: string, router: AppRouterInstance): void
+    auctions: AuctionCategoriesInterface[]
+    GetAuctionsCategories(router: AppRouterInstance): void
 }
 
 export const Auctions = (props: workInterface) => {
@@ -18,7 +19,7 @@ export const Auctions = (props: workInterface) => {
     const lastPath = pathname[pathname.length - 1]
 
     useEffect(() => {
-        props.GetArtsCategories('paintings', router)
+        props.GetAuctionsCategories(router)
     }, []);
 
     // return <WorksComponent arts={
@@ -42,5 +43,5 @@ export const Auctions = (props: workInterface) => {
     //         }))
     //     )
     // }/>
-    return <AuctionsComponent arts={props.arts}/>
+    return <AuctionsComponent auctions={props.auctions}/>
 }

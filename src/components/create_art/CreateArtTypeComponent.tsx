@@ -10,12 +10,16 @@ import {MAIN_PATHS} from "@/paths/main";
 import Cookies from "js-cookie";
 import {CreateArtData} from "@/components/create_art/pages/data/CreateArtData";
 import {CreateAuctionData} from "@/components/create_art/pages/auction/CreateAuctionData";
-
 interface createArtInterface {
     CreateArt(name: string, type: string, photos: File[], price: string,
               createDate: string, description: string, size: string,
               tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance,
               setMessage : (message: string) => void): void
+    CreateAuction(name: string, type: string, photos: File[], startPrice: string,
+                  createDate: string, description: string, size: string,
+                  tags: string[], materials: string[], startDate: string,
+                  endDate: string, frame: boolean, router: AppRouterInstance,
+                  setMessage: (message: string) => void): void
 }
 
 export const CreateArtTypeComponent = (props: createArtInterface) => {
@@ -47,7 +51,8 @@ export const CreateArtTypeComponent = (props: createArtInterface) => {
                 :
             page === 3 ? <CreateArtData CreateArt={props.CreateArt} input_type={input_type}/>
                  :
-            page === 4 ? <CreateAuctionData/> :
+            page === 4 ? <CreateAuctionData CreateAuction={props.CreateAuction}
+                                            input_type={input_type}/> :
             null}
         </section>
     )

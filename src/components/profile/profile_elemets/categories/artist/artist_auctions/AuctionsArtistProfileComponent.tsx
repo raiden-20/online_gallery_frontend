@@ -50,7 +50,7 @@ export const AuctionsArtistProfileComponent = (props: worksProfileInterface) => 
                                     </li>
                                 )
                             })}
-                        {currentId === artistId ? // todo
+                        {currentId === artistId ?
                             <button className={works_profile_scss.create_art_button}
                                     onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
                                 <Image src={create_art_icon} alt={'create_art_icon'}/>

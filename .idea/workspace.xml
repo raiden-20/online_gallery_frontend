@@ -4,53 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="write thunk for auctions and store file">
-      <change afterPath="$PROJECT_DIR$/src/app/edit/auction/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/EditRoot.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/auction/EditAuction.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/auction/EditAuctionContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.local" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="testing get auction, get auction categories and in artist profile. edit notifications sse">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/auctionsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auctionsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/AuctionsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/AuctionsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/AuctionsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/AuctionsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/category/OneAuctionCategoriesComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/category/OneAuctionCategoriesComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/category/elements/OneAuctionCategoriesTime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/category/elements/OneAuctionCategoriesTime.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuction.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionButtons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionRates.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/elements/OneAuctionRates.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/modal_windows/SetMaxRate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/modal_windows/SetMaxRate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/modal_windows/SetRate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/modal_windows/SetRate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/one_page/OneWorkComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/one_page/OneWorkComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/one_page/element/OneWorkFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/one_page/element/OneWorkFooter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/CreateArtContainer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/CreateArtContainer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/CreateArtTypeComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/AddPhotoEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/elements/AddPhotoEditComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/EditArt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/art/EditArt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/EditArtContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/art/EditArtContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/MainPhotoEditComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/elements/MainPhotoEditComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/auction/CreateAuctionData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/auction/CreateAuctionData.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/auction/CreateAuctionDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/auction/CreateAuctionDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/AuctionsArtistProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/auctionInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/auctionInterface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/profile/categories/WorksProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/color.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/auctionReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/auctionReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/auctionsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/auctionsThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/auth_config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/auth_config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/providerMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/utils/providerMain.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,22 +54,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing feature__auction",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app/edit/auction/[id]",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rebasing feature__auction&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/app/edit/auction/[id]&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\edit\auction\[id]" />
@@ -208,15 +173,8 @@
       <workItem from="1716583415457" duration="7505000" />
       <workItem from="1716618703879" duration="2174000" />
       <workItem from="1716635329285" duration="1361000" />
-      <workItem from="1716708052281" duration="9151000" />
-    </task>
-    <task id="LOCAL-00020" summary="add input checkbox css settings">
-      <option name="closed" value="true" />
-      <created>1714085251225</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1714085251225</updated>
+      <workItem from="1716708052281" duration="13864000" />
+      <workItem from="1716739786490" duration="5493000" />
     </task>
     <task id="LOCAL-00021" summary="test one api">
       <option name="closed" value="true" />
@@ -602,11 +560,22 @@
       <option name="project" value="LOCAL" />
       <updated>1716504975201</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="testing get auction, get auction categories and in artist profile. edit notifications sse">
+      <option name="closed" value="true" />
+      <created>1716720241891</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1716720241891</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -632,7 +601,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add notifications_design 2" />
     <MESSAGE value="add routing to subscriptions" />
     <MESSAGE value="edit refresh token" />
     <MESSAGE value="edit page render" />
@@ -657,6 +625,7 @@
     <MESSAGE value="page for create auction" />
     <MESSAGE value="create api file for auctions" />
     <MESSAGE value="write thunk for auctions and store file" />
-    <option name="LAST_COMMIT_MESSAGE" value="write thunk for auctions and store file" />
+    <MESSAGE value="testing get auction, get auction categories and in artist profile. edit notifications sse" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing get auction, get auction categories and in artist profile. edit notifications sse" />
   </component>
 </project>

@@ -23,26 +23,26 @@ interface oneWorkInterface {
 export const OneAuctionCategoriesComponent = (props: oneWorkInterface) => {
 
     const router = useRouter()
-
     const toOneArt = () => {
         router.push(MAIN_PATHS.AUCTION + `/${props.oneAuction.auctionId}`)
     }
-
-    return (
-        <section className={works_profile_scss.one_work}
-                 onClick={toOneArt}>
-            <section className={works_profile_scss.img_section}>
-                <OneWorkCategoriesMainPhoto photoUrl={props.oneAuction.photoUrl}/>
-                <OneWorkWhoBuy customerId={props.oneAuction.customerId}
-                               avatarUrl={props.oneAuction.customerUrl}
-                               customerName={props.oneAuction.customerName}/>
+    if (props.oneAuction.startDate) {
+        return (
+            <section className={works_profile_scss.one_work}
+                     onClick={toOneArt}>
+                <section className={works_profile_scss.img_section}>
+                    <OneWorkCategoriesMainPhoto photoUrl={props.oneAuction.photoUrl}/>
+                    <OneWorkWhoBuy customerId={props.oneAuction.customerId}
+                                   avatarUrl={props.oneAuction.customerUrl}
+                                   customerName={props.oneAuction.customerName}/>
+                </section>
+                <OneAuctionCategoriesTime startTime={props.oneAuction.startDate}
+                                          endTime={props.oneAuction.endDate}
+                                          status={props.oneAuction.status}/>
+                <OneWorkCategoriesData artistName={props.oneAuction.artistName}
+                                       name={props.oneAuction.name}/>
+                <OneWorkCategoriesPrice price={props.oneAuction.lastPrice}/>
             </section>
-            <OneAuctionCategoriesTime startTime={props.oneAuction.startDate}
-                                      endTime={props.oneAuction.endDate}
-                                      status={props.oneAuction.status}/>
-            <OneWorkCategoriesData artistName={props.oneAuction.artistName}
-                                   name={props.oneAuction.name}/>
-            <OneWorkCategoriesPrice price={props.oneAuction.lastPrice}/>
-        </section>
-    )
+        )
+    }
 }

@@ -10,7 +10,6 @@ interface workInterface {
 }
 
 export const AuctionsComponent = (props: workInterface) => {
-
     return (
         <ul className={works_profile_scss.root}>
             {props.auctions.map((oneAuction, index) => {

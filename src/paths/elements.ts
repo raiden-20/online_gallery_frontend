@@ -10,6 +10,11 @@ export const ART_TYPES_MANY = {
     SCULPTURES: 'sculptures'
 }
 
+export const ART_AUCTION = {
+    ART: 'art',
+    AUCTION: 'auction'
+}
+
 export const ART_STATUS = {
     AVAILABLE: 'AVAILABLE',
     SOLD: 'SOLD',

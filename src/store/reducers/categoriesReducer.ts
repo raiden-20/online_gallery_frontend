@@ -1,4 +1,5 @@
 import {Artist, ArtShortCategories, UserShort} from "@/interfaces/artistInterface";
+import {AuctionCategoriesInterface} from "@/interfaces/auctionInterface";
 
 const SET_ARTISTS = 'SET_ARTISTS'
 const SET_ARTS = 'SET_ARTS'
@@ -10,6 +11,7 @@ const CLEAR_CATEGORIES_DATA = 'CLEAR_CATEGORIES_DATA'
 interface CategoriesReducerInterface {
     artists: UserShort[],
     arts: ArtShortCategories[],
+    auctions: AuctionCategoriesInterface[],
     search: []
 }
 
@@ -17,7 +19,8 @@ interface CategoriesReducerInterface {
 const initialState: CategoriesReducerInterface = {
     artists: [],
     arts: [],
-    search: []
+    search: [],
+    auctions: []
 }
 
 export const categoriesReducer = (state = initialState, action: any) => {

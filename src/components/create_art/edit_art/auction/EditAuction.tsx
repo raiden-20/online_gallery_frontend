@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
-import {removeSpaces} from "../../../../../utils/tests";
+import {formatDate, removeSpaces} from "../../../../../utils/tests";
 import {AuctionInterface} from "@/interfaces/auctionInterface";
 import {CreateAuctionDataComponent} from "@/components/create_art/pages/auction/CreateAuctionDataComponent";
 
@@ -44,6 +44,8 @@ export const EditAuction = (props: editArtInterface) => {
         setInput_description(props.auction.description)
         setInput_height(props.auction.size.split('x')[0])
         setInput_width(props.auction.size.split('x')[1])
+        setStartDate(formatDate(props.auction.startDate))
+        setEndDate(formatDate(props.auction.endDate))
         setTags(props.auction.tags)
         setMaterials(props.auction.materials)
         setIsFrame(props.auction.frame)

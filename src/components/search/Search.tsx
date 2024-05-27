@@ -16,12 +16,10 @@ export interface SearchInterface {
     search: [],
 
     getSmthByName(input_name: string, type: string): void,
-
     getAllArtists(): void
-
     getAllCustomers(): void
-
     getAllArts(type: string, router: AppRouterInstance): void
+    GetAuctionsCategories(router: AppRouterInstance): void
 }
 
 export const Search = (props: SearchInterface) => {
@@ -78,7 +76,7 @@ export const Search = (props: SearchInterface) => {
                                 whoIsClicked === 6
                                     ? <Auctions search={props.search}
                                                 input_name={input_name}
-                                                getAllAuctions={props.getAllArts}
+                                                getAllAuctions={props.GetAuctionsCategories}
                                                 getSmthByName={props.getSmthByName}
                                                 whoIsClicked={whoIsClicked}/> : null}
                 </main>

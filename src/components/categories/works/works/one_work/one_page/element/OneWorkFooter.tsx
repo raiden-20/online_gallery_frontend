@@ -9,7 +9,7 @@ import Cookies from "js-cookie";
 import {usePathname, useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {AUCTION_STATUS} from "@/interfaces/auctionInterface";
-import {ART_STATUS} from "@/paths/elements";
+import {ART_AUCTION, ART_STATUS} from "@/paths/elements";
 
 interface OneWorkFooterInterface {
     artistId: string,
@@ -25,6 +25,7 @@ export const OneWorkFooter = (props: OneWorkFooterInterface) => {
     const router = useRouter()
     const pathname = usePathname()
     const lastPath = pathname.split('/')[2]
+    const type = pathname.split('/')[1]
 
     const {status} = useSession();
 
@@ -48,7 +49,14 @@ export const OneWorkFooter = (props: OneWorkFooterInterface) => {
         return (
             <footer className={one_work_scss.footer}>
                 <button className={'no_main_color'}
-                        onClick={() => router.push(MAIN_PATHS.EDIT_ART + `/${lastPath}`)}>
+                        onClick={() => {
+                            if (type === ART_AUCTION.ART) {
+                                router.push(MAIN_PATHS.EDIT_ART + `/${lastPath}`)
+                            }
+                            if (type === ART_AUCTION.AUCTION) {
+                                router.push(MAIN_PATHS.EDIT_AUCTION + `/${lastPath}`)
+                            }
+                        }}>
                     <Image src={edit_icon} alt={'edit_icon'}/>
                     <div>Редактировать</div>
                 </button>

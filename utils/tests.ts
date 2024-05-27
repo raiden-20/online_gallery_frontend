@@ -23,19 +23,8 @@ export const isEqualObject = (first_obj: any, second_obj: any) => {
     return flag
 }
 
-export const reformatDateTime = (dateTimeString: string) => {
-    const dateTime = new Date(dateTimeString);
-
-    const day = dateTime.getDate().toString().padStart(2, '0');
-    const month = (dateTime.getMonth() + 1).toString().padStart(2, '0');
-    const hours = dateTime.getHours().toString().padStart(2, '0');
-    const minutes = dateTime.getMinutes().toString().padStart(2, '0');
-
-    return `${day}.${month} ${hours}:${minutes}`;
-}
-
 export const reformatDateFull = (inputDate: string) => {
-    const date = new Date(inputDate);
+    const date = new Date(inputDate.split('.')[0]);
     const day = date.getDate();
     const month = months[date.getMonth()];
     const year = date.getFullYear();
@@ -46,14 +35,16 @@ export const reformatDateFull = (inputDate: string) => {
 }
 
 export const auctionTimeMessage = (startTime: string, endTime: string) => {
-    const startDate = new Date(startTime)
-    const endDate = new Date(endTime)
+    const startDate = new Date(startTime.split('.')[0])
+    const endDate = new Date(endTime.split('.')[0])
     const currDate = new Date()
 
-    if (startDate < endDate && currDate < endDate && startDate >= currDate) {
+    const ans = 'c ' + reformatDateFull(startTime) + "\n" + ' по ' + reformatDateFull(endTime)
+
+    if (startDate < endDate && currDate < endDate && startDate <= currDate) {
         return 'до ' + reformatDateFull(endTime)
     } else if (currDate < startDate) {
-        return 'c ' + reformatDateFull(startTime) + ' по ' + reformatDateFull(endTime)
+        return ans
     } else {
         return 'Завершен'
     }
@@ -61,6 +52,18 @@ export const auctionTimeMessage = (startTime: string, endTime: string) => {
 
 export const addRateToPrice = (rate: string, price: string) => {
     return Number.parseInt(price) + Number.parseInt(rate);
+}
+
+export const formatDate = (inputDate: string) => {
+
+    const date = new Date(inputDate.split('.')[0]);
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 
 

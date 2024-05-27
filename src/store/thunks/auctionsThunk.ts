@@ -57,7 +57,7 @@ export const EditAuctionThunk = (auctionId: string, name: string, type: string, 
                 break
             }
         }
-        AuctionsAPI.EditAuctionAPI(auctionId, name, type, changeMainPhoto, newPhotos, deletePhotoUrls,
+        AuctionsAPI.EditAuctionAPI(auctionId, name, typeEnum, changeMainPhoto, newPhotos, deletePhotoUrls,
             startPrice, createDate, description, size, tags, materials, frame,
             startDate, endDate)
             .then(response => {
@@ -88,6 +88,7 @@ export const GetAuctionsCategories = (router: AppRouterInstance) =>
             .then(response => {
                 switch (response.status) {
                     case 200 : {
+                        dispatch(clearOneAuction())
                         dispatch(setAuctions(response.data))
                         dispatch(setSearch(response.data))
                     }
@@ -111,7 +112,6 @@ export const SetMaxRate = (auctionId: string, isAnonymous: boolean, maxRate: str
     () => {
         AuctionsAPI.SetMaxRateAuctionAPI(auctionId, isAnonymous, maxRate)
             .then(response => {
-                debugger
                 switch (response.status) {
                     case 200 : {
                     }

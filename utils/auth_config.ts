@@ -5,7 +5,6 @@ import KeycloakProvider from "next-auth/providers/keycloak";
 import {encrypt} from "./encryption";
 
 export async function refreshAccessToken(token: JWT) {
-    debugger
     console.log(process.env)
     const resp = await fetch(`http://localhost:8000/realms/online_gallery/protocol/openid-connect/token`, {
         headers: {

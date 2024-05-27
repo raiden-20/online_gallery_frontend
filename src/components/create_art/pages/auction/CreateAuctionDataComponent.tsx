@@ -49,6 +49,7 @@ interface createArtDataInterface {
 
 export const CreateAuctionDataComponent = (props: createArtDataInterface) => {
     const pathname = usePathname()
+
     return (
         <section className={create_art_data_scss.root}>
             <ArtDataComponent input_name={props.input_name} setInput_name={props.setInput_name}

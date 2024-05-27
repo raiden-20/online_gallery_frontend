@@ -84,6 +84,7 @@ export const auctionReducer = (state = initialState, action: any) => {
                 viewCount: ""
 
             }
+            stateCopy.auctions = []
 
             return stateCopy
         }

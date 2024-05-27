@@ -8,11 +8,16 @@ export const AuctionsAPI = {
         try {
             const formData = new FormData()
 
+            let start = new Date(startDate)
+            let end = new Date(endDate)
+
+            debugger
+
             const dto_object = new Blob([JSON.stringify({
                 name,
                 type,
-                startDate,
-                endDate,
+                startDate : start,
+                endDate : end,
                 startPrice,
                 description,
                 createDate,
@@ -56,14 +61,20 @@ export const AuctionsAPI = {
                      tags: string[], materials: string[], frame: boolean, startDate: string, endDate: string) {
         try {
             const formData = new FormData()
+
+            let start = new Date(startDate)
+            let end = new Date(endDate)
+
+            debugger
+
             const dto_object = new Blob([JSON.stringify({
                 auctionId,
                 name,
                 type,
                 changeMainPhoto,
                 deletePhotoUrls,
-                startDate,
-                endDate,
+                startDate : start,
+                endDate : end,
                 startPrice,
                 description,
                 createDate,

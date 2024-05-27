@@ -16,7 +16,7 @@ export interface ArtInterface {
     tags: string[]
     materials: string[]
     frame: boolean
-    publishDate: string
+    publishDate: Date
 }
 
 export interface ArtShortInterface {

@@ -59,6 +59,7 @@ export const OnePopUpNotificationComponent = (props: OnePopUpNotificationCompone
         if (status === 'authenticated' && (customerId !== '' && customerId !== undefined) && Cookies.get('SSE') !== 'true') {
             getNotificationSSE()
         }
+
     }, [status, customerId]);
 
     useEffect(() => {

@@ -24,7 +24,7 @@ export const isEqualObject = (first_obj: any, second_obj: any) => {
 }
 
 export const reformatDateFull = (inputDate: string) => {
-    const date = new Date(inputDate.split('.')[0]);
+    const date = new Date(inputDate);
     const day = date.getDate();
     const month = months[date.getMonth()];
     const year = date.getFullYear();
@@ -35,8 +35,8 @@ export const reformatDateFull = (inputDate: string) => {
 }
 
 export const auctionTimeMessage = (startTime: string, endTime: string) => {
-    const startDate = new Date(startTime.split('.')[0])
-    const endDate = new Date(endTime.split('.')[0])
+    const startDate = new Date(startTime)
+    const endDate = new Date(endTime)
     const currDate = new Date()
 
     const ans = 'c ' + reformatDateFull(startTime) + "\n" + ' по ' + reformatDateFull(endTime)
@@ -56,7 +56,7 @@ export const addRateToPrice = (rate: string, price: string) => {
 
 export const formatDate = (inputDate: string) => {
 
-    const date = new Date(inputDate.split('.')[0]);
+    const date = new Date(inputDate);
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');

@@ -48,12 +48,14 @@ export const ProfileAPI = {
                                 avatarUrl: string, coverUrl: string, avatar: File | string, cover: File | string) {
         const formData = new FormData()
 
+        debugger
+
         formData.append('customerName', customerName)
         formData.append('birthDate', birthDate)
         formData.append('gender', gender)
         formData.append('description', description === '' ? ' ' : description)
-        formData.append('avatarUrl', avatarUrl)
-        formData.append('coverUrl', coverUrl)
+        formData.append('avatarUrl', avatarUrl=== '' ? ' ' : avatarUrl)
+        formData.append('coverUrl', coverUrl=== '' ? ' ' : coverUrl)
         formData.append('avatar', avatar === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : avatar)
         formData.append('cover', cover === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : cover)
         try {

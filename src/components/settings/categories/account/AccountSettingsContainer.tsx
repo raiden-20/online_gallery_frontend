@@ -6,13 +6,13 @@ import {changeEmail, changePassword, deleteAccount} from "@/store/thunks/authThu
 
 interface containerState {
     profile: {
-        customer_data: Customer
+        my_customer_data: Customer
     }
 }
 
 const mapStateToProps = (state: containerState) => {
     return {
-        customer_data: state.profile.customer_data
+        customer_data: state.profile.my_customer_data
     }
 }
 

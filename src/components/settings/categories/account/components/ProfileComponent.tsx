@@ -19,7 +19,7 @@ interface ProfileInterface {
 export const ProfileComponent = (props: ProfileInterface) => {
     const router = useRouter()
 
-    const [input_date, setInput_date] = useState(props.customer_data.birthDate)
+    const [input_date, setInput_date] = useState(props.customer_data.birthDate.toISOString().split('T')[0])
     const [input_gender, setInput_gender] = useState(props.customer_data.gender)
     const [isSave, setIsSave] = useState(false)
 
@@ -40,7 +40,9 @@ export const ProfileComponent = (props: ProfileInterface) => {
     }, []);
 
     useEffect(() => {
-        setInput_date(props.customer_data.birthDate)
+        setInput_date(props.customer_data.birthDate.getFullYear() + '-' +
+            (props.customer_data.birthDate.getMonth() + 1).toString().padStart(2, '0') + '-' +
+            props.customer_data.birthDate.getDate().toString().padStart(2, '0'))
         setInput_gender(props.customer_data.gender)
     }, [props.customer_data.birthDate, props.customer_data.gender]);
 

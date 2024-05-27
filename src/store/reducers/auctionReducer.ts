@@ -1,9 +1,10 @@
 import {ART_TYPES} from "@/paths/elements";
-import {AuctionCategoriesInterface, AuctionInterface} from "@/interfaces/auctionInterface";
+import {AuctionCategoriesInterface, AuctionInterface, CustomerRate} from "@/interfaces/auctionInterface";
 
 const SET_AUCTIONS = 'SET_AUCTIONS'
 const SET_ARTIST_AUCTIONS = 'SET_ARTIST_AUCTIONS'
 const SET_ONE_AUCTION = 'SET_ONE_AUCTION'
+const SET_CUSTOMER_RATE = 'SET_CUSTOMER_RATE'
 const CLEAR_ONE_AUCTION = 'CLEAR_ONE_AUCTION'
 
 interface ArtReducerInterface {
@@ -47,13 +48,25 @@ export const auctionReducer = (state = initialState, action: any) => {
     switch (action.type) {
 
         case SET_AUCTIONS: {
-            stateCopy.auctions = action.auctions
+            stateCopy.auctions = []
+
+            for (let i = 0; i < action.auctions.length; i++) {
+                action.auctions[i].startDate = new Date(action.auctions[i].startDate)
+                action.auctions[i].endDate = new Date(action.auctions[i].endDate)
+                stateCopy.auctions.push(action.auctions[i])
+            }
 
             return stateCopy
         }
 
         case SET_ARTIST_AUCTIONS: {
-            stateCopy.auctions_artist = action.auctions_artist
+            stateCopy.auctions_artist = []
+
+            for (let i = 0; i < action.auctions_artist.length; i++) {
+                action.auctions_artist[i].startDate = new Date(action.auctions_artist[i].startDate)
+                action.auctions_artist[i].endDate = new Date(action.auctions_artist[i].endDate)
+                stateCopy.auctions_artist.push(action.auctions_artist[i])
+            }
 
             return stateCopy
         }
@@ -104,7 +117,20 @@ export const auctionReducer = (state = initialState, action: any) => {
                     break
                 }
             }
+
+            action.auction.startDate = new Date(action.auction.startDate)
+            action.auction.endDate = new Date(action.auction.endDate)
+
+
             stateCopy.auction = action.auction
+
+            console.log(action.auction)
+
+            return stateCopy
+        }
+
+        case SET_CUSTOMER_RATE : {
+            stateCopy.auction.customerRates.push(action.customerRate)
 
             return stateCopy
         }
@@ -130,6 +156,12 @@ export const setAuctionsArtist = (auctions_artist: AuctionCategoriesInterface[])
 export const setOneAuction = (auction: AuctionInterface) => {
     return {
         type: SET_ONE_AUCTION, auction
+    }
+}
+
+export const setCustomerRate = (customerRate: CustomerRate) => {
+    return {
+        type: SET_ONE_AUCTION, customerRate
     }
 }
 export const clearOneAuction = () => {

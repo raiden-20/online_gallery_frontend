@@ -33,6 +33,7 @@ export const PathsAPI = {
     ART: '/art',
     AUCTION: '/auction',
     RATE: '/rate',
+    RATES: '/rates',
     MAX_RATE: '/maxrate',
     AUCTIONS: '/auctions',
     CART: '/cart',

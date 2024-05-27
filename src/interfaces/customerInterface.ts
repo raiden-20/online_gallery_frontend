@@ -1,6 +1,6 @@
 export interface Customer {
     customerName: string
-    birthDate: string
+    birthDate: Date
     gender: string
     avatarUrl: string
     coverUrl: string

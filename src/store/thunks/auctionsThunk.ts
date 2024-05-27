@@ -4,7 +4,14 @@ import {setSearch} from "@/store/reducers/categoriesReducer";
 import {MAIN_PATHS} from "@/paths/main";
 import {ART_TYPES} from "@/paths/elements";
 import {AuctionsAPI} from "@/api/auctionsAPI";
-import {clearOneAuction, setAuctions, setAuctionsArtist, setOneAuction} from "@/store/reducers/auctionReducer";
+import {
+    clearOneAuction,
+    setAuctions,
+    setAuctionsArtist,
+    setCustomerRate,
+    setOneAuction
+} from "@/store/reducers/auctionReducer";
+import {CustomerRate} from "@/interfaces/auctionInterface";
 
 export const CreateAuction = (name: string, type: string, photos: File[], startPrice: string,
                               createDate: string, description: string, size: string,
@@ -35,6 +42,11 @@ export const GetAuction = (auctionId: string, currentId: string, router: AppRout
                     }
                 }
             })
+    }
+
+export const SetNewCustomerRate = (customerRate: CustomerRate, router: AppRouterInstance) =>
+    (dispatch: Dispatch) => {
+        dispatch(setCustomerRate(customerRate))
     }
 
 export const EditAuctionThunk = (auctionId: string, name: string, type: string, changeMainPhoto: boolean, newPhotos: File[],

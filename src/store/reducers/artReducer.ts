@@ -38,7 +38,7 @@ const initialState: ArtReducerInterface = {
         tags: [],
         materials: [],
         frame: false,
-        publishDate: '1970-01-01'
+        publishDate: new Date('1970-01-01')
     }
 }
 
@@ -83,7 +83,7 @@ export const artReducer = (state = initialState, action: any) => {
                 tags: [],
                 materials: [],
                 frame: false,
-                publishDate: ''
+                publishDate: new Date('1970-01-01')
             }
 
             return stateCopy
@@ -104,6 +104,7 @@ export const artReducer = (state = initialState, action: any) => {
                     break
                 }
             }
+            action.oneArt.publishDate = new Date(action.oneArt.publishDate)
             stateCopy.oneArt = action.oneArt
 
             return stateCopy
@@ -128,7 +129,7 @@ export const artReducer = (state = initialState, action: any) => {
                 tags: action.tags,
                 materials: action.materials,
                 frame: action.frame,
-                publishDate: action.publishDate
+                publishDate: new Date(action.publishDate)
             }
 
             return stateCopy

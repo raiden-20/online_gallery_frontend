@@ -1,5 +1,5 @@
 import {OrderInterface} from "@/interfaces/cartInterface";
-import {ORDER_STATUS} from "@/paths/elements";
+import {ORDER_STATUS, ORDER_STATUS_RUS} from "@/paths/elements";
 
 const SET_ORDERS = 'SET_ORDERS'
 const SET_ONE_ORDER = 'SET_ONE_ORDER'
@@ -40,15 +40,19 @@ export const orderReducer = (state = initialState, action: any) => {
             for (let i = 0; i < action.orders.length; i++) {
                 switch (action.orders[i].status) {
                     case ORDER_STATUS.CREATED : {
-                        action.orders[i].status = 'Оформлен'
+                        action.orders[i].status = ORDER_STATUS_RUS.CREATED
                         break
                     }
                     case ORDER_STATUS.PROGRESS : {
-                        action.orders[i].status = 'В пути'
+                        action.orders[i].status = ORDER_STATUS_RUS.PROGRESS
                         break
                     }
                     case ORDER_STATUS.FINISHED : {
-                        action.orders[i].status = 'Завершен'
+                        action.orders[i].status = ORDER_STATUS_RUS.FINISHED
+                        break
+                    }
+                    case ORDER_STATUS.AWAIT : {
+                        action.orders[i].status = ORDER_STATUS_RUS.AWAIT
                         break
                     }
                 }
@@ -62,15 +66,19 @@ export const orderReducer = (state = initialState, action: any) => {
         case SET_ONE_ORDER: {
             switch (action.oneOrder.status) {
                 case ORDER_STATUS.CREATED : {
-                    action.oneOrder.status = 'Оформлен'
+                    action.oneOrder.status = ORDER_STATUS_RUS.CREATED
                     break
                 }
                 case ORDER_STATUS.PROGRESS : {
-                    action.oneOrder.status = 'В пути'
+                    action.oneOrder.status = ORDER_STATUS_RUS.PROGRESS
                     break
                 }
                 case ORDER_STATUS.FINISHED : {
-                    action.oneOrder.status = 'Завершен'
+                    action.oneOrder.status = ORDER_STATUS_RUS.FINISHED
+                    break
+                }
+                case ORDER_STATUS.AWAIT : {
+                    action.oneOrder.status = ORDER_STATUS_RUS.AWAIT
                     break
                 }
             }

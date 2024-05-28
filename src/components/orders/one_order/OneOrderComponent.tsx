@@ -9,6 +9,9 @@ import {useEffect} from "react";
 import {OrderInterface} from "@/interfaces/cartInterface";
 import {OneOrderButtons} from "@/components/orders/one_order/OneOrderButtons";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {ORDER_STATUS, ORDER_STATUS_RUS} from "@/paths/elements";
+import {SetTotalCount} from "@/store/thunks/cartThunk";
+import {reformatDateFull, reformatDateFullNextDay} from "../../../../utils/tests";
 
 interface oneOrderInterface {
     oneOrder: OrderInterface
@@ -16,6 +19,7 @@ interface oneOrderInterface {
     SetOrder(orderId: string, comment: string, router: AppRouterInstance): void
     EditOrder(orderId: string, comment: string, router: AppRouterInstance): void
     ReceiveOrder(orderId: string, router: AppRouterInstance): void
+    SetTotalCount(count: string): void
 }
 
 export const OneOrderComponent = (props: oneOrderInterface) => {
@@ -27,7 +31,6 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
         props.GetOneOrder(id)
     }, []);
 
-
     return (
         <section className={one_order_scss.root}>
             <button className={create_art_scss.cancel}
@@ -35,34 +38,39 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
                 <Image src={cancel_icon} alt={'cancel_icon'}/>
                 <div>Назад</div>
             </button>
-            <header className={one_order_scss.header}>Заказ №0000{props.oneOrder.orderId}</header>
+            <header className={one_order_scss.header}>Заказ №0000{props.oneOrder.orderId} от {reformatDateFull(props.oneOrder.createDate)} </header>
             <section className={one_order_scss.main}>
                 <section className={one_order_scss.section + ' ' + one_order_scss.data}>
-                    <section className={one_order_scss.table_part}>
-                        <section className={one_order_scss.table}>
-                            <div className={one_order_scss.table_title}>Адрес</div>
-                            <p className={one_order_scss.address}>
-                                {props.oneOrder.location}, {' ' + props.oneOrder.city}, {' ' + props.oneOrder.region},
-                                {' ' + props.oneOrder.city}, {' ' + props.oneOrder.name}
-                            </p>
+                    {props.oneOrder.status !== ORDER_STATUS_RUS.AWAIT ?
+                        <section className={one_order_scss.table_part}>
+                            <section className={one_order_scss.table}>
+                                <div className={one_order_scss.table_title}>Адрес</div>
+                                <p className={one_order_scss.address}>
+                                    {props.oneOrder.location}, {' ' + props.oneOrder.city}, {' ' + props.oneOrder.region},
+                                    {' ' + props.oneOrder.city}, {' ' + props.oneOrder.name}
+                                </p>
+                            </section>
+                            <section className={one_order_scss.table}>
+                                <div className={one_order_scss.table_title}>Способ оплаты</div>
+                                {props.oneOrder.number !== null ?
+                                    <div>•••• •••• ••••
+                                        {props.oneOrder.number.substring(props.oneOrder.number.length - 4, props.oneOrder.number.length - 1)}
+                                    </div>
+                                    : null}
+                            </section>
+                            <section className={one_order_scss.table}>
+                                <div className={one_order_scss.table_title}>Художник</div>
+                                <div className={one_order_scss.table_name}>{props.oneOrder.artistName}</div>
+                            </section>
+                            <section className={one_order_scss.table}>
+                                <div className={one_order_scss.table_title}>Покупатель</div>
+                                <div className={one_order_scss.table_name}>{props.oneOrder.customerName}</div>
+                            </section>
                         </section>
-                        <section className={one_order_scss.table}>
-                            <div className={one_order_scss.table_title}>Способ оплаты</div>
-                            {props.oneOrder.number !== null ?
-                                <div>•••• •••• ••••
-                                    {props.oneOrder.number.substring(props.oneOrder.number.length - 4, props.oneOrder.number.length - 1)}
-                                </div>
-                                : null}
-                        </section>
-                        <section className={one_order_scss.table}>
-                            <div className={one_order_scss.table_title}>Художник</div>
-                            <div className={one_order_scss.table_name}>{props.oneOrder.artistName}</div>
-                        </section>
-                        <section className={one_order_scss.table}>
-                            <div className={one_order_scss.table_title}>Покупатель</div>
-                            <div className={one_order_scss.table_name}>{props.oneOrder.customerName}</div>
-                        </section>
-                    </section>
+                        :
+                        <p className={'message'}>
+                            Вы должны оплатить заказ до {reformatDateFullNextDay(props.oneOrder.createDate)}, иначе Ваш аккаунт будет заблокирован
+                        </p>}
                     <section className={one_order_scss.art_data}>
                         <img src={props.oneOrder.artUrl} className={one_order_scss.img}
                              alt={'photo'}/>
@@ -78,17 +86,23 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
                             <div className={one_order_scss.table_title}>Состояние</div>
                             <div>{props.oneOrder.status}</div>
                         </section>
-                        <section className={one_order_scss.table_condition}>
-                            <div className={one_order_scss.table_title}>Комментарий к доставке</div>
-                            <div>{props.oneOrder.artistComment}</div>
-                        </section>
+                        {props.oneOrder.status !== ORDER_STATUS_RUS.AWAIT ?
+                            <section className={one_order_scss.table_condition}>
+                                <div className={one_order_scss.table_title}>Комментарий к доставке</div>
+                                <div>{props.oneOrder.artistComment}</div>
+                            </section>
+                            :
+                            null}
+
                     </section>
                     <OneOrderButtons status={props.oneOrder.status}
                                      ReceiveOrder={props.ReceiveOrder}
                                      SetOrder={props.SetOrder}
                                      orderId={props.oneOrder.orderId}
                                      EditOrder={props.EditOrder}
-                                     text={props.oneOrder.artistComment}/>
+                                     text={props.oneOrder.artistComment}
+                                     SetTotalCount={props.SetTotalCount}
+                                     price={props.oneOrder.price}/>
                 </section>
             </section>
             <p className={one_order_scss.p}>Возникли проблемы? <button>Обратитесь в техническую поддержку</button></p>

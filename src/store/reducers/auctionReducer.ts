@@ -139,6 +139,12 @@ export const auctionReducer = (state = initialState, action: any) => {
             return stateCopy
         }
 
+        case SET_MAX_RATE : {
+            stateCopy.auction.currentMaxRate = action.currentMaxRate
+
+            return stateCopy
+        }
+
         default : {
             return stateCopy
         }
@@ -169,9 +175,9 @@ export const setCustomerRate = (customerRate: CustomerRate) => {
     }
 }
 
-export const setMaxRate = (customerRate: CustomerRate) => {
+export const setMaxRate = (currentMaxRate: string) => {
     return {
-        type: SET_CUSTOMER_RATE, customerRate
+        type: SET_MAX_RATE, currentMaxRate
     }
 }
 export const clearOneAuction = () => {

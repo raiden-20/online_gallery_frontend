@@ -34,6 +34,18 @@ export const reformatDateFull = (inputDate: string) => {
     return `${day} ${month} ${year}, ${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
 }
 
+export const reformatDateFullNextDay = (inputDate: string) => {
+    let date = new Date(inputDate)
+    date.setTime(date.getTime() + 24 * 60 * 60 * 1000);;
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+
+    return `${day} ${month} ${year}, ${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+}
+
 export const auctionTimeMessage = (startTime: string, endTime: string) => {
     const startDate = new Date(startTime)
     const endDate = new Date(endTime)

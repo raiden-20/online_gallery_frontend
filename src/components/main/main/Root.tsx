@@ -34,6 +34,7 @@ import {NotificationsContainer} from "@/components/notifications/NotificationsCo
 import {OnePopUpNotificationContainer} from "@/components/notifications/one_popup_notification/OnePopUpNotificationContainer";
 import {OneAuctionContainer} from "@/components/categories/works/auctions/one_auction/one_page/OneAuctionContainer";
 import {EditRoot} from "@/components/create_art/edit_art/EditRoot";
+import {ChangeAuctionOrderContainer} from "@/components/change_order_auction/ChangeAuctionOrderContainer";
 
 interface RootInterface {
     artist_data: Artist
@@ -50,6 +51,7 @@ export const Root = (props: RootInterface) => {
     const pathname = usePathname()
     const pathnameArr = pathname.split('/')
     const main_path = '/' + pathnameArr[1]
+    const lastPath = '/' + pathnameArr[pathnameArr.length - 1]
 
     const {  data: session, status} = useSession();
 
@@ -121,7 +123,10 @@ export const Root = (props: RootInterface) => {
                         pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderContainer/> :
                         pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
                         pathname === MAIN_PATHS.ORDERS ? <OrdersContainer/> :
-                        main_path === PATHS_CATEGORY.ORDERS ? <OneOrderContainer/> :
+                        main_path === PATHS_CATEGORY.ORDERS && lastPath !== PATHS_CATEGORY.BUY
+                            ? <OneOrderContainer/> :
+                        main_path === PATHS_CATEGORY.ORDERS && lastPath === PATHS_CATEGORY.BUY
+                            ? <ChangeAuctionOrderContainer/> :
                     main_path === PATHS_CATEGORY.CART ? <CartContainer/> :
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsContainer/>  :
                         main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsContainer/>

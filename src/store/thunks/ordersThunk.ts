@@ -2,6 +2,8 @@ import {Dispatch} from "redux";
 import {OrdersAPI} from "@/api/ordersAPI";
 import {setOneOrder, setOrders} from "@/store/reducers/orderReducer";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {CartAPI} from "@/api/cartAPI";
+import {MAIN_PATHS} from "@/paths/main";
 
 export const GetOrders = (currentId: string) =>
     (dispatch: Dispatch) => {
@@ -67,6 +69,26 @@ export const ReceiveOrder = (orderId: string, router: AppRouterInstance) =>
                 switch (response[0]) {
                     case 200 : {
                         router.refresh()
+                    }
+                }
+            }).catch(error => {
+            console.error(error)
+        })
+    }
+
+export const ChangeAuctionOrderAwait = (orderId: string, cardId: string, addressId: string, router: AppRouterInstance
+    , setMessage: (message: string) => void) =>
+    () => {
+        OrdersAPI.ChangeOrderAPI(orderId, cardId, addressId)
+            .then(response => {
+                switch (response[0]) {
+                    case 200 : {
+                        router.push(MAIN_PATHS.SUCCESS_ORDER)
+                        break
+                    }
+                    case 400 : {
+                        setMessage('Ошибка оформления заказа, повторите попытку')
+                        break
                     }
                 }
             }).catch(error => {

@@ -8,7 +8,7 @@ import {
     clearOneAuction,
     setAuctions,
     setAuctionsArtist,
-    setCustomerRate,
+    setCustomerRate, setMaxRate,
     setOneAuction
 } from "@/store/reducers/auctionReducer";
 import {CustomerRate} from "@/interfaces/auctionInterface";
@@ -121,11 +121,12 @@ export const GetArtistAuctions = (artistId: string, router: AppRouterInstance) =
 
 export const SetMaxRate = (auctionId: string, isAnonymous: boolean, maxRate: number,
                            setSetRate: (setMaxRate: boolean) => void) =>
-    () => {
+    (dispatch: Dispatch) => {
         AuctionsAPI.SetMaxRateAuctionAPI(auctionId, isAnonymous, maxRate)
             .then(response => {
                 switch (response.status) {
                     case 200 : {
+                        dispatch(setMaxRate(maxRate.toString()))
                         setSetRate(false)
                     }
                 }

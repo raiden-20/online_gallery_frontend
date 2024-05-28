@@ -71,4 +71,21 @@ export const OrdersAPI =  {
             return [error.response.status, error.response.data];
         }
     },
+
+    async ChangeOrderAPI(orderId: string, cardId: string, addressId: string) {
+        try {
+            const response = await instance.put(
+                PathsAPI.ORDER + PathsAPI.CHANGE,
+                {
+                    orderId: Number.parseInt(orderId),
+                    cardId,
+                    addressId
+                }
+            );
+            return [response.status, response.data];
+        } catch (error: any) {
+            console.error(error)
+            return [error.response.status, error.response.data];
+        }
+    },
 }

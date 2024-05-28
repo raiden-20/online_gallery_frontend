@@ -24,7 +24,15 @@ export const ART_STATUS = {
 export const ORDER_STATUS = {
     CREATED: 'CREATED',
     PROGRESS: 'PROGRESS',
-    FINISHED: 'FINISHED'
+    FINISHED: 'FINISHED',
+    AWAIT: 'AWAIT'
+}
+
+export const ORDER_STATUS_RUS = {
+    CREATED: 'Оформлен',
+    PROGRESS: 'В пути',
+    FINISHED: 'Завершен',
+    AWAIT: 'Оформление'
 }
 
 export const CHARACTER_RESTRICTION = {

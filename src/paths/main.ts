@@ -9,6 +9,7 @@ export const PATHS_CATEGORY = {
 
     CREATE: '/create',
     EDIT: '/edit',
+    BUY: '/buy',
 
     MAIN: '/main',
     AUTH: '/auth',

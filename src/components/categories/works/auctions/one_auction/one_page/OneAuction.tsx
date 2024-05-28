@@ -7,7 +7,6 @@ import {AuctionInterface, CustomerRate} from "@/interfaces/auctionInterface";
 import {ROLES} from "@/paths/main";
 import {PathsAPI} from "@/api/api_main";
 import {fetchEventSource} from "@microsoft/fetch-event-source";
-import {SetNewCustomerRate} from "@/store/thunks/auctionsThunk";
 import {useSession} from "next-auth/react";
 
 interface oneWorkInterface {
@@ -17,7 +16,7 @@ interface oneWorkInterface {
     DeleteAuction(id: string, router: AppRouterInstance): void
     SetNewRate(auctionId: string, isAnonymous: boolean, setSetRate: (setMaxRate: boolean) => void,
                setMessage: (message: string) => void): void
-    SetMaxRate(auctionId: string, isAnonymous: boolean, maxRate: string,
+    SetMaxRate(auctionId: string, isAnonymous: boolean, maxRate: number,
                setSetRate: (setMaxRate: boolean) => void): void
     SetNewCustomerRate(customerRate: CustomerRate, router: AppRouterInstance): void
 }
@@ -30,9 +29,9 @@ export const OneAuction = (props: oneWorkInterface) => {
     const lastPath = pathname.split('/')[2]
 
     const [currentId] = useState(Cookies.get('customerId') as string)
-    const [customerId, setCustomerId] = useState('')
-    const [artistId, setArtistId] = useState('')
-    const [role, setRole] = useState('')
+    const [customerId, setCustomerId] = useState(Cookies.get('customerId') as string)
+    const [artistId, setArtistId] = useState(Cookies.get('artistId') as string)
+    const [role, setRole] = useState(Cookies.get('role') as string)
 
     const {status} = useSession()
 
@@ -40,37 +39,42 @@ export const OneAuction = (props: oneWorkInterface) => {
         props.GetAuction(lastPath, currentId, router)
     }, []);
 
-    // useEffect(() => {
-    //
-    //     setCustomerId(Cookies.get('customerId') as string)
-    //     setArtistId(Cookies.get('artistId') as string)
-    //     setRole(Cookies.get('role') as string)
-    //
-    //     debugger
-    //
-    //     const getRateSSE = async () => {
-    //         const who = role === ROLES.CUSTOMER ? customerId : role === ROLES.ARTIST ? artistId : null
-    //         await fetchEventSource(PathsAPI.BASE + PathsAPI.AUCTION + PathsAPI.RATES + `/userId=${who}&auctionId=${props.auction.auctionId}`,
-    //             {
-    //                 headers: {
-    //                     'Content-Type': 'multipart/form-data; boundary=-------23456789012347',
-    //                 },
-    //                 onmessage(ev) {
-    //                     const res = JSON.parse(ev.data)
-    //                     props.SetNewCustomerRate(res.data, router)
-    //                 },
-    //                 onclose() {
-    //                     console.log("Connection closed by the server");
-    //                 },
-    //
-    //             })
-    //
-    //     }
-    //     if (status === 'authenticated' && (customerId !== '' && customerId !== undefined)) {
-    //         getRateSSE()
-    //     }
-    //
-    // }, [status, customerId]);
+    useEffect(() => {
+
+        setCustomerId(Cookies.get('customerId') as string)
+        setArtistId(Cookies.get('artistId') as string)
+        setRole(Cookies.get('role') as string)
+        const controller = new AbortController();
+        const getRateSSE = async () => {
+            const signal = controller.signal
+            const who = role === ROLES.CUSTOMER ? customerId : role === ROLES.ARTIST ? artistId : null
+            const urll = PathsAPI.BASE + `/auction/rates/userId=${who}&auctionId=${lastPath}`
+            //const url = PathsAPI.BASE + PathsAPI.AUCTION + PathsAPI.RATES + `/userId=${who}&auctionId=${props.auction.auctionId}`
+            await fetchEventSource(urll,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data; boundary=-------234567890156t72347'
+                    },
+                    signal: signal,
+                    onmessage(ev) {
+                        const res = JSON.parse(ev.data)
+                        props.SetNewCustomerRate(res, router)
+                    },
+                    onclose() {
+                        console.log("Connection closed by the server");
+                    },
+
+                })
+
+        }
+        if (status === 'authenticated' && (customerId !== '' && customerId !== undefined) && lastPath !== '') {
+            getRateSSE()
+        }
+        return () => {
+            controller.abort()
+        }
+
+    }, [status]);
 
     return <OneAuctionComponent auction={props.auction}
                                 DeleteArt={props.DeleteAuction}

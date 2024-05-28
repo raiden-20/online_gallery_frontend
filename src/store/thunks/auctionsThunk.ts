@@ -119,13 +119,14 @@ export const GetArtistAuctions = (artistId: string, router: AppRouterInstance) =
             })
     }
 
-export const SetMaxRate = (auctionId: string, isAnonymous: boolean, maxRate: string,
+export const SetMaxRate = (auctionId: string, isAnonymous: boolean, maxRate: number,
                            setSetRate: (setMaxRate: boolean) => void) =>
     () => {
         AuctionsAPI.SetMaxRateAuctionAPI(auctionId, isAnonymous, maxRate)
             .then(response => {
                 switch (response.status) {
                     case 200 : {
+                        setSetRate(false)
                     }
                 }
             })

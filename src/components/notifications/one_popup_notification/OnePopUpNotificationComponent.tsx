@@ -26,17 +26,18 @@ export const OnePopUpNotificationComponent = (props: OnePopUpNotificationCompone
     const {status} = useSession()
 
     const [role] = useState(Cookies.get('role'))
-    const [customerId, setCustomerId] = useState('')
-    const [artistId, setArtistId] = useState('')
+    const [customerId, setCustomerId] = useState(Cookies.get('customerId') as string)
+    const [artistId, setArtistId] = useState(Cookies.get('artistId') as string)
 
     const [isClear, setIsClear] = useState(false)
 
     useEffect(() => {
-
+        const controller = new AbortController();
         setCustomerId(Cookies.get('customerId') as string)
         setArtistId(Cookies.get('artistId') as string)
 
         const getNotificationSSE = async () => {
+            const signal = controller.signal
             const who = role === ROLES.CUSTOMER ? customerId : role === ROLES.ARTIST ? artistId : null
             Cookies.set('SSE', 'true')
             const url = PathsAPI.BASE + PathsAPI.NOTIFICATION + PathsAPI.SSE
@@ -45,6 +46,7 @@ export const OnePopUpNotificationComponent = (props: OnePopUpNotificationCompone
                     headers: {
                         'Content-Type': 'multipart/form-data; boundary=-------23456789012347',
                     },
+                    signal: signal,
                     onmessage(ev) {
                         const res = JSON.parse(ev.data)
                         props.setOnePopUpNotification(res.avatarUrl, res.message)
@@ -59,8 +61,12 @@ export const OnePopUpNotificationComponent = (props: OnePopUpNotificationCompone
         if (status === 'authenticated' && (customerId !== '' && customerId !== undefined) && Cookies.get('SSE') !== 'true') {
             getNotificationSSE()
         }
+        return () => {
+            controller.abort()
+            Cookies.remove('SSE')
+        }
 
-    }, [status, customerId]);
+    }, [status, customerId, artistId]);
 
     useEffect(() => {
         if (isClear) {

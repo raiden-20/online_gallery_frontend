@@ -10,6 +10,7 @@ export interface AuctionInterface {
     customerId: string
     customerUrl: string
     customerName: string
+    currentMaxRate: string | null
     description: string
     viewCount: string
     size: string

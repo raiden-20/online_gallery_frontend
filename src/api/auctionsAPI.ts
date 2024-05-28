@@ -11,7 +11,6 @@ export const AuctionsAPI = {
             let start = new Date(startDate)
             let end = new Date(endDate)
 
-            debugger
 
             const dto_object = new Blob([JSON.stringify({
                 name,
@@ -64,8 +63,6 @@ export const AuctionsAPI = {
 
             let start = new Date(startDate)
             let end = new Date(endDate)
-
-            debugger
 
             const dto_object = new Blob([JSON.stringify({
                 auctionId,
@@ -159,7 +156,7 @@ export const AuctionsAPI = {
         }
     },
 
-    async SetMaxRateAuctionAPI(auctionId: string, isAnonymous: boolean, maxRate: string) {
+    async SetMaxRateAuctionAPI(auctionId: string, isAnonymous: boolean, maxRate: number) {
         try {
             return  await instance.post(
                 PathsAPI.AUCTION + PathsAPI.MAX_RATE,

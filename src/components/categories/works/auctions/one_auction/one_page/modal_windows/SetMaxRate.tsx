@@ -1,29 +1,71 @@
 import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 import delete_account_scss from "@/scss/components/settings/DeleteAccount.module.scss";
 import auctions_modal_scss from '@/scss/components/categories/auctions/AuctionsModal.module.scss'
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
+import create_art_data_scss from "@/scss/components/create_art/CreateArtData.module.scss";
+import subscriptions_scss from "@/scss/components/subscriptions/Subscriptions.module.scss";
+import Select, {SingleValue} from "react-select";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface SetMaxRate {
     auctionId: string
 
+    lastPrice: string,
+    rate: string
+
     setSetMaxRate(setMaxRate: boolean): void
 
-    SetMaxRate(auctionId: string, isAnonymous: boolean, maxRate: string, setSetRate: (setMaxRate: boolean) => void): void
+    SetMaxRate(auctionId: string, isAnonymous: boolean, maxRate: number, setSetRate: (setMaxRate: boolean) => void): void
 }
 
 export const SetMaxRate = (props: SetMaxRate) => {
 
-    const [input_amount, setInput_amount] = useState('')
     const [isAnonymous, setIsAnonymous] = useState(false)
     const [setMaxRate, setSetMaxRate] = useState(false)
     const [message, setMessage] = useState('')
 
+    const [currentMaxRatesOptions, setCurrentMaxRatesOptions] = useState<{ value: number, label: string }[]>([])
+    const [currentMaxRatesFiltered, setCurrentMaxRatesFiltered] = useState<{ value: number, label: string }[]>([])
+    const [currentMaxRate, setCurrentMaxRate] = useState<{ value: number, label: string } | undefined>(undefined)
+
     useEffect(() => {
-        if (setMaxRate) {
-            props.SetMaxRate(props.auctionId, isAnonymous, input_amount, props.setSetMaxRate)
+        if (setMaxRate && currentMaxRate !== undefined) {
+            props.SetMaxRate(props.auctionId, isAnonymous, currentMaxRate.value, props.setSetMaxRate)
         }
         setSetMaxRate(false)
     }, [setMaxRate]);
+
+    useEffect(() => {
+        let price = Number.parseInt(props.lastPrice)
+        const ratesArr: { value: number, label: string }[] = []
+        for (let i = 0; i < CHARACTER_RESTRICTION.MAX_RATE_SELECT_COUNT; i++) {
+            price += Number.parseInt(props.rate)
+            ratesArr.push({
+                value: price,
+                label: price.toString()
+            })
+        }
+        setCurrentMaxRatesOptions(ratesArr)
+        setCurrentMaxRatesFiltered(ratesArr)
+    }, []);
+
+
+    const setInputChange = useCallback((event: string) => {
+        // @ts-ignore
+        const filtered = currentMaxRatesFiltered.filter((option) =>
+            option.label.toLowerCase().includes(event.toLowerCase())
+        );
+        setCurrentMaxRatesFiltered(filtered);
+    }, [])
+
+    const setOnChange = useCallback((newValue: SingleValue<{ value: number; label: string; }>) => {
+        if (newValue) {
+            setCurrentMaxRate(newValue)
+        } else {
+            setCurrentMaxRate(undefined)
+        }
+    }, [])
+
 
     return (
         <section className={'page_modal_window'}>
@@ -36,12 +78,21 @@ export const SetMaxRate = (props: SetMaxRate) => {
                     </header>
                     <p>Когда другие пользователи будут делать ставки, система от Вашего имени будет перебивать их
                         ставки, не превышая установленную максимальную ставку</p>
-                    <input placeholder={'Сумма, ₽ '} value={input_amount} className={delete_account_scss.input}
-                           onChange={(event) => setInput_amount(event.target.value)}/>
+                    <Select className={create_art_data_scss.select}
+                            noOptionsMessage={() => 'Нет вариантов'}
+                            placeholder={
+                                <section className={subscriptions_scss.search_section}>
+                                    <div>Сумма,₽</div>
+                                </section>}
+                            options={currentMaxRatesOptions}
+                            onChange={setOnChange}
+                            value={currentMaxRate}
+                            isClearable={true}
+                            onInputChange={setInputChange}
+                            classNamePrefix={'custom-select'}/>
                     <section className={auctions_modal_scss.checkbox}>
-                        <input type={'checkbox'}
-                               checked={isAnonymous}
-                               onChange={(event) => setIsAnonymous(event.target.checked)}/>
+                        <input type={"checkbox"} checked={isAnonymous} onChange={(event) =>
+                            setIsAnonymous(event.target.checked)}/>
                         <section>Участвовать анонимно</section>
                     </section>
                     {message !== '' ?
@@ -53,7 +104,7 @@ export const SetMaxRate = (props: SetMaxRate) => {
                             Отмена
                         </button>
                         <button className={'main_button'}
-                        onClick={() => setSetMaxRate(true)}>
+                                onClick={() => setSetMaxRate(true)}>
                             Установить
                         </button>
                     </footer>

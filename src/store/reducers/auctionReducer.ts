@@ -5,6 +5,7 @@ const SET_AUCTIONS = 'SET_AUCTIONS'
 const SET_ARTIST_AUCTIONS = 'SET_ARTIST_AUCTIONS'
 const SET_ONE_AUCTION = 'SET_ONE_AUCTION'
 const SET_CUSTOMER_RATE = 'SET_CUSTOMER_RATE'
+const SET_MAX_RATE = 'SET_MAX_RATE'
 const CLEAR_ONE_AUCTION = 'CLEAR_ONE_AUCTION'
 
 interface ArtReducerInterface {
@@ -18,6 +19,7 @@ const initialState: ArtReducerInterface = {
     auctions: [],
     auctions_artist: [],
     auction: {
+        currentMaxRate: null,
         auctionId: "",
         name: "",
         type: "",
@@ -73,6 +75,7 @@ export const auctionReducer = (state = initialState, action: any) => {
 
         case CLEAR_ONE_AUCTION: {
             stateCopy.auction = {
+                currentMaxRate: null,
                 artistId: "",
                 artistName: "",
                 auctionId: "",
@@ -131,6 +134,7 @@ export const auctionReducer = (state = initialState, action: any) => {
 
         case SET_CUSTOMER_RATE : {
             stateCopy.auction.customerRates.push(action.customerRate)
+            stateCopy.auction.lastPrice = action.customerRate.rate
 
             return stateCopy
         }
@@ -161,7 +165,13 @@ export const setOneAuction = (auction: AuctionInterface) => {
 
 export const setCustomerRate = (customerRate: CustomerRate) => {
     return {
-        type: SET_ONE_AUCTION, customerRate
+        type: SET_CUSTOMER_RATE, customerRate
+    }
+}
+
+export const setMaxRate = (customerRate: CustomerRate) => {
+    return {
+        type: SET_CUSTOMER_RATE, customerRate
     }
 }
 export const clearOneAuction = () => {

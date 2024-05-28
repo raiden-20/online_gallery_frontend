@@ -48,8 +48,6 @@ export const ProfileAPI = {
                                 avatarUrl: string, coverUrl: string, avatar: File | string, cover: File | string) {
         const formData = new FormData()
 
-        debugger
-
         formData.append('customerName', customerName)
         formData.append('birthDate', birthDate)
         formData.append('gender', gender)

@@ -109,7 +109,6 @@ export const profileReducer = (state = initialState, action: any) => {
 
         case SET_MY_CUSTOMER_DATA: {
 
-            debugger
 
             const time = new Date(action.customer_data.birthDate)
 

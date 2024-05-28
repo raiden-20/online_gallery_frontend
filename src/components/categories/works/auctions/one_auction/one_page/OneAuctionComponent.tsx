@@ -21,7 +21,7 @@ interface oneWorkInterface {
     DeleteArt(artId: string, router: AppRouterInstance): void
     SetNewRate(auctionId: string, isAnonymous: boolean, setSetRate: (setMaxRate: boolean) => void,
                setMessage: (message: string) => void): void
-    SetMaxRate(auctionId: string, isAnonymous: boolean, maxRate: string, setSetRate: (setMaxRate: boolean) => void): void
+    SetMaxRate(auctionId: string, isAnonymous: boolean, maxRate: number, setSetRate: (setMaxRate: boolean) => void): void
 }
 
 export const OneAuctionComponent = (props: oneWorkInterface) => {
@@ -45,7 +45,8 @@ export const OneAuctionComponent = (props: oneWorkInterface) => {
                 <OneAuctionButtons setSetMaxRate={setSetMaxRate}
                                    setSetRate={setSetRate}
                                    artistId={props.auction.artistId}
-                                   status={props.auction.status}/>
+                                   status={props.auction.status}
+                                   maxRate={props.auction.currentMaxRate}/>
                 <section className={one_work_scss.auctions_section}>
                     <nav>
                         <ul className={nav_profile_scss.root + ' ' + one_work_scss.nav_section}>
@@ -81,7 +82,9 @@ export const OneAuctionComponent = (props: oneWorkInterface) => {
             {setMaxRate ?
                 <SetMaxRate setSetMaxRate={setSetMaxRate}
                             SetMaxRate={props.SetMaxRate}
-                            auctionId={props.auction.auctionId}/>
+                            auctionId={props.auction.auctionId}
+                            lastPrice={props.auction.lastPrice}
+                            rate={props.auction.rate}/>
                 : null}
             {setRate ?
                 <SetRate setSetRate={setSetRate}

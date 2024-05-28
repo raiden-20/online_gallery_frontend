@@ -35,6 +35,9 @@ export const ORDER_STATUS_RUS = {
     AWAIT: 'Оформление'
 }
 
+export const ANONYMOUS = 'anonymous'
+export const ANONYMOUS_RUS = 'Анонимный пользователь'
+
 export const CHARACTER_RESTRICTION = {
     ARTIST_NAME: 100,
     ARTIST_DESCRIPTIONS: 500,

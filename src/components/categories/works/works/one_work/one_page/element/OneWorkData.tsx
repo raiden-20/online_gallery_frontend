@@ -2,6 +2,7 @@ import one_work_scss from "@/scss/components/profile/categories/OneWork.module.s
 import {useRouter} from "next/navigation";
 import Cookies from "js-cookie";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
+import {ANONYMOUS, ANONYMOUS_RUS} from "@/paths/elements";
 
 interface oneWorkDataInterface {
     type: string
@@ -53,15 +54,18 @@ export const OneWorkData = (props: oneWorkDataInterface) => {
                         <div className={one_work_scss.more_info_noimp}>Владелец</div>
                         <div className={one_work_scss.underline}
                              onClick={() => {
-                                 Cookies.set('currentRole', ROLES.CUSTOMER)
-                                 Cookies.set('currentId', props.customerId)
-                                 if(props.customerId === Cookies.get('customerId')) {
-                                     Cookies.set('role', ROLES.CUSTOMER)
+                                 if (props.customerName !== ANONYMOUS ) {
+                                     Cookies.set('currentRole', ROLES.CUSTOMER)
+                                     Cookies.set('currentId', props.customerId)
+                                     if(props.customerId === Cookies.get('customerId')) {
+                                         Cookies.set('role', ROLES.CUSTOMER)
+                                     }
+                                     router.push(MAIN_PATHS.PROFILE_CUSTOMER + `/${props.customerId}`)
                                  }
-                                 router.push(MAIN_PATHS.PROFILE_CUSTOMER + `/${props.customerId}`)
+
                              }
                         }>
-                            {props.customerName}
+                            {props.customerName === ANONYMOUS ? ANONYMOUS_RUS : props.customerName}
                         </div>
                     </section>
                     : null}

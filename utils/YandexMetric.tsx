@@ -15,11 +15,8 @@ export const YandexMetric = () => {
     const searchParams = useSearchParams()
 
     useEffect(() => {
-        ym(97428671, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
-        });
+        const url = `${pathname}?${searchParams}`
+        ym(97428671, "hit", url);
     }, [pathname, searchParams]);
 
     return (
@@ -40,3 +37,9 @@ export const YandexMetric = () => {
         </Script>
     )
 };
+
+
+
+export const ClickJustButton = (value: string) => {
+    ym(97428671, 'reachGoal', value)
+}

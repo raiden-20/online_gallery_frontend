@@ -7,6 +7,7 @@ import not_available from '@/assets/icons/profile/create_post/not_available.svg'
 import {useSession} from "next-auth/react";
 import {signin} from "@/store/thunks/authThunk";
 import Cookies from "js-cookie";
+import {ClickJustButton} from "../../../../../../../../utils/YandexMetric";
 
 export const SuggestionSubscribeOnArtist = () => {
 
@@ -24,6 +25,7 @@ export const SuggestionSubscribeOnArtist = () => {
                     необходимо
                     <button className={suggestion_scss.underline}
                             onClick={() => {
+                                ClickJustButton('PrivateSubscribe') // метрика
                                 if (status === 'authenticated') {
                                     setIsClicked(true)
                                 } else {

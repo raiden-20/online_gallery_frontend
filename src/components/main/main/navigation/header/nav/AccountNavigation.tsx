@@ -11,6 +11,7 @@ import { useState} from "react";
 import {Customer} from "@/interfaces/customerInterface";
 import {Artist} from "@/interfaces/artistInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {ClickJustButton} from "../../../../../../../utils/YandexMetric";
 
 interface accountNavInterface {
     my_customer_data: Customer
@@ -91,6 +92,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                     <section>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => {
+                                    ClickJustButton('Cart') // метрика
                                     router.push(MAIN_PATHS.CART)
                                     Cookies.set('role', ROLES.CUSTOMER)
                                     Cookies.set('currentRole', ROLES.CUSTOMER)

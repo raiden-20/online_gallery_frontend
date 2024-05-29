@@ -7,6 +7,7 @@ import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {ClickJustButton} from "../../../../../../../../utils/YandexMetric";
 
 interface oneWorkInterface {
     artId: string
@@ -37,6 +38,7 @@ export const OneWorkButton = (props: oneWorkInterface) => {
                     <button className={'main_button ' + one_work_scss.add_to_cart}
                             onClick={() => {
                                 if (status === 'authenticated') {
+                                    ClickJustButton( 'AddToCart') // метрика
                                     setAddToCart(true)
                                 } else {
                                     signin()

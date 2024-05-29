@@ -13,6 +13,7 @@ import {CardEditContainer} from "@/components/create_order/edit/cart/CardEditCon
 import {OneAddressInterface, OneCardInterface} from "@/interfaces/credentials";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {AddressEditContainer} from "@/components/create_order/edit/address/AddressEditContainer";
+import {ClickJustButton} from "../../../utils/YandexMetric";
 
 
 interface createOrderInterface {
@@ -121,7 +122,10 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                         <div>{props.totalCount} ₽ </div>
                     </section>
                     <button className={'main_button'}
-                    onClick={() => setBuy(true)}>
+                    onClick={() => {
+                        ClickJustButton('Buy') // метрика
+                        setBuy(true)
+                    }}>
                         Оплатить
                     </button>
                 </section>

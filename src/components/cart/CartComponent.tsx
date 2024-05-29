@@ -49,19 +49,25 @@ export const CartComponent = (props: cartInterface) => {
                 </button>
             </section>
             <main className={cart_scss.main}>
-                <ul className={cart_scss.arts}>
-                    {props.cart.map((oneArt: CartInterface) => {
-                        return (
-                            <li key={oneArt.artId}>
-                                <OneCartComponent isAllSelected={isAllSelected} oneArt={oneArt}
-                                                  setArtId={setArtId} artId={artId}
-                                                  DeleteArtFromCart={props.DeleteArtFromCart}
-                                                  setIsAllSelected={setIsAllSelected}/>
-                            </li>
-                        )
-                    })}
+                {props.cart.length > 0 ?
+                    <ul className={cart_scss.arts}>
+                        {props.cart.map((oneArt: CartInterface) => {
+                            return (
+                                <li key={oneArt.artId}>
+                                    <OneCartComponent isAllSelected={isAllSelected} oneArt={oneArt}
+                                                      setArtId={setArtId} artId={artId}
+                                                      DeleteArtFromCart={props.DeleteArtFromCart}
+                                                      setIsAllSelected={setIsAllSelected}/>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                    :
+                    <section className={'no_elements'}>
+                         В корзине нет товаров...
+                    </section>
+                }
 
-                </ul>
                 <section className={cart_scss.buy_section}>
                     <section className={cart_scss.buy_data}>
                         <div className={cart_scss.price_text}>Итого</div>
@@ -71,8 +77,9 @@ export const CartComponent = (props: cartInterface) => {
                             onClick={() => {
                                 props.SetSelectedArts(artId)
                                 if (props.totalCount > 0) {
-                                    router.push(MAIN_PATHS.CREATE_ORDER)}
+                                    router.push(MAIN_PATHS.CREATE_ORDER)
                                 }
+                            }
                             }>
                         К оформлению
                     </button>

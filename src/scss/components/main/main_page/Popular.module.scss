@@ -11,6 +11,10 @@ $height: 600px;
 }
 
 .root_oneWork {
+  * {
+    cursor: pointer;
+  }
+
   display: flex;
   flex-flow: column;
   gap: $gap-xl;

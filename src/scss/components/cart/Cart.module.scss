@@ -95,6 +95,11 @@ $buy-data-width: 280px;
   }
 }
 
+.no_elements {
+  text-align: center;
+  color: $grey-date;
+}
+
 @media screen and (orientation: portrait) {
 
   .root {

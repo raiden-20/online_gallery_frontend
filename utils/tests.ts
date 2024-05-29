@@ -78,4 +78,12 @@ export const formatDate = (inputDate: string) => {
     return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 
+export const zerosForOrder = (orderId: string) => {
+    let res = ''
+    for (let i = 0; i < 8 - orderId.toString().length ; i++) {
+        res += '0'
+    }
+    return res
+}
+
 

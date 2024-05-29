@@ -2,15 +2,16 @@ import create_art_scss from "@/scss/components/create_art/CreateArt.module.scss"
 import Image from "next/image";
 import cancel_icon from "@/assets/icons/create_art/cancel.svg";
 import {usePathname, useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/paths/main";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
 
 import one_order_scss from '@/scss/components/orders/oneOrder/OneOrder.module.scss'
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {OrderInterface} from "@/interfaces/cartInterface";
 import {OneOrderButtons} from "@/components/orders/one_order/OneOrderButtons";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {ORDER_STATUS_RUS} from "@/paths/elements";
-import {reformatDateFull, reformatDateFullNextDay} from "../../../../utils/tests";
+import {reformatDateFull, reformatDateFullNextDay, zerosForOrder} from "../../../../utils/tests";
+import Cookies from "js-cookie";
 
 interface oneOrderInterface {
     oneOrder: OrderInterface
@@ -25,6 +26,8 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
     const router = useRouter()
     const pathName = usePathname().split('/')
 
+    const [role] = useState(Cookies.get('role'))
+
     useEffect(() => {
         const id = pathName[2]
         props.GetOneOrder(id)
@@ -37,7 +40,7 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
                 <Image src={cancel_icon} alt={'cancel_icon'}/>
                 <div>Назад</div>
             </button>
-            <header className={one_order_scss.header}>Заказ №0000{props.oneOrder.orderId} от {reformatDateFull(props.oneOrder.createDate)} </header>
+            <header className={one_order_scss.header}>Заказ №{zerosForOrder(props.oneOrder.orderId)}{props.oneOrder.orderId} от {reformatDateFull(props.oneOrder.createDate)} </header>
             <section className={one_order_scss.main}>
                 <section className={one_order_scss.section + ' ' + one_order_scss.data}>
                     {props.oneOrder.status !== ORDER_STATUS_RUS.AWAIT ?
@@ -67,9 +70,12 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
                             </section>
                         </section>
                         :
-                        <p className={'message'}>
-                            Вы должны оплатить заказ до {reformatDateFullNextDay(props.oneOrder.createDate)}, иначе Ваш аккаунт будет заблокирован
-                        </p>}
+                        role === ROLES.CUSTOMER ?
+                            <p className={'message'}>
+                                Вы должны оплатить заказ до {reformatDateFullNextDay(props.oneOrder.createDate)}, иначе Ваш аккаунт будет заблокирован
+                            </p>
+                            : null
+                        }
                     <section className={one_order_scss.art_data}>
                         <img src={props.oneOrder.artUrl} className={one_order_scss.img}
                              alt={'photo'}/>

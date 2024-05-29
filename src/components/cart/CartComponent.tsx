@@ -7,12 +7,11 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
 import {CartInterface} from "@/interfaces/cartInterface";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 interface cartInterface {
     totalCount: number
     cart: CartInterface[]
     GetCart(): void
-    DeleteArtFromCart(artId: string, router: AppRouterInstance): void
+    DeleteArtFromCart(artId: string, setMessage: (message: string) => void): void
     SetSelectedArts(arts: {[key: string]: boolean }): void
 }
 
@@ -41,7 +40,7 @@ export const CartComponent = (props: cartInterface) => {
             <section className={cart_scss.top_buttons_section}>
                 <section className={cart_scss.top_button_checkbox}>
                     <input type={'checkbox'}
-                           onClick={() => setIsAllSelected(!isAllSelected)} checked={isAllSelected}/>
+                           onChange={() => setIsAllSelected(!isAllSelected)} checked={isAllSelected}/>
                     <div>Выбрать все</div>
                 </section>
                 <button className={cart_scss.top_button_delete}>
@@ -50,18 +49,25 @@ export const CartComponent = (props: cartInterface) => {
                 </button>
             </section>
             <main className={cart_scss.main}>
-                <ul className={cart_scss.arts}>
-                    {props.cart.map((oneArt: CartInterface, index) => {
-                        return (
-                            <li key={index}>
-                                <OneCartComponent isAllSelected={isAllSelected} oneArt={oneArt}
-                                                  setArtId={setArtId} artId={artId}
-                                                  DeleteArtFromCart={props.DeleteArtFromCart}/>
-                            </li>
-                        )
-                    })}
+                {props.cart.length > 0 ?
+                    <ul className={cart_scss.arts}>
+                        {props.cart.map((oneArt: CartInterface) => {
+                            return (
+                                <li key={oneArt.artId}>
+                                    <OneCartComponent isAllSelected={isAllSelected} oneArt={oneArt}
+                                                      setArtId={setArtId} artId={artId}
+                                                      DeleteArtFromCart={props.DeleteArtFromCart}
+                                                      setIsAllSelected={setIsAllSelected}/>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                    :
+                    <section className={'no_elements'}>
+                         В корзине нет товаров...
+                    </section>
+                }
 
-                </ul>
                 <section className={cart_scss.buy_section}>
                     <section className={cart_scss.buy_data}>
                         <div className={cart_scss.price_text}>Итого</div>
@@ -70,7 +76,10 @@ export const CartComponent = (props: cartInterface) => {
                     <button className={'main_button'}
                             onClick={() => {
                                 props.SetSelectedArts(artId)
-                                router.push(MAIN_PATHS.CREATE_ORDER)}
+                                if (props.totalCount > 0) {
+                                    router.push(MAIN_PATHS.CREATE_ORDER)
+                                }
+                            }
                             }>
                         К оформлению
                     </button>

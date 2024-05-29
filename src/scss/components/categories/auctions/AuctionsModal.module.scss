@@ -1,0 +1,27 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
+
+.checkbox {
+  display: flex;
+  gap: $gap-xs;
+  align-items: center;
+}
+
+.set_rate_width {
+  width: $width-600;
+}
+
+.set_rate_section {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xxxs;
+}
+
+.set_rate_header {
+  font-size: $font-size-xs;
+  color: $grey-date;
+}
+.set_rate_price {
+  font-size: $font-size-l0;
+  font-weight: $weight;
+}

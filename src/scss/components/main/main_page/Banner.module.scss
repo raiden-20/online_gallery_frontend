@@ -2,12 +2,10 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/pages";
 
-$button-height: 58px;
-$button-width: 158px;
-
 $banner-height: 370px;
 
 .root {
+  width: 100%;
   padding: $padding-64;
   display: flex;
   flex-flow: column;
@@ -21,10 +19,14 @@ $banner-height: 370px;
 }
 
 .ul {
-  width: $width;
+  width: $width - 2 * $padding-24;
   display: flex;
   gap: $gap-l1;
   overflow-x: hidden;
+}
+
+.ul_mobile {
+  display: none;
 }
 
 .main {
@@ -38,12 +40,59 @@ $banner-height: 370px;
   font-family: "Involve", sans-serif;
 }
 
-.button {
-  height: $button-height;
-  width: $button-width;
+.banner_img {
+  width: $width - 2 * $padding-24;
 }
 
-.banner_img {
-  width: $width;
-  height: $banner-height;
+@media screen and (max-width: $width + 24px){
+
+  .ul {
+    max-width: calc(100vw - 2 * 24px);
+    display: flex;
+    gap: $gap-l1;
+    overflow-x: hidden;
+  }
+
+  .banner_img {
+    width: calc(100vw - 2 * 24px);
+  }
+
+  .date {
+    font-size: $font-size-xxxl;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .date {
+    font-size: $font-size-l;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .date {
+    font-size: $font-size-l0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .date {
+    font-size: $font-size-l22;
+  }
+}
+
+@media screen and (orientation: portrait){
+  .ul {
+    display: none;
+  }
+
+  .ul_mobile {
+    max-width: calc(100vw - 2 * 24px);
+    display: flex;
+    gap: $gap-l1;
+    overflow-x: hidden;
+  }
+
+  .root {
+    padding: $filters-padding;
+  }
 }

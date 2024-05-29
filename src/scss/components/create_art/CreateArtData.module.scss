@@ -39,10 +39,19 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: min-content max-content min-content;
+  grid-template-columns: min-content auto;
   column-gap: $gap-xs;
 
-  align-items: center;
+  justify-items: start;
+}
+
+.footer_add_data {
+  display: flex;
+  gap: $gap-xs;
+}
+
+.footer_private {
+  word-break: break-word;
 }
 
 .hover_section {
@@ -72,6 +81,10 @@
   width: max-content;
 }
 
+.button_add {
+  width: min-content;
+}
+
 .button_img {
   width: max-content;
   display: flex;
@@ -83,6 +96,7 @@
 }
 
 .add_section {
+  position: relative;
   display: flex;
   flex-flow: column;
   gap: $gap-s;
@@ -92,6 +106,7 @@
 
 .add_section_ul {
   display: flex;
+  flex-wrap: wrap;
   gap: $gap-s;
 }
 
@@ -106,4 +121,24 @@
   display: flex;
   gap: $gap-xxs;
   align-items: center;
+}
+
+.section_input {
+  position: relative;
+  z-index: $z-index-middle;
+}
+
+@media screen and (orientation: portrait) {
+  .inputs_section {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+
+  .section_root {
+    .header {
+      font-size: $font-size-l0;
+      font-weight: $weight;
+    }
+  }
 }

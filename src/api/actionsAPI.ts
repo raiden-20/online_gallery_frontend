@@ -200,10 +200,9 @@ export const ActionsAPI = {
             newPhotos.forEach(img => {
                 formData.append("newPhotos", img)
             })
-            if (newPhotos.length === 0) {
-                formData.append("newPhotos", ' ')
+            if (newPhotos.length  === 0) {
+                formData.append("newPhotos", new File([], 'empty.txt', {type: 'text/plain'}))
             }
-
             const response = await instanceFile.put(
                 PathsAPI.POST,
                 formData

@@ -13,8 +13,7 @@ export const ProfileRoot = () => {
 
     if (currentRole === ROLES.ARTIST) {
         return <ArtistProfileContainer/>
-    } else {
+    } else if (currentRole === ROLES.CUSTOMER) {
         return <CustomerProfileContainer/>
     }
-
 }

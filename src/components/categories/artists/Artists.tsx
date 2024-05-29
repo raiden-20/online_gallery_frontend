@@ -27,9 +27,9 @@ export const Artists = (props: ArtistsInterface) => {
                 <section className={artists_scss.sort_section}>
                     <div>Сортировать по:</div>
                     <select className={artists_scss.select}>
-                        {select.map((option: {popular: string, value: string}) => {
+                        {select.map((option: {popular: string, value: string}, index) => {
                             return (
-                                <option value={option.popular}>{option.value}</option>
+                                <option key={index} value={option.popular}>{option.value}</option>
                             )
                         })}
                     </select>
@@ -37,8 +37,8 @@ export const Artists = (props: ArtistsInterface) => {
             </header>
             <main>
                 <ul className={artists_scss.users}>
-                    {props.artists.map((oneArtist: UserShort) => {
-                        return <OneArtist oneArtist={oneArtist}/>
+                    {props.artists.map((oneArtist: UserShort, index) => {
+                        return <OneArtist oneArtist={oneArtist} key={index}/>
                     })}
                 </ul>
             </main>

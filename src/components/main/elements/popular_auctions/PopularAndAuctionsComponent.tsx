@@ -2,16 +2,20 @@ import Image from "next/image";
 import prev_icon from "@/assets/icons/main/prev.svg";
 import next_icon from "@/assets/icons/main/next.svg";
 
-import {useRef, useState} from "react";
+import {useRef} from "react";
 import popular_scss from "@/scss/components/main/main_page/Popular.module.scss";
 import main_scss from "@/scss/components/main/main_page/Main.module.scss";
+import {MainPageArts} from "@/interfaces/artInterface";
+import {useRouter} from "next/navigation";
+import {MAIN_PATHS} from "@/paths/main";
 
 interface PopularAuctionInterface {
     title: string,
-    photos: string[]
+    arts: MainPageArts[]
 }
 
 export const PopularAndAuctionsComponent = (props: PopularAuctionInterface) => {
+    const router = useRouter()
 
     const galleryRef = useRef<HTMLUListElement>(null);
 
@@ -55,19 +59,26 @@ export const PopularAndAuctionsComponent = (props: PopularAuctionInterface) => {
                 </button>
             </section>
             <ul ref={galleryRef} className={popular_scss.ul}>
-                {props.photos.map((img, index) => {
+                {props.arts.map((art, index) => {
                     return (
                         <li key={index}>
-                            <section className={popular_scss.root_oneWork}>
-                                <img src={img} className={popular_scss.one_work_img}
+                            <section className={popular_scss.root_oneWork}
+                            onClick={() => {
+                                if (props.title === 'Популярное') {
+                                    router.push(MAIN_PATHS.ONE_ART + `/${art.id}`)
+                                } else {
+                                    router.push(MAIN_PATHS.AUCTION + `/${art.id}`)
+                                }
+                            }}>
+                                <img src={art.photo} className={popular_scss.one_work_img}
                                      alt={'one work'}
                                      crossOrigin="anonymous"/>
                                 <section className={popular_scss.one_work_data}>
                                     <section className={popular_scss.one_work_names}>
-                                        <div className={popular_scss.one_work_weight}>Имя</div>
-                                        <div>Название</div>
+                                        <div className={popular_scss.one_work_weight}>{art.artistName}</div>
+                                        <div>{art.name}</div>
                                     </section>
-                                    <div className={popular_scss.one_work_price}>100000 ₽</div>
+                                    <div className={popular_scss.one_work_price}>{art.price + ' '} ₽</div>
                                 </section>
                             </section>
                         </li>

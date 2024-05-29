@@ -1,22 +1,21 @@
 import {connect} from "react-redux";
-import { GetArtsCategories} from "@/store/thunks/artThunk";
-import {ArtShortInterface} from "@/interfaces/artInterface";
 import {WorksRoot} from "@/components/categories/works/WorksRoot";
+import {Filters} from "@/interfaces/filters";
 
 interface state {
-    art : {
-        arts: ArtShortInterface[]
+    filters : {
+        currentFilters: Filters
     }
 }
 
 const mapStateToProps = (state: state) => {
     return {
-        arts: state.art.arts
+        currentFilters: state.filters.currentFilters,
     }
 }
 
 const mapDispatchToProps = {
-    GetArtsCategories
+
 }
 
 export const WorkRootContainer = connect(mapStateToProps, mapDispatchToProps)(WorksRoot)

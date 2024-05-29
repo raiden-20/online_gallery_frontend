@@ -60,7 +60,6 @@ $delete-img-width: 34px;
     display: none;
   }
 
-
   .profile_data {
     display: grid;
     gap: $gap-xs;
@@ -88,11 +87,15 @@ $delete-img-width: 34px;
         border-radius: $radius-big;
 
         img {
-          width: 100%;
-          height: 100%;
+          position: relative;
+          right: 1px;
+          bottom: 1px;
+
+          width: 101%;
+          height: 101%;
 
           object-fit: cover;
-          border-radius: $radius-big;
+          border-radius: $radius-m;
         }
       }
 
@@ -124,6 +127,7 @@ $delete-img-width: 34px;
       word-break: break-all;
 
       .name {
+        height: max-content;
         font-size: $font-size-xxl;
         font-weight: $weight;
       }
@@ -208,6 +212,10 @@ $delete-img-width: 34px;
 }
 
 @media screen and (orientation: portrait){
+  .hidden_button {
+    display: none;
+  }
+
   .edit_button {
     display: flex;
     gap: 10px;
@@ -231,6 +239,8 @@ $delete-img-width: 34px;
   .artist_action_section {
     display: none;
   }
+
+
 }
 
 @media screen and (max-width: $max-device-width) {
@@ -250,18 +260,6 @@ $delete-img-width: 34px;
           font-size: $font-size-l;
         }
       }
-    }
-  }
-
-  .subscriber_section {
-
-    img {
-      width: $bell-width-mobile;
-      height: $bell-height-mobile;
-    }
-
-    div {
-      font-size: 14px;
     }
   }
 }

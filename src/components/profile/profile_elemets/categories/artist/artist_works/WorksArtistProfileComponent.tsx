@@ -10,10 +10,12 @@ import Image from "next/image";
 import {ArtArtistInterface} from "@/interfaces/artInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
+import {MAIN_PATHS} from "@/paths/main";
 
 interface worksProfileInterface {
     arts_artist: ArtArtistInterface[]
     artistName: string
+
     GetArtsArtist(artistId: string, router: AppRouterInstance): void
 }
 
@@ -24,7 +26,7 @@ export const WorksArtistProfileComponent = (props: worksProfileInterface) => {
     const [artistId] = useState(Cookies.get('artistId') as string)
 
     useEffect(() => {
-        props.GetArtsArtist(currentId,  router)
+        props.GetArtsArtist(currentId, router)
     }, []);
 
 
@@ -39,7 +41,8 @@ export const WorksArtistProfileComponent = (props: worksProfileInterface) => {
             })
             }
             {currentId === artistId ?
-                <button className={works_profile_scss.create_art_button}>
+                <button className={works_profile_scss.create_art_button}
+                        onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
                     <Image src={create_art_icon} alt={'create_art_icon'}/>
                 </button>
                 : null}

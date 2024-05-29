@@ -1,0 +1,62 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+.root {
+  padding: $padding-16-48;
+  display: grid;
+  grid-template-rows: min-content auto;
+  row-gap: $gap-s;
+}
+
+.header {
+  font-size: $font-size-xxl;
+  font-weight: $weight;
+}
+
+.ul {
+  display: grid;
+}
+
+.one_notification_root {
+  * {
+    cursor: pointer;
+  }
+
+  padding: $section-padding-s;
+
+  display: flex;
+  gap: $padding-24;
+
+  .img {
+    width: $mini-avatar-size;
+    height: $mini-avatar-size;
+
+    border-radius: $radius-big;
+
+    object-fit: cover;
+  }
+
+  .data_section {
+    height: 100%;
+    display: grid;
+    align-content: space-between;
+
+    .data_text {
+      display: flex;
+      gap: $gap-xxxxxs;
+
+      .data_weight {
+        font-weight: $weight;
+      }
+    }
+
+    .data_time {
+      color: $grey-date;
+    }
+  }
+}
+
+.one_notification_root:hover {
+  background-color: $grey_bg-settings;
+  border-radius: $elements-radius;
+}

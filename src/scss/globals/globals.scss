@@ -83,6 +83,57 @@ ol {
   margin: 0;
 }
 
+.custom-select {
+  &__control {
+    height: $input-height !important;
+    padding: $input-padding !important;
+    border: 1px solid $grey !important;
+    border-radius: $elements-radius !important;
+    box-shadow: none !important;
+  }
+
+  &__value-container, &__input-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  &__indicators {
+    display: none !important;
+  }
+
+  &__menu {
+    border-radius: $elements-radius !important;
+  }
+
+  &__menu-list::-webkit-scrollbar {
+    width: 5px !important;
+  }
+
+  &__menu-list::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+  }
+
+  &__menu-list::-webkit-scrollbar-thumb {
+    background: #888 !important;
+    border-radius: 2px !important;
+  }
+
+  &__option {
+    background: none !important;
+  }
+
+  &__option:hover {
+    background-color: $grey-light !important;
+  }
+  &__option--is-selected {
+    color: $black-color !important;
+    background: none !important;
+  }
+}
+
+.custom-select:focus {
+  border: none !important;
+}
 
 .scrollBar::-webkit-scrollbar {
   width: 5px;

@@ -23,16 +23,23 @@ export const OrdersComponent = (props: ordersInterface) => {
     return (
         <section className={orders_scss.root}>
             <header className={orders_scss.header}>Заказы</header>
-            <ul className={orders_scss.main}>
-                {props.orders.map((oneOrder, index) => {
-                    return (
-                        <li className={orders_scss.li} key={index}
-                            onClick={() => route.push(MAIN_PATHS.ONE_ORDER + `/${oneOrder.orderId}`)}>
-                            <OneOrderComponentMain oneOrder={oneOrder}/>
-                        </li>
-                    )
-                })}
-            </ul>
+            {props.orders.length > 0 ?
+                <ul className={orders_scss.main}>
+                    {props.orders.map((oneOrder, index) => {
+                        return (
+                            <li className={orders_scss.li} key={index}
+                                onClick={() => route.push(MAIN_PATHS.ONE_ORDER + `/${oneOrder.orderId}`)}>
+                                <OneOrderComponentMain oneOrder={oneOrder}/>
+                            </li>
+                        )
+                    })}
+                </ul>
+                :
+                <section className={'no_elements'}>
+                    Нет заказов...
+                </section>
+            }
+
         </section>
     )
 }

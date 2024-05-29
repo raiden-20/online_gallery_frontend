@@ -16,7 +16,7 @@ export interface ArtInterface {
     tags: string[]
     materials: string[]
     frame: boolean
-    publishDate: string
+    publishDate: Date
 }
 
 export interface ArtShortInterface {
@@ -37,7 +37,7 @@ export interface ArtArtistInterface {
     name: string
     photoUrl: string
     price: string
-    isPrivate: string
+    isPrivate: boolean
     available: string
     customerId: string
     avatarUrl: string
@@ -50,5 +50,13 @@ export interface ArtCustomerInterface {
     name: string
     photoUrl: string
     isPrivate: string
+    price: string
+}
+
+export interface MainPageArts {
+    name: string,
+    photo: string
+    artistName: string,
+    id: string
     price: string
 }

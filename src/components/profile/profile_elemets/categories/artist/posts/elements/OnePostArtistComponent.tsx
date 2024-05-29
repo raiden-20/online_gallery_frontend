@@ -14,6 +14,7 @@ import {useRouter} from "next/navigation";
 import {
     EditPostContainer
 } from "@/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPostContainer";
+import TimeComponent from "@/components/time/TimeComponent";
 
 interface OnePostComponentInterface {
     onePost: OnePostInterface
@@ -25,10 +26,11 @@ export const OnePostArtistComponent = (props: OnePostComponentInterface) => {
     const router = useRouter()
 
     const [openedPhotoSrc, setOpenedPhotoSrc] = useState<{[key: string]: string }>({})
-    const [indexOpened, setIndexOpened] = useState('')
+    const [indexOpened, setIndexOpened] = useState(0)
 
     const [deletePost, setDeletePost] = useState(false)
     const [editPost, setEditPost] = useState(false)
+    const [index, setIndex] = useState(0)
 
     const [artistId] = useState(Cookies.get('artistId'))
     const [currentId] = useState(Cookies.get('currentId'))
@@ -40,20 +42,23 @@ export const OnePostArtistComponent = (props: OnePostComponentInterface) => {
     }, [deletePost]);
 
     return (
-        <section className={posts_artist_module.one_post + ' ' + posts_artist_module.border}>
+        <section className={posts_artist_module.one_post}>
             <ul>
                 {Object.keys(props.onePost.photoUrls).map((key: string, index) => {
-                    return (
-                        <li key={index}>
-                            <img src={props.onePost.photoUrls[key]} className={posts_artist_module.one_post_img}
-                                 onClick={() => {
-                                     setOpenedPhotoSrc(props.onePost.photoUrls)
-                                     setIndexOpened(key)
-                                 }}
-                                 alt={'post photo'}
-                                 crossOrigin="anonymous"/>
-                        </li>
-                    )
+                    if (props.onePost.photoUrls[key] !== 'http://localhost:9000/picture/empty.txt') {
+                        return (
+                            <li key={index}>
+                                <img src={props.onePost.photoUrls[key]} className={posts_artist_module.one_post_img}
+                                     onClick={() => {
+                                         setOpenedPhotoSrc(props.onePost.photoUrls)
+                                         setIndexOpened(Number.parseInt(key))
+                                         setIndex(index)
+                                     }}
+                                     alt={'post photo'}
+                                     crossOrigin="anonymous"/>
+                            </li>
+                        )
+                    }
                 })}
             </ul>
             <header className={posts_artist_module.one_post_title}>{props.onePost.title}</header>
@@ -72,14 +77,16 @@ export const OnePostArtistComponent = (props: OnePostComponentInterface) => {
                             <div>Удалить</div>
                         </button>
                     </section>
-                    <div>{props.onePost.date}</div>
+                    <TimeComponent time={props.onePost.date}/>
                 </footer>
                 :
-                <footer className={posts_artist_module.one_post_date}>9 апреля, 02:33</footer>
+                <footer className={posts_artist_module.one_post_date}>{props.onePost.date}</footer>
             }
             {Object.keys(openedPhotoSrc).length !== 0 ?
                 <OneOpenedPhotoPostComponent setOpenedPhotoSrc={setOpenedPhotoSrc} openedPhotoSrc={openedPhotoSrc}
-                                             indexOpened={indexOpened} setIndexOpened={setIndexOpened}/>
+                                             indexOpened={indexOpened} setIndexOpened={setIndexOpened}
+                                             index={index}
+                                             setIndex={setIndex}/>
                 : null
             }
             {editPost ? <EditPostContainer onePost={props.onePost} setIsCreatePost={setEditPost}/> : null}

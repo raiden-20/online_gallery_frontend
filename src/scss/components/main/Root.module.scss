@@ -11,7 +11,7 @@
 }
 
 .root {
-  width: $width + $gap-l1 * 2;
+  width: $width;
   display: grid;
   grid-template-rows: min-content auto min-content;
   row-gap: $gap-s;

@@ -5,21 +5,19 @@ import add_info_icon from '@/assets/icons/cart/add_info.svg'
 import delete_one_art_icon from '@/assets/icons/cart/delete_one.svg'
 import Image from "next/image";
 import {CartInterface} from "@/interfaces/cartInterface";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {useRouter} from "next/navigation";
-import {debug} from "node:util";
-
 interface oneCartInterface {
     oneArt: CartInterface
     isAllSelected: boolean
+    setIsAllSelected(isAllSelected: boolean): void
 
     setArtId(artId: {[key: string]: boolean }): void
-    DeleteArtFromCart(artId: string, router: AppRouterInstance): void
+    DeleteArtFromCart(artId: string, setMessage: (message: string) => void): void
     artId: {[key: string]: boolean } | undefined
 }
 
 export const OneCartComponent = (props: oneCartInterface) => {
-    const router = useRouter()
+    const [message, setMessage] = useState('')
+
     const [isSelected, setIsSelected] = useState(props.isAllSelected)
     const [isAnonymous, setIsAnonymous] = useState(false)
 
@@ -33,7 +31,6 @@ export const OneCartComponent = (props: oneCartInterface) => {
 
     useEffect(() => {
         const artData = props.artId
-        debugger
         if (isSelected) {
             // @ts-ignore
             artData[props.oneArt.artId] = isAnonymous
@@ -49,7 +46,8 @@ export const OneCartComponent = (props: oneCartInterface) => {
 
     useEffect(() => {
         if (isDelete) {
-            props.DeleteArtFromCart(props.oneArt.artId, router)
+            setMessage('')
+            props.DeleteArtFromCart(props.oneArt.artId, setMessage)
             setIsDelete(false)
         }
     }, [isDelete]);
@@ -63,18 +61,43 @@ export const OneCartComponent = (props: oneCartInterface) => {
     return (
         <section className={one_cart_scss.root}>
             <input type={'checkbox'} className={one_cart_scss.checkbox}
-                   onClick={() => setIsSelected(!isSelected)} checked={isSelected}/>
+                   onChange={() => setIsSelected(!isSelected)} checked={isSelected}/>
             <img src={props.oneArt.photoUrl} className={one_cart_scss.img} crossOrigin="anonymous"
                  alt={'art photo'}/>
-            <section className={one_cart_scss.data_section}>
-                <section className={one_cart_scss.art_data}>
-                    <div className={one_cart_scss.text + ' ' + one_cart_scss.name}>{props.oneArt.artistName}</div>
-                    <div className={one_cart_scss.text}>{props.oneArt.name}</div>
+            <section className={one_cart_scss.data_root}>
+                <section className={one_cart_scss.data_main}>
+                    <section className={one_cart_scss.data_section}>
+                        <section className={one_cart_scss.art_data}>
+                            <div
+                                className={one_cart_scss.text + ' ' + one_cart_scss.name}>{props.oneArt.artistName}</div>
+                            <div className={one_cart_scss.text}>{props.oneArt.name}</div>
+                        </section>
+                    </section>
+                    <section className={one_cart_scss.art_data + ' ' + one_cart_scss.price_section}>
+                        {isHover ?
+                            <section className={one_cart_scss.hover_section}
+                                     style={{
+                                         position: 'fixed',
+                                         top: windowPosition.top - 15 + 'px',
+                                         left: windowPosition.left + 25 + 'px',
+                                         display: 'block',
+                                     }}>
+                                <p className={one_cart_scss.add_text}>Ваше имя не будет отображаться в разделе
+                                    владельцев, а
+                                    товар будет скрыт из Вашей коллекции</p>
+                            </section>
+                            : null}
+                        <div className={one_cart_scss.text + ' ' + one_cart_scss.name}>{props.oneArt.price} ₽</div>
+                        <button className={'no_main_color'}
+                                onClick={() => setIsDelete(true)}>
+                            <Image src={delete_one_art_icon} alt={'delete_one_art_icon'} className={one_cart_scss.delete_img}/>
+                        </button>
+                    </section>
                 </section>
                 <section className={one_cart_scss.section}>
                     <section className={one_cart_scss.anonymous_section}>
                         <input type={'checkbox'}
-                               onClick={() => setIsAnonymous(!isAnonymous)} checked={isAnonymous}/>
+                               onChange={() => setIsAnonymous(!isAnonymous)} checked={isAnonymous}/>
                         <section className={one_cart_scss.anonymous_section_add}>
                             <div>Купить анонимно</div>
                             <button onMouseOver={handleMouseEnter}
@@ -83,25 +106,10 @@ export const OneCartComponent = (props: oneCartInterface) => {
                             </button>
                         </section>
                     </section>
-                </section>
-            </section>
-            <section className={one_cart_scss.art_data + ' ' + one_cart_scss.price_section}>
-                {isHover ?
-                    <section className={one_cart_scss.hover_section}
-                             style={{
-                                 position: 'fixed',
-                                 top: windowPosition.top - 15 + 'px' ,
-                                 left: windowPosition.left + 25 + 'px',
-                                 display: 'block',
-                             }}>
-                        <p className={one_cart_scss.add_text}>Ваше имя не будет отображаться в разделе владельцев, а товар будет скрыт из Вашей коллекции</p>
-                    </section>
+                    {message !== '' ?
+                        <p className={'message'}>{message}</p>
                     : null}
-                <div className={one_cart_scss.text + ' ' + one_cart_scss.name}>{props.oneArt.price} ₽</div>
-                <button className={'no_main_color'}
-                onClick={() => setIsDelete(true)}>
-                    <Image src={delete_one_art_icon} alt={'delete_one_art_icon'}/>
-                </button>
+                </section>
             </section>
         </section>
     )

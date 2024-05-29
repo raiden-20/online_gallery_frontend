@@ -45,12 +45,15 @@ export const Artists = (props: ArtistsInterface) => {
                             router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + oneElement.artistId)
                             Cookies.set("currentRole", ROLES.ARTIST)
                             Cookies.set("currentId", oneElement.artistId)
+                            if (Cookies.get('artistId') === oneElement.artistId) {
+                                Cookies.set("role", ROLES.ARTIST)
+                            }
                         }
                     }>
                         <img src={oneElement.avatarUrl === '' ? '/default_avatar_profile.svg' : oneElement.avatarUrl}
                              className={search_scss.one_element_photo}
                              alt={'avatar'} crossOrigin="anonymous"/>
-                        <div className={search_scss.one_element_name}>{oneElement.artistName}</div>
+                        <div className={'p ' + search_scss.one_element_name}>{oneElement.artistName}</div>
                     </li>
                 )
             })}

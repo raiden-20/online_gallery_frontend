@@ -2,6 +2,7 @@ import auth_main_scss from "@/scss/components/auth/Auth_main.module.scss";
 import {useRouter} from "next/navigation";
 import React, {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface CreateCustomerInterface {
     createCustomerProfile(customerName: string, birthDate: string, gender: string,
@@ -38,8 +39,8 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
         <main className={auth_main_scss.form}>
             <input value={input_name}
                    onChange={(event) => {
-                       if (event.target.value.length > 200) {
-                           setMessage('Лимит на имя 200 символов')
+                       if (event.target.value.length > CHARACTER_RESTRICTION.ARTIST_NAME) {
+                           setMessage('Лимит на имя 100 символов')
                        } else {
                            setMessage('')
                            setInput_name(event.target.value)

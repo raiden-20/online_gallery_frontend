@@ -12,6 +12,10 @@ $name-section-height: 51px;
 .one_artist {
   position: relative;
   display: grid;
+
+  * {
+    cursor: pointer;
+  }
 }
 
 .one_artist_img {
@@ -47,5 +51,48 @@ $name-section-height: 51px;
     padding: $main-padding;
     font-size: $font-size-xxl;
     font-weight: $weight;
+  }
+}
+
+@media screen and (orientation: portrait){
+  .one_artist_img {
+    width: $img-size / 1.4;
+    height: $img-size / 1.4;
+  }
+}
+
+@media screen and (max-width: 650px) {
+
+  .ul {
+    gap: $gap-xxl;
+  }
+
+  .one_artist_img {
+    width: $img-size / 1.5;
+    height: $img-size / 1.5;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  .ul {
+    gap: $gap-l2;
+  }
+
+  .one_artist_img {
+    width: $img-size / 1.8;
+    height: $img-size / 1.8;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .ul {
+    gap: $gap-l;
+  }
+
+  .one_artist_img {
+    width: $img-size / 2;
+    height: $img-size / 2;
   }
 }

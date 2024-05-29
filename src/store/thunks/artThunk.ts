@@ -9,17 +9,24 @@ import {ART_TYPES} from "@/paths/elements";
 
 export const CreateArt = (name: string, type: string, photos: File[], price: string,
                           createDate: string, description: string, size: string,
-                          tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance) =>
+                          tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance,
+                          setMessage: (message: string) => void) =>
     () => {
         ArtsAPI.CreateArtAPI(name, type, photos, price, createDate, description, size, tags, materials, isPrivate, frame)
             .then((response) => {
                 switch (response[0]) {
                     case 200 : {
                         router.push(MAIN_PATHS.ONE_ART + `/${response[1].artId}`)
+                        router.push(MAIN_PATHS.PROFILE_ARTIST + `/${Cookies.get('artistId')}`)
+                        break
+                    }
+                    case 409 : {
+                        setMessage('У вас нет доступа публиковать товар')
                         break
                     }
                 }
             }).catch(error => {
+            setMessage('У вас нет доступа публиковать товар')
             console.error(error)
         })
     }
@@ -42,7 +49,8 @@ export const GetArt = (artId: string, router: AppRouterInstance) =>
 
 export const EditArt = (artId: string, name: string, type: string, changeMainPhoto: boolean, newPhotos: File[],
                         deletePhotoUrls: string[], price: string, createDate: string, description: string, size: string,
-                        tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance) =>
+                        tags: string[], materials: string[], isPrivate: boolean, frame: boolean, router: AppRouterInstance,
+                        setMessage: (message: string) => void) =>
     () => {
         let typeEnum = ''
         switch (type) {
@@ -65,9 +73,15 @@ export const EditArt = (artId: string, name: string, type: string, changeMainPho
                 switch (response[0]) {
                     case 200 : {
                         router.push(MAIN_PATHS.ONE_ART + `/${artId}`)
+                        break
+                    }
+                    case 409 : {
+                        setMessage('У вас нет доступа публиковать товар')
+                        break
                     }
                 }
             }).catch(error => {
+            setMessage('У вас нет доступа публиковать товар')
             console.error(error)
         })
     }

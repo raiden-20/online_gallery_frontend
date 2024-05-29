@@ -16,15 +16,11 @@ $artist-private-img-size: 70px;
 }
 
 .search_section {
-  height: min-content;
-
-  padding: $padding-8;
-  border: 1px solid $grey;
-  border-radius: $elements-radius;
-
   display: grid;
   grid-template-columns: min-content auto;
   align-items: center;
+
+  gap: $gap-s;
 
   input {
     height: min-content;
@@ -39,8 +35,8 @@ $artist-private-img-size: 70px;
 
   font-weight: $weight;
 
-  div {
-    font-size: $font-size-l;
+  section {
+    font-size: $font-size-l0;
   }
 
   button {
@@ -88,6 +84,10 @@ $artist-private-img-size: 70px;
     }
   }
 
+  .data {
+    display: none;
+  }
+
   button {
     width: min-content;
 
@@ -109,6 +109,7 @@ $artist-private-img-size: 70px;
       cursor: pointer;
     }
 
+    width: $img-size-medium;
     display: grid;
     justify-items: center;
     gap: $gap-xs;
@@ -123,12 +124,80 @@ $artist-private-img-size: 70px;
     }
 
     div {
-      font-size: $font-size-xxl;
+      font-size: $font-size-l;
       font-weight: $weight;
     }
   }
 }
 
+.desktop_hidden {
+  display: none;
+}
+
 .p {
   text-align: center;
+  display: block;
+}
+
+@media screen and (orientation: portrait) {
+  .mobile_hidden {
+    display: none;
+  }
+
+  .desktop_hidden {
+    display: grid;
+  }
+
+  .section_title {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+
+    section {
+      font-size: $font-size-l22;
+    }
+  }
+
+  .one_private_subscription_artists {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+
+    .artist_data_private {
+      height: max-content;
+      width: 100px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      gap: $gap-xxxs;
+    }
+
+    .data {
+      width: max-content;
+      height: max-content;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: $gap-xxxs;
+    }
+
+    .mobile_date {
+      color: $grey-date;
+
+      display: flex;
+      gap: $gap-xxxxxs;
+    }
+
+    button {
+      display: grid;
+      justify-self: center;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .one_private_subscription_artists {
+
+    button {
+      padding: $search-padding;
+    }
+  }
 }

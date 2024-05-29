@@ -8,7 +8,7 @@ interface deleteAccountInterface {
     id: string
 
     setIsDelete(isDeleteClicked: boolean): void
-    DeleteCard(id: string, router: AppRouterInstance): void
+    DeleteCard(id: string, router: AppRouterInstance, setMessage: (message: string) => void): void
 }
 
 export const DeleteCardModalWindow = (props: deleteAccountInterface) => {
@@ -22,8 +22,9 @@ export const DeleteCardModalWindow = (props: deleteAccountInterface) => {
 
     useEffect(() => {
         if (deleteCard) {
+            setMessage('')
             if (input_name === customerName) {
-                props.DeleteCard(props.id, router)
+                props.DeleteCard(props.id, router, setMessage)
             } else {
                 setMessage('Имена не совпадают')
             }

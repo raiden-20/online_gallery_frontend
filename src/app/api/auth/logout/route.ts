@@ -1,16 +1,16 @@
 import {getServerSession} from "next-auth";
-import {AuthConfig} from "@/app/api/auth/[...nextauth]/route";
 import {getIdToken} from "../../../../../utils/sessionTokenAccessor";
+import {AuthConfig} from "../../../../../utils/auth_config";
 
 export async function GET() {
     const session = await getServerSession(AuthConfig)
 
     if (session) {
         const idToken = await getIdToken()
-        let url = `${process.env.END_SESSION_URL}?id_token_hint=${idToken}&post_logout_redirect_uri=${encodeURIComponent('http://localhost:3000')}`
+        let url = process.env.LOGOUT_FIRST_PART + `${idToken}` + process.env.LOGOUT_SECOND_PART
 
         try {
-            const resp = await fetch(url, {method: "GET"})
+            await fetch(url, {method: "GET"});
         } catch (error) {
             console.error(error)
             return new Response('', {

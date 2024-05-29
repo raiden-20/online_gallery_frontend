@@ -37,6 +37,15 @@
   gap: $gap-l1;
 }
 
+.auctions_gap {
+  gap: $gap-xxxl;
+}
+
+.auction_buttons_section {
+  display: grid;
+  row-gap: $gap-s;
+}
+
 .art_table {
   display: flex;
   flex-flow: column;
@@ -69,6 +78,7 @@
 }
 
 .details_section {
+
   display: grid;
   grid-template-columns: 1.1fr 2fr;
   gap: $gap-xl;
@@ -109,8 +119,50 @@
 }
 
 .underline {
+  cursor: pointer;
   font-size: $font-size-xs;
   text-decoration: underline;
+}
+
+.auctions_section {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-s;
+}
+
+.nav_section {
+  padding: 0;
+  height: min-content;
+}
+
+.auction_nav {
+  font-size: $font-size-xs !important;
+  font-weight: $weight;
+}
+
+.auction_rates_ul {
+  display: grid;
+  row-gap: $gap-xxxs;
+}
+
+.auction_rates_one {
+  display: grid;
+  align-items: center;
+  grid-template-columns: min-content auto max-content;
+  column-gap: $gap-xxxs;
+
+  * {
+    font-size: $font-size-s;
+  }
+}
+
+.auction_rates_one_img {
+  width: $img_button-width-30;
+  height: $img_button-width-30;
+
+  border-radius: $elements-radius;
+
+  object-fit: cover;
 }
 
 .footer {
@@ -124,4 +176,29 @@
     gap: $gap-xxxs;
     align-items: center;
   }
+}
+
+@media screen and (max-width: $width){
+  .root {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+
+  .photo_section {
+    width: 100%;
+    height: 50vh;
+
+    display: flex;
+    flex-flow: column;
+    gap: $gap-l1;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .one_photo {
+      width: 100%;
+    }
+  }
+
 }

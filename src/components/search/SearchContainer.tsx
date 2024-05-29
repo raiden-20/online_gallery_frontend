@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import {getAllArtists, getAllArts, getAllCustomers, getSmthByName} from "@/store/thunks/categoriesThunk";
 import {Search} from "@/components/search/Search";
+import {GetAuctionsCategories} from "@/store/thunks/auctionsThunk";
 
 interface containerState {
     categories: {
@@ -18,7 +19,8 @@ const mapDispatchToProps = {
     getSmthByName,
     getAllCustomers,
     getAllArtists,
-    getAllArts
+    getAllArts,
+    GetAuctionsCategories
 }
 
 export const SearchContainer = connect(mapStateToProps, mapDispatchToProps)(Search)

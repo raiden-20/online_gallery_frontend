@@ -21,24 +21,24 @@ const initialState: ArtReducerInterface = {
     arts_artist: [],
     arts_customer: [],
     oneArt: {
-        artId: '',
-        artistName: '',
-        name: '',
+        artId: '0',
+        artistName: 'Имя артиста',
+        name: 'Имя товара',
         type: '',
-        photoUrls: [],
-        price: '',
+        photoUrls: ['/default_art_photo.jpg', '/default_art_photo.jpg'],
+        price: '0',
         artistId: '',
         status: '',
         isPrivate: false,
         customerId: '',
         customerName: '',
-        description: '',
-        size: '',
-        createDate: '',
+        description: 'Тут описание',
+        size: '0х0',
+        createDate: '1970',
         tags: [],
         materials: [],
         frame: false,
-        publishDate: ''
+        publishDate: new Date('1970-01-01')
     }
 }
 
@@ -83,7 +83,7 @@ export const artReducer = (state = initialState, action: any) => {
                 tags: [],
                 materials: [],
                 frame: false,
-                publishDate: ''
+                publishDate: new Date('1970-01-01')
             }
 
             return stateCopy
@@ -104,6 +104,7 @@ export const artReducer = (state = initialState, action: any) => {
                     break
                 }
             }
+            action.oneArt.publishDate = new Date(action.oneArt.publishDate)
             stateCopy.oneArt = action.oneArt
 
             return stateCopy
@@ -114,7 +115,7 @@ export const artReducer = (state = initialState, action: any) => {
                 artistName: action.artistName,
                 artId: action.artId,
                 name: action.name,
-                type: action.typeArt,
+                type: action.type,
                 photoUrls: action.photoUrls,
                 price: action.price,
                 artistId: action.artistId,
@@ -128,7 +129,7 @@ export const artReducer = (state = initialState, action: any) => {
                 tags: action.tags,
                 materials: action.materials,
                 frame: action.frame,
-                publishDate: action.publishDate
+                publishDate: new Date(action.publishDate)
             }
 
             return stateCopy
@@ -161,11 +162,6 @@ export const setArtsCustomer = (arts_customer: ArtCustomerInterface[]) => {
 export const setOneArt = (oneArt: ArtInterface) => {
     return {
         type: SET_ONE_ART, oneArt
-    }
-}
-export const setOneArtStatus = (status: string) => {
-    return {
-        type: SET_ONE_ART_ELEMENTS, status
     }
 }
 export const clearOneArt = () => {

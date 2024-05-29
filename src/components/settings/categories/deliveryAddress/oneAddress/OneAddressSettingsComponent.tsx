@@ -13,13 +13,15 @@ interface oneAddressSettingsInterface {
 
     EditAddress(addressId: string, name: string, country: string, region: string, city: string,
                 index: string, location: string, isDefault: boolean,
-                router: AppRouterInstance): void
+                router: AppRouterInstance, setMessage: (message: string) => void): void
 
-    DeleteAddress(id: string, router: AppRouterInstance): void
+    DeleteAddress(id: string, router: AppRouterInstance, setMessage: (message: string) => void): void
 }
 
 export const OneAddressSettingsComponent = (props: oneAddressSettingsInterface) => {
     const router = useRouter()
+
+    const [message, setMessage] = useState('')
 
     const [isOpen, setIsOpen] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
@@ -31,21 +33,24 @@ export const OneAddressSettingsComponent = (props: oneAddressSettingsInterface) 
     const [input_index, setInput_index] = useState(props.oneAddress.index)
     const [input_location, setInput_location] = useState(props.oneAddress.location)
     const [input_isDefault, setInput_isDefault] = useState(props.oneAddress.isDefault)
-    const [ddefault, setDefault] = useState(false)
+    const [defaultAddress, setDefault] = useState(false)
 
     const [edit, setEdit] = useState(false)
     const [deleteAddress, setDeleteAddress] = useState(false)
 
     useEffect(() => {
-        if (edit || ddefault) {
+        if (edit || defaultAddress) {
+            setMessage('')
             props.EditAddress(props.oneAddress.addressId, input_name, input_country, input_region, input_city,
-                input_index, input_location, input_isDefault, router)
+                input_index, input_location, input_isDefault, router, setMessage)
             setEdit(false)
         }
-    }, [edit, ddefault]);
+    }, [edit, defaultAddress]);
+
     useEffect(() => {
         if (deleteAddress) {
-            props.DeleteAddress(props.oneAddress.addressId, router)
+            setMessage('')
+            props.DeleteAddress(props.oneAddress.addressId, router, setMessage)
             setDeleteAddress(false)
         }
     }, [deleteAddress]);
@@ -114,6 +119,9 @@ export const OneAddressSettingsComponent = (props: oneAddressSettingsInterface) 
                             </section>
                         </section>
                     }
+                    {message !== '' ?
+                        <p className={'message'}>{message}</p>
+                    : null}
                 </section>
                 : null
             }

@@ -7,23 +7,33 @@ $bell-width-mobile: 19px;
 $img-size: 20px;
 $bell-width: 23px;
 $img_button-width: 25px;
+$img_button-width-30: 30px;
+$img_button-width-35: 35px;
 $nav-avatar-size: 50px;
+$mini-avatar-size: 70px;
 $art-data-img-size: 80px;
 $one-photo-size: 100px;
+$one-photo-size-135: 135px;
 $img-size-medium: 165px;
 $img-size-big: 200px;
 $artist-photo-size: 245px;
 $cover-height: 250px;
+$width-255: 255px;
 $img-size-biggest: 307px;
-$one-work-width: 344px;
+$one-work-width: 328px;
 $hover-section-width: 400px;
 $section-action-img-width: 500px;
 $section-main-data-img-size: 510px;
+$width-600: 600px;
 $photo-section-width: 705px;
 $modal-width: 736px;
 $root-width-window: 800px;
 $max-device-width: 830px;
 $width: 1065px;
+$width-padding: 1113px;
+
+$button-height-main-button: 58px;
+$button-width-main-button: 158px;
 
 //height
 $input-height-small: 19px;
@@ -37,17 +47,18 @@ $textarea-height-2: 260px;
 
 // font-size
 $font-size: 20px;
-$font-size-xxxs: 0.6em; // 14px
-$font-size-xxs: 0.7em; // 15px
-$font-size-xs: 0.8em; // 16px
-$font-size-s: 0.9em; // 18px
-$font-size-m: 0.95em; // 19px
-$font-size-l0: 1.2em; // 24px
-$font-size-l: 1.4em; // 28px
-$font-size-xxl: 1.6em; // 32px
-$font-size-xxxl: 1.8em; // 36px
-$font-size-xxxxl: 2.4em; // 48px
-$font-size-64: 3.2em; // 64px
+$font-size-xxxs: 0.6rem; // 14px
+$font-size-xxs: 0.7rem; // 15px
+$font-size-xs: 0.8rem; // 16px
+$font-size-s: 0.9rem; // 18px
+$font-size-m: 0.95rem; // 19px
+$font-size-l22: 1.1rem; // 22px
+$font-size-l0: 1.2rem; // 24px
+$font-size-l: 1.4rem; // 28px
+$font-size-xxl: 1.6rem; // 32px
+$font-size-xxxl: 1.8rem; // 36px
+$font-size-xxxxl: 2.4rem; // 48px
+$font-size-64: 3.2rem; // 64px
 
 // font-weight
 $weight: 600;
@@ -64,6 +75,7 @@ $radius-20: 20px;
 $radius-48: 48px;
 
 // padding
+$padding-10: 10px;
 $padding-12: 12px;
 $padding-3: 15px;
 $section-padding-s: 16px;
@@ -78,19 +90,25 @@ $main-padding: 0 24px;
 $padding-2: 4px 16px;
 $padding-1: 6px 16px;
 $search-padding: 8px 16px;
+$button-padding-9-20: 4px 20px;
 $button-padding: 9px 24px;
+$button-padding-6-27: 6px 32px;
 $textarea-padding: 10px 16px;
 $padding-7: 12px 0;
 $padding-8: 12px 16px;
 $padding-12-32: 12px 32px;
 $filters-padding: 16px 0;
+$filters-padding-16-6: 16px 6px;
+$padding-16-48: 16px 0 48px 0;
 $padding-filters: 24px 48px;
+$padding-32: 32px 0;
 $padding-l: 35px 0;
 $padding-5: 45px 0;
 $padding-64: 64px 0;
 
 $padding-4: 15px 0 25px 0;
-$padding-s: 16px 0, 48px 0;
+$padding-s: 16px 0 48px 0;
+$padding-16-0-0-0: 16px 0  0;
 $padding-6: 32px 0 16px 0;
 
 
@@ -101,6 +119,7 @@ $gap-xxxxs: 6px;
 $gap-xxxs: 8px;
 $gap-xxs: 10px;
 $gap-xs: 12px;
+$gap-15: 15px;
 $gap-s: 16px;
 $gap-l1: 24px;
 $gap-l: 25px;
@@ -118,6 +137,7 @@ $border-button: 2px solid $black-color;
 $border-white: 5px solid $white-color;
 
 $shadow: 0 0 10px 0 $shadow-color;
+$shadow-top: 0 -10px 10px -10px $shadow-color;
 
 //z-index
 $z-index-menu-top: 30;

@@ -10,8 +10,8 @@ export const CreateArtSecondPage = (props: pageInterface) => {
     return (
         <section className={create_art_scss.root}>
             <header className={create_art_scss.header}>Выберите способ продажи:</header>
-            <ul className={create_art_scss.ul}>
-                <li className={create_art_scss.grey_bgc}
+            <section className={create_art_scss.ul}>
+                <section className={create_art_scss.grey_bgc}
                     onClick={() => props.setPage(3)}>
                     <section className={create_art_scss.type_section}>
                         <div>Фиксированная цена</div>
@@ -19,17 +19,17 @@ export const CreateArtSecondPage = (props: pageInterface) => {
                             <Image src={next_icon} alt={'next_icon'}/>
                         </button>
                     </section>
-                </li>
-                <li className={create_art_scss.grey_bgc}
-                    onClick={() => props.setPage(3)}>
+                </section>
+                <section className={create_art_scss.grey_bgc}
+                         onClick={() => props.setPage(4)}>
                     <section className={create_art_scss.type_section}>
                         <div>Аукцион</div>
                         <button>
                             <Image src={next_icon} alt={'next_icon'}/>
                         </button>
                     </section>
-                </li>
-            </ul>
+                </section>
+            </section>
         </section>
     )
 }

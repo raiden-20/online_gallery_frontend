@@ -1,8 +1,8 @@
 import axios from "axios";
-import {decrypt} from "../../utils/encryption";
+import {refreshAccessToken} from "../../utils/auth_config";
 
 export const PathsAPI = {
-    BASE: 'http://localhost:8080',
+    BASE: 'http://localhost:8080/api',
 
     CREATE: '/create',
     BUY: '/buy',
@@ -31,8 +31,16 @@ export const PathsAPI = {
 
     POST: '/post',
     ART: '/art',
+    AUCTION: '/auction',
+    RATE: '/rate',
+    RATES: '/rates',
+    MAX_RATE: '/maxrate',
+    AUCTIONS: '/auctions',
     CART: '/cart',
     ORDER: '/order',
+
+    NOTIFICATION: '/notification',
+    SSE: '/sse',
 
     PUBLIC: '/public',
     PRIVATE: '/private'
@@ -61,10 +69,18 @@ export const instanceWithoutToken = axios.create({
 instance.interceptors.response.use((response) => response,
     async (error) => {
         const prev = error.config
-        if (error.response.status === 401 && !prev.sent) {
+        if ((error.response.status === 401 || error.response.status === 400) && !prev.sent) {
             prev.sent = true;
-            const token = localStorage.getItem('access_token') as string
-            prev.headers['Authorization'] = `Bearer ${token}`;
+           // const res = await refreshTokenFn()
+// @ts-ignore
+            const session = JSON.parse(localStorage.getItem("session"));
+            const res = await refreshAccessToken(session)
+            console.log(res.accessToken)
+            prev.headers['Authorization'] = `Bearer ${res.accessToken}`;
+
+
+            console.log(res.accessToken)
+            prev.headers['Authorization'] = `Bearer ${res.accessToken}`;
 
             return instance(prev);
         }
@@ -74,10 +90,15 @@ instance.interceptors.response.use((response) => response,
 instanceFile.interceptors.response.use((response) => response,
     async (error) => {
         const prev = error.config
-        if (error.response.status === 401 && !prev.sent) {
+        if ((error.response.status === 401 || error.response.status === 400) && !prev.sent) {
             prev.sent = true;
-            const token = localStorage.getItem('access_token') as string
-            prev.headers['Authorization'] = `Bearer ${token}`;
+
+            //const res = await refreshTokenFn()
+            // @ts-ignore
+            const session = JSON.parse(localStorage.getItem("session"));
+            const res = await refreshAccessToken(session)
+            console.log(res.accessToken)
+            prev.headers['Authorization'] = `Bearer ${res.accessToken}`;
 
             return instanceFile(prev);
         }

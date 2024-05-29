@@ -18,16 +18,11 @@ interface ArtistProfileInterface {
 export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
     const router = useRouter()
 
-    useEffect(() => {
-        props.getArtistProfileData(Cookies.get('currentId') as string, router)
-    }, [props.artist_data.artistName, props.artist_data.avatarUrl, props.artist_data.coverUrl, props.artist_data.description]);
+    const [currentId] = useState(Cookies.get('currentId') as string)
 
     useEffect(() => {
-        setInput_coverUrl(props.artist_data.coverUrl)
-        setInput_avatarUrl(props.artist_data.avatarUrl)
-        setInput_name(props.artist_data.artistName)
-        setInput_description(props.artist_data.description)
-    }, [props.artist_data.artistName, props.artist_data.avatarUrl, props.artist_data.coverUrl, props.artist_data.description]);
+        props.getArtistProfileData(currentId, router)
+    }, []);
 
     const [input_coverFile, setInput_coverFile] = useState<File | string>('')
     const [input_coverUrl, setInput_coverUrl] = useState(props.artist_data.coverUrl)
@@ -47,6 +42,13 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
 
     const [message, setMessage] = useState('')
     const [isEditMobile, setIsEditMobile] = useState(false)
+
+    useEffect(() => {
+        setInput_coverUrl(props.artist_data.coverUrl)
+        setInput_avatarUrl(props.artist_data.avatarUrl)
+        setInput_name(props.artist_data.artistName)
+        setInput_description(props.artist_data.description)
+    }, [props.artist_data.artistName, props.artist_data.avatarUrl, props.artist_data.coverUrl, props.artist_data.description]);
 
 
     useEffect(() => {
@@ -127,7 +129,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                                     isEditMobile={isEditMobile}
                                     setIsEditMobile={setIsEditMobile}
                                     isPrivateSubscribe={props.artist_data.isPrivateSubscribe}
-                                    isPublicSubscribe={props.artist_data.isPublicSubscribe}/>
+                                    isPublicSubscribe={props.artist_data.isPublicSubscribe} countSubscribers={props.artist_data.countSubscribers}/>
             <ArtistCategoriesProfile input_description={input_description} setInput_description={setInput_description}
                                      setIsNeedChangeData={setIsNeedChangeData}
                                      isEditMobile={isEditMobile}

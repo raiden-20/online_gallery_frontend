@@ -7,14 +7,20 @@ import {
 } from "@/components/profile/profile_elemets/categories/artist/posts/elements/OneOpenedPhotoPostComponent";
 import React, {useRef, useState} from "react";
 
+type my = {
+    [key: string]: string;
+    artId: string;
+}
+
 interface photoInterface {
-    photos: {artId: string}
+    photos: my
 }
 
 export const PhotoSection = (props: photoInterface) => {
     const [isHover, setIsHover] = useState(true)
     const [openedPhotoSrc, setOpenedPhotoSrc] = useState<{[key: string]: string }>({})
-    const [indexOpened, setIndexOpened] = useState('')
+    const [indexOpened, setIndexOpened] = useState(0)
+    const [index, setIndex] = useState(0)
 
 
     const listRef = useRef<HTMLUListElement>(null);
@@ -35,7 +41,7 @@ export const PhotoSection = (props: photoInterface) => {
     return (
         <section>
             <ul ref={listRef}
-                className={artists_scss.one_user_photo}
+                className={artists_scss.one_user_photo + ' scrollbarNone'}
                 onMouseOver={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}>
                 {isHover ?
@@ -45,13 +51,14 @@ export const PhotoSection = (props: photoInterface) => {
                         <Image src={back_icon} alt={'next_icon'}/>
                     </button>
                     : null}
-                {Object.values(props.photos).map((value, index) => {
+                {Object.keys(props.photos).map((key, index) => {
                     return (
-                        <li key={index} onClick={() => {
+                        <li key={key} onClick={() => {
                             setOpenedPhotoSrc(props.photos)
-                            setIndexOpened(value)
+                            setIndexOpened(Number.parseInt(key))
+                            setIndex(index)
                         }}>
-                            <img src={value} className={artists_scss.onePhoto}
+                            <img src={props.photos[key]} className={artists_scss.onePhoto}
                                  alt={'photo'} crossOrigin={'anonymous'}/>
                         </li>
                     )
@@ -66,7 +73,8 @@ export const PhotoSection = (props: photoInterface) => {
                 : null}
             {Object.keys(openedPhotoSrc).length ?
                 <OneOpenedPhotoPostComponent setOpenedPhotoSrc={setOpenedPhotoSrc} openedPhotoSrc={openedPhotoSrc}
-                                             indexOpened={indexOpened} setIndexOpened={setIndexOpened}/>
+                                             indexOpened={indexOpened} setIndexOpened={setIndexOpened}
+                                             index={index} setIndex={setIndex}/>
                 : null}
         </section>
     )

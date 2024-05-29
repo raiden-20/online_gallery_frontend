@@ -37,6 +37,7 @@ $total-width: 255px;
 }
 
 .one_data {
+  width: 100%;
   display: flex;
   flex-flow: column;
   gap: $gap-s;
@@ -79,6 +80,7 @@ $total-width: 255px;
 }
 
 .data {
+  width: 100%;
   padding: $section-padding-s;
   background-color: $grey_bg-settings;
   border-radius: $elements-radius;
@@ -140,7 +142,7 @@ $total-width: 255px;
 }
 
 .root_window {
-  height: 575px - $root-padding-window;
+  height: 100%;
   display: grid;
   grid-template-rows: min-content auto min-content;
   gap: $gap-l1;

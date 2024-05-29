@@ -6,7 +6,7 @@ $who-buy-img-size: 35px;
 
 $star-width: 197px;
 
-$blur: 10px;
+$blur: 30px;
 
 .root {
   width: 100%;
@@ -23,6 +23,12 @@ $blur: 10px;
   display: grid;
 }
 
+.img_border {
+  display: grid;
+  overflow: hidden;
+  border-radius: $radius-xm;
+}
+
 .one_work {
   * {
     cursor: pointer;
@@ -37,6 +43,8 @@ $blur: 10px;
   .one_work_img {
     position: relative;
     width: 100%;
+    height: auto;
+    object-fit: cover;
 
     border-radius: $radius-xm;
   }
@@ -56,6 +64,20 @@ $blur: 10px;
   }
 
   .one_work_weight {
+    font-weight: $weight;
+  }
+}
+
+.zamok {
+  position: absolute;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  justify-items: center;
+  row-gap: $gap-l1;
+
+  div {
+    color: $white-color;
     font-weight: $weight;
   }
 }
@@ -125,6 +147,19 @@ $blur: 10px;
   display: none;
 }
 
+.auction_time_section {
+  font-size: $font-size-l0;
+}
+
+.auction_active {
+  color: $active;
+  font-weight: $weight;
+}
+
+.auction_no_active {
+  color: $grey-date;
+}
+
 @media screen and (orientation: portrait) {
   .root {
     display: grid;
@@ -148,7 +183,7 @@ $blur: 10px;
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (orientation: portrait){
   .create_art_button {
     img {
       width: 90px;
@@ -157,7 +192,7 @@ $blur: 10px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) and (orientation: portrait) {
   .create_art_button {
     img {
       width: 70px;

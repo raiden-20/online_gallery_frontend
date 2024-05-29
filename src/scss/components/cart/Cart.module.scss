@@ -4,10 +4,11 @@
 $buy-data-width: 280px;
 
 .root {
+  height: 100%;
   padding: $padding-s;
 
-  display: flex;
-  flex-flow: column;
+  display: grid;
+  grid-template-rows: min-content max-content auto;
   gap: $gap-xxl;
 }
 
@@ -18,8 +19,9 @@ $buy-data-width: 280px;
 
 .top_buttons_section {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: $gap-l;
+  gap: $gap-s;
 
   .top_button_checkbox {
     height: min-content;
@@ -73,9 +75,9 @@ $buy-data-width: 280px;
   width: $buy-data-width;
   height: min-content;
 
-  display: flex;
-  flex-flow: column;
+  display: grid;
   gap: $gap-l;
+
 
   .buy_data {
 
@@ -90,5 +92,60 @@ $buy-data-width: 280px;
     .price_text {
       font-weight: $weight;
     }
+  }
+}
+
+.no_elements {
+  text-align: center;
+  color: $grey-date;
+}
+
+@media screen and (orientation: portrait) {
+
+  .root {
+    padding: 0;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto min-content;
+    gap: $gap-xxl;
+  }
+
+  .buy_section {
+    position: relative;
+    left: 0;
+    width: 100%;
+    padding: $padding-16-0-0-0;
+    box-shadow: $shadow-top;
+    background: none;
+    border-radius: 0;
+
+    height: min-content;
+
+    display: grid;
+    align-items: end;
+
+    .buy_data {
+
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      gap: $gap-s;
+
+      .total_text , .price_text{
+        font-size: $font-size-l;
+      }
+
+      .price_text {
+        font-weight: $weight;
+      }
+    }
+  }
+
+  .arts {
+    height: 100%;
+    overflow: hidden;
   }
 }

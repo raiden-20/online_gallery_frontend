@@ -5,7 +5,8 @@ import sale_paintings_icon from '@/assets/icons/profile/artist_info/saled_painti
 import count_sale_icon from '@/assets/icons/profile/artist_info/count_saled.svg'
 import subscribers_icon from '@/assets/icons/profile/artist_info/subscribers.svg'
 import Image from "next/image";
-import {NULL} from "@/paths/elements";
+import Cookies from "js-cookie";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface AboutInterface {
     input_description: string
@@ -38,10 +39,11 @@ export const AboutArtistComponent = (props: AboutInterface) => {
     const [isClicked, setIsClicked] = useState(false)
     return (
         <section className={about_artist_scss.root}>
-            {(isClicked || props.isEditMobile) || props.input_description === '' ?
+            {((isClicked || props.isEditMobile) || (props.input_description === '' || props.input_description === ' ' ))&&
+            (Cookies.get('currentId') === Cookies.get('customerId') || Cookies.get('currentId') === Cookies.get('artistId')) ?
                 <textarea placeholder={'Введите информацию о себе'}
                           onChange={(event) => {
-                              if (props.input_description.length < 200) {
+                              if (props.input_description.length < CHARACTER_RESTRICTION.ARTIST_DESCRIPTIONS) {
                                   props.setInput_description(event.target.value)
                                   props.setIsNeedChangeData(true)
                               }
@@ -51,17 +53,17 @@ export const AboutArtistComponent = (props: AboutInterface) => {
                 <p onClick={() => setIsClicked(true)}>{props.input_description}</p>
             }
             <section className={about_artist_scss.info_section}>
-                {info.map((one_info: info) => {
+                {info.map((one_info: info, index) => {
                     if (one_info.data === null) {
                         return (
-                            <section className={about_artist_scss.one_info + ' ' + about_artist_scss.non}>
+                            <section className={about_artist_scss.one_info + ' ' + about_artist_scss.non} key={index}>
                                 <div>Запрещенные данные</div>
                                 <div></div>
                             </section>
                         )
                     } else {
                         return (
-                            <section className={about_artist_scss.one_info}>
+                            <section className={about_artist_scss.one_info} key={index}>
                                 <Image src={one_info.icon} alt={'icon'} className={about_artist_scss.icon}/>
                                 <div>{one_info.title}</div>
                                 <div>{one_info.data}</div>

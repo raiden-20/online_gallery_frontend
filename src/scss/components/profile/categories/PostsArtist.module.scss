@@ -112,3 +112,61 @@ $one-post-photo-width: 90vh;
 .p {
   color: $grey-date;
 }
+
+.settings_button {
+  display: none;
+}
+
+
+@media screen and (orientation: portrait) {
+  .header_buttons {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+
+  .button {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap-xxs;
+    font-weight: $weight;
+
+    img {
+      width: $img_button-width;
+    }
+  }
+
+  .one_post {
+    .one_post_title {
+      font-size: $font-size-l0;
+    }
+  }
+
+  .create_post {
+    display: none;
+  }
+
+  .settings_button {
+    display: flex;
+  }
+
+  .footer_buttons {
+    display: grid;
+    gap: $gap-s;
+
+    button {
+      height: min-content;
+      justify-content: start;
+    }
+  }
+
+  .one_post_opened_photo {
+    width: 100%;
+    object-fit: cover;
+
+    z-index: $z-index-menu;
+  }
+}

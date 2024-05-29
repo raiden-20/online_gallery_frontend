@@ -1,13 +1,38 @@
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import Image from "next/image";
 
 import open_icon from '@/assets/icons/categories/filter_category_open.svg'
 import close_icon from '@/assets/icons/categories/filter_category_close.svg'
 
 import filters_scss from '@/scss/components/categories/Filters.module.scss'
+import {Filters} from "@/interfaces/filters";
+import {containsOnlyDigits} from "../../../../../../utils/tests";
 
-export const PriceFiltersComponent = () => {
+interface filterInterface {
+    currentFilters: Filters
+    setFiltersPriceStartThunk(priceStart: string): void
+    setFiltersPriceEndThunk(priceEnd: string): void
+}
+
+export const PriceFiltersComponent = (props: filterInterface) => {
     const [isOpen, setIsOpen] = useState(false)
+
+    const [input_priceStart, setInput_priceStart] = useState('0')
+    const [input_priceEnd, setInput_priceEnd] = useState('1000000')
+
+    const setPriceStart = useCallback((value: string) => {
+        if (containsOnlyDigits(value)) {
+            setInput_priceStart(value)
+            props.setFiltersPriceStartThunk(value)
+        }
+    },[])
+
+    const setPriceEnd = useCallback((value: string) => {
+        if (containsOnlyDigits(value)) {
+            setInput_priceEnd(value)
+            props.setFiltersPriceEndThunk(value)
+        }
+    },[])
 
     return (
         <section className={filters_scss.category_root}>
@@ -19,16 +44,20 @@ export const PriceFiltersComponent = () => {
                 </button>
             </header>
             {isOpen ?
-                <ul className={filters_scss.price_section}>
-                    <li className={filters_scss.price_one_section} key={0}>
+                <section className={filters_scss.price_section}>
+                    <section className={filters_scss.price_one_section}>
                         <header className={filters_scss.price_one_section_title}>От</header>
-                        <input placeholder={'0'}/>
-                    </li>
-                    <li className={filters_scss.price_one_section} key={1}>
+                        <input value={input_priceStart}
+                                onChange={(event) =>
+                                    setPriceStart(event.target.value)}/>
+                    </section>
+                    <section className={filters_scss.price_one_section}>
                         <header className={filters_scss.price_one_section_title}>До</header>
-                        <input placeholder={'1 000 000'}/>
-                    </li>
-                </ul>
+                        <input value={input_priceEnd}
+                               onChange={(event) =>
+                                   setPriceEnd(event.target.value)}/>
+                    </section>
+                </section>
                 : null}
         </section>
     )

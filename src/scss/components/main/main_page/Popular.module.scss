@@ -6,18 +6,22 @@ $height: 600px;
   display: flex;
   gap: $gap-xxxl;
 
-  width: $width;
+  width: $width - 2 * $padding-24;
   overflow: hidden;
 }
 
 .root_oneWork {
+  * {
+    cursor: pointer;
+  }
+
   display: flex;
   flex-flow: column;
   gap: $gap-xl;
 
   .one_work_img {
     height: $height;
-    max-width: $width;
+    max-width: $width - 2 * $padding-24;
     border-radius: $radius-xm;
   }
 
@@ -45,5 +49,73 @@ $height: 600px;
     font-size: $font-size-l;
     font-weight: $weight;
     letter-spacing: 2px;
+  }
+}
+
+@media screen and (max-width: $width + 24px){
+
+  .ul {
+    max-width: calc(100vw - 2 * 24px);
+    display: flex;
+    gap: $gap-l1;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (orientation: portrait){
+  .root_oneWork {
+
+    .one_work_img {
+      height: $height / 1.3;
+      max-width: $width / 1.3;
+    }
+
+    .one_work_names {
+
+      div {
+        font-size: $font-size-l;
+      }
+    }
+
+    .one_work_price {
+      font-size: $font-size-l0;
+      font-weight: $weight;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .root_oneWork {
+
+    .one_work_img {
+      height: $height / 1.5;
+      max-width: $width / 1.5;
+    }
+
+    .one_work_names {
+
+      div {
+        font-size: $font-size-l0;
+      }
+    }
+
+    .one_work_price {
+      font-size: $font-size-l22;
+      font-weight: $weight;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .date {
+    font-size: $font-size-l0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .date {
+    font-size: $font-size-l22;
   }
 }

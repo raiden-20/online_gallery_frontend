@@ -1,0 +1,47 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+$width: 600px;
+
+.root {
+
+  position: fixed;
+  bottom: $gap-s;
+  right: $gap-s;
+
+  max-width: $width;
+  background-color: $grey-who;
+  border-radius: $radius-m;
+}
+
+.main_root {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  column-gap: $section-padding-s;
+  padding: $section-padding-s;
+
+  .data_img {
+    cursor: pointer;
+
+    width: $mini-avatar-size;
+    height: $mini-avatar-size;
+
+    object-fit: cover;
+    border-radius: $radius-big;
+  }
+
+  .data_text {
+    height: min-content;
+    color: $white-color;
+  }
+
+  .close {
+    display: grid;
+    align-self: start;
+  }
+
+  button {
+    display: grid;
+    align-items: start;
+  }
+}

@@ -17,6 +17,7 @@ import {
 import {useSession} from "next-auth/react";
 
 interface actionButtonsInterface {
+    countSubscribers: string
     isEditMobile: boolean
 
     isPublicSubscribe: boolean
@@ -29,7 +30,6 @@ interface actionButtonsInterface {
 }
 
 export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
-
     const router = useRouter()
 
     const [artistId] = useState(Cookies.get('artistId') as string)
@@ -37,10 +37,7 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
     const [currentId] = useState(Cookies.get('currentId') as string)
     const [currentRole] = useState(Cookies.get('currentRole') as string)
     const [role] = useState(Cookies.get('role') as string)
-    const {  data: session, status } = useSession();
-
-
-
+    const {status } = useSession();
 
     const [isCreatePost, setIsCreatePost] = useState(false)
     const [Subscribe, setSubscribe] = useState(false)
@@ -49,7 +46,8 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
         <section>
             {(artistId !== currentId) && role !== ROLES.ARTIST && currentRole === ROLES.ARTIST ?
                 <section className={header_profile_scss.subscriber_section}>
-                    {!props.isPrivateSubscribe ?
+                    {props.isPrivateSubscribe !== null && status === 'authenticated' ?
+                        !props.isPrivateSubscribe && props.countSubscribers !== null ?
                         <button className={'main_button'}
                                 onClick={() => {
                                     if (status === 'authenticated') {
@@ -70,12 +68,16 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                                     }
                                 }}>
                             Отменить поддержку
-                        </button>
+                        </button> : null
                     }
-                    {!props.isPublicSubscribe ?
+                    {!props.isPublicSubscribe?
                         <button className={header_profile_scss.button_bell}
                                 onClick={() => {
-                                    props.PublicAction(currentId, router)
+                                    if (status === 'authenticated') {
+                                        props.PublicAction(currentId, router)
+                                    } else {
+                                        signin()
+                                    }
                                 }}>
                             <Image src={bell_icon} className={header_profile_scss.bell_image}
                                    alt={'bell_icon'} width={0} height={0}/>
@@ -92,7 +94,8 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
                 </section>
                 :
                 artistId && artistId === currentId && currentRole === ROLES.ARTIST ?
-                    <button className={'main_button ' + header_profile_scss.subscriber_section}
+                    <button className={'main_button ' + header_profile_scss.subscriber_section
+                                        + ' ' + header_profile_scss.hidden_button}
                             onClick={() => router.push(MAIN_PATHS.CREATE_ART)}>
                         <Image src={art_icon} alt={'art_icon'}/>
                         <div>Выставить работу</div>

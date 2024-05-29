@@ -6,6 +6,7 @@
   gap: $gap-s;
 
   .header {
+    width: 100%;
     font-size: $font-size-l0;
     font-weight: $weight;
 
@@ -14,6 +15,11 @@
 
   .main_p {
     font-weight: $weight;
+  }
+
+  p {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .footer_buttons {
@@ -29,8 +35,23 @@
 }
 
 @media screen and (orientation: portrait){
-  .modal_window {
+  .root {
+    display: grid;
+    justify-items: start;
+
+    .header {
+      text-align: start;
+      font-size: $font-size-l0;
+    }
+
+    .footer_buttons {
+      display: flex;
+      flex-flow: column-reverse;
+      gap: $gap-s;
+    }
+  }
+
+  .input {
     width: 100%;
-    height: 100%;
   }
 }

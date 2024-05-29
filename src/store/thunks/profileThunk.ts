@@ -1,6 +1,7 @@
 import {Dispatch} from "redux";
 import {ProfileAPI} from "@/api/profileAPI";
 import {
+    clearProfileReducer,
     setArtistData,
     setCustomerData,
     setMyArtistData,
@@ -9,7 +10,6 @@ import {
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
-import {NULL} from "@/paths/elements";
 
 
 export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
@@ -26,6 +26,7 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
                         if (id === Cookies.get('customerId')) {
                             dispatch(setMyCustomerData(response[1]))
                         }
+                        dispatch(clearProfileReducer())
                         dispatch(setCustomerData(response[1]))
 
                         break
@@ -50,6 +51,7 @@ export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
                             dispatch(setMyArtistData(response[1]))
                             Cookies.set('artistName', response[1].artistName)
                         }
+                        dispatch(clearProfileReducer())
                         dispatch(setArtistData(response[1]))
                         break
                     }
@@ -72,7 +74,6 @@ export const changeCustomerProfileData = (customerName: string, birthDate: strin
                 switch (response[0]) {
                     case 200 : {
                         router.refresh()
-
                         break
                     }
                     case 404 : {

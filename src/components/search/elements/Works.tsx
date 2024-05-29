@@ -3,7 +3,7 @@ import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-
 import {useRouter} from "next/navigation";
 import {ArtShortInterface} from "@/interfaces/artInterface";
 import {ART_TYPES_MANY} from "@/paths/elements";
-import {WorksArts} from "@/components/categories/works/works/WorksArts";
+import {WorksComponent} from "@/components/categories/works/works/WorksComponent";
 
 interface WorksInterface {
     whoIsClicked: number
@@ -45,6 +45,6 @@ export const Works = (props: WorksInterface) => {
     }, [props.input_name, props.whoIsClicked]);
 
     return (
-        <WorksArts arts={props.search}/>
+        <WorksComponent arts={props.search}/>
     )
 }

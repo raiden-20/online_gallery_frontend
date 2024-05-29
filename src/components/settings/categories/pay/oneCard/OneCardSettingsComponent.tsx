@@ -12,11 +12,13 @@ import {DeleteCardContainer} from "@/components/settings/categories/pay/deleteCa
 interface oneCardSettingsInterface {
     oneCard: OneCardInterface,
     EditCard(cardId: string, type: string, number: string, date: string, cvv: string, isDefault: boolean,
-             router: AppRouterInstance): void
+             router: AppRouterInstance, setMessage: (message: string) => void): void
 }
 
 export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
     const router = useRouter()
+
+    const [message, setMessage] = useState('')
 
     const [isOpen, setIsOpen] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
@@ -26,19 +28,20 @@ export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
     const [input_date, setInput_date] = useState(props.oneCard.date)
     const [input_cvv, setInput_cvv] = useState(props.oneCard.cvv)
     const [input_isDefault, setInput_isDefault] = useState(props.oneCard.isDefault)
-    const [ddefault, setDefault] = useState(false)
+    const [defaultCard, setDefault] = useState(false)
 
     const [save, setSave] = useState(false)
 
     useEffect(() => {
-        if (save || ddefault) {
+        if (save || defaultCard) {
+            setMessage('')
             let dateArr = input_date.split('/')
             let date = '20' + dateArr[1] + '-' + dateArr[0] + '-' + '01'
             props.EditCard(props.oneCard.cardId, props.oneCard.type, input_number, date,
-                           input_cvv, input_isDefault, router)
+                           input_cvv, input_isDefault, router, setMessage)
             setSave(false)
         }
-    }, [save, ddefault]);
+    }, [save, defaultCard]);
 
     return (
         <section>
@@ -49,7 +52,7 @@ export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
                         <section className={settings_scss.card_data}>
                             <div>{props.oneCard.type === '' ? 'MIR' : props.oneCard.type}</div>
                             <div>•••• •••• ••••
-                                {props.oneCard.number.substring(props.oneCard.number.length - 4, props.oneCard.number.length - 1)}
+                                {' ' + props.oneCard.number.substring(props.oneCard.number.length - 4, props.oneCard.number.length)}
                             </div>
                         </section>
                     </section>
@@ -98,6 +101,9 @@ export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
                             </section>
                         </section>
                     }
+                    {message !== '' ?
+                        <p className={'message'}>{message}</p>
+                    : null}
                 </section>
                 : null
             }

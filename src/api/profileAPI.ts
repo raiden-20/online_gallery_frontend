@@ -4,7 +4,6 @@ import {
     instanceWithoutToken,
     PathsAPI,
 } from "@/api/api_main";
-import Cookies from "js-cookie";
 
 export const ProfileAPI = {
     async CustomerDataAPI(id: string) {
@@ -52,8 +51,8 @@ export const ProfileAPI = {
         formData.append('birthDate', birthDate)
         formData.append('gender', gender)
         formData.append('description', description === '' ? ' ' : description)
-        formData.append('avatarUrl', avatarUrl)
-        formData.append('coverUrl', coverUrl)
+        formData.append('avatarUrl', avatarUrl=== '' ? ' ' : avatarUrl)
+        formData.append('coverUrl', coverUrl=== '' ? ' ' : coverUrl)
         formData.append('avatar', avatar === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : avatar)
         formData.append('cover', cover === ' ' ? new File([], 'empty.txt', {type: 'text/plain'}) : cover)
         try {

@@ -74,8 +74,8 @@ $data-width: 705px;
   }
 
   .art_data_name {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto max-content;
     align-items: center;
   }
 
@@ -123,4 +123,70 @@ $data-width: 705px;
 
 .textarea::-webkit-scrollbar {
   width: 0;
+}
+
+.p {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (orientation: portrait){
+  .main {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+
+  .data {
+    max-width: 100%;
+   }
+
+  .art_data {
+    display: grid;
+    grid-template-columns: auto;
+    gap: $gap-s;
+
+    .img {
+      display: grid;
+      width: $art-data-img-size;
+      height: $art-data-img-size;
+      object-fit: cover;
+      border-radius: $elements-radius;
+    }
+
+    .art_data_name {
+      width: 100%;
+      display: grid;
+      justify-self: start;
+    }
+
+    .price {
+      display: grid;
+      justify-self: end;
+      font-size: $font-size-l;
+      font-weight: $weight;
+    }
+  }
+
+  .textarea {
+    width: 100%;
+    min-height: 107px;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: $elements-radius;
+    border: 1px solid $grey-filter-price-border;
+  }
+
+  .table {
+    display: grid;
+    grid-template-columns: 1.7fr 2fr;
+  }
+
+  .table_condition {
+    display: grid;
+    grid-template-columns: 1.7fr 2fr;
+  }
+
+  .modal_width {
+    width: 100%;
+  }
 }

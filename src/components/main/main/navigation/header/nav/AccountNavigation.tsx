@@ -1,13 +1,13 @@
 import accountNavigation_scss from "@/scss/components/main/navigation/AccountNavigation.module.scss";
 import Image from "next/image";
 import Cookies from "js-cookie";
-import {MAIN_PATHS, ROLES} from "@/paths/main";
+import {MAIN_PATHS, PATHS_CATEGORY, ROLES} from "@/paths/main";
 import {deleteCookies, keycloakSessionLogOut} from "@/store/thunks/authThunk";
 import {signOut} from "next-auth/react";
 import {useRouter} from "next/navigation";
 import navigation_scss from "@/scss/components/main/navigation/Navigation.module.scss";
 import close from "@/assets/icons/nav/close.svg";
-import {useEffect, useState} from "react";
+import { useState} from "react";
 import {Customer} from "@/interfaces/customerInterface";
 import {Artist} from "@/interfaces/artistInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -17,9 +17,7 @@ interface accountNavInterface {
     my_artist_data: Artist
 
     getCustomerProfileData(id: string, router: AppRouterInstance): void
-
     getArtistProfileData(id: string, router: AppRouterInstance): void
-
     setIsMenuClicked(isMenuClicked: boolean): void
 }
 
@@ -29,11 +27,6 @@ export const AccountNavigation = (props: accountNavInterface) => {
     const [artistId] = useState(Cookies.get('artistId'))
     const [registrationFlag] = useState(Cookies.get('registrationFlag'))
 
-    useEffect(() => {
-        props.getCustomerProfileData(Cookies.get('customerId') as string, router)
-        props.getArtistProfileData(Cookies.get('artistId') as string, router)
-    }, []);
-
     return (
         <section className={accountNavigation_scss.account_section}>
             <section className={accountNavigation_scss.account_various}>
@@ -41,9 +34,9 @@ export const AccountNavigation = (props: accountNavInterface) => {
                     <Image src={close} alt={'close'}
                            width={0} height={0} className={navigation_scss.img}/>
                 </button>
-                <ul className={accountNavigation_scss.account_nav}>
+                <section className={accountNavigation_scss.account_nav}>
                     {registrationFlag === 'true' ?
-                        <li className={accountNavigation_scss.account_data} key={0}
+                        <section className={accountNavigation_scss.account_data}
                             onClick={() => {
                                 Cookies.set('role', ROLES.CUSTOMER)
                                 Cookies.set('currentRole', ROLES.CUSTOMER)
@@ -56,16 +49,16 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                  crossOrigin="anonymous"
                                  alt={'avatar'}/>
                             <section className={accountNavigation_scss.name_section}>
-                                <div className={accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
+                                <div className={'p ' + accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
                                 <button className={accountNavigation_scss.button}>
                                     Покупатель
                                 </button>
                             </section>
-                        </li>
+                        </section>
                         : null
                     }
                     {artistId !== undefined ?
-                        <li className={accountNavigation_scss.account_data} key={1}
+                        <section className={accountNavigation_scss.account_data}
                             onClick={() => {
                                 Cookies.set('role', ROLES.ARTIST)
                                 Cookies.set('currentRole', ROLES.ARTIST)
@@ -78,14 +71,14 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                  crossOrigin="anonymous"
                                  alt={'avatar'}/>
                             <section className={accountNavigation_scss.name_section}>
-                                <div className={accountNavigation_scss.name}>{props.my_artist_data.artistName}</div>
+                                <div className={'p ' + accountNavigation_scss.name}>{props.my_artist_data.artistName}</div>
                                 <button className={accountNavigation_scss.button}>
                                     Художник
                                 </button>
                             </section>
-                        </li>
+                        </section>
                         :
-                        <li key={2}>
+                        <section>
                             <button className={accountNavigation_scss.buttonAdd}>
                                 <div className={accountNavigation_scss.plus}>+</div>
                                 <div className={accountNavigation_scss.artist_button}
@@ -93,51 +86,63 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                     Художник
                                 </div>
                             </button>
-                        </li>
+                        </section>
                     }
-                    <li key={3}>
+                    <section>
                         <button className={accountNavigation_scss.button}
-                                onClick={() => router.push(MAIN_PATHS.CART)}>
+                                onClick={() => {
+                                    router.push(MAIN_PATHS.CART)
+                                    Cookies.set('role', ROLES.CUSTOMER)
+                                    Cookies.set('currentRole', ROLES.CUSTOMER)
+                                    Cookies.set('currentId', Cookies.get('customerId') as string)
+                                }
+                                }>
                             Корзина
                         </button>
-                    </li>
-                    <li key={4}>
+                    </section>
+                    <section>
                         <button className={accountNavigation_scss.button}
                         onClick={() => router.push(MAIN_PATHS.ORDERS)}>
                             Заказы
                         </button>
-                    </li>
-                    <li key={5}>
-                        <button className={accountNavigation_scss.button}>
+                    </section>
+                    <section>
+                        <button className={accountNavigation_scss.button}
+                                onClick={() => router.push(MAIN_PATHS.NOTIFICATIONS)}>
                             Уведомления
                         </button>
-                    </li>
-                    <li key={6}>
+                    </section>
+                    <section>
                         <button className={accountNavigation_scss.button}
-                                onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS)}>
+                                onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS + PATHS_CATEGORY.PRIVATE)}>
                             Подписки
                         </button>
-                    </li>
-                    <li key={7}>
+                    </section>
+                    <section>
                         <button className={accountNavigation_scss.button}
-                                onClick={() => router.push(MAIN_PATHS.SETTINGS)}>
+                                onClick={() => {
+                                    router.push(MAIN_PATHS.SETTINGS)
+                                    Cookies.set('role', ROLES.CUSTOMER)
+                                    Cookies.set('currentRole', ROLES.CUSTOMER)
+                                    Cookies.set('currentId', Cookies.get('customerId') as string)
+                                }}>
                             Настройки
                         </button>
-                    </li>
-                    <li key={8}>
+                    </section>
+                    <section>
                         <button className={accountNavigation_scss.button}
                                 onClick={() => {
                                     keycloakSessionLogOut()
                                         .then(() => {
                                             deleteCookies()
 
-                                            signOut({callbackUrl: MAIN_PATHS.MAIN})
+                                            signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
                                         })
                                 }}>
                             Выход
                         </button>
-                    </li>
-                </ul>
+                    </section>
+                </section>
             </section>
         </section>
     )

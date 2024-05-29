@@ -1,14 +1,45 @@
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import filters_scss from "@/scss/components/categories/Filters.module.scss";
 import Image from "next/image";
 import open_icon from "@/assets/icons/categories/filter_category_open.svg";
 import close_icon from "@/assets/icons/categories/filter_category_close.svg";
-import search_icon from "@/assets/icons/categories/search.svg";
+import {Filters} from "@/interfaces/filters";
 
-export const FrameFiltersComponent = () => {
+interface filterInterface {
+    currentFilters: Filters
+    setFiltersFrameThunk(frame: boolean | null): void
+}
+
+export const FrameFiltersComponent = (props: filterInterface) => {
     const [isOpen, setIsOpen] = useState(false)
 
-    const frame = ['Присутствует', 'Отсутствует']
+    const frame = [
+        {title: 'Присутствует', name: true, isActive: false},
+        {title: 'Отсутствует', name: false, isActive: false}]
+
+    const setFrame = useCallback((isActive: boolean, name: boolean, index: number) => {
+        frame[index].isActive = !isActive
+
+        if (name) {
+            if (isActive) {
+                if (frame[2].isActive) {
+                    props.setFiltersFrameThunk(false)
+                } else {
+                    props.setFiltersFrameThunk(null)
+                }
+            } else {
+                if (isActive) {
+                    if (frame[1].isActive) {
+                        props.setFiltersFrameThunk(true)
+                    } else {
+                        props.setFiltersFrameThunk(null)
+                    }
+                }
+            }
+        }
+
+
+    }, [])
 
     return (
         <section className={filters_scss.category_root}>
@@ -21,16 +52,13 @@ export const FrameFiltersComponent = () => {
             </header>
             {isOpen ?
                 <section className={filters_scss.section_with_search}>
-                    <section className={filters_scss.search}>
-                        <Image src={search_icon} alt={'search_icon'}/>
-                        <input placeholder={'Поиск'}/>
-                    </section>
                     <ul className={filters_scss.size_section + ' ' + filters_scss.checkbox_section + ' scrollbar'}>
                         {frame.map((oneFrame, index) => {
                             return (
                                 <li className={filters_scss.size_one_section} key={index}>
-                                    <input type={'checkbox'}/>
-                                    <div>{oneFrame}</div>
+                                    <input type={'checkbox'}
+                                           onClick={() => setFrame(oneFrame.isActive, oneFrame.name, index)}/>
+                                    <div>{oneFrame.title}</div>
                                 </li>
                             )
                         })}

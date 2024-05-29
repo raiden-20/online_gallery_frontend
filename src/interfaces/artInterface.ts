@@ -52,3 +52,11 @@ export interface ArtCustomerInterface {
     isPrivate: string
     price: string
 }
+
+export interface MainPageArts {
+    name: string,
+    photo: string
+    artistName: string,
+    id: string
+    price: string
+}

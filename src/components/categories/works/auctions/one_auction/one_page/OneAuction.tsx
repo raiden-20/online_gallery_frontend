@@ -36,7 +36,7 @@ export const OneAuction = (props: oneWorkInterface) => {
     const {status} = useSession()
 
     useEffect(() => {
-        props.GetAuction(lastPath, currentId, router)
+        props.GetAuction(lastPath, currentId === undefined ? 'null' : currentId, router)
     }, []);
 
     useEffect(() => {

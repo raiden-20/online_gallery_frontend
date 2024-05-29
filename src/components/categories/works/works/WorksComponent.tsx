@@ -7,10 +7,6 @@ interface workInterface {
 
 }
 
-interface ColumnListProps {
-    items: string[];
-}
-
 export const WorksComponent = (props: workInterface) => {
 
     return (

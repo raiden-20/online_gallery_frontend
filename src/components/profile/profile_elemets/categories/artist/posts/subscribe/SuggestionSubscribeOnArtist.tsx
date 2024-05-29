@@ -12,7 +12,7 @@ export const SuggestionSubscribeOnArtist = () => {
 
     const [isClicked, setIsClicked] = useState(false)
 
-    const { data: session, status } = useSession()
+    const { status } = useSession()
 
     const [artistName] = useState(Cookies.get('artistName'))
 

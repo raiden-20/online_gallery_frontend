@@ -4,7 +4,6 @@ import {
     instanceWithoutToken,
     PathsAPI,
 } from "@/api/api_main";
-import Cookies from "js-cookie";
 
 export const ProfileAPI = {
     async CustomerDataAPI(id: string) {

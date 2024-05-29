@@ -36,7 +36,7 @@ export const reformatDateFull = (inputDate: string) => {
 
 export const reformatDateFullNextDay = (inputDate: string) => {
     let date = new Date(inputDate)
-    date.setTime(date.getTime() + 24 * 60 * 60 * 1000);;
+    date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
     const day = date.getDate();
     const month = months[date.getMonth()];
     const year = date.getFullYear();

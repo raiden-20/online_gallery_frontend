@@ -1,4 +1,3 @@
-import {ArtShortInterface} from "@/interfaces/artInterface";
 import {Filters, SizeInterface} from "@/interfaces/filters";
 import {AuctionsComponent} from "@/components/categories/works/auctions/AuctionsComponent";
 import {useEffect} from "react";

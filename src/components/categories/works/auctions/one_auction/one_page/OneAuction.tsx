@@ -48,9 +48,8 @@ export const OneAuction = (props: oneWorkInterface) => {
         const getRateSSE = async () => {
             const signal = controller.signal
             const who = role === ROLES.CUSTOMER ? customerId : role === ROLES.ARTIST ? artistId : null
-            const urll = PathsAPI.BASE + `/auction/rates/userId=${who}&auctionId=${lastPath}`
-            //const url = PathsAPI.BASE + PathsAPI.AUCTION + PathsAPI.RATES + `/userId=${who}&auctionId=${props.auction.auctionId}`
-            await fetchEventSource(urll,
+            const url = PathsAPI.BASE + `/auction/rates/userId=${who}&auctionId=${lastPath}`
+            await fetchEventSource(url,
                 {
                     headers: {
                         'Content-Type': 'multipart/form-data; boundary=-------234567890156t72347'
@@ -68,7 +67,7 @@ export const OneAuction = (props: oneWorkInterface) => {
 
         }
         if (status === 'authenticated' && (customerId !== '' && customerId !== undefined) && lastPath !== '') {
-            getRateSSE()
+            getRateSSE().then()
         }
         return () => {
             controller.abort()

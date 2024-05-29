@@ -8,7 +8,6 @@ import {MAIN_PATHS, ROLES} from "@/paths/main";
 
 import {fetchEventSource} from '@microsoft/fetch-event-source';
 import {useRouter} from "next/navigation";
-import {clearOnePopUpNotification} from "@/store/thunks/notificationsThunk";
 import {useSession} from "next-auth/react";
 import {PathsAPI} from "@/api/api_main";
 
@@ -59,7 +58,7 @@ export const OnePopUpNotificationComponent = (props: OnePopUpNotificationCompone
            
         }
         if (status === 'authenticated' && (customerId !== '' && customerId !== undefined) && Cookies.get('SSE') !== 'true') {
-            getNotificationSSE()
+            getNotificationSSE().then()
         }
         return () => {
             controller.abort()

@@ -1,8 +1,5 @@
-import create_art_scss from "@/scss/components/create_art/CreateArt.module.scss";
 import Image from "next/image";
-import cancel_icon from "@/assets/icons/create_art/cancel.svg";
 import {usePathname, useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/paths/main";
 
 import create_order_scss from '@/scss/components/create_order/CreateOder.module.scss'
 

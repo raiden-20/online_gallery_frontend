@@ -1,4 +1,4 @@
-import {instance, instanceWithoutToken, PathsAPI} from "@/api/api_main";
+import {instance, PathsAPI} from "@/api/api_main";
 
 export const CredentialsAndAddressAPI = {
     async AddAddressAPI(name: string, country: string, region: string, city: string,

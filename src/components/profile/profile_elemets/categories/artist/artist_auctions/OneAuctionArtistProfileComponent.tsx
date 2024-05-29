@@ -4,7 +4,6 @@ import {useRouter} from "next/navigation";
 import {useState} from "react";
 import {OneWorkWhoBuy} from "@/components/categories/works/works/one_work/category/elements/OneWorkWhoBuy";
 import {AuctionCategoriesInterface} from "@/interfaces/auctionInterface";
-import {auctionTimeMessage} from "../../../../../../../utils/tests";
 import {
     OneAuctionCategoriesTime
 } from "@/components/categories/works/auctions/one_auction/category/elements/OneAuctionCategoriesTime";

@@ -1,4 +1,3 @@
-import nav_profile_scss from "@/scss/components/profile/Navigation.module.scss";
 import settings_scss from "@/scss/components/settings/Settings.module.scss";
 import Image from "next/image";
 import more_icon from "@/assets/icons/settings/more.svg";

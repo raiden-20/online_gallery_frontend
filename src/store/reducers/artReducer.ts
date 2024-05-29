@@ -115,7 +115,7 @@ export const artReducer = (state = initialState, action: any) => {
                 artistName: action.artistName,
                 artId: action.artId,
                 name: action.name,
-                type: action.typeArt,
+                type: action.type,
                 photoUrls: action.photoUrls,
                 price: action.price,
                 artistId: action.artistId,
@@ -162,11 +162,6 @@ export const setArtsCustomer = (arts_customer: ArtCustomerInterface[]) => {
 export const setOneArt = (oneArt: ArtInterface) => {
     return {
         type: SET_ONE_ART, oneArt
-    }
-}
-export const setOneArtStatus = (status: string) => {
-    return {
-        type: SET_ONE_ART_ELEMENTS, status
     }
 }
 export const clearOneArt = () => {

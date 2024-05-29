@@ -5,8 +5,6 @@ import filter_icon from '@/assets/icons/categories/filter.svg'
 import works_root_scss from '@/scss/components/categories/WorksRoot.module.scss'
 import {usePathname} from "next/navigation";
 import {PATHS_CATEGORY} from "@/paths/main";
-import {ArtShortInterface} from "@/interfaces/artInterface";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {FiltersContainer} from "@/components/categories/works/filters/FIltersContainer";
 import {Filters} from "@/interfaces/filters";
 import {WorkArtsContainer} from "@/components/categories/works/works/WorkArtsContainer";

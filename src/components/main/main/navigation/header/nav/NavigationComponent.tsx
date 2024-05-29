@@ -24,7 +24,7 @@ export const NavigationComponent = (props: navigationInterface) => {
     const {  data: session, status } = useSession();
 
     const [isAccountClicked, setIsAccountClicked] = useState(false)
-    const [isAccountNavClicked, setIsAccountNavClicked] = useState(false)
+    const [, setIsAccountNavClicked] = useState(false)
 
     const [role] = useState(Cookies.get('role'))
 

@@ -19,7 +19,6 @@ export const OneWorkButton = (props: oneWorkInterface) => {
     const router = useRouter()
     const {status} = useSession();
     const [role] = useState(Cookies.get('role') as string)
-    const [customerId] = useState(Cookies.get('customerId') as string)
     const [artistId] = useState(Cookies.get('artistId') as string)
 
     const [addToCart, setAddToCart] = useState(false)

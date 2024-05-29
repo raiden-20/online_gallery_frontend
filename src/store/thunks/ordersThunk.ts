@@ -2,7 +2,6 @@ import {Dispatch} from "redux";
 import {OrdersAPI} from "@/api/ordersAPI";
 import {setOneOrder, setOrders} from "@/store/reducers/orderReducer";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {CartAPI} from "@/api/cartAPI";
 import {MAIN_PATHS} from "@/paths/main";
 
 export const GetOrders = (currentId: string) =>

@@ -9,8 +9,7 @@ import {useEffect} from "react";
 import {OrderInterface} from "@/interfaces/cartInterface";
 import {OneOrderButtons} from "@/components/orders/one_order/OneOrderButtons";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {ORDER_STATUS, ORDER_STATUS_RUS} from "@/paths/elements";
-import {SetTotalCount} from "@/store/thunks/cartThunk";
+import {ORDER_STATUS_RUS} from "@/paths/elements";
 import {reformatDateFull, reformatDateFullNextDay} from "../../../../utils/tests";
 
 interface oneOrderInterface {

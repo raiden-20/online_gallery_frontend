@@ -27,7 +27,6 @@ import {CartContainer} from "@/components/cart/CartContainer";
 import {CreateOrderContainer} from "@/components/create_order/CreateOrderContainer";
 import {OrdersContainer} from "@/components/orders/OrdersContainer";
 import {OneOrderContainer} from "@/components/orders/one_order/OneOrderContainer";
-import {EditArtContainer} from "@/components/create_art/edit_art/art/EditArtContainer";
 import {setToken} from "@/api/api_main";
 import {deleteCookies, keycloakSessionLogOut} from "@/store/thunks/authThunk";
 import {NotificationsContainer} from "@/components/notifications/NotificationsContainer";
@@ -63,7 +62,7 @@ export const Root = (props: RootInterface) => {
                     keycloakSessionLogOut()
                         .then(() => {
                             deleteCookies()
-                            signOut({callbackUrl: MAIN_PATHS.MAIN})
+                            signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
                         })
                 } else {
                     // @ts-ignore

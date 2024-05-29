@@ -19,30 +19,6 @@ export interface UserShort {
     arts: { artId: string }
     isActive: boolean
 }
-
-export interface ArtShortSearch {
-    artId: string,
-    name: string,
-    photoUrl: string,
-    price: string,
-    artistId: string,
-    artistName: string
-}
-
-export interface ArtShortProfile {
-    artId: string,
-    name: string,
-    photoUrl: string,
-    price: string,
-    artistId: string,
-    artistName: string
-    isPrivate: boolean
-    available: string
-    customerId: string
-    avatarUrl : string
-    customerName : string
-}
-
 export interface ArtShortCategories {
     artId: string,
     name: string,

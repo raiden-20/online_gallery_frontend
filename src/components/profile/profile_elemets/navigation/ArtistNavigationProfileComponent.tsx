@@ -1,8 +1,8 @@
 import nav_profile_scss from '@/scss/components/profile/Navigation.module.scss'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import Cookies from "js-cookie";
 import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
-import {usePathname, useRouter} from "next/navigation";
+import {useRouter} from "next/navigation";
 
 interface ProfileNavInterface {
     isPrivateSubscribe: boolean
@@ -13,7 +13,6 @@ interface ProfileNavInterface {
 
 export const ArtistNavigationProfileComponent = (props: ProfileNavInterface) => {
     const router = useRouter()
-    const pathname = usePathname().split('/')[usePathname().split('/').length - 1]
 
     const elements: {title: string, url: string}[] = [
         {title: 'Работы', url: ''},

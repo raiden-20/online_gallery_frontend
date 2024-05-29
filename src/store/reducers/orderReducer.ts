@@ -28,7 +28,8 @@ const initialState: ordersInterface = {
         artName: "",
         price: 0,
         status: "",
-        artistComment: ""
+        artistComment: "",
+        createDate: ""
     }
 }
 

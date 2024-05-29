@@ -5,6 +5,7 @@ import React from "react";
 import '@/scss/globals/globals.scss'
 import '@/scss/globals/pages.scss'
 import {ProviderMain} from "../../utils/providerMain";
+import {YandexMetric} from "../../utils/YandexMetric";
 
 const inter = Roboto({weight: '400', subsets: ["latin"]});
 
@@ -20,6 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <ProviderMain>
+            <YandexMetric/>
             <html lang="en">
             <body className={inter.className}>{children}</body>
             </html>

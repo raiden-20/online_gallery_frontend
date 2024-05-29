@@ -13,6 +13,7 @@ export const PATHS_CATEGORY = {
 
     MAIN: '/main',
     AUTH: '/auth',
+    ABOUT: '/about',
     PROFILE: '/profile',
     SETTINGS: '/settings',
     ART: '/art',

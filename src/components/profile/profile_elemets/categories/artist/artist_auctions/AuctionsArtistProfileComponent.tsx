@@ -29,6 +29,13 @@ export const AuctionsArtistProfileComponent = (props: worksProfileInterface) => 
 
     return (
         <main className={auction_profile_scss.root}>
+            {props.auctions_artist.length === 0 ?
+                <section className={'no_elements'}>
+                    Художник еще не проводил аукционы...
+                </section>
+            :
+                null
+            }
             {props.auctions_artist.filter((oneArt) =>
                 oneArt.status === AUCTION_STATUS.AVAILABLE)
                 .map((oneAuction, index) => {

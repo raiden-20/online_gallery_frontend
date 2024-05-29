@@ -70,7 +70,7 @@ export const OneCartComponent = (props: oneCartInterface) => {
                         <section className={one_cart_scss.art_data}>
                             <div
                                 className={one_cart_scss.text + ' ' + one_cart_scss.name}>{props.oneArt.artistName}</div>
-                            <div className={one_cart_scss.text}>{props.oneArt.name}</div>
+                            <div className={one_cart_scss.name_art}>{props.oneArt.name}</div>
                         </section>
                     </section>
                     <section className={one_cart_scss.art_data + ' ' + one_cart_scss.price_section}>

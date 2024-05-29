@@ -1,7 +1,7 @@
 @import "@/scss/globals/color";
 @import "@/scss/globals/main_values";
 
-$data-width: 705px;
+$data-width: 660px;
 
 .root {
   display: flex;
@@ -26,7 +26,7 @@ $data-width: 705px;
 .main {
   width: 100%;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: $data-width auto;
   gap: $gap-s;
 }
 
@@ -128,6 +128,17 @@ $data-width: 705px;
 .p {
   display: flex;
   flex-wrap: wrap;
+}
+
+.footer {
+  display: flex;
+  gap: $gap-xxxxxs;
+  align-items: center;
+
+  button {
+    font-size: $font-size-xs;
+    text-decoration: underline;
+  }
 }
 
 @media screen and (orientation: portrait){

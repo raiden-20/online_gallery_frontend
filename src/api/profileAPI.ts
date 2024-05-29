@@ -47,8 +47,6 @@ export const ProfileAPI = {
                                 avatarUrl: string, coverUrl: string, avatar: File | string, cover: File | string) {
         const formData = new FormData()
 
-        debugger
-
         formData.append('customerName', customerName)
         formData.append('birthDate', birthDate)
         formData.append('gender', gender)
@@ -72,8 +70,6 @@ export const ProfileAPI = {
     async ChangeArtistDataAPI(artistName: string, avatarUrl: string, coverUrl: string,
                               avatar: File | string, cover: File | string, description: string) {
         const formData = new FormData()
-
-        debugger
 
         formData.append('artistName', artistName)
         formData.append('avatarUrl', avatarUrl)

@@ -32,13 +32,18 @@ export const WorksArtistProfileComponent = (props: worksProfileInterface) => {
 
     return (
         <ul className={works_profile_scss.root}>
-            {props.arts_artist.map((oneArt: ArtArtistInterface, index) => {
-                return (
-                    <li key={index}>
-                        <OneWorkArtistProfileComponent artistName={props.artistName} oneArt={oneArt}/>
-                    </li>
-                )
-            })
+            {props.arts_artist.length > 0 ?
+                props.arts_artist.map((oneArt: ArtArtistInterface, index) => {
+                    return (
+                        <li key={index}>
+                            <OneWorkArtistProfileComponent artistName={props.artistName} oneArt={oneArt}/>
+                        </li>
+                    )
+                })
+            :
+                <section className={'no_elements'}>
+                    Художник еще не публиковал товары....
+                </section>
             }
             {currentId === artistId ?
                 <button className={works_profile_scss.create_art_button}

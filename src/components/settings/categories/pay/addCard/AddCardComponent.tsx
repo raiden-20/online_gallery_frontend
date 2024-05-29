@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
 import {CHARACTER_RESTRICTION} from "@/paths/elements";
+import {containsOnlyDigits, removeSpaces} from "../../../../../../utils/tests";
 
 interface addCardInterface {
     AddCard(number: string, date: string, cvv: string, isDefault: boolean,
@@ -29,7 +30,7 @@ export const AddCardComponent = (props: addCardInterface) => {
             let dateArr = input_date.split('/')
             let date = '20' + dateArr[1] + '-' + dateArr[0] + '-' + '01'
 
-            props.AddCard(input_number, date, input_cvv, input_isDefault, router)
+            props.AddCard(removeSpaces(input_number), date, input_cvv, input_isDefault, router)
             setAddCard(false)
         }
     }, [addCard]);
@@ -51,17 +52,26 @@ export const AddCardComponent = (props: addCardInterface) => {
                 <section className={settings_scss.address_pay_main}>
                     <input value={input_number}
                            onChange={(event) => {
-                               if (event.target.value.length < CHARACTER_RESTRICTION.CARD) {
-                                   setInput_number(event.target.value)}
+                               if ((event.target.value.length < CHARACTER_RESTRICTION.CARD
+                                   && containsOnlyDigits(event.target.value))
+                               || event.target.value === '') {
+                                   setInput_number(event.target.value)
                                }
                            }
+                    }
                            placeholder={'Номер карты'}/>
                     <section className={settings_scss.input_section}>
                         <input value={input_date}
                                onChange={(event) => setInput_date(event.target.value)}
                                placeholder={'ММ/ГГ'}/>
                         <input value={input_cvv}
-                               onChange={(event) => setInput_cvv(event.target.value)}
+                               onChange={(event) => {
+                                   if ((event.target.value.length < CHARACTER_RESTRICTION.CARD
+                                           && containsOnlyDigits(event.target.value))
+                                       || event.target.value === '') {
+                                       setInput_cvv(event.target.value)
+                               }}
+                        }
                                type={'password'} placeholder={'CVV'}/>
                     </section>
                     <section className={settings_scss.checkbox_section}>

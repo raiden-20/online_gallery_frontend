@@ -52,7 +52,12 @@ $hover-section-width: 400px;
   }
 
   .text {
-    font-size: $font-size-l;
+    font-size: $font-size-l0;
+  }
+
+  .name_art {
+    font-size: $font-size-l0;
+    color: $grey-border-main;
   }
 
   .section {

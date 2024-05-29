@@ -8,6 +8,8 @@ import {OneCardInterface} from "@/interfaces/credentials";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
 import {DeleteCardContainer} from "@/components/settings/categories/pay/deleteCard/DeleteCardContainer";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
+import {containsOnlyDigits} from "../../../../../../utils/tests";
 
 interface oneCardSettingsInterface {
     oneCard: OneCardInterface,
@@ -65,14 +67,25 @@ export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
             {isOpen ?
                 <section className={settings_scss.address_pay_main}>
                     <input value={input_number}
-                           onChange={(event) => setInput_number(event.target.value)}
+                           onChange={(event) => {
+                               if ((event.target.value.length < CHARACTER_RESTRICTION.CARD
+                                       && containsOnlyDigits(event.target.value))
+                                   || event.target.value === '') {
+                                   setInput_number(event.target.value)
+                               }
+                           }}
                            placeholder={'Номер карты'} disabled={!isEdit}/>
                     <section className={settings_scss.input_section}>
                         <input value={input_date}
                                onChange={(event) => setInput_date(event.target.value)}
                                placeholder={'ММ/ГГ'} disabled={!isEdit}/>
                         <input value={input_cvv}
-                               onChange={(event) => setInput_cvv(event.target.value)}
+                               onChange={(event) => {
+                                   if ((event.target.value.length < CHARACTER_RESTRICTION.CARD
+                                           && containsOnlyDigits(event.target.value))
+                                       || event.target.value === '') {
+                                       setInput_cvv(event.target.value)
+                                   }}}
                                type={'password'} placeholder={'CVV'} disabled={!isEdit}/>
                     </section>
                     {isEdit ?

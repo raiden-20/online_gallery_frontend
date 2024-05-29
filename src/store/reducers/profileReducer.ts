@@ -20,7 +20,7 @@ interface ProfileReducerInterface {
 
 const initialState: ProfileReducerInterface = {
     customer_data: {
-        customerName: "Пользователь",
+        customerName: "",
         birthDate: new Date('1970-01-01'),
         gender: "",
         avatarUrl: "",
@@ -29,7 +29,7 @@ const initialState: ProfileReducerInterface = {
         artistId: ""
     },
     artist_data: {
-        artistName: "Пользователь",
+        artistName: "",
         avatarUrl: "",
         coverUrl: "",
         customerId: "",

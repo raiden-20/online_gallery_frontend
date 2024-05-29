@@ -18,7 +18,7 @@ export const postsReducer = (state = initialState, action: any) => {
 
         case SET_POSTS: {
             for (let i = 0; i < action.posts.length; i++) {
-                action.posts[i].date = action.posts[i].date.substring(0, 10);
+                action.posts[i].date = new Date(action.posts[i].date);
             }
             stateCopy.posts = action.posts
 

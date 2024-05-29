@@ -2,7 +2,7 @@ import subscriptions_scss from '@/scss/components/subscriptions/Subscriptions.mo
 import {SubscriptionsCustomers} from "@/interfaces/subscriptions";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import Cookies from "js-cookie";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
 
@@ -24,19 +24,25 @@ export const SubscriptionsCustomerPrivate = (props: subscriptionsInterface) => {
 
     return (
         <ul className={subscriptions_scss.subscription_public_section}>
-            {props.subscriptions.map((one: SubscriptionsCustomers, index) => {
-                return (
-                    <li className={subscriptions_scss.one_artist_public} key={index}
-                    onClick={() => {
-                        Cookies.set('currentRole', ROLES.CUSTOMER)
-                        Cookies.set('currentId', one.customerName)
-                        router.push(MAIN_PATHS.PROFILE_ARTIST + `/${one.customerId}`)
-                    }}>
-                        <img src={one.avatarUrl} alt={'avatar'} crossOrigin="anonymous"/>
-                        <div className={'p'}>{one.customerName}</div>
-                    </li>
-                )
-            })}
+            {props.subscriptions.length > 0 ?
+                props.subscriptions.map((one: SubscriptionsCustomers, index) => {
+                    return (
+                        <li className={subscriptions_scss.one_artist_public} key={index}
+                            onClick={() => {
+                                Cookies.set('currentRole', ROLES.CUSTOMER)
+                                Cookies.set('currentId', one.customerName)
+                                router.push(MAIN_PATHS.PROFILE_ARTIST + `/${one.customerId}`)
+                            }}>
+                            <img src={one.avatarUrl} alt={'avatar'} crossOrigin="anonymous"/>
+                            <div className={'p'}>{one.customerName}</div>
+                        </li>
+                    )
+                })
+                :
+                <section className={'no_elements'}>
+                    У вас нет подписок...
+                </section>
+            }
         </ul>
     )
 }

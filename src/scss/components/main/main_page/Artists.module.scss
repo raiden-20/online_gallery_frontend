@@ -1,6 +1,6 @@
 @import "@/scss/globals/main_values";
 
-$img-size: 325px;
+$img-size: 309px;
 $name-section-height: 51px;
 
 .ul {
@@ -35,7 +35,7 @@ $name-section-height: 51px;
   left: $section-padding-s;
   bottom: $section-padding-s;
 
-  max-width: 100%;
+  max-width: 90%;
   height: $name-section-height;
 
   background-color: $white-color;

@@ -7,6 +7,8 @@ import mark_icon from '@/assets/icons/settings/mark.svg'
 import {OneAddressInterface} from "@/interfaces/credentials";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
+import {CHARACTER_RESTRICTION} from "@/paths/elements";
+import {containsOnlyDigits, containsOnlyLetters} from "../../../../../../utils/tests";
 
 interface oneAddressSettingsInterface {
     oneAddress: OneAddressInterface,
@@ -61,8 +63,8 @@ export const OneAddressSettingsComponent = (props: oneAddressSettingsInterface) 
                 <section className={settings_scss.address}>
                     <Image src={mark_icon} className={!props.oneAddress.isDefault ? settings_scss.hide : undefined}
                            alt={'mark_icon'}/>
-                    <p className={settings_scss.p}>{props.oneAddress.location}, {props.oneAddress.city}, {
-                        props.oneAddress.region}, {props.oneAddress.country}, {props.oneAddress.name}</p>
+                    <p className={settings_scss.p}>{props.oneAddress.location}, {' ' + props.oneAddress.city}, {
+                        ' ' + props.oneAddress.region}, {' ' + props.oneAddress.country}, {' ' + props.oneAddress.name}</p>
                 </section>
                 <button onClick={() => setIsOpen(!isOpen)}>
                     <Image src={isOpen ? open_icon : close_icon} className={settings_scss.icon}
@@ -72,26 +74,56 @@ export const OneAddressSettingsComponent = (props: oneAddressSettingsInterface) 
             {isOpen ?
                 <section className={settings_scss.address_pay_main}>
                     <input value={input_name}
-                           onChange={(event) => setInput_name(event.target.value)}
+                           onChange={(event) => {
+                               if ((event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_NAME &&
+                                   containsOnlyLetters(event.target.value)) || event.target.value === '') {
+                                   setInput_name(event.target.value)
+                               }
+                           }}
                            placeholder={'ФИО'} disabled={!isEdit}/>
                     <section className={settings_scss.input_section}>
                         <input value={input_country}
-                               onChange={(event) => setInput_country(event.target.value)}
+                               onChange={(event) => {
+                                   if ((event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_COUNTRY &&
+                                       containsOnlyLetters(event.target.value)) || event.target.value === '') {
+                                       setInput_country(event.target.value)
+                                   }
+                               }}
                                placeholder={'Страна'} disabled={!isEdit}/>
                         <input value={input_region}
-                               onChange={(event) => setInput_region(event.target.value)}
+                               onChange={(event) => {
+                                   if ((event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_REGION &&
+                                           containsOnlyLetters(event.target.value))
+                                       || event.target.value === '') {
+                                       setInput_region(event.target.value)
+                                   }
+                               }}
                                placeholder={'Область'} disabled={!isEdit}/>
                     </section>
                     <section className={settings_scss.input_section}>
                         <input value={input_city}
-                               onChange={(event) => setInput_city(event.target.value)}
+                               onChange={(event) => {
+                                   if ((event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_CITY &&
+                                           containsOnlyLetters(event.target.value))
+                                       || event.target.value === '') {
+                                       setInput_city(event.target.value)
+                                   }
+                               }}
                                placeholder={'Город'} disabled={!isEdit}/>
                         <input value={input_index}
-                               onChange={(event) => setInput_index(event.target.value)}
+                               onChange={(event) =>  {
+                                   if (containsOnlyDigits(event.target.value) || event.target.value === '') {
+                                       setInput_index(event.target.value)}
+                               }
+                               }
                                placeholder={'Индекс'} disabled={!isEdit}/>
                     </section>
                     <input value={input_location}
-                           onChange={(event) => setInput_location(event.target.value)}
+                           onChange={(event) => {
+                               if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_LOCATION) {
+                                   setInput_location(event.target.value)
+                               }
+                           }}
                            placeholder={'Адрес'} disabled={!isEdit}/>
                     {isEdit ?
                         <button className={'main_button'}

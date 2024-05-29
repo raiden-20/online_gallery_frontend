@@ -1,3 +1,5 @@
+import serveStatic from "serve-static";
+
 export const months = [
     "января", "февраля", "марта",
     "апреля", "мая", "июня",
@@ -84,6 +86,10 @@ export const zerosForOrder = (orderId: string) => {
         res += '0'
     }
     return res
+}
+
+export function containsOnlyLetters(inputString: string): boolean {
+    return /^\D*$/.test(inputString);
 }
 
 

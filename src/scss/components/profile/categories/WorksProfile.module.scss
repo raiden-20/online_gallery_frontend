@@ -43,7 +43,7 @@ $blur: 30px;
   .one_work_img {
     position: relative;
     width: 100%;
-    height: auto;
+    height: $artist-photo-size;
     object-fit: cover;
 
     border-radius: $radius-xm;
@@ -52,7 +52,7 @@ $blur: 30px;
   .one_work_img_not_available {
     position: relative;
     width: 100%;
-
+    height: $artist-photo-size;
     border-radius: $radius-xm;
     filter: blur($blur);
   }

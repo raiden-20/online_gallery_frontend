@@ -16,8 +16,7 @@ export const CreateArt = (name: string, type: string, photos: File[], price: str
             .then((response) => {
                 switch (response[0]) {
                     case 200 : {
-                        router.push(MAIN_PATHS.ONE_ART + `/${response[1].artId}`)
-                        router.push(MAIN_PATHS.PROFILE_ARTIST + `/${Cookies.get('artistId')}`)
+                        router.push(MAIN_PATHS.ONE_ART + `/${response[1]}`)
                         break
                     }
                     case 409 : {

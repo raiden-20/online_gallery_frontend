@@ -20,6 +20,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+
+  font-size: $font-size-l0;
+  * {
+    font-size: $font-size-l0;
+  }
+}
+
+.data_address {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xxxs;
 }
 
 .order_id {
@@ -36,6 +47,7 @@
 }
 
 .address {
+  color: $grey-border-main;
   font-size: $font-size-xs;
   width: 100%;
   display: -webkit-box;

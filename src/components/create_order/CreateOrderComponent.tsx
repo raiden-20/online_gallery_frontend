@@ -13,7 +13,7 @@ import {CardEditContainer} from "@/components/create_order/edit/cart/CardEditCon
 import {OneAddressInterface, OneCardInterface} from "@/interfaces/credentials";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {AddressEditContainer} from "@/components/create_order/edit/address/AddressEditContainer";
-import {ClickJustButton} from "../../../utils/YandexMetric";
+import {ClickJustButton} from "../../../utils/YandexClick";
 
 
 interface createOrderInterface {
@@ -86,8 +86,9 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                                 return (
                                     <section className={create_order_scss.data} key={index}>
                                         <p className={create_order_scss.p}>
-                                            {oneAddress.location}, {oneAddress.city},
-                                            {oneAddress.region}, {oneAddress.country}, {oneAddress.name}
+                                            {oneAddress.location}, {' ' + oneAddress.city},
+                                            {' ' + oneAddress.region}, {' ' + oneAddress.country},
+                                            {' ' + oneAddress.name}
                                         </p>
                                     </section>
                                 )
@@ -108,7 +109,7 @@ export const CreateOrderComponent = (props: createOrderInterface) => {
                                         className={create_order_scss.data + ' ' + create_order_scss.card_data + ' ' + settings_scss.p}>
                                         <div>{oneCard.type === '' ? 'MIR' : oneCard.type}</div>
                                         <div>•••• •••• ••••
-                                            {oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length - 1)}</div>
+                                            {' ' + oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length)}</div>
                                     </section>
                                 )
                             }

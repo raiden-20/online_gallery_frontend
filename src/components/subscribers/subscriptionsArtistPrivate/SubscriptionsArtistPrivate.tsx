@@ -34,18 +34,18 @@ export const SubscriptionsArtistPrivate = (props: subscriptionsInterface) => {
                 <button className={'no_main_color'}></button>
             </header>
             <ul className={subscriptions_scss.subscriptions_private_section}>
-                {props.subscriptionsArtistsPrivate.map((oneArtist: SubscriptionsArtistsPrivate, index) => {
-                    return (
-                        <li key={index} className={subscriptions_scss.grid}
-                        onClick={() => {
-                            Cookies.set('currentRole', ROLES.ARTIST)
-                            Cookies.set('currentId', oneArtist.artistId)
-                            router.push(MAIN_PATHS.PROFILE_ARTIST + `/${oneArtist.artistId}`)
-                        }}>
-                            <OneSubscription oneArtist={oneArtist}/>
-                        </li>
-                    )
-                })
+                {props.subscriptionsArtistsPrivate.length > 0 ?
+                    props.subscriptionsArtistsPrivate.map((oneArtist: SubscriptionsArtistsPrivate, index) => {
+                        return (
+                            <li key={index} className={subscriptions_scss.grid}>
+                                <OneSubscription oneArtist={oneArtist}/>
+                            </li>
+                        )
+                    })
+                :
+                    <section className={'no_elements'}>
+                         У вас нет подписок...
+                    </section>
                 }
             </ul>
         </section>

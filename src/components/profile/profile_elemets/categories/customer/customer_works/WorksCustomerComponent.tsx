@@ -4,7 +4,7 @@ import {
     OneWorkCustomerComponent
 } from "@/components/profile/profile_elemets/categories/customer/customer_works/OneWorkCustomerComponent";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {useRouter} from "next/navigation";
 interface workInterface {
@@ -23,13 +23,19 @@ export const WorksCustomerComponent = (props: workInterface) => {
 
     return (
         <ul className={works_profile_scss.root}>
-            {props.arts_customer.map((oneArt: ArtCustomerInterface, index) => {
-                return (
-                    <li key={index}>
-                        <OneWorkCustomerComponent oneArt={oneArt}/>
-                    </li>
-                )
-            })}
+            {props.arts_customer.length > 0 ?
+                props.arts_customer.map((oneArt: ArtCustomerInterface, index) => {
+                    return (
+                        <li key={index}>
+                            <OneWorkCustomerComponent oneArt={oneArt}/>
+                        </li>
+                    )
+                })
+                :
+                <section className={'no_elements'}>
+                    Покупатель не имеет купленных картин....
+                </section>
+            }
         </ul>
     )
 }

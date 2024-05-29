@@ -7,7 +7,7 @@ import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {ClickJustButton} from "../../../../../../../../utils/YandexMetric";
+import {ClickJustButton} from "../../../../../../../../utils/YandexClick";
 
 interface oneWorkInterface {
     artId: string

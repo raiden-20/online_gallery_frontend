@@ -5,7 +5,7 @@ import {useSession} from "next-auth/react";
 import {useState} from "react";
 import Cookies from "js-cookie";
 import {AUCTION_STATUS} from "@/interfaces/auctionInterface";
-import {ClickJustButton} from "../../../../../../../../utils/YandexMetric";
+import {ClickJustButton} from "../../../../../../../../utils/YandexClick";
 
 interface OneAuctionButtonsInterface {
     setSetMaxRate(setMaxRate: boolean): void

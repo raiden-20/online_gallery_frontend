@@ -77,8 +77,8 @@ export const ChangeAuctionOrderComponent = (props: createOrderInterface) => {
                                 return (
                                     <section className={create_order_scss.data} key={index}>
                                         <p className={create_order_scss.p}>
-                                            {oneAddress.location}, {oneAddress.city},
-                                            {oneAddress.region}, {oneAddress.country}, {oneAddress.name}
+                                            {oneAddress.location}, {' ' + oneAddress.city},
+                                            {' ' + oneAddress.region}, {' ' + oneAddress.country}, {' ' + oneAddress.name}
                                         </p>
                                     </section>
                                 )
@@ -99,7 +99,7 @@ export const ChangeAuctionOrderComponent = (props: createOrderInterface) => {
                                         className={create_order_scss.data + ' ' + create_order_scss.card_data + ' ' + settings_scss.p}>
                                         <div>{oneCard.type === '' ? 'MIR' : oneCard.type}</div>
                                         <div>•••• •••• ••••
-                                            {oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length - 1)}</div>
+                                            {' ' + oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length)}</div>
                                     </section>
                                 )
                             }

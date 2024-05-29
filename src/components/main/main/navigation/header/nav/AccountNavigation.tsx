@@ -11,7 +11,7 @@ import { useState} from "react";
 import {Customer} from "@/interfaces/customerInterface";
 import {Artist} from "@/interfaces/artistInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {ClickJustButton} from "../../../../../../../utils/YandexMetric";
+import {ClickJustButton} from "../../../../../../../utils/YandexClick";
 
 interface accountNavInterface {
     my_customer_data: Customer

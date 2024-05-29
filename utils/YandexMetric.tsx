@@ -4,11 +4,6 @@ import React, {useEffect} from 'react';
 import 'dotenv/config'
 import Script from "next/script";
 import {usePathname, useSearchParams} from "next/navigation";
-
-type Props = {
-    children: React.ReactNode;
-};
-
 export const YandexMetric = () => {
 
     const pathname = usePathname()
@@ -16,6 +11,7 @@ export const YandexMetric = () => {
 
     useEffect(() => {
         const url = `${pathname}?${searchParams}`
+        // @ts-ignore
         ym(97428671, "hit", url);
     }, [pathname, searchParams]);
 
@@ -37,9 +33,3 @@ export const YandexMetric = () => {
         </Script>
     )
 };
-
-
-
-export const ClickJustButton = (value: string) => {
-    ym(97428671, 'reachGoal', value)
-}

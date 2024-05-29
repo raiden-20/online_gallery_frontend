@@ -25,10 +25,9 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
                         }
                         if (id === Cookies.get('customerId')) {
                             dispatch(setMyCustomerData(response[1]))
+                        } else {
+                            dispatch(setCustomerData(response[1]))
                         }
-                        dispatch(clearProfileReducer())
-                        dispatch(setCustomerData(response[1]))
-
                         break
                     }
                     case 404 : {
@@ -50,9 +49,9 @@ export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
                         if (id === Cookies.get('artistId')) {
                             dispatch(setMyArtistData(response[1]))
                             Cookies.set('artistName', response[1].artistName)
+                        } else {
+                            dispatch(setArtistData(response[1]))
                         }
-                        dispatch(clearProfileReducer())
-                        dispatch(setArtistData(response[1]))
                         break
                     }
                     case 404 : {
@@ -181,7 +180,10 @@ export const isCustomerCreate = (router: AppRouterInstance) =>
                                 Cookies.set('registrationFlag', 'process')
                             } else {
                                 Cookies.set('registrationFlag', 'true')
-                                Cookies.set('currentId', Cookies.get('customerId') as string)
+                                if (Cookies.get('currentId') === undefined) {
+                                    Cookies.set('currentId', Cookies.get('customerId') as string)
+                                }
+
                             }
                             break
                         }

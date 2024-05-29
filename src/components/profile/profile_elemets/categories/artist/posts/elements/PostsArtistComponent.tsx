@@ -51,13 +51,19 @@ export const PostsArtistComponent = (props: PostArtistInterface) => {
                 </header>
                 : null}
             <ul className={posts_artist_module.root}>
-                {props.posts.map((onePost: OnePostInterface, index) => {
-                    return (
-                        <li key={index} className={index != 0 ? posts_artist_module.border : undefined}>
-                            <OnePostArtistComponent onePost={onePost} DeletePrivatePost={props.DeletePrivatePost}/>
-                        </li>
-                    )
-                }).reverse()}
+                {props.posts.length > 0 ?
+                    props.posts.map((onePost: OnePostInterface, index) => {
+                        return (
+                            <li key={index} className={index != 0 ? posts_artist_module.border : undefined}>
+                                <OnePostArtistComponent onePost={onePost} DeletePrivatePost={props.DeletePrivatePost}/>
+                            </li>
+                        )
+                    }).reverse()
+                    :
+                    <section className={'no_elements'}>
+                        Художник не имеет ни одного поста...
+                    </section>
+                }
                 {currentId === artistId ?
                     <button className={works_profile_scss.create_art_button}
                             onClick={() => setIsCreatePost(true)}>

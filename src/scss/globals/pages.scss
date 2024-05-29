@@ -153,6 +153,11 @@
   text-overflow: ellipsis;
 }
 
+.no_elements {
+  text-align: center;
+  color: $grey-date;
+}
+
 .scrollbar::-webkit-scrollbar {
   width: 5px;
 }

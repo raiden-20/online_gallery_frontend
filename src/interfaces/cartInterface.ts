@@ -24,4 +24,5 @@ export interface OrderInterface {
     price: number
     status: string
     artistComment: string
+    createDate: string
 }

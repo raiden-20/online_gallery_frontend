@@ -7,7 +7,7 @@ import {signOut} from "next-auth/react";
 import {useRouter} from "next/navigation";
 import navigation_scss from "@/scss/components/main/navigation/Navigation.module.scss";
 import close from "@/assets/icons/nav/close.svg";
-import {useEffect, useState} from "react";
+import { useState} from "react";
 import {Customer} from "@/interfaces/customerInterface";
 import {Artist} from "@/interfaces/artistInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -136,7 +136,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                         .then(() => {
                                             deleteCookies()
 
-                                            signOut({callbackUrl: MAIN_PATHS.MAIN})
+                                            signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
                                         })
                                 }}>
                             Выход

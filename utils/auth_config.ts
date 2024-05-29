@@ -4,14 +4,15 @@ import {AuthOptions} from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
 import {encrypt} from "./encryption";
 
-async function refreshAccessToken(token: JWT) {
-    const resp = await fetch(`${process.env.REFRESH_TOKEN_URL}`, {
+export async function refreshAccessToken(token: JWT) {
+    console.log(process.env)
+    const resp = await fetch(`http://localhost:8000/realms/online_gallery/protocol/openid-connect/token`, {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
         body: new URLSearchParams({
-            client_id: process.env.KEYCLOAK_CLIENT_ID as string,
-            client_secret: process.env.KEYCLOAK_CLIENT_SECRET as string,
+            client_id: `${process.env.KEYCLOAK_CLIENT_ID}`,
+            client_secret: `${process.env.KEYCLOAK_CLIENT_SECRET}`,
             grant_type: 'refresh_token',
             refresh_token: token.refresh_token as string
         }),

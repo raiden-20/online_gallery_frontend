@@ -33,19 +33,19 @@ export const OneAddressSettingsComponent = (props: oneAddressSettingsInterface) 
     const [input_index, setInput_index] = useState(props.oneAddress.index)
     const [input_location, setInput_location] = useState(props.oneAddress.location)
     const [input_isDefault, setInput_isDefault] = useState(props.oneAddress.isDefault)
-    const [ddefault, setDefault] = useState(false)
+    const [defaultAddress, setDefault] = useState(false)
 
     const [edit, setEdit] = useState(false)
     const [deleteAddress, setDeleteAddress] = useState(false)
 
     useEffect(() => {
-        if (edit || ddefault) {
+        if (edit || defaultAddress) {
             setMessage('')
             props.EditAddress(props.oneAddress.addressId, input_name, input_country, input_region, input_city,
                 input_index, input_location, input_isDefault, router, setMessage)
             setEdit(false)
         }
-    }, [edit, ddefault]);
+    }, [edit, defaultAddress]);
 
     useEffect(() => {
         if (deleteAddress) {

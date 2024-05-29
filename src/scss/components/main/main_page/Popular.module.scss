@@ -6,7 +6,7 @@ $height: 600px;
   display: flex;
   gap: $gap-xxxl;
 
-  width: $width;
+  width: $width - 2 * $padding-24;
   overflow: hidden;
 }
 
@@ -17,7 +17,7 @@ $height: 600px;
 
   .one_work_img {
     height: $height;
-    max-width: $width;
+    max-width: $width - 2 * $padding-24;
     border-radius: $radius-xm;
   }
 

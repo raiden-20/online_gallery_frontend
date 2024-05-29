@@ -40,7 +40,8 @@ export const NotificationsComponent = (props: NotificationsComponentInterface) =
                 break
             }
             case TYPES_NOTIFICATIONS.AUCTION  : {
-                url = '' // todo
+                url = MAIN_PATHS.AUCTION + `/${subjectId}`
+                router.push(url)
                 break
             }
             case TYPES_NOTIFICATIONS.ORDER  : {

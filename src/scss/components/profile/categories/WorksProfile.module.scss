@@ -43,6 +43,8 @@ $blur: 30px;
   .one_work_img {
     position: relative;
     width: 100%;
+    height: auto;
+    object-fit: cover;
 
     border-radius: $radius-xm;
   }
@@ -143,6 +145,19 @@ $blur: 30px;
 
 .who_buy_name_hide {
   display: none;
+}
+
+.auction_time_section {
+  font-size: $font-size-l0;
+}
+
+.auction_active {
+  color: $active;
+  font-weight: $weight;
+}
+
+.auction_no_active {
+  color: $grey-date;
 }
 
 @media screen and (orientation: portrait) {

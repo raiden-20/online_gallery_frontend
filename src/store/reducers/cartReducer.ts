@@ -3,6 +3,7 @@ import {CartInterface} from "@/interfaces/cartInterface";
 const SET_CART = 'SET_CART'
 const SET_SELECTED = 'SET_SELECTED'
 const DELETE_FROM_CART = 'DELETE_FROM_CART'
+const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT'
 
 interface ArtReducerInterface {
     cart: CartInterface[]
@@ -35,6 +36,11 @@ export const cartReducer = (state = initialState, action: any) => {
 
         case SET_SELECTED: {
             stateCopy.selectedArts = action.selectedArts
+            return stateCopy
+        }
+
+        case SET_TOTAL_COUNT: {
+            stateCopy.totalCount = action.count
             return stateCopy
         }
 
@@ -76,5 +82,11 @@ export const setSelectedArts = (selectedArts: {[key: string]: boolean }) => {
 export const deleteFromCart = (artId: string) => {
     return {
         type: DELETE_FROM_CART, artId
+    }
+}
+
+export const setTotalCount = (count: string) => {
+    return {
+        type: SET_TOTAL_COUNT, count
     }
 }

@@ -37,7 +37,7 @@ export const credentialsReducer = (state = initialState, action: any) => {
         }
 
         case EDIT_ADDRESSES: {
-            stateCopy.addresses.map((oneAddress, index) => {
+            stateCopy.addresses.map((oneAddress) => {
                 if (oneAddress.addressId === action.address.addressId) {
                     return  action.address
                 } else
@@ -75,7 +75,7 @@ export const credentialsReducer = (state = initialState, action: any) => {
         }
 
         case EDIT_CARDS: {
-            stateCopy.cards.map((oneCard, index) => {
+            stateCopy.cards.map((oneCard) => {
                 if (oneCard.cardId === action.card.cardId) {
                     return action.card
                 } else
@@ -107,44 +107,8 @@ export const setAddresses = (addresses: []) => {
     }
 }
 
-export const addAddress = (address: OneAddressInterface) => {
-    return {
-        type: ADD_ADDRESSES, address
-    }
-}
-
-export const editAddress = (address: OneAddressInterface) => {
-    return {
-        type: EDIT_ADDRESSES, address
-    }
-}
-
-export const deleteAddress = (addressId: string) => {
-    return {
-        type: DELETE_ADDRESSES, addressId
-    }
-}
-
 export const setCards = (cards: []) => {
     return {
         type: SET_CARDS, cards
-    }
-}
-
-export const addCard = (card: OneCardInterface) => {
-    return {
-        type: ADD_ADDRESSES, card
-    }
-}
-
-export const editCard = (card: OneCardInterface) => {
-    return {
-        type: EDIT_CARDS, card
-    }
-}
-
-export const deleteCard = (cardId: string) => {
-    return {
-        type: DELETE_ADDRESSES, cardId
     }
 }

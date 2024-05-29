@@ -1,14 +1,10 @@
 import works_profile_scss from "@/scss/components/profile/categories/WorksProfile.module.scss";
 import {ArtShortInterface} from "@/interfaces/artInterface";
-import {OneWorkCategoriesComponent} from "@/components/categories/works/works/one_work/OneWorkCategoriesComponent";
+import {OneWorkCategoriesComponent} from "@/components/categories/works/works/one_work/category/OneWorkCategoriesComponent";
 import React from "react";
 interface workInterface {
     arts: ArtShortInterface[]
 
-}
-
-interface ColumnListProps {
-    items: string[];
 }
 
 export const WorksComponent = (props: workInterface) => {

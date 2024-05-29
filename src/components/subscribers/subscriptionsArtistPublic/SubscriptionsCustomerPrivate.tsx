@@ -2,7 +2,7 @@ import subscriptions_scss from '@/scss/components/subscriptions/Subscriptions.mo
 import {SubscriptionsCustomers} from "@/interfaces/subscriptions";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import Cookies from "js-cookie";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
 
@@ -14,7 +14,6 @@ interface subscriptionsInterface {
 
 export const SubscriptionsCustomerPrivate = (props: subscriptionsInterface) => {
     const router = useRouter()
-    const [role] = useState(Cookies.get('role') as string)
 
     useEffect(() => {
         if (props.input === '') {

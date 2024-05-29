@@ -23,8 +23,6 @@ import {
 import {
     SubscriptionsCustomerPublic
 } from "@/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPublic";
-import search_scss from "@/scss/components/search/Search.module.scss";
-import delete_icon from "@/assets/icons/search/delete.svg";
 import filters_scss from "@/scss/components/categories/Filters.module.scss";
 
 interface subscriptionsInterface {

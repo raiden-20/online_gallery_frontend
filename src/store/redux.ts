@@ -11,6 +11,7 @@ import {cartReducer} from "@/store/reducers/cartReducer";
 import {orderReducer} from "@/store/reducers/orderReducer";
 import {filtersReducer} from "@/store/reducers/filtersReducer";
 import {notificationsReducer} from "@/store/reducers/notificationsReducer";
+import {auctionReducer} from "@/store/reducers/auctionReducer";
 
 let reducers = combineReducers({
     profile: profileReducer,
@@ -20,6 +21,7 @@ let reducers = combineReducers({
     posts: postsReducer,
     credentials: credentialsReducer,
     art: artReducer,
+    auction: auctionReducer,
     cart: cartReducer,
     order: orderReducer,
     filters: filtersReducer,

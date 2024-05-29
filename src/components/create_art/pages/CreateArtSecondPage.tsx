@@ -20,7 +20,8 @@ export const CreateArtSecondPage = (props: pageInterface) => {
                         </button>
                     </section>
                 </section>
-                <section className={create_art_scss.grey_bgc}>
+                <section className={create_art_scss.grey_bgc}
+                         onClick={() => props.setPage(4)}>
                     <section className={create_art_scss.type_section}>
                         <div>Аукцион</div>
                         <button>

@@ -7,10 +7,10 @@ export async function GET() {
 
     if (session) {
         const idToken = await getIdToken()
-        let url = `http://localhost:8000/realms/online_gallery/protocol/openid-connect/logout?id_token_hint=${idToken}&post_logout_redirect_uri=http://localhost:3000`
+        let url = process.env.LOGOUT_FIRST_PART + `${idToken}` + process.env.LOGOUT_SECOND_PART
 
         try {
-            const resp = await fetch(url, {method: "GET"})
+            await fetch(url, {method: "GET"});
         } catch (error) {
             console.error(error)
             return new Response('', {

@@ -1,8 +1,7 @@
 import {Dispatch} from "redux";
-import {clearCategoriesReducer, setArtists, setArts, setSearch} from "@/store/reducers/categoriesReducer";
+import {clearCategoriesReducer, setArtists, setSearch} from "@/store/reducers/categoriesReducer";
 import {CategoriesAPI} from "@/api/categoriesAPI";
 import {ArtsAPI} from "@/api/artsAPI";
-import App from "next/app";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 export const getAllCustomers = () =>

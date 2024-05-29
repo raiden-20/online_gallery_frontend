@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {CartAPI} from "@/api/cartAPI";
-import {deleteFromCart, setCart, setSelectedArts} from "@/store/reducers/cartReducer";
+import {deleteFromCart, setCart, setSelectedArts, setTotalCount} from "@/store/reducers/cartReducer";
 import {MAIN_PATHS} from "@/paths/main";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
@@ -51,7 +51,7 @@ export const DeleteArtFromCart = (artId: string, setMessage: (message: string) =
     }
 
 export const BuyCart = (arts: { [key: string]: boolean }, cardId: string, addressId: string, router: AppRouterInstance
-                        , setMessage: (message: string) => void) =>
+    , setMessage: (message: string) => void) =>
     () => {
         CartAPI.BuyCartAPI(arts, cardId, addressId)
             .then(response => {
@@ -73,4 +73,9 @@ export const BuyCart = (arts: { [key: string]: boolean }, cardId: string, addres
 export const SetSelectedArts = (arts: { [key: string]: boolean }) =>
     (dispatch: Dispatch) => {
         dispatch(setSelectedArts(arts))
+    }
+
+export const SetTotalCount = (count: string) =>
+    (dispatch: Dispatch) => {
+        dispatch(setTotalCount(count))
     }

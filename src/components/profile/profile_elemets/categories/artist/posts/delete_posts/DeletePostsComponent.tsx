@@ -4,9 +4,6 @@ import React, {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
 import Cookies from "js-cookie";
-import settings_scss from "@/scss/components/settings/Settings.module.scss";
-import Image from "next/image";
-import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
 
 interface deletePostsInterface {

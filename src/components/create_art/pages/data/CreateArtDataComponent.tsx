@@ -4,8 +4,8 @@ import {MainPhotoComponent} from "@/components/create_art/pages/data/elements/Ma
 import {AddPhotoComponent} from "@/components/create_art/pages/data/elements/AddPhotoComponent";
 import {usePathname} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
-import {MainPhotoEditComponent} from "@/components/create_art/edit_art/MainPhotoEditComponent";
-import {AddPhotoEditComponent} from "@/components/create_art/edit_art/AddPhotoEditComponent";
+import {MainPhotoEditComponent} from "@/components/create_art/edit_art/elements/MainPhotoEditComponent";
+import {AddPhotoEditComponent} from "@/components/create_art/edit_art/elements/AddPhotoEditComponent";
 import {AddInformationContainer} from "@/components/create_art/pages/data/elements/add_info/AddInformationContainer";
 
 interface createArtDataInterface {
@@ -54,7 +54,8 @@ export const CreateArtDataComponent = (props: createArtDataInterface) => {
                               setInput_description={props.setInput_description}
                               input_height={props.input_height} setInput_height={props.setInput_height}
                               input_width={props.input_width} setInput_width={props.setInput_width}
-                              isPrivate={props.isPrivate} setIsPrivate={props.setIsPrivate}/>
+                              isPrivate={props.isPrivate} setIsPrivate={props.setIsPrivate} price_placeholder={"Цена"}
+                              isFooter={true}/>
             {pathname === MAIN_PATHS.CREATE_ART ?
                 <MainPhotoComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
                                     setPhotoArrayFile={props.setPhotoArrayFile}

@@ -10,6 +10,7 @@ interface artDataInterface {
     setInput_name(input_name: string): void
     input_price: string
     setInput_price(input_price: string): void
+    price_placeholder: string
     input_year: string
     setInput_year(input_year: string): void
     input_description: string
@@ -20,6 +21,7 @@ interface artDataInterface {
     setInput_width(input_height: string): void
     isPrivate: boolean
     setIsPrivate(isPrivate: boolean): void
+    isFooter: boolean
 }
 
 export const ArtDataComponent = (props: artDataInterface) => {
@@ -39,7 +41,7 @@ export const ArtDataComponent = (props: artDataInterface) => {
                        }
                    }}/>
             <section className={create_art_data_scss.inputs_section}>
-                <input placeholder={'Цена, ₽'} value={props.input_price}
+                <input placeholder={`${props.price_placeholder}, ₽`} value={props.input_price}
                        onChange={(event) => props.setInput_price(event.target.value)}/>
                 <section>
                     <input placeholder={'Год создания'} value={props.input_year}
@@ -83,26 +85,30 @@ export const ArtDataComponent = (props: artDataInterface) => {
                     <p className={'message'}>{messageWidth}</p>
                 </section>
             </section>
-            <footer className={create_art_data_scss.footer}>
-                <input type={'checkbox'}
-                       onChange={() => props.setIsPrivate(!props.isPrivate)}/>
-                <section className={create_art_data_scss.footer_add_data}>
-                    <div className={create_art_data_scss.footer_private}>Сделать доступным только для пользователей с
-                        ежемесячной подпиской
-                    </div>
-                    <button onMouseOver={() => setIsHover(true)}
-                            onMouseLeave={() => setIsHover(false)}>
-                        <Image src={add_info_icon} alt={'add_info_icon'}/>
-                    </button>
-                </section>
-                {isHover ?
-                    <section className={create_art_data_scss.hover_section}>
-                        <p className={create_art_data_scss.add_text}>Просматривать и покупать товар смогут только
-                            пользователи с ежемесячной подпиской. Остальные пользователи будут видеть только размытое
-                            основное фото и название. После покупки товара он перейдет в публичный доступ</p>
+            {props.isFooter ?
+                <footer className={create_art_data_scss.footer}>
+                    <input type={'checkbox'}
+                           onChange={() => props.setIsPrivate(!props.isPrivate)}/>
+                    <section className={create_art_data_scss.footer_add_data}>
+                        <div className={create_art_data_scss.footer_private}>Сделать доступным только для пользователей
+                            с
+                            ежемесячной подпиской
+                        </div>
+                        <button onMouseOver={() => setIsHover(true)}
+                                onMouseLeave={() => setIsHover(false)}>
+                            <Image src={add_info_icon} alt={'add_info_icon'}/>
+                        </button>
                     </section>
-                    : null}
-            </footer>
+                    {isHover ?
+                        <section className={create_art_data_scss.hover_section}>
+                            <p className={create_art_data_scss.add_text}>Просматривать и покупать товар смогут только
+                                пользователи с ежемесячной подпиской. Остальные пользователи будут видеть только
+                                размытое
+                                основное фото и название. После покупки товара он перейдет в публичный доступ</p>
+                        </section>
+                        : null}
+                </footer>
+                : null}
         </section>
     )
 }

@@ -44,7 +44,7 @@ export const changeEmail = (input_email: string, setMessage:(message: string) =>
                         keycloakSessionLogOut()
                             .then(() => {
                                 deleteCookies()
-                                signOut({callbackUrl: MAIN_PATHS.MAIN})
+                                signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
                             })
                         break
                     }
@@ -67,7 +67,7 @@ export const changePassword = (input_password: string) =>
                             .then(() => {
                                 deleteCookies()
 
-                                signOut({callbackUrl: MAIN_PATHS.MAIN})
+                                signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
 
                             })
                     }
@@ -87,7 +87,7 @@ export const deleteAccount = (setMessage:(message: string) => void) =>
                             .then(() => {
                                 deleteCookies()
 
-                                signOut({callbackUrl: MAIN_PATHS.MAIN})
+                                signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
 
                             })
                         break

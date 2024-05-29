@@ -11,7 +11,7 @@ export const SuggestionSubscriptionOnArtist = () => {
 
     const [isClicked, setIsClicked] = useState(false)
 
-    const { data: session, status } = useSession()
+    const { status } = useSession()
 
     return (
         <section className={suggestion_scss.root}>

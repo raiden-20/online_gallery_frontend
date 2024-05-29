@@ -28,12 +28,12 @@ export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
     const [input_date, setInput_date] = useState(props.oneCard.date)
     const [input_cvv, setInput_cvv] = useState(props.oneCard.cvv)
     const [input_isDefault, setInput_isDefault] = useState(props.oneCard.isDefault)
-    const [ddefault, setDefault] = useState(false)
+    const [defaultCard, setDefault] = useState(false)
 
     const [save, setSave] = useState(false)
 
     useEffect(() => {
-        if (save || ddefault) {
+        if (save || defaultCard) {
             setMessage('')
             let dateArr = input_date.split('/')
             let date = '20' + dateArr[1] + '-' + dateArr[0] + '-' + '01'
@@ -41,7 +41,7 @@ export const OneCardSettingsComponent = (props: oneCardSettingsInterface) => {
                            input_cvv, input_isDefault, router, setMessage)
             setSave(false)
         }
-    }, [save, ddefault]);
+    }, [save, defaultCard]);
 
     return (
         <section>

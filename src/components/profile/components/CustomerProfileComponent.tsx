@@ -63,7 +63,7 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
                 cover = 'delete'
             }
 
-            props.changeCustomerProfileData(input_name, props.customer_data.birthDate, props.customer_data.gender,
+            props.changeCustomerProfileData(input_name, props.customer_data.birthDate.toString(), props.customer_data.gender,
                 input_description === '' ? ' ' : input_description,
                 avatar === '' ? ' ' : avatar,
                 cover === '' ? ' ' : cover,

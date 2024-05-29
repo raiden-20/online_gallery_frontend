@@ -1,7 +1,7 @@
 import {ActionsAPI} from "@/api/actionsAPI";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {Dispatch} from "redux";
-import {clearPosts, setPosts} from "@/store/reducers/postsReducer";
+import {setPosts} from "@/store/reducers/postsReducer";
 
 export const PrivateCreatePostPlace = (artistId: string, price: string, router: AppRouterInstance) =>
     () => {
@@ -76,7 +76,7 @@ export const EditPrivatePost = (postId: string, title: string, text: string, new
         })
     }
 export const DeletePrivatePost = (id: string, router: AppRouterInstance) =>
-    (dispatch: Dispatch) => {
+    () => {
         ActionsAPI.DeletePrivatePost(id)
             .then(response => {
                 switch (response[0]) {

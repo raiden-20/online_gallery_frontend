@@ -21,7 +21,7 @@ interface ProfileReducerInterface {
 const initialState: ProfileReducerInterface = {
     customer_data: {
         customerName: "Пользователь",
-        birthDate: "",
+        birthDate: new Date('1970-01-01'),
         gender: "",
         avatarUrl: "",
         coverUrl: "",
@@ -43,7 +43,7 @@ const initialState: ProfileReducerInterface = {
 
     my_customer_data: {
         customerName: "",
-        birthDate: "",
+        birthDate:  new Date('1970-01-01'),
         gender: "",
         avatarUrl: "",
         coverUrl: "",
@@ -69,14 +69,12 @@ export const profileReducer = (state = initialState, action: any) => {
     switch (action.type) {
 
         case SET_CUSTOMER_DATA: {
-            const time = action.customer_data.birthDate.substring(0, 10);
-            action.customer_data.birthDate = time
 
 
             if (!isEqualObject(stateCopy.customer_data, action.customer_data)) {
                 stateCopy.customer_data = {
                     customerName: action.customer_data.customerName,
-                    birthDate: time,
+                    birthDate: new Date(action.customer_data.birthDate),
                     gender: action.customer_data.gender,
                     avatarUrl: action.customer_data.avatarUrl,
                     coverUrl: action.customer_data.coverUrl,
@@ -110,8 +108,9 @@ export const profileReducer = (state = initialState, action: any) => {
         }
 
         case SET_MY_CUSTOMER_DATA: {
-            const time = action.customer_data.birthDate.substring(0, 10);
-            action.customer_data.birthDate = time
+
+
+            const time = new Date(action.customer_data.birthDate)
 
             if (!isEqualObject(stateCopy.my_customer_data, action.customer_data)) {
                 stateCopy.my_customer_data = {
@@ -166,7 +165,7 @@ export const profileReducer = (state = initialState, action: any) => {
                 avatarUrl: "",
                 coverUrl: "",
                 customerName: "",
-                birthDate: "",
+                birthDate:  new Date('1970-01-01'),
                 description: "",
                 gender: ""
             }

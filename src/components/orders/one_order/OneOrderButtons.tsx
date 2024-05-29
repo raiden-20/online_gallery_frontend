@@ -1,5 +1,5 @@
-import {ROLES} from "@/paths/main";
-import {ORDER_STATUS} from "@/paths/elements";
+import {PATHS_CATEGORY, ROLES} from "@/paths/main";
+import {ORDER_STATUS_RUS} from "@/paths/elements";
 import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {OneOrderModalWindowSend} from "@/components/orders/one_order/modal_windows/OneOrderModalWindowSend";
@@ -11,9 +11,12 @@ interface oneOrderButtonsInterface {
     text: string
     orderId: string
     status: string
+    price: number
+
     SetOrder(orderId: string, comment: string, router: AppRouterInstance): void
     EditOrder(orderId: string, comment: string, router: AppRouterInstance): void
     ReceiveOrder(orderId: string, router: AppRouterInstance): void
+    SetTotalCount(count: string): void
 }
 
 export const OneOrderButtons = (props: oneOrderButtonsInterface) => {
@@ -35,20 +38,30 @@ export const OneOrderButtons = (props: oneOrderButtonsInterface) => {
     return (
         <section>
             {role === ROLES.CUSTOMER ?
-                props.status === 'В пути' ?
+                props.status === ORDER_STATUS_RUS.PROGRESS ?
                     <button className={'main_button'}
                             onClick={() => setReceive(true)}>
                         Подтвердить получение
                     </button>
-                    : null
+                    :
+                    props.status === ORDER_STATUS_RUS.AWAIT ?
+                        <button className={'main_button'}
+                                onClick={() => {
+                                    props.SetTotalCount(props.price.toString())
+                                    router.push(PATHS_CATEGORY.ORDERS + `/${props.orderId}` + PATHS_CATEGORY.BUY)
+                                }
+                                }>
+                            К оформлению
+                        </button>
+                        : null
                 :
-                props.status === 'Оформлен' ?
+                props.status === ORDER_STATUS_RUS.CREATED ?
                     <button className={'main_button'}
                             onClick={() => setIsClicked(true)}>
                         Подтвердить отправление
                     </button>
                     :
-                    props.status === 'В пути' ?
+                    props.status === ORDER_STATUS_RUS.PROGRESS ?
                         <button className={'cancel_button'}
                                 onClick={() => setIsChange(true)}>
                             Изменить комментарий

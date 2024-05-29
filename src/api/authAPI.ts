@@ -1,6 +1,4 @@
 import {instance, PathsAPI} from "@/api/api_main";
-import Cookies from "js-cookie";
-
 export const AuthAPI = {
 
     async ChangeEmailAPI(email: string) {

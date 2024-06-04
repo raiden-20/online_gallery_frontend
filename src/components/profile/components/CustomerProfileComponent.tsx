@@ -136,7 +136,7 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
         setIsNeedChangeData(true)
     }
 
-    if ((props.my_customer_data.avatarUrl !== '' ||props.customer_data.avatarUrl !== '') && (customer?.avatarUrl === props.customer_data.avatarUrl || customer?.avatarUrl === props.my_customer_data.avatarUrl)) {
+    if ((customer?.avatarUrl === props.customer_data.avatarUrl || customer?.avatarUrl === props.my_customer_data.avatarUrl)) {
         return (
             <section>
                 <HeaderProfileComponent input_coverUrl={input_coverUrl} input_avatarUrl={input_avatarUrl}

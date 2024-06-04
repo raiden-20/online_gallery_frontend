@@ -1,0 +1,72 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+.root {
+  width: 100%;
+  padding: $padding-l;
+
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xxl;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .page_title {
+    font-size: $font-size-xxl;
+    font-weight: $weight;
+  }
+}
+
+.events_section {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xl;
+}
+
+.one_event_section {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xxxs;
+}
+
+.one_section_header {
+  font-size: $font-size-xxl;
+  font-weight: $weight;
+}
+
+.one_section_ul {
+  display: grid;
+
+  .one_section_li {
+    padding: $filters-padding;
+
+    display: grid;
+    grid-template-columns: min-content auto;
+    column-gap: $gap-15;
+    align-items: center;
+
+    .one_section_img {
+      width: $one-event-categories-width;
+      object-fit: cover;
+    }
+
+    .one_section_data {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: $gap-xxxs;
+
+      .one_section_data_title {
+        font-size: $font-size-l0;
+        font-weight: $weight;
+      }
+
+      .one_section_data_date {
+        color: $grey-date;
+      }
+    }
+  }
+}

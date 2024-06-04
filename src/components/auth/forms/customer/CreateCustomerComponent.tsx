@@ -21,15 +21,17 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
     const [message, setMessage] = useState('')
 
     useEffect(() => {
-        if (input_name !== '') {
-            if (input_date !== '') {
-                props.createCustomerProfile(input_name, input_date, input_gender, setMessage, router)
+        if (isButtonClicked) {
+            if (input_name !== '') {
+                if (input_date !== '') {
+                    props.createCustomerProfile(input_name, input_date, input_gender, setMessage, router)
 
+                } else {
+                    setMessage('Введите дату рождения')
+                }
             } else {
-                setMessage('Введите дату рождения')
+                setMessage('Введите имя')
             }
-        } else {
-            setMessage('Введите имя')
         }
         setIsButtonClicked(false)
     }, [isButtonClicked]);

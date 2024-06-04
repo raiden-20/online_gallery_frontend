@@ -34,6 +34,7 @@ import {OnePopUpNotificationContainer} from "@/components/notifications/one_popu
 import {OneAuctionContainer} from "@/components/categories/works/auctions/one_auction/one_page/OneAuctionContainer";
 import {EditRoot} from "@/components/create_art/edit_art/EditRoot";
 import {ChangeAuctionOrderContainer} from "@/components/change_order_auction/ChangeAuctionOrderContainer";
+import {EventsComponent} from "@/components/categories/events/EventsComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -74,22 +75,24 @@ export const Root = (props: RootInterface) => {
                         Cookies.set('customerId', session.providerAccountId)
                         props.isCustomerCreate(router)
                     }
-                    if (props.customer_data.customerName === '') {
-                        props.getCustomerProfileData(Cookies.get('customerId') as string, router)
-                    }
-                    if (Cookies.get('artistId') && props.artist_data.artistName === '') {
-                        props.getArtistProfileData(Cookies.get('artistId') as string, router)
-                    } else {
-                        if (props.customer_data.artistId !== '' && props.customer_data.artistId !== null) {
-                            Cookies.set('artistId', props.customer_data.artistId)
-                            props.getArtistProfileData(Cookies.get('artistId') as string, router)
+                    if (Cookies.get('registrationFlag') === 'true') {
+                        if (props.customer_data.customerName === '') {
+                            props.getCustomerProfileData(Cookies.get('customerId') as string, router)
                         }
+                        if (Cookies.get('artistId') && props.artist_data.artistName === '') {
+                            props.getArtistProfileData(Cookies.get('artistId') as string, router)
+                        } else {
+                            if (props.customer_data.artistId !== '' && props.customer_data.artistId !== null) {
+                                Cookies.set('artistId', props.customer_data.artistId)
+                                props.getArtistProfileData(Cookies.get('artistId') as string, router)
+                            }
+                        }
+                        setToken(localStorage.getItem('access_token') as string)
                     }
-                    setToken(localStorage.getItem('access_token') as string)
                 }
             }
         }
-    }, [session]);
+    }, [session, props.customer_data]);
 
     return (
         <section className={root_scss.page}>
@@ -122,6 +125,7 @@ export const Root = (props: RootInterface) => {
                         pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderContainer/> :
                         pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
                         pathname === MAIN_PATHS.ORDERS ? <OrdersContainer/> :
+                        pathname === MAIN_PATHS.EVENTS ? <EventsComponent/> :
                         main_path === PATHS_CATEGORY.ORDERS && lastPath !== PATHS_CATEGORY.BUY
                             ? <OneOrderContainer/> :
                         main_path === PATHS_CATEGORY.ORDERS && lastPath === PATHS_CATEGORY.BUY

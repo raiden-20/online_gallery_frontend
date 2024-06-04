@@ -37,6 +37,7 @@ import {ChangeAuctionOrderContainer} from "@/components/change_order_auction/Cha
 import {EventsComponent} from "@/components/categories/events/EventsComponent";
 import {CreateEventComponent} from "@/components/create_event/CreateEventComponent";
 import {CreateEvent} from "@/components/create_event/CreateEvent";
+import {OneEventPageComponent} from "@/components/categories/events/one_page_event/OneEventPageComponent";
 
 interface RootInterface {
     artist_data: Artist
@@ -128,6 +129,7 @@ export const Root = (props: RootInterface) => {
                         pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
                         pathname === MAIN_PATHS.ORDERS ? <OrdersContainer/> :
                         pathname === MAIN_PATHS.EVENTS ? <EventsComponent/> :
+                        pathname === MAIN_PATHS.EVENT ? <OneEventPageComponent/> :
                         pathname === MAIN_PATHS.CREATE_EVENT ? <CreateEvent/> :
                         main_path === PATHS_CATEGORY.ORDERS && lastPath !== PATHS_CATEGORY.BUY
                             ? <OneOrderContainer/> :

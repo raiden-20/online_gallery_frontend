@@ -4,6 +4,9 @@ import event_add_icon from '@/assets/icons/events/add_event.svg'
 import Image from "next/image";
 import {useRouter} from "next/navigation";
 import {MAIN_PATHS} from "@/paths/main";
+import {
+    OneEventCategoriesComponent
+} from "@/components/categories/events/one_event_categories/OneEventCategoriesComponent";
 export const EventsComponent = () => {
     const router = useRouter()
 
@@ -22,93 +25,33 @@ export const EventsComponent = () => {
                     <section className={events_scss.one_event_section}>
                         <header className={events_scss.one_section_header}>Текущие события</header>
                         <ul className={events_scss.one_section_ul}>
-                            <li className={events_scss.one_section_li}>
-                                <img src={'/event_example.svg'}
-                                     className={events_scss.one_section_img}
-                                     alt={'event image'}/>
-                                <section className={events_scss.one_section_data}>
-                                    <section className={events_scss.one_section_data_title}>
-                                        Благотворительный аукцион в защиту животных
-                                    </section>
-                                    <section className={events_scss.one_section_data_date}>
-                                        26 апреля — 10 мая
-                                    </section>
-                                </section>
+                            <li>
+                                <OneEventCategoriesComponent/>
                             </li>
-                            <li className={events_scss.one_section_li}>
-                                <img src={'/event_example.svg'}
-                                     className={events_scss.one_section_img}
-                                     alt={'event image'}/>
-                                <section className={events_scss.one_section_data}>
-                                    <section className={events_scss.one_section_data_title}>
-                                        Благотворительный аукцион в защиту животных
-                                    </section>
-                                    <section className={events_scss.one_section_data_date}>
-                                        26 апреля — 10 мая
-                                    </section>
-                                </section>
+                            <li>
+                                <OneEventCategoriesComponent/>
                             </li>
                         </ul>
                     </section>
                     <section className={events_scss.one_event_section}>
                         <header className={events_scss.one_section_header}>Предстоящие события</header>
                         <ul className={events_scss.one_section_ul}>
-                            <li className={events_scss.one_section_li}>
-                                <img src={'/event_example.svg'}
-                                     className={events_scss.one_section_img}
-                                     alt={'event image'}/>
-                                <section className={events_scss.one_section_data}>
-                                    <section className={events_scss.one_section_data_title}>
-                                        Благотворительный аукцион в защиту животных
-                                    </section>
-                                    <section className={events_scss.one_section_data_date}>
-                                        26 апреля — 10 мая
-                                    </section>
-                                </section>
+                            <li>
+                                <OneEventCategoriesComponent/>
                             </li>
-                            <li className={events_scss.one_section_li}>
-                                <img src={'/event_example.svg'}
-                                     className={events_scss.one_section_img}
-                                     alt={'event image'}/>
-                                <section className={events_scss.one_section_data}>
-                                    <section className={events_scss.one_section_data_title}>
-                                        Благотворительный аукцион в защиту животных
-                                    </section>
-                                    <section className={events_scss.one_section_data_date}>
-                                        26 апреля — 10 мая
-                                    </section>
-                                </section>
+                            <li>
+                                <OneEventCategoriesComponent/>
                             </li>
                         </ul>
                     </section>
                     <section className={events_scss.one_event_section}>
                         <header className={events_scss.one_section_header}>Прошедшие события</header>
                         <ul className={events_scss.one_section_ul}>
-                            <li className={events_scss.one_section_li}>
-                                <img src={'/event_example.svg'}
-                                     className={events_scss.one_section_img}
-                                     alt={'event image'}/>
-                                <section className={events_scss.one_section_data}>
-                                    <section className={events_scss.one_section_data_title}>
-                                        Благотворительный аукцион в защиту животных
-                                    </section>
-                                    <section className={events_scss.one_section_data_date}>
-                                        26 апреля — 10 мая
-                                    </section>
-                                </section>
+                            <li>
+                                <OneEventCategoriesComponent/>
                             </li>
-                            <li className={events_scss.one_section_li}>
-                                <img src={'/event_example.svg'}
-                                     className={events_scss.one_section_img}
-                                     alt={'event image'}/>
-                                <section className={events_scss.one_section_data}>
-                                    <section className={events_scss.one_section_data_title}>
-                                        Благотворительный аукцион в защиту животных
-                                    </section>
-                                    <section className={events_scss.one_section_data_date}>
-                                        26 апреля — 10 мая
-                                    </section>
-                                </section>
+                            <li>
+                                <OneEventCategoriesComponent/>
                             </li>
                         </ul>
                     </section>

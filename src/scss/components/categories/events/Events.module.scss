@@ -47,6 +47,10 @@
   display: grid;
 
   .one_section_li {
+    * {
+      cursor: pointer;
+    }
+
     padding: $filters-padding;
 
     display: grid;
@@ -56,6 +60,7 @@
 
     .one_section_img {
       width: $one-event-categories-width;
+      border-radius: $radius-xm;
       object-fit: cover;
     }
 

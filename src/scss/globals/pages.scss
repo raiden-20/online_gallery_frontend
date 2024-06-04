@@ -33,6 +33,12 @@
   font-weight: $weight;
 }
 
+.delete-button {
+  padding: $search-padding;
+  color: $red-color;
+  font-weight: $weight;
+}
+
 .cancel_button {
   background-color: $grey-light;
 

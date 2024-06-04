@@ -4,23 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create page in categories for events and design">
-      <change afterPath="$PROJECT_DIR$/src/app/create/event/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/events/add_event.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_event/CreateEvent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/create_event/CreateEventComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/create_event/CreateEvent.module.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="page create event design">
+      <change afterPath="$PROJECT_DIR$/public/example_event_url.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/event/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/categories/events/one_event_categories/OneEventCategoriesComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/categories/events/one_page_event/OneEventPageComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/categories/events/one_page_event/elements/ButtonsEvent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/categories/events/OneEventPage.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cancel_button/Cancel_ButtonComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cancel_button/Cancel_ButtonComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/events/EventsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/events/EventsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/auction/CreateAuctionDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/auction/CreateAuctionDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/CreateArtDataComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/MainPhotoComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/categories/events/Events.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/events/Events.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/globals/pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/pages.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Rebasing feature__admin__events",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/events",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,8 +74,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\events" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\events" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist\[id]\about" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\utils" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\edit\auction\[id]" />
@@ -191,15 +188,7 @@
       <workItem from="1717191997850" duration="4000" />
       <workItem from="1717232571780" duration="4000" />
       <workItem from="1717322724600" duration="18000" />
-      <workItem from="1717495737771" duration="5180000" />
-    </task>
-    <task id="LOCAL-00029" summary="added 2 files to last commit">
-      <option name="closed" value="true" />
-      <created>1714410803589</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1714410803589</updated>
+      <workItem from="1717495737771" duration="8332000" />
     </task>
     <task id="LOCAL-00030" summary="testings 2 sprint">
       <option name="closed" value="true" />
@@ -585,7 +574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717497710704</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="page create event design">
+      <option name="closed" value="true" />
+      <created>1717501949905</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1717501949905</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +615,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit" />
     <MESSAGE value="commit dev env file" />
     <MESSAGE value="add key to maps" />
     <MESSAGE value="edit authConfig and sse connection" />
@@ -643,6 +639,7 @@
     <MESSAGE value="fixed date request to change customer data" />
     <MESSAGE value="testing all app and fixed bugs" />
     <MESSAGE value="create page in categories for events and design" />
-    <option name="LAST_COMMIT_MESSAGE" value="create page in categories for events and design" />
+    <MESSAGE value="page create event design" />
+    <option name="LAST_COMMIT_MESSAGE" value="page create event design" />
   </component>
 </project>

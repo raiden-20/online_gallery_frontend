@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create one event page">
-      <change afterPath="$PROJECT_DIR$/src/api/adminAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/eventAPI.ts" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="api for admin and events">
+      <change afterPath="$PROJECT_DIR$/src/interfaces/eventInterface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/eventReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api_main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/redux.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/redux.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,15 +179,7 @@
       <workItem from="1717191997850" duration="4000" />
       <workItem from="1717232571780" duration="4000" />
       <workItem from="1717322724600" duration="18000" />
-      <workItem from="1717495737771" duration="12041000" />
-    </task>
-    <task id="LOCAL-00031" summary="mobile design for profile posts, categories, create art">
-      <option name="closed" value="true" />
-      <created>1715013089069</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1715013089069</updated>
+      <workItem from="1717495737771" duration="12696000" />
     </task>
     <task id="LOCAL-00032" summary="mobile design for cart orders and subscribers">
       <option name="closed" value="true" />
@@ -573,7 +565,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717506158159</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="api for admin and events">
+      <option name="closed" value="true" />
+      <created>1717524732143</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1717524732143</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +606,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add key to maps" />
     <MESSAGE value="edit authConfig and sse connection" />
     <MESSAGE value="edit authConfig" />
     <MESSAGE value="edit 404 page" />
@@ -631,6 +630,7 @@
     <MESSAGE value="create page in categories for events and design" />
     <MESSAGE value="page create event design" />
     <MESSAGE value="create one event page" />
-    <option name="LAST_COMMIT_MESSAGE" value="create one event page" />
+    <MESSAGE value="api for admin and events" />
+    <option name="LAST_COMMIT_MESSAGE" value="api for admin and events" />
   </component>
 </project>

@@ -1,11 +1,22 @@
 import React from "react";
 import events_scss from '@/scss/components/categories/events/Events.module.scss'
+import event_add_icon from '@/assets/icons/events/add_event.svg'
+import Image from "next/image";
+import {useRouter} from "next/navigation";
+import {MAIN_PATHS} from "@/paths/main";
 export const EventsComponent = () => {
+    const router = useRouter()
+
     return (
         <section className={events_scss.root}>
             <header className={events_scss.header}>
                 <section className={events_scss.page_title}>События</section>
             </header>
+            <button className={'main_button ' + events_scss.add_button}
+                    onClick={() => router.push(MAIN_PATHS.CREATE_EVENT)}>
+                <Image src={event_add_icon} alt={'add icon'} width={0} height={0}/>
+                <div>Создать событие</div>
+            </button>
             <main>
                 <section className={events_scss.events_section}>
                     <section className={events_scss.one_event_section}>

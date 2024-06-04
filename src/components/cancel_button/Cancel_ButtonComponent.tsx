@@ -4,8 +4,8 @@ import cancel_icon from "@/assets/icons/settings/cancel.svg";
 import React from "react";
 
 interface Cancel_buttonInterface {
-    setCancel(flag: boolean | number): void
-    whatSet: boolean | number
+    setCancel(flag: boolean | number | string): void
+    whatSet: boolean | number | string
 }
 
 export const Cancel_ButtonComponent = (props: Cancel_buttonInterface) => {

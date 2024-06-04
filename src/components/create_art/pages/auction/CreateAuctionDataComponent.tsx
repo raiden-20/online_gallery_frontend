@@ -67,6 +67,8 @@ export const CreateAuctionDataComponent = (props: createArtDataInterface) => {
                 <MainPhotoComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
                                     setPhotoArrayFile={props.setPhotoArrayFile}
                                     setPhotoArraySrc={props.setPhotoArraySrc}
+                                    title={'Основное фото'}
+                                    id={'setMainPhoto'}
                 />
                 :
                 <MainPhotoEditComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}

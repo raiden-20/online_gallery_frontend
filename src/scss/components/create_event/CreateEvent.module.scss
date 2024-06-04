@@ -1,0 +1,27 @@
+@import '@/scss/globals/color';
+@import '@/scss/globals/main_values';
+
+
+.cancel_button {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  gap: 10px;
+
+  align-items: center;
+
+  img {
+    width: $img-size;
+  }
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-s;
+}
+
+.root_data {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xxxl;
+}

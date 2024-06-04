@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="api for admin and events">
-      <change afterPath="$PROJECT_DIR$/src/interfaces/eventInterface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/eventReducer.ts" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="create event reducer and add it to redux store">
+      <change afterPath="$PROJECT_DIR$/src/store/thunks/adminThunk.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/thunks/eventsThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/redux.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/redux.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Rebasing feature__admin__events",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/store/thunks",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -65,11 +64,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\store\thunks" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\events" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist\[id]\about" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\utils" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\edit\auction\[id]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories" />
@@ -179,15 +178,7 @@
       <workItem from="1717191997850" duration="4000" />
       <workItem from="1717232571780" duration="4000" />
       <workItem from="1717322724600" duration="18000" />
-      <workItem from="1717495737771" duration="12696000" />
-    </task>
-    <task id="LOCAL-00032" summary="mobile design for cart orders and subscribers">
-      <option name="closed" value="true" />
-      <created>1715021135715</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1715021135715</updated>
+      <workItem from="1717495737771" duration="13621000" />
     </task>
     <task id="LOCAL-00033" summary="mobile design for private subscriptions">
       <option name="closed" value="true" />
@@ -573,7 +564,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717524732143</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="create event reducer and add it to redux store">
+      <option name="closed" value="true" />
+      <created>1717525371119</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1717525371119</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +605,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit authConfig and sse connection" />
     <MESSAGE value="edit authConfig" />
     <MESSAGE value="edit 404 page" />
     <MESSAGE value="edit home page" />
@@ -631,6 +629,7 @@
     <MESSAGE value="page create event design" />
     <MESSAGE value="create one event page" />
     <MESSAGE value="api for admin and events" />
-    <option name="LAST_COMMIT_MESSAGE" value="api for admin and events" />
+    <MESSAGE value="create event reducer and add it to redux store" />
+    <option name="LAST_COMMIT_MESSAGE" value="create event reducer and add it to redux store" />
   </component>
 </project>

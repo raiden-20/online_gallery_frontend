@@ -27,7 +27,7 @@ let reducers = combineReducers({
     order: orderReducer,
     filters: filtersReducer,
     notifications: notificationsReducer,
-    event: eventReducer
+    events: eventReducer
 })
 
 export const reduxStore = createStore(reducers, applyMiddleware(thunk))

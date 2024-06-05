@@ -1,4 +1,5 @@
 import {instance, instanceFile, instanceWithoutToken, PathsAPI} from "@/api/api_main";
+import Cookies from "js-cookie";
 
 export const ArtsAPI = {
     async CreateArtAPI(name: string, type: string, photos: File[], price: string,
@@ -17,7 +18,8 @@ export const ArtsAPI = {
                 size,
                 tags,
                 materials,
-                frame
+                frame,
+                eventId: Cookies.get('eventId') === undefined ? null : Cookies.get('eventId')
             })], {
                 type: 'application/json'
             })
@@ -70,7 +72,8 @@ export const ArtsAPI = {
                 size,
                 tags,
                 materials,
-                frame: frame
+                frame: frame,
+                eventId: Cookies.get('eventId') === undefined ? null : Cookies.get('eventId')
             })], {
                 type: 'application/json'
             })

@@ -12,12 +12,14 @@ export interface EventsCategoriesInterface {
 
 export interface EventInterface {
     photoUrl: string
+    bannerUrl: string
     name: string
     startDate: Date
     endDate: Date
     description: string
     subjects: EventSubjectsInterface[]
     type: string
+    status: string
 }
 
 export interface EventSubjectsInterface {
@@ -36,4 +38,7 @@ export interface EventSubjectsInterface {
     tags: string[]
     materials: string[]
     frame: boolean
+    customerId: string
+    customerUrl: string
+    customerName: string
 }

@@ -1,4 +1,5 @@
 import {instance, instanceFile, instanceWithoutToken, PathsAPI} from "@/api/api_main";
+import Cookies from "js-cookie";
 
 export const AuctionsAPI = {
     async CreateAuctionAPI(name: string, type: string, photos: File[], startPrice: string,
@@ -23,7 +24,8 @@ export const AuctionsAPI = {
                 size,
                 tags,
                 materials,
-                frame
+                frame,
+                eventId: Cookies.get('eventId') === undefined ? null : Cookies.get('eventId')
             })], {
                 type: 'application/json'
             })
@@ -78,7 +80,8 @@ export const AuctionsAPI = {
                 size,
                 tags,
                 materials,
-                frame
+                frame,
+                eventId: Cookies.get('eventId') === undefined ? null : Cookies.get('eventId')
             })], {
                 type: 'application/json'
             })
@@ -130,10 +133,10 @@ export const AuctionsAPI = {
         }
     },
 
-    async GetAllArtistAuctionAPI(artistId: string) {
+    async GetAllArtistAuctionAPI(artistId: string, currentId: string,) {
         try {
             return  await instanceWithoutToken.get(
-                PathsAPI.AUCTION + PathsAPI.ARTIST +`/${artistId}`,
+                PathsAPI.AUCTION + `/artist/artistId=${artistId}&currentId=${currentId}`,
             );
         } catch (error: any) {
             console.error(error)

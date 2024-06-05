@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import create_art_scss from '@/scss/components/create_art/CreateArt.module.scss'
 import cancel_icon from '@/assets/icons/create_art/cancel.svg'
 import Image from "next/image";

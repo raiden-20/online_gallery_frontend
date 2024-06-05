@@ -1,4 +1,4 @@
-import {instance, PathsAPI} from "@/api/api_main";
+import {instance, instanceFile, PathsAPI} from "@/api/api_main";
 
 
 export const AdminAPI = {
@@ -82,7 +82,7 @@ export const AdminAPI = {
             formData.append("photo", photo)
             formData.append("banner", banner)
 
-            return await instance.post(
+            return await instanceFile.post(
                 PathsAPI.ADMIN + PathsAPI.EVENT,
                 formData
             );
@@ -111,10 +111,10 @@ export const AdminAPI = {
 
             formData.append('EventChangeDTO', dto_object);
 
-            formData.append("newPhoto", newPhoto)
-            formData.append("newBanner", newBanner)
+            formData.append("newPhoto", newPhoto === undefined ? new File([], 'empty.txt', {type: 'text/plain'}) : newPhoto)
+            formData.append("newBanner", newBanner === undefined ? new File([], 'empty.txt', {type: 'text/plain'}) : newBanner)
 
-            return await instance.put(
+            return await instanceFile.put(
                 PathsAPI.ADMIN + PathsAPI.EVENT,
                 formData
             );

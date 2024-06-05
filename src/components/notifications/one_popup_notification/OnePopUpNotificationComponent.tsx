@@ -10,6 +10,7 @@ import {fetchEventSource} from '@microsoft/fetch-event-source';
 import {useRouter} from "next/navigation";
 import {useSession} from "next-auth/react";
 import {PathsAPI} from "@/api/api_main";
+import {IsAdmin} from "@/store/thunks/adminThunk";
 
 interface OnePopUpNotificationComponentInterface {
     popup_notification: PopUpNotificationInterface
@@ -57,7 +58,8 @@ export const OnePopUpNotificationComponent = (props: OnePopUpNotificationCompone
                 })
            
         }
-        if (status === 'authenticated' && (customerId !== '' && customerId !== undefined) && Cookies.get('SSE') !== 'true') {
+        if (status === 'authenticated' && (customerId !== '' && customerId !== undefined) && Cookies.get('SSE') !== 'true'
+            && !IsAdmin()) {
             getNotificationSSE().then()
         }
         return () => {

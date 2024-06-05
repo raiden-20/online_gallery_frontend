@@ -30,9 +30,9 @@ export const CreateArt = (name: string, type: string, photos: File[], price: str
         })
     }
 
-export const GetArt = (artId: string, router: AppRouterInstance) =>
+export const GetArt = (artId: string, currentId: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ArtsAPI.GetArtAPI(artId, Cookies.get('customerId') as string)
+        ArtsAPI.GetArtAPI(artId, currentId)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {

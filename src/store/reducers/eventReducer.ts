@@ -6,13 +6,23 @@ const CLEAR_ONE_EVENT = 'CLEAR_ONE_EVENT'
 
 interface EventReducerInterface {
     events: EventsCategoriesInterface[]
-    event: EventInterface | undefined
+    event: EventInterface
 }
 
 
 const initialState: EventReducerInterface = {
     events: [],
-    event: undefined
+    event: {
+        photoUrl: "",
+        bannerUrl: "",
+        name: "",
+        startDate: new Date(),
+        endDate: new Date(),
+        description: "",
+        subjects: [],
+        type: "",
+        status: ""
+    }
 }
 
 export const eventReducer = (state = initialState, action: any) => {
@@ -21,7 +31,6 @@ export const eventReducer = (state = initialState, action: any) => {
 
         case SET_EVENTS: {
             stateCopy.events = []
-
             for (let i = 0; i < action.events.length; i++) {
                 action.events[i].startDate = new Date(action.events[i].startDate)
                 action.events[i].endDate = new Date(action.events[i].endDate)
@@ -35,13 +44,28 @@ export const eventReducer = (state = initialState, action: any) => {
             action.event.startDate = new Date(action.event.startDate)
             action.event.endDate = new Date(action.event.endDate)
 
+            for (let i = 0; i < action.event.subjects.length; i++) {
+                action.event.subjects[i].startDate = new Date(action.event.subjects[i].startDate)
+                action.event.subjects[i].endDate = new Date(action.event.subjects[i].endDate)
+            }
+
             stateCopy.event = action.event
 
             return stateCopy
         }
 
         case CLEAR_ONE_EVENT: {
-            stateCopy.event = undefined
+            stateCopy.event = {
+                status: "",
+                photoUrl: "",
+                bannerUrl: "",
+                name: "",
+                startDate: new Date(),
+                endDate: new Date(),
+                description: "",
+                subjects: [],
+                type: ""
+            }
             stateCopy.events = []
 
             return stateCopy

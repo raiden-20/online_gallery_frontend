@@ -175,14 +175,20 @@ export const isCustomerCreate = (router: AppRouterInstance) =>
                 .then(response => {
                     switch (response[0]) {
                         case 200 : {
-                            if (response[1]) {
+                            if (response[1].firstEntry) {
                                 router.push(MAIN_PATHS.CREATE_CUSTOMER)
                                 Cookies.set('registrationFlag', 'process')
                             } else {
                                 Cookies.set('registrationFlag', 'true')
-                                if (Cookies.get('currentId') === undefined) {
+                                if (response[1].isAdmin === true) {
                                     Cookies.set('currentId', Cookies.get('customerId') as string)
+                                    Cookies.set('isAdmin', 'true')
+                                } else {
+                                    if (Cookies.get('currentId') === undefined) {
+                                        Cookies.set('currentId', Cookies.get('customerId') as string)
+                                    }
                                 }
+
 
                             }
                             break

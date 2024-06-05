@@ -2,9 +2,9 @@ import {Dispatch} from "redux";
 import {EventAPI} from "@/api/eventAPI";
 import {setEvents, setOneEvent} from "@/store/reducers/eventReducer";
 
-export const GetEvents = (currentId: string) =>
+export const GetEvents = () =>
     (dispatch: Dispatch) => {
-        EventAPI.GetAllEvents(currentId)
+        EventAPI.GetAllEvents()
             .then((response: any) => {
                 switch (response.status) {
                     case 200 : {

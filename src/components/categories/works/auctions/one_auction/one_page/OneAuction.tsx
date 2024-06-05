@@ -19,6 +19,7 @@ interface oneWorkInterface {
     SetMaxRate(auctionId: string, isAnonymous: boolean, maxRate: number,
                setSetRate: (setMaxRate: boolean) => void): void
     SetNewCustomerRate(customerRate: CustomerRate, router: AppRouterInstance): void
+    DeleteAuctionByAdmin(artId: string, router: AppRouterInstance): void
 }
 
 export const OneAuction = (props: oneWorkInterface) => {
@@ -28,7 +29,7 @@ export const OneAuction = (props: oneWorkInterface) => {
     const pathname = usePathname()
     const lastPath = pathname.split('/')[2]
 
-    const [currentId] = useState(Cookies.get('customerId') as string)
+    const [currentId] = useState(Cookies.get('currentId') as string)
     const [customerId, setCustomerId] = useState(Cookies.get('customerId') as string)
     const [artistId, setArtistId] = useState(Cookies.get('artistId') as string)
     const [role, setRole] = useState(Cookies.get('role') as string)
@@ -77,5 +78,6 @@ export const OneAuction = (props: oneWorkInterface) => {
 
     return <OneAuctionComponent auction={props.auction}
                                 DeleteArt={props.DeleteAuction}
-                                SetMaxRate={props.SetMaxRate} SetNewRate={props.SetNewRate}/>
+                                SetMaxRate={props.SetMaxRate} SetNewRate={props.SetNewRate}
+                                DeleteAuctionByAdmin={props.DeleteAuctionByAdmin}/>
 }

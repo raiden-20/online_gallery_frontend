@@ -3,6 +3,7 @@ import {ArtInterface} from "@/interfaces/artInterface";
 import {DeleteArt, GetArt} from "@/store/thunks/artThunk";
 import {AddArtToCart} from "@/store/thunks/cartThunk";
 import {OneWork} from "@/components/categories/works/works/one_work/one_page/OneWork";
+import {DeleteArtByAdmin} from "@/store/thunks/adminThunk";
 
 interface state {
     art: {
@@ -19,7 +20,9 @@ const mapStateToProps = (state: state) => {
 const mapDispatchToProps = {
     GetArt,
     DeleteArt,
-    AddArtToCart
+    AddArtToCart,
+    DeleteArtByAdmin
+
 }
 
 export const OneWorkContainer = connect(mapStateToProps, mapDispatchToProps)(OneWork)

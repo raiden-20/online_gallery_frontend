@@ -35,6 +35,17 @@ export const ORDER_STATUS_RUS = {
     AWAIT: 'Оформление'
 }
 
+export const EVENT_TYPES = {
+    AUCTION: 'AUCTION',
+    ART: 'ART'
+}
+
+export const EVENT_STATUS = {
+    WAIT: 'WAIT',
+    AVAILABLE: 'AVAILABLE',
+    END: 'END'
+}
+
 export const ANONYMOUS = 'anonymous'
 export const ANONYMOUS_RUS = 'Анонимный пользователь'
 

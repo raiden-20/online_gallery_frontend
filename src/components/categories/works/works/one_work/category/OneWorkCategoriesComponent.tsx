@@ -7,6 +7,7 @@ import {OneWorkWhoBuy} from "@/components/categories/works/works/one_work/catego
 import {OneWorkExclusive} from "@/components/categories/works/works/one_work/category/elements/OneWorkExclusive";
 import {OneWorkCategoriesData} from "@/components/categories/works/works/one_work/category/elements/OneWorkCategoriesData";
 import {OneWorkCategoriesPrice} from "@/components/categories/works/works/one_work/category/elements/OneWorkCategoriesPrice";
+import {EventSubjectsInterface} from "@/interfaces/eventInterface";
 
 interface oneWorkInterface {
     oneArt: ArtShortInterface

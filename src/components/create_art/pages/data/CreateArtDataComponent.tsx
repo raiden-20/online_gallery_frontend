@@ -7,6 +7,7 @@ import {MAIN_PATHS} from "@/paths/main";
 import {MainPhotoEditComponent} from "@/components/create_art/edit_art/elements/MainPhotoEditComponent";
 import {AddPhotoEditComponent} from "@/components/create_art/edit_art/elements/AddPhotoEditComponent";
 import {AddInformationContainer} from "@/components/create_art/pages/data/elements/add_info/AddInformationContainer";
+import Cookies from "js-cookie";
 
 interface createArtDataInterface {
     photoArraySrc: string[]
@@ -38,7 +39,6 @@ interface createArtDataInterface {
     setDeletePhotoUrls(arr: string[]): void
     deletePhotoUrls: string[]
     setIsChangeMainPhoto(flag: boolean): void
-    setIsChangeMainPhoto(flag: boolean): void
     message: string
 }
 
@@ -55,7 +55,7 @@ export const CreateArtDataComponent = (props: createArtDataInterface) => {
                               input_height={props.input_height} setInput_height={props.setInput_height}
                               input_width={props.input_width} setInput_width={props.setInput_width}
                               isPrivate={props.isPrivate} setIsPrivate={props.setIsPrivate} price_placeholder={"Цена"}
-                              isFooter={true}/>
+                              isFooter={Cookies.get('eventId') === undefined}/>
             {pathname === MAIN_PATHS.CREATE_ART ?
                 <MainPhotoComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
                                     setPhotoArrayFile={props.setPhotoArrayFile}
@@ -67,6 +67,8 @@ export const CreateArtDataComponent = (props: createArtDataInterface) => {
                 <MainPhotoEditComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
                                         setPhotoArrayFile={props.setPhotoArrayFile}
                                         setPhotoArraySrc={props.setPhotoArraySrc}
+                                        title={'Основное фото'}
+                                        id={'setMainPhoto'}
                                         photoUrls={props.photoUrls} setDeletePhotoUrls={props.setDeletePhotoUrls}
                                         deletePhotoUrls={props.deletePhotoUrls} setIsChangeMainPhoto={props.setIsChangeMainPhoto}/>
             }

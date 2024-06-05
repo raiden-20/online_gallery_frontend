@@ -1,7 +1,8 @@
 import create_art_scss from "@/scss/components/create_art/CreateArt.module.scss";
 import Image from "next/image";
 import next_icon from "@/assets/icons/create_art/next.svg";
-import {ART_TYPES} from "@/paths/elements";
+import {ART_TYPES, EVENT_TYPES} from "@/paths/elements";
+import Cookies from "js-cookie";
 
 interface pageInterface {
     setPage(page: number): void
@@ -33,7 +34,16 @@ export const CreateArtFirstPage = (props: pageInterface) => {
                                         break
                                     }
                                 }
-                                props.setPage(2)
+                                if (Cookies.get('eventType') !== undefined) {
+                                    if (Cookies.get('eventType') === EVENT_TYPES.ART) {
+                                        props.setPage(3)
+                                    } else if (Cookies.get('eventType') === EVENT_TYPES.AUCTION) {
+                                        props.setPage(4)
+                                    }
+                                } else {
+                                    props.setPage(2)
+                                }
+
                             }}>
                             <section className={create_art_scss.type_section}>
                                 <div>{one}</div>

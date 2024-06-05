@@ -1,10 +1,10 @@
-import {instance, PathsAPI} from "@/api/api_main";
+import {instance, instanceWithoutToken, PathsAPI} from "@/api/api_main";
 
 
 export const EventAPI = {
     async GetOneEvent(eventId: string, currentId: string) {
         try {
-            return await instance.get(
+            return await instanceWithoutToken.get(
                 PathsAPI.EVENT + `/eventId=${eventId}&currentId=${currentId}`
             )
         } catch (error: any) {
@@ -13,10 +13,10 @@ export const EventAPI = {
         }
     },
 
-    async GetAllEvents(currentId: string) {
+    async GetAllEvents() {
         try {
-            return await instance.get(
-                PathsAPI.EVENTS + `/currentId=${currentId}`
+            return await instanceWithoutToken.get(
+                PathsAPI.EVENTS
             )
         } catch (error: any) {
             console.error(error)

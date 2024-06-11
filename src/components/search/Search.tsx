@@ -11,6 +11,7 @@ import {Customers} from "@/components/search/elements/Customers";
 import {Works} from "@/components/search/elements/Works";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {Auctions} from "@/components/search/elements/Auctions";
+import {ArtShortInterface} from "@/interfaces/artInterface";
 
 export interface SearchInterface {
     search: [],
@@ -27,6 +28,20 @@ export const Search = (props: SearchInterface) => {
 
     const [whoIsClicked, setWhoIsClicked] = useState(1)
     const [input_name, setInput_name] = useState('')
+
+    const artExample: ArtShortInterface = {
+        artId: '',
+        name: '',
+        photoUrl: '',
+        price: '',
+        artistId: '',
+        isPrivate: false,
+        artistName: '',
+        customerId: '',
+        avatarUrl: '',
+        customerName: ''
+    }
+
 
     return (
         <section className={search_scss.root}>
@@ -68,11 +83,13 @@ export const Search = (props: SearchInterface) => {
                                          getAllCustomers={props.getAllCustomers}
                                          getSmthByName={props.getSmthByName}/> :
                             whoIsClicked === 3 || whoIsClicked === 4 || whoIsClicked === 5
-                                ? <Works search={props.search}
-                                         input_name={input_name}
-                                         getAllArts={props.getAllArts}
-                                         getSmthByName={props.getSmthByName}
-                                         whoIsClicked={whoIsClicked}/> :
+                                ?
+                                <Works search={props.search}
+                                       input_name={input_name}
+                                       getAllArts={props.getAllArts}
+                                       getSmthByName={props.getSmthByName}
+                                       whoIsClicked={whoIsClicked}/>
+                                :
                                 whoIsClicked === 6
                                     ? <Auctions search={props.search}
                                                 input_name={input_name}

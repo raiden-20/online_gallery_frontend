@@ -38,7 +38,7 @@ export const OneArtist = (props: OneArtistsInterface) => {
                 <div className={'p ' + artists_scss.one_user_name}>{props.oneArtist.artistName}</div>
             </section>
             {props.oneArtist.arts !== undefined ?
-                <PhotoSection photos={props.oneArtist.arts}/>
+                <PhotoSection photos={props.oneArtist.arts} name={props.oneArtist.artistName}/>
                 : null
             }
         </li>

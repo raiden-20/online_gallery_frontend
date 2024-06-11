@@ -15,7 +15,7 @@ export interface UserShort {
     artistId: string
     artistName: string,
     avatarUrl: string,
-    viewsCount: string,
+    viewsCount: number,
     arts: { artId: string }
     isActive: boolean
 }

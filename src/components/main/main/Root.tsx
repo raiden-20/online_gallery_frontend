@@ -92,6 +92,18 @@ export const Root = (props: RootInterface) => {
                         setToken(localStorage.getItem('access_token') as string)
                     }
                 }
+
+            }
+        } else {
+            if (session) {
+                // @ts-ignore
+                if (session.error !== undefined) {
+                    keycloakSessionLogOut()
+                        .then(() => {
+                            deleteCookies()
+                            signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
+                        })
+                }
             }
         }
     }, [session, props.customer_data, Cookies.get('registrationFlag')]);

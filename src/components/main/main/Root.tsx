@@ -77,18 +77,18 @@ export const Root = (props: RootInterface) => {
                         Cookies.set('customerId', session.providerAccountId)
                         props.isCustomerCreate(router)
                     }
-                    if (Cookies.get('registrationFlag') === 'true') {
-                        if (props.customer_data.customerName === '') {
-                            props.getCustomerProfileData(Cookies.get('customerId') as string, router)
-                        }
-                        if (Cookies.get('artistId') && props.artist_data.artistName === '') {
+                    if (props.customer_data.customerName === '') {
+                        props.getCustomerProfileData(Cookies.get('customerId') as string, router)
+                    }
+                    if (Cookies.get('artistId') && props.artist_data.artistName === '') {
+                        props.getArtistProfileData(Cookies.get('artistId') as string, router)
+                    } else {
+                        if (props.customer_data.artistId !== '' && props.customer_data.artistId !== null) {
+                            Cookies.set('artistId', props.customer_data.artistId)
                             props.getArtistProfileData(Cookies.get('artistId') as string, router)
-                        } else {
-                            if (props.customer_data.artistId !== '' && props.customer_data.artistId !== null) {
-                                Cookies.set('artistId', props.customer_data.artistId)
-                                props.getArtistProfileData(Cookies.get('artistId') as string, router)
-                            }
                         }
+                    }
+                    if (Cookies.get('registrationFlag') === 'true') {
                         setToken(localStorage.getItem('access_token') as string)
                     }
                 }

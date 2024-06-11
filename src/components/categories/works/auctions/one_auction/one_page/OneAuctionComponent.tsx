@@ -22,6 +22,7 @@ interface oneWorkInterface {
     SetNewRate(auctionId: string, isAnonymous: boolean, setSetRate: (setMaxRate: boolean) => void,
                setMessage: (message: string) => void): void
     SetMaxRate(auctionId: string, isAnonymous: boolean, maxRate: number, setSetRate: (setMaxRate: boolean) => void): void
+    DeleteAuctionByAdmin(artId: string, router: AppRouterInstance): void
 }
 
 export const OneAuctionComponent = (props: oneWorkInterface) => {
@@ -77,7 +78,8 @@ export const OneAuctionComponent = (props: oneWorkInterface) => {
                                artId={props.auction.auctionId}
                                customerId={props.auction.customerId}
                                DeleteArt={props.DeleteArt}
-                               path={MAIN_PATHS.EDIT_AUCTION}/>
+                               path={MAIN_PATHS.EDIT_AUCTION}
+                               DeleteArtByAdmin={props.DeleteAuctionByAdmin}/>
             </main>
             {setMaxRate ?
                 <SetMaxRate setSetMaxRate={setSetMaxRate}

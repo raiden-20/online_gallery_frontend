@@ -9,11 +9,8 @@ interface AuctionConductingInterface {
 }
 
 export const AuctionConducting = (props: AuctionConductingInterface) => {
-    const [message, setMessage] = useState('')
     const [isCLickedStart, setIsCLickedStart] = useState(false)
     const [isCLickedEnd, setIsCLickedEnd] = useState(false)
-
-
 
     return (
         <section className={create_art_data_scss.section_root}>
@@ -42,9 +39,6 @@ export const AuctionConducting = (props: AuctionConductingInterface) => {
                        }
                        }/>
             </section>
-            {message !== '' ?
-                <p className={'message'}>{message}</p>
-            : null}
         </section>
     )
 }

@@ -5,7 +5,7 @@ export const OneWorkWhoBuy = (props: {customerId: string, avatarUrl: string, cus
 
     const [isHoverWhoBuy, setIsHoverWhoBuy] = useState(false)
 
-    if (props.customerId !== null) {
+    if (props.customerId !== null && props.customerId !== undefined) {
         return (
             <section className={works_profile_scss.who_buy_section}
                      onMouseEnter={() => setIsHoverWhoBuy(true)}

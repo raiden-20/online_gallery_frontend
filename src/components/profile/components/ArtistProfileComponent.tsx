@@ -34,6 +34,8 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
         if (pathname.length > 0) {
             props.getArtistProfileData(pathname, router)
         }
+
+        return setArtist(undefined)
     }, []);
 
     useEffect(() => {
@@ -70,10 +72,6 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
 
     const [message, setMessage] = useState('')
     const [isEditMobile, setIsEditMobile] = useState(false)
-
-    useEffect(() => {
-
-    }, []);
 
     useEffect(() => {
         setInput_coverUrl(artist?.coverUrl as string)
@@ -149,7 +147,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
         setIsEditMobile(false)
     }
 
-    if ((props.my_artist_data.avatarUrl !== '' ||props.artist_data.avatarUrl !== '') && (artist?.avatarUrl === props.my_artist_data.avatarUrl || artist?.avatarUrl === props.artist_data.avatarUrl)) {
+    if (artist?.avatarUrl !== undefined && (artist?.avatarUrl === props.my_artist_data.avatarUrl || artist?.avatarUrl === props.artist_data.avatarUrl)) {
         return (
             <section>
                 <HeaderProfileComponent input_coverUrl={input_coverUrl} input_avatarUrl={input_avatarUrl} input_name={input_name}

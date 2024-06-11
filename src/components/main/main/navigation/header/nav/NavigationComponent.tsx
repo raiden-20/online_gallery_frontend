@@ -32,44 +32,52 @@ export const NavigationComponent = (props: navigationInterface) => {
     return (
         <section className={navigation_scss.nav}>
             <section>
-                <button className={'title ' + navigation_scss.title}
+                <button disabled={Cookies.get('registrationFlag') === 'process'}
+                        className={'title ' + navigation_scss.title}
                         onClick={() => router.push(MAIN_PATHS.MAIN)}>
                     Lindéro
                 </button>
             </section>
             <section className={navigation_scss.menu_li}>
-                <button onClick={() => router.push(MAIN_PATHS.MAIN)}>
+                <button disabled={Cookies.get('registrationFlag') === 'process'}
+                    onClick={() => router.push(MAIN_PATHS.MAIN)}>
                    <Image src={menu_icon} alt={'menu_icon'} className={navigation_scss.menu_img + ' ' + navigation_scss.img}
                           width={0} height={0}/>
                 </button>
             </section>
             <section className={navigation_scss.visible_various}>
-                <button onClick={() => router.push(MAIN_PATHS.ARTISTS)}>
+                <button disabled={Cookies.get('registrationFlag') === 'process'}
+                    onClick={() => router.push(MAIN_PATHS.ARTISTS)}>
                     Художники
                 </button>
             </section>
             <section className={navigation_scss.visible_various}>
-                <button onClick={() => router.push(MAIN_PATHS.PAINTINGS)}>
+                <button disabled={Cookies.get('registrationFlag') === 'process'}
+                    onClick={() => router.push(MAIN_PATHS.PAINTINGS)}>
                     Картины
                 </button>
             </section>
             <section className={navigation_scss.visible_various}>
-                <button onClick={() => router.push(MAIN_PATHS.PHOTO)}>
+                <button disabled={Cookies.get('registrationFlag') === 'process'}
+                    onClick={() => router.push(MAIN_PATHS.PHOTO)}>
                     Фотографии
                 </button>
             </section>
             <section className={navigation_scss.visible_various}>
-                <button onClick={() => router.push(MAIN_PATHS.SCULPTURES)}>
+                <button disabled={Cookies.get('registrationFlag') === 'process'}
+                    onClick={() => router.push(MAIN_PATHS.SCULPTURES)}>
                     Скульптуры
                 </button>
             </section>
             <section className={navigation_scss.visible_various}>
-                <button onClick={() => router.push(MAIN_PATHS.AUCTIONS)}>
+                <button disabled={Cookies.get('registrationFlag') === 'process'}
+                    onClick={() => router.push(MAIN_PATHS.AUCTIONS)}>
                     Аукционы
                 </button>
             </section>
             <section className={navigation_scss.visible_various}>
-                <button>
+                <button disabled={Cookies.get('registrationFlag') === 'process'}
+                        onClick={() => router.push(MAIN_PATHS.EVENTS)}>
                     События
                 </button>
             </section>
@@ -77,13 +85,16 @@ export const NavigationComponent = (props: navigationInterface) => {
                 <AccountNavigationContainer setIsMenuClicked={setIsAccountNavClicked}/>
                 : null}
             <section className={navigation_scss.img_section}>
-                <button onClick={() => router.push(MAIN_PATHS.SEARCH)}>
+                <button disabled={Cookies.get('registrationFlag') === 'process'}
+                    onClick={() => router.push(MAIN_PATHS.SEARCH)}>
                     <Image src={search_icon} alt={'search_icon'} className={navigation_scss.img}
                            width={0} height={0}/>
                 </button>
             </section>
             <section>
-                <button onClick={() => {
+                <button
+                    disabled={Cookies.get('registrationFlag') === 'process'}
+                    onClick={() => {
                     if ((status === 'unauthenticated' || session === null)) {
                         signin()
                      } else {

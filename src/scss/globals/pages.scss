@@ -27,9 +27,19 @@
   padding: $button-padding;
 
   font-size: $font-size-s;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 .no_main_color {
+  font-weight: $weight;
+}
+
+.delete-button {
+  padding: $search-padding;
+  color: $red-color;
   font-weight: $weight;
 }
 

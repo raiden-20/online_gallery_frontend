@@ -10,6 +10,7 @@ import {usePathname, useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {AUCTION_STATUS} from "@/interfaces/auctionInterface";
 import {ART_AUCTION, ART_STATUS} from "@/paths/elements";
+import {IsAdmin} from "@/store/thunks/adminThunk";
 
 interface OneWorkFooterInterface {
     artistId: string,
@@ -19,6 +20,7 @@ interface OneWorkFooterInterface {
     path: string
 
     DeleteArt(artId: string, router: AppRouterInstance): void
+    DeleteArtByAdmin(artId: string, router: AppRouterInstance): void
 }
 
 export const OneWorkFooter = (props: OneWorkFooterInterface) => {
@@ -34,6 +36,13 @@ export const OneWorkFooter = (props: OneWorkFooterInterface) => {
     const [currentId] = useState(Cookies.get('currentId') as string)
 
     const [deleteArt, setDeleteArt] = useState(false)
+    const [deleteArtByAdmin, setDeleteArtByAdmin] = useState(false)
+
+    useEffect(() => {
+        if (deleteArtByAdmin) {
+            props.DeleteArtByAdmin(props.artId, router)
+        }
+    }, [deleteArtByAdmin]);
 
     useEffect(() => {
         if (deleteArt) {
@@ -42,7 +51,14 @@ export const OneWorkFooter = (props: OneWorkFooterInterface) => {
         }
     }, [deleteArt]);
 
-    if (((props.path === MAIN_PATHS.EDIT_ART && props.status === ART_STATUS.AVAILABLE) ||
+    if (IsAdmin() && (props.status === ART_STATUS.AVAILABLE || props.status === AUCTION_STATUS.WAIT)) {
+        return (
+            <button className={'delete-button ' + one_work_scss.footer_delete}
+                    onClick={() => setDeleteArtByAdmin(true)}>
+                Удалить товар
+            </button>
+        )
+    } else if (((props.path === MAIN_PATHS.EDIT_ART && props.status === ART_STATUS.AVAILABLE) ||
             (props.path === MAIN_PATHS.EDIT_AUCTION && props.status === AUCTION_STATUS.WAIT))
         && status === 'authenticated' && currentId === artistId &&
         artistId === props.artistId && role === ROLES.ARTIST) {

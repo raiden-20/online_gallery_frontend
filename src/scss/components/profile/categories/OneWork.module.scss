@@ -186,6 +186,11 @@
   }
 }
 
+.footer_delete {
+  width: max-content;
+  padding: 0;
+}
+
 @media screen and (max-width: $width){
   .root {
     display: flex;

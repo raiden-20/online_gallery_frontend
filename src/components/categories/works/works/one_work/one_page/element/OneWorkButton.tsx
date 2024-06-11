@@ -8,6 +8,7 @@ import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {ClickJustButton} from "../../../../../../../../utils/YandexClick";
+import {IsAdmin} from "@/store/thunks/adminThunk";
 
 interface oneWorkInterface {
     artId: string
@@ -31,36 +32,41 @@ export const OneWorkButton = (props: oneWorkInterface) => {
         }
     }, [addToCart]);
 
-    return (
-        <section>
-            {artistId !== props.artistId && role !== ROLES.ARTIST ?
-                props.status === ART_STATUS.AVAILABLE ?
-                    <button className={'main_button ' + one_work_scss.add_to_cart}
-                            onClick={() => {
-                                if (status === 'authenticated') {
-                                    ClickJustButton( 'AddToCart') // метрика
-                                    setAddToCart(true)
-                                } else {
-                                    signin()
-                                }
-                            }}>
-                        Добавить в корзину
-                    </button>
-                :
-                    props.status === ART_STATUS.CART ?
-                        <button className={'cancel_button ' + one_work_scss.add_to_cart}
+    if (!IsAdmin()) {
+        return (
+            <section>
+                {artistId !== props.artistId && role !== ROLES.ARTIST ?
+                    props.status === ART_STATUS.AVAILABLE ?
+                        <button className={'main_button ' + one_work_scss.add_to_cart}
                                 onClick={() => {
                                     if (status === 'authenticated') {
-                                        router.push(MAIN_PATHS.CART)
+                                        ClickJustButton( 'AddToCart') // метрика
+                                        setAddToCart(true)
                                     } else {
                                         signin()
                                     }
                                 }}>
-                            Открыть корзину
+                            Добавить в корзину
                         </button>
+                        :
+                        props.status === ART_STATUS.CART ?
+                            <button className={'cancel_button ' + one_work_scss.add_to_cart}
+                                    onClick={() => {
+                                        if (status === 'authenticated') {
+                                            router.push(MAIN_PATHS.CART)
+                                        } else {
+                                            signin()
+                                        }
+                                    }}>
+                                Открыть корзину
+                            </button>
+                            : null
                     : null
-            : null
-            }
-        </section>
-    )
+                }
+            </section>
+        )
+    } else {
+        return <></>
+    }
+
 }

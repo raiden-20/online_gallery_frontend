@@ -200,6 +200,11 @@ $delete-img-width: 34px;
   }
 }
 
+.admin_buttons_section {
+  display: flex;
+  gap: $gap-xxs;
+}
+
 .message {
   padding-top: 10px;
   color: $red-color;

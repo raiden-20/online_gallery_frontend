@@ -12,6 +12,8 @@ interface oneWorkInterface {
     one_work: ArtInterface
     DeleteArt(artId: string, router: AppRouterInstance): void
     AddArtToCart(artId: string, router: AppRouterInstance): void
+
+    DeleteArtByAdmin(artId: string, router: AppRouterInstance): void
 }
 
 export const OneWorkComponent = (props: oneWorkInterface) => {
@@ -39,7 +41,8 @@ export const OneWorkComponent = (props: oneWorkInterface) => {
                                customerId={props.one_work.customerId}
                                DeleteArt={props.DeleteArt}
                                status={props.one_work.status}
-                               path={MAIN_PATHS.EDIT_ART}/>
+                               path={MAIN_PATHS.EDIT_ART}
+                               DeleteArtByAdmin={props.DeleteArtByAdmin}/>
             </main>
         </section>
     )

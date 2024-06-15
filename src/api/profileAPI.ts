@@ -6,10 +6,10 @@ import {
 } from "@/api/api_main";
 
 export const ProfileAPI = {
-    async CustomerDataAPI(id: string) {
+    async CustomerDataAPI(id: string, currentId: string) {
         try {
             const response = await instanceWithoutToken.get(
-                PathsAPI.CUSTOMER + '/' + id,
+                PathsAPI.CUSTOMER + `/customerId=${id}&currentId=${currentId}`,
             );
             return [response.status, response.data];
         } catch (error: any) {
@@ -20,9 +20,8 @@ export const ProfileAPI = {
 
     async ArtistDataAPI(artistId: string, currentId: string) {
         try {
-            const id = currentId === undefined ? null : currentId
             const response = await instanceWithoutToken.get(
-                PathsAPI.ARTIST + `/artistId=${artistId}&currentId=${id}`,
+                PathsAPI.ARTIST + `/artistId=${artistId}&currentId=${currentId}`,
             );
             return [response.status, response.data];
         } catch (error: any) {

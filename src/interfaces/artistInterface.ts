@@ -9,6 +9,7 @@ export interface Artist {
     countSubscribers: string
     isPublicSubscribe: boolean
     isPrivateSubscribe: boolean
+    isBlocked: boolean
 }
 
 export interface UserShort {

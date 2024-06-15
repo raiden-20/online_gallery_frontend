@@ -9,12 +9,13 @@ import {
 } from "@/store/reducers/profileReducer";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
+import {MAIN_PATHS, PATHS_CATEGORY, ROLES} from "@/paths/main";
 
 
 export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ProfileAPI.CustomerDataAPI(id)
+        const role = Cookies.get('role')
+        ProfileAPI.CustomerDataAPI(id, role !== undefined ? role === ROLES.CUSTOMER ? Cookies.get('customerId') as string : Cookies.get('artistId') as string : 'null')
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
@@ -42,7 +43,8 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
 
 export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ProfileAPI.ArtistDataAPI(id, Cookies.get('customerId') as string)
+        const role = Cookies.get('role')
+        ProfileAPI.ArtistDataAPI(id, role !== undefined ? role === ROLES.CUSTOMER ? Cookies.get('customerId') as string : Cookies.get('artistId') as string : 'null')
             .then(response => {
                 switch (response[0]) {
                     case 200 : {

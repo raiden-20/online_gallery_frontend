@@ -26,3 +26,7 @@ export const SizeInterface = {
     MEDIUM: 'MEDIUM',
     BIG: 'BIG'
 }
+export const SizeInterfaceValue = {
+    SMALL: 40,
+    BIG: 100
+}

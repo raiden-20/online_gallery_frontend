@@ -26,6 +26,8 @@ export const OneWork = (props: oneWorkInterface) => {
             props.GetArt(lastPath, Cookies.get('artistId') as string, router)
         } else if (Cookies.get('role') === ROLES.CUSTOMER) {
             props.GetArt(lastPath, Cookies.get('customerId') as string, router)
+        } else {
+            props.GetArt(lastPath, 'null', router)
         }
 
     }, []);

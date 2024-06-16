@@ -39,7 +39,7 @@ export const ArtistsFiltersComponent = (props: filterInterface) => {
         })
     }, []);
 
-    const setArtistsCheckBox = useCallback((event: boolean, artistId: string, index: number) => {
+    const setArtistsCheckBox = useCallback((event: boolean, artistId: string) => {
         if (event) {
             let flag = false
             props.currentFilters.artists.map((oneArtistId => {
@@ -62,7 +62,11 @@ export const ArtistsFiltersComponent = (props: filterInterface) => {
             }))
         }
         const artistsFilter = [...filteredArtists]
-        artistsFilter[index].isActive = !artistsFilter[index].isActive
+        artistsFilter.some(one =>{
+            if (one.artistId === artistId) {
+                one.isActive = !one.isActive
+            }
+        })
         setFilteredArtists(artistsFilter)
     },[])
 
@@ -90,7 +94,7 @@ export const ArtistsFiltersComponent = (props: filterInterface) => {
                                 <li className={filters_scss.size_one_section} key={index}>
                                     <input type={'checkbox'} checked={oneArtist.isActive}
                                         onChange={(event) =>
-                                            setArtistsCheckBox(event.target.checked, oneArtist.artistId, index)}/>
+                                            setArtistsCheckBox(event.target.checked, oneArtist.artistId)}/>
                                     <div>{oneArtist.artistName}</div>
                                 </li>
                             )

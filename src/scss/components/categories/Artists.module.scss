@@ -13,7 +13,8 @@ $photo-max-width: 782px;
 
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: $gap-l1;
 
   .page_title {
     font-size: $font-size-xxl;

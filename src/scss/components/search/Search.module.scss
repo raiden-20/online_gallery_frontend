@@ -19,19 +19,23 @@ $one-element-img-size: 70px;
   gap: $gap-xs;
 
   align-items: center;
+}
 
+.img {
+  width: $img-size;
+  height: $img-size;
+}
 
-  .img {
-    width: $img-size;
-    height: $img-size;
-  }
+.input {
+  border: none;
+  padding: 0;
 
-  .input {
-    border: none;
-    padding: 0;
+  width: auto;
+}
 
-    width: auto;
-  }
+.delete_button {
+  display: grid;
+  align-items: center;
 }
 
 .main {

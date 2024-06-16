@@ -1,4 +1,5 @@
 @import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
 
 $filters-button-gap: 8px;
 
@@ -12,6 +13,17 @@ $filters-button-gap: 8px;
 .header {
   font-size: $font-size-xxl;
   font-weight: $weight;
+}
+
+.nav_section {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  gap: $gap-xs;
+
+  align-items: center;
+  border: $border-search;
+  border-radius: $elements-radius;
+  padding: $input-padding;
 }
 
 .nav {

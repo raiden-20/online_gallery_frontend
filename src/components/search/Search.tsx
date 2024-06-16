@@ -11,7 +11,6 @@ import {Customers} from "@/components/search/elements/Customers";
 import {Works} from "@/components/search/elements/Works";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {Auctions} from "@/components/search/elements/Auctions";
-import {ArtShortInterface} from "@/interfaces/artInterface";
 
 export interface SearchInterface {
     search: [],
@@ -29,20 +28,6 @@ export const Search = (props: SearchInterface) => {
     const [whoIsClicked, setWhoIsClicked] = useState(1)
     const [input_name, setInput_name] = useState('')
 
-    const artExample: ArtShortInterface = {
-        artId: '',
-        name: '',
-        photoUrl: '',
-        price: '',
-        artistId: '',
-        isPrivate: false,
-        artistName: '',
-        customerId: '',
-        avatarUrl: '',
-        customerName: ''
-    }
-
-
     return (
         <section className={search_scss.root}>
             <section className={search_scss.header}>
@@ -50,7 +35,7 @@ export const Search = (props: SearchInterface) => {
                        alt={'search_icon'} width={0} height={0}/>
                 <input value={input_name} onChange={(event) => setInput_name(event.target.value)}
                        className={search_scss.input} placeholder={'Поиск'}/>
-                <button>
+                <button className={search_scss.delete_button}>
                     <Image src={delete_icon} className={search_scss.img}
                            onClick={() => setInput_name('')}
                            alt={'search_icon'} width={0} height={0}/>

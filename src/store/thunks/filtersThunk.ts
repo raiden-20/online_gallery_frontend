@@ -1,5 +1,6 @@
 import {Dispatch} from "redux";
 import {
+    clearFilters,
     setFiltersArtists, setFiltersFrame, setFiltersMaterials,
     setFiltersPriceEnd,
     setFiltersPriceStart,
@@ -49,4 +50,9 @@ export const setFiltersFrameThunk = (frame: boolean | null) =>
 export const setFiltersStatusThunk = (status: boolean | null) =>
     (dispatch: Dispatch) => {
         dispatch(setFiltersStatus(status))
+    }
+
+export const setFiltersClear = () =>
+    (dispatch: Dispatch) => {
+        dispatch(clearFilters())
     }

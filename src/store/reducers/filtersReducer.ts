@@ -9,6 +9,7 @@ const SET_FILTERS_MATERIALS = 'SET_FILTERS_MATERIALS'
 const SET_FILTERS_TAGS = 'SET_FILTERS_TAGS'
 const SET_FILTERS_FRAME = 'SET_FILTERS_FRAME'
 const SET_FILTERS_STATUS = 'SET_FILTERS_STATUS'
+const SET_CLEAR_FILTERS = 'SET_CLEAR_FILTERS'
 
 interface FiltersReducerInterface {
     tags: SelectInterface[],
@@ -97,8 +98,8 @@ const initialState: FiltersReducerInterface = {
     ],
 
     currentFilters : {
-        priceStart: "",
-        priceEnd: "",
+        priceStart: "0",
+        priceEnd: "1000000",
         size: [],
         artists: [],
         year: [],
@@ -166,6 +167,20 @@ export const filtersReducer = (state = initialState, action: any) => {
             return stateCopy
         }
 
+        case SET_CLEAR_FILTERS : {
+            stateCopy.currentFilters.priceStart = '0'
+            stateCopy.currentFilters.priceEnd = '0'
+            stateCopy.currentFilters.size = []
+            stateCopy.currentFilters.artists = []
+            stateCopy.currentFilters.year = []
+            stateCopy.currentFilters.materials = []
+            stateCopy.currentFilters.tags = []
+            stateCopy.currentFilters.frame = null
+            stateCopy.currentFilters.status = null
+
+            return stateCopy
+        }
+
         default : {
             return stateCopy
         }
@@ -223,5 +238,11 @@ export const setFiltersFrame = (frame: boolean | null) => {
 export const setFiltersStatus = (status: boolean | null) => {
     return {
         type: SET_FILTERS_STATUS, status
+    }
+}
+
+export const clearFilters = () => {
+    return {
+        type: SET_CLEAR_FILTERS
     }
 }

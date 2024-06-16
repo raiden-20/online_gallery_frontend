@@ -30,6 +30,12 @@ export interface ArtShortInterface {
     customerId: string
     avatarUrl: string
     customerName: string
+    size: string
+    createDate: string
+    tags: string[]
+    materials: string[]
+    frame: boolean
+    viewCount: number
 }
 
 export interface ArtArtistInterface {

@@ -15,7 +15,6 @@ const mapStateToProps = (state: state) => {
 }
 
 const mapDispatchToProps = {
-
 }
 
 export const WorkRootContainer = connect(mapStateToProps, mapDispatchToProps)(WorksRoot)

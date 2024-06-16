@@ -4,32 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add parametr isBlock to user">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add filters (not final version) and category search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/events/EventsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/events/EventsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorkRootContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorkRootContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/FIltersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/FIltersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/PriceFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/PriceFiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/artists/ArtistsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/artists/ArtistsFiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/one_page/OneWork.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/one_page/OneWork.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/artInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/artInterface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/filters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/filters.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Artists.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/search/Search.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/main_values.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/main_values.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/filtersReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/filtersReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/filtersThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/filtersThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/auction/elements/AuctionConducting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/auction/elements/AuctionConducting.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,15 +184,7 @@
       <workItem from="1718292016073" duration="773000" />
       <workItem from="1718307741276" duration="7000" />
       <workItem from="1718486675581" duration="1404000" />
-      <workItem from="1718561038931" duration="9189000" />
-    </task>
-    <task id="LOCAL-00039" summary="add notifications_design">
-      <option name="closed" value="true" />
-      <created>1715298975007</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1715298975007</updated>
+      <workItem from="1718561038931" duration="9815000" />
     </task>
     <task id="LOCAL-00040" summary="add notifications_design 2">
       <option name="closed" value="true" />
@@ -600,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718490174367</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="add filters (not final version) and category search">
+      <option name="closed" value="true" />
+      <created>1718577865018</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1718577865019</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +611,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add auctions in search" />
     <MESSAGE value="create modal window for set auction rate" />
     <MESSAGE value="page for create auction" />
     <MESSAGE value="create api file for auctions" />
@@ -658,6 +635,7 @@
     <MESSAGE value="edit art visibility on search page" />
     <MESSAGE value="edit materials and tags in create art page" />
     <MESSAGE value="add parametr isBlock to user" />
-    <option name="LAST_COMMIT_MESSAGE" value="add parametr isBlock to user" />
+    <MESSAGE value="add filters (not final version) and category search" />
+    <option name="LAST_COMMIT_MESSAGE" value="add filters (not final version) and category search" />
   </component>
 </project>

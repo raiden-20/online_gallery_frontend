@@ -3,10 +3,11 @@ import {MAIN_PATHS} from "@/paths/main";
 import createEvent_scss from "@/scss/components/create_event/CreateEvent.module.scss";
 import Image from "next/image";
 import cancel_icon from "@/assets/icons/settings/cancel.svg";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import create_art_data_scss from "@/scss/components/create_art/CreateArtData.module.scss";
 import {MainPhotoComponent} from "@/components/create_art/pages/data/elements/MainPhotoComponent";
 import {MainPhotoEditComponent} from "@/components/create_art/edit_art/elements/MainPhotoEditComponent";
+import {currDate} from "../../../utils/tests";
 
 interface CreateEventComponentInterface {
     photoArraySrcEvent: string[]
@@ -55,24 +56,10 @@ export const CreateEventComponent = (props: CreateEventComponentInterface) => {
 
     const [isCLickedStart, setIsCLickedStart] = useState(false)
     const [isCLickedEnd, setIsCLickedEnd] = useState(false)
+    const [currDateStr] = useState(currDate() + 'T00:00')
 
     const [isAuction, setIsAuction] = useState(false)
     const [isArts, setIsArts] = useState(false)
-
-    const [today, setToday] = useState('')
-
-    useEffect(() => {
-        const date = new Date();
-        const year = date.getFullYear();
-
-        let month: string | number = date.getMonth() + 1;
-        month = month < 10 ? `0${month}` : month;
-
-        let day: string | number = date.getDate();
-        day = day < 10 ? `0${day}` : day;
-
-        setToday(`${year}-${month}-${day}T` + date.getHours() + ':' + date.getMinutes());
-    }, []);
 
     return (
         <section className={createEvent_scss.root}>
@@ -94,7 +81,7 @@ export const CreateEventComponent = (props: CreateEventComponentInterface) => {
                     </textarea>
                     <section className={create_art_data_scss.inputs_section}>
                         <input placeholder={`Время начала события`}
-                               min={today}
+                               min={currDateStr}
                                type={props.input_startDate !== '' || isCLickedStart ? 'datetime-local' : 'text'}
                                value={props.input_startDate}
                                onFocus={() => setIsCLickedStart(true)}

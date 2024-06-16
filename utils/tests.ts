@@ -1,5 +1,3 @@
-import serveStatic from "serve-static";
-
 export const months = [
     "января", "февраля", "марта",
     "апреля", "мая", "июня",
@@ -90,6 +88,15 @@ export const zerosForOrder = (orderId: string) => {
 
 export function containsOnlyLetters(inputString: string): boolean {
     return /^\D*$/.test(inputString);
+}
+
+export const currDate = () => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // добавляем 1, так как месяцы начинаются с 0
+    const day = String(currentDate.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
 }
 
 

@@ -29,7 +29,7 @@ export const WorksArts = (props: workInterface) => {
 
     useEffect(() => {
         if (props.input_name !== '') {
-            setFilteredArts([...props.arts.filter(one => one.name.toLowerCase().includes(props.input_name))])
+            setFilteredArts([...props.arts.filter(one => one.name.toLowerCase().includes(props.input_name.toLowerCase()))])
         } else {
             setFilteredArts(props.arts)
         }

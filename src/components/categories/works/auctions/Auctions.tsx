@@ -27,7 +27,7 @@ export const Auctions = (props: workInterface) => {
 
     useEffect(() => {
         if (props.input_name !== '') {
-            setFilteredAuctions([...props.auctions.filter(one => one.name.toLowerCase().includes(props.input_name))])
+            setFilteredAuctions([...props.auctions.filter(one => one.name.toLowerCase().includes(props.input_name.toLowerCase()))])
         } else {
             setFilteredAuctions(props.auctions)
         }

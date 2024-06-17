@@ -4,29 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit data create auction and events (not early that today)">
-      <change afterPath="$PROJECT_DIR$/src/app/support/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/support/Information.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/support/Support.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/support/Support.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/oneArtist/OneArtist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/category/elements/OneWorkCategoriesData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/category/elements/OneWorkCategoriesData.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/one_work/one_page/element/OneWorkHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/one_work/one_page/element/OneWorkHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/FooterComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/FooterComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/AccountNavigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/orders/OneOrderComponentMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/OneOrderComponentMain.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/orders/one_order/OneOrderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/elements/Artists.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPrivate/OneSubscription.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsArtistPublic.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPrivate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subscribers/subscriptionsArtistPublic/SubscriptionsCustomerPrivate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/navigation/Footer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/navigation/Footer.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/globals/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/globals/globals.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="footer (not all)">
+      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +16,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -204,15 +183,7 @@
       <workItem from="1718307741276" duration="7000" />
       <workItem from="1718486675581" duration="1404000" />
       <workItem from="1718561038931" duration="10214000" />
-      <workItem from="1718619096153" duration="9976000" />
-    </task>
-    <task id="LOCAL-00041" summary="add routing to subscriptions">
-      <option name="closed" value="true" />
-      <created>1715299770197</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1715299770197</updated>
+      <workItem from="1718619096153" duration="10279000" />
     </task>
     <task id="LOCAL-00042" summary="edit refresh token">
       <option name="closed" value="true" />
@@ -598,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718578631620</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="footer (not all)">
+      <option name="closed" value="true" />
+      <created>1718668169904</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1718668169904</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +610,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="page for create auction" />
     <MESSAGE value="create api file for auctions" />
     <MESSAGE value="write thunk for auctions and store file" />
     <MESSAGE value="testing get auction, get auction categories and in artist profile. edit notifications sse" />
@@ -656,6 +634,7 @@
     <MESSAGE value="add parametr isBlock to user" />
     <MESSAGE value="add filters (not final version) and category search" />
     <MESSAGE value="edit data create auction and events (not early that today)" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit data create auction and events (not early that today)" />
+    <MESSAGE value="footer (not all)" />
+    <option name="LAST_COMMIT_MESSAGE" value="footer (not all)" />
   </component>
 </project>

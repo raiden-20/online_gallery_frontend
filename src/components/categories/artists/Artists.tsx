@@ -35,7 +35,7 @@ export const Artists = (props: ArtistsInterface) => {
 
     useEffect(() => {
         if (input_name !== '') {
-            const arr = [...props.artists.filter(one => one.artistName.toLowerCase().includes(input_name))]
+            const arr = [...props.artists.filter(one => one.artistName.toLowerCase().includes(input_name.toLowerCase()))]
             setFilteredArtists(arr)
         } else {
             switch (selectedValue.value) {

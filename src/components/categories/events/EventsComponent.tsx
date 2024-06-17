@@ -33,7 +33,7 @@ export const EventsComponent = (props: EventsComponentInterface) => {
 
     useEffect(() => {
         if (input_name !== '') {
-            const arr = [...props.events.filter(one => one.name.toLowerCase().includes(input_name))]
+            const arr = [...props.events.filter(one => one.name.toLowerCase().includes(input_name.toLowerCase()))]
             setFilteredEvents(arr)
         } else {
             setFilteredEvents(props.events)

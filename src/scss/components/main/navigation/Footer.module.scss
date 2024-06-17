@@ -46,7 +46,14 @@ $github-image-size: 30px;
       height: $github-image-size;
 
       object-fit: cover;
+      cursor: pointer;
     }
+  }
+
+  .oneLink {
+    text-decoration: none;
+    color: $black-color;
+    cursor: pointer;
   }
 }
 

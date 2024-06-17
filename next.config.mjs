@@ -12,7 +12,8 @@ const nextConfig = {
         END_SESSION_URL: 'http://localhost:8000/realms/online_gallery/protocol/openid-connect/logout',
         LOGOUT_FIRST_PART: 'http://localhost:8000/realms/online_gallery/protocol/openid-connect/logout?id_token_hint=',
         LOGOUT_SECOND_PART: '&post_logout_redirect_uri=http://localhost:3000',
-        REFRESH_TOKEN_URL: 'http://localhost:8000/realms/online_gallery/protocol/openid-connect/token'
+        REFRESH_TOKEN_URL: 'http://localhost:8000/realms/online_gallery/protocol/openid-connect/token',
+        GITHUB: 'https://github.com/raiden-20/online_gallery'
     },
 };
 

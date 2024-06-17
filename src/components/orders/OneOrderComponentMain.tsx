@@ -30,8 +30,8 @@ export const OneOrderComponentMain = (props: oneOrder) => {
                      alt={'art'}/>
                 <section className={one_order_scss.data}>
                     <section className={one_order_scss.section_name}>
-                        <div className={'p ' + one_order_scss.weight}>{props.oneOrder.artistName}</div>
-                        <div className={'p'}>{props.oneOrder.artName}</div>
+                        <abbr className={'p ' + one_order_scss.weight} title={props.oneOrder.artistName}>{props.oneOrder.artistName}</abbr>
+                        <abbr className={'p'} title={props.oneOrder.artName}>{props.oneOrder.artName}</abbr>
                     </section>
                     <div className={one_order_scss.price}>{props.oneOrder.price} ₽</div>
                 </section>

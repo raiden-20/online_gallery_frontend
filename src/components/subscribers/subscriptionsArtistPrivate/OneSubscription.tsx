@@ -24,7 +24,7 @@ export const OneSubscription = (props: {oneArtist: SubscriptionsArtistsPrivate})
                 }}>
                     <img src={props.oneArtist.avatarUrl} alt={'avatar'} crossOrigin="anonymous"/>
                 </button>
-                <div className={'p ' + subscriptions_scss.p}>{props.oneArtist.artistName}</div>
+                <abbr className={'p ' + subscriptions_scss.p} title={props.oneArtist.artistName}>{props.oneArtist.artistName}</abbr>
             </section>
             <div className={subscriptions_scss.mobile_hidden}>{props.oneArtist.price} ₽</div>
             <div className={subscriptions_scss.mobile_hidden}><TimeComponent time={props.oneArtist.payDate}/></div>

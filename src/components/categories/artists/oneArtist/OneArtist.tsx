@@ -35,7 +35,7 @@ export const OneArtist = (props: OneArtistsInterface) => {
                              alt={'default_ava'}/>
                     }
                 </section>
-                <div className={'p ' + artists_scss.one_user_name}>{props.oneArtist.artistName}</div>
+                <abbr className={'p ' + artists_scss.one_user_name} title={props.oneArtist.artistName}>{props.oneArtist.artistName}</abbr>
             </section>
             {props.oneArtist.arts !== undefined ?
                 <PhotoSection photos={props.oneArtist.arts} name={props.oneArtist.artistName}/>

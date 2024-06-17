@@ -37,6 +37,8 @@ import {ChangeAuctionOrderContainer} from "@/components/change_order_auction/Cha
 import {EventsContainer} from "@/components/categories/events/EventsContainer";
 import {OnePageEventContainer} from "@/components/categories/events/one_page_event/OnePageEventContainer";
 import {CreateEventContainer} from "@/components/create_event/create/CreateEventContainer";
+import {Information} from "@/components/support/Information";
+import {Support} from "@/components/support/Support";
 
 interface RootInterface {
     artist_data: Artist
@@ -148,7 +150,9 @@ export const Root = (props: RootInterface) => {
                             ? <ChangeAuctionOrderContainer/> :
                     main_path === PATHS_CATEGORY.CART ? <CartContainer/> :
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsContainer/>  :
-                        main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsContainer/>
+                        main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsContainer/> :
+                        main_path === MAIN_PATHS.INFORMATION ? <Information/> :
+                        main_path === MAIN_PATHS.SUPPORT ? <Support/>
                             : null
                     }
                 </main>

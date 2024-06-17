@@ -53,7 +53,7 @@ export const Artists = (props: ArtistsInterface) => {
                         <img src={oneElement.avatarUrl === '' ? '/default_avatar_profile.svg' : oneElement.avatarUrl}
                              className={search_scss.one_element_photo}
                              alt={'avatar'} crossOrigin="anonymous"/>
-                        <div className={'p ' + search_scss.one_element_name}>{oneElement.artistName}</div>
+                        <abbr className={'p ' + search_scss.one_element_name} title={oneElement.artistName}>{oneElement.artistName}</abbr>
                     </li>
                 )
             })}

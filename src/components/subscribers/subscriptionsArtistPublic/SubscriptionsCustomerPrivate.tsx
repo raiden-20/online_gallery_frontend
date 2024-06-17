@@ -34,7 +34,7 @@ export const SubscriptionsCustomerPrivate = (props: subscriptionsInterface) => {
                                 router.push(MAIN_PATHS.PROFILE_ARTIST + `/${one.customerId}`)
                             }}>
                             <img src={one.avatarUrl} alt={'avatar'} crossOrigin="anonymous"/>
-                            <div className={'p'}>{one.customerName}</div>
+                            <abbr className={'p'} title={one.customerName}>{one.customerName}</abbr>
                         </li>
                     )
                 })

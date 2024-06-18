@@ -23,7 +23,7 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
 
     const [artist, setArtist] = useState<Artist>()
 
-    const [currentId] = useState(Cookies.get('currentId') as string)
+    const [currentId] = useState(pathname)
     const [artistId] = useState(Cookies.get('artistId') as string)
 
     useEffect(() => {
@@ -161,7 +161,8 @@ export const ArtistProfileComponent = (props: ArtistProfileInterface) => {
                                         setIsEditMobile={setIsEditMobile}
                                         isPrivateSubscribe={artist?.isPrivateSubscribe as boolean}
                                         isPublicSubscribe={artist?.isPublicSubscribe as boolean}
-                                        countSubscribers={artist?.countSubscribers as string}/>
+                                        countSubscribers={artist?.countSubscribers as string}
+                                        isBlocked={artist.isBlocked}/>
                 <ArtistCategoriesProfile input_description={input_description} setInput_description={setInput_description}
                                          setIsNeedChangeData={setIsNeedChangeData}
                                          isEditMobile={isEditMobile}

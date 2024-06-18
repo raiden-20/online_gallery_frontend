@@ -39,6 +39,7 @@ export const PATHS_CATEGORY = {
     SUPPORT: '/support',
     INFORMATION: '/information',
 
+    ERROR_403: '/403',
     ERROR_404: '/404',
     SUCCESS: '/success',
 

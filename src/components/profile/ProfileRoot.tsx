@@ -3,12 +3,15 @@ import Cookies from "js-cookie";
 import {ROLES} from "@/paths/main";
 import {CustomerProfileContainer} from "@/components/profile/containers/CustomerProfileContainer";
 import {useEffect, useState} from "react";
+import {usePathname} from "next/navigation";
 
 export const ProfileRoot = () => {
+    const pathnameRole = usePathname().split('/')[2]
     const [currentRole, setCurrentRole] = useState('')
 
     useEffect(() => {
-        setCurrentRole(Cookies.get('currentRole') as string)
+        Cookies.set('currentRole', pathnameRole)
+        setCurrentRole(pathnameRole)
     }, []);
 
     if (currentRole === ROLES.ARTIST) {

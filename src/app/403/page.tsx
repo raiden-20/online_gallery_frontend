@@ -1,7 +1,7 @@
 import {RootContainer} from "@/components/main/main/RootContainer";
 
-const Error404 = () => {
+const Error403 = () => {
     return <RootContainer/>
 }
 
-export default Error404
+export default Error403

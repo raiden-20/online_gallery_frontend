@@ -2,18 +2,18 @@ import {AdminAPI} from '@/api/adminAPI'
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {MAIN_PATHS} from "@/paths/main";
-import App from "next/app";
 
 export const IsAdmin = () => {
     return Cookies.get('isAdmin') === 'true'
 }
 
-export const BlockUser = (id: string) =>
+export const BlockUser = (id: string, router: AppRouterInstance) =>
     () => {
         AdminAPI.BlockUser(id)
             .then((response: any) => {
                 switch (response.status) {
                     case 200 : {
+                        router.refresh()
                         break
                     }
                 }
@@ -22,12 +22,13 @@ export const BlockUser = (id: string) =>
         })
     }
 
-export const UnblockUser = (id: string) =>
+export const UnblockUser = (id: string, router: AppRouterInstance) =>
     () => {
         AdminAPI.UnblockUser(id)
             .then((response: any) => {
                 switch (response.status) {
                     case 200 : {
+                        router.refresh()
                         break
                     }
                 }

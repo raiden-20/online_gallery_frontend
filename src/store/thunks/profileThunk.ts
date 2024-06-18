@@ -56,8 +56,16 @@ export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
                         }
                         break
                     }
+                    case 400 : {
+                        if (response[1] === 'User\'s not found') {
+                            router.push(PATHS_CATEGORY.ERROR_404)
+                        }
+                        break
+                    }
                     case 404 : {
-                        router.push(PATHS_CATEGORY.ERROR_404)
+                        if (response[1] === 'User blocked') {
+                            router.push(PATHS_CATEGORY.ERROR_403)
+                        }
                         break
                     }
                 }

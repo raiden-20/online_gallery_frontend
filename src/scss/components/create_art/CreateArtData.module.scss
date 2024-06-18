@@ -48,6 +48,11 @@
 .footer_add_data {
   display: flex;
   gap: $gap-xs;
+
+  button {
+    display: grid;
+    align-items: start;
+  }
 }
 
 .footer_private {
@@ -57,7 +62,7 @@
 .hover_section {
   position: absolute;
 
-  right: -80px;
+  right: -140px;
   bottom: -100px;
 
   width: $hover-section-width;

@@ -23,13 +23,14 @@ interface actionButtonsInterface {
 
     isPublicSubscribe: boolean
     isPrivateSubscribe: boolean
+    isBlocked: boolean
 
     setIsEditMobile(flag: boolean): void
 
     PublicAction(id: string, router: AppRouterInstance): void
     PrivateUnsubscribe(artistId: string, router: AppRouterInstance): void
-    DeleteUserByAdmin(id: string): void
-    UndeleteUserByAdmin(id: string): void
+    DeleteUserByAdmin(id: string, router: AppRouterInstance): void
+    UndeleteUserByAdmin(id: string, router: AppRouterInstance): void
 }
 
 export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
@@ -49,32 +50,38 @@ export const ActionButtonsHeaderProfile = (props: actionButtonsInterface) => {
 
     useEffect(() => {
         if (isDeleteUserByAdmin) {
-            props.DeleteUserByAdmin(currentId)
+            props.DeleteUserByAdmin(currentId, router)
         }
         setIsDeleteUserByAdmin(false)
     }, [isDeleteUserByAdmin]);
 
     useEffect(() => {
         if (isUndeleteUserByAdmin) {
-            props.UndeleteUserByAdmin(currentId)
+            props.UndeleteUserByAdmin(currentId, router)
         }
         setIsDeleteUserByAdmin(false)
     }, [isUndeleteUserByAdmin]);
 
     if (IsAdmin()) {
-        return (
-            <section className={header_profile_scss.admin_buttons_section}>
-                <button className={'delete-button'}
-                        onClick={() => setIsDeleteUserByAdmin(true)}>
-                    Заблокировать пользователя
-                </button>
-                <button className={'delete-button'}
-                        onClick={() => setIsUndeleteUserByAdmin(true)}>
-                    Разблокировать пользователя
-                </button>
-            </section>
-
-        )
+        if (props.isBlocked) {
+            return (
+                <section className={header_profile_scss.admin_buttons_section}>
+                    <button className={'delete-button'}
+                            onClick={() => setIsUndeleteUserByAdmin(true)}>
+                        Разблокировать пользователя
+                    </button>
+                </section>
+            )
+        } else {
+            return (
+                <section className={header_profile_scss.admin_buttons_section}>
+                    <button className={'delete-button'}
+                            onClick={() => setIsDeleteUserByAdmin(true)}>
+                        Заблокировать пользователя
+                    </button>
+                </section>
+            )
+        }
     } else {
         return (
             <section>

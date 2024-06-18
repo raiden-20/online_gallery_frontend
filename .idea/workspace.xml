@@ -4,8 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="footer (not all)">
-      <change beforePath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/artists/Artists.tsx" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit searching in categories">
+      <change afterPath="$PROJECT_DIR$/src/app/403/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/errors/forbidden.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/403/403.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/errors/403.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/404/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/404/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/404/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/404/404.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileRoot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/ArtistProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/components/CustomerProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/HeaderProfileComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionButtonsHeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/header/elements/actions/ActionButtonsHeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/create_art/CreateArtData.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/adminThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/adminThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/artThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/profileThunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +34,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="SCSS File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -49,7 +67,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Rebasing feature__final__testing__app",
-    "last_opened_file_path": "C:/Users/Anastasia/Desktop/request.html",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/errors",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,11 +80,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\errors" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_event\create" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\store\thunks" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\events" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\profile\artist\[id]\about" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\event\[id]" />
@@ -183,15 +201,8 @@
       <workItem from="1718307741276" duration="7000" />
       <workItem from="1718486675581" duration="1404000" />
       <workItem from="1718561038931" duration="10214000" />
-      <workItem from="1718619096153" duration="10279000" />
-    </task>
-    <task id="LOCAL-00042" summary="edit refresh token">
-      <option name="closed" value="true" />
-      <created>1715633059643</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1715633059643</updated>
+      <workItem from="1718619096153" duration="10431000" />
+      <workItem from="1718717979044" duration="5438000" />
     </task>
     <task id="LOCAL-00043" summary="edit page render">
       <option name="closed" value="true" />
@@ -577,7 +588,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718668169904</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="edit searching in categories">
+      <option name="closed" value="true" />
+      <created>1718668267974</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1718668267974</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +629,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create api file for auctions" />
     <MESSAGE value="write thunk for auctions and store file" />
     <MESSAGE value="testing get auction, get auction categories and in artist profile. edit notifications sse" />
     <MESSAGE value="edit problem with env" />
@@ -635,6 +653,7 @@
     <MESSAGE value="add filters (not final version) and category search" />
     <MESSAGE value="edit data create auction and events (not early that today)" />
     <MESSAGE value="footer (not all)" />
-    <option name="LAST_COMMIT_MESSAGE" value="footer (not all)" />
+    <MESSAGE value="edit searching in categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit searching in categories" />
   </component>
 </project>

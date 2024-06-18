@@ -15,6 +15,7 @@ interface HeaderProfileInterface {
     input_name: string,
     isNeedChangeData: boolean
     message: string
+    isBlocked: boolean
 
     isPublicSubscribe: boolean
     isPrivateSubscribe: boolean
@@ -60,7 +61,8 @@ export const HeaderProfileComponent = (props: HeaderProfileInterface) => {
                                                 setIsEditMobile={props.setIsEditMobile}
                                                 isPrivateSubscribe={props.isPrivateSubscribe}
                                                 isPublicSubscribe={props.isPublicSubscribe}
-                                            countSubscribers={props.countSubscribers}/>
+                                            countSubscribers={props.countSubscribers}
+                                            isBlocked={props.isBlocked}/>
                 </section>
             </section>
             {props.isNeedChangeData ?

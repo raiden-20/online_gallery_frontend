@@ -39,6 +39,8 @@ import {OnePageEventContainer} from "@/components/categories/events/one_page_eve
 import {CreateEventContainer} from "@/components/create_event/create/CreateEventContainer";
 import {Information} from "@/components/support/Information";
 import {Support} from "@/components/support/Support";
+import {Error403Page} from "@/components/403/403";
+import {Error404Page} from "@/components/404/404";
 
 interface RootInterface {
     artist_data: Artist
@@ -152,7 +154,9 @@ export const Root = (props: RootInterface) => {
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsContainer/>  :
                         main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsContainer/> :
                         main_path === MAIN_PATHS.INFORMATION ? <Information/> :
-                        main_path === MAIN_PATHS.SUPPORT ? <Support/>
+                        main_path === MAIN_PATHS.SUPPORT ? <Support/>:
+                        main_path === PATHS_CATEGORY.ERROR_403 ? <Error403Page/>:
+                        main_path === PATHS_CATEGORY.ERROR_404 ? <Error404Page/>
                             : null
                     }
                 </main>

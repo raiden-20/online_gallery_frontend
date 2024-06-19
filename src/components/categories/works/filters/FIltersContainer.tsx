@@ -1,8 +1,7 @@
 import {connect} from "react-redux";
 import {FiltersComponent} from "@/components/categories/works/filters/FiltersComponent";
-import {Filters} from "@/interfaces/filters";
 import {
-    setFiltersArtistsThunk, setFiltersFrameThunk, setFiltersMaterialsThunk,
+    setFiltersArtistsThunk, setFiltersClear, setFiltersFrameThunk, setFiltersMaterialsThunk,
     setFiltersPriceEndThunk,
     setFiltersPriceStartThunk,
     setFiltersSizeThunk, setFiltersStatusThunk, setFiltersTagsThunk, setFiltersYearThunk
@@ -22,7 +21,8 @@ const mapDispatchToProps = {
     setFiltersMaterialsThunk,
     setFiltersTagsThunk,
     setFiltersFrameThunk,
-    setFiltersStatusThunk
+    setFiltersStatusThunk,
+    setFiltersClear
 }
 
 export const FiltersContainer = connect(mapStateToProps, mapDispatchToProps)(FiltersComponent)

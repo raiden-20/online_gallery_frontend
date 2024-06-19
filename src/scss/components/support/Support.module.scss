@@ -1,0 +1,59 @@
+@import '@/scss/globals/color';
+@import '@/scss/globals/main_values';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-l1;
+}
+
+.header {
+  font-size: $font-size-xxl;
+  font-weight: $weight;
+}
+
+.one_section {
+  padding: $padding-24;
+  background-color: $grey_bg-settings;
+  border-radius: $elements-radius;
+
+  display: flex;
+  flex-direction: column;
+  gap: $gap-s;
+
+  .one_section_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .one_section_header_text {
+      font-size: $font-size-l0;
+      font-weight: $weight;
+    }
+
+    button {
+      height: min-content;
+    }
+  }
+
+  .one_section_main {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-s;
+  }
+
+  .one_section_main_text {
+    line-height: 1.5;
+  }
+
+  .one_section_main_ul {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-s;
+    padding-left: $root-padding-window;
+
+    li {
+      list-style-type: disc;
+    }
+  }
+}

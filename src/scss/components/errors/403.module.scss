@@ -1,0 +1,31 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/pages";
+
+.page {
+  height: 100%;
+  display: grid;
+}
+
+.root {
+  height: max-content;
+  max-width: $hover-section-width;
+  display: grid;
+  row-gap: $gap-s;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+}
+
+.text {
+  text-align: center;
+}
+
+.button {
+  text-decoration: underline;
+  font-size: $font-size;
+}
+
+.header_404 {
+  font-size: $font-size-64;
+  font-weight: $weight;
+}

@@ -28,6 +28,10 @@ export const categoriesReducer = (state = initialState, action: any) => {
     switch (action.type) {
 
         case SET_ARTISTS: {
+            for (let i = 0; i < action.artists.length; i++) {
+                action.artists[i].isActive = false
+            }
+
             stateCopy.artists = action.artists
             stateCopy.search = action.artists
             return stateCopy

@@ -20,9 +20,10 @@ $banner-height: 370px;
 
 .ul {
   width: $width - 2 * $padding-24;
+  max-height: 575px;
   display: flex;
   gap: $gap-l1;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .ul_mobile {
@@ -30,9 +31,11 @@ $banner-height: 370px;
 }
 
 .main {
+
   display: flex;
   flex-flow: column;
-  gap: $gap-s
+  gap: $gap-xl;
+  height: min-content;
 }
 
 .date {
@@ -42,6 +45,9 @@ $banner-height: 370px;
 
 .banner_img {
   width: $width - 2 * $padding-24;
+  height: 465px;
+  object-fit: cover;
+  border-radius: $radius-xm;
 }
 
 @media screen and (max-width: $width + 24px){
@@ -82,10 +88,6 @@ $banner-height: 370px;
 
 @media screen and (orientation: portrait){
   .ul {
-    display: none;
-  }
-
-  .ul_mobile {
     max-width: calc(100vw - 2 * 24px);
     display: flex;
     gap: $gap-l1;

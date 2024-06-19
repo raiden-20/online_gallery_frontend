@@ -4,42 +4,33 @@ import Image from "next/image";
 import search_icon from "@/assets/icons/search/search.svg";
 import delete_add_icon from "@/assets/icons/create_art/delete_add.svg";
 import React, {useCallback, useState} from "react";
-import Select, {SingleValue} from "react-select";
-import {SelectInterface} from "@/interfaces/filters";
+import Select, {MultiValue} from "react-select";
+import {SelectInterfaceWithActive} from "@/interfaces/filters";
 import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface setMaterialsInterface {
     tags: string[]
-    options: SelectInterface[],
+    options: SelectInterfaceWithActive[],
     setTags(tags: (prevState: string[]) => (string)[]): void
 }
 
 export const SetTagsComponent = (props: setMaterialsInterface) => {
     const [input_oneTag, setInput_oneTag] = useState('')
 
-    const [filteredValues, setFilteredValues] = useState(props.options);
-
-    const setTags = useCallback((event: SingleValue<SelectInterface>) => {
-        const filter = [...filteredValues]
-        filter.forEach((one: SelectInterface, index) => {
-            // @ts-ignore
-            if (one.value === event.value) {
-                filter.splice(index, 1)
+    const setTags = useCallback((event: MultiValue<SelectInterfaceWithActive>) => {
+        if (event) {
+            if (props.tags.length < CHARACTER_RESTRICTION.TAG_COUNT) {
+                const arr = event.map(one => {
+                    return one.label
+                })
+                props.setTags(() => [...arr])
             }
-        })
-        setFilteredValues(filter)
-        // @ts-ignore
-        props.setTags((prevState: string[]) => [...prevState, event.label])
-        setInput_oneTag('')
+            setInput_oneTag('')
+        }
     }, [])
 
     const setInputChange = useCallback((event: string) => {
         setInput_oneTag(event)
-        const filtered = filteredValues.filter((option: SelectInterface) =>
-            option.label.toLowerCase().includes(event.toLowerCase())
-        );
-        // @ts-ignore
-        setFilteredValues(filtered);
     }, [])
 
     return (
@@ -51,7 +42,8 @@ export const SetTagsComponent = (props: setMaterialsInterface) => {
                             <Image src={search_icon} alt={'search_icon'}/>
                             <div>Теги</div>
                         </section>}
-                    options={filteredValues}
+                    options={props.options}
+                    isMulti={true}
                     onChange={setTags}
                     inputValue={input_oneTag}
                     onInputChange={setInputChange}
@@ -63,11 +55,9 @@ export const SetTagsComponent = (props: setMaterialsInterface) => {
                             <li className={create_art_data_scss.one_add} key={index}>
                                 <div>{tag}</div>
                                 <button onClick={() => {
-                                    if (props.tags.length < CHARACTER_RESTRICTION.TAG_COUNT) {
-                                        let new_material = [...props.tags]
-                                        new_material.splice(index, 1)
-                                        props.setTags(() => new_material)
-                                    }
+                                    let new_material = [...props.tags]
+                                    new_material.splice(index, 1)
+                                    props.setTags(() => new_material)
                                 }}>
                                     <Image src={delete_add_icon} alt={'delete_add_icon'}/>
                                 </button>

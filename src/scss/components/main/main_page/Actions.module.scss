@@ -9,12 +9,37 @@ $width-action: 696px;
 }
 
 .one_action {
-  display: flex;
-  justify-content: space-between;
+  * {
+    cursor: pointer;
+  }
+
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: $gap-l2;
+  align-items: center;
+
+  img {
+    max-height: 233px;
+    width: 500px;
+    border-radius: $radius-xm;
+
+    object-fit: cover;
+  }
+}
+
+.one_action_reverse {
+  * {
+    cursor: pointer;
+  }
+
+  display: grid;
+  grid-template-columns: auto max-content;
+  gap: $gap-l2;
   align-items: center;
 }
 
 .date_section {
+  width: 100%;
   display: flex;
   flex-flow: column;
   align-items: center;

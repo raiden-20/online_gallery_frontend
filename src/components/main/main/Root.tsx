@@ -37,6 +37,10 @@ import {ChangeAuctionOrderContainer} from "@/components/change_order_auction/Cha
 import {EventsContainer} from "@/components/categories/events/EventsContainer";
 import {OnePageEventContainer} from "@/components/categories/events/one_page_event/OnePageEventContainer";
 import {CreateEventContainer} from "@/components/create_event/create/CreateEventContainer";
+import {Information} from "@/components/support/Information";
+import {Support} from "@/components/support/Support";
+import {Error403Page} from "@/components/403/403";
+import {Error404Page} from "@/components/404/404";
 
 interface RootInterface {
     artist_data: Artist
@@ -77,20 +81,32 @@ export const Root = (props: RootInterface) => {
                         Cookies.set('customerId', session.providerAccountId)
                         props.isCustomerCreate(router)
                     }
-                    if (Cookies.get('registrationFlag') === 'true') {
-                        if (props.customer_data.customerName === '') {
-                            props.getCustomerProfileData(Cookies.get('customerId') as string, router)
-                        }
-                        if (Cookies.get('artistId') && props.artist_data.artistName === '') {
+                    if (props.customer_data.customerName === '') {
+                        props.getCustomerProfileData(Cookies.get('customerId') as string, router)
+                    }
+                    if (Cookies.get('artistId') && props.artist_data.artistName === '') {
+                        props.getArtistProfileData(Cookies.get('artistId') as string, router)
+                    } else {
+                        if (props.customer_data.artistId !== '' && props.customer_data.artistId !== null) {
+                            Cookies.set('artistId', props.customer_data.artistId)
                             props.getArtistProfileData(Cookies.get('artistId') as string, router)
-                        } else {
-                            if (props.customer_data.artistId !== '' && props.customer_data.artistId !== null) {
-                                Cookies.set('artistId', props.customer_data.artistId)
-                                props.getArtistProfileData(Cookies.get('artistId') as string, router)
-                            }
                         }
+                    }
+                    if (Cookies.get('registrationFlag') === 'true') {
                         setToken(localStorage.getItem('access_token') as string)
                     }
+                }
+
+            }
+        } else {
+            if (session) {
+                // @ts-ignore
+                if (session.error !== undefined) {
+                    keycloakSessionLogOut()
+                        .then(() => {
+                            deleteCookies()
+                            signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
+                        })
                 }
             }
         }
@@ -136,7 +152,11 @@ export const Root = (props: RootInterface) => {
                             ? <ChangeAuctionOrderContainer/> :
                     main_path === PATHS_CATEGORY.CART ? <CartContainer/> :
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsContainer/>  :
-                        main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsContainer/>
+                        main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsContainer/> :
+                        main_path === MAIN_PATHS.INFORMATION ? <Information/> :
+                        main_path === MAIN_PATHS.SUPPORT ? <Support/>:
+                        main_path === PATHS_CATEGORY.ERROR_403 ? <Error403Page/>:
+                        main_path === PATHS_CATEGORY.ERROR_404 ? <Error404Page/>
                             : null
                     }
                 </main>

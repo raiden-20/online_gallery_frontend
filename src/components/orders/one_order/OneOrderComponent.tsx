@@ -83,7 +83,7 @@ export const OneOrderComponent = (props: oneOrderInterface) => {
                             <img src={props.oneOrder.artUrl} className={one_order_scss.img}
                                  alt={'photo'}/>
                             <section className={one_order_scss.art_data_name}>
-                                <div className={'p'}>{props.oneOrder.artName}</div>
+                                <abbr className={'p'} title={props.oneOrder.artName}>{props.oneOrder.artName}</abbr>
                                 <div className={one_order_scss.price}>{props.oneOrder.price} ₽</div>
                             </section>
                         </section>

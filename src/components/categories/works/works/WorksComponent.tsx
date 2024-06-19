@@ -10,14 +10,22 @@ interface workInterface {
 
 export const WorksComponent = (props: workInterface) => {
 
+    function hasValidProperties(obj: any): obj is ArtShortInterface {
+        return 'artId' in obj && 'name' in obj && 'photoUrl' in obj && 'price' in obj && 'artistId' in obj &&
+               'isPrivate' in obj && 'artistName' in obj && 'customerId' in obj && 'avatarUrl' in obj &&
+               'customerName' in obj;
+    }
+
     return (
         <ul className={works_profile_scss.root}>
             {props.arts.map((oneArt, index) => {
-                return (
-                    <li key={index}>
-                        <OneWorkCategoriesComponent oneArt={oneArt}/>
-                    </li>
-                )
+                if (hasValidProperties(oneArt)) {
+                    return (
+                        <li key={index}>
+                            <OneWorkCategoriesComponent oneArt={oneArt}/>
+                        </li>
+                    )
+                }
             })}
         </ul>
     )

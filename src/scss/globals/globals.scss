@@ -71,6 +71,10 @@ textarea:focus {
   outline: none;
 }
 
+abbr {
+  text-decoration: none;
+}
+
 p {
   margin: 0;
 }
@@ -86,8 +90,8 @@ ol {
 
 .custom-select {
   &__control {
-    height: $input-height !important;
-    padding: $input-padding !important;
+    min-height: $input-height !important;
+    padding: $padding-0-0-0-16 !important;
     border: 1px solid $grey !important;
     border-radius: $elements-radius !important;
     box-shadow: none !important;
@@ -96,10 +100,6 @@ ol {
   &__value-container, &__input-container {
     padding: 0 !important;
     margin: 0 !important;
-  }
-
-  &__indicators {
-    display: none !important;
   }
 
   &__menu {
@@ -133,6 +133,48 @@ ol {
 }
 
 .custom-select:focus {
+  border: none !important;
+}
+
+.custom-select-artists {
+  &__control {
+    *{
+      cursor: pointer;
+      font-weight: $weight;
+    }
+    width: $select-artist-width !important;
+    padding: $input-padding !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  &__value-container, &__input-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  &__indicators {
+    display: none !important;
+  }
+
+  &__menu {
+    border-radius: $elements-radius !important;
+  }
+
+  &__option {
+    background: none !important;
+  }
+
+  &__option:hover {
+    background-color: $grey-light !important;
+  }
+  &__option--is-selected {
+    color: $black-color !important;
+    background: none !important;
+  }
+}
+
+.custom-select-artists:focus {
   border: none !important;
 }
 

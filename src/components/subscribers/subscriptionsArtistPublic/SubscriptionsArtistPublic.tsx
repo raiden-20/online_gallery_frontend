@@ -36,7 +36,7 @@ export const SubscriptionsArtistPublic = (props: subscriptionsInterface) => {
                                 }
                             }}>
                             <img src={one.avatarUrl} alt={'avatar'} crossOrigin="anonymous"/>
-                            <div className={'p ' + subscriptions_scss.p}>{one.artistName}</div>
+                            <abbr className={'p ' + subscriptions_scss.p} title={one.artistName}>{one.artistName}</abbr>
                         </li>
                     )
                 })

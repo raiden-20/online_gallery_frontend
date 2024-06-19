@@ -4,10 +4,10 @@ import Image from "next/image";
 import open_icon from "@/assets/icons/categories/filter_category_open.svg";
 import close_icon from "@/assets/icons/categories/filter_category_close.svg";
 import search_icon from "@/assets/icons/categories/search.svg";
-import {Filters, SelectInterface} from "@/interfaces/filters";
+import {Filters, SelectInterfaceWithActive} from "@/interfaces/filters";
 
 interface filterInterface {
-    tags: SelectInterface[]
+    tags: SelectInterfaceWithActive[]
     currentFilters: Filters
     setFiltersTagsThunk(tags: string[]): void
 }
@@ -26,7 +26,7 @@ export const TagsFiltersComponent = (props: filterInterface) => {
         setFilteredTags(filtered);
     }, [])
 
-    const setTagsCheckBox = useCallback((event: boolean, name: string, index: number) => {
+    const setTagsCheckBox = useCallback((event: boolean, name: string) => {
         if (event) {
             let flag = false
             props.currentFilters.materials.map((oneTag => {
@@ -49,7 +49,11 @@ export const TagsFiltersComponent = (props: filterInterface) => {
             }))
         }
         const tagsFilter = [...filteredTags]
-        tagsFilter[index].isActive = !tagsFilter[index].isActive
+        tagsFilter.some(one => {
+            if (one.label === name) {
+                one.isActive = !one.isActive
+            }
+        })
         setFilteredTags(tagsFilter)
     },[])
 
@@ -77,7 +81,7 @@ export const TagsFiltersComponent = (props: filterInterface) => {
                                 <li className={filters_scss.size_one_section} key={index}>
                                     <input type={'checkbox'} checked={oneTag.isActive}
                                            onChange={(event) =>
-                                               setTagsCheckBox(event.target.checked, oneTag.label, index)}/>
+                                               setTagsCheckBox(event.target.checked, oneTag.label)}/>
                                     <div>{oneTag.label}</div>
                                 </li>
                             )

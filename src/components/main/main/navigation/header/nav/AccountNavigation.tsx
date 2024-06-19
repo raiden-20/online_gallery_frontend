@@ -46,7 +46,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                      crossOrigin="anonymous"
                                      alt={'avatar'}/>
                                 <section className={accountNavigation_scss.name_section}>
-                                    <div className={'p ' + accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
+                                    <abbr className={'p ' + accountNavigation_scss.name} title={props.my_customer_data.customerName}>{props.my_customer_data.customerName}</abbr>
                                 </section>
                             </section>
                             : null
@@ -91,7 +91,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                      crossOrigin="anonymous"
                                      alt={'avatar'}/>
                                 <section className={accountNavigation_scss.name_section}>
-                                    <div className={'p ' + accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
+                                    <abbr className={'p ' + accountNavigation_scss.name} title={props.my_customer_data.customerName}>{props.my_customer_data.customerName}</abbr>
                                     <button className={accountNavigation_scss.button}>
                                         Покупатель
                                     </button>
@@ -113,7 +113,7 @@ export const AccountNavigation = (props: accountNavInterface) => {
                                      crossOrigin="anonymous"
                                      alt={'avatar'}/>
                                 <section className={accountNavigation_scss.name_section}>
-                                    <div className={'p ' + accountNavigation_scss.name}>{props.my_artist_data.artistName}</div>
+                                    <abbr className={'p ' + accountNavigation_scss.name} title={props.my_artist_data.artistName}>{props.my_artist_data.artistName}</abbr>
                                     <button className={accountNavigation_scss.button}>
                                         Художник
                                     </button>

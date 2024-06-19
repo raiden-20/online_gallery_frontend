@@ -39,7 +39,7 @@ export interface AuctionCategoriesInterface {
     customerName: string
     description: string
     size: string
-    viewCount: string
+    viewCount: number
     createDate: string
     tags: string[]
     materials: string[]

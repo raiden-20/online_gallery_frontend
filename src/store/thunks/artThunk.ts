@@ -3,7 +3,7 @@ import {ArtsAPI} from "@/api/artsAPI";
 import {Dispatch} from "redux";
 import {clearOneArt, setArts, setArtsArtist, setArtsCustomer, setOneArt} from "@/store/reducers/artReducer";
 import {setSearch} from "@/store/reducers/categoriesReducer";
-import {MAIN_PATHS} from "@/paths/main";
+import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
 import Cookies from "js-cookie";
 import {ART_TYPES} from "@/paths/elements";
 
@@ -39,6 +39,15 @@ export const GetArt = (artId: string, currentId: string, router: AppRouterInstan
                         response[1].artId = artId
                         dispatch(clearOneArt())
                         dispatch(setOneArt(response[1]))
+                        break
+                    }
+                    case 400: {
+                        router.push(PATHS_CATEGORY.ERROR_404)
+                        break
+                    }
+                    case 403: {
+                        router.push(PATHS_CATEGORY.ERROR_403)
+                        break
                     }
                 }
             }).catch(error => {

@@ -18,7 +18,6 @@ export const Works = (props: WorksInterface) => {
 
     const router = useRouter()
 
-
     useEffect(() => {
         let type = ''
         switch (props.whoIsClicked) {

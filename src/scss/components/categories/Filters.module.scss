@@ -161,3 +161,17 @@ html.page_modal_window{
   height: 100vh;
   overflow: hidden;
 }
+
+@media screen and (orientation: portrait){
+  .root {
+    width: 100%;
+    padding: $section-padding-s;
+  }
+
+  .footer {
+    padding-top: $section-padding-s;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: $gap-s;
+  }
+}

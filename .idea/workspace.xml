@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add banners to main page">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="mobile version for events">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/events/Events.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/events/Events.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/eventsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/eventsThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Filters.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Filters.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,15 +187,7 @@
       <workItem from="1718561038931" duration="10214000" />
       <workItem from="1718619096153" duration="10431000" />
       <workItem from="1718717979044" duration="9299000" />
-      <workItem from="1718786187578" duration="1307000" />
-    </task>
-    <task id="LOCAL-00047" summary="edit display css popup notification">
-      <option name="closed" value="true" />
-      <created>1715845968525</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1715845968525</updated>
+      <workItem from="1718786187578" duration="2015000" />
     </task>
     <task id="LOCAL-00048" summary="commit">
       <option name="closed" value="true" />
@@ -581,7 +573,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718786890520</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="mobile version for events">
+      <option name="closed" value="true" />
+      <created>1718787900974</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1718787900974</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit date" />
     <MESSAGE value="testing" />
     <MESSAGE value="add yandex metric" />
     <MESSAGE value="fixed date request to change customer data" />
@@ -639,6 +638,7 @@
     <MESSAGE value="complete information page" />
     <MESSAGE value="complete sorting categories" />
     <MESSAGE value="add banners to main page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add banners to main page" />
+    <MESSAGE value="mobile version for events" />
+    <option name="LAST_COMMIT_MESSAGE" value="mobile version for events" />
   </component>
 </project>

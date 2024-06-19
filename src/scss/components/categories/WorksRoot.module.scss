@@ -39,3 +39,10 @@ $filters-button-gap: 8px;
     font-weight: $weight;
   }
 }
+
+@media screen and (orientation: portrait) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+}

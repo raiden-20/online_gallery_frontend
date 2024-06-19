@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import {Roboto} from "next/font/google";
-import React from "react";
+import React, {Suspense} from "react";
 
 import '@/scss/globals/globals.scss'
 import '@/scss/globals/pages.scss'
@@ -21,13 +21,15 @@ export default function RootLayout({
 }>) {
     return (
         <ProviderMain>
-            <YandexMetric/>
+            <Suspense>
+                <YandexMetric/>
             <html lang="en">
             <head>
                 <link rel="icon" href="/main_icon.ico" />
             </head>
             <body className={inter.className}>{children}</body>
             </html>
+            </Suspense>
         </ProviderMain>
     );
 }

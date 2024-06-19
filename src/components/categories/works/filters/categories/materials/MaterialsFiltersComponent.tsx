@@ -4,10 +4,10 @@ import open_icon from "@/assets/icons/categories/filter_category_open.svg";
 import close_icon from "@/assets/icons/categories/filter_category_close.svg";
 import search_icon from "@/assets/icons/categories/search.svg";
 import {useCallback, useState} from "react";
-import { Filters, SelectInterface} from "@/interfaces/filters";
+import { Filters, SelectInterfaceWithActive} from "@/interfaces/filters";
 
 interface filterInterface {
-    materials: SelectInterface[]
+    materials: SelectInterfaceWithActive[]
     currentFilters: Filters
     setFiltersMaterialsThunk(materials: string[]): void
 }

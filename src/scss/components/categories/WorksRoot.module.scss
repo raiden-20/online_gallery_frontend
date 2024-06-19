@@ -27,8 +27,10 @@ $filters-button-gap: 8px;
 }
 
 .nav {
+  height: min-content;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   .filters_button {
     height: min-content;

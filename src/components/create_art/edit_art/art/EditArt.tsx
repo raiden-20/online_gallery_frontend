@@ -49,6 +49,7 @@ export const EditArtComponent = (props: editArtInterface) => {
 
     useEffect(() => {
         if (editArt) {
+            debugger
             if (Number.parseInt(input_createDate) > 999 && Number.parseInt(input_createDate) <= 2024) {
                 props.EditArt(props.oneArt.artId, input_name, props.oneArt.type, isChangeMainPhoto, photoArrayFile,
                     deletePhotoUrls, removeSpaces(input_price.toString()), removeSpaces(input_createDate.toString()) + '-01-01', input_description,

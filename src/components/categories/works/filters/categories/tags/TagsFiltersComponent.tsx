@@ -4,10 +4,10 @@ import Image from "next/image";
 import open_icon from "@/assets/icons/categories/filter_category_open.svg";
 import close_icon from "@/assets/icons/categories/filter_category_close.svg";
 import search_icon from "@/assets/icons/categories/search.svg";
-import {Filters, SelectInterface} from "@/interfaces/filters";
+import {Filters, SelectInterfaceWithActive} from "@/interfaces/filters";
 
 interface filterInterface {
-    tags: SelectInterface[]
+    tags: SelectInterfaceWithActive[]
     currentFilters: Filters
     setFiltersTagsThunk(tags: string[]): void
 }

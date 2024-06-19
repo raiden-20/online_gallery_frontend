@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
 import {AddInformationComponent} from "@/components/create_art/pages/data/elements/add_info/AddInformationComponent";
-import {SelectInterface} from "@/interfaces/filters";
+import {SelectInterfaceWithActive} from "@/interfaces/filters";
 
 
 interface state {
     filters : {
-        tags: SelectInterface[],
-        materials: SelectInterface[],
+        tags: SelectInterfaceWithActive[],
+        materials: SelectInterfaceWithActive[],
     }
 
 }

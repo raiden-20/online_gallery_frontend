@@ -15,10 +15,15 @@ export interface FilteredElementsInterface {
     isActive: boolean
 }
 
-export interface SelectInterface {
+export interface SelectInterfaceWithActive {
     value: string,
     label: string,
     isActive: boolean
+}
+
+export interface SelectInterface {
+    value: string,
+    label: string
 }
 
 export const SizeInterface = {

@@ -11,7 +11,7 @@ export const ART_TYPES_MANY = {
 }
 
 export const ART_AUCTION = {
-    ART: 'art',
+    ART: 'arts',
     AUCTION: 'auction'
 }
 

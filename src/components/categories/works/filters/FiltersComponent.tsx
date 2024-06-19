@@ -84,8 +84,9 @@ export const FiltersComponent = (props: filtersInterface) => {
                 <footer className={filters_scss.footer}>
                     <button className={'cancel_button'}
                             onClick={() => {
-                                props.setFiltersClear()
                                 props.setSetFilters(true)
+                                props.setFiltersClear()
+                                props.setIsFiltersOpen(false)
                                }
                             }>
                         Сбросить все

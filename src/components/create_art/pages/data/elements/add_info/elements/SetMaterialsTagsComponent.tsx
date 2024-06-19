@@ -2,14 +2,14 @@ import create_art_data_scss from "@/scss/components/create_art/CreateArtData.mod
 import subscriptions_scss from "@/scss/components/subscriptions/Subscriptions.module.scss";
 import Image from "next/image";
 import search_icon from "@/assets/icons/search/search.svg";
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Select, {MultiValue} from "react-select";
-import {SelectInterface} from "@/interfaces/filters";
+import {SelectInterface, SelectInterfaceWithActive} from "@/interfaces/filters";
 import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface setMaterialsInterface {
     materials: string[]
-    options: SelectInterface[],
+    options: SelectInterfaceWithActive[],
     count: number
     name: string
     setMaterials(materials: (prevState: string[]) => (string)[]): void
@@ -17,6 +17,19 @@ interface setMaterialsInterface {
 
 export const SetMaterialsTagsComponent = (props: setMaterialsInterface) => {
     const [input_oneMaterial, setInput_oneMaterial] = useState('')
+    const [selectedMaterials, setSelectedMaterials] = useState<SelectInterface[]>()
+
+
+    useEffect(() => {
+        const arr: SelectInterface[] = []
+        for (let i = 0; i < props.materials.length; i++) {
+            arr.push({
+                value: props.materials[i],
+                label: props.materials[i]
+            })
+        }
+        setSelectedMaterials(arr)
+    }, [props.materials]);
 
     const setMaterial = useCallback((event: MultiValue<SelectInterface>) => {
         if (event) {
@@ -48,6 +61,7 @@ export const SetMaterialsTagsComponent = (props: setMaterialsInterface) => {
                     onChange={setMaterial}
                     inputValue={input_oneMaterial}
                     onInputChange={setInputChange}
+                    value={selectedMaterials}
                     isClearable={true}
                     classNamePrefix={'custom-select'}/>
         </section>

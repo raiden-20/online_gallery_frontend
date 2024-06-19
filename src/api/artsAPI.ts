@@ -58,6 +58,9 @@ export const ArtsAPI = {
                      deletePhotoUrls: string[], price: string, createDate: string, description: string, size: string,
                      tags: string[], materials: string[], isPrivate: boolean, frame: boolean) {
         try {
+
+            debugger
+
             const formData = new FormData()
             const dto_object = new Blob([JSON.stringify({
                 artId,
@@ -73,10 +76,12 @@ export const ArtsAPI = {
                 tags,
                 materials,
                 frame: frame,
-                eventId: Cookies.get('eventId') === undefined ? null : Cookies.get('eventId')
+                eventId: Cookies.get('eventId') === undefined ? "null" : Cookies.get('eventId')
             })], {
                 type: 'application/json'
             })
+
+            debugger
 
             formData.append('ArtChangeDTO', dto_object);
 

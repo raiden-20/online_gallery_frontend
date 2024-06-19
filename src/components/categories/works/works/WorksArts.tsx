@@ -4,6 +4,7 @@ import {Filters, SizeInterface, SizeInterfaceValue} from "@/interfaces/filters";
 import {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {usePathname, useRouter} from "next/navigation";
+import {isCurrentFiltersEmpty} from "../../../../../utils/tests";
 
 interface workInterface {
     currentFilters: Filters
@@ -23,7 +24,6 @@ export const WorksArts = (props: workInterface) => {
     const lastPath = pathname[pathname.length - 1]
 
     const [filteredArts, setFilteredArts] = useState(props.arts)
-
 
     useEffect(() => {
         props.GetArtsCategories(lastPath, router)
@@ -56,7 +56,6 @@ export const WorksArts = (props: workInterface) => {
     const isSameSize = (oneArt: ArtShortInterface) : boolean => {
         let flag = false
         props.currentFilters.size.forEach(sizeName => {
-            debugger
             switch (sizeName) {
                 case SizeInterface.SMALL : {
                     if (Number.parseInt(oneArt.size.split('x')[0]) <= SizeInterfaceValue.SMALL &&
@@ -89,14 +88,17 @@ export const WorksArts = (props: workInterface) => {
 
     useEffect(() => {
         if (props.setFilters) {
-            const arr = [...props.arts]
-            const arrr= arr.filter((oneArt) =>
-                (Number.parseInt(oneArt.price) >= Number.parseInt(props.currentFilters.priceStart)) && (Number.parseInt(oneArt.price) <= Number.parseInt(props.currentFilters.priceEnd) ||
-                    oneArt.tags.some(val => props.currentFilters.tags.includes(val)) || oneArt.materials.some(val => props.currentFilters.materials.includes(val)) ||
-                    props.currentFilters.artists.includes(oneArt.artistId) || oneArt.frame === props.currentFilters.frame ||
-                    isSameSize(oneArt)))
-            debugger
-            setFilteredArts(arrr)
+            if (isCurrentFiltersEmpty(props.currentFilters)) {
+                setFilteredArts(props.arts)
+            } else {
+                const arr = [...props.arts]
+                const arrr= arr.filter((oneArt) =>
+                    (Number.parseInt(oneArt.price) >= Number.parseInt(props.currentFilters.priceStart)) && (Number.parseInt(oneArt.price) <= Number.parseInt(props.currentFilters.priceEnd) ||
+                        oneArt.tags.some(val => props.currentFilters.tags.includes(val)) || oneArt.materials.some(val => props.currentFilters.materials.includes(val)) ||
+                        props.currentFilters.artists.includes(oneArt.artistId) || oneArt.frame === props.currentFilters.frame ||
+                        isSameSize(oneArt)))
+                setFilteredArts(arrr)
+            }
             props.setSetFilters(false)
         }
     }, [props.setFilters]);

@@ -4,8 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit mobile version for categories and filters">
-      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit nav section">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/artsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/artsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/year/YearFiltersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/year/YearFiltersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/art/EditArt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/art/EditArt.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/AddInformationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/AddInformationComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/AddInformationContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/AddInformationContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetMaterialsTagsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetMaterialsTagsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetTagsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetTagsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/filters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/filters.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paths/elements.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/elements.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/filtersReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/filtersReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,22 +62,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Rebasing feature__final__testing__app&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/main/elements/banner&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Rebasing feature__final__testing__app",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/PROJECT/csf-exams-frontend",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\elements\banner" />
@@ -185,15 +203,7 @@
       <workItem from="1718561038931" duration="10214000" />
       <workItem from="1718619096153" duration="10431000" />
       <workItem from="1718717979044" duration="9299000" />
-      <workItem from="1718786187578" duration="2439000" />
-    </task>
-    <task id="LOCAL-00049" summary="commit dev env file">
-      <option name="closed" value="true" />
-      <created>1716197375285</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1716197375285</updated>
+      <workItem from="1718786187578" duration="5677000" />
     </task>
     <task id="LOCAL-00050" summary="add key to maps">
       <option name="closed" value="true" />
@@ -579,7 +589,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718788453319</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="edit nav section">
+      <option name="closed" value="true" />
+      <created>1718788845789</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1718788845789</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +630,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add yandex metric" />
     <MESSAGE value="fixed date request to change customer data" />
     <MESSAGE value="testing all app and fixed bugs" />
     <MESSAGE value="create page in categories for events and design" />
@@ -637,6 +654,7 @@
     <MESSAGE value="add banners to main page" />
     <MESSAGE value="mobile version for events" />
     <MESSAGE value="edit mobile version for categories and filters" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit mobile version for categories and filters" />
+    <MESSAGE value="edit nav section" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit nav section" />
   </component>
 </project>

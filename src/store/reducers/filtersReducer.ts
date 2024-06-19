@@ -1,4 +1,4 @@
-import {FilteredElementsInterface, Filters, SelectInterface} from "@/interfaces/filters";
+import {FilteredElementsInterface, Filters, SelectInterfaceWithActive} from "@/interfaces/filters";
 
 const SET_FILTERS_PRICE_START = 'SET_FILTERS_PRICE_START'
 const SET_FILTERS_PRICE_END = 'SET_FILTERS_PRICE_END'
@@ -12,8 +12,8 @@ const SET_FILTERS_STATUS = 'SET_FILTERS_STATUS'
 const SET_CLEAR_FILTERS = 'SET_CLEAR_FILTERS'
 
 interface FiltersReducerInterface {
-    tags: SelectInterface[],
-    materials: SelectInterface[],
+    tags: SelectInterfaceWithActive[],
+    materials: SelectInterfaceWithActive[],
     year: FilteredElementsInterface[],
     currentFilters: Filters
 }

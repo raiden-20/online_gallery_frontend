@@ -1,12 +1,12 @@
 import create_art_data_scss from '@/scss/components/create_art/CreateArtData.module.scss'
 import React from "react";
 import {SetMaterialsTagsComponent} from "@/components/create_art/pages/data/elements/add_info/elements/SetMaterialsTagsComponent";
-import {SelectInterface} from "@/interfaces/filters";
+import {SelectInterfaceWithActive} from "@/interfaces/filters";
 import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface addInfoInterface {
-    tags_list: SelectInterface[],
-    materials_list: SelectInterface[],
+    tags_list: SelectInterfaceWithActive[],
+    materials_list: SelectInterfaceWithActive[],
     tags : string[]
     setTags(tags: (prevState: string[]) => (string)[]): void
     materials: string[]

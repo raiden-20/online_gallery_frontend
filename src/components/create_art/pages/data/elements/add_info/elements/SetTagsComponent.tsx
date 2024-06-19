@@ -5,19 +5,19 @@ import search_icon from "@/assets/icons/search/search.svg";
 import delete_add_icon from "@/assets/icons/create_art/delete_add.svg";
 import React, {useCallback, useState} from "react";
 import Select, {MultiValue} from "react-select";
-import {SelectInterface} from "@/interfaces/filters";
+import {SelectInterfaceWithActive} from "@/interfaces/filters";
 import {CHARACTER_RESTRICTION} from "@/paths/elements";
 
 interface setMaterialsInterface {
     tags: string[]
-    options: SelectInterface[],
+    options: SelectInterfaceWithActive[],
     setTags(tags: (prevState: string[]) => (string)[]): void
 }
 
 export const SetTagsComponent = (props: setMaterialsInterface) => {
     const [input_oneTag, setInput_oneTag] = useState('')
 
-    const setTags = useCallback((event: MultiValue<SelectInterface>) => {
+    const setTags = useCallback((event: MultiValue<SelectInterfaceWithActive>) => {
         if (event) {
             if (props.tags.length < CHARACTER_RESTRICTION.TAG_COUNT) {
                 const arr = event.map(one => {

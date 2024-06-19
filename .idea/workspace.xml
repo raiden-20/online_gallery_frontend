@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="complete sorting categories">
-      <change afterPath="$PROJECT_DIR$/src/components/main/elements/banner/MainBannerContainer.tsx" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add banners to main page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/events/Events.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/events/Events.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/eventsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/eventsThunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,14 +187,7 @@
       <workItem from="1718561038931" duration="10214000" />
       <workItem from="1718619096153" duration="10431000" />
       <workItem from="1718717979044" duration="9299000" />
-    </task>
-    <task id="LOCAL-00046" summary="edit settings pages">
-      <option name="closed" value="true" />
-      <created>1715689840077</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1715689840077</updated>
+      <workItem from="1718786187578" duration="1307000" />
     </task>
     <task id="LOCAL-00047" summary="edit display css popup notification">
       <option name="closed" value="true" />
@@ -583,7 +573,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718755821718</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="add banners to main page">
+      <option name="closed" value="true" />
+      <created>1718786890519</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1718786890520</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testing auctions" />
     <MESSAGE value="edit date" />
     <MESSAGE value="testing" />
     <MESSAGE value="add yandex metric" />
@@ -641,6 +638,7 @@
     <MESSAGE value="add 404 and 403 errors" />
     <MESSAGE value="complete information page" />
     <MESSAGE value="complete sorting categories" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete sorting categories" />
+    <MESSAGE value="add banners to main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add banners to main page" />
   </component>
 </project>

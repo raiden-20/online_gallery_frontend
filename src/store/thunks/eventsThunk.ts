@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {EventAPI} from "@/api/eventAPI";
-import {setEvents, setOneEvent} from "@/store/reducers/eventReducer";
+import {clearOneEvent, setEvents, setOneEvent} from "@/store/reducers/eventReducer";
 
 export const GetEvents = () =>
     (dispatch: Dispatch) => {
@@ -23,6 +23,7 @@ export const GetOneEvent = (eventId: string, currentId: string) =>
             .then((response: any) => {
                 switch (response.status) {
                     case 200 : {
+                        dispatch(clearOneEvent())
                         dispatch(setOneEvent(response.data))
                         break
                     }

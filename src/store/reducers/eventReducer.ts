@@ -44,11 +44,12 @@ export const eventReducer = (state = initialState, action: any) => {
             action.event.startDate = new Date(action.event.startDate)
             action.event.endDate = new Date(action.event.endDate)
 
-            for (let i = 0; i < action.event.subjects.length; i++) {
-                action.event.subjects[i].startDate = new Date(action.event.subjects[i].startDate)
-                action.event.subjects[i].endDate = new Date(action.event.subjects[i].endDate)
+            if (action.event.subjects !== null) {
+                for (let i = 0; i < action.event.subjects.length; i++) {
+                    action.event.subjects[i].startDate = new Date(action.event.subjects[i].startDate)
+                    action.event.subjects[i].endDate = new Date(action.event.subjects[i].endDate)
+                }
             }
-
             stateCopy.event = action.event
 
             return stateCopy

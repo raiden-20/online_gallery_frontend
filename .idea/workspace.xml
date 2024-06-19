@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="mobile version for events">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/Filters.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/Filters.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit mobile version for categories and filters">
+      <change beforePath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main/navigation/header/nav/NavigationComponentMobile.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,15 +185,7 @@
       <workItem from="1718561038931" duration="10214000" />
       <workItem from="1718619096153" duration="10431000" />
       <workItem from="1718717979044" duration="9299000" />
-      <workItem from="1718786187578" duration="2015000" />
-    </task>
-    <task id="LOCAL-00048" summary="commit">
-      <option name="closed" value="true" />
-      <created>1716197273853</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1716197273854</updated>
+      <workItem from="1718786187578" duration="2439000" />
     </task>
     <task id="LOCAL-00049" summary="commit dev env file">
       <option name="closed" value="true" />
@@ -581,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718787900974</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="edit mobile version for categories and filters">
+      <option name="closed" value="true" />
+      <created>1718788453319</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1718788453319</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +612,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testing" />
     <MESSAGE value="add yandex metric" />
     <MESSAGE value="fixed date request to change customer data" />
     <MESSAGE value="testing all app and fixed bugs" />
@@ -639,6 +636,7 @@
     <MESSAGE value="complete sorting categories" />
     <MESSAGE value="add banners to main page" />
     <MESSAGE value="mobile version for events" />
-    <option name="LAST_COMMIT_MESSAGE" value="mobile version for events" />
+    <MESSAGE value="edit mobile version for categories and filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit mobile version for categories and filters" />
   </component>
 </project>

@@ -3,6 +3,7 @@ import {useRouter} from "next/navigation";
 import React, {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {CHARACTER_RESTRICTION} from "@/paths/elements";
+import {currDate} from "../../../../../utils/tests";
 
 interface CreateCustomerInterface {
     createCustomerProfile(customerName: string, birthDate: string, gender: string,
@@ -17,6 +18,8 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
     const [input_name, setInput_name] = useState('')
     const [input_date, setInput_date] = useState('')
     const [input_gender, setInput_gender] = useState('MAN')
+
+    const [currDateStr] = useState(currDate() + 'T00:00')
 
     const [message, setMessage] = useState('')
 
@@ -50,6 +53,7 @@ export const CreateCustomerComponent = (props: CreateCustomerInterface) => {
                    }}
                    placeholder={'Имя'}/>
             <input value={input_date} type={'date'}
+                   min={currDateStr}
                    onChange={(event) => setInput_date(event.target.value)}
                    placeholder={'Возраст'}/>
             <select value={input_gender}

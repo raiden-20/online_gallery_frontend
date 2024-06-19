@@ -2,7 +2,7 @@ import axios from "axios";
 import {refreshAccessToken} from "../../utils/auth_config";
 
 export const PathsAPI = {
-    BASE: 'http://localhost:8080/api',
+    BASE: process.env.API_URL,
 
     CREATE: '/create',
     BUY: '/buy',

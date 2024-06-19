@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit art editing tags and materials">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit filters">
+      <change afterPath="$PROJECT_DIR$/src/components/main/elements/actions/MainEventsContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/artists/ArtistsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/artists/ArtistsFiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/filtersReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/filtersReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/actions/ActionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/actions/EventsComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Artists.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Artists.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +58,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Rebasing feature__final__testing__app",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/PROJECT/csf-exams-frontend",
+    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/main/elements/actions",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,11 +71,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\elements\actions" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\elements\banner" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\errors" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_event\create" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\event\[id]" />
@@ -193,15 +194,7 @@
       <workItem from="1718561038931" duration="10214000" />
       <workItem from="1718619096153" duration="10431000" />
       <workItem from="1718717979044" duration="9299000" />
-      <workItem from="1718786187578" duration="9350000" />
-    </task>
-    <task id="LOCAL-00051" summary="add key to maps">
-      <option name="closed" value="true" />
-      <created>1716202430839</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1716202430839</updated>
+      <workItem from="1718786187578" duration="11640000" />
     </task>
     <task id="LOCAL-00052" summary="add key to maps">
       <option name="closed" value="true" />
@@ -587,7 +580,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718798194658</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="edit filters">
+      <option name="closed" value="true" />
+      <created>1718801877562</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1718801877562</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +621,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testing all app and fixed bugs" />
     <MESSAGE value="create page in categories for events and design" />
     <MESSAGE value="page create event design" />
     <MESSAGE value="create one event page" />
@@ -645,6 +645,7 @@
     <MESSAGE value="edit mobile version for categories and filters" />
     <MESSAGE value="edit nav section" />
     <MESSAGE value="edit art editing tags and materials" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit art editing tags and materials" />
+    <MESSAGE value="edit filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit filters" />
   </component>
 </project>

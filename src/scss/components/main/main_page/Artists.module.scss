@@ -71,6 +71,13 @@ $name-section-height: 51px;
     width: $img-size / 1.5;
     height: $img-size / 1.5;
   }
+
+  .one_artist_name_section {
+    max-width: 80%;
+    div {
+      font-size: $font-size-l22;
+    }
+  }
 }
 
 @media screen and (max-width: 550px) {

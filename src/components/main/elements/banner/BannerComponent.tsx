@@ -6,7 +6,10 @@ import Image from "next/image";
 
 import banner_scss from '@/scss/components/main/main_page/Banner.module.scss'
 import {EventsCategoriesInterface} from "@/interfaces/eventInterface";
-import {reformatDateFull} from "../../../../../utils/tests";
+import {reformatDateDayMonth} from "../../../../../utils/tests";
+import {MAIN_PATHS} from "@/paths/main";
+import {useRouter} from "next/navigation";
+import {EVENT_STATUS} from "@/paths/elements";
 
 interface banner {
     events: EventsCategoriesInterface[]
@@ -14,47 +17,33 @@ interface banner {
 }
 
 export const BannerComponent = (props: banner) => {
+    const router = useRouter()
 
     useEffect(() => {
         props.GetEvents()
     }, []);
 
     const BannerRef = useRef<HTMLUListElement>(null);
-    const BannerRef_mobile = useRef<HTMLUListElement>(null);
 
     const scrollToNextPhoto = () => {
-        if (BannerRef.current && BannerRef_mobile.current) {
+        if (BannerRef.current) {
             const galleryWidth = BannerRef.current.offsetWidth;
             const scrollLeft = BannerRef.current.scrollLeft;
 
-            const galleryWidthMobile = BannerRef_mobile.current.offsetWidth;
-            const scrollLeftMobile = BannerRef_mobile.current.scrollLeft;
-
             BannerRef.current.scrollTo({
                 left: scrollLeft + galleryWidth + 30,
-                behavior: 'smooth',
-            });
-            BannerRef_mobile.current.scrollTo({
-                left: scrollLeftMobile + galleryWidthMobile + 30,
                 behavior: 'smooth',
             });
         }
     };
 
     const scrollToPreviousPhoto = () => {
-        if (BannerRef.current && BannerRef_mobile.current) {
+        if (BannerRef.current ) {
             const galleryWidth = BannerRef.current.offsetWidth;
             const scrollLeft = BannerRef.current.scrollLeft;
 
-            const galleryWidthMobile = BannerRef_mobile.current.offsetWidth;
-            const scrollLeftMobile = BannerRef_mobile.current.scrollLeft;
-
             BannerRef.current.scrollTo({
                 left: scrollLeft - galleryWidth - 30,
-                behavior: 'smooth',
-            });
-            BannerRef_mobile.current.scrollTo({
-                left: scrollLeftMobile - galleryWidthMobile - 30,
                 behavior: 'smooth',
             });
         }
@@ -74,16 +63,20 @@ export const BannerComponent = (props: banner) => {
                     </button>
                 </section>
                 <ul className={banner_scss.ul} ref={BannerRef}>
-                    {props.events.map((events, index) => {
+                    {props.events.filter(one => one.status === EVENT_STATUS.WAIT || one.status === EVENT_STATUS.AVAILABLE)
+                        .map((events, index) => {
                         return (
                             <li className={banner_scss.main} key={index}>
                                 <img src={events.bannerUrl} className={banner_scss.banner_img}
                                      alt={'banner'} crossOrigin={'anonymous'}/>
                                 <section className={banner_scss.buttons_section}>
                                     <div className={banner_scss.date}>
-                                        {reformatDateFull(events.startDate.toISOString())} — {reformatDateFull(events.endDate.toISOString())}
+                                        {reformatDateDayMonth(events.startDate.toISOString())} — {reformatDateDayMonth(events.endDate.toISOString())}
                                     </div>
-                                    <button className={'button_main_page-2 ' + banner_scss.button}>
+                                    <button className={'button_main_page-2 ' + banner_scss.button}
+                                            onClick={() => {
+                                                router.push(MAIN_PATHS.EVENT + `/${events.eventId}`)
+                                            }}>
                                         Подробнее
                                     </button>
                                 </section>

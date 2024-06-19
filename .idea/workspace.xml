@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit filters">
-      <change afterPath="$PROJECT_DIR$/src/components/main/elements/actions/MainEventsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/elements/actions/ActionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/actions/EventsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Actions.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Artists.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Artists.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/errors/403.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/errors/403.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/support/Support.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/support/Support.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="feature_final_testing_app" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,7 +49,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing feature__final__testing__app",
+    "git-widget-placeholder": "Rebasing develop",
     "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/main/elements/actions",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",

@@ -30,12 +30,12 @@ $filters-button-gap: 8px;
   height: min-content;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   .filters_button {
     height: min-content;
 
     display: flex;
+    justify-content: start;
     gap: $gap-xxxs;
 
     font-weight: $weight;

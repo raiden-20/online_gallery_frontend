@@ -4,25 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit nav section">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit art editing tags and materials">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/artsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/artsAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/FiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/materials/MaterialsFiltersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/tags/TagsFiltersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/year/YearFiltersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/year/YearFiltersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/artists/ArtistsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/artists/ArtistsFiltersComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/edit_art/art/EditArt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/edit_art/art/EditArt.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/AddInformationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/AddInformationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/AddInformationContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/AddInformationContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetMaterialsTagsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetMaterialsTagsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetTagsComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create_art/pages/data/elements/add_info/elements/SetTagsComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/filters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/filters.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/elements.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/elements.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/categories/WorksRoot.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/categoriesReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/filtersReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/filtersReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/categoriesThunk.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,15 +193,7 @@
       <workItem from="1718561038931" duration="10214000" />
       <workItem from="1718619096153" duration="10431000" />
       <workItem from="1718717979044" duration="9299000" />
-      <workItem from="1718786187578" duration="5677000" />
-    </task>
-    <task id="LOCAL-00050" summary="add key to maps">
-      <option name="closed" value="true" />
-      <created>1716202118718</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1716202118718</updated>
+      <workItem from="1718786187578" duration="9350000" />
     </task>
     <task id="LOCAL-00051" summary="add key to maps">
       <option name="closed" value="true" />
@@ -597,7 +579,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718788845789</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="edit art editing tags and materials">
+      <option name="closed" value="true" />
+      <created>1718798194658</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1718798194658</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +620,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed date request to change customer data" />
     <MESSAGE value="testing all app and fixed bugs" />
     <MESSAGE value="create page in categories for events and design" />
     <MESSAGE value="page create event design" />
@@ -655,6 +644,7 @@
     <MESSAGE value="mobile version for events" />
     <MESSAGE value="edit mobile version for categories and filters" />
     <MESSAGE value="edit nav section" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit nav section" />
+    <MESSAGE value="edit art editing tags and materials" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit art editing tags and materials" />
   </component>
 </project>

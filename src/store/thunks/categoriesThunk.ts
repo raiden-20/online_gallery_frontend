@@ -10,7 +10,6 @@ export const getAllCustomers = () =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        dispatch(clearCategoriesReducer())
                         dispatch(setSearch(response[1]))
                     }
                 }
@@ -25,7 +24,6 @@ export const getAllArtists = () =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        dispatch(clearCategoriesReducer())
                         dispatch(setArtists(response[1]))
                     }
                 }
@@ -40,7 +38,6 @@ export const getAllArts = (type: string, router: AppRouterInstance) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        dispatch(clearCategoriesReducer())
                         dispatch(setSearch(response[1]))
                     }
                 }
@@ -55,7 +52,6 @@ export const getSmthByName = (input_name: string, type: string) =>
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
-                        dispatch(clearCategoriesReducer())
                         dispatch(setSearch(response[1]))
                     }
                 }

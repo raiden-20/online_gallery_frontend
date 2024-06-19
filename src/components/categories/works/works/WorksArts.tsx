@@ -93,9 +93,9 @@ export const WorksArts = (props: workInterface) => {
             } else {
                 const arr = [...props.arts]
                 const arrr= arr.filter((oneArt) =>
-                    (Number.parseInt(oneArt.price) >= Number.parseInt(props.currentFilters.priceStart)) && (Number.parseInt(oneArt.price) <= Number.parseInt(props.currentFilters.priceEnd) ||
-                        oneArt.tags.some(val => props.currentFilters.tags.includes(val)) || oneArt.materials.some(val => props.currentFilters.materials.includes(val)) ||
-                        props.currentFilters.artists.includes(oneArt.artistId) || oneArt.frame === props.currentFilters.frame ||
+                    (Number.parseInt(oneArt.price) >= Number.parseInt(props.currentFilters.priceStart)) && (Number.parseInt(oneArt.price) <= Number.parseInt(props.currentFilters.priceEnd) &&
+                        oneArt.tags.some(val => props.currentFilters.tags.includes(val)) && oneArt.materials.some(val => props.currentFilters.materials.includes(val)) &&
+                        props.currentFilters.artists.includes(oneArt.artistId) && oneArt.frame === props.currentFilters.frame &&
                         isSameSize(oneArt)))
                 setFilteredArts(arrr)
             }

@@ -56,10 +56,10 @@ export const FiltersComponent = (props: filtersInterface) => {
                         <SizeFiltersComponent currentFilters={props.currentFilters}
                                               setFiltersSizeThunk={props.setFiltersSizeThunk}/>
                     </section>
-                    <section>
-                        <ArtistsFiltersContainer currentFilters={props.currentFilters}
-                                                 setFiltersArtistsThunk={props.setFiltersArtistsThunk}/>
-                    </section>
+                    {/*<section>*/}
+                    {/*    <ArtistsFiltersContainer currentFilters={props.currentFilters}*/}
+                    {/*                             setFiltersArtistsThunk={props.setFiltersArtistsThunk}/>*/}
+                    {/*</section>*/}
                     {/*<section>*/}
                     {/*    <YearFiltersContainer currentFilters={props.currentFilters}*/}
                     {/*                          setFiltersYearThunk={props.setFiltersYearThunk}/>*/}

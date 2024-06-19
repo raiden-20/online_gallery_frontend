@@ -86,6 +86,8 @@ export const WorksRoot = (props: workRootInterface) => {
 
                 {lastPath === PATHS_CATEGORY.AUCTIONS ?
                     <AuctionsContainer input_name={input_name}
+                                       setFilters={setFilters}
+                                       setSetFilters={setSetFilters}
                                        currentFilters={props.currentFilters}
                                        selectedValue={selectedValue}
                                        setSelectedValue={setSelectedValue}/>

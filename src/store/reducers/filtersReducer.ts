@@ -175,8 +175,8 @@ export const filtersReducer = (state = initialState, action: any) => {
             stateCopy.currentFilters.year = []
             stateCopy.currentFilters.materials = []
             stateCopy.currentFilters.tags = []
-            stateCopy.currentFilters.frame = null
-            stateCopy.currentFilters.status = null
+            stateCopy.currentFilters.frame = false
+            stateCopy.currentFilters.status = false
 
             return stateCopy
         }

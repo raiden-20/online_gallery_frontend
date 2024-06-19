@@ -20,31 +20,35 @@ interface filterInterface {
 export const ArtistsFiltersComponent = (props: filterInterface) => {
     const [isOpen, setIsOpen] = useState(false)
 
-    const [artists, setArtists] = useState(props.artists)
-
     const [filteredArtists, setFilteredArtists] = useState(props.artists)
     const [input_artist, setInput_artist] = useState('')
 
     const setInputFilteredArtists = useCallback((event: string) => {
         setInput_artist(event)
-        const filtered = artists.filter((oneArtist) =>
-            oneArtist.artistName.toLowerCase().includes(event.toLowerCase())
-        );
-        setFilteredArtists(filtered);
+        if (event === '') {
+            setFilteredArtists(props.artists);
+        } else {
+            if (props.artists.length > 0) {
+                const filtered = props.artists.filter((oneArtist) =>
+                    oneArtist.artistName.toLowerCase().includes(event.toLowerCase())
+                );
+                setFilteredArtists(filtered);
+            }
+        }
     }, [])
 
     useEffect(() => {
         props.getAllArtists()
-        let filter = [...filteredArtists]
-        filter.forEach((oneArtist) => {
-            oneArtist['isActive'] = false
-        })
     }, []);
 
     useEffect(() => {
         if (props.artists.length > 0) {
-            setArtists(props.artists)
-            setFilteredArtists(props.artists);
+            const arr = [...props.artists]
+
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].isActive = false
+            }
+            setFilteredArtists(arr);
         }
     }, [props.artists]);
 
@@ -79,38 +83,42 @@ export const ArtistsFiltersComponent = (props: filterInterface) => {
         setFilteredArtists(artistsFilter)
     },[])
 
-    return (
-        <section className={filters_scss.category_root}>
-            <header className={filters_scss.category_header}>
-                <div className={filters_scss.category_title}>Художник</div>
-                <button onClick={() => setIsOpen(!isOpen)}>
-                    <Image src={isOpen ? open_icon : close_icon} className={filters_scss.button_open_close}
-                           alt={'open or close icon'}/>
-                </button>
-            </header>
-            {isOpen ?
-                <section className={filters_scss.section_with_search}>
-                    <section className={filters_scss.search}>
-                        <Image src={search_icon} alt={'search_icon'}/>
-                        <input value={input_artist}
-                               placeholder={'Поиск'}
-                               onChange={(event) =>
-                                   setInputFilteredArtists(event.target.value)}/>
+    if (props.artists.length > 0) {
+        return (
+            <section className={filters_scss.category_root}>
+                <header className={filters_scss.category_header}>
+                    <div className={filters_scss.category_title}>Художник</div>
+                    <button onClick={() => setIsOpen(!isOpen)}>
+                        <Image src={isOpen ? open_icon : close_icon} className={filters_scss.button_open_close}
+                               alt={'open or close icon'}/>
+                    </button>
+                </header>
+                {isOpen ?
+                    <section className={filters_scss.section_with_search}>
+                        <section className={filters_scss.search}>
+                            <Image src={search_icon} alt={'search_icon'}/>
+                            <input value={input_artist}
+                                   placeholder={'Поиск'}
+                                   onChange={(event) =>
+                                       setInputFilteredArtists(event.target.value)}/>
+                        </section>
+                        <ul className={filters_scss.size_section + ' ' + filters_scss.checkbox_section + ' scrollbar'}>
+                            {filteredArtists.map((oneArtist, index) => {
+                                return (
+                                    <li className={filters_scss.size_one_section} key={index}>
+                                        <input type={'checkbox'} checked={oneArtist.isActive}
+                                               onChange={(event) =>
+                                                   setArtistsCheckBox(event.target.checked, oneArtist.artistId)}/>
+                                        <div>{oneArtist.artistName}</div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
                     </section>
-                    <ul className={filters_scss.size_section + ' ' + filters_scss.checkbox_section + ' scrollbar'}>
-                        {filteredArtists.map((oneArtist, index) => {
-                            return (
-                                <li className={filters_scss.size_one_section} key={index}>
-                                    <input type={'checkbox'} checked={oneArtist.isActive}
-                                        onChange={(event) =>
-                                            setArtistsCheckBox(event.target.checked, oneArtist.artistId)}/>
-                                    <div>{oneArtist.artistName}</div>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </section>
-                : null}
-        </section>
-    )
+                    : null}
+            </section>
+        )
+    } else {
+        return <>почему...</>
+    }
 }

@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="complete information page">
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="complete sorting categories">
+      <change afterPath="$PROJECT_DIR$/src/components/main/elements/banner/MainBannerContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/WorksRoot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/Auctions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/filters/categories/artists/ArtistsFiltersComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/filters/categories/artists/ArtistsFiltersComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/works/WorksArts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/auctionInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/auctionInterface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/elements/banner/BannerComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/main/main_page/Banner.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,29 +49,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing feature__final__testing__app",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/assets/icons/errors",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rebasing feature__final__testing__app&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/main/elements/banner&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\elements\banner" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\errors" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_event\create" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\store\thunks" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\event\[id]" />
@@ -189,15 +189,7 @@
       <workItem from="1718486675581" duration="1404000" />
       <workItem from="1718561038931" duration="10214000" />
       <workItem from="1718619096153" duration="10431000" />
-      <workItem from="1718717979044" duration="8350000" />
-    </task>
-    <task id="LOCAL-00045" summary="edit one pup up notifications margin">
-      <option name="closed" value="true" />
-      <created>1715683429453</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1715683429453</updated>
+      <workItem from="1718717979044" duration="9299000" />
     </task>
     <task id="LOCAL-00046" summary="edit settings pages">
       <option name="closed" value="true" />
@@ -583,7 +575,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718753018195</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="complete sorting categories">
+      <option name="closed" value="true" />
+      <created>1718755821717</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1718755821718</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +616,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit problem with env" />
     <MESSAGE value="testing auctions" />
     <MESSAGE value="edit date" />
     <MESSAGE value="testing" />
@@ -641,6 +640,7 @@
     <MESSAGE value="edit searching in categories" />
     <MESSAGE value="add 404 and 403 errors" />
     <MESSAGE value="complete information page" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete information page" />
+    <MESSAGE value="complete sorting categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete sorting categories" />
   </component>
 </project>

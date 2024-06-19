@@ -20,12 +20,14 @@ interface filterInterface {
 export const ArtistsFiltersComponent = (props: filterInterface) => {
     const [isOpen, setIsOpen] = useState(false)
 
+    const [artists, setArtists] = useState(props.artists)
+
     const [filteredArtists, setFilteredArtists] = useState(props.artists)
     const [input_artist, setInput_artist] = useState('')
 
     const setInputFilteredArtists = useCallback((event: string) => {
         setInput_artist(event)
-        const filtered = props.artists.filter((oneArtist) =>
+        const filtered = artists.filter((oneArtist) =>
             oneArtist.artistName.toLowerCase().includes(event.toLowerCase())
         );
         setFilteredArtists(filtered);
@@ -38,6 +40,13 @@ export const ArtistsFiltersComponent = (props: filterInterface) => {
             oneArtist['isActive'] = false
         })
     }, []);
+
+    useEffect(() => {
+        if (props.artists.length > 0) {
+            setArtists(props.artists)
+            setFilteredArtists(props.artists);
+        }
+    }, [props.artists]);
 
     const setArtistsCheckBox = useCallback((event: boolean, artistId: string) => {
         if (event) {

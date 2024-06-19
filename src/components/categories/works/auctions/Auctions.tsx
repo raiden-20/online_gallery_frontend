@@ -1,8 +1,8 @@
-import {Filters, SizeInterface} from "@/interfaces/filters";
+import {Filters} from "@/interfaces/filters";
 import {AuctionsComponent} from "@/components/categories/works/auctions/AuctionsComponent";
 import {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {usePathname, useRouter} from "next/navigation";
+import {useRouter} from "next/navigation";
 import {AuctionCategoriesInterface} from "@/interfaces/auctionInterface";
 
 interface workInterface {
@@ -10,6 +10,8 @@ interface workInterface {
     auctions: AuctionCategoriesInterface[]
     GetAuctionsCategories(router: AppRouterInstance): void
     input_name: string
+    selectedValue: { value: string, label: string }
+    setSelectedValue(selectedValue: { value: string, label: string }): void
 }
 
 export const Auctions = (props: workInterface) => {
@@ -22,16 +24,43 @@ export const Auctions = (props: workInterface) => {
     }, []);
 
     useEffect(() => {
-        setFilteredAuctions(props.auctions)
+        props.setSelectedValue({value: 'popular', label: 'популярности'})
+        const arr = [...props.auctions.sort((first, second) => (second.viewCount - first.viewCount))]
+        setFilteredAuctions(arr)
     }, [props.auctions]);
 
     useEffect(() => {
         if (props.input_name !== '') {
             setFilteredAuctions([...props.auctions.filter(one => one.name.toLowerCase().includes(props.input_name.toLowerCase()))])
         } else {
-            setFilteredAuctions(props.auctions)
+
+            switch (props.selectedValue.value) {
+                case 'popular' : {
+                    const arr = [...props.auctions.sort((first, second) => (second.viewCount - first.viewCount))]
+                    setFilteredAuctions(arr)
+                    break
+                }
+                case 'alphabet' : {
+                    const arr = [...props.auctions.sort((first, second) => (first.name.localeCompare(second.name)))]
+                    setFilteredAuctions(arr)
+                }
+            }
         }
     }, [props.input_name]);
+
+    useEffect(() => {
+        switch (props.selectedValue.value) {
+            case 'popular' : {
+                const arr = [...props.auctions.sort((first, second) => (second.viewCount - first.viewCount))]
+                setFilteredAuctions(arr)
+                break
+            }
+            case 'alphabet' : {
+                const arr = [...props.auctions.sort((first, second) => (first.name.localeCompare(second.name)))]
+                setFilteredAuctions(arr)
+            }
+        }
+    }, [props.selectedValue]);
 
     // return <WorksComponent arts={
     //     props.arts.filter((oneArt) =>
@@ -55,5 +84,9 @@ export const Auctions = (props: workInterface) => {
     //     )
     // }/>
 
-    return <AuctionsComponent auctions={props.auctions}/>
+    if (filteredAuctions.length > 0) {
+        return <AuctionsComponent auctions={filteredAuctions}/>
+    } else {
+        return <></>
+    }
 }

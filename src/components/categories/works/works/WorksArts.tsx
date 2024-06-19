@@ -12,6 +12,8 @@ interface workInterface {
     setFilters: boolean
     setSetFilters(setFilters: boolean): void
     input_name: string
+    selectedValue: { value: string, label: string }
+    setSelectedValue(selectedValue: { value: string, label: string }): void
 }
 
 export const WorksArts = (props: workInterface) => {
@@ -31,12 +33,24 @@ export const WorksArts = (props: workInterface) => {
         if (props.input_name !== '') {
             setFilteredArts([...props.arts.filter(one => one.name.toLowerCase().includes(props.input_name.toLowerCase()))])
         } else {
-            setFilteredArts(props.arts)
+            switch (props.selectedValue.value) {
+                case 'popular' : {
+                    const arr = [...props.arts.sort((first, second) => (second.viewCount - first.viewCount))]
+                    setFilteredArts(arr)
+                    break
+                }
+                case 'alphabet' : {
+                    const arr = [...props.arts.sort((first, second) => (first.name.localeCompare(second.name)))]
+                    setFilteredArts(arr)
+                }
+            }
         }
     }, [props.input_name]);
 
     useEffect(() => {
-        setFilteredArts(props.arts)
+        props.setSelectedValue({value: 'popular', label: 'популярности'})
+        const arr = [...props.arts.sort((first, second) => (second.viewCount - first.viewCount))]
+        setFilteredArts(arr)
     }, [props.arts]);
 
     const isSameSize = (oneArt: ArtShortInterface) : boolean => {
@@ -86,6 +100,20 @@ export const WorksArts = (props: workInterface) => {
             props.setSetFilters(false)
         }
     }, [props.setFilters]);
+
+    useEffect(() => {
+        switch (props.selectedValue.value) {
+            case 'popular' : {
+                const arr = [...props.arts.sort((first, second) => (second.viewCount - first.viewCount))]
+                setFilteredArts(arr)
+                break
+            }
+            case 'alphabet' : {
+                const arr = [...props.arts.sort((first, second) => (first.name.localeCompare(second.name)))]
+                setFilteredArts(arr)
+            }
+        }
+    }, [props.selectedValue]);
 
     return <WorksComponent arts={filteredArts}/>
 }

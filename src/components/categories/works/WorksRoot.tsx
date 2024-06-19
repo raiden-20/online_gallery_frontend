@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 
 import filter_icon from '@/assets/icons/categories/filter.svg'
 import works_root_scss from '@/scss/components/categories/WorksRoot.module.scss'
@@ -13,6 +13,7 @@ import Image from "next/image";
 import search_scss from "@/scss/components/search/Search.module.scss";
 import search_icon from "@/assets/icons/search/search.svg";
 import delete_icon from "@/assets/icons/search/delete.svg";
+import Select, {SingleValue} from "react-select";
 interface workRootInterface {
     currentFilters: Filters
 }
@@ -21,15 +22,24 @@ export const WorksRoot = (props: workRootInterface) => {
     const pathname = usePathname().split('/')
     const lastPath = '/' + pathname[pathname.length - 1]
 
+    const select = [
+        {value: 'popular', label: 'популярности'},
+        {value: 'alphabet', label: 'алфавиту'},
+    ]
+
     const [isFiltersOpen, setIsFiltersOpen] = useState(false)
     const [setFilters, setSetFilters] = useState(false)
     const [input_name, setInput_name] = useState('')
 
-    const select = [
-        {popular: '-', value: '-'},
-        {popular: 'popular', value: 'популярности'},
-        {popular: 'alphabet', value: 'алфавиту'},
-    ]
+    const [selectedValue, setSelectedValue] = useState<{ value: string, label: string }>({value: 'popular', label: 'популярности'})
+
+
+
+    const setOnChange = useCallback((newValue: SingleValue<{ value: string; label: string; }>) => {
+        if (newValue) {
+            setSelectedValue(newValue)
+        }
+    },[])
 
     return (
         <section>
@@ -64,24 +74,28 @@ export const WorksRoot = (props: workRootInterface) => {
                     </button>
                     <section className={artists_scss.sort_section}>
                         <div>Сортировать по:</div>
-                        <select className={artists_scss.select}>
-                            {select.map((option: { popular: string, value: string }) => {
-                                return (
-                                    <option value={option.popular}>{option.value}</option>
-                                )
-                            })}
-                        </select>
+                        <Select
+                            value={selectedValue}
+                            noOptionsMessage={() => '-'}
+                            options={select}
+                            isSearchable={false}
+                            classNamePrefix={'custom-select-artists'}
+                            onChange={setOnChange}/>
                     </section>
                 </nav>
 
                 {lastPath === PATHS_CATEGORY.AUCTIONS ?
                     <AuctionsContainer input_name={input_name}
-                                       currentFilters={props.currentFilters}/>
+                                       currentFilters={props.currentFilters}
+                                       selectedValue={selectedValue}
+                                       setSelectedValue={setSelectedValue}/>
                     :
                     <WorkArtsContainer currentFilters={props.currentFilters}
                                        setFilters={setFilters}
                                        setSetFilters={setSetFilters}
-                                       input_name={input_name}/>
+                                       input_name={input_name}
+                                       selectedValue={selectedValue}
+                                       setSelectedValue={setSelectedValue}/>
                 }
             </section>
         </section>

@@ -23,6 +23,9 @@ export default function RootLayout({
         <ProviderMain>
             <YandexMetric/>
             <html lang="en">
+            <head>
+                <link rel="icon" href="/main_icon.ico" />
+            </head>
             <body className={inter.className}>{children}</body>
             </html>
         </ProviderMain>

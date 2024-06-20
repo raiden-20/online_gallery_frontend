@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit artist works and information">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit main page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,15 +184,7 @@
       <workItem from="1718619096153" duration="10431000" />
       <workItem from="1718717979044" duration="9299000" />
       <workItem from="1718786187578" duration="11640000" />
-      <workItem from="1718873163966" duration="8863000" />
-    </task>
-    <task id="LOCAL-00061" summary="create pages and do design for auctions: one page, categories page">
-      <option name="closed" value="true" />
-      <created>1716468205173</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1716468205173</updated>
+      <workItem from="1718873163966" duration="9774000" />
     </task>
     <task id="LOCAL-00062" summary="edit main page and artist nav">
       <option name="closed" value="true" />
@@ -580,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718882804836</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="edit main page">
+      <option name="closed" value="true" />
+      <created>1718886608751</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1718886608752</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,7 +611,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit art visibility on search page" />
     <MESSAGE value="edit materials and tags in create art page" />
     <MESSAGE value="add parametr isBlock to user" />
     <MESSAGE value="add filters (not final version) and category search" />
@@ -638,6 +635,7 @@
     <MESSAGE value="edit config and information page" />
     <MESSAGE value="add new font to public and edit art visibility" />
     <MESSAGE value="edit artist works and information" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit artist works and information" />
+    <MESSAGE value="edit main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit main page" />
   </component>
 </project>

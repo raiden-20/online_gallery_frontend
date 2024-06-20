@@ -23,7 +23,7 @@ export interface SearchInterface {
 }
 
 export const Search = (props: SearchInterface) => {
-    const categories = ['Художники', 'Покупатели', 'Картины', 'Фотографии', 'Скульптуры', 'Аукционы', 'События']
+    const categories = ['Художники', 'Покупатели', 'Картины', 'Фотографии', 'Скульптуры', 'Аукционы']
 
     const [whoIsClicked, setWhoIsClicked] = useState(1)
     const [input_name, setInput_name] = useState('')

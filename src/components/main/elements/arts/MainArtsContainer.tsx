@@ -40,7 +40,7 @@ export const MainArts = (props: arts) => {
                 photo: props.arts[i].photoUrl,
                 artistName: props.arts[i].artistName,
                 id: props.arts[i].artId,
-                price: props.arts[i].price
+                price: props.arts[i].price,
             })
         }
         setArts(artArr)
@@ -51,8 +51,13 @@ export const MainArts = (props: arts) => {
         props.GetArtsCategories('paintings', router)
     }, []);
 
-    return <PopularAndAuctionsComponent title={'Популярное'}
-                                        arts={arts}/>
+    if (arts.length > 0) {
+        return <PopularAndAuctionsComponent title={'Популярное'}
+                                            arts={arts}/>
+    } else {
+        return <></>
+    }
+
 }
 
 export const MainArtsContainer = connect(mapStateToProps, mapDispatchToProps)(MainArts)

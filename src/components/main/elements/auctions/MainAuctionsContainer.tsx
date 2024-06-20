@@ -41,7 +41,8 @@ export const MainAuctions = (props: auctions) => {
                 photo: props.auctions[i].photoUrl,
                 artistName: props.auctions[i].artistName,
                 id: props.auctions[i].auctionId,
-                price: props.auctions[i].lastPrice
+                price: props.auctions[i].lastPrice,
+
             })
         }
         setArts(artArr)
@@ -52,8 +53,13 @@ export const MainAuctions = (props: auctions) => {
         props.GetAuctionsCategories(router)
     }, []);
 
-    return <PopularAndAuctionsComponent title={'Аукционы'}
-                                        arts={arts}/>
+    if (arts.length > 0) {
+        return <PopularAndAuctionsComponent title={'Аукционы'}
+                                            arts={arts}/>
+    } else {
+        return <></>
+    }
+
 }
 
 export const MainAuctionsContainer = connect(mapStateToProps, mapDispatchToProps)(MainAuctions)

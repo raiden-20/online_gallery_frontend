@@ -64,5 +64,5 @@ export interface MainPageArts {
     photo: string
     artistName: string,
     id: string
-    price: string
+    price: string,
 }

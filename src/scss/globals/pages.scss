@@ -1,7 +1,10 @@
 @import '@/scss/globals/color';
 @import '@/scss/globals/main_values';
 
-@import url('https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@font-face {
+  font-family: "Fahkwang";
+  src: url('/fonts/fahkwang/Fahkwang-Medium-400.ttf') format('truetype');
+}
 
 @font-face {
   font-family: "Involve";

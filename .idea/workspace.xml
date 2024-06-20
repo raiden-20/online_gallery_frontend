@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit filters">
-      <change beforePath="$PROJECT_DIR$/src/scss/components/errors/403.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/errors/403.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/support/Support.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/support/Support.module.css" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit suspense">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/support/Information.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/support/Information.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/auth_config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/auth_config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,29 +46,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing develop",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/src/components/main/elements/actions",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rebasing develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\elements\actions" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\elements\banner" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\errors" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\event\[id]" />
@@ -187,54 +188,7 @@
       <workItem from="1718619096153" duration="10431000" />
       <workItem from="1718717979044" duration="9299000" />
       <workItem from="1718786187578" duration="11640000" />
-    </task>
-    <task id="LOCAL-00052" summary="add key to maps">
-      <option name="closed" value="true" />
-      <created>1716202781139</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1716202781139</updated>
-    </task>
-    <task id="LOCAL-00053" summary="edit authConfig">
-      <option name="closed" value="true" />
-      <created>1716203741415</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1716203741415</updated>
-    </task>
-    <task id="LOCAL-00054" summary="edit authConfig and sse connection">
-      <option name="closed" value="true" />
-      <created>1716205403848</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1716205403848</updated>
-    </task>
-    <task id="LOCAL-00055" summary="edit authConfig">
-      <option name="closed" value="true" />
-      <created>1716205966992</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1716205966993</updated>
-    </task>
-    <task id="LOCAL-00056" summary="edit 404 page">
-      <option name="closed" value="true" />
-      <created>1716206673170</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1716206673171</updated>
-    </task>
-    <task id="LOCAL-00057" summary="edit home page">
-      <option name="closed" value="true" />
-      <created>1716207141280</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1716207141280</updated>
+      <workItem from="1718873163966" duration="6125000" />
     </task>
     <task id="LOCAL-00058" summary="edit home page">
       <option name="closed" value="true" />
@@ -580,7 +534,55 @@
       <option name="project" value="LOCAL" />
       <updated>1718801877562</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="add min parameter in registration customer">
+      <option name="closed" value="true" />
+      <created>1718817511825</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1718817511825</updated>
+    </task>
+    <task id="LOCAL-00102" summary="add favicon">
+      <option name="closed" value="true" />
+      <created>1718827270042</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1718827270042</updated>
+    </task>
+    <task id="LOCAL-00103" summary="set api url to env">
+      <option name="closed" value="true" />
+      <created>1718831874710</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1718831874710</updated>
+    </task>
+    <task id="LOCAL-00104" summary="delete one package">
+      <option name="closed" value="true" />
+      <created>1718833402919</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1718833402919</updated>
+    </task>
+    <task id="LOCAL-00105" summary="edit edit event">
+      <option name="closed" value="true" />
+      <created>1718833666501</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1718833666501</updated>
+    </task>
+    <task id="LOCAL-00106" summary="edit suspense">
+      <option name="closed" value="true" />
+      <created>1718834204327</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1718834204327</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,12 +615,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create page in categories for events and design" />
-    <MESSAGE value="page create event design" />
-    <MESSAGE value="create one event page" />
-    <MESSAGE value="api for admin and events" />
-    <MESSAGE value="create event reducer and add it to redux store" />
-    <MESSAGE value="create admin and events thunks" />
     <MESSAGE value="testing admin and event API" />
     <MESSAGE value="changed get data" />
     <MESSAGE value="edit sorting and photos click on artist category page" />
@@ -638,6 +634,12 @@
     <MESSAGE value="edit nav section" />
     <MESSAGE value="edit art editing tags and materials" />
     <MESSAGE value="edit filters" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit filters" />
+    <MESSAGE value="add min parameter in registration customer" />
+    <MESSAGE value="add favicon" />
+    <MESSAGE value="set api url to env" />
+    <MESSAGE value="delete one package" />
+    <MESSAGE value="edit edit event" />
+    <MESSAGE value="edit suspense" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit suspense" />
   </component>
 </project>

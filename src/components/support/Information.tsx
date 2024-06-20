@@ -242,8 +242,46 @@ export const Information = () => {
                 {isCommission ?
                     <main className={support_scss.one_section_main}>
                         <section className={support_scss.one_section_main_text}>
-                            Сайт берет комиссию <strong>в размере 15%</strong> от продажи товаров, лотов и стоимость ежемесячной
-                            подписки.
+                            Сайт берет <strong>комиссию</strong> с продаж.
+                        </section>
+                        <section className={support_scss.one_section_main}>
+                            <section>
+                                Процент для <strong>картин, фотографий и скульптур</strong>:
+                            </section>
+                            <ul className={support_scss.one_section_main_ul}>
+                                <li>8% — до 15 000 рублей</li>
+                                <li>10% — 15 001—35 00 рублей</li>
+                                <li>12% — 35 001—80 000 рублей</li>
+                                <li>15% — 80 001—150 000 рублей</li>
+                                <li>20% — 150 001—500 000 рублей</li>
+                                <li>25% — от 500 001 рублей</li>
+                            </ul>
+                        </section>
+                        <section className={support_scss.one_section_main}>
+                            <section>
+                                Процент для <strong> аукционов</strong>:
+                            </section>
+                            <ul className={support_scss.one_section_main_ul}>
+                                <li>10% — до 15 000 рублей</li>
+                                <li>12% — 15 001—35 00 рублей</li>
+                                <li>15% — 35 001—80 000 рублей</li>
+                                <li>20% — 80 001—150 000 рублей</li>
+                                <li>25% — 150 001—500 000 рублей</li>
+                                <li>30% — от 500 001 рублей</li>
+                            </ul>
+                        </section>
+                        <section className={support_scss.one_section_main}>
+                            <section>
+                                Процент для <strong>ежемесячной подписки</strong>:
+                            </section>
+                            <ul className={support_scss.one_section_main_ul}>
+                                <li>5% — до 5 000 рублей</li>
+                                <li>7% — 5 001—10 00 рублей</li>
+                                <li>10% — 10 001—25 000 рублей</li>
+                                <li>15% — от 25 001 рублей</li>
+                                <li>20% — 150 001—500 000 рублей</li>
+                                <li>25% — от 500 001 рублей</li>
+                            </ul>
                         </section>
                     </main>
                     :

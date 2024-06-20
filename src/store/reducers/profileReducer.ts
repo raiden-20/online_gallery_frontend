@@ -20,16 +20,17 @@ interface ProfileReducerInterface {
 
 const initialState: ProfileReducerInterface = {
     customer_data: {
-        customerName: "Пользователь",
+        customerName: "",
         birthDate: new Date('1970-01-01'),
         gender: "",
         avatarUrl: "",
         coverUrl: "",
         description: " ",
-        artistId: ""
+        artistId: "",
+        isBlocked: false
     },
     artist_data: {
-        artistName: "Пользователь",
+        artistName: "",
         avatarUrl: "",
         coverUrl: "",
         customerId: "",
@@ -39,6 +40,7 @@ const initialState: ProfileReducerInterface = {
         countSubscribers: "",
         isPublicSubscribe: false,
         isPrivateSubscribe: false,
+        isBlocked: false
     },
 
     my_customer_data: {
@@ -48,7 +50,8 @@ const initialState: ProfileReducerInterface = {
         avatarUrl: "",
         coverUrl: "",
         description: " ",
-        artistId: ""
+        artistId: "",
+        isBlocked: false
     },
     my_artist_data: {
         artistName: "",
@@ -61,6 +64,7 @@ const initialState: ProfileReducerInterface = {
         countSubscribers: "",
         isPublicSubscribe: false,
         isPrivateSubscribe: false,
+        isBlocked: false
     }
 }
 
@@ -79,7 +83,8 @@ export const profileReducer = (state = initialState, action: any) => {
                     avatarUrl: action.customer_data.avatarUrl,
                     coverUrl: action.customer_data.coverUrl,
                     description: action.customer_data.description,
-                    artistId: action.customer_data.artistId
+                    artistId: action.customer_data.artistId,
+                    isBlocked: action.customer_data.isBlocked
                 }
             }
 
@@ -101,6 +106,7 @@ export const profileReducer = (state = initialState, action: any) => {
                     countSubscribers: action.artist_data.countSubscribers,
                     isPublicSubscribe: action.artist_data.isPublicSubscribe,
                     isPrivateSubscribe: action.artist_data.isPrivateSubscribe,
+                    isBlocked: action.artist_data.isBlocked
                 }
             }
 
@@ -120,7 +126,8 @@ export const profileReducer = (state = initialState, action: any) => {
                     avatarUrl: action.customer_data.avatarUrl,
                     coverUrl: action.customer_data.coverUrl,
                     description: action.customer_data.description === ' ' ? '' : action.customer_data.description,
-                    artistId: action.customer_data.artistId
+                    artistId: action.customer_data.artistId,
+                    isBlocked: action.customer_data.isBlocked
                 }
             }
 
@@ -141,6 +148,7 @@ export const profileReducer = (state = initialState, action: any) => {
                     countSubscribers: action.artist_data.countSubscribers,
                     isPublicSubscribe: action.artist_data.isPublicSubscribe,
                     isPrivateSubscribe: action.artist_data.isPrivateSubscribe,
+                    isBlocked: action.artist_data.isBlocked
                 }
             }
 
@@ -159,6 +167,7 @@ export const profileReducer = (state = initialState, action: any) => {
                 countSubscribers: "",
                 isPublicSubscribe: false,
                 isPrivateSubscribe: false,
+                isBlocked: false
             }
             state.customer_data = {
                 artistId: "",
@@ -167,7 +176,8 @@ export const profileReducer = (state = initialState, action: any) => {
                 customerName: "",
                 birthDate:  new Date('1970-01-01'),
                 description: "",
-                gender: ""
+                gender: "",
+                isBlocked: false
             }
 
             return stateCopy

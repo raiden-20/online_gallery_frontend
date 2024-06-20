@@ -1,7 +1,7 @@
-import {Error404Page} from "@/components/404/404";
+import {RootContainer} from "@/components/main/main/RootContainer";
 
 const Error404 = () => {
-    return <Error404Page/>
+    return <RootContainer/>
 }
 
 export default Error404

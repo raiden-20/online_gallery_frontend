@@ -15,6 +15,7 @@ import {
     EditPostContainer
 } from "@/components/profile/profile_elemets/categories/artist/posts/edit_post/EditPostContainer";
 import TimeComponent from "@/components/time/TimeComponent";
+import {formatDate, reformatDateFull} from "../../../../../../../../utils/tests";
 
 interface OnePostComponentInterface {
     onePost: OnePostInterface
@@ -77,10 +78,10 @@ export const OnePostArtistComponent = (props: OnePostComponentInterface) => {
                             <div>Удалить</div>
                         </button>
                     </section>
-                    <TimeComponent time={props.onePost.date}/>
+                    <section>{reformatDateFull(props.onePost.date.toISOString())}</section>
                 </footer>
                 :
-                <footer className={posts_artist_module.one_post_date}>{props.onePost.date}</footer>
+                <footer className={posts_artist_module.one_post_date}>{reformatDateFull(props.onePost.date.toISOString())}</footer>
             }
             {Object.keys(openedPhotoSrc).length !== 0 ?
                 <OneOpenedPhotoPostComponent setOpenedPhotoSrc={setOpenedPhotoSrc} openedPhotoSrc={openedPhotoSrc}

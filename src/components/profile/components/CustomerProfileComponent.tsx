@@ -5,10 +5,11 @@ import {setPhoto} from "@/components/profile/components/setPhoto";
 import {CustomerCategoriesProfile} from "@/components/profile/profile_elemets/categories/CustomerCategoriesProfile";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 
 interface CustomerProfileInterface {
     customer_data: Customer
+    my_customer_data: Customer
 
     getCustomerProfileData(id: string, router: AppRouterInstance): void
 
@@ -19,25 +20,40 @@ interface CustomerProfileInterface {
 
 export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     const router = useRouter()
+    const pathname = usePathname().split('/')[usePathname().split('/').length - 1]
+
+    const [customer, setCustomer] = useState<Customer>()
+
+    const [currentId] = useState(pathname)
+    const [customerId] = useState(Cookies.get('customerId') as string)
 
     useEffect(() => {
-        props.getCustomerProfileData(Cookies.get('currentId') as string, router)
-    }, [props.customer_data.customerName, props.customer_data.avatarUrl, props.customer_data.coverUrl, props.customer_data.description]);
+        Cookies.set('currentId', pathname)
+        props.getCustomerProfileData(pathname, router)
+    }, []);
 
     useEffect(() => {
-        setInput_coverUrl(props.customer_data.coverUrl)
-        setInput_avatarUrl(props.customer_data.avatarUrl)
-        setInput_name(props.customer_data.customerName)
-        setInput_description(props.customer_data.description)
-    }, [props.customer_data.customerName, props.customer_data.avatarUrl, props.customer_data.coverUrl, props.customer_data.description]);
+        if (customerId === currentId) {
+            setCustomer(props.my_customer_data)
+        } else {
+            setCustomer(props.customer_data)
+        }
+    }, [props.my_customer_data, props.customer_data]);
+
+    useEffect(() => {
+        setInput_coverUrl(customer?.coverUrl as string)
+        setInput_avatarUrl(customer?.avatarUrl as string)
+        setInput_name(customer?.customerName as string)
+        setInput_description(customer?.description as string)
+    }, [customer?.customerName, customer?.avatarUrl, customer?.coverUrl, customer?.description]);
 
     const [input_coverFile, setInput_coverFile] = useState<File | string>('')
-    const [input_coverUrl, setInput_coverUrl] = useState(props.customer_data.coverUrl)
+    const [input_coverUrl, setInput_coverUrl] = useState(customer?.coverUrl as string)
 
     const [input_avatarFile, setInput_avatarFile] = useState<File | string>('')
-    const [input_avatarUrl, setInput_avatarUrl] = useState(props.customer_data.avatarUrl)
+    const [input_avatarUrl, setInput_avatarUrl] = useState(customer?.avatarUrl as string)
 
-    const [input_name, setInput_name] = useState(props.customer_data.customerName)
+    const [input_name, setInput_name] = useState(customer?.customerName as string)
 
     const [isNeedChangeData, setIsNeedChangeData] = useState(false)
     const [isChangeDataClicked, setIsChangeDataClicked] = useState(false)
@@ -45,7 +61,7 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     const [isAvatarDeleted, setIsAvatarDeleted] = useState(false)
     const [isCoverDeleted, setIsCoverDeleted] = useState(false)
 
-    const [input_description, setInput_description] = useState(props.customer_data.description)
+    const [input_description, setInput_description] = useState(customer?.description as string)
 
     const [message, setMessage] = useState('')
     const [isEditMobile, setIsEditMobile] = useState(false)
@@ -54,8 +70,8 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     useEffect(() => {
         if (isChangeDataClicked) {
             setMessage('')
-            let avatar = props.customer_data.avatarUrl
-            let cover = props.customer_data.coverUrl
+            let avatar = customer?.avatarUrl as string
+            let cover = customer?.coverUrl as string
             if (isAvatarDeleted) {
                 avatar = 'delete'
             }
@@ -63,7 +79,7 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
                 cover = 'delete'
             }
 
-            props.changeCustomerProfileData(input_name, props.customer_data.birthDate.toString(), props.customer_data.gender,
+            props.changeCustomerProfileData(input_name, customer?.birthDate.toISOString() as string, customer?.gender as string,
                 input_description === '' ? ' ' : input_description,
                 avatar === '' ? ' ' : avatar,
                 cover === '' ? ' ' : cover,
@@ -78,24 +94,24 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
     const changeInputCover = (event: React.ChangeEvent<HTMLInputElement>) => {
         setMessage('')
         setPhoto(event.target.files as FileList, setInput_coverUrl, setInput_coverFile,
-            setMessage, setIsCoverDeleted, props.customer_data.coverUrl)
+            setMessage, setIsCoverDeleted, customer?.coverUrl as string)
         setIsNeedChangeData(true)
     }
 
     const changeInputAvatar = (event: React.ChangeEvent<HTMLInputElement>) => {
         setMessage('')
         setPhoto(event.target.files as FileList, setInput_avatarUrl, setInput_avatarFile,
-            setMessage, setIsAvatarDeleted, props.customer_data.avatarUrl)
+            setMessage, setIsAvatarDeleted, customer?.avatarUrl as string)
         setIsNeedChangeData(true)
     }
 
     const cancelChanging = () => {
         setMessage('')
         setInput_coverFile('')
-        setInput_coverUrl(props.customer_data.coverUrl)
+        setInput_coverUrl(customer?.coverUrl as string)
         setInput_avatarFile('')
-        setInput_avatarUrl(props.customer_data.avatarUrl)
-        setInput_name(props.customer_data.customerName)
+        setInput_avatarUrl(customer?.avatarUrl as string)
+        setInput_name(customer?.customerName as string)
         setIsNeedChangeData(false)
         setIsAvatarDeleted(false)
         setIsCoverDeleted(false)
@@ -108,7 +124,7 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
         setIsAvatarDeleted(true)
         setInput_avatarFile('')
         if (input_avatarUrl !== '') {
-            setInput_avatarUrl(input_avatarUrl === props.customer_data.avatarUrl ? '' : props.customer_data.avatarUrl)
+            setInput_avatarUrl(input_avatarUrl === customer?.avatarUrl ? '' : customer?.avatarUrl as string)
         }
         setIsNeedChangeData(true)
     }
@@ -117,31 +133,36 @@ export const CustomerProfileComponent = (props: CustomerProfileInterface) => {
         setIsCoverDeleted(true)
         setInput_coverFile('')
         if (input_coverUrl !== '') {
-            setInput_coverUrl(input_coverUrl === props.customer_data.coverUrl ? '' : props.customer_data.coverUrl)
+            setInput_coverUrl(input_coverUrl === customer?.coverUrl ? '' : customer?.coverUrl as string)
         }
         setIsNeedChangeData(true)
     }
 
+    if ((customer?.avatarUrl === props.customer_data.avatarUrl || customer?.avatarUrl === props.my_customer_data.avatarUrl)) {
+        return (
+            <section>
+                <HeaderProfileComponent input_coverUrl={input_coverUrl} input_avatarUrl={input_avatarUrl}
+                                        input_name={input_name}
+                                        isNeedChangeData={isNeedChangeData} cancelChanging={cancelChanging}
+                                        setInput_name={setInput_name} setIsChangeDataClicked={setIsChangeDataClicked}
+                                        changeInputCover={changeInputCover} changeInputAvatar={changeInputAvatar}
+                                        deleteAvatar={deleteAvatar} deleteCover={deleteCover}
+                                        message={message}
+                                        setIsNeedChangeData={setIsNeedChangeData}
+                                        isEditMobile={isEditMobile}
+                                        setIsEditMobile={setIsEditMobile}
+                                        isPrivateSubscribe={false}
+                                        isPublicSubscribe={false} countSubscribers={'0'}
+                                        isBlocked={customer.isBlocked}/>
+                <CustomerCategoriesProfile input_description={input_description}
+                                           setInput_description={setInput_description}
+                                           setIsNeedChangeData={setIsNeedChangeData}
+                                           isEditMobile={isEditMobile}
+                                           setIsEditMobile={setIsEditMobile}/>
+            </section>
+        )
+    } else {
+        return <></>
+    }
 
-    return (
-        <section>
-            <HeaderProfileComponent input_coverUrl={input_coverUrl} input_avatarUrl={input_avatarUrl}
-                                    input_name={input_name}
-                                    isNeedChangeData={isNeedChangeData} cancelChanging={cancelChanging}
-                                    setInput_name={setInput_name} setIsChangeDataClicked={setIsChangeDataClicked}
-                                    changeInputCover={changeInputCover} changeInputAvatar={changeInputAvatar}
-                                    deleteAvatar={deleteAvatar} deleteCover={deleteCover}
-                                    message={message}
-                                    setIsNeedChangeData={setIsNeedChangeData}
-                                    isEditMobile={isEditMobile}
-                                    setIsEditMobile={setIsEditMobile}
-                                    isPrivateSubscribe={false}
-                                    isPublicSubscribe={false} countSubscribers={'0'}/>
-            <CustomerCategoriesProfile input_description={input_description}
-                                       setInput_description={setInput_description}
-                                       setIsNeedChangeData={setIsNeedChangeData}
-                                       isEditMobile={isEditMobile}
-                                       setIsEditMobile={setIsEditMobile}/>
-        </section>
-    )
 }

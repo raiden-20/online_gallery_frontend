@@ -3,7 +3,7 @@ import {ArtsAPI} from "@/api/artsAPI";
 import {Dispatch} from "redux";
 import {clearOneArt, setArts, setArtsArtist, setArtsCustomer, setOneArt} from "@/store/reducers/artReducer";
 import {setSearch} from "@/store/reducers/categoriesReducer";
-import {MAIN_PATHS} from "@/paths/main";
+import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
 import Cookies from "js-cookie";
 import {ART_TYPES} from "@/paths/elements";
 
@@ -16,8 +16,7 @@ export const CreateArt = (name: string, type: string, photos: File[], price: str
             .then((response) => {
                 switch (response[0]) {
                     case 200 : {
-                        router.push(MAIN_PATHS.ONE_ART + `/${response[1].artId}`)
-                        router.push(MAIN_PATHS.PROFILE_ARTIST + `/${Cookies.get('artistId')}`)
+                        router.push(MAIN_PATHS.ONE_ART + `/${response[1]}`)
                         break
                     }
                     case 409 : {
@@ -31,15 +30,24 @@ export const CreateArt = (name: string, type: string, photos: File[], price: str
         })
     }
 
-export const GetArt = (artId: string, router: AppRouterInstance) =>
+export const GetArt = (artId: string, currentId: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ArtsAPI.GetArtAPI(artId, Cookies.get('customerId') as string)
+        ArtsAPI.GetArtAPI(artId, currentId)
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
                         response[1].artId = artId
                         dispatch(clearOneArt())
                         dispatch(setOneArt(response[1]))
+                        break
+                    }
+                    case 400: {
+                        router.push(PATHS_CATEGORY.ERROR_404)
+                        break
+                    }
+                    case 403: {
+                        router.push(PATHS_CATEGORY.ERROR_403)
+                        break
                     }
                 }
             }).catch(error => {

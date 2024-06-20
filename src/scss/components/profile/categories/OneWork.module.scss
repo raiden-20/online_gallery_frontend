@@ -145,6 +145,14 @@
   row-gap: $gap-xxxs;
 }
 
+.color_rate {
+  color: $grey-date;
+}
+
+.weight {
+  font-weight: $weight;
+}
+
 .auction_rates_one {
   display: grid;
   align-items: center;
@@ -176,6 +184,11 @@
     gap: $gap-xxxs;
     align-items: center;
   }
+}
+
+.footer_delete {
+  width: max-content;
+  padding: 0;
 }
 
 @media screen and (max-width: $width){

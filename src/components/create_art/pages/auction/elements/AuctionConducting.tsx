@@ -1,5 +1,6 @@
 import create_art_data_scss from "@/scss/components/create_art/CreateArtData.module.scss";
 import React, {useState} from "react";
+import {currDate} from "../../../../../../utils/tests";
 
 interface AuctionConductingInterface {
     setStartTime(startTime: string): void
@@ -9,11 +10,9 @@ interface AuctionConductingInterface {
 }
 
 export const AuctionConducting = (props: AuctionConductingInterface) => {
-    const [message, setMessage] = useState('')
     const [isCLickedStart, setIsCLickedStart] = useState(false)
     const [isCLickedEnd, setIsCLickedEnd] = useState(false)
-
-
+    const [currDateStr] = useState(currDate() + 'T00:00')
 
     return (
         <section className={create_art_data_scss.section_root}>
@@ -22,6 +21,7 @@ export const AuctionConducting = (props: AuctionConductingInterface) => {
                 <input placeholder={`Время начала аукциона`}
                        type={props.startTime !== '' || isCLickedStart ? 'datetime-local' : 'text'}
                        value={props.startTime}
+                       min={currDateStr}
                        onFocus={() => setIsCLickedStart(true)}
                        onBlur={() => {
                            if (props.startTime === '') {
@@ -42,9 +42,6 @@ export const AuctionConducting = (props: AuctionConductingInterface) => {
                        }
                        }/>
             </section>
-            {message !== '' ?
-                <p className={'message'}>{message}</p>
-            : null}
         </section>
     )
 }

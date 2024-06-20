@@ -34,6 +34,13 @@ import {OnePopUpNotificationContainer} from "@/components/notifications/one_popu
 import {OneAuctionContainer} from "@/components/categories/works/auctions/one_auction/one_page/OneAuctionContainer";
 import {EditRoot} from "@/components/create_art/edit_art/EditRoot";
 import {ChangeAuctionOrderContainer} from "@/components/change_order_auction/ChangeAuctionOrderContainer";
+import {EventsContainer} from "@/components/categories/events/EventsContainer";
+import {OnePageEventContainer} from "@/components/categories/events/one_page_event/OnePageEventContainer";
+import {CreateEventContainer} from "@/components/create_event/create/CreateEventContainer";
+import {Information} from "@/components/support/Information";
+import {Support} from "@/components/support/Support";
+import {Error403Page} from "@/components/403/403";
+import {Error404Page} from "@/components/404/404";
 
 interface RootInterface {
     artist_data: Artist
@@ -85,11 +92,25 @@ export const Root = (props: RootInterface) => {
                             props.getArtistProfileData(Cookies.get('artistId') as string, router)
                         }
                     }
-                    setToken(localStorage.getItem('access_token') as string)
+                    if (Cookies.get('registrationFlag') === 'true') {
+                        setToken(localStorage.getItem('access_token') as string)
+                    }
+                }
+
+            }
+        } else {
+            if (session) {
+                // @ts-ignore
+                if (session.error !== undefined) {
+                    keycloakSessionLogOut()
+                        .then(() => {
+                            deleteCookies()
+                            signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
+                        })
                 }
             }
         }
-    }, [session]);
+    }, [session, props.customer_data, Cookies.get('registrationFlag')]);
 
     return (
         <section className={root_scss.page}>
@@ -122,13 +143,20 @@ export const Root = (props: RootInterface) => {
                         pathname === MAIN_PATHS.CREATE_ORDER ? <CreateOrderContainer/> :
                         pathname === MAIN_PATHS.SUCCESS_ORDER ? <CreateOrderSuccessComponent/> :
                         pathname === MAIN_PATHS.ORDERS ? <OrdersContainer/> :
+                        pathname === MAIN_PATHS.EVENTS ? <EventsContainer/> :
+                            main_path === MAIN_PATHS.EVENT ? <OnePageEventContainer/> :
+                        pathname === MAIN_PATHS.CREATE_EVENT ? <CreateEventContainer/> :
                         main_path === PATHS_CATEGORY.ORDERS && lastPath !== PATHS_CATEGORY.BUY
                             ? <OneOrderContainer/> :
                         main_path === PATHS_CATEGORY.ORDERS && lastPath === PATHS_CATEGORY.BUY
                             ? <ChangeAuctionOrderContainer/> :
                     main_path === PATHS_CATEGORY.CART ? <CartContainer/> :
                     main_path === PATHS_CATEGORY.SUBSCRIPTIONS ? <SubscriptionsContainer/>  :
-                        main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsContainer/>
+                        main_path === MAIN_PATHS.NOTIFICATIONS ? <NotificationsContainer/> :
+                        main_path === MAIN_PATHS.INFORMATION ? <Information/> :
+                        main_path === MAIN_PATHS.SUPPORT ? <Support/>:
+                        main_path === PATHS_CATEGORY.ERROR_403 ? <Error403Page/>:
+                        main_path === PATHS_CATEGORY.ERROR_404 ? <Error404Page/>
                             : null
                     }
                 </main>

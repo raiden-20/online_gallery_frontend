@@ -53,7 +53,7 @@ export const NavigationComponentMobile = (props: navigationInterface) => {
                 <button onClick={() => {
                     if ((status === 'unauthenticated' || session === null)) {
                         signin()
-                    } else if (registrationFlag === 'true'){
+                    } else if (Cookies.get('registrationFlag') === 'true'){
                         setIsAccountClicked(!isAccountClicked)
                     }
                 }

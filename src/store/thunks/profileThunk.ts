@@ -9,12 +9,13 @@ import {
 } from "@/store/reducers/profileReducer";
 import Cookies from "js-cookie";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {MAIN_PATHS, PATHS_CATEGORY} from "@/paths/main";
+import {MAIN_PATHS, PATHS_CATEGORY, ROLES} from "@/paths/main";
 
 
 export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ProfileAPI.CustomerDataAPI(id)
+        const role = Cookies.get('role')
+        ProfileAPI.CustomerDataAPI(id, role !== undefined ? role === ROLES.CUSTOMER ? Cookies.get('customerId') as string : Cookies.get('artistId') as string : 'null')
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
@@ -25,10 +26,9 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
                         }
                         if (id === Cookies.get('customerId')) {
                             dispatch(setMyCustomerData(response[1]))
+                        } else {
+                            dispatch(setCustomerData(response[1]))
                         }
-                        dispatch(clearProfileReducer())
-                        dispatch(setCustomerData(response[1]))
-
                         break
                     }
                     case 404 : {
@@ -43,20 +43,29 @@ export const getCustomerProfileData = (id: string, router: AppRouterInstance) =>
 
 export const getArtistProfileData = (id: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        ProfileAPI.ArtistDataAPI(id, Cookies.get('customerId') as string)
+        const role = Cookies.get('role')
+        ProfileAPI.ArtistDataAPI(id, role !== undefined ? role === ROLES.CUSTOMER ? Cookies.get('customerId') as string : Cookies.get('artistId') as string : 'null')
             .then(response => {
                 switch (response[0]) {
                     case 200 : {
                         if (id === Cookies.get('artistId')) {
                             dispatch(setMyArtistData(response[1]))
                             Cookies.set('artistName', response[1].artistName)
+                        } else {
+                            dispatch(setArtistData(response[1]))
                         }
-                        dispatch(clearProfileReducer())
-                        dispatch(setArtistData(response[1]))
+                        break
+                    }
+                    case 400 : {
+                        if (response[1] === 'User\'s not found') {
+                            router.push(PATHS_CATEGORY.ERROR_404)
+                        }
                         break
                     }
                     case 404 : {
-                        router.push(PATHS_CATEGORY.ERROR_404)
+                        if (response[1] === 'User blocked') {
+                            router.push(PATHS_CATEGORY.ERROR_403)
+                        }
                         break
                     }
                 }
@@ -176,12 +185,21 @@ export const isCustomerCreate = (router: AppRouterInstance) =>
                 .then(response => {
                     switch (response[0]) {
                         case 200 : {
-                            if (response[1]) {
+                            if (response[1].firstEntry) {
                                 router.push(MAIN_PATHS.CREATE_CUSTOMER)
                                 Cookies.set('registrationFlag', 'process')
                             } else {
                                 Cookies.set('registrationFlag', 'true')
-                                Cookies.set('currentId', Cookies.get('customerId') as string)
+                                if (response[1].isAdmin === true) {
+                                    Cookies.set('currentId', Cookies.get('customerId') as string)
+                                    Cookies.set('isAdmin', 'true')
+                                } else {
+                                    if (Cookies.get('currentId') === undefined) {
+                                        Cookies.set('currentId', Cookies.get('customerId') as string)
+                                    }
+                                }
+
+
                             }
                             break
                         }

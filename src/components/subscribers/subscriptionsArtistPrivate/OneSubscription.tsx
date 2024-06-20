@@ -2,11 +2,12 @@ import subscriptions_scss from '@/scss/components/subscriptions/Subscriptions.mo
 import {useState} from "react";
 import {SubscriptionsArtistsPrivate} from "@/interfaces/subscriptions";
 import {useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/paths/main";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {
     CancelSubscriptionsContainer,
 } from "@/components/subscribers/subscriptionsArtistPrivate/cancel/CancelSubscriptionContainer";
 import TimeComponent from "@/components/time/TimeComponent";
+import Cookies from "js-cookie";
 
 export const OneSubscription = (props: {oneArtist: SubscriptionsArtistsPrivate}) => {
     const router = useRouter()
@@ -16,10 +17,14 @@ export const OneSubscription = (props: {oneArtist: SubscriptionsArtistsPrivate})
     return (
         <section className={subscriptions_scss.one_private_subscription_artists}>
             <section className={subscriptions_scss.artist_data_private}>
-                <button onClick={() => router.push(MAIN_PATHS.PROFILE_ARTIST + `/${props.oneArtist.artistId}`)}>
+                <button onClick={() => {
+                    Cookies.set('currentRole', ROLES.ARTIST)
+                    Cookies.set('currentId', props.oneArtist.artistId)
+                    router.push(MAIN_PATHS.PROFILE_ARTIST + `/${props.oneArtist.artistId}`)
+                }}>
                     <img src={props.oneArtist.avatarUrl} alt={'avatar'} crossOrigin="anonymous"/>
                 </button>
-                <div className={'p ' + subscriptions_scss.p}>{props.oneArtist.artistName}</div>
+                <abbr className={'p ' + subscriptions_scss.p} title={props.oneArtist.artistName}>{props.oneArtist.artistName}</abbr>
             </section>
             <div className={subscriptions_scss.mobile_hidden}>{props.oneArtist.price} ₽</div>
             <div className={subscriptions_scss.mobile_hidden}><TimeComponent time={props.oneArtist.payDate}/></div>

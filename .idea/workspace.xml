@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit date">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/auctionsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auctionsAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/profileAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuction.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/OneAuctionComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/modal_windows/SetMaxRate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/works/auctions/one_auction/one_page/modal_windows/SetMaxRate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/notifications/one_popup_notification/OnePopUpNotificationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/notifications/one_popup_notification/OnePopUpNotificationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paths/elements.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/paths/elements.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/auctionReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/auctionReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/profileReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/thunks/auctionsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/thunks/auctionsThunk.ts" afterDir="false" />
-    </list>
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit main page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,16 +14,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="SCSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="feature_final_testing_app" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +32,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -54,36 +42,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing feature__auction",
-    "last_opened_file_path": "C:/Users/Anastasia/WebstormProjects/PROJECT/csf-exams-frontend",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rebasing develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anastasia/WebstormProjects/online_gallery_frontend/public&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Anastasia\\WebstormProjects\\online_gallery_frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\edit\auction\[id]" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\edit_art\auction" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\store\thunks" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\store\reducers" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions\one_auction\one_page\modal_windows" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\public" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\elements\actions" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\main\elements\banner" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\assets\icons\errors" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\app\event\[id]" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_event\edit" />
+      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\edit_art\elements" />
       <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\create_art\edit_art\art" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\scss\components\categories\auctions" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\scss\components\categories" />
-      <recent name="C:\Users\Anastasia\WebstormProjects\online_gallery_frontend\src\components\categories\works\auctions\one_auction" />
     </key>
   </component>
   <component name="RunManager">
@@ -179,310 +167,24 @@
       <workItem from="1716747072298" duration="206000" />
       <workItem from="1716831381154" duration="20713000" />
       <workItem from="1716880530222" duration="5468000" />
-    </task>
-    <task id="LOCAL-00024" summary="main page design">
-      <option name="closed" value="true" />
-      <created>1714261248688</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1714261248688</updated>
-    </task>
-    <task id="LOCAL-00025" summary="last design details">
-      <option name="closed" value="true" />
-      <created>1714262555586</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1714262555586</updated>
-    </task>
-    <task id="LOCAL-00026" summary="last design details 2">
-      <option name="closed" value="true" />
-      <created>1714263909625</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1714263909625</updated>
-    </task>
-    <task id="LOCAL-00027" summary="commit css">
-      <option name="closed" value="true" />
-      <created>1714293991569</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1714293991569</updated>
-    </task>
-    <task id="LOCAL-00028" summary="created all stores and connected with components">
-      <option name="closed" value="true" />
-      <created>1714410775801</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1714410775801</updated>
-    </task>
-    <task id="LOCAL-00029" summary="added 2 files to last commit">
-      <option name="closed" value="true" />
-      <created>1714410803589</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1714410803589</updated>
-    </task>
-    <task id="LOCAL-00030" summary="testings 2 sprint">
-      <option name="closed" value="true" />
-      <created>1714502542502</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1714502542503</updated>
-    </task>
-    <task id="LOCAL-00031" summary="mobile design for profile posts, categories, create art">
-      <option name="closed" value="true" />
-      <created>1715013089069</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1715013089069</updated>
-    </task>
-    <task id="LOCAL-00032" summary="mobile design for cart orders and subscribers">
-      <option name="closed" value="true" />
-      <created>1715021135715</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1715021135715</updated>
-    </task>
-    <task id="LOCAL-00033" summary="mobile design for private subscriptions">
-      <option name="closed" value="true" />
-      <created>1715114792962</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1715114792962</updated>
-    </task>
-    <task id="LOCAL-00034" summary="mobile design for search section">
-      <option name="closed" value="true" />
-      <created>1715118008024</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1715118008024</updated>
-    </task>
-    <task id="LOCAL-00035" summary="mobile design for avatar profile and one art">
-      <option name="closed" value="true" />
-      <created>1715118793912</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1715118793912</updated>
-    </task>
-    <task id="LOCAL-00036" summary="edit first login">
-      <option name="closed" value="true" />
-      <created>1715119531683</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1715119531683</updated>
-    </task>
-    <task id="LOCAL-00037" summary="edit refresh token">
-      <option name="closed" value="true" />
-      <created>1715128840584</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1715128840584</updated>
-    </task>
-    <task id="LOCAL-00038" summary="edit main page artists avatar">
-      <option name="closed" value="true" />
-      <created>1715297937282</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1715297937282</updated>
-    </task>
-    <task id="LOCAL-00039" summary="add notifications_design">
-      <option name="closed" value="true" />
-      <created>1715298975007</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1715298975007</updated>
-    </task>
-    <task id="LOCAL-00040" summary="add notifications_design 2">
-      <option name="closed" value="true" />
-      <created>1715298994758</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1715298994758</updated>
-    </task>
-    <task id="LOCAL-00041" summary="add routing to subscriptions">
-      <option name="closed" value="true" />
-      <created>1715299770197</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1715299770197</updated>
-    </task>
-    <task id="LOCAL-00042" summary="edit refresh token">
-      <option name="closed" value="true" />
-      <created>1715633059643</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1715633059643</updated>
-    </task>
-    <task id="LOCAL-00043" summary="edit page render">
-      <option name="closed" value="true" />
-      <created>1715682963526</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1715682963526</updated>
-    </task>
-    <task id="LOCAL-00044" summary="edit page render 2">
-      <option name="closed" value="true" />
-      <created>1715682971707</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1715682971707</updated>
-    </task>
-    <task id="LOCAL-00045" summary="edit one pup up notifications margin">
-      <option name="closed" value="true" />
-      <created>1715683429453</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1715683429453</updated>
-    </task>
-    <task id="LOCAL-00046" summary="edit settings pages">
-      <option name="closed" value="true" />
-      <created>1715689840077</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1715689840077</updated>
-    </task>
-    <task id="LOCAL-00047" summary="edit display css popup notification">
-      <option name="closed" value="true" />
-      <created>1715845968525</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1715845968525</updated>
-    </task>
-    <task id="LOCAL-00048" summary="commit">
-      <option name="closed" value="true" />
-      <created>1716197273853</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1716197273854</updated>
-    </task>
-    <task id="LOCAL-00049" summary="commit dev env file">
-      <option name="closed" value="true" />
-      <created>1716197375285</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1716197375285</updated>
-    </task>
-    <task id="LOCAL-00050" summary="add key to maps">
-      <option name="closed" value="true" />
-      <created>1716202118718</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1716202118718</updated>
-    </task>
-    <task id="LOCAL-00051" summary="add key to maps">
-      <option name="closed" value="true" />
-      <created>1716202430839</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1716202430839</updated>
-    </task>
-    <task id="LOCAL-00052" summary="add key to maps">
-      <option name="closed" value="true" />
-      <created>1716202781139</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1716202781139</updated>
-    </task>
-    <task id="LOCAL-00053" summary="edit authConfig">
-      <option name="closed" value="true" />
-      <created>1716203741415</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1716203741415</updated>
-    </task>
-    <task id="LOCAL-00054" summary="edit authConfig and sse connection">
-      <option name="closed" value="true" />
-      <created>1716205403848</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1716205403848</updated>
-    </task>
-    <task id="LOCAL-00055" summary="edit authConfig">
-      <option name="closed" value="true" />
-      <created>1716205966992</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1716205966993</updated>
-    </task>
-    <task id="LOCAL-00056" summary="edit 404 page">
-      <option name="closed" value="true" />
-      <created>1716206673170</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1716206673171</updated>
-    </task>
-    <task id="LOCAL-00057" summary="edit home page">
-      <option name="closed" value="true" />
-      <created>1716207141280</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1716207141280</updated>
-    </task>
-    <task id="LOCAL-00058" summary="edit home page">
-      <option name="closed" value="true" />
-      <created>1716207462896</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1716207462896</updated>
-    </task>
-    <task id="LOCAL-00059" summary="edit home page">
-      <option name="closed" value="true" />
-      <created>1716207684855</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1716207684855</updated>
-    </task>
-    <task id="LOCAL-00060" summary="edit one art page to using components for auction page">
-      <option name="closed" value="true" />
-      <created>1716457063725</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1716457063725</updated>
-    </task>
-    <task id="LOCAL-00061" summary="create pages and do design for auctions: one page, categories page">
-      <option name="closed" value="true" />
-      <created>1716468205173</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1716468205173</updated>
+      <workItem from="1716985883414" duration="31831000" />
+      <workItem from="1717054029000" duration="705000" />
+      <workItem from="1717062627499" duration="3221000" />
+      <workItem from="1717074979717" duration="797000" />
+      <workItem from="1717191997850" duration="4000" />
+      <workItem from="1717232571780" duration="4000" />
+      <workItem from="1717322724600" duration="18000" />
+      <workItem from="1717495737771" duration="27740000" />
+      <workItem from="1717576397345" duration="14480000" />
+      <workItem from="1718229073805" duration="1150000" />
+      <workItem from="1718292016073" duration="773000" />
+      <workItem from="1718307741276" duration="7000" />
+      <workItem from="1718486675581" duration="1404000" />
+      <workItem from="1718561038931" duration="10214000" />
+      <workItem from="1718619096153" duration="10431000" />
+      <workItem from="1718717979044" duration="9299000" />
+      <workItem from="1718786187578" duration="11640000" />
+      <workItem from="1718873163966" duration="9774000" />
     </task>
     <task id="LOCAL-00062" summary="edit main page and artist nav">
       <option name="closed" value="true" />
@@ -572,7 +274,311 @@
       <option name="project" value="LOCAL" />
       <updated>1716852005769</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="add yandex metric">
+      <option name="closed" value="true" />
+      <created>1716989756549</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1716989756549</updated>
+    </task>
+    <task id="LOCAL-00074" summary="add yandex metric">
+      <option name="closed" value="true" />
+      <created>1716995727317</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1716995727318</updated>
+    </task>
+    <task id="LOCAL-00075" summary="fixed date request to change customer data">
+      <option name="closed" value="true" />
+      <created>1716996036910</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1716996036910</updated>
+    </task>
+    <task id="LOCAL-00076" summary="testing all app and fixed bugs">
+      <option name="closed" value="true" />
+      <created>1717024767407</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1717024767407</updated>
+    </task>
+    <task id="LOCAL-00077" summary="create page in categories for events and design">
+      <option name="closed" value="true" />
+      <created>1717497710704</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1717497710704</updated>
+    </task>
+    <task id="LOCAL-00078" summary="page create event design">
+      <option name="closed" value="true" />
+      <created>1717501949905</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1717501949905</updated>
+    </task>
+    <task id="LOCAL-00079" summary="create one event page">
+      <option name="closed" value="true" />
+      <created>1717506158159</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1717506158159</updated>
+    </task>
+    <task id="LOCAL-00080" summary="api for admin and events">
+      <option name="closed" value="true" />
+      <created>1717524732143</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1717524732143</updated>
+    </task>
+    <task id="LOCAL-00081" summary="create event reducer and add it to redux store">
+      <option name="closed" value="true" />
+      <created>1717525371119</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1717525371119</updated>
+    </task>
+    <task id="LOCAL-00082" summary="create admin and events thunks">
+      <option name="closed" value="true" />
+      <created>1717526308988</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1717526308988</updated>
+    </task>
+    <task id="LOCAL-00083" summary="changed get data">
+      <option name="closed" value="true" />
+      <created>1718104362154</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1718104362155</updated>
+    </task>
+    <task id="LOCAL-00084" summary="edit sorting and photos click on artist category page">
+      <option name="closed" value="true" />
+      <created>1718108826481</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1718108826481</updated>
+    </task>
+    <task id="LOCAL-00085" summary="edit art visibility on search page">
+      <option name="closed" value="true" />
+      <created>1718109932585</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1718109932586</updated>
+    </task>
+    <task id="LOCAL-00086" summary="edit materials and tags in create art page">
+      <option name="closed" value="true" />
+      <created>1718115182689</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1718115182690</updated>
+    </task>
+    <task id="LOCAL-00087" summary="add parametr isBlock to user">
+      <option name="closed" value="true" />
+      <created>1718490174366</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1718490174367</updated>
+    </task>
+    <task id="LOCAL-00088" summary="add filters (not final version) and category search">
+      <option name="closed" value="true" />
+      <created>1718577865018</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1718577865019</updated>
+    </task>
+    <task id="LOCAL-00089" summary="edit data create auction and events (not early that today)">
+      <option name="closed" value="true" />
+      <created>1718578631620</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1718578631620</updated>
+    </task>
+    <task id="LOCAL-00090" summary="footer (not all)">
+      <option name="closed" value="true" />
+      <created>1718668169904</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1718668169904</updated>
+    </task>
+    <task id="LOCAL-00091" summary="edit searching in categories">
+      <option name="closed" value="true" />
+      <created>1718668267974</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1718668267974</updated>
+    </task>
+    <task id="LOCAL-00092" summary="add 404 and 403 errors">
+      <option name="closed" value="true" />
+      <created>1718752341162</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1718752341163</updated>
+    </task>
+    <task id="LOCAL-00093" summary="complete information page">
+      <option name="closed" value="true" />
+      <created>1718753018195</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1718753018195</updated>
+    </task>
+    <task id="LOCAL-00094" summary="complete sorting categories">
+      <option name="closed" value="true" />
+      <created>1718755821717</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1718755821718</updated>
+    </task>
+    <task id="LOCAL-00095" summary="add banners to main page">
+      <option name="closed" value="true" />
+      <created>1718786890519</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1718786890520</updated>
+    </task>
+    <task id="LOCAL-00096" summary="mobile version for events">
+      <option name="closed" value="true" />
+      <created>1718787900974</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1718787900974</updated>
+    </task>
+    <task id="LOCAL-00097" summary="edit mobile version for categories and filters">
+      <option name="closed" value="true" />
+      <created>1718788453319</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1718788453319</updated>
+    </task>
+    <task id="LOCAL-00098" summary="edit nav section">
+      <option name="closed" value="true" />
+      <created>1718788845789</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1718788845789</updated>
+    </task>
+    <task id="LOCAL-00099" summary="edit art editing tags and materials">
+      <option name="closed" value="true" />
+      <created>1718798194658</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1718798194658</updated>
+    </task>
+    <task id="LOCAL-00100" summary="edit filters">
+      <option name="closed" value="true" />
+      <created>1718801877562</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1718801877562</updated>
+    </task>
+    <task id="LOCAL-00101" summary="add min parameter in registration customer">
+      <option name="closed" value="true" />
+      <created>1718817511825</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1718817511825</updated>
+    </task>
+    <task id="LOCAL-00102" summary="add favicon">
+      <option name="closed" value="true" />
+      <created>1718827270042</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1718827270042</updated>
+    </task>
+    <task id="LOCAL-00103" summary="set api url to env">
+      <option name="closed" value="true" />
+      <created>1718831874710</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1718831874710</updated>
+    </task>
+    <task id="LOCAL-00104" summary="delete one package">
+      <option name="closed" value="true" />
+      <created>1718833402919</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1718833402919</updated>
+    </task>
+    <task id="LOCAL-00105" summary="edit edit event">
+      <option name="closed" value="true" />
+      <created>1718833666501</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1718833666501</updated>
+    </task>
+    <task id="LOCAL-00106" summary="edit suspense">
+      <option name="closed" value="true" />
+      <created>1718834204327</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1718834204327</updated>
+    </task>
+    <task id="LOCAL-00107" summary="edit config and information page">
+      <option name="closed" value="true" />
+      <created>1718881655225</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1718881655226</updated>
+    </task>
+    <task id="LOCAL-00108" summary="add new font to public and edit art visibility">
+      <option name="closed" value="true" />
+      <created>1718882420795</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1718882420795</updated>
+    </task>
+    <task id="LOCAL-00109" summary="edit artist works and information">
+      <option name="closed" value="true" />
+      <created>1718882804836</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1718882804836</updated>
+    </task>
+    <task id="LOCAL-00110" summary="edit main page">
+      <option name="closed" value="true" />
+      <created>1718886608751</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1718886608752</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +598,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature_auction" />
+                        <option value="develop" />
                       </list>
                     </value>
                   </entry>
@@ -605,31 +611,31 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit page render 2" />
-    <MESSAGE value="edit one pup up notifications margin" />
-    <MESSAGE value="edit settings pages" />
-    <MESSAGE value="create notifications store and testing sse with backend" />
-    <MESSAGE value="edit display css popup notification" />
-    <MESSAGE value="commit" />
-    <MESSAGE value="commit dev env file" />
-    <MESSAGE value="add key to maps" />
-    <MESSAGE value="edit authConfig and sse connection" />
-    <MESSAGE value="edit authConfig" />
-    <MESSAGE value="edit 404 page" />
-    <MESSAGE value="edit home page" />
-    <MESSAGE value="edit one art page to using components for auction page" />
-    <MESSAGE value="create pages and do design for auctions: one page, categories page" />
-    <MESSAGE value="edit main page and artist nav" />
-    <MESSAGE value="create auction page in artist profile" />
-    <MESSAGE value="add auctions in search" />
-    <MESSAGE value="create modal window for set auction rate" />
-    <MESSAGE value="page for create auction" />
-    <MESSAGE value="create api file for auctions" />
-    <MESSAGE value="write thunk for auctions and store file" />
-    <MESSAGE value="testing get auction, get auction categories and in artist profile. edit notifications sse" />
-    <MESSAGE value="edit problem with env" />
-    <MESSAGE value="testing auctions" />
-    <MESSAGE value="edit date" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit date" />
+    <MESSAGE value="edit materials and tags in create art page" />
+    <MESSAGE value="add parametr isBlock to user" />
+    <MESSAGE value="add filters (not final version) and category search" />
+    <MESSAGE value="edit data create auction and events (not early that today)" />
+    <MESSAGE value="footer (not all)" />
+    <MESSAGE value="edit searching in categories" />
+    <MESSAGE value="add 404 and 403 errors" />
+    <MESSAGE value="complete information page" />
+    <MESSAGE value="complete sorting categories" />
+    <MESSAGE value="add banners to main page" />
+    <MESSAGE value="mobile version for events" />
+    <MESSAGE value="edit mobile version for categories and filters" />
+    <MESSAGE value="edit nav section" />
+    <MESSAGE value="edit art editing tags and materials" />
+    <MESSAGE value="edit filters" />
+    <MESSAGE value="add min parameter in registration customer" />
+    <MESSAGE value="add favicon" />
+    <MESSAGE value="set api url to env" />
+    <MESSAGE value="delete one package" />
+    <MESSAGE value="edit edit event" />
+    <MESSAGE value="edit suspense" />
+    <MESSAGE value="edit config and information page" />
+    <MESSAGE value="add new font to public and edit art visibility" />
+    <MESSAGE value="edit artist works and information" />
+    <MESSAGE value="edit main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit main page" />
   </component>
 </project>

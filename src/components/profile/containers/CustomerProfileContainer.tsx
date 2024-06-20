@@ -6,12 +6,14 @@ import {CustomerProfileComponent} from "@/components/profile/components/Customer
 interface containerState {
     profile: {
         customer_data: Customer
+        my_customer_data: Customer
     }
 }
 
 const mapStateToProps = (state: containerState) => {
     return {
-        customer_data: state.profile.customer_data
+        customer_data: state.profile.customer_data,
+        my_customer_data: state.profile.my_customer_data
     }
 }
 

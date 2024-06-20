@@ -11,6 +11,7 @@ import {CardEditContainer} from "@/components/create_order/edit/cart/CardEditCon
 import {OneCardInterface} from "@/interfaces/credentials";
 import mark_icon from "@/assets/icons/settings/mark.svg";
 import {Cancel_ButtonComponent} from "@/components/cancel_button/Cancel_ButtonComponent";
+import {ClickJustButton} from "../../../../utils/YandexClick";
 
 interface privateSubscribeInterface {
     price: string
@@ -94,7 +95,7 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
                                                 <section className={settings_scss.card_data}>
                                                     <div>{oneCard.type === '' ? 'MIR' : oneCard.type}</div>
                                                     <div>•••• •••• ••••
-                                                        {oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length - 1)}
+                                                        {' ' + oneCard.number.substring(oneCard.number.length - 4, oneCard.number.length)}
                                                     </div>
                                                 </section>
                                             </section>
@@ -109,7 +110,10 @@ export const PrivateSubscribeComponent = (props: privateSubscribeInterface) => {
                         <button className={'cancel_button'} onClick={() => props.setSubscribe(false)}>
                             Отменить
                         </button>
-                        <button className={'main_button'} onClick={() => setIsSubscribe(true)}>
+                        <button className={'main_button'} onClick={() => {
+                            ClickJustButton('PrivateSubscribe') // метрика
+                            setIsSubscribe(true)}
+                        }>
                             Поддержать
                         </button>
                     </footer>

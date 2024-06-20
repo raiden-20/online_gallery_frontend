@@ -1,10 +1,10 @@
 import {connect} from "react-redux";
-import {SelectInterface} from "@/interfaces/filters";
+import {SelectInterfaceWithActive} from "@/interfaces/filters";
 import {TagsFiltersComponent} from "@/components/categories/works/filters/categories/tags/TagsFiltersComponent";
 
 interface state {
     filters : {
-        tags: SelectInterface[]
+        tags: SelectInterfaceWithActive[]
     }
 }
 

@@ -107,9 +107,9 @@ export const GetAuctionsCategories = (router: AppRouterInstance) =>
                 }
             })
     }
-export const GetArtistAuctions = (artistId: string, router: AppRouterInstance) =>
+export const GetArtistAuctions = (artistId: string, currentId: string, router: AppRouterInstance) =>
     (dispatch: Dispatch) => {
-        AuctionsAPI.GetAllArtistAuctionAPI(artistId)
+        AuctionsAPI.GetAllArtistAuctionAPI(artistId, currentId)
             .then(response => {
                 switch (response.status) {
                     case 200 : {

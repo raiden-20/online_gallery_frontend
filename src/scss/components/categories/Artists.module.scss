@@ -1,11 +1,10 @@
 @import "@/scss/globals/main_values";
 
-$one-user-width: 234px;
-$photo-max-width: 796px;
+$one-user-width: 200px;
+$photo-max-width: 782px;
 
 .root {
   width: 100%;
-  padding: $padding-l;
 
   display: flex;
   flex-flow: column;
@@ -14,7 +13,8 @@ $photo-max-width: 796px;
 
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: $gap-l1;
 
   .page_title {
     font-size: $font-size-xxl;
@@ -24,8 +24,9 @@ $photo-max-width: 796px;
 
 .sort_section {
   display: grid;
-  grid-template-columns: max-content min-content;
+  grid-template-columns: max-content max-content;
   align-self: end;
+  align-items: center;
 
   .select {
     padding: 0;
@@ -117,6 +118,16 @@ $photo-max-width: 796px;
   position: absolute;
   top: $img-size-biggest / 2 - $padding-20;
   margin-left: $gap-xxs;
+}
+
+.photo_section {
+  display: grid;
+}
+
+.no_photos {
+  margin: 0;
+  display: grid;
+  align-self: center;
 }
 
 @media screen and (max-width: $width-padding){

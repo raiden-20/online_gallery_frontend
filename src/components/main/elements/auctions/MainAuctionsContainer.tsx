@@ -41,7 +41,8 @@ export const MainAuctions = (props: auctions) => {
                 photo: props.auctions[i].photoUrl,
                 artistName: props.auctions[i].artistName,
                 id: props.auctions[i].auctionId,
-                price: props.auctions[i].lastPrice
+                price: props.auctions[i].lastPrice,
+
             })
         }
         setArts(artArr)
@@ -54,6 +55,7 @@ export const MainAuctions = (props: auctions) => {
 
     return <PopularAndAuctionsComponent title={'Аукционы'}
                                         arts={arts}/>
+
 }
 
 export const MainAuctionsContainer = connect(mapStateToProps, mapDispatchToProps)(MainAuctions)

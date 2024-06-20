@@ -6,7 +6,7 @@ import {encrypt} from "./encryption";
 
 export async function refreshAccessToken(token: JWT) {
     console.log(process.env)
-    const resp = await fetch(`http://localhost:8000/realms/online_gallery/protocol/openid-connect/token`, {
+    const resp = await fetch(process.env.REFRESH_TOKEN_URL as string, {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -88,5 +88,5 @@ export const AuthConfig: AuthOptions = {
 
             return session
         }
-    }
+    },
 };

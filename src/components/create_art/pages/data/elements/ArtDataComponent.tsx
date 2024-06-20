@@ -42,7 +42,12 @@ export const ArtDataComponent = (props: artDataInterface) => {
                    }}/>
             <section className={create_art_data_scss.inputs_section}>
                 <input placeholder={`${props.price_placeholder}, ₽`} value={props.input_price}
-                       onChange={(event) => props.setInput_price(event.target.value)}/>
+                       onChange={(event) => {
+                           if (containsOnlyDigits(event.target.value) && event.target.value !== '') {
+                               props.setInput_price(event.target.value)
+                           }
+                       }
+                }/>
                 <section>
                     <input placeholder={'Год создания'} value={props.input_year}
                            onChange={(event) => {
@@ -53,32 +58,41 @@ export const ArtDataComponent = (props: artDataInterface) => {
                                    setMessageDate('Неправильная дата')
                                }
                            }
-                           }/>
+                    }/>
                     <p className={'message'}>{messageDate}</p>
                 </section>
             </section>
-            <textarea placeholder={'Описание'} value={props.input_description}
-                      onChange={(event) => props.setInput_description(event.target.value)}></textarea>
+            <textarea placeholder={'Описание'}
+                      className={'scrollBar'}
+                      value={props.input_description}
+                      onChange={(event) => props.setInput_description(event.target.value)}>
+            </textarea>
             <section className={create_art_data_scss.inputs_section}>
                 <section>
                     <input placeholder={'Длина, см'} value={props.input_height}
                            onChange={(event) => {
                                setMessageHeight('')
-                               if (!containsOnlyDigits(event.target.value)) {
-                                   setMessageHeight('Неправильный формат')
+                               if (containsOnlyDigits(event.target.value) || event.target.value === '') {
+                                   if (Number.parseInt(event.target.value) > 0 || event.target.value === '') {
+                                       props.setInput_height(event.target.value)
+                                   } else {
+                                       setMessageHeight('Неправильный формат')
+                                   }
                                }
-                               props.setInput_height(event.target.value)
                            }
-                           }/>
+                    }/>
                     <p className={'message'}>{messageHeight}</p>
                 </section>
                 <section>
                     <input placeholder={'Ширина, см'} value={props.input_width}
                            onChange={(event) => {
                                setMessageWidth('')
-                               props.setInput_width(event.target.value)
-                               if (!containsOnlyDigits(event.target.value)) {
-                                   setMessageWidth('Неправильный формат')
+                               if (containsOnlyDigits(event.target.value) || event.target.value === '') {
+                                   if (Number.parseInt(event.target.value) > 0 || event.target.value === '') {
+                                       props.setInput_width(event.target.value)
+                                   } else {
+                                       setMessageWidth('Неправильный формат')
+                                   }
                                }
                            }
                            }/>

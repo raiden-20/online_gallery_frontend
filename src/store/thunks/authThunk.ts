@@ -31,6 +31,9 @@ export const deleteCookies = () => {
     Cookies.remove('customerName');
     Cookies.remove('customerUrl');
     Cookies.remove('SSE');
+    Cookies.remove('isAdmin');
+    Cookies.remove('eventId');
+    Cookies.remove('eventType');
     localStorage.removeItem('access_token')
     localStorage.removeItem('session')
 }

@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
-import {SelectInterface} from "@/interfaces/filters";
+import {SelectInterfaceWithActive} from "@/interfaces/filters";
 import {
     MaterialsFiltersComponent
 } from "@/components/categories/works/filters/categories/materials/MaterialsFiltersComponent";
 
 interface state {
     filters : {
-        materials: SelectInterface[]
+        materials: SelectInterfaceWithActive[]
     }
 }
 

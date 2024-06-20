@@ -6,12 +6,14 @@ import {changeArtistProfileData, getArtistProfileData} from "@/store/thunks/prof
 interface containerState {
     profile: {
         artist_data: Artist
+        my_artist_data: Artist
     }
 }
 
 const mapStateToProps = (state: containerState) => {
     return {
-        artist_data: state.profile.artist_data
+        artist_data: state.profile.artist_data,
+        my_artist_data: state.profile.my_artist_data
     }
 }
 

@@ -1,4 +1,4 @@
-import {FilteredElementsInterface, Filters, SelectInterface} from "@/interfaces/filters";
+import {FilteredElementsInterface, Filters, SelectInterfaceWithActive} from "@/interfaces/filters";
 
 const SET_FILTERS_PRICE_START = 'SET_FILTERS_PRICE_START'
 const SET_FILTERS_PRICE_END = 'SET_FILTERS_PRICE_END'
@@ -9,10 +9,11 @@ const SET_FILTERS_MATERIALS = 'SET_FILTERS_MATERIALS'
 const SET_FILTERS_TAGS = 'SET_FILTERS_TAGS'
 const SET_FILTERS_FRAME = 'SET_FILTERS_FRAME'
 const SET_FILTERS_STATUS = 'SET_FILTERS_STATUS'
+const SET_CLEAR_FILTERS = 'SET_CLEAR_FILTERS'
 
 interface FiltersReducerInterface {
-    tags: SelectInterface[],
-    materials: SelectInterface[],
+    tags: SelectInterfaceWithActive[],
+    materials: SelectInterfaceWithActive[],
     year: FilteredElementsInterface[],
     currentFilters: Filters
 }
@@ -20,28 +21,28 @@ interface FiltersReducerInterface {
 
 const initialState: FiltersReducerInterface = {
     tags: [
-        {value: '', label: 'Абстракционизм', isActive: false},
-        {value: '', label: 'Арт-деко', isActive: false},
-        {value: '', label: 'Граффити и стрит-арт', isActive: false},
-        {value: '', label: 'Дадаизм', isActive: false},
-        {value: '', label: 'Импрессионизм', isActive: false},
-        {value: '', label: 'Керамика и гончарное дело', isActive: false},
-        {value: '', label: 'Коллаж', isActive: false},
-        {value: '', label: 'Концептуализм', isActive: false},
-        {value: '', label: 'Кубизм', isActive: false},
-        {value: '', label: 'Минимализм', isActive: false},
-        {value: '', label: 'Модернизм', isActive: false},
-        {value: '', label: 'Народное искусство', isActive: false},
-        {value: '', label: 'Натюрморты', isActive: false},
-        {value: '', label: 'Пейзажи', isActive: false},
-        {value: '', label: 'Поп-арт', isActive: false},
-        {value: '', label: 'Портреты', isActive: false},
-        {value: '', label: 'Реализм', isActive: false},
-        {value: '', label: 'Современное искусство', isActive: false},
-        {value: '', label: 'Сюрреализм', isActive: false},
-        {value: '', label: 'Фигуративизм', isActive: false},
-        {value: '', label: 'Фотореализм', isActive: false},
-        {value: '', label: 'Экспрессионизм', isActive: false},
+        {value: 'Abstractionism', label: 'Абстракционизм', isActive: false},
+        {value: 'Art-Deco', label: 'Арт-деко', isActive: false},
+        {value: 'Graffiti-and-street-art', label: 'Граффити и стрит-арт', isActive: false},
+        {value: 'Dadaism', label: 'Дадаизм', isActive: false},
+        {value: 'Impressionism', label: 'Импрессионизм', isActive: false},
+        {value: 'Ceramics-and-pottery', label: 'Керамика и гончарное дело', isActive: false},
+        {value: 'Collage', label: 'Коллаж', isActive: false},
+        {value: 'Conceptualism', label: 'Концептуализм', isActive: false},
+        {value: 'Cubism', label: 'Кубизм', isActive: false},
+        {value: 'Minimalism', label: 'Минимализм', isActive: false},
+        {value: 'Modernism', label: 'Модернизм', isActive: false},
+        {value: 'Folk-art', label: 'Народное искусство', isActive: false},
+        {value: 'Still-Lifes', label: 'Натюрморты', isActive: false},
+        {value: 'Landscapes', label: 'Пейзажи', isActive: false},
+        {value: 'Pop-art', label: 'Поп-арт', isActive: false},
+        {value: 'Portraits', label: 'Портреты', isActive: false},
+        {value: 'Realism', label: 'Реализм', isActive: false},
+        {value: 'Contemporary-art', label: 'Современное искусство', isActive: false},
+        {value: 'Surrealism', label: 'Сюрреализм', isActive: false},
+        {value: 'Figurativism', label: 'Фигуративизм', isActive: false},
+        {value: 'Photorealism', label: 'Фотореализм', isActive: false},
+        {value: 'Expressionism', label: 'Экспрессионизм', isActive: false},
     ],
     materials: [
         {value: 'Watercolour', label: 'Акварель', isActive: false},
@@ -97,8 +98,8 @@ const initialState: FiltersReducerInterface = {
     ],
 
     currentFilters : {
-        priceStart: "",
-        priceEnd: "",
+        priceStart: "0",
+        priceEnd: "1000000",
         size: [],
         artists: [],
         year: [],
@@ -166,6 +167,20 @@ export const filtersReducer = (state = initialState, action: any) => {
             return stateCopy
         }
 
+        case SET_CLEAR_FILTERS : {
+            stateCopy.currentFilters.priceStart = '0'
+            stateCopy.currentFilters.priceEnd = '0'
+            stateCopy.currentFilters.size = []
+            stateCopy.currentFilters.artists = []
+            stateCopy.currentFilters.year = []
+            stateCopy.currentFilters.materials = []
+            stateCopy.currentFilters.tags = []
+            stateCopy.currentFilters.frame = false
+            stateCopy.currentFilters.status = false
+
+            return stateCopy
+        }
+
         default : {
             return stateCopy
         }
@@ -223,5 +238,11 @@ export const setFiltersFrame = (frame: boolean | null) => {
 export const setFiltersStatus = (status: boolean | null) => {
     return {
         type: SET_FILTERS_STATUS, status
+    }
+}
+
+export const clearFilters = () => {
+    return {
+        type: SET_CLEAR_FILTERS
     }
 }

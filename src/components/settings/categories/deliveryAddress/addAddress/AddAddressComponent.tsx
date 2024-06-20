@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
 import {CHARACTER_RESTRICTION} from "@/paths/elements";
+import {containsOnlyDigits, containsOnlyLetters} from "../../../../../../utils/tests";
 
 interface addAddressInterface {
     AddAddress(name: string, country: string, region: string, city: string,
@@ -53,7 +54,8 @@ export const AddAddressComponent = (props: addAddressInterface) => {
                 <section className={settings_scss.address_pay_main}>
                     <input value={input_name}
                            onChange={(event) => {
-                               if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_NAME) {
+                               if ((event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_NAME &&
+                                   containsOnlyLetters(event.target.value)) || event.target.value === '') {
                                    setInput_name(event.target.value)
                                }
                            }}
@@ -61,14 +63,17 @@ export const AddAddressComponent = (props: addAddressInterface) => {
                     <section className={settings_scss.input_section}>
                         <input value={input_country}
                                onChange={(event) => {
-                                   if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_COUNTRY) {
+                                   if ((event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_COUNTRY &&
+                                       containsOnlyLetters(event.target.value)) || event.target.value === '') {
                                        setInput_country(event.target.value)
                                    }
                                }}
                                placeholder={'Страна'}/>
                         <input value={input_region}
                                onChange={(event) => {
-                                   if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_REGION) {
+                                   if ((event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_REGION &&
+                                       containsOnlyLetters(event.target.value))
+                                       || event.target.value === '') {
                                        setInput_region(event.target.value)
                                    }
                                }}
@@ -77,13 +82,19 @@ export const AddAddressComponent = (props: addAddressInterface) => {
                     <section className={settings_scss.input_section}>
                         <input value={input_city}
                                onChange={(event) => {
-                                   if (event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_CITY) {
+                                   if ((event.target.value.length < CHARACTER_RESTRICTION.ADDRESS_CITY &&
+                                       containsOnlyLetters(event.target.value))
+                                       || event.target.value === '') {
                                        setInput_city(event.target.value)
                                    }
                                }}
                                placeholder={'Город'}/>
                         <input  value={input_index}
-                                onChange={(event) => setInput_index(event.target.value)}
+                                onChange={(event) => {
+                                    if (containsOnlyDigits(event.target.value) || event.target.value === '') {
+                                        setInput_index(event.target.value)}
+                                    }
+                                }
                                 placeholder={'Индекс'}/>
                     </section>
                     <input value={input_location}

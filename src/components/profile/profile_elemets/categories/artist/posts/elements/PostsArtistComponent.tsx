@@ -20,8 +20,6 @@ interface PostArtistInterface {
 
 export const PostsArtistComponent = (props: PostArtistInterface) => {
 
-    console.log(props.posts)
-
     const [artistId] = useState(Cookies.get('artistId'))
     const [currentId] = useState(Cookies.get('currentId'))
 
@@ -61,7 +59,7 @@ export const PostsArtistComponent = (props: PostArtistInterface) => {
                     }).reverse()
                     :
                     <section className={'no_elements'}>
-                        Художник не имеет ни одного поста...
+                        Художник еще не выкладывал посты...
                     </section>
                 }
                 {currentId === artistId ?

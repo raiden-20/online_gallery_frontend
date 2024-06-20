@@ -15,12 +15,14 @@ $art-data-img-size: 80px;
 $one-photo-size: 100px;
 $one-photo-size-135: 135px;
 $img-size-medium: 165px;
+$select-artist-width: 180px;
 $img-size-big: 200px;
 $artist-photo-size: 245px;
 $cover-height: 250px;
 $width-255: 255px;
 $img-size-biggest: 307px;
 $one-work-width: 328px;
+$one-event-categories-width: 345px;
 $hover-section-width: 400px;
 $section-action-img-width: 500px;
 $section-main-data-img-size: 510px;
@@ -107,8 +109,9 @@ $padding-5: 45px 0;
 $padding-64: 64px 0;
 
 $padding-4: 15px 0 25px 0;
+$padding-0-0-0-16: 0 0 0 16px;
 $padding-s: 16px 0 48px 0;
-$padding-16-0-0-0: 16px 0  0;
+$padding-16-0-0-0: 16px 0 0 0;
 $padding-6: 32px 0 16px 0;
 
 
@@ -135,6 +138,7 @@ $gap-xxxxxl: 64px;
 $border-base: 1px solid $black-color;
 $border-button: 2px solid $black-color;
 $border-white: 5px solid $white-color;
+$border-search: 1px solid $grey-filter-price-border;
 
 $shadow: 0 0 10px 0 $shadow-color;
 $shadow-top: 0 -10px 10px -10px $shadow-color;

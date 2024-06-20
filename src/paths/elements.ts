@@ -11,7 +11,7 @@ export const ART_TYPES_MANY = {
 }
 
 export const ART_AUCTION = {
-    ART: 'art',
+    ART: 'arts',
     AUCTION: 'auction'
 }
 
@@ -33,6 +33,17 @@ export const ORDER_STATUS_RUS = {
     PROGRESS: 'В пути',
     FINISHED: 'Завершен',
     AWAIT: 'Оформление'
+}
+
+export const EVENT_TYPES = {
+    AUCTION: 'AUCTION',
+    ART: 'ART'
+}
+
+export const EVENT_STATUS = {
+    WAIT: 'WAIT',
+    AVAILABLE: 'AVAILABLE',
+    END: 'END'
 }
 
 export const ANONYMOUS = 'anonymous'

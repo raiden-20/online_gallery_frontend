@@ -27,9 +27,13 @@ export const ProfileComponent = (props: ProfileInterface) => {
 
     useEffect(() => {
         if (isSave) {
-            props.changeCustomerProfileData(props.customer_data.customerName, input_date,
-                input_gender === '' ? 'MAN' : input_gender, props.customer_data.description,
-                props.customer_data.avatarUrl, props.customer_data.coverUrl, ' ', ' ',
+            const date = new Date(input_date)
+            props.changeCustomerProfileData(props.customer_data.customerName, date.toISOString(),
+                input_gender === '' ? 'MAN' : input_gender,
+                props.customer_data.description === '' ? ' ' : props.customer_data.description,
+                props.customer_data.avatarUrl === '' ? ' ' : props.customer_data.avatarUrl
+                , props.customer_data.coverUrl === '' ? ' ' : props.customer_data.coverUrl
+                , ' ', ' ',
                 router, setMessage)
             setIsSave(false)
         }

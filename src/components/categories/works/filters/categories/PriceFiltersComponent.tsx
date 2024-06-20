@@ -17,8 +17,8 @@ interface filterInterface {
 export const PriceFiltersComponent = (props: filterInterface) => {
     const [isOpen, setIsOpen] = useState(false)
 
-    const [input_priceStart, setInput_priceStart] = useState('0')
-    const [input_priceEnd, setInput_priceEnd] = useState('1000000')
+    const [input_priceStart, setInput_priceStart] = useState(props.currentFilters.priceStart)
+    const [input_priceEnd, setInput_priceEnd] = useState((props.currentFilters.priceEnd))
 
     const setPriceStart = useCallback((value: string) => {
         if (containsOnlyDigits(value)) {

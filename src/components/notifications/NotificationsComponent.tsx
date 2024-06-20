@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import {MAIN_PATHS, ROLES} from "@/paths/main";
 import {useRouter} from "next/navigation";
+import {reformatDateFull} from "../../../utils/tests";
 
 interface NotificationsComponentInterface {
     notifications: NotificationsInterface[]
@@ -67,7 +68,7 @@ export const NotificationsComponent = (props: NotificationsComponentInterface) =
                                 <section className={notifications_scss.data_section}>
                                     <p>{one.text}</p>
                                     <section className={notifications_scss.data_time}>
-                                        <TimeComponent time={one.date}/>
+                                        {reformatDateFull(one.date)}
                                     </section>
                                 </section>
                             </li>

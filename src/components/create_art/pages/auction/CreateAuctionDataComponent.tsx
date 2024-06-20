@@ -67,13 +67,16 @@ export const CreateAuctionDataComponent = (props: createArtDataInterface) => {
                 <MainPhotoComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
                                     setPhotoArrayFile={props.setPhotoArrayFile}
                                     setPhotoArraySrc={props.setPhotoArraySrc}
+                                    title={'Основное фото'}
+                                    id={'setMainPhoto'}
                 />
                 :
                 <MainPhotoEditComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}
                                         setPhotoArrayFile={props.setPhotoArrayFile}
                                         setPhotoArraySrc={props.setPhotoArraySrc}
                                         photoUrls={props.photoUrls} setDeletePhotoUrls={props.setDeletePhotoUrls}
-                                        deletePhotoUrls={props.deletePhotoUrls} setIsChangeMainPhoto={props.setIsChangeMainPhoto}/>
+                                        deletePhotoUrls={props.deletePhotoUrls} setIsChangeMainPhoto={props.setIsChangeMainPhoto}
+                                        id={'setMainPhoto'} title={'Основное фото'}/>
             }
             {pathname === MAIN_PATHS.CREATE_ART ?
                 <AddPhotoComponent photoArraySrc={props.photoArraySrc} photoArrayFile={props.photoArrayFile}

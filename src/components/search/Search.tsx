@@ -23,7 +23,7 @@ export interface SearchInterface {
 }
 
 export const Search = (props: SearchInterface) => {
-    const categories = ['Художники', 'Покупатели', 'Картины', 'Фотографии', 'Скульптуры', 'Аукционы', 'События']
+    const categories = ['Художники', 'Покупатели', 'Картины', 'Фотографии', 'Скульптуры', 'Аукционы']
 
     const [whoIsClicked, setWhoIsClicked] = useState(1)
     const [input_name, setInput_name] = useState('')
@@ -35,7 +35,7 @@ export const Search = (props: SearchInterface) => {
                        alt={'search_icon'} width={0} height={0}/>
                 <input value={input_name} onChange={(event) => setInput_name(event.target.value)}
                        className={search_scss.input} placeholder={'Поиск'}/>
-                <button>
+                <button className={search_scss.delete_button}>
                     <Image src={delete_icon} className={search_scss.img}
                            onClick={() => setInput_name('')}
                            alt={'search_icon'} width={0} height={0}/>
@@ -68,11 +68,13 @@ export const Search = (props: SearchInterface) => {
                                          getAllCustomers={props.getAllCustomers}
                                          getSmthByName={props.getSmthByName}/> :
                             whoIsClicked === 3 || whoIsClicked === 4 || whoIsClicked === 5
-                                ? <Works search={props.search}
-                                         input_name={input_name}
-                                         getAllArts={props.getAllArts}
-                                         getSmthByName={props.getSmthByName}
-                                         whoIsClicked={whoIsClicked}/> :
+                                ?
+                                <Works search={props.search}
+                                       input_name={input_name}
+                                       getAllArts={props.getAllArts}
+                                       getSmthByName={props.getSmthByName}
+                                       whoIsClicked={whoIsClicked}/>
+                                :
                                 whoIsClicked === 6
                                     ? <Auctions search={props.search}
                                                 input_name={input_name}

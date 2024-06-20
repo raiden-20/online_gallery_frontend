@@ -30,6 +30,12 @@ export interface ArtShortInterface {
     customerId: string
     avatarUrl: string
     customerName: string
+    size: string
+    createDate: string
+    tags: string[]
+    materials: string[]
+    frame: boolean
+    viewCount: number
 }
 
 export interface ArtArtistInterface {
@@ -42,6 +48,7 @@ export interface ArtArtistInterface {
     customerId: string
     avatarUrl: string
     customerName: string
+    artistName: string
 }
 
 export interface ArtCustomerInterface {
@@ -51,6 +58,7 @@ export interface ArtCustomerInterface {
     photoUrl: string
     isPrivate: string
     price: string
+    customerName: string
 }
 
 export interface MainPageArts {
@@ -58,5 +66,5 @@ export interface MainPageArts {
     photo: string
     artistName: string,
     id: string
-    price: string
+    price: string,
 }

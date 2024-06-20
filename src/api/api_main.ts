@@ -2,7 +2,7 @@ import axios from "axios";
 import {refreshAccessToken} from "../../utils/auth_config";
 
 export const PathsAPI = {
-    BASE: 'http://localhost:8080/api',
+    BASE: process.env.API_URL,
 
     CREATE: '/create',
     BUY: '/buy',
@@ -15,12 +15,15 @@ export const PathsAPI = {
     SEND: '/send',
     EDIT: '/edit',
     RECEIVE: '/receive',
+    BLOCK: '/block',
+    UNBLOCK: '/unblock',
 
     CUSTOMER: '/customer',
     ARTIST: '/artist',
     SUBSCRIPTIONS: '/subscriptions',
     SUBSCRIBERS: '/subscribers',
     ACCOUNT: '/account',
+    ADMIN: '/admin',
 
     DATA: '/data',
     EMAIL: '/email',
@@ -38,6 +41,8 @@ export const PathsAPI = {
     AUCTIONS: '/auctions',
     CART: '/cart',
     ORDER: '/order',
+    EVENT: '/event',
+    EVENTS: '/events',
 
     NOTIFICATION: '/notification',
     SSE: '/sse',

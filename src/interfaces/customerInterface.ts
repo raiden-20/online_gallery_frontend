@@ -6,4 +6,5 @@ export interface Customer {
     coverUrl: string
     artistId: string
     description: string
+    isBlocked: boolean
 }

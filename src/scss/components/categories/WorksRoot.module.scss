@@ -1,4 +1,5 @@
 @import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
 
 $filters-button-gap: 8px;
 
@@ -14,7 +15,19 @@ $filters-button-gap: 8px;
   font-weight: $weight;
 }
 
+.nav_section {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  gap: $gap-xs;
+
+  align-items: center;
+  border: $border-search;
+  border-radius: $elements-radius;
+  padding: $input-padding;
+}
+
 .nav {
+  height: min-content;
   display: flex;
   justify-content: space-between;
 
@@ -22,8 +35,16 @@ $filters-button-gap: 8px;
     height: min-content;
 
     display: flex;
+    justify-content: start;
     gap: $gap-xxxs;
 
     font-weight: $weight;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .nav {
+    display: flex;
+    flex-direction: column;
   }
 }

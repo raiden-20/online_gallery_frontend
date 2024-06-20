@@ -40,7 +40,8 @@ export const NavigationElementsMobile = (props: {setIsMenuClicked(isMenuClicked:
                         Аукционы
                     </button>
                 </section>
-                <section className={navigation_scss.visible_various}>
+                <section className={navigation_scss.visible_various}
+                         onClick={() => router.push(MAIN_PATHS.EVENTS)}>
                     <button>
                         События
                     </button>

@@ -29,17 +29,6 @@ export const OneWorkCustomerComponent = (props: oneWorkInterface) => {
                 <img src={props.oneArt.photoUrl} className={works_profile_scss.one_work_img}
                      alt={'one work'}
                      crossOrigin="anonymous"/>
-                {/*<section className={works_profile_scss.who_buy_section}*/}
-                {/*         onMouseEnter={() => setIsHoverWhoBuy(true)}*/}
-                {/*         onMouseLeave={() => setIsHoverWhoBuy(false)}>*/}
-                {/*    <section className={works_profile_scss.who_buy_data}>*/}
-                {/*        <img src={customerUrl === '' ? '/default_avatar_profile.svg': customerUrl}*/}
-                {/*             alt={'avatar'} crossOrigin={"anonymous"}/>*/}
-                {/*        <div className={!isHoverWhoBuy ? works_profile_scss.who_buy_name_hide : undefined}>*/}
-                {/*            {customerName}*/}
-                {/*        </div>*/}
-                {/*    </section>*/}
-                {/*</section>*/}
                 {props.oneArt.isPrivate ?
                     <section className={works_profile_scss.who_buy_section + ' ' + works_profile_scss.star_section}
                              onMouseEnter={() => setIsHoveStart(true)}

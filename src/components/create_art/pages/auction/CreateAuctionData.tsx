@@ -41,13 +41,18 @@ export const CreateAuctionData = (props: CreateAuctionDataInterface) => {
     useEffect(() => {
         if (createArt) {
             if (Number.parseInt(input_createDate) >= CHARACTER_RESTRICTION.MIN_YEAR && Number.parseInt(input_createDate) <= CHARACTER_RESTRICTION.MAX_YEAR
-                && containsOnlyDigits(input_height) && containsOnlyDigits(input_width)) {
+                && containsOnlyDigits(input_height) && containsOnlyDigits(input_width)
+                && tags.length !== 0 && materials.length !== 0
+                && photoArraySrc.length !== 0
+                && startTime !== '' && endTime !== '') {
                 const size = input_height + 'x' + input_width
                 props.CreateAuction(input_name, props.input_type, photoArrayFile, removeSpaces(input_price.toString()),
                     removeSpaces(input_createDate.toString()) + '-01-01',
                     input_description, size, tags,
                     materials, startTime, endTime, isFrame, router, setMessage)
                 setCreateArt(false)
+            } else {
+                setMessage('Заполните все необходимые поля')
             }
         }
     }, [createArt]);

@@ -6,14 +6,16 @@ import create_art_icon from '@/assets/icons/profile/create_art_button.svg'
 import Image from "next/image";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
-import {MAIN_PATHS} from "@/paths/main";
-import {OneAuctionArtistProfileComponent} from "@/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent";
+import {MAIN_PATHS, ROLES} from "@/paths/main";
+import {
+    OneAuctionArtistProfileComponent
+} from "@/components/profile/profile_elemets/categories/artist/artist_auctions/OneAuctionArtistProfileComponent";
 import {AUCTION_STATUS, AuctionCategoriesInterface} from "@/interfaces/auctionInterface";
 
 interface worksProfileInterface {
     auctions_artist: AuctionCategoriesInterface[]
 
-    GetArtistAuctions(artistId: string, router: AppRouterInstance): void
+    GetArtistAuctions(artistId: string, currentId: string, router: AppRouterInstance): void
 }
 
 export const AuctionsArtistProfileComponent = (props: worksProfileInterface) => {
@@ -21,14 +23,26 @@ export const AuctionsArtistProfileComponent = (props: worksProfileInterface) => 
 
     const [currentId] = useState(Cookies.get('currentId') as string)
     const [artistId] = useState(Cookies.get('artistId') as string)
+    const [customerId] = useState(Cookies.get('customerId') as string)
 
     useEffect(() => {
-        props.GetArtistAuctions(currentId, router)
+        if (Cookies.get('role') === ROLES.ARTIST) {
+            props.GetArtistAuctions(currentId, artistId, router)
+        } else {
+            props.GetArtistAuctions(currentId, customerId, router)
+        }
     }, []);
 
 
     return (
         <main className={auction_profile_scss.root}>
+            {props.auctions_artist.length === 0 ?
+                <section className={'no_elements'}>
+                    Художник еще не проводил аукционы...
+                </section>
+                :
+                null
+            }
             {props.auctions_artist.filter((oneArt) =>
                 oneArt.status === AUCTION_STATUS.AVAILABLE)
                 .map((oneAuction, index) => {

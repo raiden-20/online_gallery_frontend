@@ -8,6 +8,8 @@ import create_post_scss from "@/scss/components/profile/categories/CreatePost.mo
 import delete_photo_icon from "@/assets/icons/profile/create_post/delete.svg";
 
 interface mainPhotoInterface {
+    id: string
+    title: string
     photoArraySrc: string[]
     photoArrayFile: File[]
 
@@ -17,6 +19,8 @@ interface mainPhotoInterface {
 }
 
 interface mainPhotoInterface2 {
+    id: string
+    title: string
     photoArraySrc: string[]
     photoArrayFile: File[]
 
@@ -73,7 +77,7 @@ export const MainPhotoComponent = (props: mainPhotoInterface | mainPhotoInterfac
     };
     return (
         <section className={create_art_data_scss.section_root}>
-            <header className={create_art_data_scss.header}>Основное фото</header>
+            <header className={create_art_data_scss.header}>{props.title}</header>
             {props.photoArraySrc.length !== 0 ?
                 <section className={create_post_scss.onePhoto_section}>
                     <button className={create_post_scss.delete_button}
@@ -89,9 +93,9 @@ export const MainPhotoComponent = (props: mainPhotoInterface | mainPhotoInterfac
                 <p className={'message'}>{message}</p>
                 : null}
             <button className={'second_plan_button ' + create_art_data_scss.button}>
-                <input className={create_art_data_scss.hidden} type="file" id="setMainPhoto"
+                <input className={create_art_data_scss.hidden} type="file" id={props.id}
                        onChange={(event) => setPhotoArr(event.target.files as FileList)}/>
-                <label htmlFor="setMainPhoto" className={create_art_data_scss.button_img}>
+                <label htmlFor={props.id} className={create_art_data_scss.button_img}>
                     <Image src={add_photo_icon} alt={add_photo_icon}/>
                     <div>Загрузить фото</div>
                 </label>

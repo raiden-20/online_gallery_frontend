@@ -4,10 +4,10 @@ import open_icon from "@/assets/icons/categories/filter_category_open.svg";
 import close_icon from "@/assets/icons/categories/filter_category_close.svg";
 import search_icon from "@/assets/icons/categories/search.svg";
 import {useCallback, useState} from "react";
-import { Filters, SelectInterface} from "@/interfaces/filters";
+import { Filters, SelectInterfaceWithActive} from "@/interfaces/filters";
 
 interface filterInterface {
-    materials: SelectInterface[]
+    materials: SelectInterfaceWithActive[]
     currentFilters: Filters
     setFiltersMaterialsThunk(materials: string[]): void
 }
@@ -26,7 +26,7 @@ export const MaterialsFiltersComponent = (props: filterInterface) => {
         setFilteredMaterials(filtered);
     }, [])
 
-    const setArtistsCheckBox = useCallback((event: boolean, name: string, index: number) => {
+    const setArtistsCheckBox = useCallback((event: boolean, name: string) => {
         if (event) {
             let flag = false
             props.currentFilters.materials.map((oneMaterial => {
@@ -35,21 +35,25 @@ export const MaterialsFiltersComponent = (props: filterInterface) => {
                 }
             }))
             if (!flag) {
-                let artists = [...props.currentFilters.artists]
-                artists.push(name)
-                props.setFiltersMaterialsThunk(artists)
+                let materials = [...props.currentFilters.materials]
+                materials.push(name)
+                props.setFiltersMaterialsThunk(materials)
             }
         } else {
-            props.currentFilters.artists.map(((oneArtistId, index) => {
-                if (oneArtistId === name) {
-                    let artists = [...props.currentFilters.artists]
-                    artists.splice(index, 1)
-                    props.setFiltersMaterialsThunk(artists)
+            props.currentFilters.materials.some(((one, index) => {
+                if (one === name) {
+                    let materials = [...props.currentFilters.materials]
+                    materials.splice(index, 1)
+                    props.setFiltersMaterialsThunk(materials)
                 }
             }))
         }
         const materialsFilter = [...filteredMaterials]
-        materialsFilter[index].isActive = !materialsFilter[index].isActive
+        materialsFilter.some(one => {
+            if (one.label === name) {
+                one.isActive = !one.isActive
+            }
+        })
         setFilteredMaterials(materialsFilter)
     },[])
 
@@ -77,7 +81,7 @@ export const MaterialsFiltersComponent = (props: filterInterface) => {
                                 <li className={filters_scss.size_one_section} key={index}>
                                     <input type={'checkbox'} checked={oneMaterial.isActive}
                                            onChange={(event) =>
-                                               setArtistsCheckBox(event.target.checked, oneMaterial.label, index)}/>
+                                               setArtistsCheckBox(event.target.checked, oneMaterial.label)}/>
                                     <div>{oneMaterial.label}</div>
                                 </li>
                             )

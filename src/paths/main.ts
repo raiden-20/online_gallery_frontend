@@ -13,6 +13,7 @@ export const PATHS_CATEGORY = {
 
     MAIN: '/main',
     AUTH: '/auth',
+    ABOUT: '/about',
     PROFILE: '/profile',
     SETTINGS: '/settings',
     ART: '/art',
@@ -27,13 +28,18 @@ export const PATHS_CATEGORY = {
     AUCTION: '/auction',
     AUCTIONS: '/auctions',
     SEARCH: '/search',
+    EVENTS: '/events',
+    EVENT: '/event',
     CART: '/cart',
     ORDER: '/order',
     ORDERS: '/orders',
     SUBSCRIPTIONS: '/subscriptions',
     NOTIFICATIONS: '/notifications',
     POSTS: '/posts',
+    SUPPORT: '/support',
+    INFORMATION: '/information',
 
+    ERROR_403: '/403',
     ERROR_404: '/404',
     SUCCESS: '/success',
 
@@ -55,11 +61,12 @@ export const MAIN_PATHS = {
     PROFILE: PATHS_CATEGORY.PROFILE,
 
     POSTS: PATHS_CATEGORY.POSTS,
-
     SETTINGS: PATHS_CATEGORY.SETTINGS,
-
     ARTISTS: PATHS_CATEGORY.ARTISTS,
-
+    EVENTS: PATHS_CATEGORY.EVENTS,
+    EVENT: PATHS_CATEGORY.EVENT,
+    CREATE_EVENT: PATHS_CATEGORY.CREATE + PATHS_CATEGORY.EVENT,
+    EDIT_EVENT: PATHS_CATEGORY.EDIT + PATHS_CATEGORY.EVENT,
     PAINTINGS: PATHS_CATEGORY.PAINTINGS,
     PHOTO: PATHS_CATEGORY.PHOTOS,
     SCULPTURES: PATHS_CATEGORY.SCULPTURES,
@@ -82,6 +89,8 @@ export const MAIN_PATHS = {
 
     CARDS: PATHS_CATEGORY.SETTINGS + PATHS_CATEGORY.CARDS,
     ADDRESSES: PATHS_CATEGORY.SETTINGS + PATHS_CATEGORY.ADDRESSES,
+    SUPPORT: PATHS_CATEGORY.SUPPORT,
+    INFORMATION: PATHS_CATEGORY.INFORMATION,
 
     ONE_ART: PATHS_CATEGORY.ARTS
 }

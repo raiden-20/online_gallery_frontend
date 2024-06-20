@@ -5,6 +5,7 @@ import {useSession} from "next-auth/react";
 import {useState} from "react";
 import Cookies from "js-cookie";
 import {AUCTION_STATUS} from "@/interfaces/auctionInterface";
+import {ClickJustButton} from "../../../../../../../../utils/YandexClick";
 
 interface OneAuctionButtonsInterface {
     setSetMaxRate(setMaxRate: boolean): void
@@ -27,6 +28,7 @@ export const OneAuctionButtons = (props: OneAuctionButtonsInterface) => {
                 <button className={props.maxRate !== null ? 'second_plan_button ' : 'main_button ' + one_work_scss.add_to_cart}
                         onClick={() => {
                             if (status === 'authenticated') {
+                                ClickJustButton('Rate') // метрика
                                 props.setSetMaxRate(true)
                             } else {
                                 signin()
@@ -38,6 +40,7 @@ export const OneAuctionButtons = (props: OneAuctionButtonsInterface) => {
                 <button className={props.maxRate !== null ? 'second_plan_button ' :'cancel_button ' + one_work_scss.add_to_cart}
                         onClick={() => {
                             if (status === 'authenticated') {
+                                ClickJustButton('Rate') // метрика
                                 props.setSetRate(true)
                             } else {
                                 signin()

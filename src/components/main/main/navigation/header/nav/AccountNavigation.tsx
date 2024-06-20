@@ -11,6 +11,8 @@ import { useState} from "react";
 import {Customer} from "@/interfaces/customerInterface";
 import {Artist} from "@/interfaces/artistInterface";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {ClickJustButton} from "../../../../../../../utils/YandexClick";
+import {IsAdmin} from "@/store/thunks/adminThunk";
 
 interface accountNavInterface {
     my_customer_data: Customer
@@ -27,123 +29,166 @@ export const AccountNavigation = (props: accountNavInterface) => {
     const [artistId] = useState(Cookies.get('artistId'))
     const [registrationFlag] = useState(Cookies.get('registrationFlag'))
 
-    return (
-        <section className={accountNavigation_scss.account_section}>
-            <section className={accountNavigation_scss.account_various}>
-                <button onClick={() => props.setIsMenuClicked(false)} className={navigation_scss.close_button}>
-                    <Image src={close} alt={'close'}
-                           width={0} height={0} className={navigation_scss.img}/>
-                </button>
-                <section className={accountNavigation_scss.account_nav}>
-                    {registrationFlag === 'true' ?
-                        <section className={accountNavigation_scss.account_data}
-                            onClick={() => {
-                                Cookies.set('role', ROLES.CUSTOMER)
-                                Cookies.set('currentRole', ROLES.CUSTOMER)
-                                Cookies.set('currentId', Cookies.get('customerId') as string)
-                                router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + Cookies.get('customerId'))
-                            }
-                            }>
-                            <img src={props.my_customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_customer_data.avatarUrl }
-                                 className={accountNavigation_scss.avatar}
-                                 crossOrigin="anonymous"
-                                 alt={'avatar'}/>
-                            <section className={accountNavigation_scss.name_section}>
-                                <div className={'p ' + accountNavigation_scss.name}>{props.my_customer_data.customerName}</div>
-                                <button className={accountNavigation_scss.button}>
-                                    Покупатель
-                                </button>
+
+    if (IsAdmin()) {
+        return (
+            <section className={accountNavigation_scss.account_section}>
+                <section className={accountNavigation_scss.account_various}>
+                    <button onClick={() => props.setIsMenuClicked(false)} className={navigation_scss.close_button}>
+                        <Image src={close} alt={'close'}
+                               width={0} height={0} className={navigation_scss.img}/>
+                    </button>
+                    <section className={accountNavigation_scss.account_nav}>
+                        {registrationFlag === 'true' ?
+                            <section className={accountNavigation_scss.account_data}>
+                                <img src={props.my_customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_customer_data.avatarUrl }
+                                     className={accountNavigation_scss.avatar}
+                                     crossOrigin="anonymous"
+                                     alt={'avatar'}/>
+                                <section className={accountNavigation_scss.name_section}>
+                                    <abbr className={'p ' + accountNavigation_scss.name} title={props.my_customer_data.customerName}>{props.my_customer_data.customerName}</abbr>
+                                </section>
                             </section>
-                        </section>
-                        : null
-                    }
-                    {artistId !== undefined ?
-                        <section className={accountNavigation_scss.account_data}
-                            onClick={() => {
-                                Cookies.set('role', ROLES.ARTIST)
-                                Cookies.set('currentRole', ROLES.ARTIST)
-                                Cookies.set('currentId', Cookies.get('artistId') as string)
-                                router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + Cookies.get('artistId'))
-                            }
-                            }>
-                            <img src={props.my_artist_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_artist_data.avatarUrl}
-                                 className={accountNavigation_scss.avatar}
-                                 crossOrigin="anonymous"
-                                 alt={'avatar'}/>
-                            <section className={accountNavigation_scss.name_section}>
-                                <div className={'p ' + accountNavigation_scss.name}>{props.my_artist_data.artistName}</div>
-                                <button className={accountNavigation_scss.button}>
-                                    Художник
-                                </button>
-                            </section>
-                        </section>
-                        :
+                            : null
+                        }
                         <section>
-                            <button className={accountNavigation_scss.buttonAdd}>
-                                <div className={accountNavigation_scss.plus}>+</div>
-                                <div className={accountNavigation_scss.artist_button}
-                                    onClick={() => router.push(MAIN_PATHS.CREATE_ARTIST)}>
-                                    Художник
-                                </div>
+                            <button className={accountNavigation_scss.button}
+                                    onClick={() => {
+                                        keycloakSessionLogOut()
+                                            .then(() => {
+                                                deleteCookies()
+                                                signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
+                                            })
+                                    }}>
+                                Выход
                             </button>
                         </section>
-                    }
-                    <section>
-                        <button className={accountNavigation_scss.button}
-                                onClick={() => {
-                                    router.push(MAIN_PATHS.CART)
-                                    Cookies.set('role', ROLES.CUSTOMER)
-                                    Cookies.set('currentRole', ROLES.CUSTOMER)
-                                    Cookies.set('currentId', Cookies.get('customerId') as string)
-                                }
-                                }>
-                            Корзина
-                        </button>
-                    </section>
-                    <section>
-                        <button className={accountNavigation_scss.button}
-                        onClick={() => router.push(MAIN_PATHS.ORDERS)}>
-                            Заказы
-                        </button>
-                    </section>
-                    <section>
-                        <button className={accountNavigation_scss.button}
-                                onClick={() => router.push(MAIN_PATHS.NOTIFICATIONS)}>
-                            Уведомления
-                        </button>
-                    </section>
-                    <section>
-                        <button className={accountNavigation_scss.button}
-                                onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS + PATHS_CATEGORY.PRIVATE)}>
-                            Подписки
-                        </button>
-                    </section>
-                    <section>
-                        <button className={accountNavigation_scss.button}
-                                onClick={() => {
-                                    router.push(MAIN_PATHS.SETTINGS)
-                                    Cookies.set('role', ROLES.CUSTOMER)
-                                    Cookies.set('currentRole', ROLES.CUSTOMER)
-                                    Cookies.set('currentId', Cookies.get('customerId') as string)
-                                }}>
-                            Настройки
-                        </button>
-                    </section>
-                    <section>
-                        <button className={accountNavigation_scss.button}
-                                onClick={() => {
-                                    keycloakSessionLogOut()
-                                        .then(() => {
-                                            deleteCookies()
-
-                                            signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
-                                        })
-                                }}>
-                            Выход
-                        </button>
                     </section>
                 </section>
             </section>
-        </section>
-    )
+        )
+
+    } else {
+        return (
+            <section className={accountNavigation_scss.account_section}>
+                <section className={accountNavigation_scss.account_various}>
+                    <button onClick={() => props.setIsMenuClicked(false)} className={navigation_scss.close_button}>
+                        <Image src={close} alt={'close'}
+                               width={0} height={0} className={navigation_scss.img}/>
+                    </button>
+                    <section className={accountNavigation_scss.account_nav}>
+                        {registrationFlag === 'true' ?
+                            <section className={accountNavigation_scss.account_data}
+                                     onClick={() => {
+                                         Cookies.set('role', ROLES.CUSTOMER)
+                                         Cookies.set('currentRole', ROLES.CUSTOMER)
+                                         Cookies.set('currentId', Cookies.get('customerId') as string)
+                                         router.push(MAIN_PATHS.PROFILE_CUSTOMER + '/' + Cookies.get('customerId'))
+                                     }
+                                     }>
+                                <img src={props.my_customer_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_customer_data.avatarUrl }
+                                     className={accountNavigation_scss.avatar}
+                                     crossOrigin="anonymous"
+                                     alt={'avatar'}/>
+                                <section className={accountNavigation_scss.name_section}>
+                                    <abbr className={'p ' + accountNavigation_scss.name} title={props.my_customer_data.customerName}>{props.my_customer_data.customerName}</abbr>
+                                    <button className={accountNavigation_scss.button}>
+                                        Покупатель
+                                    </button>
+                                </section>
+                            </section>
+                            : null
+                        }
+                        {artistId !== undefined ?
+                            <section className={accountNavigation_scss.account_data}
+                                     onClick={() => {
+                                         Cookies.set('role', ROLES.ARTIST)
+                                         Cookies.set('currentRole', ROLES.ARTIST)
+                                         Cookies.set('currentId', Cookies.get('artistId') as string)
+                                         router.push(MAIN_PATHS.PROFILE_ARTIST + '/' + Cookies.get('artistId'))
+                                     }
+                                     }>
+                                <img src={props.my_artist_data.avatarUrl === '' ? '/default_avatar_profile.svg' : props.my_artist_data.avatarUrl}
+                                     className={accountNavigation_scss.avatar}
+                                     crossOrigin="anonymous"
+                                     alt={'avatar'}/>
+                                <section className={accountNavigation_scss.name_section}>
+                                    <abbr className={'p ' + accountNavigation_scss.name} title={props.my_artist_data.artistName}>{props.my_artist_data.artistName}</abbr>
+                                    <button className={accountNavigation_scss.button}>
+                                        Художник
+                                    </button>
+                                </section>
+                            </section>
+                            :
+                            <section>
+                                <button className={accountNavigation_scss.buttonAdd}>
+                                    <div className={accountNavigation_scss.plus}>+</div>
+                                    <div className={accountNavigation_scss.artist_button}
+                                         onClick={() => router.push(MAIN_PATHS.CREATE_ARTIST)}>
+                                        Художник
+                                    </div>
+                                </button>
+                            </section>
+                        }
+                        <section>
+                            <button className={accountNavigation_scss.button}
+                                    onClick={() => {
+                                        ClickJustButton('Cart') // метрика
+                                        router.push(MAIN_PATHS.CART)
+                                        Cookies.set('role', ROLES.CUSTOMER)
+                                        Cookies.set('currentRole', ROLES.CUSTOMER)
+                                        Cookies.set('currentId', Cookies.get('customerId') as string)
+                                    }
+                                    }>
+                                Корзина
+                            </button>
+                        </section>
+                        <section>
+                            <button className={accountNavigation_scss.button}
+                                    onClick={() => router.push(MAIN_PATHS.ORDERS)}>
+                                Заказы
+                            </button>
+                        </section>
+                        <section>
+                            <button className={accountNavigation_scss.button}
+                                    onClick={() => router.push(MAIN_PATHS.NOTIFICATIONS)}>
+                                Уведомления
+                            </button>
+                        </section>
+                        <section>
+                            <button className={accountNavigation_scss.button}
+                                    onClick={() => router.push(MAIN_PATHS.SUBSCRIPTIONS + PATHS_CATEGORY.PRIVATE)}>
+                                Подписки
+                            </button>
+                        </section>
+                        <section>
+                            <button className={accountNavigation_scss.button}
+                                    onClick={() => {
+                                        router.push(MAIN_PATHS.SETTINGS)
+                                        Cookies.set('role', ROLES.CUSTOMER)
+                                        Cookies.set('currentRole', ROLES.CUSTOMER)
+                                        Cookies.set('currentId', Cookies.get('customerId') as string)
+                                    }}>
+                                Настройки
+                            </button>
+                        </section>
+                        <section>
+                            <button className={accountNavigation_scss.button}
+                                    onClick={() => {
+                                        keycloakSessionLogOut()
+                                            .then(() => {
+                                                deleteCookies()
+
+                                                signOut({callbackUrl: MAIN_PATHS.MAIN}).then()
+                                            })
+                                    }}>
+                                Выход
+                            </button>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        )
+    }
+
 }

@@ -53,12 +53,8 @@ export const MainAuctions = (props: auctions) => {
         props.GetAuctionsCategories(router)
     }, []);
 
-    if (arts.length > 0) {
-        return <PopularAndAuctionsComponent title={'Аукционы'}
-                                            arts={arts}/>
-    } else {
-        return <></>
-    }
+    return <PopularAndAuctionsComponent title={'Аукционы'}
+                                        arts={arts}/>
 
 }
 

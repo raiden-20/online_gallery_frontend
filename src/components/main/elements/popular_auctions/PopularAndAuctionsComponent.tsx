@@ -59,7 +59,8 @@ export const PopularAndAuctionsComponent = (props: PopularAuctionInterface) => {
                 </button>
             </section>
             <ul ref={galleryRef} className={popular_scss.ul}>
-                {props.arts.map((art, index) => {
+                {props.arts.length > 0 ?
+                    props.arts.map((art, index) => {
                     return (
                         <li key={index}>
                             <section className={popular_scss.root_oneWork}
@@ -83,7 +84,8 @@ export const PopularAndAuctionsComponent = (props: PopularAuctionInterface) => {
                             </section>
                         </li>
                     )
-                })}
+                })
+                : null}
             </ul>
         </section>
     )

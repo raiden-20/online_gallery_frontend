@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="add new font to public and edit art visibility">
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/OneWorkArtistProfileComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/artist/artist_works/OneWorkArtistProfileComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/OneWorkCustomerComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile_elemets/categories/customer/customer_works/OneWorkCustomerComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/support/Information.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/support/Information.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/artInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/artInterface.ts" afterDir="false" />
+    <list default="true" id="87cfca52-c0a5-46ab-9db8-ae7963637fd5" name="Changes" comment="edit artist works and information">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,15 +186,7 @@
       <workItem from="1718619096153" duration="10431000" />
       <workItem from="1718717979044" duration="9299000" />
       <workItem from="1718786187578" duration="11640000" />
-      <workItem from="1718873163966" duration="7348000" />
-    </task>
-    <task id="LOCAL-00060" summary="edit one art page to using components for auction page">
-      <option name="closed" value="true" />
-      <created>1716457063725</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1716457063725</updated>
+      <workItem from="1718873163966" duration="8863000" />
     </task>
     <task id="LOCAL-00061" summary="create pages and do design for auctions: one page, categories page">
       <option name="closed" value="true" />
@@ -583,7 +572,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718882420795</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="edit artist works and information">
+      <option name="closed" value="true" />
+      <created>1718882804836</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1718882804836</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +600,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature_admin_events" />
+                        <option value="develop" />
                       </list>
                     </value>
                   </entry>
@@ -616,7 +613,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit sorting and photos click on artist category page" />
     <MESSAGE value="edit art visibility on search page" />
     <MESSAGE value="edit materials and tags in create art page" />
     <MESSAGE value="add parametr isBlock to user" />
@@ -641,6 +637,7 @@
     <MESSAGE value="edit suspense" />
     <MESSAGE value="edit config and information page" />
     <MESSAGE value="add new font to public and edit art visibility" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new font to public and edit art visibility" />
+    <MESSAGE value="edit artist works and information" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit artist works and information" />
   </component>
 </project>

@@ -51,12 +51,8 @@ export const MainArts = (props: arts) => {
         props.GetArtsCategories('paintings', router)
     }, []);
 
-    if (arts.length > 0) {
-        return <PopularAndAuctionsComponent title={'Популярное'}
-                                            arts={arts}/>
-    } else {
-        return <></>
-    }
+    return <PopularAndAuctionsComponent title={'Популярное'}
+                                        arts={arts}/>
 
 }
 

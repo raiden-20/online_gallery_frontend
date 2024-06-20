@@ -68,7 +68,7 @@ export const OneWorkArtistProfileComponent = (props: oneWorkInterface) => {
                     : null}
             </section>
             <section className={works_profile_scss.one_work_names}>
-                <div className={works_profile_scss.one_work_weight}>{props.artistName}</div>
+                <div className={works_profile_scss.one_work_weight}>{props.oneArt.artistName}</div>
                 <div>{props.oneArt.name}</div>
             </section>
             <div className={works_profile_scss.one_work_weight}>{props.oneArt.price} ₽</div>

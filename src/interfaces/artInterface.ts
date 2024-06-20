@@ -48,6 +48,7 @@ export interface ArtArtistInterface {
     customerId: string
     avatarUrl: string
     customerName: string
+    artistName: string
 }
 
 export interface ArtCustomerInterface {
@@ -57,6 +58,7 @@ export interface ArtCustomerInterface {
     photoUrl: string
     isPrivate: string
     price: string
+    customerName: string
 }
 
 export interface MainPageArts {
